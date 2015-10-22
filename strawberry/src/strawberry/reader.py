@@ -88,11 +88,14 @@ class Reader(object):
         self.props = self.props[self.prop_index:]
 
     def __update_axis(self, first):
-        n = len(self._axis_vid) 
-        if len(self._axis_vid) == first-1:
+        n = len(self._axis_vid)
+        if n == first:
             self._axis_vid.append(self._vid)
-        elif n > first:
+        elif n == first+1:
             self._axis_vid[first] = self._vid
+        else:
+            print "ERROR", first, n, self._axis_vid
+
 
     def read_line(self):
         """
@@ -144,21 +147,27 @@ class Reader(object):
 
         cur_order = first
 
-        if cur_order == prev_order:
+        if self._vid is None:
+            assert (cur_order == 0)
+            self._vid = g.add_component(g.root, label=label, **current_props)
+            self._axis_vid.append(self._vid)
+        elif cur_order == prev_order:
             if scale == prev_scale:
-                self._vid = g.add_child(self._vid, label=label, edge_type='<', **current_props)
+                pid = self._axis_vid[cur_order]
+                self._vid = g.add_child(pid, label=label, edge_type='<', **current_props)
                 self.__update_axis(first)
             else:
                 # TODO
-                #pid = self._axis_vid[cur_order-1]
+                # pid = self._axis_vid[cur_order-1]
                 pass
         elif cur_order > prev_order:
             if scale == prev_scale:
-                self._vid = g.add_child(self._vid, label=label, edge_type='+', **current_props)
+                pid = self._axis_vid[prev_order]
+                self._vid = g.add_child(pid, label=label, edge_type='+', **current_props)
                 self.__update_axis(first)
             else:
                 # TODO
-                #pid = self._axis_vid[cur_order-1]
+                # pid = self._axis_vid[cur_order-1]
                 pass
         else:
             pid = self._axis_vid[cur_order]
@@ -186,9 +195,8 @@ class Reader(object):
         #self._vid = g.add_component(self._vid, label='Crown')
         self._order = 0
         self._scale = 3
-        self._vid = g.add_component(g.root, label='Phytomer')
-        self._axis_vid.append(self._vid) 
-        print self._vid
+        self._vid = None
+        #self._axis_vid.append(self._vid) 
 
         nb_lines = len(self.content) - self.prop_no
         for i in range(nb_lines):
