@@ -1,0 +1,3 @@
+[wralea]
+strawberry = strawberry_wralea
+

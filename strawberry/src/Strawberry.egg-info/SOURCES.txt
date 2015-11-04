@@ -1,0 +1,12 @@
+README.txt
+setup.py
+src/Strawberry.egg-info/PKG-INFO
+src/Strawberry.egg-info/SOURCES.txt
+src/Strawberry.egg-info/dependency_links.txt
+src/Strawberry.egg-info/entry_points.txt
+src/Strawberry.egg-info/not-zip-safe
+src/Strawberry.egg-info/top_level.txt
+src/strawberry/__init__.py
+src/strawberry/reader.py
+src/strawberry_wralea/__init__.py
+src/strawberry_wralea/__wralea__.py
