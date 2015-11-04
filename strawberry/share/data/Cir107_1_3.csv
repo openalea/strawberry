@@ -7,8 +7,8 @@ Legends:;F: leaf;;;lobe_C_H: height of central lob;;;;;;;;;;;;;;;;;;;;
 ;HT: Terminal inflorescence;;;Leaf_area_algo: leaf area calculate with algorithm;;;;;;;;;;;;;;;;;;;;
 ;;;;Com.: Commentary;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
-Architecture;;;;;;;;Leaf_notation;;;;;;;;;;;;;Yield_notation;;;
-Axis_1;Axis_2;Axe_3;Axis_4;Axis_5;Axis_6;Axis_7;Axis_8;leaf_area;leaf_perimeter;Lobe_C_H;Lobe_C_L;Lobe_G_H;Lobe_G_L;Leaf_area_algo;Lobe_C_H;Lobe_C_L;Lobe_G_H;Lobe_G_L;Leaf_area_algo;Com.;harvest_fruit;fruit_aborded;Total_ruit;com.
+Architecture;;;;;;;;Leaf_notation;;;;;;;;Yield_notation;;;;;;;;
+Axis_1;Axis_2;Axe_3;Axis_4;Axis_5;Axis_6;Axis_7;Axis_8;leaf_area;leaf_perimeter;Lobe_C_H;Lobe_C_L;Lobe_G_H;Lobe_G_L;Leaf_area_algo;Com.;harvest_fruit;fruit_aborded;Total_ruit;com.;;;;;
 F;;;;;;;;-;-;;;;;;;;;;;;;;;
 F;;;;;;;;-;-;;;;;;;;;;;;;;;
 F;;;;;;;;-;-;;;;;;;;;;;;;;;
