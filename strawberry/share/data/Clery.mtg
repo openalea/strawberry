@@ -4449,3 +4449,601 @@ ENTITY-CODE						date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm
 		^<ht								H
 	^<HT									77					5	0	0
 ^<HT										87					15	15	0
+
+/P						27/05/2015	Clery	1	61.34								
+^/T																	
+^/F																	
+	+A																
+	^/bt									seché
+^<F
+	+A
+	^/bt									séché
+^<F
+	+A
+	^/bt									séché
+^<F
+	+A
+	^/bt									séché
+^<F
+	+A
+	^/F
+		+A
+		^/F
+			+A
+			^/s
+		^<F
+			+A
+			^/s
+		^<F
+			+A
+			^/f
+			^<f
+			^<f
+			^<bt							17
+		^<ht								H
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<f
+			^<ht							E
+		^<F
+			+A
+			^/bt							avorté
+		^<F
+			+A
+			^/bt							avorté
+		^<F
+			+A
+			^/s
+		^<F
+			+A
+			^/f
+			^<f
+			^<f
+			^<f
+			^<f
+			^<bt							17
+		^<F
+			+A
+			^/f
+			^<f
+			^<f
+			^<f
+			^<f
+			^<f
+			^<bt							17
+		^<HT								60					3	1	0
+	^<HT									87					5	5	0
+^<F
+	+A
+	^/F
+		+A
+		^/f
+		^<f
+		^<ht								B
+	^<F
+		+A
+		^/F
+			+A
+			^/bt							avorté
+		^<F
+			+A
+			^/bt							avorté
+		^<F
+			+A
+			^/F
+				+A
+				^/s
+			^<F
+				+A
+				^/s
+			^<f
+				+A
+				^/f
+					+A
+					^/bt					avorté
+				^<ht						F
+			^<ht							H
+		^<HT								avorté
+	^<F
+		+A
+		^/F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/bt
+			^<f
+				+A
+				^/f
+				^<f
+				^<ht						C
+			^<ht							H
+		^<F
+			+A
+			^/f
+			^<f
+			^<f
+			^<ht							C
+		^<F
+			+A
+			^/F
+				+A
+				^/s
+			^<F
+				+A
+				^/s
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<f
+				^<bt						A
+			^<HT							60					4	1	0
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/F
+					+A
+					^/s
+				^<f
+				^<f
+				^<f
+				^<f
+				^<bt						17
+			^<F									19.0	7.8	7.8
+				+A
+				^/bt						avorté
+			^<HT							67					8	2	0
+		^<HT								87					1	1	0
+	^<HT									87					3	3	0
+^<HT										87					16	15	1
+
+/P						27/05/2015	Clery	2	52.68								
+^/T																	
+^/F																	
+	+A																
+	^/s
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/bt									séché
+^<F
+	+A
+	^/bt									séché
+^<F
+	+A
+	^/bt									séché
+^<F
+	+A
+	^/F
+		+A
+		^/bt								avorté
+	^<F
+		+A
+		^/f
+		^<f
+			+A
+			^/bt							17
+		^<ht								E
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<ht							C
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht							E
+		^<F
+			+A
+			^/F
+				+A
+				^/bt						17
+			^<F
+				+A
+				^/bt						19
+			^<F
+				+A
+				^/F
+					+A
+					^/bt					avorté
+				^<F
+					+A
+					^/f
+					^<f
+					^<bt					17
+				^<F
+					+A
+					^/bt					17
+				^<HT						I					3	0	0
+			^<F
+				+A
+				^/F
+					+A
+					^/bt					avorté
+				^<F
+					+A
+					^/s
+				^<F
+					+A
+					^/f
+					^<f
+					^<f
+					^<bt					19
+				^<HT						57					5	0	0
+			^<HT							73					4	4	0
+		^<HT								87					4	4	0
+	^<HT									87					8	7	1
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<ht							C
+		^<F
+			+A
+			^/bt							17
+		^<F
+			+A
+			^/f
+			^<f
+			^<f
+			^<bt							17
+		^<HT								60					3	1	0
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<f
+			^<ht							C
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht							E
+		^<F
+			+A
+			^/f
+			^<f
+			^<f
+				+A
+				^/bt						17
+			^<ht							E
+		^<F
+			+A
+			^/F
+				+A
+				^/bt						17
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<ht						B
+			^<F									23.0	9.1	9.1
+				+A
+				^/f
+					+A
+					^/bt
+				^<f
+					+A
+					^/bt
+				^<f
+				^<f
+				^<f
+				^<bt						A
+			^<HT							60					4	1	0
+		^<HT								avorté
+	^<HT									87					7	6	1
+^<HT										87					12	10	2
+
+/P						27/05/2015	Clery	3	49.92								
+^/T																	
+^/F																	
+	+A																
+	^/bt									seché
+^<F
+	+A
+	^/bt									pourri
+^<F
+	+A
+	^/F
+		+A
+		^/bt								seché
+	^<F
+		+A
+		^/F
+			+A
+			^/bt							17
+		^<F
+			+A
+			^/F
+				+A
+				^/f
+				^<f
+				^<f
+					+A
+					^/bt					17
+				^<ht						G
+			^<HT							57					5	0	0
+		^<F
+			+A
+			^/F
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt						17
+			^<F
+				+A
+				^/f
+				^<f
+				^<ht						B
+			^<F
+				+A
+				^/f
+					+A
+					^/bt					17
+				^<f
+					+A
+					^/bt					17
+				^<ht						H
+			^<F
+				+A
+				^/F
+					+A
+					^/s
+				^<F
+					+A
+					^/f
+					^<f
+						+A
+						^/bt				17	
+					^<ht					G
+				^<HT						57					4	1	0
+			^<HT							60					4	1	0
+		^<HT								87					3	3	0
+	^<HT									87					5	5	0
+^<F
+	+A
+	^/F
+		+A
+		^/f
+		^<f
+		^<ht								D
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht							C
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/bt						17
+			^<F
+				+A
+				^/bt						17
+			^<HT							I					3	0	0
+		^<HT								avorté
+	^<F
+		+A
+		^/F
+			+A
+			^/bt							17
+		^<F
+			+A
+			^/f
+			^<f
+				+A
+				^/bt						17
+			^<f
+				+A
+				^/bt						17
+			^<ht							G
+		^<F
+			+A
+			^/F
+				+A
+				^/f
+					+A
+					^/bt
+				^<f
+					+A
+					^/bt					17
+				^<ht						H
+			^<F
+				+A
+				^/f
+				^<f
+				^<ht						B
+			^<F
+				+A
+				^/F
+					+A
+					^/s
+				^<F
+					+A
+					^/f
+					^<f
+					^<f
+					^<f
+					^<bt					19
+				^<F								12.0	6.4	5.9
+					+A
+					^/bt					avorté
+				^<HT						55					6	0	0
+			^<HT							73					4	3	0
+		^<HT								87					4	4	0
+	^<HT									87					5	4	1
+^<HT										87					19	17	2
+
+/P						27/05/2015	Clery	4	32.12								
+^/T																	
+^/F																	
+	+A																
+	^/bt									seché
+^<F
+	+A
+	^/bt									seché
+^<F
+	+A
+	^/bt									séché
+^<F
+	+A
+	^/bt									séché
+^<F
+	+A
+	^/bt									seché
+^<F
+	+A
+	^/F
+		+A
+		^/F
+			+A
+			^/s
+		^<f
+			+A
+			^/f
+			^<f
+			^<f
+			^<bt							A
+		^<ht								H
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<f
+			^<f
+			^<ht							C
+		^<F
+			+A
+			^/F
+			^<F
+				+A
+				^/F
+					+A
+					^/bt					avorté
+				^<f
+					+A
+					^/bt					17
+				^<ht						H
+			^<HT							avorté
+		^<F
+			+A
+			^/F
+				+A
+				^/bt						avorté
+			^<F
+				+A
+				^/F
+					+A
+					^/bt
+				^<f
+				^<f
+				^<bt						A
+			^<HT							57					4	0	0
+		^<HT								avorté
+	^<HT									87					4	4	0
+^<F
+	+A
+	^/F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt							17
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/f
+				^<f
+				^<ht 						D
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<f
+				^<f
+				^<bt						A
+			^<HT							60					3	1	0
+		^<HT								87					2	2	0
+	^<F
+		+A
+		^/F
+			+A
+			^/bt							17
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht							E
+		^<F
+			+A
+			^/F
+				+A
+				^/bt						17
+			^<F
+				+A
+				^/bt						avorté
+			^<F									21.8	8.6	7.9
+				+A
+				^/f
+				^<f
+				^<f
+					+A
+					^/bt					17
+				^<ht						H
+			^<HT							67					4	3	0
+		^<HT								87					5	5	0
+	^<HT									87					4	4	0
+^<HT										87					13	12	1
+
