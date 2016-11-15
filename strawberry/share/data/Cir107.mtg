@@ -7150,3 +7150,502 @@ ENTITY-CODE								date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_
 	^<HT											87					6	6	0
 ^<HT												87					15	12	3
 
+/P								20/05/2015	Cir107	7	35.17
+^/T
+^/F
+	+A
+	^/bt											seché
+^<F
+	+A
+	^/bt											séché
+^<F
+	+A
+	^/bt											séché
+^<F
+	+A
+	^/bt											séché
+^<F
+	+A
+	^/f
+	^<f
+	^<ht											E
+^<F
+	+A
+	^/F
+		+A
+		^/bt										avorté
+	^<F
+		+A
+		^/bt										séché
+	^<F
+		+A
+		^/F
+			+A
+			^/bt									17
+		^<F
+			+A
+			^/F
+				+A
+				^/s
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<ht								C
+			^<HT									I					3	0	0
+		^<F
+			+A
+			^/F
+				+A
+				^/bt								avorté
+			^<F
+				+A
+				^/s
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<ht								F
+			^<HT									I					6	0	0
+		^<HT										81					4	4	0
+	^<HT											87					9	6	3
+^<F
+	+A
+	^/F
+		+A
+		^/f
+		^<f
+		^<f
+		^<ht										E
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<ht									C
+		^<F
+			+A
+			^/f
+				+A
+				^/bt
+			^<f
+			^<f
+			^<ht									C
+		^<F
+			+A
+			^/F
+				+A
+				^/bt								17
+			^<F
+				+A
+				^/f
+				^<f
+				^<bt								A
+			^<F
+				+A
+				^/f
+				^<f
+					+A
+					^/bt							17
+				^<ht								G
+			^<F											18.3	5.1	4.6
+				+A
+				^/f
+				^<f
+				^<ht								H
+			^<HT									57					6	0	0
+		^<HT										87					9	5	4
+	^<HT											87					9	9	0
+^<HT												87					8	7	1
+
+/P								20/05/2015	Cir107	8	52.81
+^/T
+^/F
+	+A
+	^/F
+		+A
+		^/bt										17
+	^<F
+		+A
+		^/F
+			+A
+			^/bt									17
+		^<F
+			+A
+			^/bt									séché
+		^<F
+			+A
+			^/F
+				+A
+				^/s
+			^<F
+				+A
+				^/bt
+			^<F
+				+AF
+				^/F
+					+A
+					^/bt
+				^<F
+					+A
+					^/bt							avorté
+				^<f
+					+A
+					^/s
+				^<f
+				^<f
+				^<f
+				^<f
+				^<f
+				^<f
+				^<bt								19
+			^<HT									85					9	7	2
+		^<HT										87					9	8	1
+	^<HT											87					7	6	1
+^<F
+	+A
+	^/F
+		+A
+		^/bt										avorté
+	^<F
+		+A
+		^/F
+			+A
+			^/bt									avorté
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht									C
+		^<F
+			+A
+			^/F
+				+A
+				^/bt								17
+			^<F
+				+A
+				^/bt								17
+			^<F
+				+A
+				^/bt								17
+			^<F
+				+A
+				^/F
+					+A
+					^/s
+				^<F
+					+A
+					^/f
+					^<f
+					^<f
+					^<bt							17
+				^<F
+					+A
+					^/f
+					^<f
+					^<f
+					^<bt							17
+				^<HT								55					6	0	0
+			^<HT									77					6	6	0
+		^<HT										87					9	6	3
+	^<HT											87					9	9	0
+^<F
+	+A
+	^/bt											seché
+^<F
+	+A
+	^/bt											séché
+^<F
+	+A
+	^/bt											séché
+^<F
+	+A
+	^/bt											séché
+^<F
+	+A
+	^/bt											séché
+^<F
+	+A
+	^/F
+		+A
+		^/bt										17
+	^<F
+		+A
+		^/F
+			+A
+			^/bt									avorté
+		^<F
+			+A
+			^/bt									avorté
+		^<f
+		^<f
+			+A
+			^/f
+			^<f
+			^<ht									C
+		^<ht										H
+	^<HT											87					6	4	2
+^<F
+	+A
+	^/F
+		+A
+		^/bt										séché
+	^<F
+		+A
+		^/F
+			+A
+			^/bt									17
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht									F
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/bt								17
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<f
+				^<bt								17
+			^<HT									57					6	0	0
+		^<F
+			+A
+			^/F
+				+A
+				^/bt								avorté
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<f
+				^<bt								19
+			^<F											16.4	5.7	6.5
+				+A
+				^/f
+				^<f
+				^<f
+				^<f
+				^<f
+				^<f
+				^<bt								17
+			^<HT									65					3	1	0
+		^<HT										coupé
+	^<HT											87					9	5	4
+^<HT												87					11	9	2			
+
+/P								20/05/2015	Cir107	9	58.69
+^/T
+^/F
+	+A
+	^/F
+		+A
+		^/f
+		^<f
+		^<f
+		^<bt										17
+	^<F
+		+A
+		^/F
+			+A
+			^/bt									17
+		^<F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt
+		^<F
+			+A
+			^/F
+				+A
+				^/bt								avorté
+			^<F
+				+A
+				^/s
+			^<F
+				+A
+				^/s
+			^<F
+				+A
+				^/bt								17
+			^<F
+				+A
+				^/bt								17
+			^<HT									I					4	0	0
+		^<HT										87					9	5	4
+	^<HT											87					5	5	0
+^<F
+	+A
+	^/F
+		+A
+		^/bt										avorté
+	^<F
+		+A
+		^/bt
+	^<F
+		+A
+		^/f
+		^<f
+		^<f
+		^<bt										A
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt									17
+		^<F
+			+A
+			^/F
+				+A
+				^/s
+			^<F
+				+A
+				^/bt								17
+			^<F
+				+A
+				^/bt								17
+			^<F
+				+A
+				^/f
+					+A
+					^/bt
+				^<f
+					+A
+					^/bt							17
+				^<ht								G
+			^<HT									57					5	0	0
+		^<HT										87					7	3	4
+	^<HT											87					10	6	4
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/F
+		+A
+		^/bt										avorté
+	^<F
+		+A
+		^/bt										avorté
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht										C
+	^<F
+		+A
+		^/F
+			+A
+			^/bt									17
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht									C
+		^<f
+			+A
+			^/f
+			^<f
+			^<f
+			^<f
+			^<ht									F
+		^<ht										H
+	^<HT											87					8	5	3
+^<F
+	+A
+	^/F
+		+A
+		^/bt										avorté
+	^<F
+		+A
+		^/bt
+	^<F
+		+A
+		^/f
+		^<f
+		^<f
+		^<ht										C
+	^<F
+		+A
+		^/f
+		^<f
+			+A
+			^/bt									17
+		^<ht										H
+	^<F
+		+A
+		^/F
+			+A
+			^/bt									17
+		^<F
+			+A
+			^/f
+				+A
+				^/s
+			^<f
+				+A
+				^/bt								17
+			^<f
+				+A
+				^/bt								17
+			^<ht									H
+		^<HT										avorté
+	^<HT											87					9	7	2
+^<F
+	+A
+	^/bt											seché
+^<F
+	+A
+	^/bt											séché
+^<F
+	+A
+	^/bt											séché
+^<F
+	+A
+	^/F
+		+A
+		^/f
+			+A
+			^/s
+		^<f
+			+A
+			^/s
+		^<f
+		^<ht										E
+	^<F
+		+A
+		^/F
+			+A
+			^/bt									17
+		^<F												25.1	7.0	6.4
+			+A
+			^/f
+				+A
+				^/s
+			^<f
+				+A
+				^/f
+				^<f
+				^<bt								17
+			^<ht									H
+		^<HT										avorté
+	^<HT											87					9	6	3
+^<HT												87					23	17	6			
