@@ -5903,3 +5903,1552 @@ ENTITY-CODE					date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm	
 		^<HT							57					4	0	0
 	^<HT								87					5	5	0
 ^<HT									87					11	11	0
+
+/P					27/05/2015	Capriss	1	62.43
+^/T
+^/F
+	+A
+	^/F
+	^/F
+		+A
+		^/F
+			+A
+			^/bt						avorté
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						D
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					17
+			^<F
+				+A
+				^/s
+			^<f
+				+A
+				^/f
+					+A
+					^/bt				19
+				^<f
+					+A
+					^/f
+					^<f
+					^<bt				A
+				^<ht					G
+			^<HT						57					4	0	0
+		^<HT							81					4	4	0
+	^<HT								87					4	4	0
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/F
+				+A
+				^/f
+				^<f
+				^<ht					C
+			^<F
+				+A
+				^/bt					17
+			^<F
+				+A
+				^/bt					17
+			^<F
+				+A
+				^/f
+					+A
+					^/bt				17
+				^<f
+					+A
+					^/f
+					^<f
+					^<ht				E
+				^<ht					H
+			^<HT						73					3	2	0
+		^<HT							87					3	3	0
+	^<HT								87					5	5	0
+^<F
+	+A
+	^/F
+	^<F
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+			^<f
+			^<bt						A
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					17
+			^<F
+				+A
+				^/f
+				^<f
+				^<bt					A
+			^<F
+				+A
+				^/f
+				^<f
+					+A
+					^/bt				17
+				^<ht					H
+			^<HT						67					4	2	0
+		^<HT							87					3	3	0
+	^<HT								87					7	6	1
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							C
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<f
+		^<f
+			+A
+			^/f
+			^<f
+			^<ht						E
+		^<ht							G
+	^<HT								87					4	4	0
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							B
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							C
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<bt						A
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+				+A
+				^/bt					17
+			^<f
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					17
+			^<ht						H
+		^<HT							73					4	4	0
+	^<HT								87					3	3	0
+^<F
+	+A
+	^/F
+		+A
+		^/bt							19
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							C
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							D
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/f
+			^<f
+				+A
+				^/bt					17
+			^<ht						E
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					avorté
+			^<F								31.0	8.5	7.5
+				+A
+				^/f
+				^<f
+				^<f
+				^<ht					C
+			^<f
+				+A
+				^/f
+				^<f
+				^<bt					17
+			^<HT						57					3	0	0
+		^<HT							81					4	4	0
+	^<HT								87					4	4	0
+^<HT									87					12	12	0	
+
+/P					27/05/2015	Capriss	2	45.96
+^/T
+^/F
+	+A
+	^/s
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/F
+	^<F
+	^<F
+	^<F
+		+A
+		^/f
+		^<f
+			+A
+			^/bt						17
+		^<ht							avorté
+	^<HT								87					3	1	2
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/F
+		+A
+		^/bt							seché
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					avorté
+			^<f
+			^<f
+				+A
+				^/bt					19
+			^<ht						H
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					avorté
+			^<F
+				+A
+				^/bt
+			^<f
+				+A
+				^/bt					17
+			^<ht						H
+		^<HT							avorté
+	^<HT								87					4	4	0
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt
+		^<F
+			+A
+			^/s
+		^<F
+			+A
+			^/f
+			^<f
+				+A
+				^/bt					17
+			^<ht						G
+		^<HT							58					3	0	0
+	^<HT								87					3	2	1
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						avorté
+		^<F
+			+A
+			^/bt						avorté
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					avorté
+			^<F								33.0	8.9	8.8
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					A
+			^<f
+				+A
+				^/f
+				^<f
+					+A
+					^/bt				17
+				^<ht					H
+			^<HT						57					3	0	0
+		^<HT							87					4	4	0
+	^<HT								87					5	5	0
+^<HT									87					13	13	0
+
+/P					27/05/2015	Capriss	3	45.11
+^/T
+^/F
+	+A
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<bt						A
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						B
+		^<F
+			+A
+			^/F
+				+A
+				^/s
+			^<F
+				+A
+				^/bt					17
+			^<F
+				+A
+				^/f
+					+A
+					^/bt
+				^<f
+					+A
+					^/bt				17
+				^<ht					H
+			^<HT						67					4	2	0
+		^<HT							87					3	3	0
+	^<HT								87					3	3	0
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/F
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						avorté
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					17
+			^<F
+				+A
+				^/f
+					+A
+					^/bt
+				^<f
+					+A
+					^/bt				17
+				^<ht					H
+			^<HT						57					3	0	0
+		^<HT							avorté
+	^<HT								87					4	3	1
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							D
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/F
+				+A
+				^/s
+			^<f
+				+A
+				^/bt					17
+			^<f
+				+A
+				^/bt					17
+			^<ht						H
+		^<HT							73					3	3	0
+	^<HT								87					2	2	0
+^<F
+	+A
+	^/F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							E
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							E
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/bt						avorté
+		^<F
+			+A
+			^/f
+				+A
+				^/bt					17
+			^<f
+				^/bt					17
+			^<ht						H
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					avorté
+			^<F								33.7	8.1	7.6
+				+A
+				^/s
+			^<f
+				+A
+				^/bt					17
+			^<bt						17
+		^<HT							81					3	3	0
+	^<HT								87					4	4	0
+^<HT									87					11	11	0
+
+/P					27/05/2015	Capriss	4	57.41
+^/T
+^/F
+	+A
+	^/F
+	^/F
+		+A
+		^/F
+			+A
+			^/bt						avorté
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						E
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/bt						17
+		^<f
+			+A
+			^/F
+				+A
+				^/bt					17
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					17
+			^<HT						60					3	1	0
+		^<HT							81					4	4	0
+	^<HT								87					3	3	0
+^<F
+	+A
+	^/F
+	^<F
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					avorté
+			^<F
+				+A
+				^/bt					17
+			^<f
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					17
+			^<HT						57					5	0	0
+		^<HT							77					4	4	0
+	^<HT								87					4	3	1
+^<F
+	+A
+	^/F
+		+A
+		^/f
+		^<f
+		^<ht							E
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							C
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/f
+			^<f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/bt					17
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					17
+			^<ht						60					4	1	0
+		^<HT							87					4	4	0
+	^<HT								87					3	3	0
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/bt					17
+			^<f
+				+A
+				^/bt					17
+			^<ht						H
+		^<HT							73					4	3	0
+	^<HT								87					3	3	0
+^<F
+	+A
+	^/F
+		+A
+		^/f
+		^<f
+		^<ht							D
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<ht						E
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					17
+			^<F
+				+A
+				^/f
+				^<f
+				^<bt					A
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					17
+			^<F
+				+A
+				^/F							17.0	6.5	5.8
+					+A
+					^/bt				avorté
+				^<f
+				^<f
+				^<f
+				^<bt					17
+			^<HT						81					3	3	0
+		^<HT							87					4	4	0
+	^<HT								87					5	4	1
+^<HT									87					10	10	0
+
+/P					27/05/2015	Capriss	5	46.27
+^/T
+^/F
+	+A
+	^/F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/F
+					+A
+					^/s
+				^<f
+					+A
+					^/bt				17
+				^<ht					H
+			^<HT						67					3	2	0
+		^<HT							87					2	2	0
+	^<HT								87					3	3	0
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/F
+	^<F
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						E
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						B
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					
+			^<f
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					17
+			^<HT						58					2	2	0
+		^<HT							73					4	4	0
+	^<HT								87					4	4	0
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						B
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/f
+				^<f
+				^<ht					C
+			^<F
+				+A
+				^/bt					17
+			^<F								19.0	5.0	4.7
+				+A
+				^/bt					17
+			^<f
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					17
+			^<HT						58					3	0	0
+		^<HT							77					4	4	0
+	^<HT								87					4	4	0
+^<HT									87					15	14	1
+
+/P					27/05/2015	Capriss	7	43.45
+^/T
+^/F
+	+A
+	^/F
+	^<F
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<f
+		^<f
+		^<f
+		^<f
+		^<ht							F
+	^<HT								65					5	0	5
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/F
+	^<F
+	^<F
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+			^<f
+			^<bt						A
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						D
+		^<F
+			+A
+			^/f
+			^<f
+			^<bt						B
+		^<F
+			+A
+			^/F
+				+A
+				^/s
+			^<f
+				+A
+				^/f
+				^<f
+					+A
+					^/bt				17
+				^<ht					F
+			^<f
+				+A
+				^/bt					17
+			^<HT						I					3	0	0
+		^<HT							73					4	4	0
+	^<HT								87					6	6	0
+^<F
+	+A
+	^/F
+	^<F
+	^<F
+		+A
+		^/F
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					avorté
+			^<f
+			^<f
+			^<ht						F
+		^<HT							avorté
+	^<HT								87					6	4	2
+^<F
+	+A
+	^/F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/f
+			+A
+			^/bt						17
+		^<f
+		^<ht							H
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/f
+			^<f
+			^<f
+				+A
+				^/bt					17
+			^<ht						G
+		^<HT							avorté
+	^<HT								87					4	3	1
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						avorté
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+				+A
+				^/bt					17
+			^<f
+			^<ht						H
+		^<HT							60					2	1	0
+	^<HT								87					3	2	1
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							B
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						avorté
+		^<F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+			^<f
+				+A
+				^/bt					17
+			^<f
+				+A
+				^/bt					17
+			^<ht						H
+		^<HT							57					3	0	0
+	^<HT								87					4	4	0
+^<F
+	+A
+	^/F
+		+A
+		^/f
+		^<f
+		^<ht							B
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/F								25.0	6.6	6.0
+				+A
+				^/bt
+			^<f
+				+A
+				^/bt					17
+			^<f
+				+A
+				^/bt					avorté
+			^<ht						H
+		^<HT							60					4	1	0
+	^<HT								87					4	3	1
+^<HT									87					15	12	3
+
+/P					27/05/2015	Capriss	8	52.84
+^/T
+^/F
+	+A
+	^/F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/f
+			+A
+			^/bt						17
+		^<f
+			+A
+			^/f
+			^<f
+			^<f
+			^<bt						17
+		^<ht							H
+	^<HT								87					4	4	0
+^<F
+	+A
+	^/F
+		+A
+		^/f
+		^<f
+		^<ht							C
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							C
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						B
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						E
+		^<F
+			+A
+			^/F
+				+A
+				^/s
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					A
+			^<F
+				+A
+				^/f
+					+A
+					^/bt
+				^<f
+					+A
+					^/s
+				^<f
+				^<bt					17
+			^<HT						73					4	3	0
+		^<HT							87					3	3	0
+	^<HT								87					5	5	0
+^<F
+	+A
+	^/F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						D
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/f
+				^<f
+				^<ht					C
+			^<F
+				+A
+				^/F
+					+A
+					^/bt				17
+				^<f
+					+A
+					^/f
+					^<f
+					^<f
+					^<bt				A
+				^<HT					55					2	0	0
+			^<HT						81					3	3	0
+		^<HT							87					2	2	0
+	^<HT								87					4	4	0
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/s
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/f
+		^<f
+		^<f
+			+A
+			^/f
+			^<f
+			^<ht						D
+		^<ht							avorté
+	^<HT								87					4	3	1
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt
+	^<F
+		+A
+		^/f
+		^<f
+		^<f
+		^<ht							C
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/f
+			^<f
+			^<bt						B
+		^<F
+			+A
+			^/f
+			^<f
+				+A
+				^/bt
+			^<ht						F
+		^<F
+			+A
+			^/f
+			^<f
+				+A
+				^/bt					17
+			^<ht						F
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/bt
+			^<F								16.8	6.2	7.6
+				+A
+				^/f
+					+A
+					^/bt
+				^<f
+				^<f
+				^<f
+				^<f
+				^<bt					17
+			^<HT						65					3	1	0
+		^<HT							87					4	4	0
+	^<HT								87					4	4	0
+^<HT									87					10	10	0
+
+/P					27/05/2015	Capriss	9	52.75
+^/T
+^/F
+	+A
+	^/s
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					
+			^<F
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					17
+			^<HT						57				4	0	0	
+		^<HT							81				4	4	0
+	^<HT								87				3	3	0
+^<F
+	+A
+	^/F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt							avorté
+	^<F
+		+A
+		^/bt
+	^<F
+		+A
+		^/F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/bt
+			^<f
+			^<f
+				+A
+				^/f
+				^<f
+				^<ht					E
+			^<ht						H
+		^<HT							81					10	10	0
+	^<HT								87					4	4	0
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/bt								seché
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							C
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							D
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/bt						17
+		^<F
+			+A
+			^/f
+				+A
+				^/s
+			^<f
+				+A
+				^/bt					17
+			^<ht						H
+		^<HT							73					4	4	0
+	^<HT								87					3	3	0
+^<F
+	+A
+	^/F
+		+A
+		^/f
+		^<f
+		^<ht							B
+	^<F
+		+A
+		^/bt							17
+	^<F
+		+A
+		^/f
+		^<f
+		^<ht							B
+	^<F
+		+A
+		^/f
+		^<f
+		^<bt							C
+	^<F
+		+A
+		^/F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht						C
+		^<F
+			+A
+			^/f
+				+A
+				^/bt
+			^<f
+			^<f
+			^<ht						B
+		^<F
+			+A
+			^/F
+				+A
+				^/bt					17
+			^<F
+				+A
+				^/bt					17
+			^<F								27.5	8.5	7.0
+				+A
+				^/f
+				^<f
+				^<f
+				^<bt					17
+			^<HT						65					3	2	0
+		^<HT							87					4	4	0
+	^<HT								87					5	5	0
+^<HT									87					11	11	0
