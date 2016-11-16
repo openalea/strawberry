@@ -6812,7 +6812,7 @@ ENTITY-CODE						date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm
 			^<F														
 				+A													
 				^/bt						17							
-			^<F									19.0	5.0	4.7			
+			^<F									29.0	10.5	8.1			
 				+A													
 				^/bt						17							
 			^<f														
@@ -6824,8 +6824,185 @@ ENTITY-CODE						date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm
 			^<HT							58					3	0	0
 		^<HT								77					4	4	0
 	^<HT									87					4	4	0
+^<HT										87					11	9	2
+
+/P						27/05/2015	Capriss	6	35.42								
+^/T																	
+^/F																	
+	+A																
+	^/F																
+	^<F
+		+A
+		^/F
+			+A
+			^/bt							avorté
+		^<F
+			+A
+			^/bt
+		^<F
+			+A
+			^/bt							avorté
+		^<F
+			+A
+			^/bt
+		^<f
+			+A
+			^/f
+			^<f
+				+A
+				^/bt						17
+			^<ht							E
+		^<ht								H
+	^<HT									87					2	1	1
+^<F
+	+A
+	^/F
+	^<F
+		+A
+		^/F
+			+A
+			^/bt							avorté
+		^<F
+			+A
+			^/bt							
+		^<F
+			+A
+			^/bt							avorté
+		^<F
+			+A
+			^/f
+			^<f
+				+A
+				^/bt						17
+			^<ht							G
+		^<HT								57					3	0	0
+	^<HT									87					2	2	0
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/f
+		^<f
+		^<f
+		^<ht								E
+	^<F
+		+A
+		^/F
+			+A
+			^/bt							17
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht							C
+		^<F
+			+A
+			^/f
+			^<f
+			^<f
+			^<ht							E
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/f
+					+A
+					^/s
+				^<f
+					+A
+					^/bt					17
+				^<f
+					+A
+					^/f
+					^<f
+						+A
+						^/bt
+					^<ht					D		
+				^<ht						H
+			^<HT							65					4	1	0
+		^<HT								coupé
+	^<HT									87					4	4	0
+^<F
+	+A
+	^/bt									seché
+^<F
+	+A
+	^/bt									seché
+^<F
+	+A
+	^/bt									seché
+^<F
+	+A
+	^/bt									seché
+^<F
+	+A
+	^/F
+		+A
+		^/bt								17
+	^<F
+		+A
+		^/f
+		^<f
+			+A
+			^/bt							17
+		^<ht								F
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/f
+				+A
+				^/bt						19
+			^<f
+			^<ht							F
+		^<HT								avorté
+	^<HT									87					4	3	1
+^<F
+	+A
+	^/F
+		+A
+		^/bt								17
+	^<F
+		+A
+		^/F
+			+A
+			^/bt							
+		^<F
+			+A
+			^/f
+			^<f
+			^<ht							C
+		^<F
+			+A
+			^/F
+				+A
+				^/bt
+			^<F
+				+A
+				^/F								19.0	5.0	4.7
+					+A
+					^/bt					avorté
+				^<f
+					+A
+					^/f
+					^<f
+					^<f
+					^<bt					17
+				^<HT						I					2	0	0
+			^<HT							67					5	2	0
+		^<HT								87					3	2	1
+	^<HT									87					5	4	1
 ^<HT										87					15	14	1
-																	
+
 /P						27/05/2015	Capriss	7	43.45								
 ^/T																	
 ^/F																	
