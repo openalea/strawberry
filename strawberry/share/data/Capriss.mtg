@@ -45,8 +45,8 @@ Fleurs_avorté	INT
 MTG:																		
 ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm	Hauteur_Lobe_centrale_cm	Hauteur_Lobe_gauche_cm	Fleurs_total	Fleurs_ouverte	Fleurs_avorté
 																		
-/P							10/12/2014	Capriss	1	19.80								
-^/T																		
+/P							10/12/2014	Capriss	1									
+^/T													19.80					
 ^/F																		
 	+A																	
 	^/f																	
@@ -56,9 +56,10 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		+A																
 		^/bt									17							
 	^<f																	
-	^<f																	
-		+A																
-		^/ht									C							
+		+A
+		^/f
+		^<f																									
+		^<ht									C							
 	^<ht										G							
 ^<F																		
 	+A																	
@@ -96,10 +97,11 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt																
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									A							
+	^<f																																
+		+A
+		^/f
+		^<f																
+		^<bt									A							
 	^f																	
 		+A																
 		^/bt									17							
@@ -143,10 +145,11 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									17							
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									19							
+	^<f																																
+		+A
+		^/f
+		^<f																
+		^<bt									19							
 	^<ht										F							
 ^<f																		
 	+A																	
@@ -162,8 +165,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										F							
 ^<ht											H	0.7						
 																		
-/P							10/12/2014	Capriss	2	21.70								
-^/T																		
+/P							10/12/2014	Capriss	2									
+^/T													21.70					
 ^/F																		
 	+A																	
 	^/F																	
@@ -255,8 +258,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<bt										19							
 ^<ht											H	0.8						
 																		
-/P							10/12/2014	Capriss	3	19.54								
-^/T																		
+/P							10/12/2014	Capriss	3									
+^/T													19.54					
 ^/F																		
 	+A																	
 	^/s																	
@@ -310,8 +313,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										F							
 ^<ht											H	0.9						
 																		
-/P							10/12/2014	Capriss	4	15.63								
-^/T																		
+/P							10/12/2014	Capriss	4									
+^/T													15.63					
 ^/F																		
 	+A																	
 	^/s																	
@@ -339,9 +342,10 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		+A																
 		^/bt																
 	^<f																	
-	^<f																	
-	^<f																	
-		+A																
+	^<f																
+		+A
+		^/f
+		^<f																
 		^/bt									19							
 	^<ht										F							
 ^<F																		
@@ -379,16 +383,17 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 	^<bt										17							
 ^<f																		
-	+A																	
-	^/bt										17							
-^<f																		
-^<f																		
-	+A																	
-	^/bt										17							
+	+A
+	^<f	
+		+A																
+		^/bt									17							
+	^<f																		
+	^<f																																		
+	^<bt										17							
 ^<ht											H	0.6						
 																		
-/P							10/12/2014	Capriss	5	19.52								
-^/T																		
+/P							10/12/2014	Capriss	5									
+^/T													19.52					
 ^/F																		
 	+A																	
 	^/f																	
@@ -397,7 +402,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt																
-	^f																	
+	^<f																	
 		+A																
 		^/bt									17							
 	^<ht										G							
@@ -413,10 +418,11 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									17							
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									A							
+	^<f																																		
+		+A
+		^/f
+		^<f																
+		^<bt									A							
 	^<ht										E							
 ^<F																		
 	+A																	
@@ -432,9 +438,10 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									17							
-	^<f																	
-	^<f																	
+	^<f	
 		+A																
+		^/f
+		^<f																																	
 		^/bt									A							
 	^<ht										G							
 ^<F																		
@@ -481,8 +488,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										E							
 ^<ht											H	0.7						
 																		
-/P							10/12/2014	Capriss	6	18.24								
-^/T																		
+/P							10/12/2014	Capriss	6									
+^/T													18.24					
 ^/F																		
 	+A																	
 	^/s																	
@@ -553,8 +560,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 ^<f																		
 	+A																	
 	^/f																	
-	^<f																	
-	^<f																	
+	^<f																																	
 		+A																
 		^/bt									17							
 	^<f																	
@@ -563,15 +569,16 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	+A																	
 	^/f																	
 	^<f																	
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									19							
+	^<f																																		
+		+A
+		^/f
+		^<f																
+		^<bt									19							
 	^<ht										F							
 ^<ht											H	0.8						
 																		
-/P							10/12/2014	Capriss	7	18.17								
-^/T																		
+/P							10/12/2014	Capriss	7									
+^/T													18.17					
 ^/F																		
 	+A																	
 	^/f																	
@@ -651,8 +658,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										E							
 ^<ht											H	0.6						
 																		
-/P							10/12/2014	Capriss	8	20.78								
-^/T																		
+/P							10/12/2014	Capriss	8									
+^/T													20.78					
 ^/F																		
 	+A																	
 	^/f																	
@@ -717,8 +724,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										E							
 ^<ht											H	0.9						
 																		
-/P							10/12/2014	Capriss	9	17.9								
-^/T																		
+/P							10/12/2014	Capriss	9									
+^/T													17.9					
 ^/F																		
 	+A																	
 	^/F																	
@@ -727,10 +734,13 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									17							
-	^<f																	
-	^<f																	
-		+A																
-		^/bt																
+	^<f																																	
+		+A
+		^/f
+		^<f
+			+A
+			^/bt																								
+		^/ht									D							
 	^<ht										G							
 ^<F																		
 	+A																	
@@ -795,12 +805,14 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	+A																	
 	^/f																	
 	^<f																	
-	^<f																	
+	^<f
+		+A
+		^/bt									17																	
 	^<ht										E							
 ^<ht											H	0.6						
 																		
-/P							07/01/2015	Capriss	1	22.19								
-^/T																		
+/P							07/01/2015	Capriss	1									
+^/T													22.19					
 ^/F																		
 	+A																	
 	^/F																	
@@ -809,10 +821,16 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<F																	
 		+A																
 		^/bt																
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									19							
+	^<f																																	
+		+A
+		^/f
+		^<f																
+		^<bt									19
+	^<f
+		+A
+		^/f
+		^<f
+		^<bt									19							
 	^<ht										H							
 ^<F																		
 	+A																	
@@ -828,10 +846,11 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									17							
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									17							
+	^<f																																		
+		+A
+		^/f
+		^<f																
+		^<bt									17							
 	^<ht										F							
 ^<F																		
 	+A																	
@@ -865,14 +884,17 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^/f																	
 		+A																
 		^/bt																
-	^<f																	
-	^<f																	
-	^<f																	
-	^<bt										19							
+	^<f
+		+A
+		^/f
+		^<f
+		^<f
+		^<bt									19
+	^<ht										H																								
 ^<HT											I	2			14	0	0	
 																		
-/P							07/01/2015	Capriss	2	25.04								
-^/T																		
+/P							07/01/2015	Capriss	2									
+^/T													25.04					
 ^/F																		
 	+A																	
 	^/f																	
@@ -883,7 +905,9 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										F							
 ^<F																		
 	+A																	
-	^/F																	
+	^/F
+		+A
+		^/bt									avorté																	
 	^<f																	
 		+A																
 		^/bt																
@@ -902,37 +926,42 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^/s																	
 ^<F																		
 	+A																	
-	^/F																	
-	^<F																	
-	^<F																	
-		+A																
-		^/bt									17							
-	^<F																	
-	^<F																	
-	^<F																	
-		+A																
-		^/bt									17							
-	^/f																	
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									19							
+	^/F																																		
+		+A
+		^/f
+		^<f
+		^<f																
+		^<bt									17							
+	^<F																																	
+		+A
+		^/f
+		^<f
+		^<f																
+		^<bt									17							
+	^<f																																	
+		+A
+		^/f
+		^<f
+		^<f																
+		^<bt									19							
 	^<ht										H							
 ^<F																		
 	+A																	
 	^/F																	
 		+A																
 		^/bt																
-	^<f																	
-	^<f																	
-		+A																
+	^<f																																
+		+A
+		^/f
+		^<f																
 		^/bt									19							
 	^<f																	
 		+A																
 		^/bt									avorté							
-	^<f																	
-	^<f																	
-		+A																
+	^<f																																	
+		+A
+		^/f
+		^<f																
 		^/bt									17							
 	^<ht										G							
 ^<F																		
@@ -975,19 +1004,21 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt																
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									19							
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									19							
+	^<f																																	
+		+A
+		^/f
+		^<f																
+		^<bt									19							
+	^<f																																	
+		+A
+		^/f
+		^<f																
+		^<bt									19							
 	^<ht										G							
 ^<HT											55	2				14	0	0
 																		
-/P							07/01/2015	Capriss	3	24.10								
-^/T																		
+/P							07/01/2015	Capriss	3									
+^/T													24.10					
 ^/F																		
 	+A																	
 	^/f																	
@@ -1014,26 +1045,29 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt																
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									17							
+	^<f																																	
+		+A
+		^/f
+		^<f																
+		^<bt									17							
 	^<ht										G							
 ^<F																		
 	+A																	
 	^/F																	
 		+A																
 		^/bt									avorté							
-	^<F																	
-	^<F																	
-	^<F																	
-		+A																
-		^/bt									17							
-	^<f																	
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									A							
+	^<F																																	
+		+A
+		^/f
+		^<f
+		^<f																
+		^<bt									17							
+	^<f																																	
+		+A
+		^/f
+		^<f
+		^<f																
+		^<bt									A							
 	^<ht										H							
 ^<F																		
 	+A																	
@@ -1045,8 +1079,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^/bt									avorté							
 	^<f																	
 		+A																
-		^/bt									avorté							
-	^<f																	
+		^/bt									avorté																							
 	^<ht										F							
 ^<F																		
 	+A																	
@@ -1062,15 +1095,19 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									17							
-	^<f																	
-	^<f																	
+	^<f
+		+A
+		^/bt									avorté																	
+	^<f
+		+A
+		^/bt									avorté																	
 	^<ht										C							
 ^<F																		
 	+A																	
 	^/f																	
 	^<f																	
 	^<f																	
-	^<ht										A							
+	^<bt										A							
 ^F													5.4	4.0	3.8			
 	+A																	
 	^/f																	
@@ -1083,7 +1120,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 	^<f																	
 	^<ht										C							
-^f																		
+^<f																		
 	+A																	
 	^/f																	
 		+A																
@@ -1097,10 +1134,10 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 	^<f																	
 	^<ht										B							
-^<HT											H	1.7					12	0
+^<HT											H	1.7					12	0	0
 																		
-/P							07/01/2015	Capriss	4	37.0								
-^/T																		
+/P							07/01/2015	Capriss	4									
+^/T													37.0					
 ^/F																		
 	+A																	
 	^/f																	
@@ -1130,9 +1167,9 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 			^/f															
 			^<f															
 			^<f															
-			^<ht								A							
+			^<bt								A							
 		^<ht									H							
-	^<HT										57						7	0
+	^<HT										57						7	0	0
 ^<F																		
 	+A																	
 	^/F																	
@@ -1163,13 +1200,13 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^<f																
 		^<f																
 		^<bt									A							
-	^f																	
+	^<f																	
 		+A																
 		^/f																
 		^<f																
 		^<f																
 		^<bt									17							
-	^ht											H						
+	^<ht										H						
 ^<F																		
 	+A																	
 	^/s																	
@@ -1181,8 +1218,11 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt																
-	^<f																	
-	^<f																	
+	^<f
+		+A
+		^/f
+		^<f
+		^<bt									17																	
 	^<ht										G							
 ^<F																		
 	+A																	
@@ -1205,7 +1245,9 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		+A																
 		^/f																
 		^<f																
-		^<f																
+		^<f
+			+A
+			^/bt																
 		^<ht									C							
 	^<ht										H							
 ^<F																		
@@ -1229,7 +1271,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		+A																
 		^/bt																
 	^<ht										D							
-^>F																		
+^<F																		
 	+A																	
 	^/f																	
 		+A																
@@ -1260,15 +1302,16 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									avorté							
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									17							
+	^<f																																		
+		+A
+		^/f
+		^<f																
+		^<bt									17							
 	^<ht										G							
 ^<HT											I	1.8				14	0	0
 																		
-/P							07/01/2015	Capriss	5	20.10								
-^/T																		
+/P							07/01/2015	Capriss	5									
+^/T													20.10					
 ^/F																		
 	+A																	
 	^/s																	
@@ -1298,10 +1341,11 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									17							
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									19							
+	^<f																																		
+		+A
+		^/f
+		^<f																
+		^<bt									19							
 	^<ht										G							
 ^<F																		
 	+A																	
@@ -1358,15 +1402,16 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									17							
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									19							
+	^<f																																		
+		+A
+		^/f
+		^<f																
+		^<bt									19							
 	^<ht										H							
 ^<HT											55	2.1				13	0	0
 																		
-/P							07/01/2015	Capriss	6	25.98								
-^/T																		
+/P							07/01/2015	Capriss	6									
+^/T													25.98					
 ^/F																		
 	+A																	
 	^/F																	
@@ -1375,16 +1420,17 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									17							
-	^<f																	
-	^<f																	
-		+A																
-		^/bt									17							
+	^<f																																		
+		+A
+		^/f
+		^<f																
+		^<bt									17							
 	^<ht										H							
 ^<F																		
 	+A																	
 	^/f																	
 	^<f																	
-	^<ht										A							
+	^<bt										A							
 ^<F																		
 	+A																	
 	^/s																	
@@ -1486,8 +1532,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										C							
 ^<HT											I	1.9				15	0	0
 																		
-/P							07/01/2015	Capriss	7	20.64								
-^/T																		
+/P							07/01/2015	Capriss	7									
+^/T													20.64					
 ^/F																		
 	+A																	
 	^/F																	
@@ -1540,7 +1586,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^/f																
 		^<f																
 		^<bt									17							
-	^<ht										G							
+	^<ht										H							
 ^<F																		
 	+A																	
 	^/F																	
@@ -1554,7 +1600,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^/f																
 		^<f																
 		^<bt									A							
-	^<ht										F							
+	^<ht										H							
 ^<F																		
 	+A																	
 	^/f																	
@@ -1606,8 +1652,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										H							
 ^<HT											55	2.0				14	0	0
 																		
-/P							07/01/2015	Capriss	8	21.62								
-^/T																		
+/P							07/01/2015	Capriss	8									
+^/T													21.62					
 ^/F																		
 	+A																	
 	^/bt										pourri							
@@ -1691,13 +1737,13 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 	^<f																	
 	^<f																	
-	^<ht										17							
+	^<bt										17							
 ^<F																		
 	+A																	
 	^/f																	
 	^<f																	
 	^<f																	
-	^<ht										A							
+	^<bt										A							
 ^<F																		
 	+A																	
 	^/f																	
@@ -1722,8 +1768,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										G							
 ^<ht											H	1.2						
 																		
-/P							07/01/2015	Capriss	9	27.28								
-^/T																		
+/P							07/01/2015	Capriss	9									
+^/T													27.28					
 ^/F																		
 	+A																	
 	^/f																	
@@ -1819,8 +1865,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										H							
 ^<HT											55	2.4				13	0	0
 																		
-/P							15/02/2015	Capriss	1	18.69								
-^/T																		
+/P							15/02/2015	Capriss	1									
+^/T													18.69					
 ^/F																		
 	+A																	
 	^/s																	
@@ -1886,7 +1932,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^<f																
 		^<f																
 		^<ht									C							
-	^ht											H						
+	^<ht										H						
 ^<F																		
 	+A																	
 	^/f																	
@@ -1941,8 +1987,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										H							
 ^<HT											58				9	0	0	
 																		
-/P							15/02/2015	Capriss	2	40.37								
-^/T																		
+/P							15/02/2015	Capriss	2									
+^/T													40.37					
 ^/F																		
 	+A																	
 	^/F																	
@@ -1960,7 +2006,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 			+A															
 			^/bt															
 		^<ht									D							
-	^<ht										I							
+	^<HT										I							
 ^<F																		
 	+A																	
 	^/F																	
@@ -2055,7 +2101,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A																
 		^/bt									17							
-	^<ht										H							
+	^<ht										F							
 ^<F																		
 	+A																	
 	^/f																	
@@ -2080,7 +2126,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 			+A															
 			^/bt								17							
 		^<ht									C							
-	^<ht										I							
+	^<HT										I							
 ^<F																		
 	+A																	
 	^/F																	
@@ -2106,8 +2152,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										I							
 ^<HT											58					13	0	0
 																		
-/P							15/02/2015	Capriss	3	31.32								
-^/T																		
+/P							15/02/2015	Capriss	3									
+^/T													31.32					
 ^/F																		
 	+A																	
 	^/F																	
@@ -2123,7 +2169,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^<f																
 		^<f																
 		^<bt									19							
-	^<ht										I							
+	^<HT										I							
 ^<F																		
 	+A																	
 	^/s																	
@@ -2139,16 +2185,24 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^<f																
 		^<bt									17							
 	^<F																	
-		+A																
+		+A																														
 		^/f																
-			+A															
-			^/bt															
-		^<f																
 		^<f																
 		^<f																
 			+A															
 			^/bt								17							
 		^<ht									F							
+	^<F
+		+A
+		^/f
+			+A
+			^/bt
+		^<f
+		^<f
+		^<f
+			+A
+			^/bt								17
+		^<ht									F
 	^<HT										55					5	0	0
 ^<F																		
 	+A																	
@@ -2169,8 +2223,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<F																	
 		+A																
 		^/f																
-		^<f																
-		^<f																
+		^<f																															
 		^<bt									17							
 	^<F																	
 		+A																
@@ -2179,9 +2232,9 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 			+A															
 			^/f															
 			^<f															
-			^<ht								A							
+			^<bt								A							
 		^<ht									F							
-	^<ht										I							
+	^<HT										I							
 ^<F																		
 	+A																	
 	^/f																	
@@ -2261,8 +2314,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										55					6	0	0
 ^<HT											61					10	2	0
 																		
-/P							15/02/2015	Capriss	4	21.12								
-^/T																		
+/P							15/02/2015	Capriss	4									
+^/T													21.12					
 ^/F																		
 	+A																	
 	^/s																	
@@ -2338,8 +2391,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										H							
 ^<HT											60					7	1	0
 																		
-/P							15/02/2015	Capriss	5	23.62								
-^/T																		
+/P							15/02/2015	Capriss	5									
+^/T													23.60					
 ^/F																		
 	+A																	
 	^/F																	
@@ -2488,8 +2541,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										I							
 ^<HT											65					11	4	0
 																		
-/P							15/02/2015	Capriss	6	36.08								
-^/T																		
+/P							15/02/2015	Capriss	6									
+^/T													36.08					
 ^/F																		
 	+A																	
 	^/s																	
@@ -2501,7 +2554,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^/f																
 		^<f																
 		^<f																
-		^<bt									19							
+		^<bt									17							
 	^<ht										H							
 ^<F																		
 	+A																	
@@ -2540,7 +2593,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 			^/f															
 			^<f															
 			^<bt								A							
-		^<F																
+		^<ht									F																
 	^<HT										55					5	0	0
 ^<F																		
 	+A																	
@@ -2622,8 +2675,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										H							
 ^<HT											60					15	1	0
 																		
-/P							15/02/2015	Capriss	7	19.0								
-^/T																		
+/P							15/02/2015	Capriss	7									
+^/T													19.0					
 ^/F																		
 	+A																	
 	^/s																	
@@ -2660,7 +2713,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^<f																
 		^<f																
 		^<f																
-		^<ht									A							
+		^<bt									A							
 	^<HT										I							
 ^<F																		
 	+A																	
@@ -2702,8 +2755,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										55					5	0	0
 ^<HT											coupé							
 																		
-/P							15/02/2015	Capriss	8	33.85								
-^/T																		
+/P							15/02/2015	Capriss	8									
+^/T													33.85					
 ^/F																		
 	+A																	
 	^/F																	
@@ -2750,7 +2803,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		+A																
 		^/f																
 			+A															
-			^/bt															
+			^/bt								17							
 		^<f																
 			+A															
 			^/bt								17							
@@ -2826,8 +2879,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										57					4	0	0
 ^<HT											67					8	3	0
 																		
-/P							15/02/2015	Capriss	9	38.24								
-^/T																		
+/P							15/02/2015	Capriss	9									
+^/T													38.24					
 ^/F																		
 	+A																	
 	^/F																	
@@ -2861,7 +2914,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^<f																
 			+A															
 			^/bt															
-		^<F																
+		^<f																
 			+A															
 			^/f															
 			^<f															
@@ -2909,7 +2962,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 			+A															
 			^/bt								17							
 		^<ht									F							
-	^<ht										I							
+	^<HT										I							
 ^<F																		
 	+A																	
 	^/F																	
@@ -3021,8 +3074,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										H							
 ^<HT											58					9	0	0
 																		
-/P							02/03/2015	Capriss	1	35.05								
-^/T																		
+/P							02/03/2015	Capriss	1									
+^/T													35.05					
 ^/F																		
 	+A																	
 	^/F																	
@@ -3150,8 +3203,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										57					5	0	0
 ^<HT											67					11	8	0
 																		
-/P							02/03/2015	Capriss	2	31.29								
-^/T																		
+/P							02/03/2015	Capriss	2									
+^/T													31.29					
 ^/F																		
 	+A																	
 	^/s																	
@@ -3217,7 +3270,9 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<F																	
 		+A																
 		^/f																
-		^<f																
+		^<f
+			+A
+			^/bt								17																
 		^<ht									F							
 	^<HT										I					4	0	0
 ^<F																		
@@ -3243,8 +3298,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										57					5	0	0
 ^<HT											65					12	5	0
 																		
-/P							02/03/2015	Capriss	3	37.23								
-^/T																		
+/P							02/03/2015	Capriss	3									
+^/T													37.23					
 ^/F																		
 	+A																	
 	^/s																	
@@ -3379,8 +3434,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										H							
 ^<HT											67					13	9	0
 																		
-/P							02/03/2015	Capriss	4	38.18								
-^/T																		
+/P							02/03/2015	Capriss	4									
+^/T													38.18					
 ^/F																		
 	+A																	
 	^/bt										pourri							
@@ -3503,8 +3558,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										F							
 ^<HT											67					9	6	0
 																		
-/P							02/03/2015	Capriss	5	45.07								
-^/T																		
+/P							02/03/2015	Capriss	5									
+^/T													45.07					
 ^/F																		
 	+A																	
 	^/F																	
@@ -3660,8 +3715,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										H							
 ^<HT											63					10	3	0
 																		
-/P							02/03/2015	Capriss	6	37.13								
-^/T																		
+/P							02/03/2015	Capriss	6									
+^/T													37.13					
 ^/F																		
 	+A																	
 	^/F																	
@@ -3678,7 +3733,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^<f																
 		^<f																
 		^<ht									C							
-	^HT											I					3	0
+	^<HT										I					3	0	0
 ^<F																		
 	+A																	
 	^/bt										pourri							
@@ -3751,14 +3806,14 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^/f																
 		^<f																
 		^<bt									A							
-	^f																	
+	^<f																	
 		+A																
 		^/f																
 		^<f																
 		^<f																
 			+A															
 			^/bt								17							
-		^<ht									G							
+		^<ht									C							
 	^<ht										H							
 ^<F																		
 	+A																	
@@ -3788,8 +3843,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										55					5	0	0
 ^<HT											67					11	5	0
 																		
-/P							02/03/2015	Capriss	7	45.34								
-^/T																		
+/P							02/03/2015	Capriss	7									
+^/T													45.34					
 ^/F																		
 	+A																	
 	^/s																	
@@ -3909,7 +3964,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 			+A															
 			^/f															
 			^<f															
-			^<ht								A							
+			^<bt								A							
 		^<ht									F							
 	^<HT										57					4	4	0
 ^<F																		
@@ -3999,8 +4054,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										57					3	3	0
 ^<HT											65					9	6	0
 																		
-/P							02/03/2015	Capriss	8	47.70								
-^/T																		
+/P							02/03/2015	Capriss	8									
+^/T													47.70					
 ^/F																		
 	+A																	
 	^/F																	
@@ -4211,8 +4266,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<ht										H							
 ^<HT											67					10	4	0
 																		
-/P							02/03/2015	Capriss	9	36.05								
-^/T																		
+/P							02/03/2015	Capriss	9									
+^/T													36.01					
 ^/F																		
 	+A																	
 	^/F																	
@@ -4336,7 +4391,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		+A																
 		^/f																
 		^<f																
-		^<ht									A							
+		^<bt									A							
 	^<ht										H							
 ^<F																		
 	+A																	
@@ -4383,8 +4438,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										58					4	0	0
 ^<HT											73					10	7	0
 																		
-/P							03/04/2015	Capriss	1	43.71								
-^/T																		
+/P							03/04/2015	Capriss	1									
+^/T													43.71					
 ^/F																		
 	+A																	
 	^/F																	
@@ -4452,25 +4507,28 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^<f																
 		^<bt									17							
 	^<F																	
-		+A																
-		^/f																
-		^<f																
-		^<bt									17							
-	^<F																	
-		+A																
-		^/f																
-		^<f																
-		^<bt									17							
-	^<f																	
-		+A																
-		^/bt																
-	^<f																	
-		+A																
-		^/f																
-		^<f																
-		^<f																
-		^<ht									B							
-	^<ht										G							
+		+A
+		^/F
+			+A																
+			^/f																
+			^<f																
+			^<bt								17							
+		^<F																	
+			+A																
+			^/f																
+			^<f																
+			^<bt								17							
+		^<f																	
+			+A																
+			^/bt																
+		^<f																	
+			+A																
+			^/f																
+			^<f																
+			^<f																
+			^<ht								B							
+		^<ht									G							
+	^<HT										73					3	3	0
 ^<F																		
 	+A																	
 	^/f																	
@@ -4553,8 +4611,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 ^<HT											87					11	11	0
 																		
 																		
-/P							03/04/2015	Capriss	2	42.37								
-^/T																		
+/P							03/04/2015	Capriss	2									
+^/T													42.37					
 ^/F																		
 	+A																	
 	^/F																	
@@ -4709,8 +4767,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 ^<HT											87					9	9	0
 																		
 																		
-/P							03/04/2015	Capriss	3	49.15								
-^/T																		
+/P							03/04/2015	Capriss	3									
+^/T													49.15					
 ^/F																		
 	+A																	
 	^/F																	
@@ -4824,8 +4882,50 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 				^/bt							19							
 			^<ht								F							
 		^<ht									H							
-	^<HT										73					5	4	0
-^<F																		
+	^<HT										73					6	5	0
+^<F	
+	+A
+	^/f
+	^<f
+		+A
+		^/bt									pourri
+	^<ht										E	
+^<F
+	+A
+	^/f
+	^<f
+		+A
+		^/bt									pourri
+	^<ht										E	
+^<F
+	+A
+	^/bt										pourri
+^<F
+	+A
+	^/F
+		+A
+		^/bt
+	^<F
+		+A
+		^/bt									17
+	^<F
+		+A
+		^/F
+			+A
+			^/bt
+		^<F
+			+A
+			^/f
+			^<f
+			^<bt								17
+		^<f
+			+A
+			^/f
+			^<f
+			^<ht								E
+		^<ht									H
+	^<HT										73					5	4	0																
+^<F
 	+A																	
 	^/F																	
 		+A																
@@ -4864,8 +4964,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 ^<HT											87					24	24	0
 																		
 																		
-/P							03/04/2015	Capriss	4	49.17								
-^/T																		
+/P							03/04/2015	Capriss	4									
+^/T													49.17					
 ^/F																		
 	+A																	
 	^/F																	
@@ -5020,7 +5120,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		+A																
 		^/f																
 		^<f																
-		^<ht									A							
+		^<bt									A							
 	^<F																	
 		+A																
 		^/f																
@@ -5051,8 +5151,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 ^<HT											87					13	13	0
 																		
 																		
-/P							03/04/2015	Capriss	5	47.23								
-^/T																		
+/P							03/04/2015	Capriss	5									
+^/T													47.23					
 ^/F																		
 	+A																	
 	^/F																	
@@ -5148,8 +5248,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 			+A															
 			^/bt															
 		^<f																
-		^<f																
-		^<f																
+		^<f																																
 			+A															
 			^/f															
 			^<f															
@@ -5214,8 +5313,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 ^<HT											87					13	13	0
 																		
 																		
-/P							03/04/2015	Capriss	6	45.17								
-^/T																		
+/P							03/04/2015	Capriss	6									
+^/T													45.17					
 ^/F																		
 	+A																	
 	^/F																	
@@ -5378,8 +5477,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 ^<HT											coupé							
 																		
 																		
-/P							03/04/2015	Capriss	7	58.17								
-^/T																		
+/P							03/04/2015	Capriss	7									
+^/T													58.17					
 ^/F																		
 	+A																	
 	^/F																	
@@ -5494,7 +5593,9 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 ^<F																		
 	+A																	
 	^/f																	
-	^<f																	
+	^<f
+		+A
+		^/bt									pourri																	
 	^<ht										F							
 ^<F																		
 	+A																	
@@ -5588,8 +5689,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										81					3	3	0
 ^<HT											87					11	11	0
 																		
-/P							03/04/2015	Capriss	8	45.21								
-^/T																		
+/P							03/04/2015	Capriss	8									
+^/T													45.21					
 ^/F																		
 	+A																	
 	^/F																	
@@ -5731,8 +5832,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										77					4	4	0
 ^<HT											87					14	14	0
 																		
-/P							03/04/2015	Capriss	9	46.70								
-^/T																		
+/P							03/04/2015	Capriss	9									
+^/T													46.70					
 ^/F																		
 	+A																	
 	^/s																	
