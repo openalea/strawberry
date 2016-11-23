@@ -1,4 +1,4 @@
-#																																		
+#																			
 #																																		
 CODE:	FORM-A																																	
 																																		
@@ -720,13 +720,13 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		+A																																	
 		^/f
 		^<f																																											
-		^/bt								A																							
+		^/bt									A																							
 	^<f	
 		+A																																
 		^/f																																	
 		^<f																																	
 		^<f																																
-		^<bt								17																							
+		^<bt									17																							
 	^<f																																	
 		+A
 		^/f																																	
