@@ -49,6 +49,7 @@ def strawberry_dataframe(g):
         d['Plante'] = pnid.Plante
         d['date'] = pnid.date
         d['label'] = g.label(v)
+        
         return d
 
 
