@@ -35,6 +35,7 @@ def to_dataframe(g, vertices=[], f=None):
     d['scale'] = {v: scales.get(v) for v in vertices}
     d['order'] = {v: _orders.get(v) for v in vertices}
 
+
     dataframe = pd.DataFrame.from_dict(d)
     return dataframe
 
@@ -51,7 +52,6 @@ def strawberry_dataframe(g):
         d['date'] = pnid.date
         d['label'] = g.label(v)
         d['Stade'] = pnid.Stade
-
         return d
 
 
