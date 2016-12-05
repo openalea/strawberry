@@ -43,15 +43,21 @@ def strawberry_dataframe(g):
     vertices = [v for v in g.vertices_iter() if v !=0]
 
     props = g.properties()
+    
     def my_f(v):
         d = dict()
         pid = g.complex_at_scale(v, scale=1)
         pnid = g.node(pid)
+        nid = g.node(v)
+        # Set plant properties to each node 
         d['Genotype'] = pnid.Genotype
         d['Plante'] = pnid.Plante
         d['date'] = pnid.date
         d['label'] = g.label(v)
-        d['Stade'] = pnid.Stade
+        
+        # At all scale
+        d['Stage'] = nid.Stade
+
         return d
 
 
