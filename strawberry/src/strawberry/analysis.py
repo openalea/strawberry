@@ -41,6 +41,7 @@ def to_dataframe(g, vertices=[], f=None):
 def strawberry_dataframe(g):
     vertices = [v for v in g.vertices_iter() if v !=0]
 
+    props = g.properties()
     def my_f(v):
         d = dict()
         pid = g.complex_at_scale(v, scale=1)
@@ -49,7 +50,8 @@ def strawberry_dataframe(g):
         d['Plante'] = pnid.Plante
         d['date'] = pnid.date
         d['label'] = g.label(v)
-        
+        d['Stade'] = pnid.Stade
+
         return d
 
 
