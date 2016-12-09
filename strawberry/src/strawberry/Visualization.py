@@ -1,4 +1,4 @@
-
+""" Visualisation code for strawberry on MTG. """
 from strawberry import Rules_production
 from openalea.mtg import *
 from turtle import *
@@ -35,34 +35,43 @@ def strawberry_visitor(g, v, turtle, time=0):
 #print count # a quoi sert le conmpteur?
 
 #Vizalisation by genotype et par de la date
-#fonction visualisation(Genotype, nb_date, nb_plante) 
+#fonction visualisation(Genotype, nb_date, nb_plante)
 
-def visualise_plants(g):
+def visualise_plants(g, vids=[], positions=[]):
+    max_scale = g.max_scale()
     t = pgl.PglTurtle()
-    vids = g.component_roots_at_scale(g.root, g.max_scale())
+    if not vids:
+        vids = g.component_roots_at_scale(g.root, scale=max_scale)
+        x = -9
+        y = -12
+        dx = 2.
+        dy = 4.
+        positions = [(x+(count%9)*dx,y+(count/9)*dy,0) for count in range(len(vids))]
+    else:
+        vids = [cid for vid in vids for cid in g.component_roots_at_scale_iter(vid, scale=max_scale)]
+
+    assert len(vids) == len(positions)
     n= len(vids)
-    x=-9
-    y = -12
-    dx = 2.
-    dy = 4.
+
     scenes = pgl.Scene()
-    count = 0
-    for vid in vids:
-        position = (x+(count%9)*dx,y+(count/9)*dy,0)
+    for i, vid in enumerate(vids):
+        #position = (x+(count%9)*dx,y+(count/9)*dy,0)
+        position = positions[i]
         t = pgl.PglTurtle()
         #t.move(position)
         scene = turtle.traverse_with_turtle(g, vid, visitor=strawberry_visitor, turtle=t)
-        
+
         ds = scene.todict()
-        
+
         for shid in ds:
             for sh in ds[shid]:
                 sh.geometry = pgl.Translated(position, sh.geometry)
                 scenes.add(sh)
-        count += 1
     return scenes
 
 #Vizualisation d'une plante selectionnee par genotype et par date
 #fonction (Genotype~Plante selectionnee)
 #fonction (All Genotype ~ Plante selectionnee)
 #Comparer les Genotypes 2 a 2
+
+def compute_positions(n, n_rows, n_cols, ):
