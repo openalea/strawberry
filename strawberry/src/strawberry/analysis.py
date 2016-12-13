@@ -57,6 +57,7 @@ def strawberry_dataframe(g):
         
         # At all scale
         d['Stage'] = nid.Stade
+        d['prelevement'] = nid.prelevement
 
         return d
 

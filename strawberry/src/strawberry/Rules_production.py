@@ -2,14 +2,11 @@
 from openalea.core import path
 from openalea.deploy.shared_data import shared_data
 from openalea.mtg import *
-#% gui qt
 from openalea.mtg.algo import orders
 from openalea.plantgl import all as pgl
 from math import radians
 
 #Properties
-#g.properties()['order'] = orders(g)
-
 VISIBLE = True
 WITHOUT_LEAF = True
 position = (0,0,0)
@@ -19,9 +16,7 @@ position = (0,0,0)
 # 1. Phyllotaxie
 roll_angle = 360.*2./5.
 
-
 # 2.Phytomer
-
 def leaflet(length=1., width=1.):
     disc = pgl.Translated((-0.5,0,0), pgl.Disc())
     disc = pgl.Scaled((length, width,1), disc)
@@ -131,7 +126,7 @@ def TerminalBud(g, vid, turtle):
     nid = g.node(vid)
     order = nid.order
     t.setColor(2+order)
-    turtle.F(0.1)
+    turtle.F(0.05)
     sphere = pgl.Sphere(radius=0.02)
     turtle.customGeometry(sphere)
 
@@ -169,23 +164,23 @@ def color_code(g):
     labels = g.property('label')
     for v in g.vertices(scale=g.max_scale()):
         nid = g.node(v)
-        if nid.label == 'F':
-            nid.color = cleaf
-            if nid.order == 1:
-                nid.color=(255,0,0)
-            elif nid.order == 2:
-                nid.color=(0,0,255)
-            elif nid.order == 3:
-                nid.color=(255,255,0)
-            elif nid.order == 4:
-                nid.color=(255,0,255)
-            elif nid.order == 5:
-                nid.color=(0,255,255)
-            elif nid.order == 6:
-                nid.color=(255,255,255)
-            elif nid.order >6:
-                nid.color=(0, 0, 0)
-        elif nid.label =='f':
+        #if nid.label == 'F':
+         #   nid.color = cleaf
+          #  if nid.order == 1:
+               # nid.color=(255,0,0)
+           # elif nid.order == 2:
+               # nid.color=(0,0,255)
+           # elif nid.order == 3:
+               # nid.color=(255,255,0)
+            #elif nid.order == 4:
+               # nid.color=(255,0,255)
+           # elif nid.order == 5:
+              #  nid.color=(0,255,255)
+           # elif nid.order == 6:
+             #   nid.color=(255,255,255)
+           # elif nid.order >6:
+            #    nid.color=(0, 0, 0)
+        if nid.label =='f':
             nid.color = cfleaf
         elif nid.label == 's':
             nid.color = cstolon
@@ -203,35 +198,35 @@ def color_code(g):
                 nid.color = (255, 127+127/7*(i-1),0)
             else:
                 nid.color = (153, 102, 51)
-        elif nid.label == 'ht':
+        #elif nid.label == 'ht':
             stade = nid.Stade
 
-            if stade is None:
-                nid.color = (155, 155, 155)
-            elif stade in ('17', '18', '19'):
-                nid.color= (0, 255,0)
-            elif stade == 'A':
-                nid.color = (255,0,0)
-            elif stade in 'BCDEFGH':
-                d = dict(zip('BCDEFGH', range(1, len('BCDEFGH')+1)))
-                i = d[stade]
-                nid.color = (255, 127+127/7*(i-1),0)
-            else:
-                nid.color = (153, 102, 51)
-        elif nid.label == 'HT':
-            stade = nid.Stade
-            if stade is None:
-                nid.color = (155, 155, 155)
-            elif stade in ('17', '18', '19'):
-                nid.color=(0,0,255)
-            elif stade == 'I':
-                nid.color = (255,0,0)
-            else:
-                stades = map(str, range(55,88))
-                if stade in stades:
-                    d = dict(zip(stades, range(len(stades))))
-                    i = d[stade]
-                    nid.color = (0, 127+127/(len(stades)-1)*(i),255)
-                else:
-                    nid.color = (153, 102, 51)
+         #   if stade is None:
+          #      nid.color = (155, 155, 155)
+           # elif stade in ('17', '18', '19'):
+            #    nid.color= (0, 255,0)
+           # elif stade == 'A':
+            #    nid.color = (255,0,0)
+           # elif stade in 'BCDEFGH':
+            #    d = dict(zip('BCDEFGH', range(1, len('BCDEFGH')+1)))
+             #   i = d[stade]
+              #  nid.color = (255, 127+127/7*(i-1),0)
+            #else:
+#                nid.color = (153, 102, 51)
+#        elif nid.label == 'HT':
+#            stade = nid.Stade
+#            if stade is None:
+#                nid.color = (155, 155, 155)
+#            elif stade in ('17', '18', '19'):
+#                nid.color=(0,0,255)
+#            elif stade == 'I':
+#                nid.color = (255,0,0)
+#            else:
+#                stades = map(str, range(55,88))
+#                if stade in stades:
+#                    d = dict(zip(stades, range(len(stades))))
+#                    i = d[stade]
+#                    nid.color = (0, 127+127/(len(stades)-1)*(i),255)
+#                else:
+#                    nid.color = (153, 102, 51)
 

@@ -9,30 +9,21 @@ from openalea.plantgl import all as pgl
 #Visualization  by plante
 # Je souhaiterai l'avoir une entre plutot de type Visualise_plant( Genotype_name, Date, plant number)
 
-#g.properties()['order'] = orders(g)
-#color_code(g)
 
-#count = 0
 def strawberry_visitor(g, v, turtle, time=0):
     """ Function that draw geometry for a given vertex. """
-    #global count
-    #count+=1
     geoms = Rules_production.get_symbols()
     turtle.setWidth(0.01)
     nid = g.node(v)
     label = g.label(v)
 
-    if label in ('F', 'f'):
+    if label in ('F','f'): 
         turtle.rollL(Rules_production.roll_angle)
     if g.edge_type(v) == '+':
         turtle.down(30)
 
     turtle.setId(v)
     geoms.get(label)(g, v, turtle)
-
-#scene = turtle.traverse_with_turtle(g, vid, visitor=strawberry_visitor)
-#spgl.Viewer.display(scene)
-#print count # a quoi sert le conmpteur?
 
 #Vizalisation by genotype et par de la date
 #fonction visualisation(Genotype, nb_date, nb_plante)
@@ -68,10 +59,3 @@ def visualise_plants(g, vids=[], positions=[]):
                 sh.geometry = pgl.Translated(position, sh.geometry)
                 scenes.add(sh)
     return scenes
-
-#Vizualisation d'une plante selectionnee par genotype et par date
-#fonction (Genotype~Plante selectionnee)
-#fonction (All Genotype ~ Plante selectionnee)
-#Comparer les Genotypes 2 a 2
-
-def compute_positions(n, n_rows, n_cols, ):
