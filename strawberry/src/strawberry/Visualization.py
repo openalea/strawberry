@@ -17,10 +17,11 @@ def strawberry_visitor(g, v, turtle, time=0):
     nid = g.node(v)
     label = g.label(v)
 
-    if label in ('F','f'): 
-        turtle.rollL(Rules_production.roll_angle)
+
     if g.edge_type(v) == '+':
         turtle.down(30)
+    elif label in ('F','f'):
+        turtle.rollL(Rules_production.roll_angle)
 
     turtle.setId(v)
     geoms.get(label)(g, v, turtle)
@@ -50,7 +51,7 @@ def visualise_plants(g, vids=[], positions=[]):
         position = positions[i]
         t = pgl.PglTurtle()
         #t.move(position)
-        scene = turtle.traverse_with_turtle(g, vid, visitor=strawberry_visitor, turtle=t)
+        scene = turtle.traverse_with_turtle(g, vid, visitor=strawberry_visitor, turtle=t, gc=False)
 
         ds = scene.todict()
 
