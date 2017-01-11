@@ -40,10 +40,10 @@ Hauteur_Lobe_centrale_cm	REAL
 Hauteur_Lobe_gauche_cm	REAL																																	
 Fleurs_total	INT																																	
 Fleurs_ouverte	INT																																	
-Fleurs_avorté	INT																																	
+Fleurs_avorte	INT																																	
 																																		
 MTG:																																		
-ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm	Hauteur_Lobe_centrale_cm	Hauteur_Lobe_gauche_cm	Fleurs_total	Fleurs_ouverte	Fleurs_avorté																
+ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm	Hauteur_Lobe_centrale_cm	Hauteur_Lobe_gauche_cm	Fleurs_total	Fleurs_ouverte	Fleurs_avorte																
 																																		
 /P							04/12/2014	Ciflorette	1																									
 ^/T														15.37																				

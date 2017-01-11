@@ -17,7 +17,9 @@ position = (0,0,0)
 roll_angle = 360.*2./5.
 
 # 2.Phytomer
-def leaflet(length=1., width=1.):
+## 2.1 Leaflet
+
+def Trileaflet(length=1., width=1.):
     disc = pgl.Translated((-0.5,0,0), pgl.Disc())
     disc = pgl.Scaled((length, width,1), disc)
     disc = pgl.AxisRotated(axis=(0,1,0), angle=radians(90.), geometry=disc)
@@ -29,7 +31,18 @@ def leaflet(length=1., width=1.):
     shape = pgl.Group([d1, d2, d3])
     return shape
 
-def Phytomer(g, vid, turtle):
+def Unileaflet(length=1., width=1.):
+    disc = pgl.Translated((-0.5,0,0), pgl.Disc())
+    disc = pgl.Scaled((length, width,1), disc)
+    disc = pgl.AxisRotated(axis=(0,1,0), angle=radians(90.), geometry=disc)
+
+    d3 = pgl.AxisRotated(axis=(1,0,0), angle=0., geometry=disc)
+
+    shape = pgl.Group([d3])
+    return shape
+
+## 2.2 Trifoliate
+def Trifoliate(g, vid, turtle):
     """ F: Petiol + 3 lobes.
     cylinder + 3 ellipse/surface
     """
@@ -51,10 +64,39 @@ def Phytomer(g, vid, turtle):
     t.down(45.)
     t.F(len_petiole)
     if not WITHOUT_LEAF:
-        t.customGeometry(leaflet(leaflet_length, leaflet_wdth))
+        t.customGeometry(Trileaflet(leaflet_length, leaflet_wdth))
     t.pop()
 
-def Phytomer_Primordia(g, vid, turtle):
+## 2.3 Unifoliate
+def Unifoliate(g, vid, turtle):
+    """ F: Petiol + 3 lobes.
+    cylinder + 3 ellipse/surface
+    """
+    t = turtle
+    nid = g.node(vid)
+    order = nid.order
+    t.setColor(2+order)
+    t.setWidth(0.01)
+
+    len_petiole = 1.
+    len_internode = 0.1
+    leaflet_length = 0.7/2.
+    leaflet_wdth = 0.3/2.
+
+    t.F(0.1)
+    #if order != 1:
+    #    return
+    t.push()
+    t.down(45.)
+    t.F(len_petiole)
+    if not WITHOUT_LEAF:
+        t.customGeometry(Unileaflet(leaflet_length, leaflet_wdth))
+    t.pop()
+
+
+
+#2.5 PrimordiaLeaf
+def PrimordiaLeaf(g, vid, turtle):
     """ F: Petiol + 3 lobes.
     cylinder + 3 ellipse/surface
     """
@@ -78,46 +120,9 @@ def Phytomer_Primordia(g, vid, turtle):
         #t.customGeometry(leaflet(leaflet_length*scale, leaflet_wdth*scale))
         t.pop()
 
+# 4. Bud
 
-# 3. Inflorescence
-
-def Inflorescence(g, vid, turtle):
-    """ HT: Inflorescence
-    Box (may change)
-    """
-    t = turtle
-    nid = g.node(vid)
-    order = nid.order
-    #turtle.setColor(3)
-    nb_flower = nid.Fleurs_total
-    nb_flower_open = nid.Fleurs_ouverte
-
-    t.setColor(2+order)
-    turtle.F(0.2)
-    if nb_flower is None:
-        nb_flower = 0.5
-    if nb_flower_open is None or nb_flower_open == 0:
-        nb_flower_open = 0.1
-
-    cube = pgl.Box(0.05*pgl.Vector3(1,1,nb_flower_open/4.))
-    tap = pgl.Tapered(3./20*nb_flower, 3./20*nb_flower_open, cube)
-    turtle.customGeometry(tap)
-
-def Inflo_Primordia(g, vid, turtle):
-    """ ht: Primordia inflorescence
-    """
-    t = turtle
-    #turtle.setColor(1)
-    nid = g.node(vid)
-    order = nid.order
-    t.setColor(8+order)
-    turtle.F(0.1)
-    cube = pgl.Box(0.02*pgl.Vector3(1,1,1))
-    turtle.customGeometry(cube)
-
-# 4. Terminal Bud
-
-def TerminalBud(g, vid, turtle):
+def Bud(g, vid, turtle):
     """ bt: Terminal Bud.
     sphere
     """
@@ -130,33 +135,12 @@ def TerminalBud(g, vid, turtle):
     sphere = pgl.Sphere(radius=0.02)
     turtle.customGeometry(sphere)
 
-# 5. Stolon
-
-def stolon_curve(scale=1.):
-    v2 = pgl.Vector3
-    ctrls = pgl.Point3Array([v2(x*scale, y*scale) for x,y in [(0,0), (1,3), (3,5), (4,2), (5,4)]])
-    crv = pgl.BezierCurve2D(ctrls)
-    return crv
-
-stolon = stolon_curve(scale=.25)
-
-
-def Stolon(g, vid, turtle):
-	""" s: Stolon
-    """
-        t = turtle
-    #t.setGuide(stolon, 1)
-        nid = g.node(vid)
-        order = nid.order
-    #turtle.setColor(3)
-        t.setColor(2+order)
-        turtle.customGeometry(stolon)
-
+#Stocker sous forme de dictionnaire les regles de production
 def get_symbols():
-    geoms = dict(F=Phytomer, HT=Inflorescence, bt=TerminalBud, f=Phytomer_Primordia, ht=Inflo_Primordia, s=Stolon) # dictionnary for all rules production
+    geoms = dict(Cotyledon= Unifoliate, Unifoliate= Unifoliate, Trifoliate= Trifoliate, Bud= Bud, TerminalBud= Bud) # dictionnary for all rules production
     return geoms
 
-## Colors rules
+#Color Rules
 def color_code(g):
     cleaf = (0,125,0)
     cfleaf = (255, 0, 255)

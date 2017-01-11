@@ -58,6 +58,9 @@ def strawberry_dataframe(g):
         # At all scale
         d['Stage'] = nid.Stade
         d['prelevement'] = nid.prelevement
+        d['Fleurs_total']= nid.Fleurs_total
+        d['Fleurs_ouverte'] = nid.Fleurs_ouverte
+        d['Fleurs_avorte'] = nid.Fleurs_avorte
 
         return d
 

@@ -40,11 +40,11 @@ Hauteur_Lobe_centrale_cm	REAL
 Hauteur_Lobe_gauche_cm	REAL																		
 Fleurs_total	INT																		
 Fleurs_ouverte	INT																		
-Fleurs_avorté	INT																		
+Fleurs_avorte	INT																		
 prelevement	STRING																		
 																			
 MTG:																			
-ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm	Hauteur_Lobe_centrale_cm	Hauteur_Lobe_gauche_cm	Fleurs_total	Fleurs_ouverte	Fleurs_avorté	prelevement
+ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm	Hauteur_Lobe_centrale_cm	Hauteur_Lobe_gauche_cm	Fleurs_total	Fleurs_ouverte	Fleurs_avorte	prelevement
 																			
 /P							10/12/2014	Darselect	1										
 ^/T										19.9									
@@ -1476,7 +1476,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<HT										55					11	0	0	
 ^<HT											65					15	9	0	
 																			
-/P							11/02/2015	Darselect	1										
+/P							11/02/2015	Darselect	8										
 ^/T										21.90									
 ^/F																			
 	+A																		

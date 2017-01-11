@@ -5,10 +5,10 @@ CODE:	FORM-A
 																				
 CLASSES:																				
 SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION																
-$ 	0	FREE	FREE	IMPLICIT																
-P 	1	FREE	FREE	EXPLICIT																
-T  	2	FREE	FREE	EXPLICIT																
-A  	2	FREE	FREE	EXPLICIT																
+$	0	FREE	FREE	IMPLICIT																
+P	1	FREE	FREE	EXPLICIT																
+T	2	FREE	FREE	EXPLICIT																
+A	2	FREE	FREE	EXPLICIT																
 F	3	FREE	FREE	EXPLICIT																
 f	3	FREE	FREE	EXPLICIT																
 s	3	FREE	FREE	EXPLICIT																
@@ -40,11 +40,11 @@ Hauteur_Lobe_centrale_cm	REAL
 Hauteur_Lobe_gauche_cm	REAL																			
 Fleurs_total	INT																			
 Fleurs_ouverte	INT																			
-Fleurs_avorté	INT																			
+Fleurs_avorte	INT																			
 prelevement	STRING																			
 																				
-MTG:																				
-ENTITY-CODE								date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm	Hauteur_Lobe_centrale_cm	Hauteur_Lobe_gauche_cm	Fleurs_total	Fleurs_ouverte	Fleurs_avorté	prelevement
+MTG:
+ENTITY-CODE								date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm	Hauteur_Lobe_centrale_cm	Hauteur_Lobe_gauche_cm	Fleurs_total	Fleurs_ouverte	Fleurs_avorte	prelevement
 																				
 /P								10/12/2014	Gariguette	1										
 ^/T											14.79									
