@@ -1298,8 +1298,8 @@ ENTITY-CODE								date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_
 			^/f																			
 			^<f																			
 			^<bt									17										
-		^ht											H							10:50		
-	^HT												I	2.1								
+		^<ht											H							10:50		
+	^<HT												I	2.1								
 ^<F																						
 	+A																					
 	^/F																					
@@ -1751,7 +1751,7 @@ ENTITY-CODE								date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_
 		^<f																				
 			+A																			
 			^/bt																			
-		^ht											E									
+		^<ht											E									
 	^<F																					
 		+A																				
 		^/f																				
@@ -4740,7 +4740,7 @@ ENTITY-CODE								date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_
 	^/F																					
 		+A																				
 		^/s																				
-	^/F																					
+	^<F																					
 		+A																				
 		^/f																				
 		^<f																				
@@ -6459,7 +6459,7 @@ ENTITY-CODE								date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_
 				^<f																		
 				^<ht								F										
 			^<ht									H										
-		^HT											81					8	5	0		
+		^<HT											81					8	5	0		
 	^<F																					
 		+A																				
 		^/F																				
