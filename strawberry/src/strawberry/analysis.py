@@ -34,7 +34,7 @@ def to_dataframe(g, vertices=[], f=None):
     d['complex'] = {v: complexes.get(v) for v in vertices}
     d['scale'] = {v: scales.get(v) for v in vertices}
     d['order'] = {v: _orders.get(v) for v in vertices}
-
+    
 
     dataframe = pd.DataFrame.from_dict(d)
     return dataframe
@@ -49,6 +49,7 @@ def strawberry_dataframe(g):
         pid = g.complex_at_scale(v, scale=1)
         pnid = g.node(pid)
         nid = g.node(v)
+        
         # Set plant properties to each node 
         d['Genotype'] = pnid.Genotype
         d['Plante'] = pnid.Plante
@@ -57,10 +58,12 @@ def strawberry_dataframe(g):
         
         # At all scale
         d['Stage'] = nid.Stade
-        d['prelevement'] = nid.prelevement
+        #d['prelevement'] = nid.prelevement
         d['Fleurs_total']= nid.Fleurs_total
         d['Fleurs_ouverte'] = nid.Fleurs_ouverte
         d['Fleurs_avorte'] = nid.Fleurs_avorte
+       
+
 
         return d
 

@@ -1,0 +1,4280 @@
+#																						
+#																						
+CODE:	FORM-A																					
+																						
+																						
+CLASSES:																						
+SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION																		
+$ 	0	FREE	FREE	IMPLICIT																		
+P 	1	FREE	FREE	EXPLICIT																		
+T  	2	FREE	FREE	EXPLICIT																		
+A  	2	FREE	FREE	EXPLICIT																		
+F	3	FREE	FREE	EXPLICIT																		
+f	3	FREE	FREE	EXPLICIT																		
+s	3	FREE	FREE	EXPLICIT																		
+bt	3	FREE	FREE	EXPLICIT																		
+BT	3	FREE	FREE	EXPLICIT																		
+ht	3	FREE	FREE	EXPLICIT																		
+HT	3	FREE	FREE	EXPLICIT	
+
+DESCRIPTION :																						
+LEFT	RIGHT	RELTYPE	MAX																			
+A	A	+	?																			
+A	A	<	1																			
+T	T	+	?																			
+T	T	<	1				
+
+FEATURES:																						
+NAME	TYPE																					
+
+Experiment_name	STRING
+Sample_date	STRING
+Architecture_date	STRING
+Genotype	STRING
+Plante	INT
+Foliar_type	STRING
+Stade	STRING
+comment	STRING
+Petiol_leanght	REAL # mm
+ALL	REAL # mm
+ACL	REAL # mm
+ARL	REAL # mm
+HLL	REAL # mm
+HCL	REAL # mm
+HRL	REAL # mm
+WLL	REAL # mm
+WCL	REAL # mm
+WRL	REAL # mm
+Total_leaf_Area	REAL # mm
+H/W_L	REAL # mm
+H/W_C	REAL # mm
+H/W_R	REAL # mm																						
+
+MTG:
+ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plante	Foliar_type	Stade	comment	Petiol_leanght	ALL	ACL	ARL	HLL	HCL	HRL	WLL	WCL	WRL	Total_leaf_Area	H/W_L	H/W_C	H/W_R
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	10		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	12		3															
+/T																									
+^/F									cotyledon		Non visible														
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	27-07-2016	Sicile	22		3															
+/T																									
+^/F									Cotyledon																
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	23		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	30		3															
+/T																									
+^/F									Cotyledon																
+^<F									Unifoliate		Non visible														
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	31		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	27-07-2016	Sicile	40		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia foliar																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	27-07-2016	Sicile	55		3															
+/T																									
+^/F									cotyledon																
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	27-07-2016	Sicile	65		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	68		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	70		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	201		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17 ou 19															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	203		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	204		3															
+/T																									
+^/F									Cotyledon																
+^<F									Cotyledon																
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	207		3															
+/T																									
+^/F									Unifoliate		Non visible														
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	210		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	212		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	215		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	28-07-2016	Sicile	218		3															
+/T																									
+^/F									Cotyledon																
+^<F									Cotyledon		Non visible														
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	231		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	239		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<bt										19															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	242		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	250		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	256		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	266		3															
+/T																									
+^/F									Cotyledon		Non Visible 														
+^<F									Cotyledon		Non Visible 														
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	285		3															
+/T																									
+^/F									Cotyledon		Non visible														
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	27-07-2016	Sicile	306		3															
+/T																									
+^/F									Unifoliate		Non visible														
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	27-07-2016	Sicile	328		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	339		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	17-05-2016	29-07-2016	Sicile	348		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	17-05-2016	26-07-2016	Sicile	354		3															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	02-08-2016	Sicile	24		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	08-08-2016	Sicile	28		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/f								Primordia Trifoliate																
+		+A																							
+		^/bt																							
+	^<f								Primordia Trifoliate																
+		+A																							
+		^/bt																							
+	^<bt									17															
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	08-08-2016	Sicile	43		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	08-08-2016	Sicile	52		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	08-08-2016	Sicile	53		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	08-08-2016	Sicile	57		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	10-08-2016	Sicile	73		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	10-08-2016	Sicile	78		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	10-08-2016	Sicile	79		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	10-08-2016	Sicile	82		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	17-08-2016	Sicile	92		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	09-08-2016	Sicile	98		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	09-08-2016	Sicile	103		5															
+/T																									
+^/F									Cotyledon																
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	09-08-2016	Sicile	109		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	11-08-2016	Sicile	130		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	11-08-2016	Sicile	135		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	11-08-2016	Sicile	202		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	11-08-2016	Sicile	235		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	16-08-2016	Sicile	249		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/f								Primordia foliar																
+		+A																							
+		^/bt																							
+	^<f								Primordia foliar																
+		+A																							
+		^/bt																							
+	^<bt									17 ou_ 19															
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	16-08-2016	Sicile	271		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate		Leaflets missing														
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate		Leaflet missing														
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	22-08-2016	Sicile	284		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	22-08-2016	Sicile	292		5															
+/T																									
+^/F									Cotyledon																
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	16-08-2016	Sicile	300		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	16-08-2016	Sicile	307		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	16-08-2016	Sicile	327		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	21-08-2016	Sicile	329		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	21-08-2016	Sicile	330		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate		Leflet missing														
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17 ou 19															
+/P				Topmodel March	01-06-2016	17-08-2016	Sicile	335		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	17-08-2016	Sicile	338		5															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/f								Primordia trifoliate																
+		+A																							
+		^/bt																							
+	^<f								Primordia trifoliate																
+		+A																							
+		^/bt																							
+	^<bt									17															
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	17-08-2016	Sicile	340		5															
+/T																									
+^/F									Cotyledon																
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	28-10-2016	Sicile	13		7															
+/T																									
+^/F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	12-10-2016	Sicile	15		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	09-11-2016	Sicile	19		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	27-10-2016	Sicile	25		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	27-10-2016	Sicile	34		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	07-11-2016	Sicile	62		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	03-11-2016	Sicile	63		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	07-11-2016	Sicile	102		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	10-10-2016	Sicile	111		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	10-10-2016	Sicile	121		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	27-10-2016	Sicile	122		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	27-10-2016	Sicile	217		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	07-11-2016	Sicile	241		7	erreur														
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	27-10-2016	Sicile	253		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	11-10-2016	Sicile	263		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	27-10-2016	Sicile	276		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	27-10-2016	Sicile	286		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	27-10-2016	Sicile	289		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	10-11-2016	Sicile	301		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	10-11-2016	Sicile	314		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	03-11-2016	Sicile	318		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	28-10-2016	Sicile	322		6															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	15-11-2016	Sicile	323		6															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	15-11-2016	Sicile	325		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	08-11-2016	Sicile	326		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	28-10-2016	Sicile	332		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	03-10-2016	Sicile	334		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	03-10-2016	Sicile	342		7															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	02-02-2016	Sicile	4		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	01-02-2016	Sicile	26		10	Scan a l'envers														
+/T																									
+^/F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	02-02-2016	Sicile	32		10															
+/T																									
+^/F									Trifoliate		Non visible														
+	+A																								
+	^/bt																								
+^<F									Trifoliate		Non visible														
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	20-01-2016	Sicile	49		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	20-01-2016	Sicile	51		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	20-01-2016	Sicile	54		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	01-02-2016	Sicile	60		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	02-02-2016	Sicile	61		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Bifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt																									
+/P				Topmodel March	01-06-2016	01-02-2016	Sicile	86		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	02-02-2016	Sicile	90		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	01-02-2016	Sicile	99		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	02-02-2016	Sicile	113		10															
+/T																									
+^/F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	02-02-2016	Sicile	118		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	02-02-2016	Sicile	119		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	02-02-2016	Sicile	124		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	30-01-2016	Sicile	125		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	30-01-2016	Sicile	133		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	30-01-2016	Sicile	134		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	26-10-2016	Sicile	205		10															
+/T																									
+^/F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	27-10-2016	Sicile	216		10															
+/T																									
+^/F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+/P				Topmodel March	01-06-2016	30-01-2017	Sicile	234		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	29-01-2017	Sicile	246		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	30-01-2017	Sicile	247		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	30-01-2017	Sicile	258		10															
+/T																									
+^/F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										19															
+/P				Topmodel March	01-06-2016	30-01-2017	Sicile	260		10															
+/T																									
+^/F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate		foliole missing														
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	30-01-2017	Sicile	298		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	01-02-2017	Sicile	308		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	30-01-2017	Sicile	321		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	30-01-2017	Sicile	341		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/s																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										17															
+/P				Topmodel March	01-06-2016	26-10-2016	Sicile	355		10															
+/T																									
+^/F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Unifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/bt																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate																
+	+A																								
+	^/s																								
+^<F									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Trifoliate non developped																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<f									Primordia Trifoliate																
+	+A																								
+	^/bt																								
+^<bt										18															
+

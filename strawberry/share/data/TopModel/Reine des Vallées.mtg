@@ -1,0 +1,415 @@
+#																						
+#																						
+CODE:	FORM-A																					
+																						
+																						
+CLASSES:																						
+SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION																		
+$ 	0	FREE	FREE	IMPLICIT																		
+P 	1	FREE	FREE	EXPLICIT																		
+T  	2	FREE	FREE	EXPLICIT																		
+A  	2	FREE	FREE	EXPLICIT																		
+F	3	FREE	FREE	EXPLICIT																		
+f	3	FREE	FREE	EXPLICIT																		
+s	3	FREE	FREE	EXPLICIT																		
+bt	3	FREE	FREE	EXPLICIT																		
+BT	3	FREE	FREE	EXPLICIT																		
+ht	3	FREE	FREE	EXPLICIT																		
+HT	3	FREE	FREE	EXPLICIT	
+
+DESCRIPTION :																						
+LEFT	RIGHT	RELTYPE	MAX																			
+A	A	+	?																			
+A	A	<	1																			
+T	T	+	?																			
+T	T	<	1				
+
+FEATURES:																						
+NAME	TYPE																					
+
+Experiment_name	STRING
+Sample_date	STRING
+Architecture_date	STRING
+Genotype	STRING
+Plante	INT
+Foliar_type	STRING
+Stade	STRING
+comment	STRING
+Petiol_leanght	REAL # mm
+ALL	REAL # mm
+ACL	REAL # mm
+ARL	REAL # mm
+HLL	REAL # mm
+HCL	REAL # mm
+HRL	REAL # mm
+WLL	REAL # mm
+WCL	REAL # mm
+WRL	REAL # mm
+Total_leaf_Area	REAL # mm
+H/W_L	REAL # mm
+H/W_C	REAL # mm
+H/W_R	REAL # mm																						
+
+MTG:
+ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plante	Foliar_type	Stade	comment	Petiol_leanght	ALL	ACL	ARL	HLL	HCL	HRL	WLL	WCL	WRL	Total_leaf_Area	H/W_L	H/W_C	H/W_R
+/P				Topmodel March	11-05-2016	27-07-2016	Reine des Vallées	4		3	
+^/T											
+^/F									Cotyledon		
+^<F									Cotyledon		Missing
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate non developped		
+	+A										
+	^/bt										
+^<bt										17	
+/P				Topmodel March	11-05-2016	21-07-2016	Reine des Vallées	17		3	
+^/T											
+^/F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<f									Trifoliate non developped		
+	+A										
+	^/bt										
+^<bt										19	
+/P				Topmodel March	11-05-2016	21-07-2016	Reine des Vallées	20		3	
+^/T											
+^/F									Cotuledon		
+^<F									Cotyledon		
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<f									Trifoliate non developped		
+	+A										
+	^/bt										
+^<bt										19	
+/P				Topmodel March	11-05-2016	05-08-2016	Reine des Vallées	21		3	
+^/T											
+^/F									Cotuledon		Missing
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<f									Trifoliate non developped		
+	+A										
+	^/bt										
+^<bt										19	
+/P				Topmodel March	11-05-2016	05-08-2016	Reine des Vallées	28		3	
+^/T											
+^/F									Cotuledon		
+^<F									Cotyledon		
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<f									Trifoliate non developped		
+	+A										
+	^/bt										
+^<bt										19	
+/P				Topmodel March	01-06-2016	06-09-2016	Reine des Vallées	10		7	
+^/T											
+^/F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		Missing
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<bt									17	
+^<f									Trifoliate non developped		
+	+A										
+	^/bt										
+^<bt										17	
+/P				Topmodel March	01-06-2016	07-09-2016	Reine des Vallées	38		7	
+^/T											
+^/F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<bt									17 ou 19	
+^<F									Trifoliate		
+	+A										
+	^/F								Trifoliate non developped		
+		+A									
+		^/bt									
+	^<f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<bt									17	
+^<F									Trifoliate		
+	+A										
+	^/f								Trifoliate non developped		
+		+A									
+		^/bt									
+	^<f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<bt									19	
+^<F									Trifoliate		
+	+A										
+	^/f								Trifoliate non developped		
+		+A									
+		^/bt									
+	^<f								Trifoliate non developped		
+		+A									
+		^/bt									
+	^<bt									17	
+^<F									Trifoliate		
+	+A										
+	^/f								Trifoliate non developped		
+		+A									
+		^/bt									
+	^<f								Trifoliate non developped		
+		+A									
+		^/bt									
+	^<bt									17 ou 19	
+^<F									Trifoliate		
+	+A										
+	^/f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<bt									17 ou 19	
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<f									Trifoliate non developped		
+	+A										
+	^/bt										
+^<bt										18	
+/P				Topmodel March	01-06-2016	31-08-2016	Reine des Vallées	42		7	
+^/T											
+^/F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<bt									17 ou 19	
+^<F									Trifoliate		
+	+A										
+	^/f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<bt									19	
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate non developped		
+	+A										
+	^/bt										
+^<f									Trifoliate non developped		
+	+A										
+	^/bt										
+^<ht										B	
+/P				Topmodel March	01-06-2016	31-08-2016	Reine des Vallées	60		7	
+^/T											
+^/F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<bt									17	
+^<F									Trifoliate		
+	+A										
+	^/f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<f								Primordia Trifoliate		
+		+A									
+		^/bt									
+	^<bt									19	
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate non developped		
+	+A										
+	^/bt										
+^<f									Trifoliate non developped		
+	+A										
+	^/bt										
+^<bt										19	
+/P				Topmodel March	01-06-2016	09-08-2016	Reine des Vallées	71		7	
+^/T											
+^/F									Unifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate		
+	+A										
+	^/bt										
+^<F									Trifoliate non developped		
+	+A										
+	^/bt										
+^<f									Trifoliate non developped		
+	+A										
+	^/bt										
+^<bt										19	

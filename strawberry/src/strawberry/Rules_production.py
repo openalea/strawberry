@@ -97,7 +97,7 @@ def Inflorescence(g, vid, turtle):
     if nb_flower is None:
         nb_flower = 0.5
     if nb_flower_open is None or nb_flower_open == 0:
-        nb_flower_open = 0.1
+        nb_flower_open = 0.5
 
     cube = pgl.Box(0.05*pgl.Vector3(1,1,nb_flower_open/4.))
     tap = pgl.Tapered(3./20*nb_flower, 3./20*nb_flower_open, cube)
