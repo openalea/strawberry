@@ -34,7 +34,7 @@ def to_dataframe(g, vertices=[], f=None):
     d['complex'] = {v: complexes.get(v) for v in vertices}
     d['scale'] = {v: scales.get(v) for v in vertices}
     d['order'] = {v: _orders.get(v) for v in vertices}
-    
+
 
     dataframe = pd.DataFrame.from_dict(d)
     return dataframe
@@ -43,30 +43,75 @@ def strawberry_dataframe(g):
     vertices = [v for v in g.vertices_iter() if v !=0]
 
     props = g.properties()
-    
+
     def my_f(v):
         d = dict()
         pid = g.complex_at_scale(v, scale=1)
         pnid = g.node(pid)
         nid = g.node(v)
-        
-        # Set plant properties to each node 
+
+        # Set plant properties to each node
         d['Genotype'] = pnid.Genotype
         d['Plante'] = pnid.Plante
         d['date'] = pnid.date
         d['label'] = g.label(v)
-        
+
         # At all scale
         d['Stage'] = nid.Stade
         #d['prelevement'] = nid.prelevement
         d['Fleurs_total']= nid.Fleurs_total
         d['Fleurs_ouverte'] = nid.Fleurs_ouverte
         d['Fleurs_avorte'] = nid.Fleurs_avorte
-       
+
 
 
         return d
 
 
     return to_dataframe(g, vertices, my_f)
+
+
+def write_sequences(seqs, variables, VertexIdentifiers):
+    """ Write Sequences into a txt file.
+
+    """
+    sep = '\t'
+    txts = []
+
+    # header
+    header = "INDEX_PARAMETER : TIME   # vertex_id"
+    txts.append(header)
+    txts.append('')
+
+    n = len(variables)
+    header = "%d VARIABLES"%n
+    txts.append(header)
+    txts.append('')
+
+    for i in range(1, n+1):
+        txts.append('VARIABLE %d: INT  # %s'%(i, variables[i-1]))
+
+    txts.append('')
+    txts.append('')
+    txts.append('#Index'+sep+sep.join(variables))
+
+    for i, seq in enumerate(seqs):
+        n = len(seq)
+        for j, value in enumerate(seq):
+            vid = VertexIdentifiers[i][j]
+            record = [str(vid)] + map(str,value)
+            if j < n-1:
+                record.append('\\')
+            else:
+                # end of the sequence
+                record.append('')
+
+            record.append('#')
+
+            txt = sep.join(record)
+            txts.append(txt)
+        txts.append('')
+
+    return '\n'.join(txts)
+
 
