@@ -58,7 +58,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	^<f																	
 		+A
 		^/f
-		^<f																									
+		^<f																			
 		^<ht									C							
 	^<ht										G							
 ^<F																		
