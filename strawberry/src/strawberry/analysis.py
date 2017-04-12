@@ -53,15 +53,16 @@ def strawberry_dataframe(g):
         # Set plant properties to each node
         d['Genotype'] = pnid.Genotype
         d['Plante'] = pnid.Plante
-        d['date'] = pnid.date
+        d['date'] = pnid.Sample_date
         d['label'] = g.label(v)
 
         # At all scale
         d['Stage'] = nid.Stade
+        d['Foliar_type'] = nid.Foliar_type
         #d['prelevement'] = nid.prelevement
-        d['Fleurs_total']= nid.Fleurs_total
-        d['Fleurs_ouverte'] = nid.Fleurs_ouverte
-        d['Fleurs_avorte'] = nid.Fleurs_avorte
+        #d['Fleurs_total']= nid.Fleurs_total
+        #d['Fleurs_ouverte'] = nid.Fleurs_ouverte
+        #d['Fleurs_avorte'] = nid.Fleurs_avorte
 
 
 
