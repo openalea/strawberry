@@ -6382,13 +6382,13 @@ ENTITY-CODE								date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_
 		^<F
 			+A
 			^/bt									17
-		^<f
+		^<F
 			+A
 			^/f
 			^<f
 				+A
 				^/bt								17
-			^<bt									G
+			^<ht									G
 		^<F
 			+A
 			^/F
