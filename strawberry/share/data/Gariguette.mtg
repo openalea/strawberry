@@ -6532,7 +6532,7 @@ ENTITY-CODE								date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_
 			^<f
 			^<f
 			^<bt									17
-		^<HT										65					4	2	0
+		j^<HT										65					4	2	0
 	^<F
 		+A
 		^/F
