@@ -46,7 +46,7 @@ MTG:
 ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_cm	Hauteur_Lobe_centrale_cm	Hauteur_Lobe_gauche_cm	Fleurs_total	Fleurs_ouverte	Fleurs_aborted
 
 /P							04/12/2014	Ciflorette	1
-^/T														15.37
+^/T														
 ^/F
 	+A
 	^/s
@@ -69,7 +69,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^/f
 		^<f
 		^<bt									17
-	^<F
+	^<F													
 		+A
 		^/f
 		^<f
@@ -85,8 +85,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^<f
 		^<f
 		^<ht									C
-	^<ht										H	0.7
-^<HT											cut
+	^<ht										H				0	0	0
+^<HT											I				1	0	0      		
 
 /P							04/12/2014	Ciflorette	2
 ^/T														17.2
@@ -218,7 +218,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 		^<f
 		^<ht									C
 	^<ht										H	0.5
-^<HT											Coupé
+^<HT											Cut
 
 /P							04/12/2014	Ciflorette	4
 /T														15.66
@@ -1753,8 +1753,8 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 			+A
 			^/bt								19
 		^<ht									E
-	^<HT											55					7	0
-^<HT																12	3	0
+	^<HT										55					7	0
+^<HT											65				12	3	0
 
 /P							13/02/2015	Ciflorette	3
 ^/T														23.68
@@ -5858,6 +5858,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 	+A
 	^/F
 		+A
+		+A
 		^/f
 		^<f
 			+A
@@ -5897,7 +5898,7 @@ ENTITY-CODE							date	Genotype	Plante	diam_mm	Stade	mesure_ht	Longeur_petiole_c
 			^<HT								81					5	4	0
 		^<HT									87					4	4	0
 	^<HT										87					5	5	0
-^<HT
+^<HT											87					11	11	0
 
 /P							27/05/2015	Ciflorette	6
 ^/T														43.84

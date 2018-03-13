@@ -7,8 +7,8 @@ from openalea.plantgl import all as pgl
 from math import radians
 
 #Properties
-VISIBLE = True
-WITHOUT_LEAF = True
+VISIBLE = False
+WITHOUT_LEAF = False
 position = (0,0,0)
 
 ## Rules of production
