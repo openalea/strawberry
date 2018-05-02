@@ -33,7 +33,7 @@ Installation
 
 
 Requirements
-°°°°°°°°°°°°°
++++++++++++++
 
 * OpenAlea.Deploy
 * OpneAlea.MTG
@@ -44,7 +44,7 @@ Requirements
 
 
 Installation 
-°°°°°°°°°°°°
++++++++++++++
 
 ::
 
