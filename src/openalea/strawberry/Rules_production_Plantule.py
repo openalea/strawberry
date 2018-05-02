@@ -1,5 +1,4 @@
 # 1. Pakages import
-from openalea.core import path
 from openalea.deploy.shared_data import shared_data
 from openalea.mtg import *
 from openalea.mtg.algo import orders

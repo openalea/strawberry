@@ -1,7 +1,6 @@
 """ Visualisation code for strawberry on MTG. """
-from strawberry import Rules_production
+from openalea.strawberry import Rules_production
 from openalea.mtg import *
-from turtle import *
 from openalea.core import *
 from openalea.plantgl import all as pgl
 

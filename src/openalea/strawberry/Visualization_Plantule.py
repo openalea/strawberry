@@ -1,7 +1,6 @@
 """ Visualisation code for strawberry on MTG. """
-from strawberry import Rules_production_Plantule
+from openalea.strawberry import Rules_production_Plantule
 from openalea.mtg import *
-from turtle import *
 from openalea.core import *
 from openalea.plantgl import all as pgl
 
@@ -20,12 +19,12 @@ def strawberry_visitor(g, v, turtle, time=0):
 
     if g.edge_type(v) == '+':
         turtle.down(30)
-    elif label in ('Cotyledon','Unifoliate',"Trifoliate","LeafPrimordia"):
+    elif label in ('Cotyledon', 'Unifoliate', 'Trifoliate', 'LeafPrimordia'):
         turtle.rollL(Rules_production_Plantule.roll_angle)
 
     turtle.setId(v)
     geoms.get(label)(g, v, turtle)
-    
+
 #Vizalisation by genotype et par de la date
 #fonction visualisation(Genotype, nb_date, nb_plante)
 
