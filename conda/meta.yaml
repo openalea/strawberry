@@ -1,0 +1,40 @@
+{% set version = "1.0.0" %}
+
+package:
+  name: openalea.strawberry
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  preserve_egg_dir: True
+  number: 0
+  script: python setup.py install --prefix=$PREFIX
+
+requirements:
+  build:
+    - openalea.deploy #==2.0.0
+  run:
+    - python
+    - openalea.mtg
+    - openalea.plantgl
+    - pandas
+
+test:
+  imports:
+    - openalea.strawberry
+  requires:
+    - nose
+  source_files:
+    - test/
+    - test/*.py
+
+  commands:
+    - nosetests -v
+
+about:
+  home: http://github.com/openalea/strawberry
+  license: Cecill-c License
+  summary: OpenAlea Strawberry is a package for architecture analysis and 2D/3D reconstruction.
+
