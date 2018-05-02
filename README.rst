@@ -1,55 +1,58 @@
-====== Strawberry ======
+OpenAlea.Strawberry
+~~~~~~~~~~~~~~~~~~~
 
-**Authors** : XXX
+**Authors** : Marc Labadie, Christophe Pradal
 
-**Institutes** : INRIA / CIRAD 
+**Institutes** : INRA / CIRAD / Inria 
 
 **Status** : Python package 
 
 **License** : Cecill-C
 
-**URL** : http://openalea.gforge.inria.fr
+**URL** : https://github.com/openalea-incubator/strawberry
 
-===== About =====
+About 
+=====
 
-=== Description ===
+Description 
+------------
 
-Strawberry is a XXX
+Strawberry is a package for architecture analysis and 2D/3D reconstruction.
+It contains Python and R code.
 
 
 
-=== Content ===
+Content 
+-------
 
 The Strawberry package contains :
 
 
-===== Installation =====
+Installation
+------------
 
-=== Download ===
 
-Go to http://gforge.inria.fr/frs/?group_id=79
+Requirements
+°°°°°°°°°°°°°
 
-=== Requirements ===
-
-* Scons >= 1
-* SconsX
 * OpenAlea.Deploy
-* Boost.Python
+* OpneAlea.MTG
+* Jupyter Notebook
+* OpenAlea.PlantGL
+* Matplotlib
+* Pandas
 
 
-=== Installation ===
+Installation 
+°°°°°°°°°°°°
 
+::
 
-=== Utilisation ===
-
-
-<code>
-python setup.py install
-</code>
+    conda install -c openalea openalea.strawberry
 
 
 
-===== Documentation =====
-
-http://openalea.gforge.inria.fr/doc//strawberry/doc/_build/html/contents.html
+Documentation
+-------------
+https://strawberry.readthedoc.org
 
