@@ -6,6 +6,7 @@ import os
 from setuptools import setup, find_packages
 from openalea.deploy.metainfo import read_metainfo
 
+name = 'OpenAlea.Strawberry'
 version = '1.0.0'
 
 description = "Strawberry is a package for architecture analysis and 2D/3D reconstruction."
