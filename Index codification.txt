@@ -7,6 +7,7 @@ P	Plant (1)		Experiment_name	name of experiment
 			Stade	Plant development stage		PO:0009011
 T/A	Crown (2)	PO: 0025029	Collar Diameter (mm)	diameter of collar (of the Primary crown)	BAINDIA,DBI	TO:0000132
 F	Leaf (3)	PO:0009025	Leaf area (mm²)	Total leaf area	LFAR	TO:0000540
+			Foliar type	Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar		
 	cotyledon	PO:0020030	Leaf area (mm²)	Leaf area	LFAR	TO:0000540
 			leaflet lenght (mm)	leaf length 	LFLG	TO:0000774
 			leaflet width (mm)	leaf width	LFWD	TO:0000370

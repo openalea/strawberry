@@ -37,7 +37,7 @@ Plant	INT
 Foliar_type	STRING	
 Stade	INT
 comment	STRING
-Petiol_lenght	REAL	#mm
+lenght	REAL	#mm
 ALL	REAL	#mm2
 ACL	REAL	#mm2
 ARL	REAL	#mm2
