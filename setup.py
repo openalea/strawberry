@@ -48,6 +48,7 @@ setup(
 
     # Namespace packages creation by deploy
     namespace_packages=['openalea'],
+    create_namespaces=True,
     zip_safe=False,
 
     # Dependencies
