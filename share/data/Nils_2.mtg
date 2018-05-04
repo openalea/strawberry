@@ -1128,7 +1128,7 @@ ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	S
 ^/F										Unifoliate					7.23			10.96			53.17								10.26	
 	+A																													
 	^/bt																													
-^/F										Unifoliate					11.55			14.37			116.59								23.63	
+^<F										Unifoliate					11.55			14.37			116.59								23.63	
 	+A																													
 	^/bt																													
 ^<F										Trifoliate				12.04		18.85	8.12		13.04	67.98		173.36							35.8	bifoliate
