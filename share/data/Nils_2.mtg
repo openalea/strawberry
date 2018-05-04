@@ -33,7 +33,7 @@ Architecture_date	DD/MM/YYYY
 Genotype	STRING																													
 Plant_ID	INT																													
 Stade	STRING																													
-Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar																													
+Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar				
 DBI	REAL # mm Collar diameter																													
 INFLOLG	REAL # mm Inflorescence length																													
 PETLG	REAL # mm petiole lenght																													
@@ -51,7 +51,8 @@ FLWRNUMBER	INT # Total flower number
 FLWRNUMBER_OPEN	INT # Total opened Flower number																													
 FLWRNUMBER_ABORTED	INT # Total aborted Flower number																													
 FLWRNUMBER_CLOSED	INT # Total closed flower number																													
-SAMPLING	STRING # location of sampling																													
+SAMPLING	STRING # location of sampling	
+lenght REAL																												
 COMMENT	STRING																													
 																														
 MTG:																														
