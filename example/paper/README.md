@@ -2,7 +2,7 @@
 
 ## Reading and extract data from MTG
 
-MTG_protocol.ipynb
+1_MTG_protocol.ipynb
 
 ### TODO
 - Problem :
@@ -16,8 +16,7 @@ MTG_protocol.ipynb
 
 ## Extract sequence at different scales from MTG
 
-Sequence_Analysis.ipynb or
-Sequence Analysis Marc.ipynb, but i prefer because integrate last minor modification
+2_Sequence_Analysis.ipynb 
 
 add new variable like petiol lenght, leaf area ect...
 
@@ -26,7 +25,7 @@ add new variable like petiol lenght, leaf area ect...
 Rscripts
 Z:\G1\Fraise\Marc-Labadie\R\R-users\FraFlo\Script\Architecture analysis
 
-* 2017_04_27_selection of the most central individual.R, this selection was perform on the extraction of sequence according module non overlapping.
+*mean_plant_selection_170427.R, this selection was perform on the extraction of sequence according module non overlapping.
 	- [Hint: Selection of the most central individual no generalize i don't know if this funtion is extendible]
 
 * Architecture sequence analysis-scriptpropre.R. This script allows to represent the number of flower, leaves,ect by order and realize linear regression in order to identify from which order we obtain a stationarity of the number of flowers, leave ect.
@@ -38,6 +37,8 @@ Z:\G1\Fraise\Marc-Labadie\R\R-users\FraFlo\Script\Architecture analysis
 	and intergrate new future analysis such as function plotmean by node and new variables (leaf area), return plot according to variables]
 
 ## Visualisation 2D, 3D for each genotypes, ...
+
+3_Visualisation.ipynb
 
 * 2D: create a module
 	- incorporate cotyledons, unifoliate and trifoliate leaves.
@@ -52,5 +53,4 @@ Z:\G1\Fraise\Marc-Labadie\R\R-users\FraFlo\Script\Architecture analysis
 		- for generalization diploid and octoploid incorporation of cotyledon and unifoliate rules
 		- if possible incorporation of properties in the visualisation petiol lenght, area, ect
 
-Visualisation.ipynb
 
