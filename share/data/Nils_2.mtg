@@ -1095,7 +1095,7 @@ ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	S
 ^/F										Unifoliate					11.32			15.49			127.9								21.81	
 	+A																													
 	^/bt																													
-^/F										bifoliaite				13.16	14.76		8.33	17.93		74.42	179.6								37.47	
+^<F										bifoliaite				13.16	14.76		8.33	17.93		74.42	179.6								37.47	
 	+A																													
 	^/bt																													
 ^<F										Trifoliate				17.27	21.4	18.25	12.68	17.63	12.82	157	262.91	166.31							69.34	
@@ -2894,7 +2894,7 @@ ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	S
 	^/bt																													
 ^<f										Primordia foliar																				
 	+A																													
-	^/bt								C																					
+	^/ht								C																					
 ^<ht									F																					
 /P				Topmodel March	20/06/2016	23/11/2016	Nils	38	10																					
 /T																														
