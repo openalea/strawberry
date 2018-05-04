@@ -257,7 +257,7 @@ ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	S
 ^<bt									19																					
 /P				Topmodel March	11/05/2016	05/08/2016	Nils	81	3																					
 /T																														
-^<F										Unifoliate					6.72			8.98			42.77								8.73	
+^/F										Unifoliate					6.72			8.98			42.77								8.73	
 	+A																													
 	^/bt																													
 ^<F										Unifoliate					10.21			12.48			92.59								22.2	
@@ -546,7 +546,7 @@ ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	S
 ^<bt									17																					
 /P				Topmodel March	11/05/2016	13/07/2016	Nils	184	3																					
 /T																														
-^<F										Unifoliate					5.76			8.41			34.16								7.85	
+^/F										Unifoliate					5.76			8.41			34.16								7.85	
 	+A																													
 	^/bt																													
 ^<F										Unifoliate					10.92			13.46			102.64								17.24	
