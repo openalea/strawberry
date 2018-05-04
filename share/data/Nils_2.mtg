@@ -40,9 +40,9 @@ PETLG	REAL # mm petiole lenght
 LFTLG_RIGHT	REAL # mm Right leaflet length																												
 LFTLG_CENTRAL	REAL # mm Central leaflet length																												
 LFTLG_LEFT	REAL # mm Left leaflet length																												
-LFTWD_RIGHT	"REAL # mm Right leaflet width																										
+LFTWD_RIGHT	REAL # mm Right leaflet width																										
 LFTWD_CENTRAL	REAL # mm Central leaflet width																										
-LFTWD_LEFT	"REAL # mm Left leaflet width																											
+LFTWD_LEFT	REAL # mm Left leaflet width																											
 LFTAR_RIGHT	REAL # mm2 Right Leaflet area 																												
 LFTAR_CENTRAL	REAL # mm2 Central Leaflet area																												
 LFTAR_LEFT	REAL # mm2 Left Leaflet area																												
