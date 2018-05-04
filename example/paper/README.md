@@ -7,7 +7,7 @@ MTG_protocol.ipynb
 ### TODO
 - Problem :
     * OK: New common index ok for octoploid,
-    * FAIL : Unable to read the MTG: Nils_2.mtg (test...)
+    * OK : Unable to read the MTG: Nils_2.mtg (test...)
 
 - TODO:
     * Add properties : Computation of some new properties (eg leaflet_area), leaf area or keep manually
