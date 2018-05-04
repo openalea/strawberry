@@ -29,7 +29,7 @@ T	T	<	1
 FEATURES:
 NAME	TYPE
 
-Experiment_name	SRING
+Experiment_name	STRING
 Sample_date	YYYY-MM-DD
 Architecture_date	YYYY-MM-DD
 Genotype	STRING
