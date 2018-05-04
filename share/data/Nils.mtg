@@ -50,11 +50,7 @@ WRL	REAL	#mm
 diam_mm	REAL # mm
 Stade	STRING
 
-
-
-
-
-
+MTG:
 ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant	Foliar_type	Stade	comment	lenght	ALL	ACL	ARL	HLL	HCL	HRL	WLL	WCL	WRL
 /P				Topmodel March	2016-05-11	2016-07-20	Nils	3		3											
 /T																					
