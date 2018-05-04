@@ -33,7 +33,7 @@ Architectural_date	DD/MM/YYYY
 Genotype	STRING																												
 Plant_ID	INT																												
 Stade	STRING																												
-Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar					
+Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar																												
 DBI	REAL # mm Collar diameter																												
 INFLOLG	REAL # mm Inflorescence length																												
 PETLG	REAL # mm petiole lenght																												
