@@ -1,61 +1,58 @@
-#																														
-#																														
+#
+#
 CODE:	FORM-A																													
-																														
-																														
+
 CLASSES:																														
-SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION																										
-$ 	0	FREE	FREE	IMPLICIT																										
-P 	1	FREE	FREE	EXPLICIT																										
-T  	2	FREE	FREE	EXPLICIT																										
-A  	2	FREE	FREE	EXPLICIT																										
-F	3	FREE	FREE	EXPLICIT																										
-f	3	FREE	FREE	EXPLICIT																										
-s	3	FREE	FREE	EXPLICIT																										
-bt	3	FREE	FREE	EXPLICIT																										
-ht	3	FREE	FREE	EXPLICIT																										
-HT	3	FREE	FREE	EXPLICIT																										
-																														
-DESCRIPTION :																														
-LEFT	RIGHT	RELTYPE	MAX																											
-A	A	+	?																											
-A	A	<	1																											
-T	T	+	?																											
-T	T	<	1																											
-																														
-																														
-																														
-FEATURES:																														
-NAME	TYPE																													
-Experiment_name	STRING																													
-Sample_date	DD/MM/YYYY																													
-Architecture_date	DD/MM/YYYY																													
-Genotype	STRING																													
-Plant_ID	INT																													
-Stade	STRING																													
-Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar				
-DBI	REAL # mm Collar diameter																													
-INFLOLG	REAL # mm Inflorescence length																													
-PETLG	REAL # mm petiole lenght																													
-LFTLG_RIGHT	REAL # mm Right leaflet length																													
-LFTLG_CENTRAL	REAL # mm Central leaflet length																													
-LFTLG_LEFT	REAL # mm Left leaflet length																													
-LFTWD_RIGHT	REAL # mm Right leaflet width																													
-LFTWD_CENTRAL	REAL # mm Central leaflet width																													
-LFTWD_LEFT	REAL # mm Left leaflet width																													
-LFTAR_RIGHT	REAL # mm2 Right Leaflet area 																													
-LFTAR_CENTRAL	REAL # mm2 Central Leaflet area																													
-LFTAR_LEFT	REAL # mm2 Left Leaflet area																													
-LFAR	REAL # mm2 Total leaf area																													
-FLWRNUMBER	INT # Total flower number																													
-FLWRNUMBER_OPEN	INT # Total opened Flower number																													
-FLWRNUMBER_ABORTED	INT # Total aborted Flower number																													
-FLWRNUMBER_CLOSED	INT # Total closed flower number																													
-SAMPLING	STRING # location of sampling	
+SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION
+$ 	0	FREE	FREE	IMPLICIT
+P 	1	FREE	FREE	EXPLICIT
+T  	2	FREE	FREE	EXPLICIT
+A  	2	FREE	FREE	EXPLICIT
+F	3	FREE	FREE	EXPLICIT
+f	3	FREE	FREE	EXPLICIT
+s	3	FREE	FREE	EXPLICIT
+bt	3	FREE	FREE	EXPLICIT
+ht	3	FREE	FREE	EXPLICIT
+HT	3	FREE	FREE	EXPLICIT
+
+DESCRIPTION :
+LEFT	RIGHT	RELTYPE	MAX
+A	A	+	?
+A	A	<	1
+T	T	+	?
+T	T	<	1
+
+FEATURES:
+NAME	TYPE
+Experiment_name	STRING
+Sample_date	DD/MM/YYYY
+Architecture_date	DD/MM/YYYY
+Genotype	STRING
+Plant_ID	INT
+Stade	STRING
+Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar
+DBI	REAL # mm Collar diameter
+INFLOLG	REAL # mm Inflorescence length
+PETLG	REAL # mm petiole lenght
+LFTLG_RIGHT	REAL # mm Right leaflet length
+LFTLG_CENTRAL	REAL # mm Central leaflet length
+LFTLG_LEFT	REAL # mm Left leaflet length
+LFTWD_RIGHT	REAL # mm Right leaflet width
+LFTWD_CENTRAL	REAL # mm Central leaflet width
+LFTWD_LEFT	REAL # mm Left leaflet width
+LFTAR_RIGHT	REAL # mm2 Right Leaflet area
+LFTAR_CENTRAL	REAL # mm2 Central Leaflet area
+LFTAR_LEFT	REAL # mm2 Left Leaflet area
+LFAR	REAL # mm2 Total leaf area
+FLWRNUMBER	INT # Total flower number
+FLWRNUMBER_OPEN	INT # Total opened Flower number
+FLWRNUMBER_ABORTED	INT # Total aborted Flower number
+FLWRNUMBER_CLOSED	INT # Total closed flower number
+SAMPLING	STRING # location of sampling
 lenght REAL																												
-COMMENT	STRING																													
-																														
-MTG:																														
+COMMENT	STRING
+
+MTG:
 ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	Stade	Foliar_type	DBI	INFLOLG	PETLG	LFTLG_LEFT	LFTLG_CENTRAL	LFTLG_RIGHT	LFTWD_LEFT	LFTWD_CENTRAL	LFTWD_RIGHT	LFTAR_LEFT	LFTAR_CENTRAL	LFTAR_RIGHT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	lenght	COMMENT
 /P				Topmodel March	11/05/2016	20/07/2016	Nils	3	3																					
 /T																														
