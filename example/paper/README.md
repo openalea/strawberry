@@ -1,6 +1,11 @@
 # Notebooks and Rmd for strawberry analysis and visualisation
 
 ## Reading and extract data from MTG
+- New information: In order to import and read MTG, I (Marc) Create a new ipynb name: 0-MTG Reader.ipynb 
+This script features importing MTG diploid data and octoploids made the last time in XXX.
+to which I added a function to realize a big_mtg (union of all the mtg octoploids) to allow a meta-analysis.
+
+[Hint: So I think we will be able after verification clear the notebook XXX]
 
 1_MTG_protocol.ipynb
 
