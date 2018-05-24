@@ -31,7 +31,7 @@ add new variable like petiol lenght, leaf area ect...
 Rscripts
 Z:\G1\Fraise\Marc-Labadie\R\R-users\FraFlo\Script\Architecture analysis
 
-*mean_plant_selection_170427.R, this selection was perform on the extraction of sequence according module non overlapping.
+* mean_plant_selection_170427.R, this selection was perform on the extraction of sequence according module non overlapping.
 	- [Hint: Selection of the most central individual no generalize i don't know if this funtion is extendible]
 
 * Architecture sequence analysis-scriptpropre.R. This script allows to represent the number of flower, leaves,ect by order and realize linear regression in order to identify from which order we obtain a stationarity of the number of flowers, leave ect.
