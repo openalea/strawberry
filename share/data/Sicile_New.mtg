@@ -232,7 +232,7 @@ ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	S
 ^<F										Trifoliate			36.938	17.73	21.467	18.602	13.837	13.131	13.841	172.293	124.619	183.036								ACL cutted
 	+A																													
 	^/bt																													
-^<F										Trifoliate			41.528	17.461	18,,491	16.048	12.618	13.496	11.217	153.538	150.711	126.358								
+^<F										Trifoliate			41.528	17.461	18.491	16.048	12.618	13.496	11.217	153.538	150.711	126.358								
 	+A																													
 	^/bt																													
 ^<f										Primordia foliar																				
@@ -840,7 +840,7 @@ ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	S
 ^<F										Trifoliate			18.658	12.092	15.143	11.513	8.632	10.485	8.594	70.942	104.452	64.327								
 	+A																													
 	^/bt																													
-^<F										Trifoliate			30.468	17.039	20.277	16.329	11.208	14,,922	11.914	134.42	191.839	137.884								
+^<F										Trifoliate			30.468	17.039	20.277	16.329	11.208	14.922	11.914	134.42	191.839	137.884								
 	+A																													
 	^/bt																													
 ^<F										Trifoliate			37.993	18.682	22.131	19.826	12.657	15.904	12.333	160.424	215.021	164.352								
