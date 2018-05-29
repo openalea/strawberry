@@ -88,8 +88,8 @@ def Inflorescence(g, vid, turtle):
     nid = g.node(vid)
     order = nid.order
     #turtle.setColor(3)
-    nb_flower = nid.Fleurs_total
-    nb_flower_open = nid.Fleurs_ouverte
+    nb_flower = nid.FLWRNUMBER
+    nb_flower_open = nid.FLWRNUMBER_OPEN
 
     t.setColor(2+order)
     turtle.F(0.2)
