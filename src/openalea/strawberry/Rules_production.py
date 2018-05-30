@@ -152,7 +152,12 @@ def Stolon(g, vid, turtle):
         turtle.customGeometry(stolon)
 
 def get_symbols():
-    geoms = dict(F=Phytomer, HT=Inflorescence, bt=TerminalBud, f=Phytomer_Primordia, ht=Inflo_Primordia, s=Stolon) # dictionnary for all rules production
+    geoms = dict(F=Phytomer,
+                 HT=Inflorescence,
+                 bt=TerminalBud,
+                 f=Phytomer_Primordia,
+                 ht=Inflo_Primordia,
+                 s=Stolon) # dictionnary for all rules production
     return geoms
 
 ## Colors rules
