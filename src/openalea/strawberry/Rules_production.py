@@ -10,12 +10,12 @@ VISIBLE = False
 WITHOUT_LEAF = False
 position = (0,0,0)
 
-## Rules of production
+# Rules of production for 3D visualisation
 
-# 1. Phyllotaxie
+## 1. Phyllotaxie
 roll_angle = 360.*2./5.
 
-# 2.Phytomer
+## 2.Phytomer
 def leaflet(length=1., width=1.):
     disc = pgl.Translated((-0.5,0,0), pgl.Disc())
     disc = pgl.Scaled((length, width,1), disc)
@@ -78,7 +78,7 @@ def Phytomer_Primordia(g, vid, turtle):
         t.pop()
 
 
-# 3. Inflorescence
+## 3. Inflorescence
 
 def Inflorescence(g, vid, turtle):
     """ HT: Inflorescence
@@ -114,7 +114,7 @@ def Inflo_Primordia(g, vid, turtle):
     cube = pgl.Box(0.02*pgl.Vector3(1,1,1))
     turtle.customGeometry(cube)
 
-# 4. Terminal Bud
+## 4. Terminal Bud
 
 def TerminalBud(g, vid, turtle):
     """ bt: Terminal Bud.
@@ -129,7 +129,7 @@ def TerminalBud(g, vid, turtle):
     sphere = pgl.Sphere(radius=0.02)
     turtle.customGeometry(sphere)
 
-# 5. Stolon
+## 5. Stolon
 
 def stolon_curve(scale=1.):
     v2 = pgl.Vector3
@@ -228,4 +228,3 @@ def color_code(g):
                     nid.color = (0, 127+127/(len(stades)-1)*(i),255)
                 else:
                     nid.color = (153, 102, 51)
-
