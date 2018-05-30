@@ -225,6 +225,7 @@ def graph_layout(g):
 
 def my_visitor(g, v, turtle, time=0):
     turtle.setWidth(0.01)
+    t = turtle
     nid = g.node(v)
     label = g.label(v)
     draw_it = nid.drawable
@@ -284,7 +285,7 @@ def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100]):
     max_scale = g.max_scale()
     color_code(g)
     drawable(g)
-    branch_ratio(g)
+    graph_layout(g)
 
     for i, rid in enumerate(vids):
         t = PglTurtle()
@@ -300,5 +301,5 @@ def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100]):
                 scene.add(sh)
         position.x += dist[i]
 
-    Viewer.display(scene))
+    Viewer.display(scene)
 
