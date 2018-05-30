@@ -51,6 +51,7 @@ def _plant_variables(g):
     plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
     plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
     plant_variables['stolons']= nb_stolons
+    return plant_variables
 
 
 
