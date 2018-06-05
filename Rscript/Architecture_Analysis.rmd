@@ -1,0 +1,12 @@
+---
+title: "Architecture_analysis"
+author: "Marc LABADIE"
+date: "5 juin 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
