@@ -7,7 +7,7 @@ from math import radians
 
 #Properties
 VISIBLE = False
-WITHOUT_LEAF = False
+WITHOUT_LEAF = True
 position = (0,0,0)
 
 # Rules of production for 3D visualisation

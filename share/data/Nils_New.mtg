@@ -3080,7 +3080,7 @@ ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	S
 	^/F									Trifoliate non developped																			18.77	
 		+A																												
 		^/bt																												
-	^/f									Primodia foliar																				
+	^<f									Primodia foliar																				
 		+A																												
 		^/bt																												
 	^<ht								E																					
@@ -3524,7 +3524,7 @@ ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	S
 	^/F									Trifoliate non developped																			53.68	
 		+A																												
 		^/bt																												
-	^/f									Primordia foliar																				
+	^<f									Primordia foliar																				
 		+A																												
 		^/bt																												
 	^<ht								D																					

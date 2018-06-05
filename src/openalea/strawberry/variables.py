@@ -50,13 +50,55 @@ def _plant_variables(g):
     plant_variables = OrderedDict()
     plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
     plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
-    plant_variables['stolons']= nb_stolons
+    plant_variables['nb_stolons']= nb_stolons
     return plant_variables
 
 
 
 ###############################################################################
+def extract_at_module_scale(g, convert=convert):
 
+    orders = algo.orders(g,scale=2)
+
+    module_variables=_module_variables(g)
+    plant_ids = g.vertices(scale=1)
+    visible_modules(g)
+
+    plant_df = OrderedDict()
+    # for name in ('Genotype', 'date', 'plant','order'):
+    #     plant_df[name] = [plant_variables[name](pid) for pid in plant_ids]
+    plant_df['Genotype'] = [genotype(pid, g) for pid in plant_ids]
+    plant_df['date'] = [date(pid, g) for pid in plant_ids]
+    plant_df['plant'] = [plant(pid, g) for pid in plant_ids]
+
+    visibles = property(g, 'visible')
+    plant_df['order'] = [orders[v] for v in g.complex_at_scale(pid,scale=2) if v in visibles for pid in plant_ids]
+
+    for name in (module_variables):
+        f = module_variables[name]
+        plant_df[name] = [sum(f(v, g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
+
+    df = pd.DataFrame(plant_df)
+    return df
+
+def _module_variables(g):
+    module_variables = OrderedDict()
+    module_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille developpe
+    module_variables['nb_foliar_primordia'] = nb_foliar_primordia #Nombre de primordia foliaire
+    module_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
+    module_variables['nb_open_flowers'] = nb_open_flowers #Nombre de fleurs ouverte
+    module_variables['nb_aborted_flowers'] = nb_aborted_flowers #Nombre de fleurs avorte
+    module_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
+    module_variables['nb_vegetative_bud'] = nb_vegetative_buds
+    module_variables['nb_Initiated_bud']= nb_initiated_buds
+    module_variables['nb_floral_bud']= nb_floral_buds
+    module_variables['nb_stolons']= nb_stolons
+    module_variables['type_of_crown'] = type_of_crown # Type de crowns (Primary Crown:1, Branch crown:2 extension crown:3)
+    module_variables['Crown_status'] = Crown_status
+    return module_variables
+
+
+################################################################################
 def visible_modules(g):
     modules =  [v for v in g.vertices_iter(scale=2)
                   if g.label(g.component_roots_iter(v).next()) == 'F']
@@ -224,3 +266,4 @@ def date(vid, g):
     cpx = g.complex_at_scale(vid, scale=1)
     _date = property(g, 'date')[cpx]
     return(_date)
+

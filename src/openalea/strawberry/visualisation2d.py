@@ -131,7 +131,7 @@ def type_of_crown(vid, g):
             return 3
         else:
             # ERROR !!!
-            print g[cid], g[g.complex_at_scale(cid, scale=1)]
+           # print g[cid], g[g.complex_at_scale(cid, scale=1)]
             return 4
 
 def drawable(g):
@@ -248,7 +248,7 @@ def my_visitor(g, v, turtle, time=0):
             else:
                 angle = 90.
                 length = 1.5 * branch_ratio
-                print 'v:%d, length:%d'%(v, branch_ratio)
+             #   print 'v:%d, length:%d'%(v, branch_ratio)
 
             turtle.down(angle)
             turtle.F(length)
