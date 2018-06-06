@@ -2,7 +2,27 @@
 title: "Architecture_analysis"
 author: "Marc LABADIE"
 date: "5 juin 2018"
-output: html_document
+output:
+  html_document:
+    df_print: kable
+    fig_caption: yes
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 4
+  pdf_document:
+    fig_caption: yes
+    fig_crop: no
+    keep_tex: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 4
+  word_document:
+    toc: yes
+    toc_depth: 4
+    fig_caption: yes
+    df_print: kable
+geometry: margin= 2cm
 ---
 
 ```{r setup, include=FALSE}
@@ -52,25 +72,25 @@ source(file = "c:/Users/mlabadie/Documents/GitHub/strawberry/Rscript/Functions.R
 
 ##Import dataset
 
-INDEX_PARAMETER : TIME   # vertex_id
+**INDEX_PARAMETER :** TIME   # vertex_id
 
-15 VARIABLES
+**15 VARIABLES:**
 
-VARIABLE 1 : INT  # nb_visible_leaves. No. elongated leaves (F)
-VARIABLE 2 : INT  # nb_foliar_primordia No. primordia (f)
-VARIABLE 3 : INT  # nb_total_leaves. Total no. leaves (F+f)
-VARIABLE 4 : INT  # nb_open_flowers. No. open flowers
-VARIABLE 5 : INT  # nb_aborted_flowers No. aborted flowers
-VARIABLE 6 : INT  # nb_total_flowers Total no. flowers 
-VARIABLE 7 : INT  # vegetative_bud. No. vegetative buds (axillary vegetative bud)
-VARIABLE 8 : INT  # Initiated_bud. No. initiated bud (axillary initiated bud)
-VARIABLE 9 : INT  # floral_bud. No. floral buds (axillary floral bud)
-VARIABLE 10 : INT  # stolons No. stolons
-VARIABLE 11 : INT  # type_of_crown. Type of crown (1: primary crown, 2: extention crowns, 3: branch crown)
-VARIABLE 12 : INT  # Crown_status (1: Terminal Vegetative bud (bt, stage 17, 18, 19, None), 2:Terminal bud initiated (bt, stage A), 3: Terminal floral bud(ht), 4: Inflorescence(HT), -1: rotten or aborded)
-VARIABLE 13 : INT  # genotype (1: Gariguette, 2: Ciflorette, 3: Clery, 4: Capriss, 5:Darselect, 6: Cir107)
-VARIABLE 14 : INT  # date (1: mid December, 2: early Junuary, 3: mid February, 4: early March, 5: early April, 6: end May/early June)
-VARIABLE 15 : INT  # plant. plant index
+- VARIABLE 1 : INT  # nb_visible_leaves. No. elongated leaves (F)
+- VARIABLE 2 : INT  # nb_foliar_primordia No. primordia (f)
+- VARIABLE 3 : INT  # nb_total_leaves. Total no. leaves (F+f)
+- VARIABLE 4 : INT  # nb_open_flowers. No. open flowers
+- VARIABLE 5 : INT  # nb_aborted_flowers No. aborted flowers
+- VARIABLE 6 : INT  # nb_total_flowers Total no. flowers 
+- VARIABLE 7 : INT  # vegetative_bud. No. vegetative buds (axillary vegetative bud)
+- VARIABLE 8 : INT  # Initiated_bud. No. initiated bud (axillary initiated bud)
+- VARIABLE 9 : INT  # floral_bud. No. floral buds (axillary floral bud)
+- VARIABLE 10 : INT  # stolons No. stolons
+- VARIABLE 11 : INT  # type_of_crown. Type of crown (1: primary crown, 2: extention crowns, 3: branch crown)
+- VARIABLE 12 : INT  # Crown_status (1: Terminal Vegetative bud (bt, stage 17, 18, 19, None), 2:Terminal bud initiated (bt, stage A), 3: Terminal floral bud(ht), 4: Inflorescence(HT), -1: rotten or aborded)
+- VARIABLE 13 : INT  # genotype (1: Gariguette, 2: Ciflorette, 3: Clery, 4: Capriss, 5:Darselect, 6: Cir107)
+- VARIABLE 14 : INT  # date (1: mid December, 2: early Junuary, 3: mid February, 4: early March, 5: early April, 6: end May/early June)
+- VARIABLE 15 : INT  # plant. plant index
 
 ```{r Import dataset}
 DataSet <- read.csv(
@@ -84,6 +104,7 @@ data<-DataSet[,c(colstart:colend)]
 ```
 
 ## Dataset Class Object
+
 ```{r Dataset Class Object}
 str(object = data)
 ```
@@ -167,9 +188,13 @@ dat$Index<-as.factor(x = dat$Index)
 
 # Exploratory analysis
 
+## At plant scale
+
+
 ## At module scale
 
-** * Extraction of data at module scale **
+** Extraction of data at module scale **
+
 ```{r Extraction of data at module scale}
 data_at_module_scale<-ddply(.data = dat,
                             .variables = c("genotype","Index"),
@@ -204,6 +229,9 @@ kable(x = tab1,
 ```
 
 ### Occurence of the higher order along time
+
+- Table of distribution of higher order along time
+
 ```{r Occurence of the higher order along time}
 tab2<- fc_dist_order_by_date(data = dat,
                              genotype = "Gariguette",
@@ -212,56 +240,35 @@ kable(x = tab2,
       caption = "Module order frequency distribution for successive date",digits = 2)
 ```
 
-```{r}
-tab2<- data.frame(tab2)
-ggplot(data = tab2,
-       mapping = aes(x = Var1,
-                     y = Freq,
-                     group=Var2)
-       )+
-  geom_line(aes(color=Var2))+
-  geom_point(aes(color=Var2))+
-  xlab("Orders")+
-  ylab("Probability")+
-  guides(color= guide_legend(title = "Date"))+
-  scale_y_continuous(expand = c(0,0))+
-  scale_x_discrete(expand = c(0,0))+
-  theme_bw(base_size = 12,base_family = "Times")
- 
+- Plot visualization of distribution of higher order along time
+
+```{r Plot Module order frequency distribution for successive date, fig.cap="Module order frequency distribution for successive date"}
+fc_dist_order_by_date.plot(data=tab2)+
+  geom_hline(yintercept = 0.9,linetype="dashed")
 ```
 
-```{r}
-t<-table(dat[dat[,"genotype"]=="Gariguette",][,"Index"],
-          dat[dat[,"genotype"]=="Gariguette",][,"date"])
+### Cumulative distribution of one varname for each module order
 
-t<-prop.table(t,2)
-  
-#t$freq<- margin.table(x = t,margin = 1)
-```
+- Table of distribution of one varname according to module orders 
 
-```{r}
-test<-data.frame(matrix(data = t,nrow = nrow(t),ncol = ncol(t)))
-colnames(test)<- levels(x = dat$date)
-row.names(test)<- c(levels(x = dat$Index))
+```{r Cumulative distribution of one varname for each module order}
+tab3<-fc_dist_variable_by_order(data = dat,genotype = "Gariguette",varname = "nb_total_leaves",prob = F)
 
-
-
-d<-data.frame(matrix(nrow=nrow(test),ncol = ncol(test)))
-colnames(d)<-colnames(test)
-row.names(d)<-row.names(test)
-d[1,]<-test[1,]
-for (j in 1:ncol(d)){
-  for (i in 2:nrow(d)){
-    res<-d[i,j]<-d[i-1,j]+test[i,j]
-    if(res==1){
-      break
-    }
-  }
-}
+kable(x = tab3, 
+      caption = "Cumulative distribution of total no. leaves by orders",digits = 2)
 
 ```
 
+- Visualization of distribution of varname according to module orders
+
 ```{r}
-colSums(test)
+fc_dist_variable_by_order.plot(data = tab3)
 ```
+
+```{r}
+fc_dist_order_by_date.plot(data = tab3)
+```
+
+
+
 
