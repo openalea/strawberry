@@ -1,0 +1,380 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"c",
+				"complex_at_scale"
+			],
+			[
+				"_",
+				"_module_variables"
+			],
+			[
+				"module",
+				"module_variables"
+			],
+			[
+				"mo",
+				"module_variables"
+			],
+			[
+				"plant_",
+				"plant_ids"
+			],
+			[
+				"M",
+				"Model"
+			],
+			[
+				"v",
+				"varieties"
+			],
+			[
+				"ge",
+				"geoms"
+			],
+			[
+				"T",
+				"TerminalBud"
+			],
+			[
+				"U",
+				"Unifoliate"
+			],
+			[
+				"Terminal",
+				"TerminalBud"
+			],
+			[
+				"Termina",
+				"TerminalBud"
+			],
+			[
+				"pr",
+				"prelevement"
+			],
+			[
+				"P",
+				"pgl"
+			],
+			[
+				"roll",
+				"roll_angle"
+			],
+			[
+				"visual",
+				"visualise_plants"
+			],
+			[
+				"visua",
+				"visualise_plants"
+			],
+			[
+				"colo",
+				"color_code"
+			],
+			[
+				"comple",
+				"complex_at_scale"
+			],
+			[
+				"prop",
+				"property"
+			],
+			[
+				"pro",
+				"props_v"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 490.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 609.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Capriss_New.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/Rscript/strawberry_archi_module_nonoverlaping_path.seq",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/TopModel/Reine_des_Vallees.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/src/openalea/strawberry/analysis.py",
+		"/Z/G1/Fraise/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/2017_04_14_strawberry_archi_module_nonoverlapping_path.seq",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/src/openalea/strawberry/variables.py",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/Rscript/strawberry_archi_module_nonoverlaping_path.txt",
+		"/C/Users/mlabadie/AppData/Local/conda/conda/pkgs/urls.txt",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Gariguette_NEW.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Nils_New.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/Rscript/Function/functions.R",
+		"/Z/G1/Fraise/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Architecture Fraflo.txt",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/src/openalea/strawberry/Rules_production.py",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/src/openalea/strawberry/Visualization.py",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/src/openalea/strawberry/visualisation2d.py",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Ciflorette_New.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Sicile_New.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Nils_2.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Clery_New.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Cir107_NEW.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Darselect_New.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Darselect.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Cir107.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Clery.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Ciflorette.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Capriss.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Gariguette.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Gariguette_2.mtg",
+		"/C/Users/mlabadie/Downloads/strawberry_flower_leaf_stolon_result (11).txt",
+		"/Z/G1/FRAISE/Marc-Labadie/2014_2015_Projet FraFlo/Resultats/Result architecture analysis.txt",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/example/paper/2_Sequence_Analysis.ipynb",
+		"/C/Users/mlabadie/Documents/GitHub/Rscript/Strawberry/Phenological Study/Script/README.md",
+		"/C/Users/mlabadie/Documents/GitHub/Rscript/README.md",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/share/data/Nils.mtg",
+		"/C/Users/mlabadie/Downloads/strawberry_flower_leaf_stolon_result (10).txt",
+		"/C/Users/mlabadie/Documents/GitHub/Rscript/Strawberry/Phenological Study/Script/.Rhistory",
+		"/C/Users/mlabadie/AppData/Local/Continuum/miniconda2/envs/strawberry/Lib/site-packages/openalea.mtg-2.0.1-py2.7.egg/openalea/mtg/io.py",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/example/paper/README.md",
+		"/Z/G1/Fraise/Marc-Labadie/R/R-users/FraFlo/Script/Architecture analysis/Architecture sequence analysis-scriptpropre.R",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/Index codification.txt",
+		"/C/Users/mlabadie/.conda/environments.txt",
+		"/Z/G1/Fraise/Marc-Labadie/2014_2015_Projet FraFlo/Phenotypage/strawberry_flower_leaf_stolon_result.txt",
+		"/C/Users/mlabadie/Documents/GitHub/Rscript/Strawberry/Phenological Study/Script/Strawberry_phenological_analysis.tex",
+		"/C/Users/mlabadie/Documents/GitHub/Rscript/Strawberry/Phenological Study/Script/Strawberry_phenological_analysis.log",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/Ciflorette.mtg",
+		"/C/Users/mlabadie/Documents/GitHub/strawberry/conda/meta.yaml",
+		"/C/Users/mlabadie/Downloads/base_4fa118ae7d6ec1abfbcb23448ffd4558bee9b57e3e12c31af528fe0ef42e9832.mrc",
+		"/Z/G1/FRAISE/Marc-Labadie/Article Phenologie/Phenology/.Rhistory",
+		"/Z/G1/Fraise/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/strawberry_archi_module_nonoverlaping_path_end.seq",
+		"/C/Users/mlabadie/Downloads/strawberry_flower_leaf_stolon_result (8).txt",
+		"/C/Users/mlabadie/Downloads/strawberry_flower_leaf_stolon_result (7).txt",
+		"/C/Users/mlabadie/Downloads/10.2307_2440994.txt",
+		"/C/Users/mlabadie/Downloads/10.2307_2435912.txt",
+		"/C/Users/mlabadie/Downloads/strawberry_flower_leaf_stolon_result (6).txt",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/Cir107.mtg",
+		"/C/Users/mlabadie/AppData/Roaming/Microsoft/Windows/Recent/Architecture sequence analysis-scriptpropre2.lnk",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/Gariguette.mtg",
+		"//nnaeic04-2/databfp$/G1/Marc-Labadie/2014_2015_Projet FraFlo/Resultats/Architecture/Selection of the most central plant.txt",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/Clery.mtg",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/Capriss.mtg",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_nonoverlapping_path (2).seq",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/strawberry_archi_module_overlaping_path_end.seq",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/strawberry_archi_module_nonoverlaping_path_end.seq",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Resultats/Architecture/Selection of the most central plant.txt",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/Darselect.mtg",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Architecture MTG/Gariguette.mtg",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Resultats/Model/2016_11_17_strawberry_flower_leaf_stolon_result_end.txt",
+		"/Z/G1/Marc-Labadie/Python/strawberry/src/strawberry/Rules_production.py",
+		"/Z/G1/Marc-Labadie/Python/strawberry/src/strawberry/Visualization.py",
+		"/C/Users/mlabadie/Downloads/strawberry_flower_leaf_stolon_result (5).txt",
+		"/Z/G1/Marc-Labadie/1-Redaction/exemple de notation architecture fraisier",
+		"//nnaeic04-2/databfp$/G1/Marc-Labadie/Python/strawberry/share/data/Gariguette.mtg",
+		"/Z/G1/Marc-Labadie/Python/strawberry/src/strawberry/Visualization_Plantule.py",
+		"/C/Users/mlabadie/Downloads/SavedRecords-FullRecord.txt",
+		"/C/Users/mlabadie/AppData/Local/Temp/Denoyes_ib16_AAPStarter_Centre_Codique_v6.docx",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/2017_03_28_strawberry_archi_module_axes.seq",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/Internod sequence analysis/strawberry_archi_node_trunk_path.seq",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/2017_04_14_strawberry_archi_module_nonoverlapping_path.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/src/strawberry/variables.py",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/strawberry_archi_node_trunk_path.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/TopModel/NIL.mtg",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/strawberry_archi_module_nonoverlaping_path.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/Nils2.63.39.mtg",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/strawberry_archi_module_nonoverlaping_path.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/src/strawberry/variables",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/strawberry_archi_module_overlaping_path.seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_nonoverlaping_path_end.seq",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/strawberry_archi_module_overlaping_path.seq",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/strawberry_archi_module_overlaping_path (2).seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_nonoverlaping_path (2).seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_overlaping_path (2).seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_overlaping_path (1).seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_nonoverlaping_path (1).seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_overlaping_path.seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_overlapping_path.seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_nonoverlaping_path.seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_nonoverlapping_path (1).seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_overlapping_path (3).seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_overlapping_path (2).seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_overlapping_path (1).seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/strawberry_archi_module_nooverlaping.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/strawberry_archi_module_cheminrecouvrant.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/strawberry_archi_module_apparant_axis.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/src/strawberry/analysis.py",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_nonoverlapping_path.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/strawberry_archi_module_axes.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/strawberry_archi_module_recouvrant_CP.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/strawberry_archi_module_extremities.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/src/strawberry/Rules_production.pyc",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/Sequence Analysis Marc.ipynb",
+		"/Z/G1/Marc-Labadie/Python/strawberry/example/strawberry_archi_module_axes_CP.seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/src/strawberry/Strawberry_module_extraction.py",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/2017_03_29_Strawberry_archi_module_extremities.seq",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/2017_03_28_strawberry_archi_module_axes_end.seq",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/strawberry_archi_module_extremities.seq",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Architecture/Sequence analysis/2017_03_28_strawberry_archi_module_extremities.seq",
+		"/C/Users/mlabadie/Downloads/strawberry_flower_leaf_stolon_day.seq",
+		"/C/Users/mlabadie/Downloads/pearl_millet_lateral_root_cinetic.seq",
+		"/C/Users/mlabadie/Downloads/strawberry_archi_module_extremities (3).seq",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/Reine des Vallées.mtg",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/Sicile.mtg",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/NIL.mtg",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Resultats/Model/2016_11_30_strawberry_flower_leaf_stolon_result.txt",
+		"/Z/G1/Marc-Labadie/2014_2015_Projet FraFlo/Meteo/PAR du 13-01-2015 to 09-09-2015.txt",
+		"/C/Users/mlabadie/Desktop/Rules_production.pdf",
+		"/C/Users/mlabadie/Desktop/StrawberryLeafThresholding/StrawberryLeafThresholding/leaf_adaptive_thresholding.py",
+		"/Z/G1/Marc-Labadie/Python/strawberry/src/strawberry/Rules_production_Plantule.py",
+		"/Z/G1/Marc-Labadie/Python/strawberry/share/data/Nils2.63.39"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "strawberry_archi_module_nonoverlaping_path.sublime-project",
+	"replace":
+	{
+		"height": 63.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 170.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}

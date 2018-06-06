@@ -184,6 +184,8 @@ for (i in 1:nrow(data)){
 }
 
 dat$Index<-as.factor(x = dat$Index)
+
+kable(x = dat,digits = 2,caption = "Data extract from MTG")
 ```
 
 # Exploratory analysis
@@ -252,21 +254,122 @@ fc_dist_order_by_date.plot(data=tab2)+
 - Table of distribution of one varname according to module orders 
 
 ```{r Cumulative distribution of one varname for each module order}
-tab3<-fc_dist_variable_by_order(data = dat,genotype = "Gariguette",varname = "nb_total_leaves",prob = F)
+tab3<-fc_dist_variable_by_order(data = dat,genotype = "Gariguette",varname = "nb_total_leaves",prob = "cumulative")
 
 kable(x = tab3, 
       caption = "Cumulative distribution of total no. leaves by orders",digits = 2)
 
 ```
 
-- Visualization of distribution of varname according to module orders
+- Visualization of distribution of varname for each module orders
 
-```{r}
-fc_dist_variable_by_order.plot(data = tab3)
+```{r Plot distribution of one variable for each module orders}
+fc_dist_variable_by_order.plot(data = tab3)+
+  xlab("No. Leaves")+
+  ylab("Cumulative distribution function")
 ```
 
-```{r}
-fc_dist_order_by_date.plot(data = tab3)
+### Variable function of successive orders
+
+In the following architectural analyses, we chose to group the highest-order modules because of the small sample size (cf. tables 1: No. Module by varieties for successive orders).
+
+For this, we used a recursive pooling of samples from the highest prder downward if sample size =< 8
+
+* Build data according group
+
+```{r Group highiest modules orders}
+dat_group<-data[2:colend]
+
+for (i in 1:nrow(data)){ 
+  if (data[i,'Index']=="0"){ 
+    dat_group[i,"Index"]<- 0
+  }else if (data[i,'Index']=="0-1"){
+    dat_group[i,"Index"]<- 1
+  }else if (data[i,'Index']=="0-1-2"){
+    dat_group[i,"Index"]<- 2
+  }else if (data[i,'Index']=="0-1-2-3"){
+    dat_group[i,"Index"]<- 3
+  }else if (data[i,'Index']=="0-1-2-3-4"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="0-1-2-3-4-5"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="1"){
+    dat_group[i,"Index"]<- 1
+  }else if (data[i,'Index']=="1-2"){
+    dat_group[i,"Index"]<- 2
+  }else if (data[i,'Index']=="1-2-3"){
+    dat_group[i,"Index"]<- 3
+  }else if (data[i,'Index']=="1-2-3-4"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="1-2-3-4-5"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="2"){
+    dat_group[i,"Index"]<- 2
+  }else if (data[i,'Index']=="2-3"){
+    dat_group[i,"Index"]<- 3
+  }else if (data[i,'Index']=="2-3-4"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="3"){
+    dat_group[i,"Index"]<- 3
+  }else if (data[i,'Index']=="3-4"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="4"){
+    dat_group[i,"Index"]<- 4
+  }
+}
+
+dat_group$Index<-as.factor(dat_group$Index)
+```
+
+* check that the modules have been well grouped
+
+```{r check that the modules have been well grouped}
+tab4<- fc_dist_module_by_order(data = dat_group)
+kable(x = tab4,caption = "Number of modules for each successive orders after grouping for each varieties")
+```
+
+[**Hint:** Compare tab4 with tab1]
+
+#### Recalculate data_at_module_scale after grouping
+
+```{r Recalculate data_at_module_scale after grouping}
+data_at_module_scale_group<-ddply(.data = dat_group,
+                            .variables = c("genotype","Index"),
+                            summarise,
+                            MeanTotalLeave= round(x = mean(x = nb_total_leaves,
+                                                           na.rm = T),
+                                                  digits = 0),
+                            SdTotalLeave= sd(x = nb_total_leaves,
+                                  na.rm = T),
+                            MeanTotalFlower= round(mean(x = nb_total_flowers,
+                                                        na.rm = T),
+                                                   digits = 0),
+                            SdTotalFlower= sd(x = nb_total_flowers,
+                                              na.rm = T),
+                            MeanStolon= round(mean(x = stolons,
+                                                   na.rm = T),
+                                              digits = 0),
+                            SdStolon= sd(x = stolons,
+                                         na.rm = T),
+                            N=length(nb_total_leaves))
+
+kable(x = data_at_module_scale_group,caption = " Data at module scale after grouping")
+```
+
+#### Pointwise Mean of variable of modules for successive orders for each varieties
+
+```{r Pointwise Mean of variable of modules for successive orders for each varieties}
+ggplot(data = data_at_module_scale_group,
+       mapping = aes(
+         x = Index,
+         y = MeanTotalLeave,
+         group=genotype)
+       )+
+  geom_line(mapping = aes(color=genotype))+
+  geom_point(mapping = aes(color=genotype))+
+  xlab("Order")+
+  ylab("Mean No. leaves")+
+  ylim(0,12)
 ```
 
 

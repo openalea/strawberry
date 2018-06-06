@@ -1,0 +1,516 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin= 2cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Architecture\_analysis},
+            pdfauthor={Marc LABADIE},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Architecture\_analysis}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Marc LABADIE}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{5 juin 2018}
+
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{4}
+\tableofcontents
+}
+\section{Requierements}\label{requierements}
+
+\subsection{Packages install}\label{packages-install}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"plyr"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"gtable"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"grid"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"cowplot"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"reshape2"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"scales"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"knitr"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"tinytex"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\CommentTok{#install.packages("RCurl")}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Packages loading}\label{packages-loading}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(plyr)}
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{library}\NormalTok{(gtable)}
+\KeywordTok{library}\NormalTok{(grid)}
+\KeywordTok{library}\NormalTok{(cowplot)}
+\KeywordTok{library}\NormalTok{(reshape2)}
+\KeywordTok{library}\NormalTok{(scales)}
+\KeywordTok{library}\NormalTok{(knitr)}
+\KeywordTok{library}\NormalTok{(tinytex)}
+\KeywordTok{library}\NormalTok{(dplyr)}
+\CommentTok{#library(RCurl)}
+\KeywordTok{library}\NormalTok{(rmarkdown)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Functions importing}\label{functions-importing}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{source}\NormalTok{(}\DataTypeTok{file =} \StringTok{"c:/Users/mlabadie/Documents/GitHub/strawberry/Rscript/Functions.R"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Import and transformation of
+dataset}\label{import-and-transformation-of-dataset}
+
+\subsection{Import dataset}\label{import-dataset}
+
+INDEX\_PARAMETER : TIME \# vertex\_id
+
+15 VARIABLES
+
+VARIABLE 1 : INT \# nb\_visible\_leaves. No. elongated leaves (F)
+VARIABLE 2 : INT \# nb\_foliar\_primordia No. primordia (f) VARIABLE 3 :
+INT \# nb\_total\_leaves. Total no. leaves (F+f) VARIABLE 4 : INT \#
+nb\_open\_flowers. No. open flowers VARIABLE 5 : INT \#
+nb\_aborted\_flowers No. aborted flowers VARIABLE 6 : INT \#
+nb\_total\_flowers Total no. flowers VARIABLE 7 : INT \#
+vegetative\_bud. No. vegetative buds (axillary vegetative bud) VARIABLE
+8 : INT \# Initiated\_bud. No. initiated bud (axillary initiated bud)
+VARIABLE 9 : INT \# floral\_bud. No. floral buds (axillary floral bud)
+VARIABLE 10 : INT \# stolons No. stolons VARIABLE 11 : INT \#
+type\_of\_crown. Type of crown (1: primary crown, 2: extention crowns,
+3: branch crown) VARIABLE 12 : INT \# Crown\_status (1: Terminal
+Vegetative bud (bt, stage 17, 18, 19, None), 2:Terminal bud initiated
+(bt, stage A), 3: Terminal floral bud(ht), 4: Inflorescence(HT), -1:
+rotten or aborded) VARIABLE 13 : INT \# genotype (1: Gariguette, 2:
+Ciflorette, 3: Clery, 4: Capriss, 5:Darselect, 6: Cir107) VARIABLE 14 :
+INT \# date (1: mid December, 2: early Junuary, 3: mid February, 4:
+early March, 5: early April, 6: end May/early June) VARIABLE 15 : INT \#
+plant. plant index
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DataSet <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}
+  \StringTok{"c:/Users/mlabadie/Documents/GitHub/strawberry/Rscript/Dataset.csv"}\NormalTok{, }
+  \DataTypeTok{sep=}\StringTok{";"}\NormalTok{,}\DataTypeTok{na.strings =} \StringTok{"-1"}\NormalTok{)}
+
+\NormalTok{colstart<-}\DecValTok{1}
+\NormalTok{colend<-}\KeywordTok{dim}\NormalTok{(DataSet)[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\DecValTok{2}
+
+\NormalTok{data<-DataSet[,}\KeywordTok{c}\NormalTok{(colstart}\OperatorTok{:}\NormalTok{colend)]}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Dataset Class Object}\label{dataset-class-object}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str}\NormalTok{(}\DataTypeTok{object =}\NormalTok{ data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    1796 obs. of  16 variables:
+##  $ Index              : Factor w/ 17 levels "0","0-1","0-1-2",..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ nb_visible_leaves  : int  8 8 11 8 6 7 7 6 7 11 ...
+##  $ nb_foliar_primordia: int  4 4 3 3 4 4 4 3 3 8 ...
+##  $ nb_total_leaves    : int  12 12 14 11 10 11 11 9 10 19 ...
+##  $ nb_open_flowers    : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ nb_aborted_flowers : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ nb_total_flowers   : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ vegetative_bud     : int  1 4 3 6 5 3 7 1 4 3 ...
+##  $ Initiated_bud      : int  3 3 1 0 2 2 1 3 0 2 ...
+##  $ floral_bud         : int  7 4 8 5 2 5 2 4 5 10 ...
+##  $ stolons            : int  1 1 2 0 1 1 1 1 1 1 ...
+##  $ type_of_crown      : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ Crown_status       : int  3 3 3 3 3 3 3 3 3 3 ...
+##  $ genotype           : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ date               : int  1 1 1 1 1 1 1 1 1 2 ...
+##  $ plant              : int  1 2 3 4 5 6 7 8 9 1 ...
+\end{verbatim}
+
+\subsection{Transformation of Class
+object}\label{transformation-of-class-object}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data}\OperatorTok{$}\NormalTok{genotype<-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(data}\OperatorTok{$}\NormalTok{genotype)}
+\NormalTok{data}\OperatorTok{$}\NormalTok{date<-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(DataSet}\OperatorTok{$}\NormalTok{date)}
+\NormalTok{data}\OperatorTok{$}\NormalTok{Crown_status<-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(DataSet}\OperatorTok{$}\NormalTok{Crown_status)}
+\NormalTok{data}\OperatorTok{$}\NormalTok{type_of_crown<-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(DataSet}\OperatorTok{$}\NormalTok{type_of_crown)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Conversion of dataset}\label{conversion-of-dataset}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Convert numerical categorical ordered value in factor values with their properties }
+
+\NormalTok{data}\OperatorTok{$}\NormalTok{genotype<-}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ data}\OperatorTok{$}\NormalTok{genotype,}
+                       \DataTypeTok{levels =} \KeywordTok{levels}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ data}\OperatorTok{$}\NormalTok{genotype),}
+                       \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Gariguette"}\NormalTok{,}\StringTok{"Ciflorette"}\NormalTok{,}\StringTok{"Clery"}\NormalTok{,}\StringTok{"Capriss"}\NormalTok{,}\StringTok{"Darselect"}\NormalTok{,}\StringTok{"Cir107"}\NormalTok{)}
+\NormalTok{                       )}
+
+\NormalTok{data}\OperatorTok{$}\NormalTok{date<-}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ data}\OperatorTok{$}\NormalTok{date,}
+                   \DataTypeTok{levels =} \KeywordTok{levels}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ data}\OperatorTok{$}\NormalTok{date),}
+                   \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Mid-December"}\NormalTok{,}\StringTok{"Early-Junuary"}\NormalTok{,}\StringTok{"Mid-February"}\NormalTok{,}\StringTok{"Early-March"}\NormalTok{,}\StringTok{"Early-April"}\NormalTok{,}\StringTok{"Early-June"}\NormalTok{)}
+\NormalTok{                   )}
+
+\NormalTok{data}\OperatorTok{$}\NormalTok{type_of_crown<-}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ DataSet}\OperatorTok{$}\NormalTok{type_of_crown,}
+                            \DataTypeTok{levels =} \KeywordTok{levels}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ data}\OperatorTok{$}\NormalTok{type_of_crown),}
+                            \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Primary_Crown"}\NormalTok{,}\StringTok{"Extention_Crown"}\NormalTok{,}\StringTok{"Branch_Crown"}\NormalTok{)}
+\NormalTok{                            )}
+\NormalTok{data}\OperatorTok{$}\NormalTok{Crown_status<-}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ data}\OperatorTok{$}\NormalTok{Crown_status,}
+                              \DataTypeTok{levels =} \KeywordTok{levels}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ data}\OperatorTok{$}\NormalTok{Crown_status),}
+                              \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Terminal_Vegetative_bud"}\NormalTok{,}\StringTok{"Terminal_initiated_bud"}\NormalTok{,}\StringTok{"Terminal_Floral_bud"}\NormalTok{,}\StringTok{"Terminal_Inflorescence"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#convert index sequence analysis in index for R analysis}
+\NormalTok{dat<-data[}\DecValTok{2}\OperatorTok{:}\NormalTok{colend]}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(data))\{ }
+  \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"0"}\NormalTok{)\{ }
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{0}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"0-1"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{1}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"0-1-2"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{2}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"0-1-2-3"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{3}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"0-1-2-3-4"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{4}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"0-1-2-3-4-5"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{5}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"1"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{1}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"1-2"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{2}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"1-2-3"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{3}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"1-2-3-4"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{4}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"1-2-3-4-5"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{5}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"2"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{2}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"2-3"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{3}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"2-3-4"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{4}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"3"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{3}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"3-4"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{4}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (data[i,}\StringTok{'Index'}\NormalTok{]}\OperatorTok{==}\StringTok{"4"}\NormalTok{)\{}
+\NormalTok{    dat[i,}\StringTok{"Index"}\NormalTok{]<-}\StringTok{ }\DecValTok{4}
+\NormalTok{  \}}
+\NormalTok{\}}
+
+\NormalTok{dat}\OperatorTok{$}\NormalTok{Index<-}\KeywordTok{as.factor}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ dat}\OperatorTok{$}\NormalTok{Index)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Exploratory analysis}\label{exploratory-analysis}
+
+\subsection{At module scale}\label{at-module-scale}
+
+** * Extraction of data at module scale **
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data_at_module_scale<-}\KeywordTok{ddply}\NormalTok{(}\DataTypeTok{.data =}\NormalTok{ dat,}
+                            \DataTypeTok{.variables =} \KeywordTok{c}\NormalTok{(}\StringTok{"genotype"}\NormalTok{,}\StringTok{"Index"}\NormalTok{),}
+\NormalTok{                            summarise,}
+                            \DataTypeTok{MeanTotalLeave=} \KeywordTok{round}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{mean}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ nb_total_leaves,}
+                                                           \DataTypeTok{na.rm =}\NormalTok{ T),}
+                                                  \DataTypeTok{digits =} \DecValTok{0}\NormalTok{),}
+                            \DataTypeTok{SdTotalLeave=} \KeywordTok{sd}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ nb_total_leaves,}
+                                  \DataTypeTok{na.rm =}\NormalTok{ T),}
+                            \DataTypeTok{MeanTotalFlower=} \KeywordTok{round}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ nb_total_flowers,}
+                                                        \DataTypeTok{na.rm =}\NormalTok{ T),}
+                                                   \DataTypeTok{digits =} \DecValTok{0}\NormalTok{),}
+                            \DataTypeTok{SdTotalFlower=} \KeywordTok{sd}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ nb_total_flowers,}
+                                              \DataTypeTok{na.rm =}\NormalTok{ T),}
+                            \DataTypeTok{MeanStolon=} \KeywordTok{round}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ stolons,}
+                                                   \DataTypeTok{na.rm =}\NormalTok{ T),}
+                                              \DataTypeTok{digits =} \DecValTok{0}\NormalTok{),}
+                            \DataTypeTok{SdStolon=} \KeywordTok{sd}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ stolons,}
+                                         \DataTypeTok{na.rm =}\NormalTok{ T),}
+                            \DataTypeTok{N=}\KeywordTok{length}\NormalTok{(nb_total_leaves))}
+
+\KeywordTok{kable}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ data_at_module_scale,}\DataTypeTok{caption =} \StringTok{" Data at module scale"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}llrrrrrrr@{}}
+\caption{Data at module scale}\tabularnewline
+\toprule
+genotype & Index & MeanTotalLeave & SdTotalLeave & MeanTotalFlower &
+SdTotalFlower & MeanStolon & SdStolon & N\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+genotype & Index & MeanTotalLeave & SdTotalLeave & MeanTotalFlower &
+SdTotalFlower & MeanStolon & SdStolon & N\tabularnewline
+\midrule
+\endhead
+Gariguette & 0 & 10 & 2.3520513 & 14 & 8.690441 & 1 & 0.7523548 &
+54\tabularnewline
+Gariguette & 1 & 3 & 1.2818355 & 7 & 4.365022 & 0 & 0.0000000 &
+94\tabularnewline
+Gariguette & 2 & 4 & 1.5464772 & 4 & 3.869534 & 0 & 0.6455314 &
+62\tabularnewline
+Gariguette & 3 & 3 & 0.5117663 & 4 & 3.269629 & 0 & 0.5606119 &
+21\tabularnewline
+Gariguette & 4 & 3 & 0.4409586 & 5 & 1.166667 & 1 & 0.7817360 &
+9\tabularnewline
+Gariguette & 5 & 3 & NA & 7 & NA & 2 & NA & 1\tabularnewline
+Ciflorette & 0 & 8 & 2.5719554 & 8 & 5.392751 & 1 & 0.9569708 &
+54\tabularnewline
+Ciflorette & 1 & 3 & 0.8956203 & 6 & 3.076745 & 0 & 0.0000000 &
+115\tabularnewline
+Ciflorette & 2 & 4 & 1.0108469 & 3 & 3.215120 & 0 & 0.0000000 &
+78\tabularnewline
+Ciflorette & 3 & 3 & 0.6290460 & 5 & 2.495157 & 1 & 0.8462441 &
+31\tabularnewline
+Ciflorette & 4 & 4 & 1.5434873 & 5 & 3.041381 & 2 & 0.7812132 &
+17\tabularnewline
+Ciflorette & 5 & 5 & 2.3094011 & 3 & 5.196152 & 1 & 0.5773503 &
+3\tabularnewline
+Clery & 0 & 8 & 2.9652070 & 10 & 6.909543 & 2 & 1.2462382 &
+54\tabularnewline
+Clery & 1 & 3 & 1.0363172 & 4 & 3.430427 & 0 & 0.1010153 &
+98\tabularnewline
+Clery & 2 & 3 & 0.7792759 & 2 & 2.378862 & 0 & 0.3461440 &
+63\tabularnewline
+Clery & 3 & 3 & 0.6485965 & 3 & 2.321718 & 0 & 0.6969503 &
+34\tabularnewline
+Clery & 4 & 3 & 0.7703289 & 2 & 2.139375 & 1 & 0.6992932 &
+14\tabularnewline
+Capriss & 0 & 10 & 1.8239229 & 9 & 5.912624 & 2 & 0.9705661 &
+54\tabularnewline
+Capriss & 1 & 3 & 1.0404784 & 3 & 2.321914 & 0 & 0.0000000 &
+190\tabularnewline
+Capriss & 2 & 4 & 0.9443864 & 1 & 1.983821 & 0 & 0.0990148 &
+102\tabularnewline
+Capriss & 3 & 3 & 0.7063460 & 2 & 1.709556 & 0 & 0.4016097 &
+31\tabularnewline
+Capriss & 4 & 2 & 1.0000000 & 1 & 1.154700 & 0 & 0.5000000 &
+4\tabularnewline
+Darselect & 0 & 6 & 2.2875105 & 7 & 6.271880 & 1 & 1.1060156 &
+54\tabularnewline
+Darselect & 1 & 3 & 1.0764669 & 5 & 4.455098 & 0 & 0.1072113 &
+87\tabularnewline
+Darselect & 2 & 3 & 0.9597149 & 4 & 2.263362 & 0 & 0.3422980 &
+57\tabularnewline
+Darselect & 3 & 3 & 0.6803587 & 3 & 2.593462 & 0 & 0.4845800 &
+39\tabularnewline
+Darselect & 4 & 3 & 2.0701967 & 3 & 2.121320 & 1 & 1.0606602 &
+8\tabularnewline
+Darselect & 5 & 2 & NA & 5 & NA & 1 & NA & 1\tabularnewline
+Cir107 & 0 & 10 & 3.2868882 & 10 & 8.522261 & 2 & 1.3282134 &
+54\tabularnewline
+Cir107 & 1 & 4 & 1.6110796 & 6 & 5.063588 & 0 & 0.2543235 &
+154\tabularnewline
+Cir107 & 2 & 3 & 0.9382965 & 3 & 3.698939 & 0 & 0.0000000 &
+110\tabularnewline
+Cir107 & 3 & 3 & 0.7079686 & 4 & 2.880760 & 0 & 0.5587442 &
+41\tabularnewline
+Cir107 & 4 & 4 & 2.1001701 & 4 & 2.531939 & 1 & 0.7559289 &
+8\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsubsection{Number of Module for successive
+orders}\label{number-of-module-for-successive-orders}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tab1<-}\StringTok{ }\KeywordTok{fc_dist_module_by_order}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ dat)}
+\KeywordTok{kable}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ tab1,}
+      \DataTypeTok{caption =} \StringTok{"No. Module by varieties for successive orders "}
+\NormalTok{      )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lrrrrrrr@{}}
+\caption{No. Module by varieties for successive orders}\tabularnewline
+\toprule
+& 0 & 1 & 2 & 3 & 4 & 5 & Frequency\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& 0 & 1 & 2 & 3 & 4 & 5 & Frequency\tabularnewline
+\midrule
+\endhead
+Gariguette & 54 & 94 & 62 & 21 & 9 & 1 & 241\tabularnewline
+Ciflorette & 54 & 115 & 78 & 31 & 17 & 3 & 298\tabularnewline
+Clery & 54 & 98 & 63 & 34 & 14 & 0 & 263\tabularnewline
+Capriss & 54 & 190 & 102 & 31 & 4 & 0 & 381\tabularnewline
+Darselect & 54 & 87 & 57 & 39 & 8 & 1 & 246\tabularnewline
+Cir107 & 54 & 154 & 110 & 41 & 8 & 0 & 367\tabularnewline
+Frequency & 324 & 738 & 472 & 197 & 60 & 5 & 1796\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsubsection{Occurence of the higher order along
+time}\label{occurence-of-the-higher-order-along-time}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tab2<-}\StringTok{ }\KeywordTok{fc_dist_order_by_date}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ dat,}
+                             \DataTypeTok{genotype =} \StringTok{"Gariguette"}\NormalTok{,}
+                             \DataTypeTok{prob =}\NormalTok{ F)}
+\KeywordTok{kable}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ tab2, }
+      \DataTypeTok{caption =} \StringTok{"Module order frequency distribution for successive date"}\NormalTok{,}\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lrrrrrrr@{}}
+\caption{Module order frequency distribution for successive
+date}\tabularnewline
+\toprule
+& Mid-December & Early-Junuary & Mid-February & Early-March &
+Early-April & Early-June & Frequency\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& Mid-December & Early-Junuary & Mid-February & Early-March &
+Early-April & Early-June & Frequency\tabularnewline
+\midrule
+\endhead
+0 & 9 & 9 & 9 & 9 & 9 & 9 & 54\tabularnewline
+1 & 0 & 7 & 24 & 17 & 26 & 20 & 94\tabularnewline
+2 & 0 & 0 & 0 & 11 & 28 & 23 & 62\tabularnewline
+3 & 0 & 0 & 0 & 1 & 3 & 17 & 21\tabularnewline
+4 & 0 & 0 & 0 & 0 & 0 & 9 & 9\tabularnewline
+5 & 0 & 0 & 0 & 0 & 0 & 1 & 1\tabularnewline
+Frequency & 9 & 16 & 33 & 38 & 66 & 79 & 241\tabularnewline
+\bottomrule
+\end{longtable}
+
+
+\end{document}
