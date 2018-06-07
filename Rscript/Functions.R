@@ -1,11 +1,11 @@
 
 # Distribution function of number of module for successive orders ---------
-fc_dist_module_by_order<-function(data){
+fc_dist_module_by_order<-function(data, index){
   t<- table(data[,"genotype"],
         data[,"Index"])
   
   t<-data.frame(matrix(data = t,nrow = nrow(t),ncol = ncol(t)))
-  colnames(t)<- levels(x = data$Index)
+  colnames(t)<- levels(x = data[,index])
   row.names(t)<- c(levels(x = data$genotype))
   t[,"Frequency"]<-rowSums(t)
   t["Frequency",]<-colSums(t)
@@ -225,3 +225,69 @@ fc_dist_variable_by_order.plot<-function(data){
     theme_cowplot(font_size = 12,font_family = "Times",line_size = 0.5)
 }
 
+# Pointwise Mean of variable of modules for successive orders -------------
+fc_pointwise_mean_variable_by_order<- function(data,varname){
+  ggplot(data = data,
+         mapping = aes(
+           x = data[,"Index"],
+           y = data[,varname],
+           group=genotype)
+  )+
+    geom_line(mapping = aes(color=genotype))+
+    geom_point(mapping = aes(color=genotype))+
+    scale_y_continuous(expand = c(0,0))+
+    scale_x_discrete(expand = c(0,0))+
+    xlab("Orders")+
+    ylab(varname)
+}
+
+
+# Linear trend regression (estimate slope and IC95% --------
+
+fc_linear_trend_reg<-function(data,genotype,variable,Index){
+  
+  
+  data$Index<-as.numeric(data$Index)
+  
+  model<-lm(formula = data[data[,"genotype"]==genotype,][,variable]~data[data[,"genotype"]==genotype,][,Index])
+  
+  d<-data.frame(matrix(ncol = 4, nrow=1))
+  colnames(d)<-c("Genotype","Slope","IC_lower","IC_upper")
+  d[,"Genotype"]<-genotype
+  d[,"Slope"]<-coef(object = model)[2]
+  d[,"IC_lower"]<-confint(object = model)[2]
+  d[,"IC_upper"]<-confint(object = model)[4]
+  
+  return(d)
+}
+
+
+# Comparison krukal wallis and posthoc nemenei by order -------------------
+
+fc_comp_varieties_kruskal_posthoc<-function(data,varname,group){
+  
+  k<-kruskal(y = data[,varname],
+             trt = data[,"genotype"],
+             alpha = 0.05,
+             group = group,
+             console = F)
+  
+  posthoc<- posthoc.kruskal.nemenyi.test(x = data[,varname],
+                                         g = data[,"genotype"],
+                                         dist = "Tukey")
+  
+  print(posthoc)
+  
+  res<-data.frame(matrix(nrow=6,ncol = 1))
+  res[,"genotype"]<-row.names(k$mean)
+  res[,"Mean"]<-k$means[1]
+  res[,"Sd"]<-k$means[3]
+  res[,"Group"]<-k$groups[2]
+  res<-res[,-1]
+  
+  
+  if (group==T){
+    return(res)
+  }else
+    print(k)
+}
