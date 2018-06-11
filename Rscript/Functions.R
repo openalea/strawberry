@@ -317,6 +317,24 @@ fc_chi_by_order<-function(data,genotype,varname,parameter,var.comp,idx.comp,tabl
 
 
 
+# Comparison of fisher for categorical variable after chi2 test -----------
+
+fc_comp_varieties_chi2.fisher<-function(data,varname,comp){
+  
+  cont<-table(x=data[,varname],y=data[,comp])
+  res<-fisher.multcomp(cont[-1,])
+  
+  res<-t(res$p.value)
+  t.res<-as.data.frame(matrix(data = res))
+  t.res$comp<-row.names(res)
+  colnames(t.res)<-c("p.value","comparison")
+  t.res<-t.res[,c(2,1)]
+  
+  return(t.res)
+}
+
+
+
 ###################### Plot function ##########################################
 
 # Plot Module order distribution for successive date of observation -------
@@ -424,8 +442,7 @@ fc_dist_variable_by_order.plot<-function(data){
 
 fc_dist_cat_variable_by_order.plot<-function(data,varname){
   #Creation of new dataframe name d
-  data=tab12
-  varname="Branch_Crown"
+
   d<- data.frame(matrix(nrow = nrow(data),ncol = ncol(data)))
   
   # Filter to remove Frequency column or row

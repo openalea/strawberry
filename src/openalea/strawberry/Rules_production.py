@@ -6,7 +6,7 @@ from openalea.plantgl import all as pgl
 from math import radians
 
 #Properties
-VISIBLE = False
+VISIBLE = True
 WITHOUT_LEAF = True
 position = (0,0,0)
 
