@@ -1,28 +1,28 @@
-##
-
+#
+#
 CODE:	FORM-A
-																																	
+
 CLASSES:
-SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION																													
-$	0	FREE	FREE	IMPLICIT																													
-P	1	FREE	FREE	EXPLICIT																													
-T	2	FREE	FREE	EXPLICIT																													
-A	2	FREE	FREE	EXPLICIT																													
-F	3	FREE	FREE	EXPLICIT																													
-f	3	FREE	FREE	EXPLICIT																													
-s	3	FREE	FREE	EXPLICIT																													
-bt	3	FREE	FREE	EXPLICIT																													
-BT	3	FREE	FREE	EXPLICIT																													
-ht	3	FREE	FREE	EXPLICIT																													
-HT	3	FREE	FREE	EXPLICIT																													
-																																	
+SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION
+$	0	FREE	FREE	IMPLICIT
+P	1	FREE	FREE	EXPLICIT
+T	2	FREE	FREE	EXPLICIT
+A	2	FREE	FREE	EXPLICIT
+F	3	FREE	FREE	EXPLICIT
+f	3	FREE	FREE	EXPLICIT
+s	3	FREE	FREE	EXPLICIT
+bt	3	FREE	FREE	EXPLICIT
+BT	3	FREE	FREE	EXPLICIT
+ht	3	FREE	FREE	EXPLICIT
+HT	3	FREE	FREE	EXPLICIT
+
 DESCRIPTION :
 LEFT	RIGHT	RELTYPE	MAX
 A	A	+	?
 A	A	<	1
 T	T	+	?
-T	T	<	1																														
-																																	
+T	T	<	1
+
 FEATURES:
 NAME	TYPE
 Experiment_name	STRING
@@ -51,9 +51,9 @@ FLWRNUMBER_ABORTED	INT # Total aborted Flower number
 FLWRNUMBER_CLOSED	INT # Total closed flower number
 LOCATION	STRING # Location of experiment
 SAMPLING	STRING # location of sampling
-COMMENT	STRING
+COMMENT	STRING																																
 																																	
-MTG:
+MTG:																																	
 ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	Stade	DBI	INFLOLG	PETLG	LFTLG_RIGHT	LFTLG_CENTRAL	LFTLG_LEFT	LFTWD_RIGHT	LFTWD_CENTRAL	LFTWD_LEFT	LFTAR_RIGHT	LFTAR_CENTRAL	LFTAR_LEFT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	LOCATION	SAMPLING	COMMENT
 /P								FRIENDLY FRUIT	26/04/2018		Gariguette	8																			Maroc		
 ^/T																																	
