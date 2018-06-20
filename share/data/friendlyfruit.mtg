@@ -813,7 +813,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<bt									A																				
 			^<F																														
-				^<F																													
+			^<F																														
+				+A																													
 				^/f																													
 					+A																												
 					^/bt																												
