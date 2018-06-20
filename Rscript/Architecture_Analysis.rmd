@@ -206,7 +206,8 @@ dat$Index<-as.factor(x = dat$Index)
 #Remplacer les valeurs 0 dans la colone total flowers par NA
 dat$nb_total_flowers[dat$nb_total_flowers==0]<-NA
 
-#kable(x = dat,digits = 2,caption = "Data extract from MTG")
+
+kable(x = dat,digits = 2,caption = "Data extract from MTG")
 ```
 
 
@@ -214,6 +215,9 @@ dat$nb_total_flowers[dat$nb_total_flowers==0]<-NA
 
 ## At plant scale
 
+```{r}
+
+```
 
 
 
@@ -1260,32 +1264,32 @@ dat_ramif<- dat_group[!dat_group[,"type_of_crown"]=="Primary_Crown",]
 Capriss<-fc_dist_cat_variable_by_order(data = dat_ramif,
                                        genotype = "Capriss",
                                        varname = "type_of_crown",
-                                       prob = T)
+                                       prob = F)
 
 Ciflorette<-fc_dist_cat_variable_by_order(data = dat_ramif,
                                           genotype = "Ciflorette",
                                           varname = "type_of_crown",
-                                          prob = T)
+                                          prob = F)
 
 Cir107<-fc_dist_cat_variable_by_order(data = dat_ramif,
                                       genotype = "Cir107",
                                       varname = "type_of_crown",
-                                      prob = T)
+                                      prob = F)
 
 Clery<-fc_dist_cat_variable_by_order(data = dat_ramif,
                                      genotype = "Clery",
                                      varname = "type_of_crown",
-                                     prob = T)
+                                     prob = F)
 
 Darselect<-fc_dist_cat_variable_by_order(data = dat_ramif,
                                          genotype = "Darselect",
                                          varname = "type_of_crown",
-                                         prob = T)
+                                         prob = F)
 
 Gariguette<-fc_dist_cat_variable_by_order(data = dat_ramif,
                                           genotype = "Gariguette",
                                           varname = "type_of_crown",
-                                          prob = T)
+                                          prob = F)
 
 tab12<-merge(x = Capriss,
              y = Ciflorette, 
