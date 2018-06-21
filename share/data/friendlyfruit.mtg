@@ -28,6 +28,7 @@ NAME	TYPE
 Experiment_name	STRING
 Sample_date	DD/MM/YYYY
 Architecture_date	DD/MM/YYYY
+LOCATION	STRING # Location of plantation
 Genotype	STRING
 Plant_ID	INT
 Stade	STRING
@@ -49,13 +50,12 @@ FLWRNUMBER	INT # Total flower number
 FLWRNUMBER_OPEN	INT # Total opened Flower number
 FLWRNUMBER_ABORTED	INT # Total aborted Flower number
 FLWRNUMBER_CLOSED	INT # Total closed flower number
-LOCATION	STRING # Location of experiment
 SAMPLING	STRING # location of sampling
-COMMENT	STRING																																
+COMMENT	STRING
 																																	
-MTG:																																	
-ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	Stade	DBI	INFLOLG	PETLG	LFTLG_RIGHT	LFTLG_CENTRAL	LFTLG_LEFT	LFTWD_RIGHT	LFTWD_CENTRAL	LFTWD_LEFT	LFTAR_RIGHT	LFTAR_CENTRAL	LFTAR_LEFT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	LOCATION	SAMPLING	COMMENT
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	8																			Maroc		
+MTG:
+ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	LOCATION	Genotype	Plant_ID	Stade	DBI	INFLOLG	PETLG	LFTLG_RIGHT	LFTLG_CENTRAL	LFTLG_LEFT	LFTWD_RIGHT	LFTWD_CENTRAL	LFTWD_LEFT	LFTAR_RIGHT	LFTAR_CENTRAL	LFTAR_LEFT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	COMMENT
+/P								plant_origin	26/04/2018		Maroc	Gariguette	8																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -63,18 +63,18 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<bt											A																				
+		^<bt												A																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<bt											A																				
+		^<bt												A																			
 	^<F																																
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<bt											A																				
+		^<bt												A																			
 	^<F																																
 		+A																															
 		^/f																															
@@ -85,15 +85,15 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 		^<f																															
 		^<f																															
-		^<bt											A																				
+		^<bt												A																			
 	^<f																																
 		+A																															
 		^/f																															
 		^<f																															
 		^<f																															
 		^<f																															
-		^<bt											A																				
-	^<ht												I																				
+		^<bt												A																			
+	^<ht													I																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -104,13 +104,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<ht									C																				
+				^<ht										C																			
 			^<F																														
 				+A																													
 				^/f																													
 				^<f																													
-				^<ht									A																				
-			^<F													101		59	55														
+				^<ht										A																			
+			^<F														101		59	55													
 				+A																													
 				^/f																													
 				^<f																													
@@ -119,17 +119,17 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/bt																												
-				^<ht									F																				
-			^<HT										55																				
-		^<HT											71														4						
-	^<HT												CUT																				
+				^<ht										F																			
+			^<HT											55																			
+		^<HT												71														4					
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -141,24 +141,24 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<ht									C																				
+				^<ht										C																			
 			^<F																														
 				+A																													
 				^/F																													
 					+A																												
 					^/f																												
 					^<f																												
-					^<ht								B																				
+					^<ht									B																			
 				^<F																													
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
+					^<bt									A																			
 				^<F																													
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
+					^<bt									A																			
 				^<f																													
 					+A																												
 					^/f																												
@@ -171,14 +171,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							19																				
-					^<ht								C																				
-				^<ht									H																				
-			^<HT										71														4						
-		^<HT											71														5						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	5																			Maroc		
+						^<bt								19																			
+					^<ht									C																			
+				^<ht										H																			
+			^<HT											71														4					
+		^<HT												71														5					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		Maroc	Gariguette	5																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -195,19 +195,19 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^/bt																														
+			^<bt																														
 		^<F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^/bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/f																													
 				^<f																													
-				^/ht									B																				
+				^<ht										B																			
 			^<f																														
 				+A																													
 				^/f																													
@@ -216,11 +216,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
-				^/ht									F																				
-			^/HT										55																				
-		^/HT											65														4						
-	^/HT																																ABORTED
+					^<bt									A																			
+				^<ht										F																			
+			^<HT											55																			
+		^<HT												65														4					
+	^<HT																																ABORTED
 ^<F																																	
 	+A																																
 	^/F																																
@@ -232,7 +232,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^<f																														
 				+A																													
 				^/bt																													
-			^/ht										E																				
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -242,7 +242,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<bt																													
 			^<F																														
 				+A																													
-				^/F											CUT		52	53															
+				^/F												CUT		52	53														
 					+A																												
 					^/f																												
 					^<f																												
@@ -258,13 +258,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<f																												
-					^<bt								A																				
-				^<ht									H																				
-			^<HT										67														4						
-		^<HT											65														4						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	7																			Maroc		
+					^<bt									A																			
+				^<ht										H																			
+			^<HT											67														4					
+		^<HT												65														4					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		Maroc	Gariguette	7																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -287,19 +287,19 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^/f																															
 		^<f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<bt											A																				
+		^<bt												A																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -316,10 +316,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<f																													
 				^<f																													
-				^<bt									60														3						
+				^<bt										60														3					
 			^<HT																														
-		^<HT											71														6						
-	^<HT												CUT																				
+		^<HT												71														6					
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -332,14 +332,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										B																				
+			^<ht											B																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -349,7 +349,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<bt																													
 			^<F																														
 				+A																													
-				^/F											72		73	75															
+				^/F												72		73	75														
 					+A																												
 					^/f																												
 					^<f																												
@@ -362,13 +362,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						^/f																											
 						^<f																											
 						^<bt																											
-					^<ht								G																				
-				^<HT									55																				
-			^<HT										67														6						
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	1																			Maroc		
+					^<ht									G																			
+				^<HT										55																			
+			^<HT											67														6					
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		Maroc	Gariguette	1																				
 ^/T																																	
 ^/F																																	
 ^<F																																	
@@ -379,7 +379,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^/f																															
 		^<f																															
 		^<f																															
-		^<bt											A																				
+		^<bt												A																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -389,14 +389,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^/ht										B																				
+			^<ht											B																			
 		^<F																															
 			+A																														
 			/F																														
 				+A																													
 				^/f																													
 				^<f																													
-				^/ht									B																				
+				^/ht										B																			
 			^<F																														
 				+A																													
 				^/f																													
@@ -405,10 +405,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<bt																												
-				^<ht									G																				
-			^<HT										55																				
-		^<HT											71														4						
-	^<HT												77														10						
+				^<ht										G																			
+			^<HT											55																			
+		^<HT												71														4					
+	^<HT													77														10					
 ^<F																																	
 	+A																																
 	^/F																																
@@ -433,7 +433,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<bt																													
 			^<F																														
 				+A																													
-				^/F												105		63	65														
+				^/F													105		63	65													
 					+A																												
 					^/bt																												
 				^<f																													
@@ -444,13 +444,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						^/f																											
 						^<f																											
 						^<bt																											
-					^<ht								E																				
-				^<ht									I																				
-			^<HT										65														5						
-		^<HT											71														5						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	3																			Maroc		
+					^<ht									E																			
+				^<ht										I																			
+			^<HT											65														5					
+		^<HT												71														5					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		Maroc	Gariguette	3																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -474,7 +474,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/f																														
@@ -485,9 +485,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^<f																														
 				+A																													
 				^/bt																													
-			^<ht										G																				
-		^<HT											57																				
-	^<HT												71														5						
+			^<ht											G																			
+		^<HT												57																			
+	^<HT													71														5					
 ^<F																																	
 	+A																																
 	^/F																																
@@ -498,13 +498,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										B																				
+			^<ht											B																			
 		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/bt																													
-			^<F													95		72	72														
+			^<F														95		72	72													
 				+A																													
 				^/f																													
 					+A																												
@@ -513,13 +513,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
-				^<ht									G																				
-			^<HT										57																				
-		^<HT											71														5						
+					^<bt									A																			
+				^<ht										G																			
+			^<HT											57																			
+		^<HT												71														5					
 	^<HT																																ABORTED
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	4																			Maroc		
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		Maroc	Gariguette	4																				
 ^/T																																	
 ^/F																																	
 ^<F																																	
@@ -533,7 +533,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											F																				
+		^<ht												F																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -541,7 +541,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -567,10 +567,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt							A																					
-				^<ht								E																					
-			^<HT									60														5							
-		^<HT										65														5							
+					^<bt								A																				
+				^<ht									E																				
+			^<HT										60														5						
+		^<HT											65														5						
 	^<HT																																ABORTED
 ^<F																																	
 	+A																																
@@ -581,7 +581,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -589,9 +589,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									19																				
-			^<ht										H																				
-		^<HT											65														4						
+				^<bt										19																			
+			^<ht											H																			
+		^<HT												65														4					
 	^<F																																
 	^<F																																
 		+A																															
@@ -604,7 +604,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<bt																													
 			^<F																														
 				+A																													
-				^/F											138		58	63															
+				^/F												138		58	63														
 					+A																												
 					^/f																												
 					^<f																												
@@ -619,14 +619,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								E																				
-				^<HT									55																				
-			^<HT										67														4						
-		^<HT											71														5						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	6																			Maroc		
+						^<bt								A																			
+					^<ht									E																			
+				^<HT										55																			
+			^<HT											67														4					
+		^<HT												71														5					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		Maroc	Gariguette	6																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -640,13 +640,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<bt											A																				
+		^<bt												A																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
 		^<f																															
-		^<ht											D																				
+		^<ht												D																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -662,29 +662,29 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									A																				
-			^<ht										G																				
-		^<HT											ABORTED																				
-	^<HT												65														6						
+				^<bt										A																			
+			^<ht											G																			
+		^<HT												ABORTED																			
+	^<HT													65														6					
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/F																															
 			+A																														
-			^/bt																														
+			^<bt																														
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
 			^<f																														
 			^<bt																														
-		^/F																															
+		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/bt																													
-			^/F													105		68	63														
+			^<F														105		68	63													
 				+A																													
 				^/f																													
 					+A																												
@@ -698,13 +698,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<ht								C																				
-				^<ht									H																				
-			^<HT										65														4						
-		^<HT											71														5						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	2																			Maroc		
+					^<ht									C																			
+				^<ht										H																			
+			^<HT											65														4					
+		^<HT												71														5					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		Maroc	Gariguette	2																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -730,7 +730,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									19																				
+				^<bt										19																			
 			^<f																														
 				+A																													
 				^/bt																													
@@ -747,9 +747,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/f																													
 				^<f																													
 				^<bt																													
-			^<ht										F																				
-		^<HT											60														4						
-	^<HT												CUT																				
+			^<ht											F																			
+		^<HT												60														4					
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -765,7 +765,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<bt																													
 			^<F																														
 				+A																													
-				^/F												92		58	63														
+				^/F													92		58	63													
 					+A																												
 					^/f																												
 					^<f																												
@@ -783,11 +783,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<f																													
 				^<bt																													
-			^<HT										65														3						
-		^<HT											71														6						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	6																			DOUVILLE		
+			^<HT											65														3					
+		^<HT												71														6					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		DOUVILLE	Gariguette	6																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -811,7 +811,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/f																													
 				^<f																													
 				^<f																													
-				^<bt									A																				
+				^<bt										A																			
 			^<F																														
 			^<F																														
 				+A																													
@@ -822,10 +822,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<f																													
 				^<f																													
-				^<bt									A																				
-			^<HT										57																				
-		^<HT											60														4						
-	^<HT												CUT																				
+				^<bt										A																			
+			^<HT											57																			
+		^<HT												60														4					
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -835,7 +835,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										B																				
+			^<ht											B																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -847,12 +847,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 					^<bt																												
 				^<F																													
-					+A											83		67	67														
+					+A												83		67	67													
 					^/F																												
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
+						^<bt								A																			
 					^<f																												
 						+A																											
 						^/f																											
@@ -865,13 +865,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 					^<f																												
 					^<f																												
-					^<bt								A																				
-				^<HT									65														4						
-			^<HT										65														6						
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	7																			DOUVILLE		
+					^<bt									A																			
+				^<HT										65														4					
+			^<HT											65														6					
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		DOUVILLE	Gariguette	7																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -907,7 +907,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -929,10 +929,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/bt																												
-				^<ht									E																				
-			^<ht										I																				
-		^<HT											65														5						
-	^<HT												CUT																				
+				^<ht										E																			
+			^<ht											I																			
+		^<HT												65														5					
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -940,29 +940,29 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										E																				
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									A																				
-			^/F																														
+				^<bt										A																			
+			^<F																														
 				+A																													
 				^/f																													
 					+A																												
@@ -972,17 +972,17 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<bt																												
-				^<ht									G																				
-			^<HT										55																				
-		^<HT											CUT																				
-	^<HT												CUT																				
+				^<ht										G																			
+			^<HT											55																			
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											B																				
+		^<ht												B																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -990,14 +990,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
-			^/F														100		54	67													
+			^/F															100		54	67												
 				+A																													
 				^/f																													
 				^<f																													
-				^<ht									B																				
+				^<ht										B																			
 			^<f																														
 				+A																													
 				^/f																													
@@ -1005,13 +1005,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								19																				
-				^<ht									F																				
-			^<ht										I																				
-		^<HT											56																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	8																			DOUVILLE		
+					^<bt									19																			
+				^<ht										F																			
+			^<ht											I																			
+		^<HT												56																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		DOUVILLE	Gariguette	8																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -1035,14 +1035,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										B																				
+			^<ht											B																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -1064,15 +1064,15 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								G																				
-				^<HT									57																				
-			^<HT										77														5						
-		^<HT											CUT																				
-	^<HT												CUT																				
+						^<bt								A																			
+					^<ht									G																			
+				^<HT										57																			
+			^<HT											77														5					
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
-																																	
-																																	
+	+A																																
+	^/F																																
 		+A																															
 		^/bt																															
 	^<F																																
@@ -1081,7 +1081,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											G																				
+		^<ht												G																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -1090,7 +1090,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^<f																														
 				+A																													
 				^/bt																													
-			^<ht										G																				
+			^<ht											G																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -1104,10 +1104,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
+					^<bt									A																			
 				^<F																													
 					+A																												
-					^/F											105			75	79													
+					^/F												105			75	79												
 						+A																											
 						^/s																											
 					^<f																												
@@ -1115,14 +1115,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						^/f																											
 						^<f																											
 						^<f																											
-						^<ht							B																				
-					^<ht								I																				
-				^<HT									65														6						
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	2																			DOUVILLE		
+						^<ht								B																			
+					^<ht									I																			
+				^<HT										65														6					
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		DOUVILLE	Gariguette	2																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -1144,7 +1144,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<f																																
 		+A																															
 		^/f																															
@@ -1156,9 +1156,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										19																				
-		^<ht											F																				
-	^<HT												ABORTED																				
+			^<bt											19																			
+		^<ht												F																			
+	^<HT													ABORTED																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -1166,7 +1166,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^/f																															
 		^<f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -1174,14 +1174,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/f																													
 				^<f																													
-				^<ht									C																				
+				^<ht										C																			
 			^<F																														
 				+A																													
 				^/F																													
@@ -1207,19 +1207,19 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								F																				
-				^<ht									I																				
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
+						^<bt								A																			
+					^<ht									F																			
+				^<ht										I																			
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -1227,7 +1227,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/f																														
@@ -1237,16 +1237,16 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									19																				
-			^<ht										H																				
-		^<HT											ABORTED																				
+				^<bt										19																			
+			^<ht											H																			
+		^<HT												ABORTED																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -1257,16 +1257,16 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<f																												
-					^<bt								A																				
-				^<ht									I																				
-			^<HT										65														4						
+					^<bt									A																			
+				^<ht										I																			
+			^<HT											65														4					
 		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									A																				
+				^<bt										A																			
 			^<F																														
 				+A																													
 				^/f																													
@@ -1274,16 +1274,16 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								19																				
-				^<ht									G																				
+					^<bt									19																			
+				^<ht										G																			
 			^<F																														
 				+A																													
 				^/F																													
 					+A																												
 					^/f																												
 					^<f																												
-					^<ht								B																				
-				^<F												105		69	75														
+					^<ht									B																			
+				^<F													105		69	75													
 					+A																												
 					^/f																												
 						+A																											
@@ -1294,13 +1294,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						^<f																											
 						^<f																											
 						^<bt																											
-					^<ht								H																				
-				^<HT									65														6						
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	4																			DOUVILLE		
+					^<ht									H																			
+				^<HT										65														6					
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		DOUVILLE	Gariguette	4																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -1320,7 +1320,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 	^<F																																
 		+A																															
@@ -1331,7 +1331,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										E																				
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -1350,7 +1350,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
+					^<bt									A																			
 				^<f																													
 					+A																												
 					^/f																												
@@ -1359,31 +1359,31 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<ht							B																				
-					^<ht								G																				
-				^<ht									I																				
-			^<HT										71														4						
-		^<HT											CUT																				
-	^<HT												CUT																				
+						^<ht								B																			
+					^<ht									G																			
+				^<ht										I																			
+			^<HT											71														4					
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										D																				
+			^<ht											D																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -1398,8 +1398,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<ht								B																				
-				^<F												125		71	68														
+					^<ht									B																			
+				^<F													125		71	68													
 					+A																												
 					^/f																												
 					^<f																												
@@ -1408,16 +1408,16 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<f								A																				
+					^<f									A																			
 				^<f																													
 				^<f																													
 				^<f																													
 				^<f																													
-			^<HT										60														8						
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	5																			DOUVILLE		
+			^<HT											60														8					
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		DOUVILLE	Gariguette	5																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -1441,8 +1441,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<bt																														
-		^<ht											F																				
-	^<HT												55																				
+		^<ht												F																			
+	^<HT													55																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -1453,15 +1453,15 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										A																				
-		^<ht											E																				
+			^<bt											A																			
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^<F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										E																				
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/f																														
@@ -1472,8 +1472,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									19																				
-			^<ht										E																				
+				^<bt										19																			
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -1482,7 +1482,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/f																													
 				^<f																													
 				^<f																													
-				^<bt									A																				
+				^<bt										A																			
 			^<F																														
 				+A																													
 				^<F																													
@@ -1502,20 +1502,20 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 							+A																										
 							^/f																										
 							^<f																										
-							^<ht						B																				
-						^<ht							F																				
-					^<ht								I																				
-				^<HT									65														5						
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
+							^<ht							B																			
+						^<ht								F																			
+					^<ht									I																			
+				^<HT										65														5					
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/f																															
@@ -1524,7 +1524,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<bt																														
-		^<ht											F																				
+		^<ht												F																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -1532,7 +1532,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<f																														
-			^<bt										19																				
+			^<bt											19																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -1540,11 +1540,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/bt																													
 			^<F																														
 				+A																													
-				^/F												67		48	60														
+				^/F													67		48	60													
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
+					^<bt									A																			
 				^<f																													
 					+A																												
 					^/f																												
@@ -1552,14 +1552,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								F																				
-				^<ht									I																				
-			^<HT										67														4						
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	1																			DOUVILLE		
+						^<bt								A																			
+					^<ht									F																			
+				^<ht										I																			
+			^<HT											67														4					
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		DOUVILLE	Gariguette	1																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -1581,14 +1581,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											F																				
+		^<ht												F																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -1612,10 +1612,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<bt																												
-				^<ht									G																				
-			^<HT										57																				
-		^<HT											67														3						
-	^<HT												CUT																				
+				^<ht										G																			
+			^<HT											57																			
+		^<HT												67														3					
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -1625,8 +1625,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										19																				
-		^<ht											E																				
+			^<bt											19																			
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/f																															
@@ -1635,14 +1635,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
 			^/f																														
@@ -1650,21 +1650,21 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^<f																														
 				+A																													
 				^/bt																													
-			^<ht										E																				
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/f																													
 				^<f																													
-				^<ht									B																				
+				^<ht										B																			
 			^<F																														
 				+A																													
-				^/F												100		58	67														
+				^/F													100		58	67													
 					+A																												
 					^/f																												
 					^<f																												
-					^<ht								A																				
+					^<ht									A																			
 				^<f																													
 					+A																												
 					^/f																												
@@ -1673,13 +1673,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						^/f																											
 						^<f																											
 						^<bt																											
-					^<ht								G																				
-				^<ht									I																				
-			^<HT										67														4						
-		^<HT											85														5						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	3																			DOUVILLE		
+					^<ht									G																			
+				^<ht										I																			
+			^<HT											67														4					
+		^<HT												85														5					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		DOUVILLE	Gariguette	3																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -1710,7 +1710,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									A																				
+				^<bt										A																			
 			^<f																														
 				+A																													
 				^/f																													
@@ -1720,11 +1720,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<ht								B																				
-				^<ht									G																				
-			^<ht										I																				
-		^<HT											CUT																				
-	^<HT												CUT																				
+					^<ht									B																			
+				^<ht										G																			
+			^<ht											I																			
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -1732,7 +1732,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<bt											19																				
+		^<bt												19																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -1743,7 +1743,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^<f																														
 				+A																													
 				^/bt																													
-			^<ht										E																				
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -1755,16 +1755,16 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<f																													
 				^<f																													
-				^<ht									C																				
+				^<ht										C																			
 			^<F																														
 				+A																													
 				^/F																													
 					+A																												
 					^/f																												
 					^<f																												
-					^<f								A																				
+					^<f									A																			
 					^<bt																												
-				^/F																													
+				^<F																													
 					+A																												
 					^/f																												
 						+A																											
@@ -1778,41 +1778,41 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 							+A																										
 							^/f																										
 							^<f																										
-							^<bt						A																				
-						^<ht							F																				
-					^<ht								H																				
-				^<HT									57																				
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
+							^<bt							A																			
+						^<ht								F																			
+					^<ht									H																			
+				^<HT										57																			
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											D																				
+		^<ht												D																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									A																				
+				^<bt										A																			
 			^<F																														
 				+A																													
-				^/F												65		53	62														
+				^/F													65		53	62													
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
+					^<bt									A																			
 				^<F																													
 				^<f																													
 					+A																												
@@ -1820,13 +1820,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 						+A																											
 						^/bt																											
-					^<ht								H																				
-				^<ht									I																				
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	5																			ANJOU1		
+					^<ht									H																			
+				^<ht										I																			
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANJOU1	Gariguette	5																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -1856,14 +1856,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										E																				
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -1871,7 +1871,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/f																													
 				^<f																													
 				^<f																													
-				^<ht									B																				
+				^<ht										B																			
 			^<F																														
 				+A																													
 				^/F																													
@@ -1884,10 +1884,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<f																													
 				^<f																													
-				^<bt									A																				
-			^<HT										65														3						
-		^<HT											ABORTED																				
-	^<HT												CUT																				
+				^<bt										A																			
+			^<HT											65														3					
+		^<HT												ABORTED																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -1895,7 +1895,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^/f																															
 		^<f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -1911,12 +1911,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<bt																													
 			^<F																														
 				+A																													
-				^/F												76		60	56														
+				^/F													76		60	56													
 					+A																												
 					^/f																												
 					^<f																												
 					^<f																												
-					^<bt								A																				
+					^<bt									A																			
 				^<F																													
 					+A																												
 					^/f																												
@@ -1925,14 +1925,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							19																				
-					^<ht								E																				
-				^<HT									55																				
-			^<HT										67														4						
-		^<HT											ABORTED																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	6																			ANJOU1		
+						^<bt								19																			
+					^<ht									E																			
+				^<HT										55																			
+			^<HT											67														4					
+		^<HT												ABORTED																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANJOU1	Gariguette	6																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -1948,14 +1948,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 	^<f																																
 		+A																															
 		^/bt																															
-	^<ht												G																				
+	^<ht													G																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -1972,14 +1972,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									19																				
+				^<bt										19																			
 			^<F																														
 				+A																													
 				^/F																													
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
+					^<bt									A																			
 				^<F																													
 					+A																												
 					^/f																												
@@ -1989,12 +1989,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								H																				
-				^<HT									57																				
-			^<HT										81														5						
-		^<HT											CUT																				
-	^<HT												CUT																				
+						^<bt								A																			
+					^<ht									H																			
+				^<HT										57																			
+			^<HT											81														5					
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -2011,10 +2011,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									A																				
+				^<bt										A																			
 			^<F																														
 				+A																													
-				^/F												120		80	83														
+				^/F													120		80	83													
 					+A																												
 					^/f																												
 					^<f																												
@@ -2023,7 +2023,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<ht								B																				
+					^<ht									B																			
 				^<f																													
 					+A																												
 					^/f																												
@@ -2036,18 +2036,18 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								19																				
+					^<bt									19																			
 				^<f																													
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								19																				
-				^<ht									F																				
-			^<HT										81														5						
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	7																			ANJOU1		
+					^<bt									19																			
+				^<ht										F																			
+			^<HT											81														5					
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANJOU1	Gariguette	7																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -2073,7 +2073,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 	^<f																																
 		+A																															
 		^/bt																															
-	^<ht												E																				
+	^<ht													E																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -2105,11 +2105,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						^/f																											
 						^<f																											
 						^<bt																											
-					^<ht								G																				
-				^<HT									57																				
-			^<HT										67																				
-		^<HT											ABORTED																				
-	^<HT												CUT																				
+					^<ht									G																			
+				^<HT										57																			
+			^<HT											67																			
+		^<HT												ABORTED																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -2124,7 +2124,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									19																				
+				^<bt										19																			
 			^<F																														
 				+A																													
 				^/F																													
@@ -2136,10 +2136,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^<F																												
-					^<bt								A																				
-				^<ht									G																				
-			^<HT										65														4						
-		^<HT											67														4						
+					^<bt									A																			
+				^<ht										G																			
+			^<HT											65														4					
+		^<HT												67														4					
 	^<F																																
 		+A																															
 		^/F																															
@@ -2151,7 +2151,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^<f																														
 				+A																													
 				^/bt																													
-			^<ht										F																				
+			^<ht											F																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -2162,8 +2162,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/f																													
 				^<f																													
 				^<f																													
-				^<ht									C																				
-			^<F													82		65	65														
+				^<ht										C																			
+			^<F														82		65	65													
 				+A																													
 				^/f																													
 					+A																												
@@ -2176,12 +2176,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 					^<f																												
 					^<bt																												
-				^<ht									H																				
-			^<HT										65														4						
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	8																			ANJOU1		
+				^<ht										H																			
+			^<HT											65														4					
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANJOU1	Gariguette	8																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -2211,8 +2211,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<f																														
-			^<ht										C																				
-		^<HT											67														4						
+			^<ht											C																			
+		^<HT												67														4					
 	^<F																																
 		+A																															
 		^/F																															
@@ -2228,14 +2228,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
-				^<ht									G																				
-			^<HT										60														6						
+					^<bt									A																			
+				^<ht										G																			
+			^<HT											60														6					
 		^<F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -2252,8 +2252,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 						+A																											
 						^/bt																											
-					^<ht								E																				
-				^<ht									H																				
+					^<ht									E																			
+				^<ht										H																			
 			^<F																														
 				+A																													
 				^/F																													
@@ -2276,12 +2276,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							19																				
-					^<ht								E																				
-				^<ht									I																				
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
+						^<bt								19																			
+					^<ht									E																			
+				^<ht										I																			
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -2293,8 +2293,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										19																				
-		^<ht											F																				
+			^<bt											19																			
+		^<ht												F																			
 	^<F																																
 		+A																															
 		^/f																															
@@ -2309,8 +2309,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/f																													
 				^<f																													
 				^<bt																													
-			^<ht										G																				
-		^<HT											81														5						
+			^<ht											G																			
+		^<HT												81														5					
 	^<F																																
 		+A																															
 		^/F																															
@@ -2318,7 +2318,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<f																														
-			^<bt										19																				
+			^<bt											19																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -2333,8 +2333,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<ht								B																				
-				^<F												170		97	85														
+					^<ht									B																			
+				^<F													170		97	85													
 					+A																												
 					^/f																												
 						+A																											
@@ -2344,14 +2344,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								G																				
-				^<HT									65														9						
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	1																			ANJOU1		
+						^<bt								A																			
+					^<ht									G																			
+				^<HT										65														9					
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANJOU1	Gariguette	1																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -2359,7 +2359,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 ^<F																																	
 	+A																																
 	^/bt																																
-^/F																																	
+^<F																																	
 	+A																																
 	^/bt																																
 ^<F																																	
@@ -2376,7 +2376,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -2384,7 +2384,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^/bt										19																				
+			^/bt											19																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -2399,15 +2399,15 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^/bt								A																				
-				^<ht									G																				
-			^<HT										65														4						
-		^<HT											81														5						
+					^/bt									A																			
+				^<ht										G																			
+			^<HT											65														4					
+		^<HT												81														5					
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -2415,7 +2415,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<f																														
-			^<ht										B																				
+			^<ht											B																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -2439,19 +2439,19 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								G																				
-				^<HT									60														5						
-			^<HT										81														6						
-		^<HT											CUT																				
-	^<HT												CUT																				
+						^<bt								A																			
+					^<ht									G																			
+				^<HT										60														5					
+			^<HT											81														6					
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -2461,8 +2461,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									A																				
-			^<ht										G																				
+				^<bt										A																			
+			^<ht											G																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -2481,7 +2481,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/F																												
 						+A																											
 						^/bt																											
-					^<F											80		50	55														
+					^<F												80		50	55													
 						+A																											
 						^/bt																											
 					^<f																												
@@ -2493,13 +2493,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 					^<f																												
 					^<f																												
-					^<bt								19																				
-				^<HT									ABORTED																				
-			^<HT										81														5						
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	2																			ANJOU1		
+					^<bt									19																			
+				^<HT										ABORTED																			
+			^<HT											81														5					
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANJOU1	Gariguette	2																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -2507,7 +2507,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 ^<F																																	
 	+A																																
 	^/bt																																
-^/F																																	
+^<F																																	
 	+A																																
 	^/bt																																
 ^<F																																	
@@ -2525,19 +2525,19 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 	^<f																																
 		+A																															
 		^/bt																															
-	^<ht												F																				
+	^<ht													F																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/f																															
@@ -2556,9 +2556,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/bt																												
-				^<ht									G																				
-			^<HT										55																				
-		^<HT											CUT																				
+				^<ht										G																			
+			^<HT											55																			
+		^<HT												CUT																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -2566,7 +2566,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<f																														
-			^<bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -2578,7 +2578,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<ht								B																				
+					^<ht									B																			
 				^<F																													
 					+A																												
 					^/f																												
@@ -2597,15 +2597,15 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/f																												
-					^<bt								19																				
+					^<bt									19																			
 				^<f																													
 					+A																												
 					^/f																												
-					^<bt								19																				
-				^<ht									E																				
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
+					^<bt									19																			
+				^<ht										E																			
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -2615,33 +2615,33 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
 		^<f																															
-		^<ht											G																				
+		^<ht												G																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											G																				
+		^<ht												G																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										B																				
+			^<ht											B																			
 		^<F																															
 			+A																														
 			^/f																														
 			^<f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -2649,7 +2649,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/f																													
 				^<f																													
 				^<f																													
-				^<ht									C																				
+				^<ht										C																			
 			^<F																														
 				+A																													
 				^/F																													
@@ -2665,9 +2665,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<bt																												
-				^<ht									F																				
-			^<HT										67														9						
-		^<HT											CUT																				
+				^<ht										F																			
+			^<HT											67														9					
+		^<HT												CUT																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -2690,7 +2690,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<bt																												
-				^<F											115		74	84															
+				^<F												115		74	84														
 					+A																												
 					^/f																												
 					^<f																												
@@ -2706,17 +2706,105 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/f																												
-					^<bt								19																				
+					^<bt									19																			
 				^<f																													
 					+A																												
 					^/f																												
-					^<bt								19																				
-				^<ht									E																				
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	3																			ANJOU1		
+					^<bt									19																			
+				^<ht										E																			
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANJOU1	Gariguette	3																				
+^/T																																	
+^/F																																	
+	+A																																
+	^/bt																																
+^<F																																	
+	+A																																
+	^/bt																																
+^<F																																	
+	+A																																
+	^/bt																																
+^<F																																	
+	+A																																
+	^/bt																																
+^<F																																	
+	+A																																
+	^/bt																																
+^<F																																	
+	+A																																
+	^/bt																																
+^<F																																	
+	+A																																
+	^/F																																
+		+A																															
+		^/F																															
+		^<F																															
+		^<f																															
+		^<f																															
+			+A																														
+			^/bt																														
+		^<ht												F																			
+	^<F																																
+		+A																															
+		^/F																															
+		^<F																															
+			+A																														
+			^/F																														
+			^<F																														
+				+A																													
+				^/f																													
+				^<f																													
+				^<f																													
+				^<bt																													
+			^<HT											55																			
+		^<HT												ABORTED																			
+	^<HT													CUT																			
+^<F																																	
+	+A																																
+	^/F																																
+		+A																															
+		^/f																															
+		^<f																															
+			+A																														
+			^/bt																														
+		^<ht												F																			
+	^<F																																
+		+A																															
+		^/F																															
+			+A																														
+			^/f																														
+			^<f																														
+			^<ht											E																			
+		^<F																															
+			+A																														
+			^/F																														
+			^<F																														
+				+A																													
+				^/bt																													
+			^<F																														
+				+A																													
+				^/f																													
+				^<f																													
+				^<bt																													
+			^<F														66		59	61													
+				+A																													
+				^/f																													
+					+A																												
+					^/bt																												
+				^<f																													
+					+A																												
+					^/f																												
+					^<f																												
+					^<bt																												
+				^<ht										G																			
+			^<HT											57																			
+		^<HT												ABORTED																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANJOU1	Gariguette	4																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -2740,99 +2828,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 	+A																																
 	^/F																																
 		+A																															
-		^/F																															
-		^<F																															
 		^/f																															
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											F																				
-	^<F																																
-		+A																															
-		^/F																															
-		^<F																															
-			+A																														
-			^/F																														
-			^<F																														
-				+A																													
-				^/f																													
-				^<f																													
-				^<f																													
-				^<bt																													
-			^<HT										55																				
-		^<HT											ABORTED																				
-	^<HT												CUT																				
-^<F																																	
-	+A																																
-	^/F																																
-		+A																															
-		^/f																															
-		^<f																															
-			+A																														
-			^/bt																														
-		^<ht											F																				
-	^<F																																
-		+A																															
-		^/F																															
-			+A																														
-			^/f																														
-			^<f																														
-			^<ht										E																				
-		^<F																															
-			+A																														
-			^/F																														
-			^<F																														
-				+A																													
-				^/bt																													
-			^<F																														
-				+A																													
-				^/f																													
-				^<f																													
-				^<bt																													
-			^<F													66		59	61														
-				+A																													
-				^/f																													
-					+A																												
-					^/bt																												
-				^<f																													
-					+A																												
-					^/f																												
-					^<f																												
-					^<bt																												
-				^<ht									G																				
-			^<HT										57																				
-		^<HT											ABORTED																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	4																			ANJOU1		
-^/T																																	
-^/F																																	
-	+A																																
-	^/bt																																
-^<F																																	
-	+A																																
-	^/bt																																
-^/F																																	
-	+A																																
-	^/bt																																
-^<F																																	
-	+A																																
-	^/bt																																
-^<F																																	
-	+A																																
-	^/bt																																
-^<F																																	
-	+A																																
-	^/bt																																
-^<F																																	
-	+A																																
-	^/F																																
-		+A																															
-		^/f																															
-		^<f																															
-			+A																														
-			^/bt																														
-		^<ht											G																				
+		^<ht												G																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -2843,7 +2843,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<f																														
-			^<ht										E																				
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -2858,18 +2858,18 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 						+A																											
 						^/bt																											
-					^<ht								E																				
-				^<ht									I																				
-			^<HT										65														4						
-		^<HT											CUT																				
-	^<HT												CUT																				
+					^<ht									E																			
+				^<ht										I																			
+			^<HT											65														4					
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -2878,7 +2878,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<ht									B																				
+				^<ht										B																			
 			^<F																														
 				+A																													
 				^/F																													
@@ -2886,7 +2886,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<bt																												
-				^/F												123		81	79														
+				^/F													123		81	79													
 					+A																												
 					^/f																												
 						+A																											
@@ -2896,14 +2896,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						^/f																											
 						^<f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								H																				
-				^<HT									60														5						
-			^<HT										82														4						
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	1																			HOLLANDE		
+						^<bt								A																			
+					^<ht									H																			
+				^<HT										60														5					
+			^<HT											82														4					
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		HOLLANDE	Gariguette	1																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -2911,7 +2911,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -2929,9 +2929,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/bt																												
-				^<ht									F																				
-			^<HT										ABORTED																				
-		^<HT											CUT																				
+				^<ht										F																			
+			^<HT											ABORTED																			
+		^<HT												CUT																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -2939,7 +2939,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<f																														
-			^<ht										E																				
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -2961,12 +2961,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								E																				
-				^<ht									H																				
-			^<HT										65														2						
-		^<HT											CUT																				
-	^<HT												CUT																				
+						^<bt								A																			
+					^<ht									E																			
+				^<ht										H																			
+			^<HT											65														2					
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -2993,10 +2993,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 					^<f																												
 					^<bt																												
-				^<ht									G																				
-			^<ht										H																				
-		^<HT											CUT																				
-	^<HT												CUT																				
+				^<ht										G																			
+			^<ht											H																			
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/bt																																
@@ -3024,12 +3024,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											B																				
+		^<ht												B																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -3054,12 +3054,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<ht							C																				
-					^<ht								H																				
-				^<HT									57																				
-			^<HT										CUT																				
-		^<HT											CUT																				
-	^<HT												CUT																				
+						^<ht								C																			
+					^<ht									H																			
+				^<HT										57																			
+			^<HT											CUT																			
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3067,7 +3067,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<bt											19																				
+		^<bt												19																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -3082,7 +3082,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/bt																													
 			^<F																														
 				+A																													
-				^/F												64		70	67														
+				^/F													64		70	67													
 					+A																												
 					^/bt																												
 				^<f																													
@@ -3091,13 +3091,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 						+A																											
 						^/bt																											
-					^<bt								A																				
-				^<ht									H																				
-			^<HT										65														4						
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	2																			HOLLANDE		
+					^<bt									A																			
+				^<ht										H																			
+			^<HT											65														4					
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		HOLLANDE	Gariguette	2																				
 ^/T																																	
 ^/F																																	
 ^<F																																	
@@ -3151,11 +3151,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/f																												
-					^<bt								19																				
-				^<ht									E																				
-			^<ht										I																				
-		^<HT											67														6						
-	^<HT												ABORTED																				
+					^<bt									19																			
+				^<ht										E																			
+			^<ht											I																			
+		^<HT												67														6					
+	^<HT													ABORTED																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3167,7 +3167,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										B																				
+			^<ht											B																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -3180,11 +3180,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
-				^<ht									F																				
+					^<bt									A																			
+				^<ht										F																			
 			^<F																														
 				+A																													
-				^/F												119		61	66														
+				^/F													119		61	66													
 					+A																												
 					^/bt																												
 				^<f																													
@@ -3194,13 +3194,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 						+A																											
 						^/bt																											
-					^<ht								F																				
-				^<ht									I																				
-			^<HT										67														5						
-		^<HT											77														6						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	3																			HOLLANDE		
+					^<ht									F																			
+				^<ht										I																			
+			^<HT											67														5					
+		^<HT												77														6					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		HOLLANDE	Gariguette	3																				
 ^/T																																	
 ^/F																																	
 ^<F																																	
@@ -3225,8 +3225,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											E																				
-	^<HT												60														4						
+		^<ht												E																			
+	^<HT													60														4					
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3245,7 +3245,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<f																														
-			^<bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -3259,10 +3259,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<f																													
 				^<f																													
-				^<bt									A																				
-			^<ht										I																				
-		^<HT											67														5						
-	^<HT												ABORTED																				
+				^<bt										A																			
+			^<ht											I																			
+		^<HT												67														5					
+	^<HT													ABORTED																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3273,13 +3273,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/f																														
 			^<f																														
 			^<bt																														
-		^<F														92		66	54														
+		^<F															92		66	54													
 			+A																														
 			^/f																														
 				+A																													
@@ -3290,11 +3290,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^<f																														
 				+A																													
 				^/bt																													
-			^<ht										F																				
-		^<HT											60														3						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	4																			HOLLANDE		
+			^<ht											F																			
+		^<HT												60														3					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		HOLLANDE	Gariguette	4																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -3316,10 +3316,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/bt																												
-				^<ht									G																				
-			^<ht										I																				
-		^<HT											ABORTED																				
-	^<HT												CUT																				
+				^<ht										G																			
+			^<ht											I																			
+		^<HT												ABORTED																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/bt																																
@@ -3340,12 +3340,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 	^/bt																																
 ^<F																																	
 	+A																																
-	^/F																																
+	^/bt																																
 ^<F																																	
 	+A																																
 	^/f																																
 	^<f																																
-	^<ht												E																				
+	^<ht													E																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3353,7 +3353,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -3371,18 +3371,18 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								19																				
-				^<ht									E																				
-			^<ht										I																				
-		^<HT											57																				
-	^<HT												CUT																				
+					^<bt									19																			
+				^<ht										E																			
+			^<ht											I																			
+		^<HT												57																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											F																				
+		^<ht												F																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -3393,7 +3393,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/f																													
 				^<f																													
 				^<bt																													
-			^<F													85		60	65														
+			^<F														85		60	65													
 				+A																													
 				^/f																													
 					+A																												
@@ -3403,12 +3403,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<bt																												
-				^<ht									G																				
-			^<HT										55																				
-		^<HT											ABORTED																				
-	^<HT												87														3						
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	5																			HOLLANDE		
+				^<ht										G																			
+			^<HT											55																			
+		^<HT												ABORTED																			
+	^<HT													87														3					
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		HOLLANDE	Gariguette	5																				
 ^/T																																	
 ^/F																																	
 ^<F																																	
@@ -3441,9 +3441,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										C																				
-		^<ht											ABORTED																				
-	^<ht												ABORTED																				
+			^<ht											C																			
+		^<ht												ABORTED																			
+	^<ht													ABORTED																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3466,10 +3466,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<f																													
 				^<f																													
-				^<bt									A																				
-			^<ht										I																				
-		^<HT											65														5						
-	^<HT												CUT																				
+				^<bt										A																			
+			^<ht											I																			
+		^<HT												65														5					
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3484,7 +3484,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^<f																														
 			^<f																														
 			^<bt																														
-		^<HT											55																				
+		^<HT												55																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -3494,19 +3494,19 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/F																														
 				+A																													
 				^/bt																													
-			^<F													79		55	58														
+			^<F														79		55	58													
 				+A																													
 				^/f																													
 				^<f																													
 				^<f																													
 					+A																												
 					^/bt																												
-				^<ht									E																				
-			^<HT										55																				
-		^<HT											65														6						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	6																			HOLLANDE		
+				^<ht										E																			
+			^<HT											55																			
+		^<HT												65														6					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		HOLLANDE	Gariguette	6																				
 ^/T																																	
 ^/F																																	
 ^<F																																	
@@ -3536,21 +3536,21 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 	^<f																																
 		+A																															
 		^/bt																															
-	^<ht												F																				
+	^<ht													F																			
 ^<F																																	
 	+A																																
 	^/f																																
 	^<f																																
 		+A																															
 		^/bt																															
-	^<ht												E																				
+	^<ht													E																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -3574,7 +3574,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<bt																												
-				^<ht									H																				
+				^<ht										H																			
 			^<F																														
 				+A																													
 				^/f																													
@@ -3582,24 +3582,24 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/bt																												
-				^<ht									E																				
-			^<HT										55																				
-		^<HT											ABORTED																				
-	^<HT												CUT																				
+				^<ht										E																			
+			^<HT											55																			
+		^<HT												ABORTED																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											D																				
+		^<ht												D																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										B																				
+			^<ht											B																			
 		^<F																															
 			+A																														
 			^/f																														
@@ -3613,27 +3613,27 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/bt																												
-				^<ht									D																				
+				^<ht										D																			
 			^<F																														
 				+A																													
 				^/F																													
 					+A																												
 					^/bt																												
-				^<F												77		71	66														
+				^<F													77		71	66													
 					+A																												
 					^/f																												
 					^<f																												
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							19																				
-					^<ht								E																				
-				^<ht									H																				
-			^<HT										65														3						
-		^<HT											CUT																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	7																			HOLLANDE		
+						^<bt								19																			
+					^<ht									E																			
+				^<ht										H																			
+			^<HT											65														3					
+		^<HT												CUT																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		HOLLANDE	Gariguette	7																				
 ^/T																																	
 ^/F																																	
 ^<F																																	
@@ -3655,10 +3655,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
-	^<ht												ABORTED																				
-																																	
-																																	
+		^<ht												C																			
+	^<ht													ABORTED																			
+^<F																																	
+	+A																																
 	^/F																																
 		+A																															
 		^/bt																															
@@ -3666,7 +3666,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											D																				
+		^<ht												D																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -3681,7 +3681,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									19																				
+				^<bt										19																			
 			^<F																														
 				+A																													
 				^/F																													
@@ -3697,11 +3697,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						^/f																											
 						^<f																											
 						^<bt																											
-					^<ht								G																				
-				^<ht									I																				
-			^<HT										73														8						
-		^<HT											CUT																				
-	^<HT												CUT																				
+					^<ht									G																			
+				^<ht										I																			
+			^<HT											73														8					
+		^<HT												CUT																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3710,25 +3710,25 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											G																				
+		^<ht												G																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<bt											A																				
+		^<bt												A																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/bt																													
-			^<F													110		61	74														
+			^<F														110		61	74													
 				+A																													
 				^/f																													
 					+A																												
@@ -3737,13 +3737,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
-				^<ht									G																				
-			^<ht										I																				
-		^<HT											ABORTED																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	8																			HOLLANDE		
+					^<bt									A																			
+				^<ht										G																			
+			^<ht											I																			
+		^<HT												ABORTED																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		HOLLANDE	Gariguette	8																				
 ^/T																																	
 ^/F																																	
 ^<F																																	
@@ -3776,7 +3776,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 		^<f																															
 		^<bt																															
-	^<HT												65														8						
+	^<HT													65														8					
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3788,7 +3788,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<bt											A																				
+		^<bt												A																			
 	^<F																																
 		+A																															
 		^/f																															
@@ -3800,13 +3800,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/bt																													
-			^<F													105		57	61														
+			^<F														105		57	61													
 				+A																													
 				^/F																													
 					+A																												
@@ -3818,13 +3818,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
-				^<ht									E																				
-			^<HT										65														5						
-		^<HT											73														5						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	1																			ANGIER		
+					^<bt									A																			
+				^<ht										E																			
+			^<HT											65														5					
+		^<HT												73														5					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANGIER	Gariguette	1																				
 ^/T																																	
 ^/F																																	
 ^<F																																	
@@ -3838,7 +3838,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 	^<f																																
 		+A																															
 		^/bt																															
-	^<ht												E																				
+	^<ht													E																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3866,9 +3866,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<f																													
 				^<bt																													
-			^<HT										65														4						
-		^<ht											ABORTED																				
-	^<HT												CUT																				
+			^<HT											65														4					
+		^<ht												ABORTED																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3885,14 +3885,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<f																													
 				^<f																													
-				^<bt									A																				
+				^<bt										A																			
 			^<F																														
 				+A																													
-				^/F												83		63	61														
+				^/F													83		63	61													
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
+					^<bt									A																			
 				^<f																													
 					+A																												
 					^/f																												
@@ -3900,14 +3900,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								F																				
-				^<ht									I																				
-			^<HT										65														4						
-		^<HT											73														5						
-	^<HT												87														3						
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	2																			ANGIER		
+						^<bt								A																			
+					^<ht									F																			
+				^<ht										I																			
+			^<HT											65														4					
+		^<HT												73														5					
+	^<HT													87														3					
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANGIER	Gariguette	2																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -3920,13 +3920,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 	^/f																																
 	^<f																																
 	^<f																																
-	^<ht												C																				
+	^<ht													C																			
 ^<F																																	
 	+A																																
 	^/f																																
 	^<f																																
 	^<f																																
-	^<ht												D																				
+	^<ht													D																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3938,7 +3938,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/f																														
 			^<f																														
 			^<bt																														
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/f																															
@@ -3946,9 +3946,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										19																				
-		^<ht											E																				
-	^<HT												65														4						
+			^<bt											19																			
+		^<ht												E																			
+	^<HT													65														4					
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3961,8 +3961,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										19																				
-		^<ht											F																				
+			^<bt											19																			
+		^<ht												F																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -3977,13 +3977,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									19																				
+				^<bt										19																			
 			^<f																														
 			^<f																														
 			^<f																														
 			^<bt																														
-		^<HT											65														6						
-	^<HT												67														4						
+		^<HT												65														6					
+	^<HT													67														4					
 ^<F																																	
 	+A																																
 	^/F																																
@@ -3996,7 +3996,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -4004,7 +4004,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/f																													
 				^<f																													
 				^<f																													
-				^<ht									B																				
+				^<ht										B																			
 			^<F																														
 				+A																													
 				^/F																													
@@ -4013,10 +4013,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 						+A																											
 						^/bt																											
-					^<ht								C																				
+					^<ht									C																			
 				^<F																													
 					+A																												
-					^/F											100	72	72															
+					^/F												100	72	72														
 						+A																											
 						^/bt																											
 					^<f																												
@@ -4026,14 +4026,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<ht							B																				
-					^<ht								G																				
-				^<HT									60														7						
-			^<HT										77														6						
-		^<HT											ABORTED																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	3																			ANGIER		
+						^<ht								B																			
+					^<ht									G																			
+				^<HT										60														7					
+			^<HT											77														6					
+		^<HT												ABORTED																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANGIER	Gariguette	3																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -4062,7 +4062,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -4085,10 +4085,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 				^<f																													
 				^<f																													
-				^<bt									A																				
-			^<ht										H																				
-		^<HT											65														4						
-	^<HT												CUT																				
+				^<bt										A																			
+			^<ht											H																			
+		^<HT												65														4					
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -4102,8 +4102,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^/f																															
 		^<f																															
 		^<f																															
-		^<bt											19																				
-	^<ht												I																				
+		^<bt												19																			
+	^<ht													I																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -4112,14 +4112,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/f																															
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											E																				
+		^<ht												E																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -4129,7 +4129,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										E																				
+			^<ht											E																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -4139,7 +4139,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<bt																													
 			^<F																														
 				+A																													
-				^/F												78		65	60														
+				^/F													78		65	60													
 					+A																												
 					^/s																												
 				^<f																													
@@ -4151,14 +4151,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 					^<f																												
 					^<f																												
-					^<f																						5						
-					^<bt								19														4						
-				^<ht									I																				
-			^<HT										65																				
-		^<HT											65																				
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	4																			ANGIER		
+					^<f																							5					
+					^<bt									19														4					
+				^<ht										I																			
+			^<HT											65																			
+		^<HT												65																			
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANGIER	Gariguette	4																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -4189,8 +4189,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 			+A																														
 			^/bt																														
-		^<ht											E																				
-	^<ht												G																				
+		^<ht												E																			
+	^<ht													G																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -4201,7 +4201,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<bt											A																				
+		^<bt												A																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -4215,8 +4215,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<f																															
 		^<f																															
 		^<f																															
-		^<bt											A																				
-	^<HT												60														4						
+		^<bt												A																			
+	^<HT													60														4					
 ^<F																																	
 	+A																																
 	^/F																																
@@ -4231,7 +4231,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										B																				
+			^<ht											B																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -4243,16 +4243,16 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<f																													
 					+A																												
 					^/f																												
-					^<bt								19																				
+					^<bt									19																			
 				^<f																													
 				^<f																													
 					+A																												
 					^/f																												
-					^<bt								A																				
-				^<ht									E																				
-			^<HT										60														5						
-		^<HT											65														4						
-	^<HT												CUT																				
+					^<bt									A																			
+				^<ht										E																			
+			^<HT											60														5					
+		^<HT												65														4					
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -4275,7 +4275,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/F																													
 					+A																												
 					^/bt																												
-				^<F												120	60	65															
+				^<F													120	60	65														
 					+A																												
 					^/s																												
 				^<f																													
@@ -4287,12 +4287,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<bt																												
-				^<ht									E																				
-			^<HT										65														4						
-		^<HT											67														6						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	5																			ANGIER		
+				^<ht										E																			
+			^<HT											65														4					
+		^<HT												67														6					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANGIER	Gariguette	5																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -4331,15 +4331,15 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/f																													
 				^<f																													
 				^<bt																													
-			^<ht										E																				
-		^<HT											ABORTED																				
+			^<ht											E																			
+		^<HT												ABORTED																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -4358,12 +4358,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							19														4						
-					^<ht								E														5						
-				^<ht									I																				
-			^<HT										65																				
-		^<HT											65																				
-	^<HT												CUT																				
+						^<bt								19														4					
+					^<ht									E														5					
+				^<ht										I																			
+			^<HT											65																			
+		^<HT												65																			
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -4375,7 +4375,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										C																				
+			^<ht											C																			
 		^<F																															
 			+A																														
 			^/F																														
@@ -4385,7 +4385,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
+					^<bt									A																			
 				^<F																													
 				^<f																													
 					+A																												
@@ -4394,14 +4394,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^<bt							A																				
-					^<ht								E														3						
-				^<ht									I														5						
-			^<HT										65																				
-		^<HT											71																				
-	^<HT												ABORTED																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	7																			ANGIER		
+						^<bt								A																			
+					^<ht									E														3					
+				^<ht										I														5					
+			^<HT											65																			
+		^<HT												71																			
+	^<HT													ABORTED																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANGIER	Gariguette	7																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -4418,13 +4418,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 	^<f																																
 		+A																															
 		^/f																															
-		^<bt											19																				
-	^<ht												E																				
+		^<bt												19																			
+	^<ht													E																			
 ^<F																																	
 	+A																																
 	^/f																																
 	^<f																																
-	^<bt												A																				
+	^<bt													A																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -4434,7 +4434,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											C																				
+		^<ht												C																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -4456,12 +4456,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 						+A																											
 						^/f																											
 						^<f																											
-						^/bt							19																				
-					^<ht								G																				
-				^<ht									I																				
-			^<HT										60																				
-		^<HT											CUT														4						
-	^<HT												CUT																				
+						^/bt								19																			
+					^<ht									G																			
+				^<ht										I																			
+			^<HT											60																			
+		^<HT												CUT														4					
+	^<HT													CUT																			
 ^<F																																	
 	+A																																
 	^/F																																
@@ -4469,7 +4469,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											B																				
+		^<ht												B																			
 	^<F																																
 		+A																															
 		^/F																															
@@ -4480,7 +4480,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^/bt																													
 			^<F																														
 				+A																													
-				^/F												83	46	53															
+				^/F													83	46	53														
 					+A																												
 					^/bt																												
 				^<f																													
@@ -4489,13 +4489,13 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<f																												
 					^<f																												
 					^<f																												
-					^<bt								A																				
-				^<ht									H																				
-			^<HT										57																				
-		^<HT											71														5						
-	^<HT												CUT																				
-^<HT													CUT																				
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	6																			ANGIER		
+					^<bt									A																			
+				^<ht										H																			
+			^<HT											57																			
+		^<HT												71														5					
+	^<HT													CUT																			
+^<HT														CUT																			
+/P								plant_origin	26/04/2018		ANGIER	Gariguette	6																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -4515,7 +4515,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 	^<f																																
 		+A																															
 		^/bt																															
-	^<ht												E																				
+	^<ht													E																			
 ^<F																																	
 	+A																																
 	^/f																																
@@ -4528,8 +4528,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											B																				
-	^<ht												F																				
+		^<ht												B																			
+	^<ht													F																			
 ^<F																																	
 ^<F																																	
 	+A																																
@@ -4542,14 +4542,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^/bt																														
 		^<f																															
 		^<f																															
-		^<ht											B																				
+		^<ht												B																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										19																				
+			^<bt											19																			
 		^<F																															
 			+A																														
 			^/f																														
@@ -4563,12 +4563,12 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/f																												
 					^<f																												
 					^<bt																												
-				^<ht									E																				
-			^<ht										H																				
-		^<HT											65														4						
-	^<HT												71														5						
-^<HT													85														8						
-/P								FRIENDLY FRUIT	26/04/2018		Gariguette	8																			ANGIER		
+				^<ht										E																			
+			^<ht											H																			
+		^<HT												65														4					
+	^<HT													71														5					
+^<HT														85														8					
+/P								plant_origin	26/04/2018		ANGIER	Gariguette	8																				
 ^/T																																	
 ^/F																																	
 	+A																																
@@ -4587,7 +4587,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											G																				
+		^<ht												G																			
 	^<F	+A																															
 		^/F																															
 			+A																														
@@ -4596,7 +4596,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										B																				
+			^<ht											B																			
 		^<f																															
 			+A																														
 			^/f																														
@@ -4604,38 +4604,38 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^<f																														
 			^<f																														
 			^<f																														
-			^<bt										19																				
-		^<ht											H																				
-	^<HT												ABORTED																				
+			^<bt											19																			
+		^<ht												H																			
+	^<HT													ABORTED																			
 ^<F																																	
 	+A																																
 	^/F																																
 		+A																															
 		^/f																															
 		^<f																															
-		^<ht											B																				
+		^<ht												B																			
 	^<F																																
 		+A																															
 		^/F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<bt										A																				
+			^<bt											A																			
 		^<F																															
 			+A																														
 			^/f																														
 			^<f																														
-			^<ht										D																				
+			^<ht											D																			
 		^<F																															
 			+A																														
 			^/F																														
 				+A																													
 				^/f																													
 				^<f																													
-				^<bt									19																				
+				^<bt										19																			
 			^<F																														
 				+A																													
-				^/F												67		53	53														
+				^/F													67		53	53													
 					+A																												
 					^/bt																												
 				^<f																													
@@ -4647,9 +4647,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																												
 					^/f																												
 					^<f																												
-					^<bt								A																				
-				^<ht									E																				
-			^<HT										65														3						
-		^<HT											65														7						
-	^<HT												ABORTED																				
-^<HT													CUT																				
+					^<bt									A																			
+				^<ht										E																			
+			^<HT											65														3					
+		^<HT												65														7					
+	^<HT													ABORTED																			
+^<HT														CUT																			
