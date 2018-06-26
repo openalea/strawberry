@@ -79,7 +79,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																														
 		^/f																														
 			+A																													
-			/s																													
+			^/s																													
 		^<f																														
 		^<f																														
 		^<f																														
@@ -242,7 +242,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<bt																												
 			^<F																													
 				+A																												
-				^/F											CUT		52	53														
+				^/F												87	52	53														
 					+A																											
 					^/f																											
 					^<f																											
@@ -392,7 +392,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			^<ht										B																			
 		^<F																														
 			+A																													
-			/F																													
+			^/F																													
 				+A																												
 				^/f																												
 				^<f																												
@@ -567,11 +567,11 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					+A																											
 					^/f																											
 					^<f																											
-					^<bt							A																				
-				^<ht								E																				
-			^<HT									60														5						
-		^<HT										65														5						
-	^<HT																															ABORTED
+					^<bt								A																			
+				^<ht									E																			
+			^<HT										60													5						
+		^<HT											65													5						
+	^<HT												ABORTED																			ABORTED
 ^<F																																
 	+A																															
 	^/F																															
@@ -672,8 +672,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		+A																														
 		^/F																														
 			+A																													
-			^<bt																													
-		^/F																														
+			^/bt																													
+		^<F																														
 			+A																													
 			^/f																													
 			^<f																													
@@ -1457,7 +1457,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 		^<ht											E																			
 	^<F																															
 		+A																														
-		^<F																														
+		^/F																														
 			+A																													
 			^/f																													
 			^<f																													
@@ -1485,14 +1485,14 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 				^<bt									A																			
 			^<F																													
 				+A																												
-				^<F																												
+				^/F																												
 					+A																											
 					^/f																											
 					^<f																											
 					^<bt																											
 				^<F																												
 					+A																											
-					^<F																											
+					^/F																											
 						+A																										
 						^/s																										
 					^<f																											
@@ -2135,7 +2135,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^/bt																											
 				^<f																												
 					+A																											
-					^<F																											
+					^/F																											
 					^<bt								A																			
 				^<ht									G																			
 			^<HT										65														4					
@@ -2697,10 +2697,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 					^<bt																											
 				^<f																												
 					+A																											
-					^<bt																											
+					^/bt																											
 				^<f																												
 					+A																											
-					^<bt																											
+					^/bt																											
 				^<f																												
 				^<f																												
 				^<f																												
@@ -4554,7 +4554,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 			+A																													
 			^/f																													
 				+A																												
-				^<bt																												
+				^/bt																												
 			^<f																													
 				+A																												
 				^/f																												
