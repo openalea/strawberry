@@ -2812,7 +2812,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Plant_
 ^<F																																
 	+A																															
 	^/bt																															
-^/F																																
+^<F																																
 	+A																															
 	^/bt																															
 ^<F																																
