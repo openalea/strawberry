@@ -30,7 +30,7 @@ def extract_at_plant_scale(g, convert=convert):
     #     plant_df[name] = [plant_variables[name](pid) for pid in plant_ids]
     plant_df['Genotype'] = [genotype(pid, g) for pid in plant_ids]
     plant_df['date'] = [date(pid, g) for pid in plant_ids]
-    plant_df['modality'] = [Experiment_name(pid,g) for pid in plant_ids]
+    plant_df['modality'] = [modality(pid, g) for pid in plant_ids]
     plant_df['plant'] = [plant(pid, g) for pid in plant_ids]
 
     visibles = property(g, 'visible')
@@ -245,3 +245,7 @@ def date(vid, g):
     _date = property(g, 'date')[cpx]
     return(_date)
 
+def modality(vid, g):
+    cpx = g.complex_at_scale(vid, scale=1)
+    _modality = property(g, 'modality')[cpx]
+    return(_modality)
