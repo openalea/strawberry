@@ -247,5 +247,5 @@ def date(vid, g):
 
 def modality(vid, g):
     cpx = g.complex_at_scale(vid, scale=1)
-    _modality = property(g, 'mModality')[cpx]
+    _modality = property(g, 'Modality')[cpx]
     return(_modality)
