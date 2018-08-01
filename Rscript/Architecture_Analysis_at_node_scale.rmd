@@ -1,0 +1,201 @@
+---
+title: "Strawberry_Architecture_Analysis_at Phytomer_scale"
+author: "Marc LABADIE"
+date: "19 juillet 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Requierment
+
+## Packages
+
+* Package installation  
+
+```{r Install Packages}
+install.packages(pkgs = c("plyr","ggplot2","dplyr","rmarkdown","knitr","reshape"))
+```
+
+* Packages loading
+
+```{r package loading, message=FALSE, warning=FALSE}
+library(plyr)
+library(dplyr)
+library(tidyselect)
+library(ggplot2)
+library(rmarkdown)
+library(knitr)
+library(reshape)
+```
+
+* function
+
+```{r function}
+source(file = "c:/Users/mlabadie/Documents/GitHub/Rscript/Theme/Theme.R")
+
+```
+
+## Directory pathway
+
+```{r Directory Path}
+setwd(dir = "c:/Users/mlabadie/Documents/GitHub/strawberry/Rscript/")
+```
+
+## import data
+
+* Import data
+
+```{r import data}
+dataset <- read.csv(
+  file= "C:/Users/mlabadie/Documents/GitHub/strawberry/Rscript/Dataset_node_scale.csv",
+  sep = ";",
+  dec = ".",
+  header = TRUE)
+
+dataset <- dataset[,-c(7:8)]
+
+```
+
+* Transform data 
+
+-1: missing bud,  
+1: stolon,  
+2: vegetative bud (stages 17, 18, 19)  
+3: initiated bud (stage A)  
+4: rotten, dry or aborted bud  
+5: floral bud  
+6: branch crown  
+7: inflorescence  
+
+```{r}
+dataset[,"branching_type"] <- as.factor(dataset[,"branching_type"])
+dataset[,"branching_type"] <- factor(x = dataset[,"branching_type"],
+                                     levels = levels(dataset[,"branching_type"]),
+                                     labels = c("missing bud",
+                                                "stolon", 
+                                                "vegetative bud", 
+                                                "initated bud", 
+                                                "aborted bud", 
+                                                "floral bud", 
+                                                "branch crown",
+                                                "inflorescence")
+                                     )
+
+dataset[,"genotype"] <- as.factor(dataset[,"genotype"])
+dataset[,"genotype"] <- factor(x = dataset[,"genotype"],
+                               levels = levels(dataset[,"genotype"]),
+                               labels = c("Gariguette",
+                                          "Ciflorette",
+                                          "Clery",
+                                          "Capriss", 
+                                          "Darselect",
+                                          "Cir107"))
+
+```
+
+* Filter by genotype
+
+1: Gariguette, 2: Ciflorette, 3: Clery, 4: Capriss, 5: Darselect, 6: Cir107
+
+```{r filter data by genotype}
+Gar <- filter(.data = dataset, genotype=="Gariguette")
+Cif <- filter(.data = dataset, genotype=="Ciflorette")
+Cle <- filter(.data = dataset, genotype=="Clery")
+Cap <- filter(.data = dataset, genotype=="Capriss")
+Dar <- filter(.data = dataset, genotype=="Darselect")
+Cir <- filter(.data = dataset, genotype=="Cir107")
+```
+
+* frequency distribution
+
+
+```{r frequency }
+freq<- table(Gar$Index, Gar$branching_type)
+
+freq.data <- data.frame(
+  matrix(
+    data = freq,
+    nrow = nrow(freq),
+    ncol = ncol(freq)
+    )
+  )
+    
+colnames(freq.data)<- levels(x = Gar$branching_type)
+row.names(freq.data)<- row.names(freq)
+
+freq.data[,"Frequency"]<-rowSums(freq.data)
+freq.data["Frequency",]<-colSums(freq.data)
+kable(freq.data)
+```
+
+```{r probability}
+freq<- table(dataset[dataset$order=="0" & dataset$branching_type=="stolon",]$Index,dataset[dataset$order=="0" & dataset$branching_type=="stolon",]$genotype )
+ 
+prob<-prop.table(x = freq, 2)
+
+prob.data <- data.frame(
+  matrix(
+    data = prob,
+    nrow = nrow(prob),
+    ncol = ncol(prob)
+    )
+  )
+
+colnames(prob.data)<- c(levels(x = dataset$genotype))
+row.names(prob.data)<- row.names(prob)
+
+prob.data["Frequency",]<-colSums(prob.data)
+
+
+Cdf.data<- data.frame(
+  matrix(
+    nrow = nrow(prob.data),
+    ncol = ncol(prob.data)
+    )
+  )
+
+colnames(Cdf.data) <- colnames(prob.data)
+rownames(Cdf.data) <- rownames(prob.data)
+
+Cdf.data[1,]<-prob.data[1,]
+
+for (j in 1:ncol(Cdf.data)){
+  for (i in 2:nrow(Cdf.data)){
+    if(Cdf.data[i-1,j]== "1"){
+      break
+      }
+    Cdf.data[i,j]<-Cdf.data[i-1,j]+prob.data[i,j]
+  }
+}
+
+Cdf.data[,"Index"] <- rownames(Cdf.data)
+Cdf.data[,"Index"] <- as.numeric(Cdf.data[,"Index"] )
+
+Cdf.data<- melt(data = Cdf.data,id.vars = "Index")
+```
+
+
+```{r}
+ggplot(data = Cdf.data,
+       mapping = aes(
+         x = Index, 
+         y = value, colour= variable)
+       )+
+  geom_line(aes(colour= variable))+
+  geom_point(aes(colour= variable))+
+  scale_x_continuous(name = "node rank",
+                     breaks = seq(0,max(dataset$Index),1),
+                     labels = seq(0,max(dataset$Index),1))+
+  scale_y_continuous(name = "Cumulative distribution function")+
+  guides(colour= guide_legend(title = "Varieties"))+
+  labs(subtitle="order 0")+
+  Newphytol_theme
+```
+
+```{r}
+
+```
+

@@ -1,5 +1,4 @@
 
-
 ####################### Calcul function ####################################### 
 
 # Distribution function of number of module for successive orders ---------
@@ -332,6 +331,7 @@ fc_comp_varieties_chi2.fisher<-function(data,varname,comp){
   
   return(t.res)
 }
+
 
 
 
