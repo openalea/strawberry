@@ -28,7 +28,7 @@ Experiment_name	STRING
 Sample_date	DD/MM/YYYY
 Architecture_date	DD/MM/YYYY
 Genotype	STRING
-Modality	STRING
+Modality	STRING #Modality in this data modality is NULL
 Plant_ID	INT
 Stade	STRING
 Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar
