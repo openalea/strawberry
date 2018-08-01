@@ -30,6 +30,7 @@ def extract_at_plant_scale(g, convert=convert):
     #     plant_df[name] = [plant_variables[name](pid) for pid in plant_ids]
     plant_df['Genotype'] = [genotype(pid, g) for pid in plant_ids]
     plant_df['date'] = [date(pid, g) for pid in plant_ids]
+    plant_df['modality'] = [Experiment_name(pid,g) for pid in plant_ids]
     plant_df['plant'] = [plant(pid, g) for pid in plant_ids]
 
     visibles = property(g, 'visible')
@@ -56,30 +57,7 @@ def _plant_variables(g):
 
 
 ###############################################################################
-def extract_at_module_scale(g, convert=convert):
 
-    orders = algo.orders(g,scale=2)
-
-    module_variables=_module_variables(g)
-    plant_ids = g.vertices(scale=1)
-    visible_modules(g)
-
-    plant_df = OrderedDict()
-    # for name in ('Genotype', 'date', 'plant','order'):
-    #     plant_df[name] = [plant_variables[name](pid) for pid in plant_ids]
-    plant_df['Genotype'] = [genotype(pid, g) for pid in plant_ids]
-    plant_df['date'] = [date(pid, g) for pid in plant_ids]
-    plant_df['plant'] = [plant(pid, g) for pid in plant_ids]
-
-    visibles = property(g, 'visible')
-    plant_df['order'] = [orders[v] for v in g.complex_at_scale(pid,scale=2) if v in visibles for pid in plant_ids]
-
-    for name in (module_variables):
-        f = module_variables[name]
-        plant_df[name] = [sum(f(v, g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
-
-    df = pd.DataFrame(plant_df)
-    return df
 
 def _module_variables(g):
     module_variables = OrderedDict()

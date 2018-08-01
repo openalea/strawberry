@@ -116,9 +116,9 @@ def write_sequences(seqs, variables, VertexIdentifiers):
     return '\n'.join(txts)
 
 
-def median_individuals(df):
+def median_individuals(df,modality):
     indices = []
-    for gd, dataf in df.groupby(["Genotype","date"]):
+    for gd, dataf in df.groupby(["Genotype","date",modality]):
         geno, date = gd
         dg = dataf[df.columns[3:-1]]
         s=((dg-dg.median()).abs()/(dg-dg.median()).abs().mean()).sum(axis=1)

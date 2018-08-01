@@ -1,6 +1,19 @@
 
 # Rapport Formation Entrée des données friendlyfruit par Karine et Marie Noelle
 
+## Objectifs
+
+1. Former Marie Noelle et Karine à L'utilisation du MTG (module strawberry) à Marie Noelle et Karine Guy
+2. Continuer à développer le module MTG (Strawberry) 
+3. Permettre à INVENIO d'analyser les donner d'architecture sur des donnée en routine
+
+Ce documents est un compte rendu des différents problème rencontrer par Karine lors de la formation sur les données Firendly fruit. 
+Il permet également à INVENIO d'avoir un appercu de l'utilisation et du potentielle d'utilisation du MTG
+Il permet à Marc d'avoir une idée plus précise des attentes d'INVENIO pour l'élaboration des différents script Python et R. 
+==> réaliser et adapter les scripts en fonction des attentes d'INVENIO
+
+Cette formation permettra ainsi d'établir un cahier des charges plus précis entre INVENIO, CIRAD & INRA
+
 ## Lancer condaPromt
 
 1. Dans conda choisir le répetoire d'installation pour cela:cd path
@@ -20,14 +33,14 @@ cliquer sur example puis Formation puis Demo strawberry
 
 ## Mardi 20 juin 2018
 
-​​* **Erreurs Majeurs  empêchant de charger le MTG**
-​​	-Ligne 815-816-817: mauvaise position du F et/ou il doit manquer un +A
+* **Erreurs Majeurs  empêchant de charger le MTG**
+	-Ligne 815-816-817: mauvaise position du F et/ou il doit manquer un +A
 	-Ligne 1073-1074-1075: saut de deux lignes + début de l'axe/coeur en 3ième colonne
 	-Ligne 3659-3660-3661: saut de deux lignes + début de l'axe/coeur en 3ième colonne
-​​
-​* **Erreurs Mineurs qui n’empêche pas le programme de charger le jeux de donner, que je faire identifier par le programme et corriger manuellement.** 
 
-​​*Attention: les erreurs mineur peuvent influencer la visualisation et l'extraction des données donc une mauvaise analyse*
+* **Erreurs Mineurs qui n’empêche pas le programme de charger le jeux de donner, que je faire identifier par le programme et corriger manuellement.** 
+
+*Attention: les erreurs mineur peuvent influencer la visualisation et l'extraction des données donc une mauvaise analyse*
 
 	-Lignes 198, 203, 210, 220-223, 235, 392,675, 682, 687, 964, 1766, 2361, 2509, 2726, 2744: erreur de signe dans la majorité des cas il faut remplacer le "/" par "<"
 	-Ligne 3342, un axe ne peux se terminer par un F, il faut obligatoirement qu'il se termine par un bt, ht ou HT. 
@@ -90,13 +103,46 @@ Ce type d'erreur renvoi la propriété ainsi que le vertex auquel se situe l'err
 
 **Demande de la part d'Invenio (Karine Guy)**
 =============================================
-Actuellement afin d'avoir la structure du plant parfois il est necessaire d'ajouter une feuille (feuille n'est plus présente du à la sénésence). Cependant ils souhaiteraient calculer la surface foliaire qui correspond au feuille réellement présent. 
+
+1. Actuellement afin d'avoir la structure du plant parfois il est necessaire d'ajouter une feuille (feuille n'est plus présente du à la sénésence). Cependant ils souhaiteraient calculer la surface foliaire qui correspond au feuille réellement présent. 
 
 	=>	S= 1.89*nb_leaves
 
-C'est pourquoi tous comme la propriété visible/non visible, il serait important de mettre une propriété qui permettrai d'identifier les feuilles réelement présente.
+**C'est pourquoi tous comme la propriété visible/non visible, il serait important de mettre une propriété qui permettrai d'identifier les feuilles réelement présente.**
 
 	=> senecent_leaf = g.property(Absent) if Abscent==T and label==F 
 
+2. Visualisation 3D. 
 
+Mettre en place des argument qui me permette de definir la grille (un argument nombre de modalite et un autre nombre de plant par modalité).
 
+**Objectif est de pouvoir visualiser les plants sur une grille avec une colonne = une modalité et une ligne par plante 
+
+3. Visualisation 2D
+
+Problème de visualisation je n'arrive pas à visualiser l'ensemble des plantes. 
+
+4. Extraction sous forme de dataframe
+
+    4.1 A l'échelle du plant
+    
+    Actuellement le dataframe extrait permet de visualiser et calculer l'individu central en fonction du génotype et de la date. 
+    Invenio (Karine) aimerai également qu'il puisse tenir en compte d'une modalité par exemple dans le projet friendly fruit l'origine du plant. 
+    
+    * Prévoir dans le MTG, dans la sortie du dataframe une variable LA et LAI qui se calculerai seul en fonction des données rentrées
+        - LA= 1.89+(2.145*Hauteur Lobe central* Hauteur Lobe Gauche)
+        - LAI = LA* nombre de feuille Total
+    
+    * Dans le extraction des dataframe prévoire un argument qui permet de modalité =T ou F et extraire également la l'information modalité en plus de la variétés.
+    * Afficher dans le dataframe l'ensemble des variables mesurer.
+    * Prévoir également dans le calcul de l'individu centrale  la possibilité de choisir la modalité (par exemple modality =T or False ou modalite== "Origin"
+    * Permettre aux utilisateurs de choisir les variables pour le calcule de l'individu centrale actuellement, l'individu centrale est calculer sur des variable de comptage. Cependant il est possible que Invenio souhaite calculer l'individu centrale sur d'autres variables tel que la surface foliaire (LA), ou la surface foliaire rapporter au sol (LAI). 
+    
+    
+    4.2 A l'echelle du module
+    
+    Actuellement il n'y a pas d'extraction sous forme de dataframe à l'echelle du module. 
+    Il serait important pour Invenio et Karine d'avoir ce type d'extraction. 
+    
+    **Objectif est de pouvoir voir une certain nombre de variable en fonction du rang du module est de pouvoir les annalyser par la suite**
+   
