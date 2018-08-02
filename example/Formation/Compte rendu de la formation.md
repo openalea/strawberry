@@ -116,7 +116,8 @@ Ce type d'erreur renvoi la propriété ainsi que le vertex auquel se situe l'err
 
 Mettre en place des argument qui me permette de definir la grille (un argument nombre de modalite et un autre nombre de plant par modalité).
 
-**Objectif est de pouvoir visualiser les plants sur une grille avec une colonne = une modalité et une ligne par plante 
+**Objectif est de pouvoir visualiser les plants sur une grille avec une colonne = une modalité et une ligne par plante** 
+
 
 3. Visualisation 2D
 
@@ -146,3 +147,20 @@ Problème de visualisation je n'arrive pas à visualiser l'ensemble des plantes.
     
     **Objectif est de pouvoir voir une certain nombre de variable en fonction du rang du module est de pouvoir les annalyser par la suite**
    
+## Mercredi 1 Aout 2018
+
+**Marc:** J'ai fait des modifications afin de répondre à certaine attentes des centres experimentaux (INVENIO, CIREF), que je présentaterai à Karine lors de notre future journée de formation prévu le vendredi 3 Aouts. 
+
+* Dataframe extraction on plant scale:
+	- Extration du dataframe à l'échelle ainsi que le l'extation de l'individu centrale prends en compte la Modalité (pour le moment une seul modalité est possible).
+	La fonction extraction à l'echelle du plant revoie desormais le genotype/variété, la date, la modalité, le numéros du plant ainsi que les variable de comptage: nombre de feuilles , fleurs et stolons totale, l'ordre maximum ainsi que le nombre de ramification total. Il donne egalement le Vid (Numéros d'indexation du plant convertie en MTG)
+
+	- Idem pour le calcul de l'individu centrale, le calcul de l'individu central tiens desormais en compte le modalité. le calcule de l'individu central ce fait desormais en fonction de ces trois paramètre globaux (groupby en fonction de des paramètres globaux). Le calcul se fait cependant toujours sur le nombre de feuilles, fleurs, stolon, ordre maximum et nombre de ramification. 
+
+[**HINT:** Puisque le calcul se fait également sur la modalité il est donc necessaire au MTG d'ajouter et surtout de remplir la colonne modality par une valeur, si pas de modalité mettre A dans la case correspondante ou une autre valeur qui est identique pour chaque plante sinon le calcul ne marchera pas, en tout cas pour le moment. 
+Attention les modalités sont considérer comme des STRING (FACTEUR), donc ne pas mettre de variable quantitative]
+
+* Pour la visualisation 3D:
+	- J'ai ajouté un paramêtre qui me permet de donner le nombre de plante par modalité. Ce paramêtre permet ainsi de visualiser sur la grille l'ensemble des plantes avec une colonne par modalité. Attention, c'est un peu du bricolage donc pour que cela marche il faut le même nombre de plante par modalité sinon il risque (c'est même sur) d'y avoir un décalage. **PENSER A REDEFINIR LA FONCTION POUR QUE LA GRILLE SE FASSE EN FONCTION DU NOMBRE DE PLANTE ET DU NOMBRE DE MODALITE** 
+
+

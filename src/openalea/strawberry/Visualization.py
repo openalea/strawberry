@@ -28,16 +28,16 @@ def strawberry_visitor(g, v, turtle, time=0):
 #Vizalisation by genotype et par de la date
 #fonction visualisation(Genotype, nb_date, nb_plante)
 
-def visualise_plants(g, vids=[], positions=[]):
+def visualise_plants(g, vids=[], positions=[], no_plant=[]):
     max_scale = g.max_scale()
     t = pgl.PglTurtle()
     if not vids:
         vids = g.component_roots_at_scale(g.root, scale=max_scale)
-        x = -9
+        x = - no_plant
         y = -12
         dx = 2.
         dy = 4.
-        positions = [(x+(count%9)*dx,y+(count/9)*dy,0) for count in range(len(vids))]
+        positions = [(x+(count%no_plant)*dx,y+(count/no_plant)*dy,0) for count in range(len(vids))]
     else:
         vids = [cid for vid in vids for cid in g.component_roots_at_scale_iter(vid, scale=max_scale)]
 
