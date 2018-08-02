@@ -160,7 +160,22 @@ Problème de visualisation je n'arrive pas à visualiser l'ensemble des plantes.
 [**HINT:** Puisque le calcul se fait également sur la modalité il est donc necessaire au MTG d'ajouter et surtout de remplir la colonne modality par une valeur, si pas de modalité mettre A dans la case correspondante ou une autre valeur qui est identique pour chaque plante sinon le calcul ne marchera pas, en tout cas pour le moment. 
 Attention les modalités sont considérer comme des STRING (FACTEUR), donc ne pas mettre de variable quantitative]
 
+## Jeudi 2 Aout 2018
+
+Autres modification approter par marc
+
 * Pour la visualisation 3D:
 	- J'ai ajouté un paramêtre qui me permet de donner le nombre de plante par modalité. Ce paramêtre permet ainsi de visualiser sur la grille l'ensemble des plantes avec une colonne par modalité. Attention, c'est un peu du bricolage donc pour que cela marche il faut le même nombre de plante par modalité sinon il risque (c'est même sur) d'y avoir un décalage. **PENSER A REDEFINIR LA FONCTION POUR QUE LA GRILLE SE FASSE EN FONCTION DU NOMBRE DE PLANTE ET DU NOMBRE DE MODALITE** 
 
 
+* Ceux qui reste à faire:
+	- Visualisation 3D:
+		- Mettre un argument pour permettre de basculer d'une visualisation avec feuille à une visualisation sans feuille (without_leaf= True or False)	
+	
+	- Extraction sous forme de dataframe à l'échelle du module. 
+		Il souhaite dans le dataframe extraire toute les variables à l'echelle du module. 
+
+* Sur le MTG:
+	- Calculer la propriété Leaf Area et Leaf Area Index
+ 		- LA= 1.89+(2.145*Hauteur Lobe central* Hauteur Lobe Gauche)
+        - LAI = LA* nombre de feuille Total

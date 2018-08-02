@@ -570,8 +570,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 					^<f																												
 					^<bt									A																			
 				^<ht										E																			
-			^<HT											60													5						
-		^<HT												65													5						
+			^<HT											60														5						
+		^<HT												65														5						
 	^<HT													ABORTED																			ABORTED
 ^<F																																	
 	+A																																
