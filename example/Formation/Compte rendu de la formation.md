@@ -16,9 +16,10 @@ Cette formation permettra ainsi d'établir un cahier des charges plus précis en
 
 ## Lancer condaPromt
 
-1. Dans conda choisir le répetoire d'installation pour cela:cd path
+1. Dans conda choisir le répetoire d'installation pour cela:
+cd path
 
-path= chemin d'accès example c:\users\mlabadie\Documents\GitHub\strawberry
+path= chemin d'accès example  c:\users\mlabadie\Documents\GitHub\strawberry
 
 2. Activé l'environnement conda (strawberry/ openalea)
 taper: conda activate strawberry
