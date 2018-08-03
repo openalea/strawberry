@@ -179,3 +179,23 @@ Autres modification approter par marc
 	- Calculer la propriété Leaf Area et Leaf Area Index
  		- LA= 1.89+(2.145*Hauteur Lobe central* Hauteur Lobe Gauche)
         - LAI = LA* nombre de feuille Total
+
+## Vendredi 3 Aout
+
+Deroulement de la session: 
+Nous avons vu avec Karine les nouvelle amélioration du script 
+Nous avons revu comment entrer les données en mtg. avec le nouveau template et rentrée quelque données Projet FriendlyFruit_Variete
+
+je vais voir comment entre les données plus facilement. 
+
+
+[**Hint**: A voir si on le fait sur Python ou sur R]
+Demande de Karine:
+	- extraire un dataframe avec la moyenne et ecart type de du génotype et de la modalité de toute les propriétés. 
+
+	-représentation de chaque stade par niveau (nombre de bourdeons pour chaque stade)
+		- uniquement les les axes visible se terminant par un BT
+
+
+
+
