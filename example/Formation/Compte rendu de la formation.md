@@ -197,6 +197,9 @@ Demande de Karine:
 	-représentation de chaque stade par niveau (nombre de bourdeons pour chaque stade)
 		- uniquement les les axes visible se terminant par un BT
 
+## Vendredi 10 aout
 
-
-
+Faire la fonction pour extraire les données en excel (les tableaux)
+Visualisation 3D argument pour augmenter la distance entre les plants aussi bien en ligne que en colonne
+Faire une representation du plant médian en 3D
+Faire une visualisation des plant moyen à la place des plant moyens. 
