@@ -55,6 +55,7 @@ def extract_at_module_scale(g, convert=convert):
     visible_modules(g)
 
     module_ids =  list(g.property('visible'))
+    modules_ids.sort()
 
     module_df = OrderedDict()
     # for name in ('Genotype', 'date', 'plant'):
@@ -100,11 +101,11 @@ def _module_variables(g):
     module_variables['nb_aborted_flowers'] = nb_aborted_flowers #Nombre de fleurs avorte
     module_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
     module_variables['nb_vegetative_bud'] = nb_vegetative_buds
-    module_variables['nb_Initiated_bud']= nb_initiated_buds
+    module_variables['nb_initiated_bud']= nb_initiated_buds
     module_variables['nb_floral_bud']= nb_floral_buds
     module_variables['nb_stolons']= nb_stolons
     module_variables['type_of_crown'] = type_of_crown # Type de crowns (Primary Crown:1, Branch crown:2 extension crown:3)
-    module_variables['Crown_status'] = Crown_status
+    module_variables['crown_status'] = Crown_status
     return module_variables
 
 
