@@ -47,6 +47,39 @@ def extract_at_plant_scale(g, convert=convert):
     return df
 
 
+def extract_at_module_scale(g, convert=convert):
+
+    orders = algo.orders(g, scale=2)
+
+    module_variables = _module_variables(g)
+    module_ids =  [v for v in g.vertices_iter(scale=2)
+                  if g.label(g.component_roots_iter(v).next()) == 'F']
+
+    visible_modules(g)
+
+    module_df = OrderedDict()
+    # for name in ('Genotype', 'date', 'plant'):
+    #     plant_df[name] = [plant_variables[name](pid) for pid in plant_ids]
+    module_df['Genotype'] = [genotype(mid, g) for mid in module_ids]
+    module_df['date'] = [date(mid, g) for mid in module_ids]
+    module_df['modality'] = [modality(mid, g) for mid in module_ids]
+    module_df['plant'] = [plant(mid, g) for mid in module_ids]
+
+    visibles = property(g, 'visible')
+
+    for name in (module_variables):
+        f = module_variables[name]
+        module_df[name] = [f(v, g) for mid in module_ids]
+
+    module_df['order'] = [orders[mid]  for mid in module_ids]
+    #plant_df['nb_ramifications'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==3 and v in visibles)) for pid in plant_ids]
+    module_df['vid'] = module_ids
+    module_df['plant_vid'] = [g.complex(v) for v in module_ids]
+
+    df = pd.DataFrame(module_df)
+    return df
+
+
 def _plant_variables(g):
     plant_variables = OrderedDict()
     plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
