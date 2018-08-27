@@ -52,10 +52,9 @@ def extract_at_module_scale(g, convert=convert):
     orders = algo.orders(g, scale=2)
 
     module_variables = _module_variables(g)
-    module_ids =  [v for v in g.vertices_iter(scale=2)
-                  if g.label(g.component_roots_iter(v).next()) == 'F']
-
     visible_modules(g)
+
+    module_ids =  list(g.property('visible'))
 
     module_df = OrderedDict()
     # for name in ('Genotype', 'date', 'plant'):
@@ -69,7 +68,7 @@ def extract_at_module_scale(g, convert=convert):
 
     for name in (module_variables):
         f = module_variables[name]
-        module_df[name] = [f(v, g) for mid in module_ids]
+        module_df[name] = [f(mid, g) for mid in module_ids]
 
     module_df['order'] = [orders[mid]  for mid in module_ids]
     #plant_df['nb_ramifications'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==3 and v in visibles)) for pid in plant_ids]
