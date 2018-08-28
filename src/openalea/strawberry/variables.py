@@ -88,7 +88,7 @@ def _plant_variables(g):
     plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
     plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
     plant_variables['nb_stolons'] = nb_stolons
-    
+
     return plant_variables
 
 
@@ -301,6 +301,6 @@ def leaf_area(vid,g):
         if (central is None) or (left is None):
             print("DATA is missing on vertex %d for line %d"%(v, g.node(v)._line))
             continue
-    _area[v] = round(1.89 + (2.145 * central * left),2)
+        _area[v] = round(1.89 + (2.145 * central * left),2)
 
     return(_area)
