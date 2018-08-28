@@ -203,3 +203,11 @@ Faire la fonction pour extraire les données en excel (les tableaux)
 Visualisation 3D argument pour augmenter la distance entre les plants aussi bien en ligne que en colonne
 Faire une representation du plant médian en 3D
 Faire une visualisation des plant moyen à la place des plant moyens. 
+
+## Lundi 27 Aout 2018 (Marc+ Christophe Pradal)
+Avec Christophe pradal nous avons fait une fonction pour extraire les données à l'échelle des modules sous forme de dataframe.  
+Nous avons également fait la fonction extraire le dataset en donnée excel. 
+
+## Mardi 28 Aout 2018 (Marc +Christophe Pradal)
+Création de la fonction pour calculer la surface foliaire selon l'allometrie d'invenio. 
+
