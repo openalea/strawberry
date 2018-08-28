@@ -43,6 +43,9 @@ def extract_at_plant_scale(g, convert=convert):
     plant_df['nb_ramifications'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==3 and v in visibles)) for pid in plant_ids]
     plant_df['vid'] = plant_ids
 
+    #rajouter par Marc
+
+
     df = pd.DataFrame(plant_df)
     return df
 
@@ -83,7 +86,8 @@ def _plant_variables(g):
     plant_variables = OrderedDict()
     plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
     plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
-    plant_variables['nb_stolons']= nb_stolons
+    plant_variables['nb_stolons'] = nb_stolons
+    plant_variables['leaf_area'] = leaf_area
     return plant_variables
 
 
@@ -282,3 +286,17 @@ def modality(vid, g):
     _modality = property(g, 'Modality')[cpx]
     return(_modality)
 
+
+
+
+
+####################
+def leaf_area(vid,g):
+    _LFTLG_CENTRAL= g.property("LFTLG_CENTRAL")
+    _LFTLG_LEFT= g.property("LFTLG_LEFT")
+    _LFAR= g.property("LFAR")
+
+    for v in LFTLG_CENTRAL:
+    _LFAR[v] = round(1.89 + (2.145 * LFTLG_CENTRAL[v] * LFTLG_LEFT[v]),2)
+
+    return(_LFAR)
