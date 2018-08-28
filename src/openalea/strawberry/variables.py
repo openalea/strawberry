@@ -39,6 +39,7 @@ def extract_at_plant_scale(g, convert=convert):
         f = plant_variables[name]
         plant_df[name] = [sum(f(v, g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
 
+    plant_df['leaf_area'] = [leaf_area(v,g) for v in g.components(pid) if v in visibles for pid in plant_ids]
     plant_df['order_max'] = [max(orders[v] for v in g.components(pid) if v in visibles) for pid in plant_ids]
     plant_df['nb_ramifications'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==3 and v in visibles)) for pid in plant_ids]
     plant_df['vid'] = plant_ids
@@ -87,7 +88,7 @@ def _plant_variables(g):
     plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
     plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
     plant_variables['nb_stolons'] = nb_stolons
-    plant_variables['leaf_area'] = leaf_area
+    
     return plant_variables
 
 
