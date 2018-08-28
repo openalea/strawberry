@@ -24,6 +24,7 @@ def extract_at_plant_scale(g, convert=convert):
     plant_variables = _plant_variables(g)
     plant_ids = g.vertices(scale=1)
     visible_modules(g)
+    compute_leaf_area(g)
 
     plant_df = OrderedDict()
     # for name in ('Genotype', 'date', 'plant'):
@@ -39,7 +40,7 @@ def extract_at_plant_scale(g, convert=convert):
         f = plant_variables[name]
         plant_df[name] = [sum(f(v, g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
 
-    plant_df['leaf_area'] = [leaf_area(v,g) for v in g.components(pid) if v in visibles for pid in plant_ids]
+    plant_df['leaf_area'] = [mean_leaf_area(pid, g) * sum(nb_visible_leaves(v,g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
     plant_df['order_max'] = [max(orders[v] for v in g.components(pid) if v in visibles) for pid in plant_ids]
     plant_df['nb_ramifications'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==3 and v in visibles)) for pid in plant_ids]
     plant_df['vid'] = plant_ids
@@ -289,18 +290,25 @@ def modality(vid, g):
 
 # add by marc
 
-def leaf_area(vid,g):
+def compute_leaf_area(g):
     _central= g.property("LFTLG_CENTRAL")
     _left= g.property("LFTLG_LEFT")
-    _area= g.property("LFAR")
+    _mean_leaf_area= g.property("LFAR")
 
     for v in _central:
         central = _central.get(v)
         left = _left.get(v)
-
         if (central is None) or (left is None):
             print("DATA is missing on vertex %d for line %d"%(v, g.node(v)._line))
             continue
-        _area[v] = round(1.89 + (2.145 * central * left),2)
 
-    return(_area)
+        pid = g.complex_at_scale(v, scale=1)
+        _mean_leaf_area[pid]= round(1.89 + (2.145 * central * left),2)
+
+
+def mean_leaf_area(vid,g):
+    pid = g.complex_at_scale(vid, scale=1)
+    area = g.property("LFAR").get(pid, 0.)
+
+    return area
+
