@@ -658,7 +658,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Plant_ID	Stade	Foliar_typ
 			^<ht								19																								
 		^<ht									D																								
 	^<ht										H			7																					
-^<ht											cut																								
+^<HT											cut																								
 																																			
 /P							FRAFLO	10/12/2014	Clery	9																									
 ^/T													18.85																						
