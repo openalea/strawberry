@@ -286,3 +286,20 @@ def modality(vid, g):
     _modality = property(g, 'Modality')[cpx]
     return(_modality)
 
+# add by marc
+
+def leaf_area(vid,g):
+    _central= g.property("LFTLG_CENTRAL")
+    _left= g.property("LFTLG_LEFT")
+    _area= g.property("LFAR")
+
+    for v in _central:
+        central = _central.get(v)
+        left = _left.get(v)
+
+        if (central is None) or (left is None):
+            print("DATA is missing on vertex %d for line %d"%(v, g.node(v)._line))
+            continue
+    _area[v] = round(1.89 + (2.145 * central * left),2)
+
+    return(_area)
