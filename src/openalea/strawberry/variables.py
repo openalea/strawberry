@@ -230,7 +230,7 @@ def Crown_status(vid, g):
     if label is bt then
         - if stage is 17, 18, 19 or None, => vegetative (1)
         - if stage is A => initiated (2)
-        - if stage is other => non defined (pourri, avorté, coupé) (-1)
+        - if stage is other => non defined (pourri, avorte, coupe) (-1)
      - Terminal vegetative bud (1): label==bt g.property(Stade)== none or 17 or 18 or 19
      - Terminal initiated bud (2): label== bt if g.property(Stade) == A
      - Terminal Floral bud (3): label==ht
@@ -286,17 +286,3 @@ def modality(vid, g):
     _modality = property(g, 'Modality')[cpx]
     return(_modality)
 
-
-
-
-
-####################
-def leaf_area(vid,g):
-    _LFTLG_CENTRAL= g.property("LFTLG_CENTRAL")
-    _LFTLG_LEFT= g.property("LFTLG_LEFT")
-    _LFAR= g.property("LFAR")
-
-    for v in LFTLG_CENTRAL:
-    _LFAR[v] = round(1.89 + (2.145 * LFTLG_CENTRAL[v] * LFTLG_LEFT[v]),2)
-
-    return(_LFAR)
