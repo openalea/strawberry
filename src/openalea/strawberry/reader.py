@@ -232,7 +232,7 @@ def transform_date(g, pattern = 'date'):
         prop = g.property(date_property)
         if prop:
             myd = g.property(date_property).itervalues().next()
-            date_format = '%d-%m-%Y' if '-' in myd else '%d-%m-%Y'
+            date_format = '%d-%m-%Y' if '-' in myd else '%d/%m/%Y'
             g.properties()[date_property] = dict((v, datetime.datetime.strptime(d, date_format))
                                              for v, d in g.property(date_property).iteritems())
     return g
