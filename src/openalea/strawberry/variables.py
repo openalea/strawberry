@@ -41,6 +41,7 @@ def extract_at_plant_scale(g, convert=convert):
         plant_df[name] = [sum(f(v, g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
 
     plant_df['leaf_area'] = [mean_leaf_area(pid, g) * sum(nb_visible_leaves(v,g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
+    #plant_df['leaf_area'] = [mean_leaf_area(pid, g)  for pid in plant_ids] 
     plant_df['order_max'] = [max(orders[v] for v in g.components(pid) if v in visibles) for pid in plant_ids]
     plant_df['nb_ramifications'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==3 and v in visibles)) for pid in plant_ids]
     plant_df['vid'] = plant_ids
@@ -303,7 +304,7 @@ def compute_leaf_area(g):
             continue
 
         pid = g.complex_at_scale(v, scale=1)
-        _mean_leaf_area[pid]= round(1.89 + (2.145 * central * left),2)
+        _mean_leaf_area[pid]= round(1.89 + (2.145 * (central/10) * (left/10)),2)
 
 
 def mean_leaf_area(vid,g):

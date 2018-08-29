@@ -211,3 +211,6 @@ Nous avons également fait la fonction extraire le dataset en donnée excel.
 ## Mardi 28 Aout 2018 (Marc +Christophe Pradal)
 Création de la fonction pour calculer la surface foliaire selon l'allometrie d'invenio. 
 
+[**Rmq**: Il y a une forte erreur sur l'allometry, le calcule reel est LA= 1.89+(2.145*Hauteur Lobe central* Largeur Lobe Gauche)
+En appliquant la formule d'invenio nous obtenons des surfaces foliaire vraiment important est peu réalise voir avec eux si c'est bien cette allometry qu'il souhaite utiliser. 
+Attention: pour utiliser cette allométry les unités sont vraiment importante effet quadratique tres important]
