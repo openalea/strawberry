@@ -25,6 +25,7 @@
 import datetime
 
 from openalea.mtg import MTG, fat_mtg
+from openalea.mtg.algo import orders
 
 
 ###############################################################################

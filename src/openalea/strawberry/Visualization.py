@@ -1,4 +1,6 @@
 """ Visualisation code for strawberry on MTG. """
+from collections import OrderedDict, defaultdict
+
 from openalea.strawberry import Rules_production
 from openalea.mtg import *
 from openalea.core import *
@@ -141,6 +143,6 @@ def plot3d(g, by=['Genotype'], hide_leaves=False):
 
     vids, positions = plant_positions(g, by=by)
     Rules_production.color_code(g)
-    scene = Visualization.visualise_plants(g, vids=vids, positions=positions, hide_leaves=hide_leaves)
+    scene = visualise_plants(g, vids=vids, positions=positions, hide_leaves=hide_leaves)
     pgl.Viewer.display(scene)
     return scene
