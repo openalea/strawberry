@@ -229,7 +229,9 @@ def strawberry2mtg(fn):
 def transform_date(g, pattern = 'date'):
     date_properties = [name for name in g.property_names_iter() if pattern in name]
     for date_property in date_properties:
-        g.properties()[date_property] = dict((v, datetime.datetime.strptime(d, '%d-%m-%Y'))
+        myd = g.property(date_property).itervalues().next()
+        date_format = '%d-%m-%Y' if '-' in myd else '%d-%m-%Y'
+        g.properties()[date_property] = dict((v, datetime.datetime.strptime(d, date_format))
                                              for v, d in g.property(date_property).iteritems())
     return g
 
