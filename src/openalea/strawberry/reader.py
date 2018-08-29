@@ -22,6 +22,7 @@
 """
 
 """
+import datetime
 
 from openalea.mtg import MTG, fat_mtg
 
@@ -196,7 +197,7 @@ class Reader(object):
         self._order = 0
         self._scale = 3
         self._vid = None
-        #self._axis_vid.append(self._vid) 
+        #self._axis_vid.append(self._vid)
 
         nb_lines = len(self.content) - self.prop_no
         for i in range(nb_lines):
@@ -220,4 +221,21 @@ def strawberry2mtg(fn):
     """ csv to MTG converter """
     reader = Reader(fn)
     g = reader.parse()
+    return g
+
+###############################################################################
+
+def transform_date(g, pattern = 'date'):
+    date_properties = [name for name in g.property_names_iter() if pattern in name]
+    for date_property in date_properties:
+        g.properties()[date_property] = dict((v, datetime.datetime.strptime(d, '%d-%m-%Y'))
+                                             for v, d in g.property(date_property).iteritems())
+    return g
+
+
+def load_mtg(fn):
+    g = MTG(fn)
+    g = transform_date(g)
+    g.properties()['order'] = orders(g)
+
     return g
