@@ -217,3 +217,11 @@ Attention: pour utiliser cette allométry les unités sont vraiment importante e
 
 ## Mercredi 29 aout 2018
 Nous avons modifié la visualisation 3D afin de definir la grille en fonction de la modalité, maintenant de manière automatique nous representons les plantes architecturé en fonction de la modalité (en colonne) et nous pouvons également associé un ensemble de modaliter. (pas très claire)
+
+## Jeudi 30 aout 2018
+
+Nous sommes revenues sur les mesures de surface foliaire, pour le calcul de la surface foliaire nous exportons dans le dataframe à l'echelle de la plante une surface foliaire moyenne de la feuille mesuré grâce à l'allometry. 
+j'ai également intégrer dans le dataframe le calcule du nombre de feuille manquante ce qui me permet dans le data frame de soustraire au nombre de feuille visible le nombre de feuille manquante et de calculer la surface folaire total du plant 
+
+
+

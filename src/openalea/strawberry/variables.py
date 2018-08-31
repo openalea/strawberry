@@ -40,8 +40,8 @@ def extract_at_plant_scale(g, convert=convert):
         f = plant_variables[name]
         plant_df[name] = [sum(f(v, g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
 
-    plant_df['leaf_area'] = [mean_leaf_area(pid, g) * sum(nb_visible_leaves(v,g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
-    #plant_df['leaf_area'] = [mean_leaf_area(pid, g)  for pid in plant_ids]
+    #plant_df['Total_leaf_area'] = [mean_leaf_area(pid, g) * (sum(nb_visible_leaves(v,g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
+    plant_df['leaf_area'] = [mean_leaf_area(pid, g)  for pid in plant_ids]
     plant_df['order_max'] = [max(orders[v] for v in g.components(pid) if v in visibles) for pid in plant_ids]
     plant_df['nb_ramifications'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==3 and v in visibles)) for pid in plant_ids]
     plant_df['vid'] = plant_ids
@@ -89,8 +89,9 @@ def _plant_variables(g):
     plant_variables = OrderedDict()
     plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
     plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
-    plant_variables['nb_stolons'] = nb_stolons
-
+    plant_variables['nb_stolons'] = nb_stolons # Nombre de stolons
+    plant_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille visible
+    plant_variables['nb_missing_leaves'] = missing_leaves #Nombre de feuille manquante
     return plant_variables
 
 
@@ -159,6 +160,9 @@ def nb_total_flowers(vid, g):
     flowers = property(g, 'Fleurs_total')
     return sum( flowers.get(cid,0) for cid in g.components(vid) if g.label(cid) in ('ht', 'HT'))
 
+def missing_leaves(vid,g):
+    missing= property(g, 'Missing')
+    return sum(1 for cid in g.components(vid) if missing.get(cid)=="yes")
 
 """Return the No vegetative bud
 
