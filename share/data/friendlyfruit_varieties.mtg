@@ -53,6 +53,1377 @@ FLWRNUMBER_ABORTED	INT # Total aborted Flower number
 FLWRNUMBER_CLOSED	INT # Total closed flower number
 SAMPLING	STRING # location of sampling
 COMMENT	STRING
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+MTG:
+ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modality	Plant_ID	Stade	Missing	PETLG	LFTLG_CENTRAL	LFTLG_LEFT	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	COMMENT
+/P								friendlyfruit_variete_sol	22/06/2018		BH518		1											
+^/T																								
+^/F															yes									
+^<F																								
+	+A																							
+	^/F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F														yes									
+		+A																						
+		^/F																						
+		^<F																						
+		^<F																						
+		^<BT																						
+	^<HT													87					6	2	4	0		
+^<F																								
+	+A														yes									
+	^/F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<BT																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/F																						
+		^<F																						
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<BT																						
+	^<HT																		6	6	0	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+	^<F																							
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<BT																						
+	^<HT													87					8	6	2	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F																							
+	^<BT													ABORTED										
+^<F															yes									
+	+A																							
+	^/F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/BT																					
+		^<F																						
+			+A																					
+			^/F																					
+			^<F																					
+			^<F																					
+			^<BT																					
+		^<HT												87					7	5	2	0		
+	^<HT													87					6	6	0	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/BT																					
+		^<F														200	90	96						
+			+A																					
+			^/F																					
+				+A																				
+				^/s																				
+			^<F																					
+				+A																				
+				^/s																				
+			^<f																					
+				+A																				
+				^/s																				
+			^<BT																					
+		^<HT												87					9	9	0	0		
+	^<HT													87					6	6	0	0		
+^<HT														87					14	5	9	0		
+/P								friendlyfruit_variete_sol	22/06/2018		BH518		2											
+/T																								
+^/F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+	^<F														yes									
+		+A																						
+		^/BT																						
+	^<F														yes									
+		+A																						
+		^/F																						
+		^<F																						
+			+A																					
+			^/F																					
+			^<F																					
+			^<F																					
+				+A																				
+				^/s																				
+			^<F																					
+				+A																				
+				^/s																				
+			^<F																					
+				+A																				
+				^/BT																				
+			f																					
+				+A																				
+				^/BT																				
+			^<HT											65					5					
+		^<HT												87					2	2				
+	^<HT													87					12	11	1			
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+	^<F														yes									
+		+A																						
+		^/F																						
+		^<F																						
+			+A																					
+			^/F												yes									
+			^<F												yes									
+			^<F																					
+			^<BT											ABORTED										
+		^<F																						
+			+A																					
+			^/F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/BT																				
+			f																					
+				+A																				
+				^/BT																				
+			^<HT											60					9	1	0	8		
+		^<HT												87					6	6	0	0		
+	^<HT													CUT										
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/F													yes									
+		^<F																						
+		^<F																						
+		^<F																						
+		^<BT																						
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/f																					
+				+A																				
+				^/s																				
+			^<BT																					
+		^<HT												73					8	0	0	8		
+	^<HT													87					13	11	2	0		
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/BT													ABORTED										
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F																							
+		+A																						
+		^/BT																						
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/BT																					
+		^<F																						
+			+A																					
+			^/BT																					
+		^<HT												67					8					
+	^<HT													87					7	7	0	0		
+^<F															yes									
+	+A																							
+	^/F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F														174	97	84						
+			+A																					
+			^/F																					
+				+A																				
+				^/s																				
+			^<BT																					
+		^<HT												83					8	8	0	0		
+	^<HT													87					4	4	0	0		
+^<HT														87					14	6	8	0		
+/P								friendlyfruit_variete_sol	22/06/2018		BH518		3											
+/T																								
+^/F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/BT																						
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/BT																				
+			^<F																					
+				+A																				
+				^/BT																				
+			^<ht											I										
+		^<HT												87					4	3	1	0		
+	^<HT													87					7	4	3	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/F													yes									
+		^<F													yes									
+			+A																					
+			^/F																					
+			^<F																					
+			^<BT																					
+		^<HT												87					6	5	1	0		
+	^<F														yes									
+		+A																						
+		^/F													yes									
+		^<F																						
+			+A																					
+			^/F																					
+			^<F																					
+			^<F																					
+			^<F																					
+				+A																				
+				^/s																				
+			^<F																					
+				+A																				
+				^/BT																				
+			^<HT											73					7					
+		^<HT												87					8	8	0	0		
+	^<HT													87					13	6	7	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F														yes									
+		+A																						
+		^/F																						
+		^<F																						
+			+A																					
+			^/F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/BT																				
+			^<HT											CUT										
+		^<HT												87					6	6	0	0		
+	^<HT													87					9	8	1	0		
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/F																							
+	^<F																							
+		+A																						
+		^/BT																						
+	^<F																							
+		+A																						
+		^/F																						
+		^<F																						
+		^<F																						
+		^<F																						
+		^<BT																						
+	^<HT													87					6	6	0	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F															267	80	76						
+		+A																						
+		^/BT																						
+	^<HT													85					3	3	0	0		
+^<HT														87					14	10	4	0		
+/P								friendlyfruit_variete_sol	22/06/2018		BH518		4											
+/T																								
+^/F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/F													yes									
+		^<F													yes									
+		^<F													yes									
+		^<F																						
+			+A																					
+			^/F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<f																					
+				+A																				
+				^/BT																				
+			^<HT											60					3	1	0	2		
+		^<HT												87					5	4	1	0		
+	^<F														yes									
+		+A																						
+		^/s																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/s																				
+			^<F																					
+				+A																				
+				^/F																				
+					+A																			
+					^/BT																			
+				^<f																				
+					+A																			
+					^/BT																			
+				^<HT										57										
+			^<HT											83					7	7	0	0		
+		^<HT												87					9	8	1	0		
+	^<F														yes									
+		+A																						
+		^/F													yes									
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/BT																				
+			^<HT											81					3					
+		^<HT												87					8	7	1	0		
+	^<HT													87					10	4	6	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+		+A																						
+		^/F													yes									
+			+A																					
+			^/bt																					
+		^<F													yes									
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<BT																					
+		^<HT												87					8	8	0	0		
+	^<HT													87					6	6	0	0		
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/BT																					
+		^<F																						
+			+A																					
+			^/F																					
+				+A																				
+				^/bt																				
+			^<BT																					
+		^<HT												81					5					
+	^<HT													87					6	6	0	0		
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/BT																					
+		^<ht												I										
+	^<F														yes									
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F														94	58	33						
+			+A																					
+			^/BT																					
+		^<HT												65					4					
+	^<HT													87					6	6	0	0		
+^<HT														87					11	5	6	0		
+/P								friendlyfruit_variete_sol	22/06/2018		BH518		5											
+/T																								
+^/F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/BT																						
+	^<HT													67					6					
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/F													yes									
+			+A																					
+			^/bt																					
+		^<F													yes									
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/F																					
+			^<F																					
+			^<BT																					
+		^<HT												87					6	4	2	0		
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/F													yes									
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/F																				
+					+A																			
+					^/s																			
+				^<F																				
+					+A																			
+					^/s																			
+				f																				
+					+A																			
+					^/BT																			
+				^<HT										55										
+			^<HT											87					7	7	0	0		
+		^<HT												87					7	6	1	0		
+	^<HT													87					10	8	2	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/F													yes									
+		^<F																						
+			+A												yes									
+			^/F												yes									
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			f																					
+				+A																				
+				^/BT																				
+			^<HT											55										
+		^<HT												87					6	6	0	0		
+	^<HT													87					12	8	4	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<BT																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/F																					
+				+A																				
+				^/s																				
+			f																					
+				+A																				
+				^/s																				
+			^<BT																					
+		^<HT												87					7	7	0	0		
+	^<HT													87					11	11	0	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F														yes									
+		+A																						
+		^/F																						
+			+A																					
+			^/BT																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/BT																					
+		^<HT												65					7					
+	^<HT													87					9	8	1	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/BT																						
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/BT																					
+		^<HT												73					5					
+	^<HT													87					7	6	1	0		
+^<F															yes									
+	+A																							
+	^/F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/BT																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/BT																						
+	^<F																							
+		+A																						
+		^/F																						
+			+A																					
+			^/s																					
+		^<F														225	81	76						
+			+A																					
+			^/bt																					
+		^<BT																						
+	^<HT													81					9	9	0	0		
+^<HT														87					11	7	4	0		
+/P								friendlyfruit_variete_sol	22/06/2018		BH518		6											
+/T																								
+^/F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<BT																							
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^/F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/bt																						
+	^<BT																							
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/F													yes									
+			+A																					
+			^/bt																					
+		^<F													yes									
+			+A																					
+			^/F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/bt																				
+			^<F																					
+				+A																				
+				^/F																				
+					+A																			
+					^/bt																			
+				^<F																				
+					+A																			
+					^/bt																			
+				^<F																				
+					+A																			
+					^/bt																			
+				^<F																				
+					+A																			
+					^/bt																			
+				^<f																				
+					+A																			
+					^/BT																			
+				^<ht										I										
+			^<HT											87					6	6	0	0		
+		^<HT												87					6	3	3	0		
+	^<HT													CUT										
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/F																						
+		^<BT													ABORTED									
+	^<HT													87					7	2	5	0		
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/s																							
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+	^<F																							
+	^<F																							
+	^<BT													ABORTED										
+^<F															yes									
+	+A																							
+	^/F														yes									
+	^<F														yes									
+	^<F														yes									
+	^<F																							
+		+A																						
+		^/s																						
+	^<F																							
+		+A																						
+		^/BT												ABORTED										
+	^<HT																							ABORTED
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F																							
+		+A																						
+		^/BT												ABORTED										
+	^<HT																							ABORTED
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/bt																							
+^<F															yes									
+	+A																							
+	^/F																							
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/s																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<f																				
+			+A																					
+			^/BT																					
+		^<HT												57										
+	^<HT													87					9	9	0	0		
+^<F															yes									
+	+A																							
+	^/F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/bt																						
+	^<F														yes									
+		+A																						
+		^/F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/bt																					
+		^<F																						
+			+A																					
+			^/BT																					
+		^<HT																						ABORTED
+	^<HT													87					12	10	2	0		
+^<HT														87					15	5	10	0		
+=======
+=======
+>>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
+=======
+>>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
 																																		
 MTG:																																		
 ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modality	Plant_ID	Stade	Missing	DBI	INFLOLG	PETLG	LFTLG_RIGHT	LFTLG_CENTRAL	LFTLG_LEFT	LFTWD_RIGHT	LFTWD_CENTRAL	LFTWD_LEFT	LFTAR_RIGHT	LFTAR_CENTRAL	LFTAR_LEFT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	COMMENT
@@ -5376,3 +6747,10 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 		^<bt																																
 	^<HT													85															4					
 ^<HT														87															4	2	2	0		
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> cc46ba2cbd0b66dfc2261023abdc877f0bd5c484
+=======
+>>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
+=======
+>>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
