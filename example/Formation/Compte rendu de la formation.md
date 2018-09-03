@@ -199,9 +199,37 @@ Demande de Karine:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Le label "BT" n'est pas reconnue nous avons decider de tous mettre en "bt"
 =======
 ## Vendredi 10 aout
+=======
+## Vendredi 10 aout
+
+Faire la fonction pour extraire les données en excel (les tableaux)
+Visualisation 3D argument pour augmenter la distance entre les plants aussi bien en ligne que en colonne
+Faire une representation du plant médian en 3D
+Faire une visualisation des plant moyen à la place des plant moyens. 
+
+## Lundi 27 Aout 2018 (Marc+ Christophe Pradal)
+Avec Christophe pradal nous avons fait une fonction pour extraire les données à l'échelle des modules sous forme de dataframe.  
+Nous avons également fait la fonction extraire le dataset en donnée excel. 
+
+## Mardi 28 Aout 2018 (Marc +Christophe Pradal)
+Création de la fonction pour calculer la surface foliaire selon l'allometrie d'invenio. 
+
+[**Rmq**: Il y a une forte erreur sur l'allometry, le calcule reel est LA= 1.89+(2.145*Hauteur Lobe central* Largeur Lobe Gauche)
+En appliquant la formule d'invenio nous obtenons des surfaces foliaire vraiment important est peu réalise voir avec eux si c'est bien cette allometry qu'il souhaite utiliser. 
+Attention: pour utiliser cette allométry les unités sont vraiment importante effet quadratique tres important]
+
+## Mercredi 29 aout 2018
+Nous avons modifié la visualisation 3D afin de definir la grille en fonction de la modalité, maintenant de manière automatique nous representons les plantes architecturé en fonction de la modalité (en colonne) et nous pouvons également associé un ensemble de modaliter. (pas très claire)
+
+## Jeudi 30 aout 2018
+
+Nous sommes revenues sur les mesures de surface foliaire, pour le calcul de la surface foliaire nous exportons dans le dataframe à l'echelle de la plante une surface foliaire moyenne de la feuille mesuré grâce à l'allometry. 
+j'ai également intégrer dans le dataframe le calcule du nombre de feuille manquante ce qui me permet dans le data frame de soustraire au nombre de feuille visible le nombre de feuille manquante et de calculer la surface folaire total du plant 
+>>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
 
 Faire la fonction pour extraire les données en excel (les tableaux)
 Visualisation 3D argument pour augmenter la distance entre les plants aussi bien en ligne que en colonne

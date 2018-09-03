@@ -55,6 +55,7 @@ SAMPLING	STRING # location of sampling
 COMMENT	STRING
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 MTG:
 ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modality	Plant_ID	Stade	Missing	PETLG	LFTLG_CENTRAL	LFTLG_LEFT	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	COMMENT
@@ -1419,6 +1420,8 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87					12	10	2	0		
 ^<HT														87					15	5	10	0		
 =======
+=======
+>>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
 =======
 >>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
 																																		
@@ -6745,6 +6748,9 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													85															4					
 ^<HT														87															4	2	2	0		
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> cc46ba2cbd0b66dfc2261023abdc877f0bd5c484
+=======
+>>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
 =======
 >>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
