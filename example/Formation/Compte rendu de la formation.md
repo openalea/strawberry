@@ -229,7 +229,7 @@ Nous avons modifié la visualisation 3D afin de definir la grille en fonction de
 
 Nous sommes revenues sur les mesures de surface foliaire, pour le calcul de la surface foliaire nous exportons dans le dataframe à l'echelle de la plante une surface foliaire moyenne de la feuille mesuré grâce à l'allometry. 
 j'ai également intégrer dans le dataframe le calcule du nombre de feuille manquante ce qui me permet dans le data frame de soustraire au nombre de feuille visible le nombre de feuille manquante et de calculer la surface folaire total du plant 
->>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
+
 
 Faire la fonction pour extraire les données en excel (les tableaux)
 Visualisation 3D argument pour augmenter la distance entre les plants aussi bien en ligne que en colonne
@@ -254,12 +254,12 @@ Nous avons modifié la visualisation 3D afin de definir la grille en fonction de
 
 Nous sommes revenues sur les mesures de surface foliaire, pour le calcul de la surface foliaire nous exportons dans le dataframe à l'echelle de la plante une surface foliaire moyenne de la feuille mesuré grâce à l'allometry. 
 j'ai également intégrer dans le dataframe le calcule du nombre de feuille manquante ce qui me permet dans le data frame de soustraire au nombre de feuille visible le nombre de feuille manquante et de calculer la surface folaire total du plant 
->>>>>>> 9cdc9a256b6dc173d01df0e11b847677f2541cbe
+
 
 Inclure les stage=ABORTED dans la proprietes Stade et identifier avec une couleur spécifique (marron) 
 =======
 ## Vendredi 10 aout
->>>>>>> cc46ba2cbd0b66dfc2261023abdc877f0bd5c484
+
 
 Faire la fonction pour extraire les données en excel (les tableaux)
 Visualisation 3D argument pour augmenter la distance entre les plants aussi bien en ligne que en colonne
