@@ -6883,8 +6883,8 @@ ENTITY-CODE										Experiment_name	Sample_date	Architecture_date	Genotype	Moda
 ^/F																	yes								
 	+A																								
 	^/F																yes								
- 		+A																							
-		^/s																							
+		+A																							
+		^/s																				
 	^<F																yes								
 		+A																							
 		^/s																							
@@ -6962,7 +6962,7 @@ ENTITY-CODE										Experiment_name	Sample_date	Architecture_date	Genotype	Moda
 ^<F																	yes								
 	+A																								
 	^/F																yes								
- 		+A																							
+		+A																							
 		^/s																							
 	^<F																yes								
 		+A																							
@@ -7072,7 +7072,7 @@ ENTITY-CODE										Experiment_name	Sample_date	Architecture_date	Genotype	Moda
 ^<F																	yes								
 	+A																								
 	^/F																yes								
- 		+A																							
+		+A																							
 		^/bt																							
 	^<F																yes								
 		+A																							
@@ -7309,7 +7309,7 @@ ENTITY-CODE										Experiment_name	Sample_date	Architecture_date	Genotype	Moda
 ^/F																	yes								
 	+A																								
 	^/F																yes								
- 		+A																							
+		+A																							
 		^/F																							
 			+A																						
 			^/bt																						
@@ -7525,7 +7525,7 @@ ENTITY-CODE										Experiment_name	Sample_date	Architecture_date	Genotype	Moda
 		^<F																							
 		^<F																							
 			+A																						
-			^/S																						
+			^/s																						
 		^<F																							
 		^<F																178	70	66					
 		^<bt																							
@@ -7654,7 +7654,8 @@ ENTITY-CODE										Experiment_name	Sample_date	Architecture_date	Genotype	Moda
 	^<F																yess								
 		+A																							
 		^/F															yes								
-		^<F	+A																						
+		^<F	
+			+A																						
 			^/F																						
 				+A																					
 				^/bt																					
