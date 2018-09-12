@@ -92,6 +92,13 @@ def _plant_variables(g):
     plant_variables['nb_stolons'] = nb_stolons # Nombre de stolons
     plant_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille visible
     plant_variables['nb_missing_leaves'] = missing_leaves #Nombre de feuille manquante
+    plant_variables['nb_vegetative_bud'] = nb_vegetative_buds
+    plant_variables['nb_initiated_bud'] = nb_initiated_buds
+    plant_variables['nb_floral_bud'] = nb_floral_buds
+    plant_variables['nb_inflorescence'] = nb_inflorescence
+    #plant_variables['type_of_crown'] = type_of_crown
+    #plant_variables['crown_status'] = crown_status
+
     return plant_variables
 
 
@@ -113,6 +120,7 @@ def _module_variables(g):
     module_variables['nb_stolons']= nb_stolons
     module_variables['type_of_crown'] = type_of_crown # Type de crowns (Primary Crown:1, Branch crown:2 extension crown:3)
     module_variables['crown_status'] = Crown_status
+    module_variables['nb_stade_87'] = nb_stade_87
     return module_variables
 
 
