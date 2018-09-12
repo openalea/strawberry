@@ -54,7 +54,7 @@ FLWRNUMBER_CLOSED	INT # Total closed flower number
 SAMPLING	STRING # location of sampling
 COMMENT	STRING
 																																		
-MTG:																																		
+MTG:
 ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modality	Plant_ID	Stade	Missing	DBI	INFLOLG	PETLG	LFTLG_RIGHT	LFTLG_CENTRAL	LFTLG_LEFT	LFTWD_RIGHT	LFTWD_CENTRAL	LFTWD_LEFT	LFTAR_RIGHT	LFTAR_CENTRAL	LFTAR_LEFT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	COMMENT
 /P								friendlyfruit_variete_sol	22/06/2018		BH518	CF12372B	1																					
 ^/T																																		
