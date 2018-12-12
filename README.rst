@@ -46,12 +46,15 @@ Requirements
 Installation 
 +++++++++++++
 
-::
- conda create -n openalea -c openalea -c openalea/label/unstable openalea.plantgl openalea.lpy
- boost=1.66 openalea.mtg
+Give the example
 
-::
-    conda install -c openalea openalea.strawberry
+```
+conda create -n openalea -c openalea -c openalea/label/unstable openalea.plantgl openalea.lpy boost=1.66 openalea.mtg
+```
+
+```
+conda install -c openalea openalea.strawberry
+```
 
 
 
