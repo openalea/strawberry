@@ -50,7 +50,9 @@ Installation
 
     conda install -c openalea openalea.strawberry
 
-
+if error
+    conda create -n openalea -c openalea -c openalea/label/unstable openalea.plantgl openalea.lpy
+ boost=1.66 openalea.mtg
 
 Documentation
 -------------
