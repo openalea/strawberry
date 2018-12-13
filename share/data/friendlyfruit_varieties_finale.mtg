@@ -31,7 +31,7 @@ Genotype	STRING
 Modality	STRING #Modality in tis case it's Plant Origin																											
 Plant_ID	INT																											
 Stade	STRING																											
-Missing	STRING # feuille a ne pas compter pour le calcul de la surface																											
+Missing	STRING # feuille a ne pas compter pour le calcul de la surface			
 DBI	REAL # mm Collar diameter																											
 INFLOLG	REAL # mm Inflorescence length																											
 PETLG	REAL # mm petiole lenght																											

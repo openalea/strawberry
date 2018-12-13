@@ -120,7 +120,7 @@ def _module_variables(g):
     module_variables['nb_stolons']= nb_stolons
     module_variables['type_of_crown'] = type_of_crown # Type de crowns (Primary Crown:1, Branch crown:2 extension crown:3)
     module_variables['crown_status'] = Crown_status
-    module_variables['nb_stade_87'] = nb_stade_87
+    #module_variables['nb_stade_87'] = nb_stade_87
     return module_variables
 
 
