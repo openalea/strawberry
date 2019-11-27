@@ -60,7 +60,7 @@ conda install -c openalea openalea.strawberry
 
 Documentation
 -------------
-.. todo:: 
+**TODO**: 
     
     https://strawberry.readthedocs.io
 
