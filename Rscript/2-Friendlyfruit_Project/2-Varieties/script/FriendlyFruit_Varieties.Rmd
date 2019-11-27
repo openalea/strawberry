@@ -1,0 +1,11 @@
+---
+title: "Friendlyfruit_Varieties project"
+author: "Marc LABADIE"
+date: "17 septembre 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+

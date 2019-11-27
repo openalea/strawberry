@@ -1,0 +1,1539 @@
+---
+title: "Architecture_analysis"
+author: "Marc LABADIE"
+date: "5 juin 2018"
+output:
+  word_document:
+    df_print: kable
+    fig_caption: yes
+    toc: yes
+    toc_depth: 4
+  pdf_document:
+    fig_caption: yes
+    fig_crop: no
+    number_sections: yes
+    toc: yes
+    toc_depth: 4
+  html_document:
+    df_print: kable
+    fig_caption: yes
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 4
+geometry: margin= 2cm
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE, 
+                      message = FALSE, 
+                      dpi = 800,
+                      fig.pos = "h")
+```
+
+\listoffigures
+\listoftables
+
+#Requierements
+
+##Packages install 
+
+```{r Package install ,eval=FALSE}
+install.packages("plyr")
+install.packages("ggplot2")
+install.packages("gtable")
+install.packages("grid")
+install.packages("cowplot")
+install.packages("reshape2")
+install.packages("scales")
+install.packages("knitr")
+install.packages("tinytex")
+install.packages("dplyr")
+install.packages("lmtest")
+install.packages("agricolae")
+install.packages("PMCMR")
+install.packages("gtools")
+install.packages("RVAideMemoire")
+#install.packages("RCurl")
+```
+
+##Packages loading
+```{r Package loading, eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE}
+library(plyr)
+library(ggplot2)
+library(gtable)
+library(grid)
+library(cowplot)
+library(reshape2)
+library(scales)
+library(knitr)
+library(tinytex)
+library(dplyr)
+#library(RCurl)
+library(rmarkdown)
+library(lmtest)
+library(agricolae)
+library(PMCMR)
+library(gtools)
+library(RVAideMemoire)
+```
+
+## Functions importing
+```{r}
+source(file = "c:/Users/mlabadie/Documents/GitHub/strawberry/Rscript/Functions.R")
+```
+
+#Import and transformation of dataset 
+
+##Import dataset
+
+**INDEX_PARAMETER :** TIME   # vertex_id
+
+**15 VARIABLES:**
+
+* VARIABLE 1 : INT  # nb_visible_leaves. No. elongated leaves (F)
+* VARIABLE 2 : INT  # nb_foliar_primordia No. primordia (f)
+* VARIABLE 3 : INT  # nb_total_leaves. Total no. leaves (F+f)
+* VARIABLE 4 : INT  # nb_open_flowers. No. open flowers
+* VARIABLE 5 : INT  # nb_aborted_flowers No. aborted flowers
+* VARIABLE 6 : INT  # nb_total_flowers Total no. flowers 
+* VARIABLE 7 : INT  # vegetative_bud. No. vegetative buds (axillary vegetative bud)
+* VARIABLE 8 : INT  # Initiated_bud. No. initiated bud (axillary initiated bud)
+* VARIABLE 9 : INT  # floral_bud. No. floral buds (axillary floral bud)
+* VARIABLE 10 : INT  # stolons No. stolons
+* VARIABLE 11 : INT  # type_of_crown. Type of crown (1: primary crown, 2: extention crowns, 3: branch crown)
+* VARIABLE 12 : INT  # Crown_status (1: Terminal Vegetative bud (bt, stage 17, 18, 19, None), 2:Terminal bud initiated (bt, stage A), 3: Terminal floral bud(ht), 4: Inflorescence(HT), -1: rotten or aborded)
+* VARIABLE 13 : INT  # genotype (1: Gariguette, 2: Ciflorette, 3: Clery, 4: Capriss, 5:Darselect, 6: Cir107)
+* VARIABLE 14 : INT  # date (1: mid December, 2: early Junuary, 3: mid February, 4: early March, 5: early April, 6: end May/early June)
+* VARIABLE 15 : INT  # plant. plant index
+
+```{r Import dataset}
+DataSet <- read.csv(file = "c:/Users/mlabadie/Documents/GitHub/strawberry/Rscript/Dataset.csv", 
+  sep=";",
+  na.strings = "-1")
+
+colstart<-1
+colend<-dim(DataSet)[2]-2
+
+data<-DataSet[,c(colstart:colend)]
+```
+
+## Dataset Class Object
+
+```{r Dataset Class Object}
+str(object = data)
+```
+
+## Transformation of Class object
+
+```{r Transformation of Class object}
+data$genotype<- as.factor(data$genotype)
+data$date<- as.factor(DataSet$date)
+data$Crown_status<- as.factor(DataSet$Crown_status)
+data$type_of_crown<- as.factor(DataSet$type_of_crown)
+```
+
+## Conversion of dataset
+
+```{r Conversion of dataset}
+
+# Convert numerical categorical ordered value in factor values with their properties 
+
+data$genotype<- factor(x = data$genotype,
+                       levels = levels(x = data$genotype),
+                       labels = c("Gariguette","Ciflorette","Clery","Capriss","Darselect","Cir107")
+                       )
+
+data$date<- factor(x = data$date,
+                   levels = levels(x = data$date),
+                   labels = c("Mid-December","Early-Junuary","Mid-February","Early-March","Early-April","Early-June")
+                   )
+
+data$type_of_crown<- factor(x = DataSet$type_of_crown,
+                            levels = levels(x = data$type_of_crown),
+                            labels = c("Primary_Crown","Extention_Crown","Branch_Crown")
+                            )
+data$Crown_status<- factor(x = data$Crown_status,
+                              levels = levels(x = data$Crown_status),
+                              labels = c("Terminal_Vegetative_bud","Terminal_initiated_bud","Terminal_Floral_bud","Terminal_Inflorescence"))
+
+```
+
+```{r convert Index data}
+#convert index sequence analysis in index for R analysis
+dat<-data[2:colend]
+for (i in 1:nrow(data)){ 
+  if (data[i,'Index']=="0"){ 
+    dat[i,"Index"]<- 0
+  }else if (data[i,'Index']=="0-1"){
+    dat[i,"Index"]<- 1
+  }else if (data[i,'Index']=="0-1-2"){
+    dat[i,"Index"]<- 2
+  }else if (data[i,'Index']=="0-1-2-3"){
+    dat[i,"Index"]<- 3
+  }else if (data[i,'Index']=="0-1-2-3-4"){
+    dat[i,"Index"]<- 4
+  }else if (data[i,'Index']=="0-1-2-3-4-5"){
+    dat[i,"Index"]<- 5
+  }else if (data[i,'Index']=="1"){
+    dat[i,"Index"]<- 1
+  }else if (data[i,'Index']=="1-2"){
+    dat[i,"Index"]<- 2
+  }else if (data[i,'Index']=="1-2-3"){
+    dat[i,"Index"]<- 3
+  }else if (data[i,'Index']=="1-2-3-4"){
+    dat[i,"Index"]<- 4
+  }else if (data[i,'Index']=="1-2-3-4-5"){
+    dat[i,"Index"]<- 5
+  }else if (data[i,'Index']=="2"){
+    dat[i,"Index"]<- 2
+  }else if (data[i,'Index']=="2-3"){
+    dat[i,"Index"]<- 3
+  }else if (data[i,'Index']=="2-3-4"){
+    dat[i,"Index"]<- 4
+  }else if (data[i,'Index']=="3"){
+    dat[i,"Index"]<- 3
+  }else if (data[i,'Index']=="3-4"){
+    dat[i,"Index"]<- 4
+  }else if (data[i,'Index']=="4"){
+    dat[i,"Index"]<- 4
+  }
+}
+
+dat$Index<-as.factor(x = dat$Index)
+
+#Remplacer les valeurs 0 dans la colone total flowers par NA
+dat$nb_total_flowers[dat$nb_total_flowers==0]<-NA
+
+
+kable(x = dat,digits = 2,caption = "Data extract from MTG")
+```
+
+
+# Exploratory analysis
+
+## At plant scale
+
+```{r}
+
+```
+
+
+
+
+
+## At module scale
+
+### Extraction of data at module scale 
+
+```{r Extraction of data at module scale}
+data_at_module_scale<-ddply(.data = dat,
+                            .variables = c("genotype","Index"),
+                            summarise,
+                            MeanTotalLeave= mean(x = nb_total_leaves,
+                                                 na.rm = T),
+                            SdTotalLeave= sd(x = nb_total_leaves,
+                                             na.rm = T),
+                            MeanTotalFlower= mean(x = nb_total_flowers,
+                                                  na.rm = T),
+                            SdTotalFlower= sd(x = nb_total_flowers,
+                                              na.rm = T),
+                            MeanStolon= mean(x = stolons,
+                                             na.rm = T),
+                            SdStolon= sd(x = stolons,
+                                         na.rm = T),
+                            N=length(nb_total_leaves))
+
+kable(x = data_at_module_scale,
+      digits = 2,
+      caption = " Data at module scale")
+```
+
+### Number of Module for successive orders
+
+```{r Number of Module for successive orders}
+tab1<- fc_dist_module_by_order(data = dat,
+                               index = "Index")
+
+kable(x = tab1,
+      caption = "No. Module by varieties for successive orders "
+      )
+```
+
+### Occurence of the higher order along time
+
+* **Table of distribution of higher order along time**
+
+```{r Occurence of the higher order along time}
+tab2<- fc_dist_order_by_date(data = dat,
+                             genotype = "Gariguette",
+                             prob = "cumulative")
+kable(x = tab2,
+      digits = 2,
+      caption = "Module order frequency distribution for successive date")
+```
+
+* **Plot visualization of distribution of higher order along time**
+
+```{r Plot Module order frequency distribution for successive date, fig.cap="Module order frequency distribution for successive date"}
+fc_dist_order_by_date.plot(data=tab2)+
+  geom_hline(yintercept = 0.9,
+             linetype="dashed")
+```
+
+
+### Analysis of quantitative variable function of successive orders
+
+In the following architectural analyses, we chose to group the highest-order modules because of the small sample size (cf. tables 1: No. Module by varieties for successive orders).
+
+For this, we used a recursive pooling of samples from the highest order downward if sample size =< 8
+
+
+* **Build data according group**
+
+```{r Group highiest modules orders}
+dat_group<-data[2:colend]
+
+for (i in 1:nrow(data)){
+  if( dat_group[i,"genotype"]=="Capriss"){
+    if (data[i,'Index']=="0"){ 
+      dat_group[i,"Index"]<- 0
+      }else if (data[i,'Index']=="0-1"){
+      dat_group[i,"Index"]<- 1
+      }else if (data[i,'Index']=="0-1-2"){
+        dat_group[i,"Index"]<- 2
+      }else if (data[i,'Index']=="0-1-2-3"){
+        dat_group[i,"Index"]<- 3
+      }else if (data[i,'Index']=="0-1-2-3-4"){
+        dat_group[i,"Index"]<- 3
+      }else if (data[i,'Index']=="0-1-2-3-4-5"){
+        dat_group[i,"Index"]<- 3
+      }else if (data[i,'Index']=="1"){
+        dat_group[i,"Index"]<- 1
+      }else if (data[i,'Index']=="1-2"){
+        dat_group[i,"Index"]<- 2
+      }else if (data[i,'Index']=="1-2-3"){
+        dat_group[i,"Index"]<- 3
+      }else if (data[i,'Index']=="1-2-3-4"){
+        dat_group[i,"Index"]<- 3
+      }else if (data[i,'Index']=="1-2-3-4-5"){
+        dat_group[i,"Index"]<- 3
+      }else if (data[i,'Index']=="2"){
+        dat_group[i,"Index"]<- 2
+      }else if (data[i,'Index']=="2-3"){
+        dat_group[i,"Index"]<- 3
+      }else if (data[i,'Index']=="2-3-4"){
+        dat_group[i,"Index"]<- 3
+      }else if (data[i,'Index']=="3"){
+        dat_group[i,"Index"]<- 3
+      }else if (data[i,'Index']=="3-4"){
+        dat_group[i,"Index"]<- 3
+      }else if (data[i,'Index']=="4"){
+        dat_group[i,"Index"]<- 3
+      }
+    }else
+  if (data[i,'Index']=="0"){ 
+    dat_group[i,"Index"]<- 0
+  }else if (data[i,'Index']=="0-1"){
+    dat_group[i,"Index"]<- 1
+  }else if (data[i,'Index']=="0-1-2"){
+    dat_group[i,"Index"]<- 2
+  }else if (data[i,'Index']=="0-1-2-3"){
+    dat_group[i,"Index"]<- 3
+  }else if (data[i,'Index']=="0-1-2-3-4"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="0-1-2-3-4-5"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="1"){
+    dat_group[i,"Index"]<- 1
+  }else if (data[i,'Index']=="1-2"){
+    dat_group[i,"Index"]<- 2
+  }else if (data[i,'Index']=="1-2-3"){
+    dat_group[i,"Index"]<- 3
+  }else if (data[i,'Index']=="1-2-3-4"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="1-2-3-4-5"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="2"){
+    dat_group[i,"Index"]<- 2
+  }else if (data[i,'Index']=="2-3"){
+    dat_group[i,"Index"]<- 3
+  }else if (data[i,'Index']=="2-3-4"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="3"){
+    dat_group[i,"Index"]<- 3
+  }else if (data[i,'Index']=="3-4"){
+    dat_group[i,"Index"]<- 4
+  }else if (data[i,'Index']=="4"){
+    dat_group[i,"Index"]<- 4
+  }
+}
+
+#Remplacer les valeurs 0 dans la colone total flowers par NA
+dat_group$nb_total_flowers[dat_group$nb_total_flowers==0]<-NA
+
+dat_group$Index<-as.factor(dat_group$Index)
+
+```
+
+* **check that the modules have been well grouped**
+
+```{r check that the modules have been well grouped}
+tab3<- fc_dist_module_by_order(data = dat_group,
+                               index = "Index")
+
+kable(x = tab3,
+      caption = "Number of modules for each successive orders after grouping for each varieties")
+```
+
+**Hint:** Compare tab4 with tab1
+
+
+#### Data at module scale after grouping
+
+```{r Recalculate data_at_module_scale after grouping}
+
+data_at_module_scale_group<-ddply(.data = dat_group,
+                                  .variables = c("genotype","Index"),
+                                  summarise,
+                                  MeanTotalLeave= mean(x = nb_total_leaves,
+                                                       na.rm = T),
+                                  SdTotalLeave= sd(x = nb_total_leaves,
+                                                   na.rm = T),
+                                  MeanTotalFlower= mean(x = nb_total_flowers,
+                                                        na.rm = T),
+                                  SdTotalFlower= sd(x = nb_total_flowers,
+                                                    na.rm = T),
+                                  MeanStolon= mean(x = stolons,
+                                                   na.rm = T),
+                                  SdStolon= sd(x = stolons,
+                                               na.rm = T),
+                            N=length(nb_total_leaves))
+
+kable(x = data_at_module_scale_group,
+      digits = 2,
+      caption = " Data at module scale after grouping")
+```
+
+#### No. leaves fonction of successive module order
+
+##### Cumulative distribution of no. leaves for each module orders
+
+* **Table of distribution of one varname according to module orders** 
+  
+```{r Table Cumulative distribution of no. leaves for each module order}
+tab4<-fc_dist_variable_by_order(data = dat_group,
+                                genotype = "Gariguette",
+                                varname = "nb_total_leaves",
+                                prob = "cumulative")
+
+kable(x = tab4,
+      digits = 2,
+      caption = "Cumulative distribution of total no. leaves by orders for Gariguette")
+
+```
+
+* **Visualization of distribution of varname for each module orders**
+
+```{r Plot distribution of one variable for each module orders, fig.cap= "Plot distribution of leaves for each module orders and for Gariguette"}
+fc_dist_variable_by_order.plot(data = tab4)+
+  xlab("No. Leaves")+
+  ylab("Cumulative distribution function")
+```
+
+##### Pointwise Mean of No.leaves of modules for successive orders for each varieties
+
+```{r Pointwise Mean of leaves of modules for successive orders for each variety after grouping, fig.cap="Pointwise Mean of No. leaves of modules for successive orders for each variety after grouping"}
+fc_pointwise_mean_variable_by_order(data = data_at_module_scale_group,
+                                    varname = "MeanTotalLeave")+
+  ylab("Mean No. Flower")+
+  ylim(2,10)
+```
+
+##### Comparison of No. leaves for successive orders 
+
+Because pointwise of the mean no.leaves and mean no.flowers seems roughly constant for each varieties. In order to compare varieties we used trend linear regression, in particular we test the zero value of the slope parameter. 
+
+* **Identification from wich module variable was roughly constant for each varieties**
+
+  * *From Order 0*
+  
+```{r linear trend (estimate slope and IC95%) from Order 0}
+Gariguette<- fc_linear_trend_reg(data = dat_group,
+                                 genotype = "Gariguette",
+                                 variable = "nb_total_leaves",
+                                 Index = "Index")
+
+Clery<- fc_linear_trend_reg(data = dat_group,
+                            genotype = "Clery",
+                            variable = "nb_total_leaves",
+                            Index = "Index")
+
+Capriss<- fc_linear_trend_reg(data = dat_group,
+                              genotype = "Capriss",
+                              variable = "nb_total_leaves",
+                              Index = "Index")
+
+Ciflorette<- fc_linear_trend_reg(data = dat_group,
+                                 genotype = "Ciflorette",
+                                 variable = "nb_total_leaves",
+                                 Index = "Index")
+
+Cir107<- fc_linear_trend_reg(data = dat_group,
+                             genotype = "Cir107",
+                             variable = "nb_total_leaves",
+                             Index = "Index")
+
+Darselect<- fc_linear_trend_reg(data = dat_group,
+                                genotype = "Darselect",
+                                variable = "nb_total_leaves",
+                                Index = "Index")
+
+tab5<- merge(x = Gariguette,
+             y = Clery,
+             all=T)
+
+tab5<- merge(x = tab5,
+             y = Capriss, 
+             all=T)
+
+tab5<- merge(x = tab5,
+             y = Ciflorette, 
+             all=T)
+
+tab5<- merge(x = tab5,
+             y = Cir107, 
+             all=T)
+
+tab5<- merge(x = tab5,
+             y = Darselect,
+             all=T)
+
+kable(x = tab5,
+      digits = 2,
+      caption = "Linear trend for no.leaves (estimate slope and 95% confidence interval -IC95%-) from order 0 onwards")
+```
+
+  * *From Order 1*
+  
+```{r linear trend (estimate slope and IC95%) from Order 1}
+dat_group_from_Order1<-dat_group[!dat_group[,'Index']=="0",]
+
+Gariguette<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                                 genotype = "Gariguette",
+                                 variable = "nb_total_leaves",
+                                 Index = "Index")
+
+Clery<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                            genotype = "Clery",
+                            variable = "nb_total_leaves",
+                            Index = "Index")
+
+Capriss<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                              genotype = "Capriss",
+                              variable = "nb_total_leaves",
+                              Index = "Index")
+
+Ciflorette<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                                 genotype = "Ciflorette",
+                                 variable = "nb_total_leaves",
+                                 Index = "Index")
+
+Cir107<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                             genotype = "Cir107",
+                             variable = "nb_total_leaves",
+                             Index = "Index")
+
+Darselect<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                                genotype = "Darselect",
+                                variable = "nb_total_leaves",
+                                Index = "Index")
+
+tab6<- merge(x = Gariguette,
+             y = Clery,
+             all=T)
+
+tab6<- merge(x = tab6,
+             y = Capriss,
+             all=T)
+
+tab6<- merge(x = tab6,
+             y = Ciflorette,
+             all=T)
+
+tab6<- merge(x = tab6,
+             y = Cir107,
+             all=T)
+
+tab6<- merge(x = tab6,
+             y = Darselect, 
+             all=T)
+
+kable(x = tab6,
+      digits = 2,
+      caption = "Linear trend for no.leaves (estimate slope and 95% confidence interval -IC95%-) for the first-order module onwards ")
+```
+
+**Result:** The no. leaves was roughly constant from first-order module
+
+
+* **Comparison between variety for zeroth-order module and first-order modules**
+    
+  * *From Order 0*
+  
+```{r Comparison of Mean No.Leaves for Order 0 between varieties}
+
+dat_group_Order0<- dat_group[dat_group[,"Index"]=="0",]
+
+tab7<-fc_comp_varieties_kruskal_posthoc(data = dat_group_Order0,
+                                        varname = "nb_total_leaves",
+                                        groupe = T)
+
+
+kable(x = tab7,
+      digits = 2,
+      caption = "Mean number with standard deviation and grouping of varieties using ANOVA on rank (Kruskal Wallis and posthoc test) represented by letter for zeroth-order module")
+
+```
+
+  * *From Order 1*
+
+```{r Comparison of Mean No.Leaves from Order 1 onward between varieties}
+
+tab8<-fc_comp_varieties_kruskal_posthoc(data = dat_group_from_Order1,
+                                        varname = "nb_total_leaves",
+                                        group = T)
+
+
+kable(x = tab8,
+      digits = 2,
+      caption = "Mean number with standard deviation and grouping of varieties using ANOVA on rank (Kruskal Wallis and posthoc test) represented by letter from the first-order modules onward")
+```  
+
+  * *pointwise Mean No .leaves of successive orders module (0 and >=1)* 
+
+    * convert dat in dat_group_from_order1
+    
+```{r dat_group from Order1}
+dat_group_from_Order1<-data[2:colend]
+
+for (i in 1:nrow(data)){
+  if( dat_group_from_Order1[i,"genotype"]=="Capriss"){
+    if (data[i,'Index']=="0"){ 
+      dat_group_from_Order1[i,"Index"]<- 0
+      }else if (data[i,'Index']=="0-1"){
+      dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="0-1-2"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="0-1-2-3"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="0-1-2-3-4"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="0-1-2-3-4-5"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="1"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="1-2"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="1-2-3"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="1-2-3-4"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="1-2-3-4-5"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="2"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="2-3"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="2-3-4"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="3"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="3-4"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }else if (data[i,'Index']=="4"){
+        dat_group_from_Order1[i,"Index"]<- 1
+      }
+    }else
+  if (data[i,'Index']=="0"){ 
+    dat_group_from_Order1[i,"Index"]<- 0
+  }else if (data[i,'Index']=="0-1"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="0-1-2"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="0-1-2-3"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="0-1-2-3-4"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="0-1-2-3-4-5"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="1"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="1-2"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="1-2-3"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="1-2-3-4"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="1-2-3-4-5"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="2"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="2-3"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="2-3-4"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="3"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="3-4"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }else if (data[i,'Index']=="4"){
+    dat_group_from_Order1[i,"Index"]<- 1
+  }
+}
+
+#Remplacer les valeurs 0 dans la colone total flowers par NA
+dat_group_from_Order1$nb_total_flowers[dat_group_from_Order1$nb_total_flowers==0]<-NA
+
+dat_group_from_Order1$Index<-as.factor(dat_group_from_Order1$Index)
+```
+
+      * recalcule data_at_module_scale_group_from_Order1 
+      
+```{r Recalculate data_at_module_scale after grouping from Order1 onwards}
+
+data_at_module_scale_group_from_Order1<-ddply(.data = dat_group_from_Order1,
+                                              .variables = c("genotype","Index"),
+                                              summarise,
+                                              MeanTotalLeave= mean(
+                                                x = nb_total_leaves,
+                                                na.rm = T),
+                                              SdTotalLeave= sd(
+                                                x = nb_total_leaves,
+                                                na.rm = T),
+                                              MeanTotalFlower= mean(
+                                                x = nb_total_flowers,
+                                                na.rm = T),
+                                              SdTotalFlower= sd(
+                                                x = nb_total_flowers,
+                                                na.rm = T),
+                                              MeanStolon= mean(
+                                                x = stolons,
+                                                na.rm = T),
+                                              SdStolon= sd(
+                                                x = stolons,
+                                                na.rm = T),
+                                              N=length(nb_total_leaves))
+
+kable(x = data_at_module_scale_group_from_Order1,
+      digits = 2,
+      caption = " Data at module scale after grouping from order1")
+```
+
+    * Plot mean no. leaves for succesive module orders for 0 and from first-order module onwards
+    
+```{r}
+fc_pointwise_mean_variable_by_order(data = data_at_module_scale_group_from_Order1,
+                                    varname = "MeanTotalLeave")+
+  ylab("Mean no. leaves")+
+  ylim(3,10)
+
+```
+    
+
+#### No. flowers fonction of successive module order
+
+##### Cumulative distribution of no. flowers  for each module order
+
+* **Table of distribution of No.flowers according to module orders**
+
+```{r Table Cumulative distribution of no. flowers for each module order}
+tab9<-fc_dist_variable_by_order(data = dat_group,
+                                genotype = "Gariguette",
+                                varname = "nb_total_flowers",
+                                prob = "cumulative")
+
+kable(x = tab9,
+      digits = 2,
+      caption = "Cumulative distribution of total no. leaves by orders for Gariguette")
+
+```
+
+* **Visualization of distribution of No. flowers for each module orders**
+
+```{r Plot distribution of no. flowers for each module orders, fig.cap= "Plot distribution of leaves for each module orders and for Gariguette"}
+fc_dist_variable_by_order.plot(data = tab9)+
+  xlab("No. Leaves")+
+  ylab("Cumulative distribution function")
+```
+
+##### Pointwise Mean of No.flowers of modules for successive orders for each varieties
+
+```{r Pointwise Mean of no. flowers of modules for successive orders for each variety after grouping, fig.cap="Pointwise Mean of No. leaves of modules for successive orders for each variety after grouping"}
+fc_pointwise_mean_variable_by_order(data = data_at_module_scale_group,
+                                    varname = "MeanTotalFlower")+
+  ylab("Mean No. Flower")+
+  ylim(0,20)
+```
+
+##### Comparison of No. flowers for successive orders
+
+* **Identification from wich module variable was roughly constant for each varieties**
+
+      * *From Order 0*
+  
+```{r linear trend (estimate slope and IC95%) for the number of flowers from Order 0}
+Gariguette<- fc_linear_trend_reg(data = dat_group,
+                                 genotype = "Gariguette",
+                                 variable = "nb_total_flowers",
+                                 Index = "Index")
+
+Clery<- fc_linear_trend_reg(data = dat_group,
+                            genotype = "Clery",
+                            variable = "nb_total_flowers",
+                            Index = "Index")
+
+Capriss<- fc_linear_trend_reg(data = dat_group,
+                              genotype = "Capriss",
+                              variable = "nb_total_flowers",
+                              Index = "Index")
+
+Ciflorette<- fc_linear_trend_reg(data = dat_group,
+                                 genotype = "Ciflorette",
+                                 variable = "nb_total_flowers",
+                                 Index = "Index")
+
+Cir107<- fc_linear_trend_reg(data = dat_group,
+                             genotype = "Cir107",
+                             variable = "nb_total_flowers",
+                             Index = "Index")
+
+Darselect<- fc_linear_trend_reg(data = dat_group,
+                                genotype = "Darselect",
+                                variable = "nb_total_flowers",
+                                Index = "Index")
+
+tab10<- merge(x = Gariguette,
+              y = Clery,
+              all=T)
+
+tab10<- merge(x = tab10,
+              y = Capriss, 
+              all=T)
+
+tab10<- merge(x = tab10,
+              y = Ciflorette, 
+              all=T)
+
+tab10<- merge(x = tab10,
+              y = Cir107, 
+              all=T)
+
+tab10<- merge(x = tab10,
+              y = Darselect, 
+              all=T)
+
+kable(x = tab10,
+      digits = 2,
+      caption = "Linear trend (estimate slope and 95% confidence interval -IC95%-) for the number of flowersfrom zeroth-order onward (orders >=0)")
+```
+
+  * *From Order 1*
+  
+```{r linear trend (estimate slope and IC95%) for the number of flowers from Order 1}
+
+Gariguette<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                                 genotype = "Gariguette",
+                                 variable = "nb_total_flowers",
+                                 Index = "Index")
+
+Clery<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                            genotype = "Gariguette",
+                            variable = "nb_total_flowers",
+                            Index = "Index")
+
+Capriss<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                              genotype = "Capriss",
+                              variable = "nb_total_flowers",
+                              Index = "Index")
+
+Ciflorette<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                                 genotype = "Ciflorette",
+                                 variable = "nb_total_flowers",
+                                 Index = "Index")
+
+Cir107<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                             genotype = "Cir107",
+                             variable = "nb_total_flowers",
+                             Index = "Index")
+
+Darselect<- fc_linear_trend_reg(data = dat_group_from_Order1,
+                                genotype = "Darselect",
+                                variable = "nb_total_flowers",
+                                Index = "Index")
+
+tab11<- merge(x = Gariguette,
+              y = Clery,
+              all=T)
+
+tab11<- merge(x = tab11,
+              y = Capriss, 
+              all=T)
+
+tab11<- merge(x = tab11,
+              y = Ciflorette, 
+              all=T)
+
+tab11<- merge(x = tab11,
+              y = Cir107, 
+              all=T)
+
+tab11<- merge(x = tab11,
+              y = Darselect, 
+              all=T)
+
+kable(x = tab11,
+      digits = 2,
+      caption = "Linear trend (estimate slope and 95% confidence interval -IC95%-) for the number of flowers  from first-order onward (orders >=1)")
+```
+
+  * *From Order 2*
+
+```{r linear trend (estimate slope and IC95%) from Order 2}
+
+dat_group_from_Order2<-dat_group_from_Order1[!dat_group_from_Order1[,'Index']=="1",]
+
+Gariguette<- fc_linear_trend_reg(data = dat_group_from_Order2,
+                                 genotype = "Gariguette",
+                                 variable = "nb_total_flowers",
+                                 Index = "Index")
+
+Clery<- fc_linear_trend_reg(data = dat_group_from_Order2,
+                            genotype = "Gariguette",
+                            variable = "nb_total_flowers",
+                            Index = "Index")
+
+Capriss<- fc_linear_trend_reg(data = dat_group_from_Order2,
+                              genotype = "Capriss",
+                              variable = "nb_total_flowers",
+                              Index = "Index")
+
+Ciflorette<- fc_linear_trend_reg(data = dat_group_from_Order2,
+                                 genotype = "Ciflorette",
+                                 variable = "nb_total_flowers",
+                                 Index = "Index")
+
+Cir107<- fc_linear_trend_reg(data = dat_group_from_Order2,
+                             genotype = "Cir107",
+                             variable = "nb_total_flowers",
+                             Index = "Index")
+
+Darselect<- fc_linear_trend_reg(data = dat_group_from_Order2,
+                                genotype = "Darselect",
+                                variable = "nb_total_flowers",
+                                Index = "Index")
+
+tab12<- merge(x = Gariguette,
+              y = Clery,
+              all=T)
+
+tab12<- merge(x = tab12,
+              y = Capriss, 
+              all=T)
+
+tab12<- merge(x = tab12,
+              y = Ciflorette, 
+              all=T)
+
+tab12<- merge(x = tab12,
+              y = Cir107, 
+              all=T)
+
+tab12<- merge(x = tab12,
+              y = Darselect,
+              all=T)
+
+kable(x = tab12,
+      digits = 2,
+      caption = "Linear trend (estimate slope and 95% confidence interval -IC95%-) for the number of flowers from second-order onward (orders >=2)")
+```
+
+**Result:** The no. flowers was roughly constant from second-order module
+
+* ** Comparison between variety for zeroth-order module and first-order modules and second-order module onwards**
+
+  * * For zeroth-order module*
+
+
+```{r Comparison of Mean No.flowers for zeroth-order module between varieties}
+
+tab13<-fc_comp_varieties_kruskal_posthoc(data = dat_group_Order0,
+                                         varname = "nb_total_flowers",
+                                         group = T)
+
+
+kable(x = tab13,
+      digits = 2,
+      caption = "Mean number with standard deviation and grouping of varieties using ANOVA on rank (Kruskal Wallis and posthoc test) represented by letter for zeroth-order module")
+```  
+  
+  
+  * * For the first-order module*
+  
+  
+```{r Comparison of Mean No.flowers for first-order module between varieties}
+
+dat_group_Order1<- dat_group[dat_group[,"Index"]==1,]
+
+tab14<-fc_comp_varieties_kruskal_posthoc(data = dat_group_Order1,
+                                         varname = "nb_total_flowers",
+                                         group = T)
+
+
+kable(x = tab14,
+      digits = 2,
+      caption = "Mean number with standard deviation and grouping of varieties using ANOVA on rank (Kruskal Wallis and posthoc test) represented by letter for first-order module")
+```    
+ 
+    * * For second-order module onwards*
+
+
+```{r Comparison of Mean No.flowers from Order 2 onward between varieties}
+
+tab15<-fc_comp_varieties_kruskal_posthoc(data = dat_group_from_Order2,
+                                         varname = "nb_total_flowers",
+                                         group = T)
+
+
+kable(x = tab15,
+      digits = 2,
+      caption = "Mean number with standard deviation and grouping of varieties using ANOVA on rank (Kruskal Wallis and posthoc test) represented by letter from the second-order modules onward")
+```
+
+  * *Pointwise Mean No. flowers of succesive orders module (0, 1 and >=2)*  
+
+
+    * convert dat in dat_group_from_order2
+    
+```{r dat_group from Order2}
+dat_group_from_Order2<-data[2:colend]
+
+for (i in 1:nrow(data)){
+  if( dat_group_from_Order2[i,"genotype"]=="Capriss"){
+    if (data[i,'Index']=="0"){ 
+      dat_group_from_Order2[i,"Index"]<- 0
+      }else if (data[i,'Index']=="0-1"){
+      dat_group_from_Order2[i,"Index"]<- 1
+      }else if (data[i,'Index']=="0-1-2"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="0-1-2-3"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="0-1-2-3-4"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="0-1-2-3-4-5"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="1"){
+        dat_group_from_Order2[i,"Index"]<- 1
+      }else if (data[i,'Index']=="1-2"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="1-2-3"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="1-2-3-4"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="1-2-3-4-5"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="2"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="2-3"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="2-3-4"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="3"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="3-4"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }else if (data[i,'Index']=="4"){
+        dat_group_from_Order2[i,"Index"]<- 2
+      }
+    }else
+  if (data[i,'Index']=="0"){ 
+    dat_group_from_Order2[i,"Index"]<- 0
+  }else if (data[i,'Index']=="0-1"){
+    dat_group_from_Order2[i,"Index"]<- 1
+  }else if (data[i,'Index']=="0-1-2"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="0-1-2-3"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="0-1-2-3-4"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="0-1-2-3-4-5"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="1"){
+    dat_group_from_Order2[i,"Index"]<- 1
+  }else if (data[i,'Index']=="1-2"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="1-2-3"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="1-2-3-4"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="1-2-3-4-5"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="2"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="2-3"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="2-3-4"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="3"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="3-4"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }else if (data[i,'Index']=="4"){
+    dat_group_from_Order2[i,"Index"]<- 2
+  }
+}
+
+#Remplacer les valeurs 0 dans la colone total flowers par NA
+dat_group_from_Order2$nb_total_flowers[dat_group_from_Order2$nb_total_flowers==0]<-NA
+
+dat_group_from_Order2$Index<-as.factor(dat_group_from_Order2$Index)
+```
+
+      * recalcule data_at_module_scale_group_from_Order2 
+      
+```{r Recalculate data_at_module_scale after grouping from Order2 onwards}
+
+data_at_module_scale_group_from_Order2<-ddply(.data = dat_group_from_Order2,
+                                              .variables = c("genotype","Index"),
+                                              summarise,
+                                              MeanTotalLeave= mean(
+                                                x = nb_total_leaves,
+                                                na.rm = T),
+                                              SdTotalLeave= sd(
+                                                x = nb_total_leaves,
+                                                na.rm = T),
+                                              MeanTotalFlower= mean(
+                                                x = nb_total_flowers,
+                                                na.rm = T),
+                                              SdTotalFlower= sd(
+                                                x = nb_total_flowers,
+                                                na.rm = T),
+                                              MeanStolon= mean(
+                                                x = stolons,
+                                                na.rm = T),
+                                              SdStolon= sd(
+                                                x = stolons,
+                                                na.rm = T),
+                                              N=length(nb_total_leaves))
+
+kable(x = data_at_module_scale_group_from_Order2,
+      digits = 2,
+      caption = " Data at module scale after grouping from order1")
+```
+
+    * Plot mean no. leaves for succesive module orders for 0, 1 and from second-order module onwards
+    
+```{r Plot mean no. leaves for succesive module orders for 0, 1 and from second-order module onwards,fig.cap="Plot mean no. leaves for succesive module orders for 0, 1 and from second-order module onwards"}
+fc_pointwise_mean_variable_by_order(data = data_at_module_scale_group_from_Order2,
+                                    varname = "MeanTotalFlower")+
+  ylab("Mean no. flowers")+
+  ylim(3,20)
+
+```
+#### No. stolons fonction of successive module order
+
+##### Cumulative distribution of no. stolons  for each module order
+  
+* **Table of distribution of No. stolons according to module orders**
+  
+```{r Table of relative frequency of no. stolons by module orders}
+tab16<-fc_dist_variable_by_order(data = dat_group,genotype = "Gariguette",varname = "stolons",prob = T)
+
+kable(x = tab16, 
+      digits = 2,
+      caption = "Relative distribution of no. stolon by orders"
+      )
+
+```
+
+* **Visualization of distribution of No stolons for each module orders**
+
+```{r Plot of relative frequency of no. stolons by module orders, fig.cap= "Relative frequency distribution of the number of stolons  for successive orders for XX"}
+fc_dist_variable_by_order.plot(data = tab16)+
+  xlab("No. stolon")+
+  ylab("Relative distribution function")
+```
+
+##### Pointwise Mean of No. stolons of modules for successive orders for each varieties
+
+```{r Pointwise Mean of stolons for successive orders for each variety after grouping, fig.cap="Pointwise Mean of No. leaves of modules for successive orders for each variety after grouping"}
+fc_pointwise_mean_variable_by_order(data = data_at_module_scale_group,
+                                    varname = "MeanStolon")+
+  ylab("Mean No. Stolon")
+```
+
+**Results:** Not stationary so we are forced to compare varieties for each module orders
+
+##### Comparison of No. stolons for successive orders 
+
+* **For Order 0**
+  
+```{r Comparison of Mean No.Stolons for Order 0  between varieties}
+tab17<- fc_comp_varieties_kruskal_posthoc(data = dat_group_Order0,
+                                          varname = "stolons",
+                                          groupe = T)
+
+kable(x = tab17,
+      digits = 2,
+      caption = "Mean number of stolons with standard deviation and grouping of varieties using ANOVA on rank (Kruskal Wallis and posthoc test) represented by letter for zeroth-order module")
+
+```
+
+* **For Order 1**
+
+```{r Comparison of Mean No.Stolons for Order 1  between varieties}
+tab18<-fc_comp_varieties_kruskal_posthoc(data = dat_group_Order1,
+                                         varname = "stolons",
+                                         groupe = T)
+
+kable(x = tab18,
+      digits = 2,
+      caption = "Mean no.stolons with standard deviation and grouping of varieties using ANOVA on rank (Kruskal Wallis and posthoc test) represented by letter for zeroth-order module")
+
+```
+
+* **For Order 2**
+
+```{r Comparison of Mean No.Stolons for Order 2  between varieties}
+dat_group_order2<-dat_group[dat_group[,"Index"]==2,]
+
+tab19<-fc_comp_varieties_kruskal_posthoc(data = dat_group_order2,
+                                         varname = "stolons",
+                                         groupe = T)
+
+kable(x = tab19,
+      digits = 2,
+      caption = "Mean No.stolons with standard deviation and grouping of varieties using ANOVA on rank (Kruskal Wallis and posthoc test) represented by letter for second-order module")
+
+```
+
+* **For Order 3**
+
+```{r Comparison of Mean No.Stolons for Order 3  between varieties}
+dat_group_order3<-dat_group[dat_group[,"Index"]==3,]
+
+tab20<-fc_comp_varieties_kruskal_posthoc(data = dat_group_order3,
+                                         varname = "stolons",
+                                         groupe = T)
+
+kable(x = tab20,
+      digits = 2,
+      caption = "Mean No. stolons with standard deviation and grouping of varieties using ANOVA on rank (Kruskal Wallis and posthoc test) represented by letter for third-order module")
+
+```
+
+* **For Order 4**
+
+```{r Comparison of Mean No.Stolons for Order 4  between varieties}
+dat_group_order4<-dat_group[dat_group[,"Index"]==4,]
+
+tab21<-fc_comp_varieties_kruskal_posthoc(data = dat_group_order4,
+                                         varname = "stolons",
+                                         groupe = T)
+
+kable(x = tab21,
+      digits = 2,
+      caption = "Mean No. stolons with standard deviation and grouping of varieties using ANOVA on rank (Kruskal Wallis and posthoc test) represented by letter for four-order module")
+
+```
+
+### Comparison of categorical variables
+
+#### Branch crown function of successive modules orders
+
+Because the zeroth-order module is primary crown, to compare ramification for each module order we compare only from first-order module
+
+##### Relative frequency of proportion of Branch/Extention crown
+
+* **Table of relative frequency of proportion of branch/Extention crown**
+
+```{r Relative frequency data}
+dat_ramif<- dat_group[!dat_group[,"type_of_crown"]=="Primary_Crown",]
+
+Capriss<-fc_dist_cat_variable_by_order(data = dat_ramif,
+                                       genotype = "Capriss",
+                                       varname = "type_of_crown",
+                                       prob = F)
+
+Ciflorette<-fc_dist_cat_variable_by_order(data = dat_ramif,
+                                          genotype = "Ciflorette",
+                                          varname = "type_of_crown",
+                                          prob = F)
+
+Cir107<-fc_dist_cat_variable_by_order(data = dat_ramif,
+                                      genotype = "Cir107",
+                                      varname = "type_of_crown",
+                                      prob = F)
+
+Clery<-fc_dist_cat_variable_by_order(data = dat_ramif,
+                                     genotype = "Clery",
+                                     varname = "type_of_crown",
+                                     prob = F)
+
+Darselect<-fc_dist_cat_variable_by_order(data = dat_ramif,
+                                         genotype = "Darselect",
+                                         varname = "type_of_crown",
+                                         prob = F)
+
+Gariguette<-fc_dist_cat_variable_by_order(data = dat_ramif,
+                                          genotype = "Gariguette",
+                                          varname = "type_of_crown",
+                                          prob = F)
+
+tab12<-merge(x = Capriss,
+             y = Ciflorette, 
+             all=T)
+
+tab12<-merge(x = tab12,
+             y = Cir107,
+             all=T)
+
+tab12<-merge(x = tab12,
+             y = Clery, 
+             all=T)
+
+tab12<-merge(x = tab12,
+             y = Darselect, 
+             all=T)
+
+tab12<-merge(x = tab12,
+             y = Gariguette, 
+             all=T)
+
+tab12<- tab12[order(tab12$genotype),]
+
+kable(x = tab12,
+      digits = 2,
+      caption = "Relative frequency distribution or branch crown and extention crown as function of module orders for each variety")
+```
+
+* **Visualization of relative frequency of proportion of Branch/Extension crown**
+
+    * *Plot of relative frequencies of branch crown*
+
+```{r Relative frequencies of branch or Extention crown as a function of module orders for each varieties, fig.cap="Relative frequencies of branch crown as a function of module orders for each varieties"}
+fc_dist_cat_variable_by_order.plot(data = tab12,
+                                   varname = "Branch_Crown")  
+```
+
+    * * Plot of relative frequency of extension crown*
+  
+```{r Relative frequencies of branch crown as a function of module orders for each varieties, fig.cap="Relative frequencies of extension crown as a function of module orders for each varieties"}
+fc_dist_cat_variable_by_order.plot(data = tab12,
+                                   varname = "Extention_Crown")  
+```
+
+##### Comparison of Branch crown for successive order
+
+* **Identification from wich module variable was roughly constant for each varieties (chi2-test)**
+
+    * *Comparison from zeroth-order module (from >= 1)*
+  
+```{r Chi2 Comparaison of proportion of branch/extension crown for successive module order from first-order module}
+Capriss<- fc_chi_by_order(data = dat_group,
+                          genotype = "Capriss",
+                          varname = "type_of_crown",
+                          var.comp = c("Branch_Crown",
+                                       "Extention_Crown"),
+                          idx.comp = c("1","2","3"),
+                          parameter = ">=1",
+                          table = F)
+
+Ciflorette<- fc_chi_by_order(data = dat_group,
+                             genotype = "Ciflorette",
+                             varname = "type_of_crown",
+                             var.comp = c("Branch_Crown",
+                                          "Extention_Crown"),
+                             idx.comp = c("1","2","3","4"),
+                             parameter = ">=1",
+                             table = F)
+
+Cir107<- fc_chi_by_order(data = dat_group,
+                         genotype = "Cir107",
+                         varname = "type_of_crown",
+                         var.comp = c("Branch_Crown",
+                                      "Extention_Crown"),
+                         idx.comp = c("1","2","3","4"),
+                         parameter = ">=1",
+                         table = F)
+
+Clery<- fc_chi_by_order(data = dat_group,
+                        genotype = "Clery",
+                        varname = "type_of_crown",
+                        var.comp = c("Branch_Crown",
+                                     "Extention_Crown"),
+                        idx.comp = c("1","2","3","4"),
+                        parameter = ">=1",
+                        table = F)
+
+Darselect<- fc_chi_by_order(data = dat_group,
+                            genotype = "Darselect",
+                            varname = "type_of_crown",
+                            var.comp = c("Branch_Crown",
+                                         "Extention_Crown"),
+                            idx.comp = c("1","2","3","4"),
+                            parameter = ">=1",
+                            table = F)
+
+Gariguette<- fc_chi_by_order(data = dat_group,
+                             genotype = "Gariguette",
+                             varname = "type_of_crown",
+                             var.comp = c("Branch_Crown",
+                                          "Extention_Crown"),
+                             idx.comp = c("1","2","3","4"),
+                             parameter = ">=1",
+                             table = F)
+
+
+tab13<-merge(x = Capriss,
+             y = Ciflorette,
+             all=T)
+
+tab13<-merge(x = tab13,
+             y = Cir107, 
+             all=T)
+
+tab13<-merge(x = tab13,
+             y = Clery, 
+             all=T)
+
+tab13<-merge(x = tab13,
+             y = Darselect,
+             all=T)
+
+tab13<-merge(x = tab13,
+             y = Gariguette, 
+             all=T)
+
+tab13<- tab13[order(tab13$genotype),]
+
+kable(x = tab13,
+      digits = 2, 
+      caption = "Chi2 Comparaison of proportion of branch/extension crown for successive module order from first-order module onward")
+```
+
+    * *Comparison from zeroth-order module (from >= 2)*
+
+```{r Chi2 Comparaison of proportion of branch/extension crown for successive module order from second-order module}
+
+Capriss<- fc_chi_by_order(data = dat_group,
+                          genotype = "Capriss",
+                          varname = "type_of_crown",
+                          var.comp = c("Branch_Crown",
+                                       "Extention_Crown"),
+                          idx.comp = c("2","3"),
+                          parameter = ">=2",
+                          table = F)
+
+Ciflorette<- fc_chi_by_order(data = dat_group,
+                             genotype = "Ciflorette",
+                             varname = "type_of_crown",
+                             var.comp = c("Branch_Crown",
+                                          "Extention_Crown"),
+                             idx.comp = c("2","3","4"),
+                             parameter = ">=2",
+                             table = F)
+
+Cir107<- fc_chi_by_order(data = dat_group,
+                         genotype = "Cir107",
+                         varname = "type_of_crown",
+                         var.comp = c("Branch_Crown",
+                                      "Extention_Crown"),
+                         idx.comp = c("2","3","4"),
+                         parameter = ">=2",
+                         table = F)
+
+Clery<- fc_chi_by_order(data = dat_group,
+                        genotype = "Clery",
+                        varname = "type_of_crown",
+                        var.comp = c("Branch_Crown",
+                                     "Extention_Crown"),
+                        idx.comp = c("2","3","4"),
+                        parameter = ">=2",
+                        table = F)
+
+Darselect<- fc_chi_by_order(data = dat_group,
+                            genotype = "Darselect",
+                            varname = "type_of_crown",
+                            var.comp = c("Branch_Crown",
+                                         "Extention_Crown"),
+                            idx.comp = c("2","3","4"),
+                            parameter = ">=2",
+                            table = F)
+
+Gariguette<- fc_chi_by_order(data = dat_group,
+                             genotype = "Gariguette",
+                             varname = "type_of_crown",
+                             var.comp = c("Branch_Crown",
+                                          "Extention_Crown"),
+                             idx.comp = c("2","3","4"),
+                             parameter = ">=2",
+                             table = F)
+
+
+tab14<-merge(x = Capriss,
+             y = Ciflorette,
+             all=T)
+
+tab14<-merge(x = tab14,
+             y = Cir107, 
+             all=T)
+
+tab14<-merge(x = tab14,
+             y = Clery, 
+             all=T)
+
+tab14<-merge(x = tab14,
+             y = Darselect,
+             all=T)
+
+tab14<-merge(x = tab14,
+             y = Gariguette, 
+             all=T)
+
+tab14<- tab14[order(tab14$genotype),]
+
+kable(x = tab14,
+      digits = 2, 
+      caption = "Chi2 Comparaison of proportion of branch/extension crown for successive module order from second-order module onwards")
+```
+
+* ** Comparison between varieties for zeroth-order modules and from first-order module onward**
+
+  * *Comparison between varieties for first-order module*
+
+```{r Comparison between varieties for zeroth-order module}
+dat_group_Order1<- dat_group[dat_group[,"Index"]=="1",]
+
+tab15<-fc_comp_varieties_chi2.fisher(data = dat_group_Order1,
+                                     varname = "type_of_crown",
+                                     comp = "genotype")
+
+kable(x = tab15,
+      digits = 2,
+      caption = "Fisher comparison of proportion of branch crown extension crown for the first-order module (Order1)")
+```
+
+  * *Comparison between varieties from second-order module onwards*
+  
+```{r Comparison between varieties from second-order module onwards}
+
+tab15<-fc_comp_varieties_chi2.fisher(data = dat_group_from_Order2,
+                                     varname = "type_of_crown",
+                                     comp = "genotype")
+
+kable(x = tab15,
+      digits = 2,
+      caption = "Fisher comparison of proportion of branch crown extension crown from second-order module onwards (Order>=2)")
+```
