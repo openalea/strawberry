@@ -17,6 +17,11 @@ roll_angle = 360.*2./5.
 
 ## 2.Phytomer
 def leaflet(length=1., width=1.):
+    """
+    return 
+    ------
+    a strawberry leaf composed of three discs
+    """
     disc = pgl.Translated((-0.5,0,0), pgl.Disc())
     disc = pgl.Scaled((length, width,1), disc)
     disc = pgl.AxisRotated(axis=(0,1,0), angle=radians(90.), geometry=disc)
@@ -31,6 +36,16 @@ def leaflet(length=1., width=1.):
 def Phytomer(g, vid, turtle):
     """ F: Petiol + 3 lobes.
     cylinder + 3 ellipse/surface
+    
+    parameters:
+    -----------
+    g: is a current MTG
+    vid: vertex id in the mtg
+    turtle: openalea.
+    
+    return:
+    ---------
+    for each F in mtg return an object compose of petiol (2 cylinder) and 3 lobes (leaflet)
     """
     t = turtle
     nid = g.node(vid)
@@ -54,8 +69,19 @@ def Phytomer(g, vid, turtle):
     t.pop()
 
 def Phytomer_Primordia(g, vid, turtle):
-    """ F: Petiol + 3 lobes.
+    """ f: Petiol + 3 lobes.
     cylinder + 3 ellipse/surface
+    
+    parameters:
+    -----------
+    g: is a current MTG
+    vid: vertex id in the mtg
+    turtle: openalea.pltgl.turtle
+    
+    return:
+    ---------
+    for each f in mtg return an object compose of petiol (2 cylinder) and 3 lobes (leaflet)
+    
     """
     scale = 1./5
     t = turtle
@@ -83,6 +109,17 @@ def Phytomer_Primordia(g, vid, turtle):
 def Inflorescence(g, vid, turtle):
     """ HT: Inflorescence
     Box (may change)
+    
+    parameters:
+    -----------
+    g: is a current MTG
+    vid: vertex id in the mtg
+    turtle: openalea.pltgl.turtle
+    
+    return:
+    ----------
+    for each HT in mtg return an object compose of cylender and a blue box. 
+    Shape of the box is dependent of the number of total flower and number of open flowers.
     """
     t = turtle
     nid = g.node(vid)
@@ -104,6 +141,16 @@ def Inflorescence(g, vid, turtle):
 
 def Inflo_Primordia(g, vid, turtle):
     """ ht: Primordia inflorescence
+    
+    parameters:
+    -----------
+    g: is a current MTG
+    vid: vertex id in the mtg
+    turtle: openalea.pltgl.turtle
+    
+    return:
+    -------
+    for each ht in mtg return an object compose of a cylinder and a of orange cube 
     """
     t = turtle
     #turtle.setColor(1)
@@ -119,6 +166,17 @@ def Inflo_Primordia(g, vid, turtle):
 def TerminalBud(g, vid, turtle):
     """ bt: Terminal Bud.
     sphere
+    
+    parameters:
+    -----------
+    g: is a current MTG
+    vid: vertex id in the mtg
+    turtle: openalea.pltgl.turtle
+    
+    return:
+    -------
+    for each bt in mtg return a sphere with a radius of 0.02
+    
     """
     t = turtle
     #turtle.setColor(1)
@@ -132,6 +190,9 @@ def TerminalBud(g, vid, turtle):
 ## 5. Stolon
 
 def stolon_curve(scale=1.):
+    """
+    return a curve to for symbolise a stolon
+    """
     v2 = pgl.Vector3
     ctrls = pgl.Point3Array([v2(x*scale, y*scale) for x,y in [(0,0), (1,3), (3,5), (4,2), (5,4)]])
     crv = pgl.BezierCurve2D(ctrls)
@@ -142,6 +203,7 @@ stolon = stolon_curve(scale=.25)
 
 def Stolon(g, vid, turtle):
 	""" s: Stolon
+    
     """
         t = turtle
     #t.setGuide(stolon, 1)
@@ -152,6 +214,12 @@ def Stolon(g, vid, turtle):
         turtle.customGeometry(stolon)
 
 def get_symbols():
+    """
+    return:
+    --------
+    
+    a dictionnary which associate each geometrical fonction Phytomer, Inflorescence, TerminalBud, Phytomer_Primordia, Inflo_Primordia,Stolon to F, HT, bt, ht, s
+    """
     geoms = dict(F=Phytomer,
                  HT=Inflorescence,
                  bt=TerminalBud,
@@ -162,6 +230,15 @@ def get_symbols():
 
 ## Colors rules
 def color_code(g):
+    """
+    Parameter:
+    g: a current MTG
+    
+    return:
+    -------
+    Colloration rule of each object Phytomer, Inflorescence, TerminalBud, Phytomer_Primordia, Inflo_Primordia,Stolon
+    according to orders and stage
+    """
     cleaf = (0,125,0)
     cfleaf = (255, 0, 255)
     cstolon= (0,20,0)

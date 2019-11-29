@@ -1,4 +1,10 @@
 User guide
 ##########
 
-Put whaterver you want here
+Author:
+=========
+Marc LABADIE
+
+Description:
+===========
+
