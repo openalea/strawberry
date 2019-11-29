@@ -1,5 +1,5 @@
 
-
+from openalea.deploy.shared_data import shared_dat
 
 def import_mtgfile(filename):
     """
