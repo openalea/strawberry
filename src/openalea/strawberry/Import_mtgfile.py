@@ -9,7 +9,7 @@ def import_mtgfile(filename):
     """
     parameters:
     -----------
-    filename = names of mtg
+    filename : names of mtg
     
     return:
     -------
@@ -28,9 +28,17 @@ def import_mtgfile(filename):
             metaMTG = algo.union(metaMTG, MTG(mtgfile[i]))
         return metaMTG   
 
-def plant_number_by_varieties(g):
-genotype = set(g.property("Genotype").values())
 
-for geno in genotype:
-    no_plants= g.property("Genotype").values().count(geno)
-    print geno, ":", no_plants, "plants"
+def plant_number_by_varieties(g):
+    """
+    parameter:
+    g : a current mtg
+
+    Note: Genotype variable can be explicitely defined
+
+    """
+    genotype = set(g.property("Genotype").values())
+
+    for geno in genotype:
+        no_plants= g.property("Genotype").values().count(geno)
+        print geno, ":", no_plants, "plants"

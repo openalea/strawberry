@@ -7,8 +7,11 @@ from openalea.core import *
 from openalea.plantgl import all as pgl
 
 
+
+
 #Visualization  by plante
 # Je souhaiterai l'avoir une entre plutot de type Visualise_plant( Genotype_name, Date, plant number)
+
 
 
 def strawberry_visitor(g, v, turtle, time=0):
