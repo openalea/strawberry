@@ -127,3 +127,22 @@ def median_individuals(df):
         # _min = s.min()
         # minimum_inds= s[s==_min]
     return df.iloc[indices]
+
+def occurence_module_order_along_time(data, frequency_type):
+    """
+    parameters:
+    -----------
+        data = data at module scale 
+        frequency_type = type of distribution frequency distribution (freq), probability distribution frequency (pbf) or cumulative frequency distribution (cdf)
+
+    return:
+    --------
+        A dataframe with frequency, probability or cumulative frequency distribution for each module order along time
+    """
+    if frequency_type == "freq":
+        res = pd.crosstab(index= data["order"], columns= data["date"], margins = True)
+    if frequency_type == "pdf":
+        res = pd.crosstab(index= data["order"], columns= data["date"], normalize = "columns")
+    if frequency_type == "cdf":
+        res = pd.crosstab(index= data["order"], columns= data["date"], normalize = "columns").cumsum()
+    return res
