@@ -1,7 +1,7 @@
 
 import pandas as pd
 from openalea.mtg.algo import orders
-
+import matplotlib.pyplot as plt
 
 def to_dataframe(g, vertices=[], f=None):
     """ Convert an MTG into a full dataframe.
@@ -146,3 +146,30 @@ def occurence_module_order_along_time(data, frequency_type):
     if frequency_type == "cdf":
         res = pd.crosstab(index= data["order"], columns= data["date"], normalize = "columns").cumsum()
     return res
+
+def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab):
+    """
+    parameters:
+    -----------
+        data_mean: panda dataframe containg mean values
+        data_sd: panda dataframe containing standars error values
+        varieties: names of varieties which are plot
+        title: plot title
+        ylab:  y axis label
+
+    return:
+    ---------
+        line plot with mean value of each varieties selected 
+    """
+
+    fig, pointwise_mean = plt.subplots()
+    cmap = plt.get_cmap('rainbow', len(varieties))
+    for i, varietie in enumerate(varieties):
+        pointwise_mean.errorbar(x=data_mean.loc[varietie].index, 
+                     y=data_mean.loc[varietie][variable],
+                     yerr=data_sd.loc[varietie][variable],
+                     color=cmap(i), marker="p")
+    pointwise_mean.legend(labels=varieties)
+    pointwise_mean.set_title(title)
+    pointwise_mean.set_ylabel(ylab)
+    plt.show()

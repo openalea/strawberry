@@ -142,10 +142,13 @@ def plant_positions(g, by=['Genotype']):
     return vids, positions
 
 
-def plot3d(g, by=['Genotype'], hide_leaves=False):
+def plot3d(g, by=['Genotype'], hide_leaves=False,display=True):
 
     vids, positions = plant_positions(g, by=by)
     Rules_production.color_code(g)
     scene = visualise_plants(g, vids=vids, positions=positions, hide_leaves=hide_leaves)
-    pgl.Viewer.display(scene)
-    return scene
+    
+    if display:
+        pgl.Viewer.display(scene)
+    else:
+        return scene
