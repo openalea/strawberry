@@ -173,3 +173,42 @@ def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab):
     pointwise_mean.set_title(title)
     pointwise_mean.set_ylabel(ylab)
     plt.show()
+
+def crowntype_distribution(data, varieties, crown_type, plot=True):
+    """
+    parameters:
+    -----------
+    data: panda dataframe issue from extraction of data at module scale
+    varieties: names of varieties which are plot
+    variable: type of branch crown (extension_crown or branch_crown)
+    plot: booleen variable True or False
+
+    return:
+    -------
+    a dataframe containing relative frequency values by genotype and order for extension and branch crown
+    and a relative frequency distribution plot
+
+    """
+    df= pd.crosstab(index= [data.Genotype, data.order],
+                    columns= data.type_of_crown,
+                    normalize="index")
+    
+    df.columns=["Main", "extension_crown", "branch_crown"]
+    
+    if plot:
+        cmap = plt.get_cmap('rainbow', len(varieties))
+        print cmap
+        
+        for i, variety in enumerate(varieties): 
+            
+            df = df[df.index.get_level_values('order')!=0]
+            plt.plot(df.loc[variety][crown_type],
+                     marker="p", 
+                     color = cmap(i))
+            plt.ylabel("relative frequency")
+            plt.xlabel("order")
+            plt.title("Relative frequency of " + crown_type)
+            plt.legend(labels= varieties)
+            
+        
+    return df
