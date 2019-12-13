@@ -45,7 +45,7 @@ extensions = [
 source_suffix = '.rst'
 
 # The master toctree document.
-master_doc = 'contents.rst'
+master_doc = 'contents'
 
 # General information about the project.
 project = u'openalea.strawberry'
