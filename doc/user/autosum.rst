@@ -7,12 +7,12 @@ Reference guide
 ###################################
 .. contents::
 
-.. currentmodule:: Strawberry.__init__
+.. currentmodule:: strawberry.__init__
 
 
 :mod:`Strawberry` module
 ===============================================
-.. automodule:: Strawberry.__init__
+.. automodule:: strawberry.__init__
     :members:
     :undoc-members:
     :inherited-members:
