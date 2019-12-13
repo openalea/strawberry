@@ -23,8 +23,6 @@ Authors:
 * Christophe Pradal
 
 
-
-
 Installation:
 =============
 
