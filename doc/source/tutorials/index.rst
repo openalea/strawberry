@@ -1,9 +1,12 @@
 
-tutoriaaaal !
+tutorials !
 ======================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :numbered:
 
-   tuto1.rst
+   1.import and read MTG.rst
+   2.Strawberry architecture representations.rst
+   3.Architecture analysis at module scale.rst
+   
