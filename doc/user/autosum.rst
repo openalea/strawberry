@@ -10,7 +10,7 @@ Reference guide
 .. currentmodule:: strawberry.__init__
 
 
-:mod:`Strawberry` module
+:mod:`strawberry` module
 ===============================================
 .. automodule:: strawberry.__init__
     :members:
