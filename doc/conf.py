@@ -198,7 +198,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'Strawberry.tex', u'strawberry Documentation',
-     u'marc Labadie', 'manual'),
+     u'Marc Labadie', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -228,7 +228,7 @@ latex_documents = [
 man_pages = [
     (master_doc, 'strawberry',
      u'strawberry Documentation',
-     [author], 1)
+     [AUTHORS], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -241,7 +241,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'strawberry', u'strawberry Documentation',
-     author, 'strawberry', 'Visualisation and analysis of strawberry architecture',
+     AUTHORS, 'strawberry', 'Visualisation and analysis of strawberry architecture',
      'Miscellaneous'),
 ]
 
