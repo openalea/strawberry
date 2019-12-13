@@ -41,7 +41,7 @@ Requirements
 * OpenAlea.PlantGL
 * Matplotlib
 * Pandas
-
+* oawidgets
 
 Installation 
 +++++++++++++
