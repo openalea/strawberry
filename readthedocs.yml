@@ -1,0 +1,11 @@
+name: strawberry
+channels:
+  - openalea
+  - defaults
+  - conda-forge
+
+dependencies:
+  - python=2.7
+  - openalea.strawberry
+  - sphinx
+  - sphinx_rtd_theme
