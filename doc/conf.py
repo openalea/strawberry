@@ -228,7 +228,7 @@ latex_documents = [
 man_pages = [
     (master_doc, 'strawberry',
      u'strawberry Documentation',
-     [AUTHORS], 1)
+     [u'Marc Labadie'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -241,7 +241,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'strawberry', u'strawberry Documentation',
-     AUTHORS, 'strawberry', 'Visualisation and analysis of strawberry architecture',
+     u'Marc Labadie', 'strawberry', 'Visualisation and analysis of strawberry architecture',
      'Miscellaneous'),
 ]
 
