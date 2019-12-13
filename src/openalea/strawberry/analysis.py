@@ -147,7 +147,7 @@ def occurence_module_order_along_time(data, frequency_type):
         res = pd.crosstab(index= data["order"], columns= data["date"], normalize = "columns").cumsum()
     return res
 
-def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab):
+def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab, expand=0):
     """
     parameters:
     -----------
@@ -156,6 +156,7 @@ def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab):
         varieties: names of varieties which are plot
         title: plot title
         ylab:  y axis label
+        expand: allows to change xlim
 
     return:
     ---------
@@ -169,12 +170,14 @@ def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab):
                      y=data_mean.loc[varietie][variable],
                      yerr=data_sd.loc[varietie][variable],
                      color=cmap(i), marker="p")
-    pointwise_mean.legend(labels=varieties)
+    pointwise_mean.legend(labels=varieties,loc='center left', bbox_to_anchor=(1, 0.5))
     pointwise_mean.set_title(title)
     pointwise_mean.set_ylabel(ylab)
+    pointwise_mean.set_xlim(left=-expand, right= max(data_mean.loc[varietie].index)+expand)
+
     plt.show()
 
-def crowntype_distribution(data, varieties, crown_type, plot=True):
+def crowntype_distribution(data, varieties, crown_type, plot=True,expand=0):
     """
     parameters:
     -----------
@@ -202,13 +205,16 @@ def crowntype_distribution(data, varieties, crown_type, plot=True):
         for i, variety in enumerate(varieties): 
             
             df = df[df.index.get_level_values('order')!=0]
+            
             plt.plot(df.loc[variety][crown_type],
                      marker="p", 
                      color = cmap(i))
             plt.ylabel("relative frequency")
             plt.xlabel("order")
             plt.title("Relative frequency of " + crown_type)
-            plt.legend(labels= varieties)
-            
-        
+            plt.legend(labels=varieties,loc='center left', bbox_to_anchor=(1, 0.5))
+            plt.xlim(left=1-expand, right= max(df.loc[variety].index)+expand)
+            plt.ylim(bottom=0.1, top= 1.1)
+
+
     return df

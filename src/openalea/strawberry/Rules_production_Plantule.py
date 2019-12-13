@@ -212,4 +212,3 @@ def color_code(g):
                     nid.color = (0, 127+127/(len(stades)-1)*(i),255)
                 else:
                     nid.color = (153, 102, 51)
-
