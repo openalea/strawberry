@@ -28,6 +28,15 @@ Requierements:
 installation:
 -------------
 
+1. Install Miniconda
++++++++++++++++++++++
+Follow official website instruction to install miniconda :
+
+http://conda.pydata.org/miniconda.html
+
+2. Install strawberry module
+++++++++++++++++++++++++++++
+
 .. code:: shell
       
       conda create -n openalea -c openalea -c openalea/label/unstable openalea.plantgl openalea.lpy boost=1.66 openalea.mtg
@@ -37,6 +46,7 @@ installation:
 .. code:: shell
 
       conda install -c openalea openalea.strawberry
+      conda activate openalea
 
 Documentation:
 ==============
