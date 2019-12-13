@@ -129,11 +129,11 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-#latex_documents = [
-#    (master_doc, 'strawberry.tex', u'strawberry Documentation',
-#     u'Marc Labadie \\& Christophe Pradal', 'manual'),
-#]
-latex_documents = []
+latex_documents = [
+    (master_doc, 'strawberry.tex', u'strawberry Documentation',
+     u'Marc Labadie \\& Christophe Pradal', 'manual'),
+]
+
 
 
 # -- Options for manual page output ------------------------------------------

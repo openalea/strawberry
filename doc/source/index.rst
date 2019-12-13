@@ -3,28 +3,27 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to strawberry's documentation!
+Strawberry documentation
 ======================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   tuto/index.rst
+Description:
+===========
 
+Strawberry is a package for architecture analysis and 2D/3D reconstruction. 
+it is encoded in python 2.7
 
-User guide
-##########
 
 Authors:
 =========
 * Marc Labadie
 * Christophe Pradal
 
-Description:
-===========
-Strawberry is a package for architecture analysis and 2D/3D reconstruction. 
-it is encoded in python 2.7
+
+
 
 Installation:
 =============

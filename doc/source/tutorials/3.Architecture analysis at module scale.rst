@@ -1,0 +1,203 @@
+Architecture analysis at module scale
+=====================================
+
+0. Module Requierement
+----------------------
+
+0.1. import standard python modules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: ipython2
+
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
+0.3. import strawberry modules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: ipython2
+
+    import openalea.strawberry #import openalea.strawberry module
+    from openalea.strawberry.Import_mtgfile import import_mtgfile
+    from openalea.strawberry.Import_mtgfile import plant_number_by_varieties
+    from openalea.strawberry.variables import extract_at_module_scale
+    from openalea.strawberry.analysis import occurence_module_order_along_time, pointwisemean_plot, crowntype_distribution
+
+.. code:: ipython2
+
+    # config
+    pd.set_option('display.multi_sparse', False)
+
+1. Import and read mtg files
+----------------------------
+
+-  Import and read mtg file for each varieties (Gariguette and Capriss)
+
+.. code:: ipython2
+
+    Gariguette = import_mtgfile(filename= "Gariguette")
+    Capriss = import_mtgfile(filename = "Capriss")
+    Darselect = import_mtgfile(filename = "Darselect")
+    Cir107 = import_mtgfile(filename = "Cir107")
+
+-  Import and read mtg for the varities Gariguette and Capriss in the
+   single big mtg file
+
+.. code:: ipython2
+
+    All_varieties = import_mtgfile(filename=["Gariguette","Capriss","Darselect","Cir107"])
+    plant_number_by_varieties(All_varieties)
+
+2. Extraction of data at module scale
+-------------------------------------
+
+| To study plant development at module scale you must extract data at
+  module scale.
+| For this you use *variable.extract\_at\_module\_scale* function
+
+-  **Example with Gariguette**
+
+.. code:: ipython2
+
+    Gariguette_extraction_at_module_scale = extract_at_module_scale(Gariguette)
+    Gariguette_extraction_at_module_scale
+
+-  **Example with Capriss**
+
+.. code:: ipython2
+
+    Capriss_extraction_at_module_scale = extract_at_module_scale(Capriss)
+    Capriss_extraction_at_module_scale
+
+-  **Exemple of big mtg (All varieties) extraction at module scale**
+
+.. code:: ipython2
+
+    All_varieties_extraction_at_module_scale = extract_at_module_scale(All_varieties)
+    All_varieties_extraction_at_module_scale
+
+3. Exploratory data analysis at module scale
+--------------------------------------------
+
+| Exploratory analysis analysis at module scale consisted in comparing
+  the frequency distribution of five main variables:
+| 1. Occurence of successive module orders along time 2. Number of
+  leaves by module orders 3. Number of flowers by module orders 4.
+  Number of stolons by module orders 5. Type of crown (extension crown
+  vs branch crown) by module orders
+
+3.1. Occurence of the successive module orders along time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **For Gariguette varieties**
+
+.. code:: ipython2
+
+    Gariguette_frequency = occurence_module_order_along_time(data= Gariguette_extraction_at_module_scale,frequency_type= "cdf")
+    Gariguette_frequency
+
+.. code:: ipython2
+
+    Gariguette_frequency.plot.line(marker = "o")
+    plt.axhline(y = 0.9, color = "r") # threshold at 0.9 quartile, 
+    plt.axhline(y = 0.75, color = "b") # threshold at 0.75 quartile
+    plt.title("Occurence of succesive module order along time for Gariguette")
+    plt.ylabel("cdf")
+
+-  **For Capriss varieties**
+
+.. code:: ipython2
+
+    Capriss_frequency = occurence_module_order_along_time(data= Capriss_extraction_at_module_scale,frequency_type= "cdf")
+    Capriss_frequency
+
+.. code:: ipython2
+
+    Capriss_frequency.plot.line(marker = "p")
+    plt.axhline(y = 0.9, color = "r") # threshold at 0.9 quartile, 
+    plt.axhline(y = 0.75, color = "b") # threshold at 0.75 quartile
+    plt.title("Occurence of successive module order for Capriss")
+    plt.ylabel("cdf")
+
+3.2 Pointwise mean no. Leaves, Flowers, Stolon by module order
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The first step is calcul mean and standard deviation for each variable
+by genotype and order
+
+.. code:: ipython2
+
+    Mean= All_varieties_extraction_at_module_scale.groupby(["Genotype", "order"]).mean()
+    sd= All_varieties_extraction_at_module_scale.groupby(["Genotype", "order"]).std()
+
+.. code:: ipython2
+
+    Mean
+
+.. code:: ipython2
+
+    sd
+
+3.2.1 Pointwise mean no. leaves by module order and génotype
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: ipython2
+
+    pointwisemean_plot(data_mean=Mean,
+                       data_sd=sd,
+                       varieties=["Gariguette","Capriss","Cir107","Darselect"], 
+                       variable='nb_total_leaves',
+                       title= "Pointwisemean of no.leaves",
+                       ylab="Mean no.leaves",
+                       expand= 0.1)
+
+3.2.2 Pointwise mean of no. total flowers by genotype and orders
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: ipython2
+
+    pointwisemean_plot(data_mean=Mean,
+                       data_sd=sd,
+                       varieties=["Gariguette","Capriss","Cir107","Darselect"], 
+                       variable='nb_total_flowers',
+                       title= "Pointwisemean of no. flowers",
+                       ylab="Mean no. flowers",
+                       expand= 0.1)
+
+3.4 Number of stolons by module orders
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: ipython2
+
+    pointwisemean_plot(data_mean=Mean,
+                       data_sd=sd,
+                       varieties=["Gariguette","Capriss","Cir107","Darselect"], 
+                       variable='nb_stolons',
+                       title= "Pointwisemean of no. stolons",
+                       ylab="Mean no. stolons", expand=0.1)
+
+3.5 Type of Crowns (Extension crown vs Branch crowns)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: ipython2
+
+    crowntype_distribution(data= All_varieties_extraction_at_module_scale, varieties=["Gariguette","Capriss","Cir107","Darselect"],crown_type="branch_crown",expand=0.1)
+
+.. code:: ipython2
+
+    t=crowntype_distribution(data= All_varieties_extraction_at_module_scale, varieties=["Gariguette","Capriss","Cir107","Darselect"],crown_type="extension_crown",expand=0.1)
+
+
+
+.. code:: ipython2
+
+    import statsmodels.sandbox.stats.multicomp
+
+.. code:: ipython2
+
+    statsmodels.sandbox.stats.multicomp.MultiComparison(data= All_varieties_extraction_at_module_scale,groups=["Genotype","order"])
+
+.. code:: ipython2
+
+    statsmodels.sandbox.stats.multicomp.MultiComparison()
+
