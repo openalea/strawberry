@@ -69,7 +69,10 @@ Tutorial Jupyter Notebooks
 --------------------------
 Tutorial Jupyter Notebooks are available on the git repository in the folder examples/tutorials.
 
+.. toctree::
 
+   ./tutorials/index.rst
+   
 Indices and tables
 ==================
 
