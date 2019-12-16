@@ -43,6 +43,7 @@ Requirements
 * Pandas
 * oawidgets
 
+
 Installation 
 +++++++++++++
 
@@ -58,5 +59,6 @@ conda install -c openalea openalea.strawberry
 
 Documentation
 -------------
-https://strawberry.readthedoc.org
+    
+    https://strawberry.readthedocs.io
 
