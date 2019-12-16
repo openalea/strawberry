@@ -21,11 +21,12 @@ Install
 
 .. toctree::
 
-	./Install/Index.rst
+	./Install/index.rst
 
 
 User guide
 ==============
+
 
 Tutorials Jupyter Notebooks
 --------------------------
