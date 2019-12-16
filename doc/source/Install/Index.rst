@@ -1,5 +1,5 @@
 .. toctree::
-   :maxdepth: 2
-   :numbered:
+    :glob:
+    :caption: Install
 
-   miniconda.rst
+    ./miniconda.rst
