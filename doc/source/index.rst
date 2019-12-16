@@ -33,7 +33,7 @@ Tutorial Jupyter Notebooks are available on the git repository in the folder exa
 
 Authors:
 =========
-.. include:: ../../AUTHORS.txt
+.. include:: ../../AUTHORS.rst
 
    
 Indices and tables
