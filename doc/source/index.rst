@@ -10,20 +10,21 @@ Strawberry documentation
    :maxdepth: 2
    :caption: Contents:
 
-Description:
+Description
 ===========
 
 Strawberry is a package for architecture analysis and 2D/3D reconstruction. 
 it is encoded in python 2.7
 
-Install:
-=============
+Install
+========
 
 .. toctree::
+
 	./Install/index.rst
 
 
-User guide:
+User guide
 ==============
 
 Tutorials Jupyter Notebooks
@@ -31,7 +32,7 @@ Tutorials Jupyter Notebooks
 Tutorials Jupyter Notebooks are available on the git repository in the folder examples/tutorials.
 
 
-Authors:
+Authors
 =========
 .. include:: ../../AUTHORS.rst
 
