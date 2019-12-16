@@ -30,28 +30,12 @@ Requierements:
 * Pandas
 * oawidgets
 
-installation:
+Installation:
 -------------
 
-1. Install Miniconda
-+++++++++++++++++++++
-Follow official website instruction to install miniconda :
+.. toctree::
+	./install/index.rst
 
-http://conda.pydata.org/miniconda.html
-
-2. Install strawberry module
-++++++++++++++++++++++++++++
-
-.. code:: shell
-      
-      conda create -n openalea -c openalea -c openalea/label/unstable openalea.plantgl openalea.lpy boost=1.66 openalea.mtg
-
-
-
-.. code:: shell
-
-      conda install -c openalea openalea.strawberry
-      conda activate openalea
 
 Documentation:
 ==============
@@ -59,10 +43,6 @@ Documentation:
 Tutorial Jupyter Notebooks
 --------------------------
 Tutorial Jupyter Notebooks are available on the git repository in the folder examples/tutorials.
-
-.. toctree::
-
-   ./tutorials/index.rst
 
 
 Authors:
