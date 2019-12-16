@@ -6,7 +6,7 @@ Installation
 .. toctree::
    :maxdepth: 2
 
-   user/install/index.rst
+   user/install/miniconda.rst
   
 
 Documentation
