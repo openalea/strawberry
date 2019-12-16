@@ -1,20 +1,18 @@
 Strawberry
 ##########
 
-Description:
-============
+**Description**:
+
 Strawberry is a package for architecture analysis and 2D/3D reconstruction. 
 it is encoded in python 2.7
 
-Licence:
-========
-
-Cecill-C
-
-Authors:
-========
+**Authors**
 * Marc Labadie
 * Christophe Pradal
+
+**Licence:** Cecill-C
+
+**URL**: https://github.com/openalea-incubator/strawberry
 
 
 Strawberry User Guide
