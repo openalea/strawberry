@@ -1,11 +1,11 @@
-0. Install Miniconda
+Install Miniconda
 --------------------
 
 Follow official website instruction to install miniconda :
 
 http://conda.pydata.org/miniconda.html
 
-2. Create virtual environment and activate it
+Create virtual environment and activate it
 ---------------------------------------------
 
 In Anaconda Prompt:
@@ -15,14 +15,14 @@ In Anaconda Prompt:
   conda create -n strawberry -c openalea -c openalea/label/unstable openalea.plantgl openalea.lpy boost=1.66 openalea.mtg
           conda activate strawberry
 
-3. Install strawberry package
+Install strawberry package
 ------------------------------
 
 .. code:: shell
 
   conda install -c openalea openalea.strawberry
 
-3. Install several packages managing tools:
+Install several packages managing tools:
 -------------------------------------------
 
 .. code:: shell
