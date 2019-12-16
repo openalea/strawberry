@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 
-Welcome to openalea.mtg's documentation!
+Welcome to strawberry's documentation!
 ========================================
 
 Contents:
@@ -23,9 +23,3 @@ Indices and tables
 * :ref:`search`
 
    
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
