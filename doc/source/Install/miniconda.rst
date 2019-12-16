@@ -22,7 +22,7 @@ Install strawberry package
 
   conda install -c openalea openalea.strawberry
 
-Install several packages managing tools:
+Install several packages managing tools
 -------------------------------------------
 
 .. code:: shell
