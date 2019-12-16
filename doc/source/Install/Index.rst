@@ -1,5 +1,5 @@
 .. toctree::
     :glob:
-    :caption: Install
+    :caption: Installation
 
     /miniconda.rst
