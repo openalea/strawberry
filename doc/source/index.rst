@@ -19,9 +19,8 @@ it is encoded in python 2.7
 Install
 ========
 
-.. toctree::
-
-	./Install/index.rst
+.. toctree:: 
+   ./Install/index.rst
 
 
 User guide
