@@ -4,33 +4,23 @@
    contain the root `toctree` directive.
 
 
-.. contents::
+Welcome to openalea.mtg's documentation!
+========================================
 
-Description
-===========
+Contents:
 
-Strawberry is a package for architecture analysis and 2D/3D reconstruction. 
-it is encoded in python 2.7
+.. toctree::
+   :maxdepth: 2
 
-Install
-========
-
-.. toctree:: 
-   ./Install/index.rst
+   user/index.rst
 
 
-User guide
-==============
+Indices and tables
+==================
 
-
-Tutorials Jupyter Notebooks
---------------------------
-Tutorials Jupyter Notebooks are available on the git repository in the folder examples/tutorials.
-
-
-Authors
-=========
-.. include:: ../../AUTHORS.rst
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 
    
 Indices and tables
