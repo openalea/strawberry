@@ -12,8 +12,13 @@ In Anaconda Prompt:
 
 .. code:: shell
 
-  conda create -n strawberry -c openalea -c openalea/label/unstable openalea.plantgl openalea.lpy boost=1.66 openalea.mtg
-          conda activate strawberry
+  conda create -n strawberry -c openalea -c openalea/label/unstable openalea.plantgl boost=1.66 openalea.mtg
+
+
+.. code:: shell
+
+  conda activate strawberry
+  
 
 Install strawberry package
 ------------------------------
