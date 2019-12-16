@@ -1,5 +1,5 @@
 .. toctree::
     :maxdepth: 2
     :numbered:
-	
-    ./miniconda.rst
+
+    miniconda.rst
