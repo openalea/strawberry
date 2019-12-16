@@ -2,4 +2,4 @@
     :glob:
     :caption: Installation
 
-    /miniconda.rst
+    ./miniconda.rst
