@@ -3,3 +3,4 @@
     :numbered:
 
     miniconda.rst
+    use.rst
