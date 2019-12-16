@@ -21,8 +21,7 @@ Install
 
 .. toctree::
 
-	./Install/miniconda.rst
-	./Install/index.rst
+	./Install/Index.rst
 
 
 User guide
