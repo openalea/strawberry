@@ -9,6 +9,8 @@ it is encoded in python 2.7
 Licence:
 ========
 
+Cecill-C
+
 Authors:
 ========
 * Marc Labadie
