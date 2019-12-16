@@ -5,6 +5,8 @@ from openalea.plantgl.all import *
 from openalea.mtg import *
 from openalea.mtg.turtle import *
 
+
+
 def colors():
     """ Returns a set of predefined colors"""
     shoot_color=Material("green",Color3(0,255,0))
@@ -278,7 +280,7 @@ def my_visitor(g, v, turtle, time=0):
 ###############################################################################
 # Visualisation
 
-def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100]):
+def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], display=True):
 
     scene = Scene()
     position = Vector3()
@@ -301,5 +303,8 @@ def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100]):
                 scene.add(sh)
         position.x += dist[i]
 
-    Viewer.display(scene)
+    if display:
+        Viewer.display(scene)
+    else:
+        return scene
 

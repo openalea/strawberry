@@ -1,60 +1,60 @@
-#
-#
-CODE:	FORM-A
-CLASSES:
-SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION
-$	0	FREE	FREE	IMPLICIT
-P	1	FREE	FREE	EXPLICIT
-T	2	FREE	FREE	EXPLICIT
-A	2	FREE	FREE	EXPLICIT
-F	3	FREE	FREE	EXPLICIT
-f	3	FREE	FREE	EXPLICIT
-s	3	FREE	FREE	EXPLICIT
-bt	3	FREE	FREE	EXPLICIT
-BT	3	FREE	FREE	EXPLICIT
-ht	3	FREE	FREE	EXPLICIT
-HT	3	FREE	FREE	EXPLICIT
-
-DESCRIPTION :
-LEFT	RIGHT	RELTYPE	MAX
-A	A	+	?
-A	A	<	1
-T	T	+	?
-T	T	<	1
-
-FEATURES:
-NAME	TYPE
-Experiment_name	STRING
-Sample_date	DD/MM/YYYY
-Architecture_date	DD/MM/YYYY
-Genotype	STRING
-Modality	STRING # Modality in this cas no Modality (modality= A)
-Plant_ID	INT
-Stade	STRING
-Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar
-DBI	REAL # mm Collar diameter
-INFLOLG	REAL # mm Inflorescence length
-PETLG	REAL # mm petiole lenght
-LFTLG_RIGHT	REAL # mm Right leaflet length
-LFTLG_CENTRAL	REAL # mm Central leaflet length
-LFTLG_LEFT	REAL # mm Left leaflet length
-LFTWD_RIGHT	REAL # mm Right leaflet width
-LFTWD_CENTRAL	REAL # mm Central leaflet width
-LFTWD_LEFT	REAL # mm Left leaflet width
-LFTAR_RIGHT	REAL # mm2 Right Leaflet area
-LFTAR_CENTRAL	REAL # mm2 Central Leaflet area
-LFTAR_LEFT	REAL # mm2 Left Leaflet area
-LFAR	REAL # mm2 Total leaf area
-FLWRNUMBER	INT # Total flower number
-FLWRNUMBER_OPEN	INT # Total opened Flower number
-FLWRNUMBER_ABORTED	INT # Total aborted Flower number
-FLWRNUMBER_CLOSED	INT # Total closed flower number
-SAMPLING	STRING # location of sampling
-COMMENT	STRING
-
-MTG:
+#																																																																
+#																																																																
+CODE:	FORM-A																																																															
+CLASSES:																																																																
+SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION																																																												
+$	0	FREE	FREE	IMPLICIT																																																												
+P	1	FREE	FREE	EXPLICIT																																																												
+T	2	FREE	FREE	EXPLICIT																																																												
+A	2	FREE	FREE	EXPLICIT																																																												
+F	3	FREE	FREE	EXPLICIT																																																												
+f	3	FREE	FREE	EXPLICIT																																																												
+s	3	FREE	FREE	EXPLICIT																																																												
+bt	3	FREE	FREE	EXPLICIT																																																												
+BT	3	FREE	FREE	EXPLICIT																																																												
+ht	3	FREE	FREE	EXPLICIT																																																												
+HT	3	FREE	FREE	EXPLICIT																																																												
+																																																																
+DESCRIPTION :																																																																
+LEFT	RIGHT	RELTYPE	MAX																																																													
+A	A	+	?																																																													
+A	A	<	1																																																													
+T	T	+	?																																																													
+T	T	<	1																																																													
+																																																																
+FEATURES:																																																																
+NAME	TYPE																																																															
+Experiment_name	STRING																																																															
+Sample_date	DD/MM/YYYY																																																															
+Architecture_date	DD/MM/YYYY																																																															
+Genotype	STRING																																																															
+Modality	STRING # Modality in this cas no Modality (modality= A)																																																															
+Plant_ID	INT																																																															
+Stade	STRING																																																															
+Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar																																																															
+DBI	REAL # mm Collar diameter																																																															
+INFLOLG	REAL # mm Inflorescence length																																																															
+PETLG	REAL # mm petiole lenght																																																															
+LFTLG_RIGHT	REAL # mm Right leaflet length																																																															
+LFTLG_CENTRAL	REAL # mm Central leaflet length																																																															
+LFTLG_LEFT	REAL # mm Left leaflet length																																																															
+LFTWD_RIGHT	REAL # mm Right leaflet width																																																															
+LFTWD_CENTRAL	REAL # mm Central leaflet width																																																															
+LFTWD_LEFT	REAL # mm Left leaflet width																																																															
+LFTAR_RIGHT	REAL # mm2 Right Leaflet area																																																															
+LFTAR_CENTRAL	REAL # mm2 Central Leaflet area																																																															
+LFTAR_LEFT	REAL # mm2 Left Leaflet area																																																															
+LFAR	REAL # mm2 Total leaf area																																																															
+FLWRNUMBER	INT # Total flower number																																																															
+FLWRNUMBER_OPEN	INT # Total opened Flower number																																																															
+FLWRNUMBER_ABORTED	INT # Total aborted Flower number																																																															
+FLWRNUMBER_CLOSED	INT # Total closed flower number																																																															
+SAMPLING	STRING # location of sampling																																																															
+COMMENT	STRING																																																															
+																																																																
+MTG:																																																																
 ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modality	Plant_ID	Stade	DBI	INFLOLG	PETLG	LFTLG_RIGHT	LFTLG_CENTRAL	LFTLG_LEFT	LFTWD_RIGHT	LFTWD_CENTRAL	LFTWD_LEFT	LFTAR_RIGHT	LFTAR_CENTRAL	LFTAR_LEFT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	COMMENT																															
-/P								FRAFLO	10/12/2014		Gariguette	A	1																																																			
+/P								FRAFLO	2014/12/10		Gariguette	A	1																																																			
 ^/T															14.79																																																	
 ^/F																																																																
 	+A																																																															
@@ -127,7 +127,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													F																																																		
 ^<ht														H		6																x																																
 																																																																
-/P								FRAFLO	10/12/2014		Gariguette	A	2																																																			
+/P								FRAFLO	2014/12/10		Gariguette	A	2																																																			
 ^/T															14.14																																																	
 ^/F																																																																
 	+A																																																															
@@ -201,7 +201,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													F																																																		
 ^<ht														H		6																x																																
 																																																																
-/P								FRAFLO	10/12/2014		Gariguette	A	3																																																			
+/P								FRAFLO	2014/12/10		Gariguette	A	3																																																			
 ^/T															19.56																																																	
 ^/F																																																																
 	+A																																																															
@@ -319,7 +319,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													F																																																		
 ^<ht														H		8																x																																
 																																																																
-/P								FRAFLO	10/12/2014		Gariguette	A	4																																																			
+/P								FRAFLO	2014/12/10		Gariguette	A	4																																																			
 ^/T															15.29																																																	
 ^/F																																																																
 	+A																																																															
@@ -383,7 +383,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													E																																																		
 ^<ht														H		7																x																																
 																																																																
-/P								FRAFLO	10/12/2014		Gariguette	A	5																																																			
+/P								FRAFLO	2014/12/10		Gariguette	A	5																																																			
 ^/T															15.83																																																	
 ^/F																																																																
 	+A																																																															
@@ -440,7 +440,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													F																																																		
 ^<ht														H		7																x																																
 																																																																
-/P								FRAFLO	10/12/2014		Gariguette	A	6																																																			
+/P								FRAFLO	2014/12/10		Gariguette	A	6																																																			
 ^/T															22.47																																																	
 ^/F																																																																
 	+A																																																															
@@ -503,7 +503,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													E																																																		
 ^<ht														H		5																x																																
 																																																																
-/P								FRAFLO	10/12/2014		Gariguette	A	7																																																			
+/P								FRAFLO	2014/12/10		Gariguette	A	7																																																			
 ^/T															15																																																	
 ^/F																																																																
 	+A																																																															
@@ -564,7 +564,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													E																																																		
 ^<ht														H		5																x																																
 																																																																
-/P								FRAFLO	10/12/2014		Gariguette	A	8																																																			
+/P								FRAFLO	2014/12/10		Gariguette	A	8																																																			
 ^/T															14.84																																																	
 ^/F																																																																
 	+A																																																															
@@ -622,7 +622,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													E																																																		
 ^<ht														H		8																x																																
 																																																																
-/P								FRAFLO	10/12/2014		Gariguette	A	9																																																			
+/P								FRAFLO	2014/12/10		Gariguette	A	9																																																			
 ^/T															16.36																																																	
 ^/F																																																																
 	+A																																																															
@@ -697,7 +697,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													G																																																		
 ^<ht														H		8																x																																
 																																																																
-/P								FRAFLO	08/01/2015		Gariguette	A	1																																																			
+/P								FRAFLO	2015/01/08		Gariguette	A	1																																																			
 ^/T															24.27																																																	
 ^/F																																																																
 	+A																																																															
@@ -879,7 +879,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													D																																																		
 ^<ht														H		8																13:50																																
 																																																																
-/P								FRAFLO	08/01/2015		Gariguette	A	2																																																			
+/P								FRAFLO	2015/01/08		Gariguette	A	2																																																			
 ^/T															16																																																	
 ^/F																																																																
 	+A																																																															
@@ -977,7 +977,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													G																																																		
 ^<ht														H		10												14	0	0		14:00																																
 																																																																
-/P								FRAFLO	08/01/2015		Gariguette	A	3																																																			
+/P								FRAFLO	2015/01/08		Gariguette	A	3																																																			
 ^/T															17.6																																																	
 ^/F																																																																
 	+A																																																															
@@ -1115,7 +1115,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																		12:05																																
 ^<HT														cut																																																		
 																																																																
-/P								FRAFLO	08/01/2015		Gariguette	A	4																																																			
+/P								FRAFLO	2015/01/08		Gariguette	A	4																																																			
 ^/T															19.66																																																	
 ^/F																																																																
 	+A																																																															
@@ -1267,7 +1267,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																		14:45																																
 ^<HT														55		25												22	0	0																																		
 																																																																
-/P								FRAFLO	08/01/2015		Gariguette	A	5																																																			
+/P								FRAFLO	2015/01/08		Gariguette	A	5																																																			
 ^/T															24.63																																																	
 ^/F																																																																
 	+A																																																															
@@ -1388,7 +1388,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																		14:50																																
 ^<HT														55		26												20	0	0																																		
 																																																																
-/P								FRAFLO	08/01/2015		Gariguette	A	6																																																			
+/P								FRAFLO	2015/01/08		Gariguette	A	6																																																			
 ^/T															19.28																																																	
 ^/F																																																																
 	+A																																																															
@@ -1494,7 +1494,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																		14:55																																
 ^<HT														55		30												18	0	0																																		
 																																																																
-/P								FRAFLO	08/01/2015		Gariguette	A	7																																																			
+/P								FRAFLO	2015/01/08		Gariguette	A	7																																																			
 ^/T															20.12																																																	
 ^/F																																																																
 	+A																																																															
@@ -1602,7 +1602,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																		15:45																																
 ^<HT														55		29												17	0	0																																		
 																																																																
-/P								FRAFLO	08/01/2015		Gariguette	A	8																																																			
+/P								FRAFLO	2015/01/08		Gariguette	A	8																																																			
 ^/T															17.33																																																	
 ^/F																																																																
 	+A																																																															
@@ -1690,7 +1690,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																		15:50																																
 ^<HT														55		19												19	0	0																																		
 																																																																
-/P								FRAFLO	08/01/2015		Gariguette	A	9																																																			
+/P								FRAFLO	2015/01/08		Gariguette	A	9																																																			
 ^/T															21.21																																																	
 ^/F																																																																
 	+A																																																															
@@ -1780,7 +1780,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																		15:55																																
 ^<HT														55		28												24	0	0																																		
 																																																																
-/P								FRAFLO	12/02/2015		Gariguette	A	1																																																			
+/P								FRAFLO	2015/02/12		Gariguette	A	1																																																			
 ^/T															20.12																																																	
 ^/F																																																																
 	+A																																																															
@@ -2019,7 +2019,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													55														11	0	0																																		
 ^<HT														65														19	2	0																																		
 																																																																
-/P								FRAFLO	12/02/2015		Gariguette	A	2																																																			
+/P								FRAFLO	2015/02/12		Gariguette	A	2																																																			
 ^/T															23.27																																																	
 ^/F																																																																
 	+A																																																															
@@ -2140,7 +2140,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													55														8	0	0																																		
 ^<HT														58														22	0	0																																		
 																																																																
-/P								FRAFLO	12/02/2015		Gariguette	A	3																																																			
+/P								FRAFLO	2015/02/12		Gariguette	A	3																																																			
 ^/T															16.54																																																	
 ^/F																																																																
 	+A																																																															
@@ -2241,7 +2241,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													57														11	0	0																																		
 ^<HT														63														22	3	0																																		
 																																																																
-/P								FRAFLO	12/02/2015		Gariguette	A	4																																																			
+/P								FRAFLO	2015/02/12		Gariguette	A	4																																																			
 ^/T															20.7																																																	
 ^/F																																																																
 	+A																																																															
@@ -2313,7 +2313,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													55														8	0	0																																		
 ^<HT														58														24	0	0																																		
 																																																																
-/P								FRAFLO	12/02/2015		Gariguette	A	5																																																			
+/P								FRAFLO	2015/02/12		Gariguette	A	5																																																			
 ^/T															28.35																																																	
 ^/F																																																																
 	+A																																																															
@@ -2517,7 +2517,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													55														7	0	0																																		
 ^<HT														61														19	2	0																																		
 																																																																
-/P								FRAFLO	12/02/2015		Gariguette	A	6																																																			
+/P								FRAFLO	2015/02/12		Gariguette	A	6																																																			
 ^/T															31.75																																																	
 ^/F																																																																
 	+A																																																															
@@ -2680,7 +2680,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													57														12	0	0																																		
 ^<HT														65														17	4	0																																		
 																																																																
-/P								FRAFLO	12/02/2015		Gariguette	A	7																																																			
+/P								FRAFLO	2015/02/12		Gariguette	A	7																																																			
 ^/T															17.64																																																	
 ^/F																																																																
 	+A																																																															
@@ -2756,7 +2756,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													57														6	0	0																																		
 ^<HT														58														15	0	0																																		
 																																																																
-/P									12/02/2015		Gariguette	A	8																																																			
+/P									2015/02/12		Gariguette	A	8																																																			
 ^/T															17.01																																																	
 ^/F																																																																
 	+A																																																															
@@ -2869,7 +2869,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													55														7	0	0																																		
 ^<HT														58														18	0	0																																		
 																																																																
-/P								FRAFLO	12/02/2015		Gariguette	A	9																																																			
+/P								FRAFLO	2015/02/12		Gariguette	A	9																																																			
 ^/T															17.79																																																	
 ^/F																																																																
 	+A																																																															
@@ -2976,7 +2976,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													55														6	0	0																																		
 ^<HT														60														18	1	0																																		
 																																																																
-/P								FRAFLO	06/03/2015		Gariguette	A	1																																																			
+/P								FRAFLO	2015/03/06		Gariguette	A	1																																																			
 ^/T															29.19																																																	
 ^/F																																																																
 	+A																																																															
@@ -3068,7 +3068,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													65														6	2	0																																		
 ^<HT														67														17	12	0																																		
 																																																																
-/P								FRAFLO	06/03/2015		Gariguette	A	2																																																			
+/P								FRAFLO	2015/03/06		Gariguette	A	2																																																			
 ^/T															25.74																																																	
 ^/F																																																																
 	+A																																																															
@@ -3157,7 +3157,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													65														7	3	0																																		
 ^<HT														73														17	15	0																																		
 																																																																
-/P								FRAFLO	06/03/2015		Gariguette	A	3																																																			
+/P								FRAFLO	2015/03/06		Gariguette	A	3																																																			
 ^/T															29.7																																																	
 ^/F																																																																
 	+A																																																															
@@ -3277,7 +3277,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													65														8	4	0																																		
 ^<HT														67														19	17	0																																		
 																																																																
-/P								FRAFLO	06/03/2015		Gariguette	A	4																																																			
+/P								FRAFLO	2015/03/06		Gariguette	A	4																																																			
 ^/T															30.06																																																	
 ^/F																																																																
 	+A																																																															
@@ -3408,7 +3408,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													67														6	4	0																																		
 ^<HT														73														15	15	0																																		
 																																																																
-/P								FRAFLO	06/03/2015		Gariguette	A	5																																																			
+/P								FRAFLO	2015/03/06		Gariguette	A	5																																																			
 ^/T															30.32																																																	
 ^/F																																																																
 	+A																																																															
@@ -3526,7 +3526,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													67														10	7	0																																		
 ^<HT														73														21	16	0																																		
 																																																																
-/P								FRAFLO	06/03/2015		Gariguette	A	6																																																			
+/P								FRAFLO	2015/03/06		Gariguette	A	6																																																			
 ^/T															34.34																																																	
 ^/F																																																																
 	+A																																																															
@@ -3639,7 +3639,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													63														8	3	0																																		
 ^<HT														67														22	18	0																																		
 																																																																
-/P								FRAFLO	06/03/2015		Gariguette	A	7																																																			
+/P								FRAFLO	2015/03/06		Gariguette	A	7																																																			
 ^/T															28.2																																																	
 ^/F																																																																
 	+A																																																															
@@ -3714,7 +3714,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													73														23	20	0																																		
 ^<HT														cut																																																		
 																																																																
-/P								FRAFLO	06/03/2015		Gariguette	A	8																																																			
+/P								FRAFLO	2015/03/06		Gariguette	A	8																																																			
 ^/T															31.75																																																	
 ^/F																																																																
 	+A																																																															
@@ -3820,7 +3820,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													65														12	6	0																																		
 ^<HT														73														25	18	0																																		
 																																																																
-/P								FRAFLO	06/03/2015		Gariguette	A	9																																																			
+/P								FRAFLO	2015/03/06		Gariguette	A	9																																																			
 ^/T															36.68																																																	
 ^/F																																																																
 	+A																																																															
@@ -3968,7 +3968,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													67														6	5	0																																		
 ^<HT														73														14	13	0																																		
 																																																																
-/P								FRAFLO	02/04/2015		Gariguette	A	1																																																			
+/P								FRAFLO	2015/04/02		Gariguette	A	1																																																			
 ^/T															42.29																																																	
 ^/F																																																																
 	+A																																																															
@@ -4214,7 +4214,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													77														9	9	0																																		
 ^<HT														87														24	24	0																																		
 																																																																
-/P								FRAFLO	02/04/2015		Gariguette	A	2																																																			
+/P								FRAFLO	2015/04/02		Gariguette	A	2																																																			
 ^/T															42.67																																																	
 ^/F																																																																
 	+A																																																															
@@ -4333,7 +4333,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													81														11	0	0																																		
 ^<HT														87														21	21	0																																		
 																																																																
-/P								FRAFLO	02/04/2015		Gariguette	A	3																																																			
+/P								FRAFLO	2015/04/02		Gariguette	A	3																																																			
 ^/T															21.49																																																	
 ^/F																																																																
 	+A																																																															
@@ -4402,7 +4402,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													77														10	10	0																																		
 ^<HT														83														17	16	0																																		
 																																																																
-/P								FRAFLO	02/04/2015		Gariguette	A	4																																																			
+/P								FRAFLO	2015/04/02		Gariguette	A	4																																																			
 ^/T															47.01																																																	
 ^/F																																																																
 	+A																																																															
@@ -4569,7 +4569,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87														5	5	0																																		
 ^<HT														87														18	18	0																																		
 																																																																
-/P								FRAFLO	02/04/2015		Gariguette	A	5																																																			
+/P								FRAFLO	2015/04/02		Gariguette	A	5																																																			
 ^/T															23.91																																																	
 ^/F																																																																
 	+A																																																															
@@ -4650,7 +4650,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													77														10	10	0																																		
 ^<HT														87														20	20	0																																		
 																																																																
-/P								FRAFLO	02/04/2015		Gariguette	A	6																																																			
+/P								FRAFLO	2015/04/02		Gariguette	A	6																																																			
 ^/T															31.02																																																	
 ^/F																																																																
 	+A																																																															
@@ -4748,7 +4748,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													81														7	7	0																																		
 ^<HT														87														21	21	0																																		
 																																																																
-/P								FRAFLO	02/04/2015		Gariguette	A	7																																																			
+/P								FRAFLO	2015/04/02		Gariguette	A	7																																																			
 ^/T															22.48																																																	
 ^/F																																																																
 	+A																																																															
@@ -4864,7 +4864,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													77														10	9	0																																		
 ^<HT														87														23	23	0																																		
 																																																																
-/P								FRAFLO	02/04/2015		Gariguette	A	8																																																			
+/P								FRAFLO	2015/04/02		Gariguette	A	8																																																			
 ^/T															44.67																																																	
 ^/F																																																																
 	+A																																																															
@@ -5175,7 +5175,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													81														23	23	0																																		
 ^<HT														cut																																																		
 																																																																
-/P								FRAFLO	02/04/2015		Gariguette	A	9																																																			
+/P								FRAFLO	2015/04/02		Gariguette	A	9																																																			
 ^/T															29.08																																																	
 ^/F																																																																
 	+A																																																															
@@ -5280,7 +5280,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													81														7	7	0																																		
 ^<HT														87														18	18	0																																		
 																																																																
-/P								FRAFLO	19/05/2015		Gariguette	A	1																																																			
+/P								FRAFLO	2015/05/19		Gariguette	A	1																																																			
 ^/T															38.91																																																	
 ^/F																																																																
 	+A																																																															
@@ -5427,7 +5427,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87														9	8	1																																		
 ^<HT														87														14	13	1																																		
 																																																																
-/P								FRAFLO	19/05/2015		Gariguette	A	2																																																			
+/P								FRAFLO	2015/05/19		Gariguette	A	2																																																			
 ^/T															34.22																																																	
 ^/F																																																																
 	+A																																																															
@@ -5611,7 +5611,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87														9	0	0																																		
 ^<HT														87														23	20	3																																		
 																																																																
-/P								FRAFLO	19/05/2015		Gariguette	A	3																																																			
+/P								FRAFLO	2015/05/19		Gariguette	A	3																																																			
 ^/T															37.38																																																	
 ^/F																																																																
 	+A																																																															
@@ -5755,7 +5755,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87														8	6	2																																		
 ^<HT														87														18	17	1																																		
 																																																																
-/P								FRAFLO	19/05/2015		Gariguette	A	4																																																			
+/P								FRAFLO	2015/05/19		Gariguette	A	4																																																			
 ^/T															24.83																																																	
 ^/F																																																																
 	+A																																																															
@@ -5827,7 +5827,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87														6	6	0																																		
 ^<HT														87														21	19	2																																		
 																																																																
-/P								FRAFLO	19/05/2015		Gariguette	A	5																																																			
+/P								FRAFLO	2015/05/19		Gariguette	A	5																																																			
 ^/T															48.91																																																	
 ^/F																																																																
 	+A																																																															
@@ -5963,7 +5963,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87														8	7	1																																		
 ^<HT														87														11	9	2																																		
 																																																																
-/P								FRAFLO	19/05/2015		Gariguette	A	6																																																			
+/P								FRAFLO	2015/05/19		Gariguette	A	6																																																			
 ^/T															51.05																																																	
 ^/F																																																																
 	+A																																																															
@@ -6158,7 +6158,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87														9	9	0																																		
 ^<HT														87														10	10	0																																		
 																																																																
-/P								FRAFLO	19/05/2015		Gariguette	A	7																																																			
+/P								FRAFLO	2015/05/19		Gariguette	A	7																																																			
 ^/T															40.1																																																	
 ^/F																																																																
 	+A																																																															
@@ -6274,7 +6274,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87														9	8	1																																		
 ^<HT														87														13	13	0																																		
 																																																																
-/P								FRAFLO	19/05/2015		Gariguette	A	8																																																			
+/P								FRAFLO	2015/05/19		Gariguette	A	8																																																			
 ^/T															37.22																																																	
 ^/F																																																																
 	+A																																																															
@@ -6399,7 +6399,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87														7	6	1																																		
 ^<HT														87														23	23	0																																		
 																																																																
-/P								FRAFLO	19/05/2015		Gariguette	A	9																																																			
+/P								FRAFLO	2015/05/19		Gariguette	A	9																																																			
 ^/T															53.07																																																	
 ^/F																																																																
 	+A																																																															
@@ -6625,4 +6625,4 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 		^<HT												87														10	10	0																																		
 	^<HT													87														7	7	0																																		
 ^<HT														87														14	14	0																																		
-																																																													
+																																																																

@@ -1,62 +1,62 @@
-#
-#
-
-CODE:	FORM-A
-
-CLASSES:
-SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION
-$ 	0	FREE	FREE	IMPLICIT
-P 	1	FREE	FREE	EXPLICIT
-T  	2	FREE	FREE	EXPLICIT
-A  	2	FREE	FREE	EXPLICIT
-F	3	FREE	FREE	EXPLICIT
-f	3	FREE	FREE	EXPLICIT
-s	3	FREE	FREE	EXPLICIT
-bt	3	FREE	FREE	EXPLICIT
-BT	3	FREE	FREE	EXPLICIT
-ht	3	FREE	FREE	EXPLICIT
-HT	3	FREE	FREE	EXPLICIT
-
-DESCRIPTION :
-LEFT	RIGHT	RELTYPE	MAX
-A	A	+	?
-A	A	<	1
-T	T	+	?
-T	T	<	1
-
-FEATURES:
-NAME	TYPE
-Experiment_name	STRING
-Sample_date	DD/MM/YYYY
-Architecture_date	DD/MM/YYYY
-Genotype	STRING
-Modality	STRING
-Plant_ID	INT
-Stade	STRING
-Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar
-DBI	REAL # mm Collar diameter
-INFLOLG	REAL # mm Inflorescence length
-PETLG	REAL # mm petiole lenght
-LFTLG_RIGHT	REAL # mm Right leaflet length
-LFTLG_CENTRAL	REAL # mm Central leaflet length
-LFTLG_LEFT	REAL # mm Left leaflet length
-LFTWD_RIGHT	REAL # mm Right leaflet width
-LFTWD_CENTRAL	REAL # mm Central leaflet width
-LFTWD_LEFT	REAL # mm Left leaflet width
-LFTAR_RIGHT	REAL # mm2 Right Leaflet area
-LFTAR_CENTRAL	REAL # mm2 Central Leaflet area
-LFTAR_LEFT	REAL # mm2 Left Leaflet area
-LFAR	REAL # mm2 Total leaf area
-FLWRNUMBER	INT # Total flower number
-FLWRNUMBER_OPEN	INT # Total opened Flower number
-FLWRNUMBER_ABORTED	INT # Total aborted Flower number
-FLWRNUMBER_CLOSED	INT # Total closed flower number
-SAMPLING	STRING # location of sampling
-COMMENT	STRING
-
+#																																		
+#																																		
+																																		
+CODE:	FORM-A																																	
+																																		
+CLASSES:																																		
+SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION																														
+$ 	0	FREE	FREE	IMPLICIT																														
+P 	1	FREE	FREE	EXPLICIT																														
+T  	2	FREE	FREE	EXPLICIT																														
+A  	2	FREE	FREE	EXPLICIT																														
+F	3	FREE	FREE	EXPLICIT																														
+f	3	FREE	FREE	EXPLICIT																														
+s	3	FREE	FREE	EXPLICIT																														
+bt	3	FREE	FREE	EXPLICIT																														
+BT	3	FREE	FREE	EXPLICIT																														
+ht	3	FREE	FREE	EXPLICIT																														
+HT	3	FREE	FREE	EXPLICIT																														
+																																		
+DESCRIPTION :																																		
+LEFT	RIGHT	RELTYPE	MAX																															
+A	A	+	?																															
+A	A	<	1																															
+T	T	+	?																															
+T	T	<	1																															
+																																		
+FEATURES:																																		
+NAME	TYPE																																	
+Experiment_name	STRING																																	
+Sample_date	DD/MM/YYYY																																	
+Architecture_date	DD/MM/YYYY																																	
+Genotype	STRING																																	
+Modality	STRING																																	
+Plant_ID	INT																																	
+Stade	STRING																																	
+Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar																																	
+DBI	REAL # mm Collar diameter																																	
+INFLOLG	REAL # mm Inflorescence length																																	
+PETLG	REAL # mm petiole lenght																																	
+LFTLG_RIGHT	REAL # mm Right leaflet length																																	
+LFTLG_CENTRAL	REAL # mm Central leaflet length																																	
+LFTLG_LEFT	REAL # mm Left leaflet length																																	
+LFTWD_RIGHT	REAL # mm Right leaflet width																																	
+LFTWD_CENTRAL	REAL # mm Central leaflet width																																	
+LFTWD_LEFT	REAL # mm Left leaflet width																																	
+LFTAR_RIGHT	REAL # mm2 Right Leaflet area																																	
+LFTAR_CENTRAL	REAL # mm2 Central Leaflet area																																	
+LFTAR_LEFT	REAL # mm2 Left Leaflet area																																	
+LFAR	REAL # mm2 Total leaf area																																	
+FLWRNUMBER	INT # Total flower number																																	
+FLWRNUMBER_OPEN	INT # Total opened Flower number																																	
+FLWRNUMBER_ABORTED	INT # Total aborted Flower number																																	
+FLWRNUMBER_CLOSED	INT # Total closed flower number																																	
+SAMPLING	STRING # location of sampling																																	
+COMMENT	STRING																																	
+																																		
 MTG:																																		
 ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modality	Plant_ID	Stade	Foliar_type	DBI	INFLOLG	PETLG	LFTLG_RIGHT	LFTLG_CENTRAL	LFTLG_LEFT	LFTWD_RIGHT	LFTWD_CENTRAL	LFTWD_LEFT	LFTAR_RIGHT	LFTAR_CENTRAL	LFTAR_LEFT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	COMMENT
-/P								FRALFO	10/12/2014		Cir107	A	1																					
+/P								FRALFO	2014/12/10		Cir107	A	1																					
 ^/T																21.03																		
 ^/F																																		
 	+A																																	
@@ -127,7 +127,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													F																				
 ^<ht														H			8																X	
 																																		
-/P								FRALFO	10/12/2014		Cir107	A	2																					
+/P								FRALFO	2014/12/10		Cir107	A	2																					
 ^/T																28																		
 ^/F																																		
 	+A																																	
@@ -221,7 +221,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													E																				
 ^<ht														H			12																X	
 																																		
-/P								FRALFO	10/12/2014		Cir107	A	3																					
+/P								FRALFO	2014/12/10		Cir107	A	3																					
 ^/T																18.07																		
 ^/F																																		
 	+A																																	
@@ -303,7 +303,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													E																				
 ^<ht														H			9																X	
 																																		
-/P								FRALFO	10/12/2014		Cir107	A	4																					
+/P								FRALFO	2014/12/10		Cir107	A	4																					
 ^/T																18.98																		
 ^/F																																		
 	+A																																	
@@ -414,7 +414,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													E																				
 ^<HT														I			25																X	
 																																		
-/P								FRALFO	10/12/2014		Cir107	A	5																					
+/P								FRALFO	2014/12/10		Cir107	A	5																					
 ^/T																16.66																		
 ^/F																																		
 	+A																																	
@@ -497,7 +497,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													F																				
 ^<ht														H			14																X	
 																																		
-/P								FRALFO	10/12/2014		Cir107	A	6																					
+/P								FRALFO	2014/12/10		Cir107	A	6																					
 ^/T																24.25																		
 ^/F																																		
 	+A																																	
@@ -609,7 +609,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													C																				
 ^<ht														H			6																X	
 																																		
-/P								FRALFO	10/12/2014		Cir107	A	7																					
+/P								FRALFO	2014/12/10		Cir107	A	7																					
 ^/T																22.2																		
 ^/F																																		
 	+A																																	
@@ -704,7 +704,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													D																				
 ^<ht														H			5																X	
 																																		
-/P								FRALFO	10/12/2014		Cir107	A	8																					
+/P								FRALFO	2014/12/10		Cir107	A	8																					
 ^/T																17.02																		
 ^/F																																		
 	+A																																	
@@ -812,7 +812,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													E																				
 ^<ht														H			10																X	
 																																		
-/P								FRALFO	10/12/2014		Cir107	A	9																					
+/P								FRALFO	2014/12/10		Cir107	A	9																					
 ^/T																19.82																		
 ^/F																																		
 	+A																																	
@@ -876,7 +876,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													C																				
 ^<ht														H			6																X	
 																																		
-/P								FRALFO	08/01/2015		Cir107	A	1																					
+/P								FRALFO	2015/01/08		Cir107	A	1																					
 ^/T																21.88																		
 ^/F																																		
 	+A																																	
@@ -1031,7 +1031,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													G																				
 ^<ht														H			15																09:00	
 																																		
-/P								FRALFO	08/01/2015		Cir107	A	2																					
+/P								FRALFO	2015/01/08		Cir107	A	2																					
 ^/T																19.26																		
 ^/F																																		
 	+A																																	
@@ -1149,7 +1149,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																			09:30	
 ^<HT														I			22																09:05	
 																																		
-/P								FRALFO	08/01/2015		Cir107	A	3																					
+/P								FRALFO	2015/01/08		Cir107	A	3																					
 ^/T																19.86																		
 ^/F																																		
 	+A																																	
@@ -1264,7 +1264,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																			09:15	
 ^<HT														55			26												14	0	0			
 																																		
-/P								FRALFO	08/01/2015		Cir107	A	4																					
+/P								FRALFO	2015/01/08		Cir107	A	4																					
 ^/T																25.5																		
 ^/F																																		
 	+A																																	
@@ -1403,7 +1403,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													I			24												17	0	0			
 ^<HT														cut																				
 																																		
-/P								FRALFO	08/01/2015		Cir107	A	5																					
+/P								FRALFO	2015/01/08		Cir107	A	5																					
 ^/T																16.3																		
 ^/F																																		
 	+A																																	
@@ -1476,7 +1476,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 ^<HT														cut																				
 																																		
 																																		
-/P								FRALFO	08/01/2015		Cir107	A	6																					
+/P								FRALFO	2015/01/08		Cir107	A	6																					
 ^/T																23																		
 ^/F																																		
 	+A																																	
@@ -1559,7 +1559,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													I			25												16	0	0			
 ^<HT														cut																				
 																																		
-/P								FRALFO	08/01/2015		Cir107	A	7																					
+/P								FRALFO	2015/01/08		Cir107	A	7																					
 ^/T																29.1																		
 ^/F																																		
 	+A																																	
@@ -1712,7 +1712,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																			11:00	
 ^<HT														I			20																10:45	
 																																		
-/P								FRALFO	08/01/2015		Cir107	A	8																					
+/P								FRALFO	2015/01/08		Cir107	A	8																					
 ^/T																31.85																		
 ^/F																																		
 	+A																																	
@@ -1862,7 +1862,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																			10:50	
 ^<HT														cut																				
 																																		
-/P								FRALFO	08/01/2015		Cir107	A	9																					
+/P								FRALFO	2015/01/08		Cir107	A	9																					
 ^/T																29.02																		
 ^/F																																		
 	+A																																	
@@ -1979,7 +1979,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																			11:00	
 ^<HT														I			20																	
 																																		
-/P								FRALFO	11/02/2015		Cir107	A	1																					
+/P								FRALFO	2015/02/11		Cir107	A	1																					
 ^/T																23.81																		
 ^/F																																		
 	+A																																	
@@ -2082,7 +2082,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													58															11	0	0			
 ^<HT														cut																				
 																																		
-/P								FRALFO	11/02/2015		Cir107	A	2																					
+/P								FRALFO	2015/02/11		Cir107	A	2																					
 ^/T																41.97																		
 ^/F																																		
 	+A																																	
@@ -2289,7 +2289,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<ht													H																			09:15	
 ^<HT														57															16	0	0			
 																																		
-/P								FRALFO	11/02/2015		Cir107	A	3																					
+/P								FRALFO	2015/02/11		Cir107	A	3																					
 ^/T																29.25																		
 ^/F																																		
 	+A																																	
@@ -2389,7 +2389,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													58															19	0	0			
 ^<HT														cut																				
 																																		
-/P								FRALFO	11/02/2015		Cir107	A	4																					
+/P								FRALFO	2015/02/11		Cir107	A	4																					
 ^/T																24.03																		
 ^/F																																		
 	+A																																	
@@ -2533,7 +2533,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													55															10	0	0			
 ^<HT														58															18	0	0			
 																																		
-/P								FRALFO	11/02/2015		Cir107	A	5																					
+/P								FRALFO	2015/02/11		Cir107	A	5																					
 ^/T																33.25																		
 ^/F																																		
 	+A																																	
@@ -2692,7 +2692,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													I																			10:35	
 ^<HT														58															17	0	0			
 																																		
-/P								FRALFO	11/02/2015		Cir107	A	6																					
+/P								FRALFO	2015/02/11		Cir107	A	6																					
 ^/T																30.52																		
 ^/F																																		
 	+A																																	
@@ -2839,7 +2839,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													55															9	0	0			
 ^<HT														61															17	0	0			
 																																		
-/P								FRALFO	11/02/2015		Cir107	A	7																					
+/P								FRALFO	2015/02/11		Cir107	A	7																					
 ^/T																47.57																		
 ^/F																																		
 	+A																																	
@@ -3014,7 +3014,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													I																				
 ^<HT														58															13	0	0			
 																																		
-/P								FRALFO	11/02/2015		Cir107	A	8																					
+/P								FRALFO	2015/02/11		Cir107	A	8																					
 ^/T																24.27																		
 ^/F																																		
 	+A																																	
@@ -3117,7 +3117,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													55															5	0	0			
 ^<HT														58															13	0	0			
 																																		
-/P								FRALFO	11/02/2015		Cir107	A	9																					
+/P								FRALFO	2015/02/11		Cir107	A	9																					
 ^/T																34.48																		
 ^/F																																		
 	+A																																	
@@ -3237,7 +3237,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													61															19	0	0			
 ^<HT														cut																				
 																																		
-/P								FRALFO	04/03/2015		Cir107	A	1																					
+/P								FRALFO	2015/03/04		Cir107	A	1																					
 ^/T																46.81																		
 ^/F																																		
 	+A																																	
@@ -3440,7 +3440,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													60															7	1	0			
 ^<HT														73															18	12	0			
 																																		
-/P								FRALFO	04/03/2015		Cir107	A	2																					
+/P								FRALFO	2015/03/04		Cir107	A	2																					
 ^/T																36.67																		
 ^/F																																		
 	+A																																	
@@ -3572,7 +3572,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													61															8	2	0			
 ^<HT														77															19	0	0			
 																																		
-/P								FRALFO	04/03/2015		Cir107	A	3																					
+/P								FRALFO	2015/03/04		Cir107	A	3																					
 ^/T																34.64																		
 ^/F																																		
 	+A																																	
@@ -3707,7 +3707,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													60															6	1	0			
 ^<HT														73															10	8	0			
 																																		
-/P								FRALFO	04/03/2015		Cir107	A	4																					
+/P								FRALFO	2015/03/04		Cir107	A	4																					
 ^/T																43.4																		
 ^/F																																		
 	+A																																	
@@ -3910,7 +3910,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													58															4	0	0			
 ^<HT														67															16	11	0			
 																																		
-/P								FRALFO	04/03/2015		Cir107	A	5																					
+/P								FRALFO	2015/03/04		Cir107	A	5																					
 ^/T																36.33																		
 ^/F																																		
 	+A																																	
@@ -4005,7 +4005,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													63															8	3	0			
 ^<HT														73															21	16	0			
 																																		
-/P								FRALFO	04/03/2015		Cir107	A	6																					
+/P								FRALFO	2015/03/04		Cir107	A	6																					
 ^/T																31.39																		
 ^/F																																		
 	+A																																	
@@ -4113,7 +4113,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^/bt													aborted																				
 ^<HT														73															28	16	0			
 																																		
-/P								FRALFO	04/03/2015		Cir107	A	7																					
+/P								FRALFO	2015/03/04		Cir107	A	7																					
 ^/T																47.67																		
 ^/F																																		
 	+A																																	
@@ -4338,7 +4338,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													57															5	0	0			
 ^<HT														cut																				
 																																		
-/P								FRALFO	04/03/2015		Cir107	A	8																					
+/P								FRALFO	2015/03/04		Cir107	A	8																					
 ^/T																24.5																		
 ^/F																																		
 	+A																																	
@@ -4433,7 +4433,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													60															7	1	0			
 ^<HT														73															18	11	0			
 																																		
-/P								FRALFO	04/03/2015		Cir107	A	9																					
+/P								FRALFO	2015/03/04		Cir107	A	9																					
 ^/T																34.2																		
 ^/F																																		
 	+A																																	
@@ -4598,7 +4598,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													61															9	2	0			
 ^<HT														67															17	9	0			
 																																		
-/P								FRALFO	02/04/2015		Cir107	A	1																					
+/P								FRALFO	2015/04/02		Cir107	A	1																					
 ^/T																61.51																		
 ^/F																																		
 	+A																																	
@@ -4914,7 +4914,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													77															7	7	0			
 ^<HT														87															18	18	0			
 																																		
-/P								FRALFO	02/04/2015		Cir107	A	2																					
+/P								FRALFO	2015/04/02		Cir107	A	2																					
 ^/T																33.2																		
 ^/F																																		
 	+A																																	
@@ -5054,7 +5054,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													77															6	6	0			
 ^<HT														81															15	15	0			
 																																		
-/P								FRALFO	02/04/2015		Cir107	A	3																					
+/P								FRALFO	2015/04/02		Cir107	A	3																					
 ^/T																40.9																		
 ^/F																																		
 	+A																																	
@@ -5207,7 +5207,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													73															8	7	0			
 ^<HT														83															18	18	0			
 																																		
-/P								FRALFO	02/04/2015		Cir107	A	4																					
+/P								FRALFO	2015/04/02		Cir107	A	4																					
 ^/T																44.06																		
 ^/F																																		
 	+A																																	
@@ -5328,7 +5328,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													77															13	13	0			
 ^<HT														81 demicut															12	12	0			
 																																		
-/P								FRALFO	02/04/2015		Cir107	A	5																					
+/P								FRALFO	2015/04/02		Cir107	A	5																					
 ^/T																53.45																		
 ^/F																																		
 	+A																																	
@@ -5568,7 +5568,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													73															12	6	0			
 ^<HT														81															23	23	0			
 																																		
-/P								FRALFO	02/04/2015		Cir107	A	6																					
+/P								FRALFO	2015/04/02		Cir107	A	6																					
 ^/T																30.22																		
 ^/F																																		
 	+A																																	
@@ -5634,7 +5634,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													67															10	5	0			
 ^<HT														77															15	13	0			
 																																		
-/P								FRALFO	02/04/2015		Cir107	A	7																					
+/P								FRALFO	2015/04/02		Cir107	A	7																					
 ^/T																30.64																		
 ^/F																																		
 	+A																																	
@@ -5787,7 +5787,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													77															5	5	0			
 ^<HT														83															15	15	0			
 																																		
-/P								FRALFO	02/04/2015		Cir107	A	8																					
+/P								FRALFO	2015/04/02		Cir107	A	8																					
 ^/T																34.6																		
 ^/F																																		
 	+A																																	
@@ -5923,7 +5923,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													73															9	7	0			
 ^<HT														81															11	11	0			
 																																		
-/P								FRALFO	02/04/2015		Cir107	A	9																					
+/P								FRALFO	2015/04/02		Cir107	A	9																					
 ^/T																33.55																		
 ^/F																																		
 	+A																																	
@@ -6023,7 +6023,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													77															6	6	0			
 ^<HT														87															14	14	0			
 																																		
-/P								FRALFO	20/05/2015		Cir107	A	1																					
+/P								FRALFO	2015/05/20		Cir107	A	1																					
 ^/T																57.37																		
 ^/F																																		
 	+A																																	
@@ -6251,7 +6251,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87 demi-cut				40		40	0													
 ^<HT														87															14	13	1			
 																																		
-/P								FRALFO	20/05/2015		Cir107	A	2																					
+/P								FRALFO	2015/05/20		Cir107	A	2																					
 ^/T																38.46																		
 ^/F																																		
 	+A																																	
@@ -6428,7 +6428,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87															8	7	2			
 ^<HT														87															20	17	3			
 																																		
-/P								FRALFO	20/05/2015		Cir107	A	3																					
+/P								FRALFO	2015/05/20		Cir107	A	3																					
 ^/T																57.37																		
 ^/F																																		
 	+A																																	
@@ -6626,7 +6626,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87															8	7	1			
 ^<HT														87															13	12	1			
 																																		
-/P								FRALFO	20/05/2015		Cir107	A	4																					
+/P								FRALFO	2015/05/20		Cir107	A	4																					
 ^/T																63.25																		
 ^/F																																		
 	+A																																	
@@ -6875,7 +6875,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87															7	3	4			
 ^<HT														87															10	10	0			
 																																		
-/P								FRALFO	20/05/2015		Cir107	A	5																					
+/P								FRALFO	2015/05/20		Cir107	A	5																					
 ^/T																36.46																		
 ^/F																																		
 	+A																																	
@@ -7010,7 +7010,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87															9	6	3			
 ^<HT														87															18	15	3			
 																																		
-/P								FRALFO	20/05/2015		Cir107	A	6																					
+/P								FRALFO	2015/05/20		Cir107	A	6																					
 ^/T																37.04																		
 ^/F																																		
 	+A																																	
@@ -7174,7 +7174,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87															6	6	0			
 ^<HT														87															15	12	3			
 																																		
-/P								FRALFO	20/05/2015		Cir107	A	7																					
+/P								FRALFO	2015/05/20		Cir107	A	7																					
 ^/T																35.17																		
 ^/F																																		
 	+A																																	
@@ -7285,7 +7285,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87															9	9	0			
 ^<HT														87															8	7	1			
 																																		
-/P								FRALFO	20/05/2015		Cir107	A	8																					
+/P								FRALFO	2015/05/20		Cir107	A	8																					
 ^/T																52.81																		
 ^/F																																		
 	+A																																	
@@ -7469,7 +7469,7 @@ ENTITY-CODE								Experiment_name	Sample_date	Architecture_date	Genotype	Modali
 	^<HT													87															9	5	4			
 ^<HT														87															11	9	2			
 																																		
-/P								FRALFO	20/05/2015		Cir107	A	9																					
+/P								FRALFO	2015/05/20		Cir107	A	9																					
 ^/T																58.69																		
 ^/F																																		
 	+A																																	

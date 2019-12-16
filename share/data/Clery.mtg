@@ -1,61 +1,61 @@
-#
-#
-CODE:	FORM-A
-
-CLASSES:
-SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION
-$ 	0	FREE	FREE	IMPLICIT
-P 	1	FREE	FREE	EXPLICIT
-T  	2	FREE	FREE	EXPLICIT
-A  	2	FREE	FREE	EXPLICIT
-F	3	FREE	FREE	EXPLICIT
-f	3	FREE	FREE	EXPLICIT
-s	3	FREE	FREE	EXPLICIT
-bt	3	FREE	FREE	EXPLICIT
-BT	3	FREE	FREE	EXPLICIT
-ht	3	FREE	FREE	EXPLICIT
-HT	3	FREE	FREE	EXPLICIT
-
-DESCRIPTION :
-LEFT	RIGHT	RELTYPE	MAX
-A	A	+	?
-A	A	<	1
-T	T	+	?
-T	T	<	1
-
-FEATURES:
-NAME	TYPE
-Experiment_name	STRING
-Sample_date	DD/MM/YYYY
-Architecture_date	DD/MM/YYYY
-Genotype	STRING
-Modality	STRING
-Plant_ID	INT
-Stade	STRING
-Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar
-DBI	REAL # mm Collar diameter
-INFLOLG	REAL # mm Inflorescence length
-PETLG	REAL # mm petiole lenght
-LFTLG_RIGHT	REAL # mm Right leaflet length
-LFTLG_CENTRAL	REAL # mm Central leaflet length
-LFTLG_LEFT	REAL # mm Left leaflet length
-LFTWD_RIGHT	REAL # mm Right leaflet width
-LFTWD_CENTRAL	REAL # mm Central leaflet width
-LFTWD_LEFT	REAL # mm Left leaflet width
-LFTAR_RIGHT	REAL # mm2 Right Leaflet area
-LFTAR_CENTRAL	REAL # mm2 Central Leaflet area
-LFTAR_LEFT	REAL # mm2 Left Leaflet area
-LFAR	REAL # mm2 Total leaf area
-FLWRNUMBER	INT # Total flower number
-FLWRNUMBER_OPEN	INT # Total opened Flower number
-FLWRNUMBER_ABORTED	INT # Total aborted Flower number
-FLWRNUMBER_CLOSED	INT # Total closed flower number
-SAMPLING	STRING # location of sampling
-COMMENT	STRING
-
+#																																				
+#																																				
+CODE:	FORM-A																																			
+																																				
+CLASSES:																																				
+SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION																																
+$ 	0	FREE	FREE	IMPLICIT																																
+P 	1	FREE	FREE	EXPLICIT																																
+T  	2	FREE	FREE	EXPLICIT																																
+A  	2	FREE	FREE	EXPLICIT																																
+F	3	FREE	FREE	EXPLICIT																																
+f	3	FREE	FREE	EXPLICIT																																
+s	3	FREE	FREE	EXPLICIT																																
+bt	3	FREE	FREE	EXPLICIT																																
+BT	3	FREE	FREE	EXPLICIT																																
+ht	3	FREE	FREE	EXPLICIT																																
+HT	3	FREE	FREE	EXPLICIT																																
+																																				
+DESCRIPTION :																																				
+LEFT	RIGHT	RELTYPE	MAX																																	
+A	A	+	?																																	
+A	A	<	1																																	
+T	T	+	?																																	
+T	T	<	1																																	
+																																				
+FEATURES:																																				
+NAME	TYPE																																			
+Experiment_name	STRING																																			
+Sample_date	DD/MM/YYYY																																			
+Architecture_date	DD/MM/YYYY																																			
+Genotype	STRING																																			
+Modality	STRING																																			
+Plant_ID	INT																																			
+Stade	STRING																																			
+Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar																																			
+DBI	REAL # mm Collar diameter																																			
+INFLOLG	REAL # mm Inflorescence length																																			
+PETLG	REAL # mm petiole lenght																																			
+LFTLG_RIGHT	REAL # mm Right leaflet length																																			
+LFTLG_CENTRAL	REAL # mm Central leaflet length																																			
+LFTLG_LEFT	REAL # mm Left leaflet length																																			
+LFTWD_RIGHT	REAL # mm Right leaflet width																																			
+LFTWD_CENTRAL	REAL # mm Central leaflet width																																			
+LFTWD_LEFT	REAL # mm Left leaflet width																																			
+LFTAR_RIGHT	REAL # mm2 Right Leaflet area																																			
+LFTAR_CENTRAL	REAL # mm2 Central Leaflet area																																			
+LFTAR_LEFT	REAL # mm2 Left Leaflet area																																			
+LFAR	REAL # mm2 Total leaf area																																			
+FLWRNUMBER	INT # Total flower number																																			
+FLWRNUMBER_OPEN	INT # Total opened Flower number																																			
+FLWRNUMBER_ABORTED	INT # Total aborted Flower number																																			
+FLWRNUMBER_CLOSED	INT # Total closed flower number																																			
+SAMPLING	STRING # location of sampling																																			
+COMMENT	STRING																																			
+																																				
 MTG:																																				
 ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	Foliar_type	DBI	INFLOLG	PETLG	LFTLG_RIGHT	LFTLG_CENTRAL	LFTLG_LEFT	LFTWD_RIGHT	LFTWD_CENTRAL	LFTWD_LEFT	LFTAR_RIGHT	LFTAR_CENTRAL	LFTAR_LEFT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	COMMENT				
-/P							FRAFLO	10/12/2014	Clery	A	1																									
+/P							FRAFLO	2014/12/10	Clery	A	1																									
 ^/T														17.06																						
 ^/F																																				
 	+A																																			
@@ -156,7 +156,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											F																								
 ^<ht												H			8																					
 																																				
-/P							FRAFLO	10/12/2014	Clery	A	2																									
+/P							FRAFLO	2014/12/10	Clery	A	2																									
 ^/T														18.09																						
 ^/F																																				
 	+A																																			
@@ -244,7 +244,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											C																								
 ^<ht												H			6																					
 																																				
-/P							FRAFLO	10/12/2014	Clery	A	3																									
+/P							FRAFLO	2014/12/10	Clery	A	3																									
 ^/T														17.45																						
 ^/F																																				
 	+A																																			
@@ -311,7 +311,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											F																								
 ^<ht												H			10																					
 																																				
-/P							FRAFLO	10/12/2014	Clery	A	4																									
+/P							FRAFLO	2014/12/10	Clery	A	4																									
 ^/T														18.29																						
 ^/F																																				
 	+A																																			
@@ -353,7 +353,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											H			5																					
 ^<HT												cut																								
 																																				
-/P							FRAFLO	10/12/2014	Clery	A	5																									
+/P							FRAFLO	2014/12/10	Clery	A	5																									
 ^/T														18.69																						
 ^/F																																				
 	+A																																			
@@ -442,7 +442,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											D																								
 ^<ht												H			9																					
 																																				
-/P							FRAFLO	10/12/2014	Clery	A	6																									
+/P							FRAFLO	2014/12/10	Clery	A	6																									
 ^/T														18.82																						
 ^/F																																				
 	+A																																			
@@ -510,7 +510,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											E																								
 ^<ht												H			9																					
 																																				
-/P							FRAFLO	10/12/2014	Clery	A	7																									
+/P							FRAFLO	2014/12/10	Clery	A	7																									
 ^/T														19.77																						
 ^/F																																				
 	+A																																			
@@ -597,7 +597,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											E																								
 ^<ht												H			7																					
 																																				
-/P							FRAFLO	10/12/2014	Clery	A	8																									
+/P							FRAFLO	2014/12/10	Clery	A	8																									
 ^/T														18.78																						
 ^/F																																				
 	+A																																			
@@ -661,7 +661,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											H			7																					
 ^<HT												cut																								
 																																				
-/P							FRAFLO	10/12/2014	Clery	A	9																									
+/P							FRAFLO	2014/12/10	Clery	A	9																									
 ^/T														18.85																						
 ^/F																																				
 	+A																																			
@@ -739,7 +739,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											E																								
 ^<ht												H			9																					
 																																				
-/P							FRAFLO	07/01/2015	Clery	A	1																									
+/P							FRAFLO	2015/01/07	Clery	A	1																									
 ^/T														15.1																						
 ^/F																																				
 	+A																																			
@@ -825,7 +825,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											G																								
 ^<HT												I			18												9									
 																																				
-/P							FRAFLO	07/01/2015	Clery	A	2																									
+/P							FRAFLO	2015/01/07	Clery	A	2																									
 ^/T														20.07																						
 ^/F																																				
 	+A																																			
@@ -929,7 +929,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											F																								
 ^<ht												H			10																					
 																																				
-/P							FRAFLO	07/01/2015	Clery	A	3																									
+/P							FRAFLO	2015/01/07	Clery	A	3																									
 ^/T														13.52																						
 ^/F																																				
 	+A																																			
@@ -990,7 +990,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											G																								
 ^<HT												cut																								
 																																				
-/P							FRAFLO	07/01/2015	Clery	A	4																									
+/P							FRAFLO	2015/01/07	Clery	A	4																									
 ^/T														18.31																						
 ^/F																																				
 	+A																																			
@@ -1042,7 +1042,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											I															9									
 ^<HT												cut																								
 																																				
-/P							FRAFLO	07/01/2015	Clery	A	5																									
+/P							FRAFLO	2015/01/07	Clery	A	5																									
 ^/T														18.71																						
 ^/F																																				
 	+A																																			
@@ -1141,7 +1141,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^/bt											aborted																								
 ^<ht												H			18																					
 																																				
-/P							FRAFLO	07/01/2015	Clery	A	6																									
+/P							FRAFLO	2015/01/07	Clery	A	6																									
 ^/T														15.89																						
 ^/F																																				
 	+A																																			
@@ -1224,7 +1224,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											H																								
 ^<HT												I			21												12	0	0							
 																																				
-/P							FRAFLO	07/01/2015	Clery	A	7																									
+/P							FRAFLO	2015/01/07	Clery	A	7																									
 ^/T														17.25																						
 ^/F																																				
 	+A																																			
@@ -1307,7 +1307,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											G																								
 ^<HT												I			23												12	0	0							
 																																				
-/P							FRAFLO	07/01/2015	Clery	A	8																									
+/P							FRAFLO	2015/01/07	Clery	A	8																									
 ^/T														17.3																						
 ^/F																																				
 	+A																																			
@@ -1381,7 +1381,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											G																								
 ^<HT												55			28												15	0	0							
 																																				
-/P							FRAFLO	07/01/2015	Clery	A	9																									
+/P							FRAFLO	2015/01/07	Clery	A	9																									
 ^/T														18.46																						
 ^/F																																				
 	+A																																			
@@ -1451,7 +1451,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											H																								
 ^<HT												H															3	0	3							
 																																				
-/P							FRAFLO	15/02/2015	Clery	A	1																									
+/P							FRAFLO	2015/02/15	Clery	A	1																									
 ^/T														13.33																						
 ^/F																																				
 	+A																																			
@@ -1569,7 +1569,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											I																								
 ^<HT												61															16	2	0							
 																																				
-/P							FRAFLO	15/02/2015	Clery	A	2																									
+/P							FRAFLO	2015/02/15	Clery	A	2																									
 ^/T														20.93																						
 ^/F																																				
 	+A																																			
@@ -1651,7 +1651,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											I																								
 ^<HT												60															9	1	0							
 																																				
-/P							FRAFLO	15/02/2015	Clery	A	3																									
+/P							FRAFLO	2015/02/15	Clery	A	3																									
 ^/T														23.75																						
 ^/F																																				
 	+A																																			
@@ -1747,7 +1747,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											I																								
 ^<HT												61															19	0	0							
 																																				
-/P							FRAFLO	15/02/2015	Clery	A	4																									
+/P							FRAFLO	2015/02/15	Clery	A	4																									
 ^/T														24.38																						
 ^/F																																				
 	+A																																			
@@ -1858,7 +1858,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^/bt											aborted																								
 ^<HT												58															19	0	0							
 																																				
-/P							FRAFLO	15/02/2015	Clery	A	5																									
+/P							FRAFLO	2015/02/15	Clery	A	5																									
 ^/T														24.52																						
 ^/F																																				
 	+A																																			
@@ -1944,7 +1944,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											55															5	0	0							
 ^<HT												60															13	1	0							
 																																				
-/P							FRAFLO	15/02/2015	Clery	A	6																									
+/P							FRAFLO	2015/02/15	Clery	A	6																									
 ^/T														23.44																						
 ^/F																																				
 	+A																																			
@@ -2044,7 +2044,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											55															6	0	0							
 ^<HT												65															14	1	0							
 																																				
-/P							FRAFLO	15/02/2015	Clery	A	7																									
+/P							FRAFLO	2015/02/15	Clery	A	7																									
 ^/T														19.35																						
 ^/F																																				
 	+A																																			
@@ -2102,7 +2102,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											I																								
 ^<HT												58															14	0	0							
 																																				
-/P							FRAFLO	15/02/2015	Clery	A	8																									
+/P							FRAFLO	2015/02/15	Clery	A	8																									
 ^/T														17.48																						
 ^/F																																				
 	+A																																			
@@ -2218,7 +2218,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											I																								
 ^<HT												60															15	1	0							
 																																				
-/P							FRAFLO	15/02/2015	Clery	A	9																									
+/P							FRAFLO	2015/02/15	Clery	A	9																									
 ^/T														22.17																						
 ^/F																																				
 	+A																																			
@@ -2319,7 +2319,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											55															9	0	0							
 ^<HT												65															20	3	0							
 																																				
-/P							FRAFLO	02/03/2015	Clery	A	1																									
+/P							FRAFLO	2015/03/02	Clery	A	1																									
 ^/T														32.34																						
 ^/F																																				
 	+A																																			
@@ -2460,7 +2460,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											57															6	0	0							
 ^<HT												67															14	8	0							
 																																				
-/P							FRAFLO	02/03/2015	Clery	A	2																									
+/P							FRAFLO	2015/03/02	Clery	A	2																									
 ^/T														27.4																						
 ^/F																																				
 	+A																																			
@@ -2565,7 +2565,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											58															6	0	0							
 ^<HT												67															15	8	0							
 																																				
-/P							FRAFLO	02/03/2015	Clery	A	3																									
+/P							FRAFLO	2015/03/02	Clery	A	3																									
 ^/T														23.12																						
 ^/F																																				
 	+A																																			
@@ -2665,7 +2665,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											57															6	0	0							
 ^<HT												67															11	8	0							
 																																				
-/P							FRAFLO	02/03/2015	Clery	A	4																									
+/P							FRAFLO	2015/03/02	Clery	A	4																									
 ^/T														22.46																						
 ^/F																																				
 	+A																																			
@@ -2764,7 +2764,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											58															6	0	0							
 ^<HT												67															11	5	0							
 																																				
-/P							FRAFLO	02/03/2015	Clery	A	5																									
+/P							FRAFLO	2015/03/02	Clery	A	5																									
 ^/T														23.54																						
 ^/F																																				
 	+A																																			
@@ -2857,7 +2857,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											55															3	0	0							
 ^<HT												67															13	4	0							
 																																				
-/P							FRAFLO	02/03/2015	Clery	A	6																									
+/P							FRAFLO	2015/03/02	Clery	A	6																									
 ^/T														30.34																						
 ^/F																																				
 	+A																																			
@@ -2963,7 +2963,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											55															7	0	0							
 ^<HT												67															12	4	0							
 																																				
-/P							FRAFLO	02/03/2015	Clery	A	7																									
+/P							FRAFLO	2015/03/02	Clery	A	7																									
 ^/T														36.96																						
 ^/F																																				
 	+A																																			
@@ -3101,7 +3101,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<ht											H																								
 ^<HT												58															16	0	0							
 																																				
-/P							FRAFLO	02/03/2015	Clery	A	8																									
+/P							FRAFLO	2015/03/02	Clery	A	8																									
 ^/T														24.33																						
 ^/F																																				
 	+A																																			
@@ -3184,7 +3184,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											60															6	1	0							
 ^<HT												65															13	9	0							
 																																				
-/P							FRAFLO	02/03/2015	Clery	A	9																									
+/P							FRAFLO	2015/03/02	Clery	A	9																									
 ^/T														38.26																						
 ^/F																																				
 	+A																																			
@@ -3308,7 +3308,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											58															5	0	0							
 ^<HT												67															13	8	0							
 																																				
-/P							FRAFLO	03/04/2015	Clery	A	1																									
+/P							FRAFLO	2015/04/03	Clery	A	1																									
 ^/T														36.76																						
 ^/F																																				
 	+A																																			
@@ -3426,7 +3426,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											83							100								10	0								
 ^<HT												cut																								
 																																				
-/P							FRAFLO	03/04/2015	Clery	A	2																									
+/P							FRAFLO	2015/04/03	Clery	A	2																									
 ^/T														39.71																						
 ^/F																																				
 	+A																																			
@@ -3572,7 +3572,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											73															7	7	0							
 ^<HT												81															15	14	0							
 																																				
-/P							FRAFLO	03/04/2015	Clery	A	3																									
+/P							FRAFLO	2015/04/03	Clery	A	3																									
 ^/T														52.12																						
 ^/F																																				
 	+A																																			
@@ -3746,7 +3746,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											67															7	6	0							
 ^<HT												81															18	18	0							
 																																				
-/P							FRAFLO	03/04/2015	Clery	A	4																									
+/P							FRAFLO	2015/04/03	Clery	A	4																									
 ^/T														46.48																						
 ^/F																																				
 	+A																																			
@@ -3905,7 +3905,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											77															5	5	0							
 ^<HT												81															8	8	0							
 																																				
-/P							FRAFLO	03/04/2015	Clery	A	5																									
+/P							FRAFLO	2015/04/03	Clery	A	5																									
 ^/T														24.8																						
 ^/F																																				
 	+A																																			
@@ -3977,7 +3977,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											73															6	5	0							
 ^<HT												81															12	12	0							
 																																				
-/P							FRAFLO	03/04/2015	Clery	A	6																									
+/P							FRAFLO	2015/04/03	Clery	A	6																									
 ^/T														26.36																						
 ^/F																																				
 	+A																																			
@@ -4046,7 +4046,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											83															14	14	0							
 ^<HT												cut																								
 																																				
-/P							FRAFLO	03/04/2015	Clery	A	7																									
+/P							FRAFLO	2015/04/03	Clery	A	7																									
 ^/T														53.36																						
 ^/F																																				
 	+A																																			
@@ -4230,7 +4230,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											81															9	9	0							
 ^<HT												87															18	18	0							
 																																				
-/P							FRAFLO	03/04/2015	Clery	A	8																									
+/P							FRAFLO	2015/04/03	Clery	A	8																									
 ^/T														46.21																						
 ^/F																																				
 	+A																																			
@@ -4355,7 +4355,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											81															8	8	0							
 ^<HT												87															14	14	0							
 																																				
-/P							FRAFLO	03/04/2015	Clery	A	9																									
+/P							FRAFLO	2015/04/03	Clery	A	9																									
 ^/T														34.48																						
 ^/F																																				
 	+A																																			
@@ -4460,7 +4460,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											77															5	0	0							
 ^<HT												87															15	15	0							
 																																				
-/P							FRAFLO	27/05/2015	Clery	A	1																									
+/P							FRAFLO	2015/05/27	Clery	A	1																									
 ^/T														61.34																						
 ^/F																																				
 	+A																																			
@@ -4619,7 +4619,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											87															3	3	0							
 ^<HT												87															16	15	1							
 																																				
-/P							FRAFLO	27/05/2015	Clery	A	2																									
+/P							FRAFLO	2015/05/27	Clery	A	2																									
 ^/T														52.68																						
 ^/F																																				
 	+A																																			
@@ -4774,7 +4774,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											87															7	6	1							
 ^<HT												87															12	10	2							
 																																				
-/P							FRAFLO	27/05/2015	Clery	A	3																									
+/P							FRAFLO	2015/05/27	Clery	A	3																									
 ^/T														49.92																						
 ^/F																																				
 	+A																																			
@@ -4923,7 +4923,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											87															5	4	1							
 ^<HT												87															19	17	2							
 																																				
-/P							FRAFLO	27/05/2015	Clery	A	4																									
+/P							FRAFLO	2015/05/27	Clery	A	4																									
 ^/T														32.12																						
 ^/F																																				
 	+A																																			
@@ -5057,7 +5057,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											87															4	4	0							
 ^<HT												87															13	12	1							
 																																				
-/P							FRAFLO	27/05/2015	Clery	A	5																									
+/P							FRAFLO	2015/05/27	Clery	A	5																									
 ^/T														48.92																						
 ^/F																																				
 	+A																																			
@@ -5178,7 +5178,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											87															10	10	0							
 ^<HT												87															15	14	1							
 																																				
-/P							FRAFLO	27/05/2015	Clery	A	6																									
+/P							FRAFLO	2015/05/27	Clery	A	6																									
 ^/T														32.12																						
 ^/F																																				
 	+A																																			
@@ -5254,7 +5254,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											87															5	4	1							
 ^<HT												87															13	11	2							
 																																				
-/P							FRAFLO	27/05/2015	Clery	A	7																									
+/P							FRAFLO	2015/05/27	Clery	A	7																									
 ^/T														53.47																						
 ^/F																																				
 	+A																																			
@@ -5369,7 +5369,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											87															12	12	0							
 ^<HT												aborted																								
 																																				
-/P							FRAFLO	27/05/2015	Clery	A	8																									
+/P							FRAFLO	2015/05/27	Clery	A	8																									
 ^/T														46.76																						
 ^/F																																				
 	+A																																			
@@ -5563,7 +5563,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 	^<HT											87															4	3	1							
 ^<HT												87															13	11	2							
 																																				
-/P							FRAFLO	27/05/2015	Clery	A	9																									
+/P							FRAFLO	2015/05/27	Clery	A	9																									
 ^/T														43.41																						
 ^/F																																				
 	+A																																			
@@ -5727,4 +5727,1949 @@ ENTITY-CODE							Experiment_name	Sample_date	Genotype	Modality	Plant_ID	Stade	F
 		^<HT										87															4	4	0							
 	^<HT											87															8	8	0							
 ^<HT												87															12	12	0							
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
 																																				

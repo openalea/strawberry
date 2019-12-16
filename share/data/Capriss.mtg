@@ -1,62 +1,62 @@
-#	
-#
-
-CODE:	FORM-A
-
-CLASSES:		
-SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION
-$ 	0	FREE	FREE	IMPLICIT																										
-P 	1	FREE	FREE	EXPLICIT																											
-T  	2	FREE	FREE	EXPLICIT																											
-A  	2	FREE	FREE	EXPLICIT																											
-F	3	FREE	FREE	EXPLICIT																											
-f	3	FREE	FREE	EXPLICIT																											
-s	3	FREE	FREE	EXPLICIT																											
-bt	3	FREE	FREE	EXPLICIT																											
-BT	3	FREE	FREE	EXPLICIT																											
-ht	3	FREE	FREE	EXPLICIT																										
-HT	3	FREE	FREE	EXPLICIT																											
-																																				
-DESCRIPTION :
-LEFT	RIGHT	RELTYPE	MAX
-A	A	+	?
-A	A	<	1
-T	T	+	?
-T	T	<	1
-
-FEATURES:			
-NAME	TYPE	
-Experiment_name	STRING
-Sample_date	DD/MM/YYYY
-Architecture_date	DD/MM/YYYY
-Genotype	STRING
-Modality	STRING
-Plant_ID	INT
-Stade	STRING
-Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar
-DBI	REAL # mm Collar diameter
-INFLOLG	REAL # mm Inflorescence length
-PETLG	REAL # mm petiole lenght
-LFTLG_RIGHT	REAL # mm Right leaflet length
-LFTLG_CENTRAL	REAL # mm Central leaflet length
-LFTLG_LEFT	REAL # mm Left leaflet length
-LFTWD_RIGHT	REAL # mm Right leaflet width
-LFTWD_CENTRAL	REAL # mm Central leaflet width
-LFTWD_LEFT	REAL # mm Left leaflet width
-LFTAR_RIGHT	REAL # mm2 Right Leaflet area
-LFTAR_CENTRAL	REAL # mm2 Central Leaflet area
-LFTAR_LEFT	REAL # mm2 Left Leaflet area
-LFAR	REAL # mm2 Total leaf area
-FLWRNUMBER	INT # Total flower number
-FLWRNUMBER_OPEN	INT # Total opened Flower number
-FLWRNUMBER_ABORTED	INT # Total aborted Flower number
-FLWRNUMBER_CLOSED	INT # Total closed flower number
-SAMPLING	STRING # location of sampling
-COMMENT	STRING
-
-MTG:																																	
-ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modality	Plant_ID	Stade	DBI	Foliar_type	INFLOLG	PETLG	LFTLG_RIGHT	LFTLG_CENTRAL	LFTLG_LEFT	LFTWD_RIGHT	LFTWD_CENTRAL	LFTWD_LEFT	LFTAR_RIGHT	LFTAR_CENTRAL	LFTAR_LEFT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	COMMENT	
-/P							FRAFLO	10/12/2014		Capriss	A	1																									
+#																																					
+#																																					
+																																					
+CODE:	FORM-A																																				
+																																					
+CLASSES:																																					
+SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION																																	
+$ 	0	FREE	FREE	IMPLICIT																																	
+P 	1	FREE	FREE	EXPLICIT																																	
+T  	2	FREE	FREE	EXPLICIT																																	
+A  	2	FREE	FREE	EXPLICIT																																	
+F	3	FREE	FREE	EXPLICIT																																	
+f	3	FREE	FREE	EXPLICIT																																	
+s	3	FREE	FREE	EXPLICIT																																	
+bt	3	FREE	FREE	EXPLICIT																																	
+BT	3	FREE	FREE	EXPLICIT																																	
+ht	3	FREE	FREE	EXPLICIT																																	
+HT	3	FREE	FREE	EXPLICIT																																	
+																																					
+DESCRIPTION :																																					
+LEFT	RIGHT	RELTYPE	MAX																																		
+A	A	+	?																																		
+A	A	<	1																																		
+T	T	+	?																																		
+T	T	<	1																																		
+																																					
+FEATURES:																																					
+NAME	TYPE																																				
+Experiment_name	STRING																																				
+Sample_date	DD/MM/YYYY																																				
+Architecture_date	DD/MM/YYYY																																				
+Genotype	STRING																																				
+Modality	STRING																																				
+Plant_ID	INT																																				
+Stade	STRING																																				
+Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar																																				
+DBI	REAL # mm Collar diameter																																				
+INFLOLG	REAL # mm Inflorescence length																																				
+PETLG	REAL # mm petiole lenght																																				
+LFTLG_RIGHT	REAL # mm Right leaflet length																																				
+LFTLG_CENTRAL	REAL # mm Central leaflet length																																				
+LFTLG_LEFT	REAL # mm Left leaflet length																																				
+LFTWD_RIGHT	REAL # mm Right leaflet width																																				
+LFTWD_CENTRAL	REAL # mm Central leaflet width																																				
+LFTWD_LEFT	REAL # mm Left leaflet width																																				
+LFTAR_RIGHT	REAL # mm2 Right Leaflet area																																				
+LFTAR_CENTRAL	REAL # mm2 Central Leaflet area																																				
+LFTAR_LEFT	REAL # mm2 Left Leaflet area																																				
+LFAR	REAL # mm2 Total leaf area																																				
+FLWRNUMBER	INT # Total flower number																																				
+FLWRNUMBER_OPEN	INT # Total opened Flower number																																				
+FLWRNUMBER_ABORTED	INT # Total aborted Flower number																																				
+FLWRNUMBER_CLOSED	INT # Total closed flower number																																				
+SAMPLING	STRING # location of sampling																																				
+COMMENT	STRING																																				
+																																					
+MTG:																																					
+ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modality	Plant_ID	Stade	DBI	Foliar_type	INFLOLG	PETLG	LFTLG_RIGHT	LFTLG_CENTRAL	LFTLG_LEFT	LFTWD_RIGHT	LFTWD_CENTRAL	LFTWD_LEFT	LFTAR_RIGHT	LFTAR_CENTRAL	LFTAR_LEFT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	COMMENT				
+/P							FRAFLO	2014/12/10		Capriss	A	1																									
 ^/T														19.8																							
 ^/F																																					
 	+A																																				
@@ -176,7 +176,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												F																								
 ^<ht													H			7																					
 																																					
-/P							FRAFLO	10/12/2014		Capriss	A	2																									
+/P							FRAFLO	2014/12/10		Capriss	A	2																									
 ^/T														21.7																							
 ^/F																																					
 	+A																																				
@@ -269,7 +269,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<bt												19																								
 ^<ht													H			8																					
 																																					
-/P							FRAFLO	10/12/2014		Capriss	A	3																									
+/P							FRAFLO	2014/12/10		Capriss	A	3																									
 ^/T														19.54																							
 ^/F																																					
 	+A																																				
@@ -324,7 +324,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												F																								
 ^<ht													H			9																					
 																																					
-/P							FRAFLO	10/12/2014		Capriss	A	4																									
+/P							FRAFLO	2014/12/10		Capriss	A	4																									
 ^/T														15.63																							
 ^/F																																					
 	+A																																				
@@ -403,7 +403,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<bt												17																								
 ^<ht													H			6																					
 																																					
-/P							FRAFLO	10/12/2014		Capriss	A	5																									
+/P							FRAFLO	2014/12/10		Capriss	A	5																									
 ^/T														19.52																							
 ^/F																																					
 	+A																																				
@@ -499,7 +499,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												E																								
 ^<ht													H			7																					
 																																					
-/P							FRAFLO	10/12/2014		Capriss	A	6																									
+/P							FRAFLO	2014/12/10		Capriss	A	6																									
 ^/T														18.24																							
 ^/F																																					
 	+A																																				
@@ -588,7 +588,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												F																								
 ^<ht													H			8																					
 																																					
-/P							FRAFLO	10/12/2014		Capriss	A	7																									
+/P							FRAFLO	2014/12/10		Capriss	A	7																									
 ^/T														18.17																							
 ^/F																																					
 	+A																																				
@@ -669,7 +669,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												E																								
 ^<ht													H			6																					
 																																					
-/P							FRAFLO	10/12/2014		Capriss	A	8																									
+/P							FRAFLO	2014/12/10		Capriss	A	8																									
 ^/T														20.78																							
 ^/F																																					
 	+A																																				
@@ -735,7 +735,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												E																								
 ^<ht													H			9																					
 																																					
-/P							FRAFLO	10/12/2014		Capriss	A	9																									
+/P							FRAFLO	2014/12/10		Capriss	A	9																									
 ^/T														17.9																							
 ^/F																																					
 	+A																																				
@@ -822,7 +822,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												E																								
 ^<ht													H			6																					
 																																					
-/P							FRAFLO	07/01/2015		Capriss	A	1																									
+/P							FRAFLO	2015/01/07		Capriss	A	1																									
 ^/T														22.19																							
 ^/F																																					
 	+A																																				
@@ -904,7 +904,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													I			20				140								0	0								
 																																					
-/P							FRAFLO	07/01/2015		Capriss	A	2																									
+/P							FRAFLO	2015/01/07		Capriss	A	2																									
 ^/T														25.04																							
 ^/F																																					
 	+A																																				
@@ -1028,7 +1028,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												G																								
 ^<HT													55			20												14	0	0							
 																																					
-/P							FRAFLO	07/01/2015		Capriss	A	3																									
+/P							FRAFLO	2015/01/07		Capriss	A	3																									
 ^/T														24.1																							
 ^/F																																					
 	+A																																				
@@ -1147,7 +1147,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												B																								
 ^<HT													H			17													12	0	0						
 																																					
-/P							FRAFLO	07/01/2015		Capriss	A	4																									
+/P							FRAFLO	2015/01/07		Capriss	A	4																									
 ^/T														37																							
 ^/F																																					
 	+A																																				
@@ -1321,7 +1321,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												G																								
 ^<HT													I			18												14	0	0							
 																																					
-/P							FRAFLO	07/01/2015		Capriss	A	5																									
+/P							FRAFLO	2015/01/07		Capriss	A	5																									
 ^/T														20.1																							
 ^/F																																					
 	+A																																				
@@ -1421,7 +1421,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													55			21												13	0	0							
 																																					
-/P							FRAFLO	07/01/2015		Capriss	A	6																									
+/P							FRAFLO	2015/01/07		Capriss	A	6																									
 ^/T														25.98																							
 ^/F																																					
 	+A																																				
@@ -1543,7 +1543,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												C																								
 ^<HT													I			19												15	0	0							
 																																					
-/P							FRAFLO	07/01/2015		Capriss	A	7																									
+/P							FRAFLO	2015/01/07		Capriss	A	7																									
 ^/T														20.64																							
 ^/F																																					
 	+A																																				
@@ -1663,7 +1663,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													55			20												14	0	0							
 																																					
-/P							FRAFLO	07/01/2015		Capriss	A	8																									
+/P							FRAFLO	2015/01/07		Capriss	A	8																									
 ^/T														21.62																							
 ^/F																																					
 	+A																																				
@@ -1779,7 +1779,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												G																								
 ^<ht													H			12																					
 																																					
-/P							FRAFLO	07/01/2015		Capriss	A	9																									
+/P							FRAFLO	2015/01/07		Capriss	A	9																									
 ^/T														27.28																							
 ^/F																																					
 	+A																																				
@@ -1876,7 +1876,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													55			24												13	0	0							
 																																					
-/P							FRAFLO	15/02/2015		Capriss	A	1																									
+/P							FRAFLO	2015/02/15		Capriss	A	1																									
 ^/T														18.69																							
 ^/F																																					
 	+A																																				
@@ -1998,7 +1998,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													58							90								0	0								
 																																					
-/P							FRAFLO	15/02/2015		Capriss	A	2																									
+/P							FRAFLO	2015/02/15		Capriss	A	2																									
 ^/T														40.37																							
 ^/F																																					
 	+A																																				
@@ -2163,7 +2163,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												I																								
 ^<HT													58															13	0	0							
 																																					
-/P							FRAFLO	15/02/2015		Capriss	A	3																									
+/P							FRAFLO	2015/02/15		Capriss	A	3																									
 ^/T														31.32																							
 ^/F																																					
 	+A																																				
@@ -2325,7 +2325,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												55															6	0	0							
 ^<HT													61															10	2	0							
 																																					
-/P							FRAFLO	15/02/2015		Capriss	A	4																									
+/P							FRAFLO	2015/02/15		Capriss	A	4																									
 ^/T														21.12																							
 ^/F																																					
 	+A																																				
@@ -2402,7 +2402,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													60															7	1	0							
 																																					
-/P							FRAFLO	15/02/2015		Capriss	A	5																									
+/P							FRAFLO	2015/02/15		Capriss	A	5																									
 ^/T														23.6																							
 ^/F																																					
 	+A																																				
@@ -2552,7 +2552,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												I																								
 ^<HT													65															11	4	0							
 																																					
-/P							FRAFLO	15/02/2015		Capriss	A	6																									
+/P							FRAFLO	2015/02/15		Capriss	A	6																									
 ^/T														36.08																							
 ^/F																																					
 	+A																																				
@@ -2686,7 +2686,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													60															15	1	0							
 																																					
-/P							FRAFLO	15/02/2015		Capriss	A	7																									
+/P							FRAFLO	2015/02/15		Capriss	A	7																									
 ^/T														19																							
 ^/F																																					
 	+A																																				
@@ -2766,7 +2766,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												55															5	0	0							
 ^<HT													cut																								
 																																					
-/P							FRAFLO	15/02/2015		Capriss	A	8																									
+/P							FRAFLO	2015/02/15		Capriss	A	8																									
 ^/T														33.85																							
 ^/F																																					
 	+A																																				
@@ -2890,7 +2890,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												57															4	0	0							
 ^<HT													67															8	3	0							
 																																					
-/P							FRAFLO	15/02/2015		Capriss	A	9																									
+/P							FRAFLO	2015/02/15		Capriss	A	9																									
 ^/T														38.24																							
 ^/F																																					
 	+A																																				
@@ -3085,7 +3085,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													58															9	0	0							
 																																					
-/P							FRAFLO	02/03/2015		Capriss	A	1																									
+/P							FRAFLO	2015/03/02		Capriss	A	1																									
 ^/T														35.05																							
 ^/F																																					
 	+A																																				
@@ -3214,7 +3214,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												57															5	0	0							
 ^<HT													67															11	8	0							
 																																					
-/P							FRAFLO	02/03/2015		Capriss	A	2																									
+/P							FRAFLO	2015/03/02		Capriss	A	2																									
 ^/T														31.29																							
 ^/F																																					
 	+A																																				
@@ -3309,7 +3309,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												57															5	0	0							
 ^<HT													65															12	5	0							
 																																					
-/P							FRAFLO	02/03/2015		Capriss	A	3																									
+/P							FRAFLO	2015/03/02		Capriss	A	3																									
 ^/T														37.23																							
 ^/F																																					
 	+A																																				
@@ -3445,7 +3445,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													67															13	9	0							
 																																					
-/P							FRAFLO	02/03/2015		Capriss	A	4																									
+/P							FRAFLO	2015/03/02		Capriss	A	4																									
 ^/T														38.18																							
 ^/F																																					
 	+A																																				
@@ -3569,7 +3569,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												F																								
 ^<HT													67															9	6	0							
 																																					
-/P							FRAFLO	02/03/2015		Capriss	A	5																									
+/P							FRAFLO	2015/03/02		Capriss	A	5																									
 ^/T														45.07																							
 ^/F																																					
 	+A																																				
@@ -3726,7 +3726,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													63															10	3	0							
 																																					
-/P							FRAFLO	02/03/2015		Capriss	A	6																									
+/P							FRAFLO	2015/03/02		Capriss	A	6																									
 ^/T														37.13																							
 ^/F																																					
 	+A																																				
@@ -3854,7 +3854,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												55															5	0	0							
 ^<HT													67															11	5	0							
 																																					
-/P							FRAFLO	02/03/2015		Capriss	A	7																									
+/P							FRAFLO	2015/03/02		Capriss	A	7																									
 ^/T														45.34																							
 ^/F																																					
 	+A																																				
@@ -4065,7 +4065,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												57															3	3	0							
 ^<HT													65															9	6	0							
 																																					
-/P							FRAFLO	02/03/2015		Capriss	A	8																									
+/P							FRAFLO	2015/03/02		Capriss	A	8																									
 ^/T														47.7																							
 ^/F																																					
 	+A																																				
@@ -4277,7 +4277,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<ht												H																								
 ^<HT													67															10	4	0							
 																																					
-/P							FRAFLO	02/03/2015		Capriss	A	9																									
+/P							FRAFLO	2015/03/02		Capriss	A	9																									
 ^/T														36.01																							
 ^/F																																					
 	+A																																				
@@ -4449,7 +4449,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												58															4	0	0							
 ^<HT													73															10	7	0							
 																																					
-/P							FRAFLO	03/04/2015		Capriss	A	1																									
+/P							FRAFLO	2015/04/03		Capriss	A	1																									
 ^/T														43.71																							
 ^/F																																					
 	+A																																				
@@ -4622,7 +4622,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 ^<HT													87															11	11	0							
 																																					
 																																					
-/P							FRAFLO	03/04/2015		Capriss	A	2																									
+/P							FRAFLO	2015/04/03		Capriss	A	2																									
 ^/T														42.37																							
 ^/F																																					
 	+A																																				
@@ -4778,7 +4778,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 ^<HT													87															9	9	0							
 																																					
 																																					
-/P							FRAFLO	03/04/2015		Capriss	A	3																									
+/P							FRAFLO	2015/04/03		Capriss	A	3																									
 ^/T														49.15																							
 ^/F																																					
 	+A																																				
@@ -4975,7 +4975,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 ^<HT													87															24	24	0							
 																																					
 																																					
-/P							FRAFLO	03/04/2015		Capriss	A	4																									
+/P							FRAFLO	2015/04/03		Capriss	A	4																									
 ^/T														49.17																							
 ^/F																																					
 	+A																																				
@@ -5162,7 +5162,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 ^<HT													87															13	13	0							
 																																					
 																																					
-/P							FRAFLO	03/04/2015		Capriss	A	5																									
+/P							FRAFLO	2015/04/03		Capriss	A	5																									
 ^/T														47.23																							
 ^/F																																					
 	+A																																				
@@ -5324,7 +5324,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 ^<HT													87															13	13	0							
 																																					
 																																					
-/P							FRAFLO	03/04/2015		Capriss	A	6																									
+/P							FRAFLO	2015/04/03		Capriss	A	6																									
 ^/T														45.17																							
 ^/F																																					
 	+A																																				
@@ -5488,7 +5488,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 ^<HT													cut																								
 																																					
 																																					
-/P							FRAFLO	03/04/2015		Capriss	A	7																									
+/P							FRAFLO	2015/04/03		Capriss	A	7																									
 ^/T														58.17																							
 ^/F																																					
 	+A																																				
@@ -5700,7 +5700,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												81															3	3	0							
 ^<HT													87															11	11	0							
 																																					
-/P							FRAFLO	03/04/2015		Capriss	A	8																									
+/P							FRAFLO	2015/04/03		Capriss	A	8																									
 ^/T														45.21																							
 ^/F																																					
 	+A																																				
@@ -5843,7 +5843,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												77															4	4	0							
 ^<HT													87															14	14	0							
 																																					
-/P							FRAFLO	03/04/2015		Capriss	A	9																									
+/P							FRAFLO	2015/04/03		Capriss	A	9																									
 ^/T														46.7																							
 ^/F																																					
 	+A																																				
@@ -6016,7 +6016,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												87															5	5	0							
 ^<HT													87															11	11	0							
 																																					
-/P							FRAFLO	27/05/2015		Capriss	A	1																									
+/P							FRAFLO	2015/05/27		Capriss	A	1																									
 ^/T														62.43																							
 ^/F																																					
 	+A																																				
@@ -6283,7 +6283,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												87															4	4	0							
 ^<HT													87															12	12	0							
 																																					
-/P							FRAFLO	27/05/2015		Capriss	A	2																									
+/P							FRAFLO	2015/05/27		Capriss	A	2																									
 ^/T														45.96																							
 ^/F																																					
 	+A																																				
@@ -6433,7 +6433,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												87															5	5	0							
 ^<HT													87															13	13	0							
 																																					
-/P							FRAFLO	27/05/2015		Capriss	A	3																									
+/P							FRAFLO	2015/05/27		Capriss	A	3																									
 ^/T														45.11																							
 ^/F																																					
 	+A																																				
@@ -6598,7 +6598,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												87															4	4	0							
 ^<HT													87															11	11	0							
 																																					
-/P							FRAFLO	27/05/2015		Capriss	A	4		57.41																							
+/P							FRAFLO	2015/05/27		Capriss	A	4		57.41																							
 ^/T																																					
 ^/F																																					
 	+A																																				
@@ -6804,7 +6804,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												87															5	4	1							
 ^<HT													87															10	10	0							
 																																					
-/P							FRAFLO	27/05/2015		Capriss	A	5																									
+/P							FRAFLO	2015/05/27		Capriss	A	5																									
 ^/T														46.27																							
 ^/F																																					
 	+A																																				
@@ -6938,7 +6938,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												87															4	4	0							
 ^<HT													87															11	9	2							
 																																					
-/P							FRAFLO	27/05/2015		Capriss	A	6																									
+/P							FRAFLO	2015/05/27		Capriss	A	6																									
 ^/T														35.42																							
 ^/F																																					
 	+A																																				
@@ -7115,7 +7115,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												87															5	4	1							
 ^<HT													87															15	14	1							
 																																					
-/P							FRAFLO	27/05/2015		Capriss	A	7																									
+/P							FRAFLO	2015/05/27		Capriss	A	7																									
 ^/T														43.45																							
 ^/F																																					
 	+A																																				
@@ -7337,7 +7337,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												87															4	3	1							
 ^<HT													87															15	12	3							
 																																					
-/P							FRAFLO	27/05/2015		Capriss	A	8																									
+/P							FRAFLO	2015/05/27		Capriss	A	8																									
 ^/T														52.84																							
 ^/F																																					
 	+A																																				
@@ -7558,7 +7558,7 @@ ENTITY-CODE							Experiment_name	Sample_date	Architecture_date	Genotype	Modalit
 	^<HT												87															4	4	0							
 ^<HT													87															10	10	0							
 																																					
-/P							FRAFLO	27/05/2015		Capriss	A	9																									
+/P							FRAFLO	2015/05/27		Capriss	A	9																									
 ^/T														52.75																							
 ^/F																																					
 	+A																																				
