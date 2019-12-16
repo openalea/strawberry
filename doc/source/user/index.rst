@@ -18,4 +18,4 @@ Tutorials Jupyter Notebooks are available on the git repository in the folder ex
 
 Authors:
 ========
-.. include:: ../../../AUTHORS.rst
+.. include:: ../../../../AUTHORS.rst
