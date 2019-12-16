@@ -20,9 +20,8 @@ Installation:
 =============
 
 .. toctree::
-	./install/index.rst
-
-
+	/install/index.rst
+	
 Documentation:
 ==============
 
