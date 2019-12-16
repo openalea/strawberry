@@ -19,20 +19,6 @@ it is encoded in python 2.7
 Installation:
 =============
 
-Requierements:
-------------
-
-* OpenAlea.Deploy
-* OpneAlea.MTG
-* Jupyter Notebook
-* OpenAlea.PlantGL
-* Matplotlib
-* Pandas
-* oawidgets
-
-Installation:
--------------
-
 .. toctree::
 	./install/index.rst
 
@@ -47,8 +33,7 @@ Tutorial Jupyter Notebooks are available on the git repository in the folder exa
 
 Authors:
 =========
-* Marc Labadie
-* Christophe Pradal
+.. include:: ../../AUTHORS.txt
 
    
 Indices and tables
