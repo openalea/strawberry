@@ -2,6 +2,7 @@ name: strawberry
 channels:
   - conda-forge
   - openalea
+  - openalea/label/unstable
   
 dependencies:
   - python=2.7
