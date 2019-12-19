@@ -37,8 +37,9 @@ Tutorials Jupyter Notebooks
 Tutorials Jupyter Notebooks are available on the git repository in the folder examples/tutorials.
 
 .. toctree::
-
-   notebook1.rst
+   :maxdepth:: 2
+   
+   ../../../example/tutorials/1.import_and_read_MTG.ipynb
 
 
 References
