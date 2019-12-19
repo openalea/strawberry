@@ -12,3 +12,6 @@ dependencies:
   - numpy
   - ipython
   - sphinx_rtd_theme
+  - openalea.plantgl
+  - openalea.lpy 
+  - boost=1.66
