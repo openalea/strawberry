@@ -8,4 +8,5 @@ dependencies:
   - python=2.7
   - openalea.strawberry
   - sphinx
+  - nbsphinx
   - sphinx_rtd_theme
