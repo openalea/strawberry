@@ -1,9 +1,8 @@
 name: strawberry
 channels:
-  - openalea
-  - defaults
   - conda-forge
-
+  - openalea
+  
 dependencies:
   - python=2.7
   - openalea.strawberry
