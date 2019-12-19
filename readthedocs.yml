@@ -8,5 +8,7 @@ dependencies:
   - openalea.strawberry
   - sphinx
   - nbsphinx
-  - nbconvert
+  - pandoc
+  - numpy
+  - ipython
   - sphinx_rtd_theme
