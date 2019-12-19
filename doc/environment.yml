@@ -6,7 +6,6 @@ channels:
   
 dependencies:
   - python=2.7
-  - openalea.strawberry
   - sphinx
   - nbsphinx
   - pandoc
