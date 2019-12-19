@@ -8,5 +8,4 @@ dependencies:
   - openalea.strawberry
   - sphinx
   - nbsphinx
-  - nbconvert
   - sphinx_rtd_theme
