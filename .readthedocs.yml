@@ -1,8 +1,9 @@
 conda:
-  environment: doc/environment.yml
+  file: doc/environment.yml
 
 build:
   image: latest
 
 python:
   version: 2.7
+  setup_py_install: false
