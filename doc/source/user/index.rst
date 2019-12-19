@@ -39,9 +39,9 @@ Tutorials Jupyter Notebooks are available on the git repository in the folder ex
 
 .. toctree::
    :maxdepth: 2
-   ./strawberry/example/tutorials/1.import and read MTG.ipynb
-   ./strawberry/example/tutorials/2.Strawberry architecture representations.ipynb
-   ./strawberry/example/tutorials/3.Architecture analysis at module scale.ipynb
+   ./strawberry/example/tutorials/1.import and read MTG
+   ./strawberry/example/tutorials/2.Strawberry architecture representations
+   ./strawberry/example/tutorials/3.Architecture analysis at module scale
 
 
 References
