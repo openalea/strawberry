@@ -38,7 +38,7 @@ Tutorials Jupyter Notebooks are available on the git repository in the folder ex
 
 .. toctree::
 
-   notebook1
+   notebook1.rst
 
 
 References
