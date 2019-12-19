@@ -1,1 +1,1 @@
-.. include:: ../../../example/tutorials/1.import_and_read_MTG.ipynb
+.. include:: ../../example/tutorials/1.import_and_read_MTG.ipynb
