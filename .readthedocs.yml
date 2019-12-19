@@ -1,0 +1,8 @@
+conda:
+  environment: doc/environment.yml
+
+build:
+  image: latest
+
+python:
+  version: 2.7
