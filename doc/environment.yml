@@ -9,7 +9,6 @@ dependencies:
   - sphinx
   - nbsphinx
   - pandoc
-  - numpy
   - ipython
   - sphinx_rtd_theme
   - openalea.plantgl
