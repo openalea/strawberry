@@ -38,7 +38,7 @@ Tutorials Jupyter Notebooks are available on the git repository in the folder ex
 
 .. toctree::
    
-   ./user/1.import_and_read_MTG.ipynb
+   1.import_and_read_MTG.ipynb
 
 
 References
