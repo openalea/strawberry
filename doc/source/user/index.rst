@@ -1,5 +1,5 @@
 Strawberry
-##########
+###########
 
 Description
 -------------
@@ -42,13 +42,7 @@ Tutorials Jupyter Notebooks
 ------------------------------
 Tutorials Jupyter Notebooks are available on the git repository in the folder examples/tutorials.
 
-.. toctree::
+.. include:: ../../../example/tutorial/1.import_and_read_MTG.ipynb
    
-   ../../../../example/tutorial/1.import_and_read_MTG.ipynb
-   ../../../../example/tutorial/2.Strawberry_architecture_representations.ipynb
-   ../../../../example/tutorial/2.Strawberry_architecture_representations.ipynb
-   ../../../../example/tutorial/3.Architecture_analysis_at_module_scale.ipynb
-
-
 References
-##############
+#############
