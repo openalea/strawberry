@@ -25,10 +25,11 @@ def colors():
 
 
 ###############################################################################
-
-# Graphic alphabet
-#   - leaves
-#
+#                                                                             #
+#                           Graphic alphabet                                  #
+#                   leaf, bud, stolon, inflorescence                          #
+#                                                                             #
+############################################################################### 
 
 def leaf():
     cyl = Cylinder(0.01,0.5)
@@ -95,11 +96,15 @@ def Inflorescence():
     return shape
 
 ###############################################################################
-
-# MTG functions
-#
-
+#                                                                             #
+#                              MTG functions                                  #
+#                                                                             #
+###############################################################################
 def is_visible(g, v):
+    """ Returns bolean value if module are visible or not
+    Module are considered as visible when axis contains at least one F
+    
+    """
     if g.edge_type(v) == '+' and g.label(v) == 'F':
         return True
     else:
@@ -277,8 +282,10 @@ def my_visitor(g, v, turtle, time=0):
         t.f(0.05)
         t.customGeometry(custom)
 
+        
 ###############################################################################
-# Visualisation
+#                            Visualisation                                    #
+###############################################################################
 
 def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], display=True):
 
