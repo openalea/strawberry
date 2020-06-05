@@ -169,7 +169,12 @@ def color_code(g, plantule=False):
     stolon= (255,255,255)
 
     labels = g.property('label')
-# TODO: If module are incomplet module color (red) else (blue)    
+
+# TODO: If module are incomplet module color (red) else (blue)
+#       - complet module is a module finished by an inflorescence (HT)
+#       - incomplet module is a module finished by terminal bud (bt) or floral bud (ht)
+#  Warning: only drawing module must be take into account
+    
     for v in g.vertices(scale=g.max_scale()):
         nid = g.node(v)
         if nid.label == 'F':
@@ -288,6 +293,8 @@ def my_visitor(g, v, turtle, time=0):
 ###############################################################################
 #                            Visualisation                                    #
 ###############################################################################
+
+#TODO: add argument to choose complete/incomplet color for module
 
 def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], display=True):
 
