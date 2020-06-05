@@ -9,7 +9,7 @@ from openalea.mtg.turtle import *
 
 def colors():
     """ Returns a set of predefined colors"""
-    shoot_color=Material("green",Color3(0,0,0))
+    shoot_color=Material("green",Color3(0,255,0))
     vegbud_color=Material("green",Color3(0,40,0))
     initbud_color = Material("orange",Color3(255,128,0))
     floral_color= Material("red",Color3(255,0,0))
@@ -162,7 +162,7 @@ def drawable(g):
 def color_code(g, plantule=False):
     PLANTULE = plantule
 
-    shoot_green = (0,0,0)
+    shoot_green = (0,255,0)
     vegetative = (0,128,0)
     initiated= (125,125,0)
     floral= (255,0,0)
