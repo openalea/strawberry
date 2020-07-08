@@ -52,13 +52,30 @@ def extract_at_plant_scale(g, convert=convert):
     df = pd.DataFrame(plant_df)
     return df
 
+def _plant_variables(g):
+    plant_variables = OrderedDict()
+    plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
+    plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
+    plant_variables['nb_stolons'] = nb_stolons # Nombre de stolons
+    plant_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille visible
+    plant_variables['nb_missing_leaves'] = missing_leaves #Nombre de feuille manquante
+    plant_variables['nb_vegetative_bud'] = nb_vegetative_buds
+    plant_variables['nb_initiated_bud'] = nb_initiated_buds
+    plant_variables['nb_floral_bud'] = nb_floral_buds
+    plant_variables['nb_inflorescence'] = nb_inflorescence
+    #plant_variables['type_of_crown'] = type_of_crown
+    #plant_variables['crown_status'] = crown_status
 
+    return plant_variables
+
+####################### Extraction at the module scale ##################################################################
 def extract_at_module_scale(g, convert=convert):
 
     orders = algo.orders(g, scale=2)
 
     module_variables = _module_variables(g)
     visible_modules(g)
+    complete_module(g)
 
     module_ids =  list(g.property('visible'))
     #modules_ids.sort()
@@ -85,22 +102,6 @@ def extract_at_module_scale(g, convert=convert):
     return df
 
 
-def _plant_variables(g):
-    plant_variables = OrderedDict()
-    plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
-    plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
-    plant_variables['nb_stolons'] = nb_stolons # Nombre de stolons
-    plant_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille visible
-    plant_variables['nb_missing_leaves'] = missing_leaves #Nombre de feuille manquante
-    plant_variables['nb_vegetative_bud'] = nb_vegetative_buds
-    plant_variables['nb_initiated_bud'] = nb_initiated_buds
-    plant_variables['nb_floral_bud'] = nb_floral_buds
-    plant_variables['nb_inflorescence'] = nb_inflorescence
-    #plant_variables['type_of_crown'] = type_of_crown
-    #plant_variables['crown_status'] = crown_status
-
-    return plant_variables
-
 def _module_variables(g):
     module_variables = OrderedDict()
     module_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille developpe
@@ -115,12 +116,10 @@ def _module_variables(g):
     module_variables['nb_stolons']= nb_stolons
     module_variables['type_of_crown'] = type_of_crown # Type de crowns (Primary Crown:1, Branch crown:2 extension crown:3)
     module_variables['crown_status'] = Crown_status
-    #module_variables['complete_module'] = complete_module #(True: complete, False: incomplete)
+    module_variables['complete_module'] = complete #(True: complete, False: incomplete)
     
     return module_variables
 
-
-################################################################################
 
 def visible_modules(g):
     modules =  [v for v in g.vertices_iter(scale=2)
@@ -147,10 +146,11 @@ def complete_module (g):
         c = comp[0]
         axis = [v for v in g.Axis(c) if v in comp]
         last = axis[-1]
-        complete[vid] = True if g.label(last) == 'HT' else False
+        if g.label(last) == 'HT': 
+            complete[vid] = True 
             
-    return complete
-    g.properties()['complete'] = complete_module(g)
+    g.properties()['complete'] = complete
+    
 
 def nb_visible_leaves(vid, g):
     return sum(1 for cid in g.components(vid) if g.label(cid)=='F')
@@ -341,6 +341,11 @@ def mean_leaf_area(vid,g):
     area = g.property("LFAR").get(pid, 0.)
 
     return area
+
+def complete(vid, g):
+    return g.property("complete").get(vid, False)
+########################## Extraction on node scale ############################################
+
 
 
 
