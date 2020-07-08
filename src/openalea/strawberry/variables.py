@@ -131,7 +131,7 @@ def visible_modules(g):
     g.properties()['visible'] = _visible
 
 
-def complete_module (g=g):
+def complete_module (g):
     """Return properties incomplete or complete module
     
     Algorithm: 
