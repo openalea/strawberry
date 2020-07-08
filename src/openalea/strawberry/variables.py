@@ -101,11 +101,6 @@ def _plant_variables(g):
 
     return plant_variables
 
-
-
-###############################################################################
-
-
 def _module_variables(g):
     module_variables = OrderedDict()
     module_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille developpe
@@ -120,11 +115,13 @@ def _module_variables(g):
     module_variables['nb_stolons']= nb_stolons
     module_variables['type_of_crown'] = type_of_crown # Type de crowns (Primary Crown:1, Branch crown:2 extension crown:3)
     module_variables['crown_status'] = Crown_status
-    #module_variables['nb_stade_87'] = nb_stade_87
+    module_variables['complete_module'] = complete_module #(True: complete, False: incomplete)
+    
     return module_variables
 
 
 ################################################################################
+
 def visible_modules(g):
     modules =  [v for v in g.vertices_iter(scale=2)
                   if g.label(g.component_roots_iter(v).next()) == 'F']
@@ -134,6 +131,26 @@ def visible_modules(g):
     g.properties()['visible'] = _visible
 
 
+def complete_module (g=g):
+    """Return properties incomplete or complete module
+    
+    Algorithm: 
+     module are complete:
+       if module are visible and terminated by an Inflorescence (HT) (propertie=True)
+       else module are incomplete (all module terminated by ht or bt) (property=False)
+       
+    """
+    complete = {}
+    visible = g.property('visible')
+    for vid in visible:
+        comp = g.components(vid)
+        c = comp[0]
+        axis = [v for v in g.Axis(c) if v in comp]
+        last = axis[-1]
+        complete[vid] = True if g.label(last) == 'HT' else False
+            
+    return complete
+    g.properties()['complete'] = complete_module(g)
 
 def nb_visible_leaves(vid, g):
     return sum(1 for cid in g.components(vid) if g.label(cid)=='F')
@@ -175,7 +192,7 @@ def missing_leaves(vid,g):
 """Return the No vegetative bud
 
 Algorithm:
-if labet is bt then stage is 17,18,19 or None
+if label is bt then stage is 17,18,19 or None
 count number of bt and attach at the parent order
     """
 # function return number of vegetative buds
@@ -324,5 +341,7 @@ def mean_leaf_area(vid,g):
     area = g.property("LFAR").get(pid, 0.)
 
     return area
+
+
 
 
