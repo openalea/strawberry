@@ -1,7 +1,10 @@
 import pandas as pd
 from collections import OrderedDict, defaultdict
 
-from openalea.mtg import stat, algo
+from openalea.mtg import stat, algo, traversal
+
+from itertools import chain
+
 
 
 convert = dict(Stade='Stade',
@@ -16,7 +19,7 @@ def property(g, name):
     """ We can change the name of the MTG properties without changing the code"""
     return g.property(convert.get(name, name))
 
-
+######################################## Extraction at plant scale ###########################################################
 def extract_at_plant_scale(g, convert=convert):
 
     orders = algo.orders(g, scale=2)
@@ -348,14 +351,114 @@ def complete(vid, g):
 
 ########################## Extraction on node scale ############################################
 
-''' def extract_at_module_scale(g, convert=convert):
+def extract_at_module_scale(g, convert=convert):
+    
     orders = algo.orders(g, scale=2)
 
     node_variables = _node_variables(g)
- '''
+    
+    roots = g.component_roots_at_scale(g.root, scale=2)
+    trunks = [ list(chain(*[(v for v in algo.axis(g,m, scale=3) if g.label(v) in ('F', 'f')) for m in apparent_axis(g, r)])) for r in roots]
+    node_ids = [[str(rank) for rank, v in enumerate(trunk)] for trunk in trunks]
+
+    node_df['Genotype'] = [genotype(nid, g) for nid in node_ids]
+    node_df['date'] = [date(nid, g) for nid in node_ids]
+    node_df['modality'] = [modality(nid, g) for nid in node_ids]
+    node_df['plant'] = [plant(nid, g) for nid in node_ids]
+    node_df['order'] = [orders[nid]  for nid in node_ids]
+
+    for name in (node_variables):
+        f = node_variables[name]
+    node_df[name] = [f(nid, g) for nid in node_ids]
+
+    node_df['vid'] = node_ids
+    node_df['plant_vid'] = [g.complex(v) for v in node_ids]
+
+    df = pd.DataFrame(node_df)
+    return df
+
+def apparent_axis(g, vid):
+    visibles = g.property('visible')
+    v = vid
+    while v is not None:
+        yield v
+        vtx = v; v = None
+        for vid in g.children(vtx):
+            if (vid in visibles) and (not is_axis_root(g, vid)):
+                v = vid
 
 
+def is_axis_root(g, vid):
+    cid = g.component_roots_iter(vid).next()
+    pid = g.parent(cid)
+    sid = g.Successor(pid)
+    if g.label(sid) not in ('bt', 'ht', 'HT'):
+        return True
+    else:
+        return False
+
+def _node_variables(g):
+    node_variables = OrderedDict()
+    node_variables['branching_type'] = branching_type 
+
+def branching_type(vid, g=g):
+    """ Returns the type of branching
+    
+    :Algorithms:
+    
+    if module is visible:
+        - branch crown (complex ramification):6
+        - inflorescence : 7
+
+    if module is invisible:
+        - stolon (s): 1,
+        - vegetative bud(bt, at stage None, 17,18,19):2,
+        - initiated bud, (bt, at stage A):3,
+        - aborted or roten or dried bud: 4
+        - floral bud(ht):5
+
+     
+    """
+
+    cpx = g.complex(vid)
+    nid = g.node(cpx) 
+    if nid.visible:
+        if g.label(vid) == 'HT':
+            return 7
+        else:
+            return 6
+    
+    # select s, ht, et bt
+    for cid in nid.components():
+        label = cid.label
+        if label in ('s', 'ht', 'bt'):
+            if label == 's':
+                return 1
+            elif label == 'bt':
+                stage = cid.Stade
+                if stage in (None, '17', '18', '19'):
+                    return 2
+                elif stage == 'A':
+                    return 3
+                elif stage in ('pourri', 'aborted', 'dried'):
+                    return 4
+            elif label  == 'ht':
+                return 5
+    else:
+        print 'ERROR: ', cpx, nid.complex().Genotype, nid.properties()
+
+def genotype(vid, g):
+    cpx = g.complex_at_scale(vid, scale=1)
+    _genotype = property(g, 'Genotype')[cpx]
+    return _genotype
 
 
+def plant(vid, g):
+    cpx = g.complex_at_scale(vid, scale=1)
+    return property(g, 'Plante')[cpx]
 
+def date(vid, g):
+    cpx = g.complex_at_scale(vid, scale=1)
+    _date = property(g, 'date')[cpx]
+    return(_date)
 
