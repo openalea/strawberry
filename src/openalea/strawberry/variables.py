@@ -189,14 +189,15 @@ def missing_leaves(vid,g):
     missing= property(g, 'Missing')
     return sum(1 for cid in g.components(vid) if missing.get(cid)=="yes")
 
-"""Return the No vegetative bud
+
+# function return number of vegetative buds
+def nb_vegetative_buds(vid, g):
+    """Return the No vegetative bud
 
 Algorithm:
 if label is bt then stage is 17,18,19 or None
 count number of bt and attach at the parent order
     """
-# function return number of vegetative buds
-def nb_vegetative_buds(vid, g):
     stages= property(g, 'Stade')
 
     def nb_vegetative(v):
@@ -207,10 +208,10 @@ def nb_vegetative_buds(vid, g):
     return sum(nb_vegetative(ch) for ch in g.children(vid))
 
 
-""" Return the No initiated bud"""
+
 
 def nb_initiated_buds(vid, g):
-
+    """ Return the No initiated bud"""
     stages= property(g, 'Stade')
 
     def nb_init(v):
@@ -344,7 +345,15 @@ def mean_leaf_area(vid,g):
 
 def complete(vid, g):
     return g.property("complete").get(vid, False)
+
 ########################## Extraction on node scale ############################################
+
+def extract_at_module_scale(g, convert=convert):
+    orders = algo.orders(g, scale=2)
+
+    node_variables = _node_variables(g)
+
+def _node_variables(g):
 
 
 
