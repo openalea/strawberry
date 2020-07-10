@@ -351,7 +351,7 @@ def complete(vid, g):
 
 ########################## Extraction on node scale ############################################
 
-def extract_at_module_scale(g, convert=convert):
+def extract_at_node_scale(g, convert=convert):
     
     orders = algo.orders(g, scale=2)
 
@@ -401,7 +401,7 @@ def _node_variables(g):
     node_variables = OrderedDict()
     node_variables['branching_type'] = branching_type 
 
-def branching_type(vid, g=g):
+def branching_type(vid, g):
     """ Returns the type of branching
     
     :Algorithms:
