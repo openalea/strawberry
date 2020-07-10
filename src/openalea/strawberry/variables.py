@@ -348,12 +348,12 @@ def complete(vid, g):
 
 ########################## Extraction on node scale ############################################
 
-def extract_at_module_scale(g, convert=convert):
+''' def extract_at_module_scale(g, convert=convert):
     orders = algo.orders(g, scale=2)
 
     node_variables = _node_variables(g)
+ '''
 
-def _node_variables(g):
 
 
 
