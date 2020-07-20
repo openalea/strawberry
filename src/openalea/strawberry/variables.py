@@ -81,11 +81,8 @@ def extract_at_module_scale(g, convert=convert):
     complete_module(g)
 
     module_ids =  list(g.property('visible'))
-    #modules_ids.sort()
 
     module_df = OrderedDict()
-    # for name in ('Genotype', 'date', 'plant'):
-    #     plant_df[name] = [plant_variables[name](pid) for pid in plant_ids]
     module_df['Genotype'] = [genotype(mid, g) for mid in module_ids]
     module_df['date'] = [date(mid, g) for mid in module_ids]
     module_df['modality'] = [modality(mid, g) for mid in module_ids]
@@ -352,32 +349,94 @@ def complete(vid, g):
 ########################## Extraction on node scale ############################################
 
 def extract_at_node_scale(g, convert=convert):
-    
-    orders = algo.orders(g, scale=2)
+    node_df = OrderedDict()
+    complete_module(g)
 
-    node_variables = _node_variables(g)
-    
+    # Define all the rows
+    props = ['node_id', 'rank', 'branching_type', 'complete', 'order', 'genotype', 'plant', 'date']
+    for prop in props:
+        node_df[prop] = []
+
     roots = g.component_roots_at_scale(g.root, scale=2)
-    trunks = [ list(chain(*[(v for v in algo.axis(g,m, scale=3) if g.label(v) in ('F', 'f')) for m in apparent_axis(g, r)])) for r in roots]
-    node_ids = [[str(rank) for rank, v in enumerate(trunk)] for trunk in trunks]
-
-    node_df['Genotype'] = [genotype(nid, g) for nid in node_ids]
-    node_df['date'] = [date(nid, g) for nid in node_ids]
-    node_df['modality'] = [modality(nid, g) for nid in node_ids]
-    node_df['plant'] = [plant(nid, g) for nid in node_ids]
-    node_df['order'] = [orders[nid]  for nid in node_ids]
-
-    for name in (node_variables):
-        f = node_variables[name]
-    node_df[name] = [f(nid, g) for nid in node_ids]
-
-    node_df['vid'] = node_ids
-    node_df['plant_vid'] = [g.complex(v) for v in node_ids]
-
+    trunks = [ list(chain(*[(v for v in algo.axis(g,m, scale=3) if g.label(v) in ('F', 'f')) 
+                            for m in apparent_axis(g, r)])) for r in roots]
+            
+    for trunk in trunks:
+        # Define your schema
+        for i, vid in enumerate(trunk):
+            node_df['node_id'].append(vid) #scale=3
+            node_df['rank'].append(i+1) #scale=3
+            node_df['branching_type'].append(my_bt(vid)) #scale=2
+            node_df['complete'].append(my_complete(vid, g)) #scale=2
+            node_df['order'].append(orders[g.complex(vid)]) #scale=2
+            node_df['genotype'].append(genotype(vid, g)) #scale=1
+            node_df['plant'].append(plant(vid, g)) #scale=1
+            node_df['date'].append(date(vid, g)) #scale=1
+    
     df = pd.DataFrame(node_df)
+
     return df
 
+orders = algo.orders(g,scale=2)
+
+def my_bt(vid, g=g):
+    """
+    Return branching type on parent if branch crown correspond to Son vertex
+    """
+    for cid in g.Sons(vid, EdgeType='+'):
+        return str(branching_type(cid))
+
+def complete_module (g):
+    """Return properties incomplete or complete module
+    
+    Algorithm: 
+     module are complete:
+       if module are visible and terminated by an Inflorescence (HT) (propertie=True)
+       else module are incomplete (all module terminated by ht or bt) (property=False)
+       
+    """
+    complete = {}
+    visible = g.property('visible')
+    for vid in visible:
+        comp = g.components(vid)
+        c = comp[0]
+        axis = [v for v in g.Axis(c) if v in comp]
+        last = axis[-1]
+        if g.label(last) == 'HT': 
+            complete[vid] = True 
+            
+    g.properties()['complete'] = complete
+
+def complete(vid, g):
+    """
+    Add property complete or not on mtg
+    """
+    return g.property("complete").get(vid, False)
+
+    
+def my_complete(vid, g=g):
+    """
+    Return complete module, incomplete module or other (if not branch crown)
+    """
+    # scale = 2
+    _complete = g.property('complete')
+    if not complete:
+        complete_module(g)
+        _complete = g.property('complete')
+    
+    res = 'other'
+    for cid in g.Sons(vid, EdgeType='+'):
+        cpx = g.complex(cid)
+        bt = branching_type(cid)
+        if bt == 6: 
+            res = 'complete' if complete(cpx,g) else 'incomplete'
+            break
+    return res
+
 def apparent_axis(g, vid):
+    """
+    Return apparent axis if module are visible
+    """
     visibles = g.property('visible')
     v = vid
     while v is not None:
@@ -396,10 +455,6 @@ def is_axis_root(g, vid):
         return True
     else:
         return False
-
-def _node_variables(g):
-    node_variables = OrderedDict()
-    node_variables['branching_type'] = branching_type 
 
 def branching_type(vid, g):
     """ Returns the type of branching
@@ -445,6 +500,7 @@ def branching_type(vid, g):
             elif label  == 'ht':
                 return 5
     else:
+        return -1
         print 'ERROR: ', cpx, nid.complex().Genotype, nid.properties()
 
 def genotype(vid, g):
