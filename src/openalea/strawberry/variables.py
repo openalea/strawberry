@@ -380,7 +380,7 @@ def extract_at_node_scale(g, convert=convert):
 
 
 
-def my_bt(vid, g=g):
+def my_bt(vid, g):
     """
     Return branching type on parent if branch crown correspond to Son vertex
     """
@@ -415,7 +415,7 @@ def complete(vid, g):
     return g.property("complete").get(vid, False)
 
     
-def my_complete(vid, g=g):
+def my_complete(vid, g):
     """
     Return complete module, incomplete module or other (if not branch crown)
     """
