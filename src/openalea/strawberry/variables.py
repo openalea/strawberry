@@ -395,7 +395,7 @@ def visible_modules(g):
     for m in modules:
         _visible[m] = True
     g.properties()['visible'] = _visible
-    
+
 def complete_module (g):
     """Return properties incomplete or complete module
     
@@ -524,8 +524,13 @@ def plant(vid, g):
     cpx = g.complex_at_scale(vid, scale=1)
     return property(g, 'Plante')[cpx]
 
-def date(vid, g):
+def date(vid, g=g):
+    d = {'2014/12/10':1,'2015/01/07':2,'2015/02/15':3,'2015/03/02':4,'2015/03/04':5,'2015/05/27':6,
+         '2014/12/04':1,'2015/02/13':3,'2015/03/30':5,
+         '2015/01/08':2,'2015/02/11':3,'2015/04/03':4,'2015/04/02':5,'2015/05/20':6,
+         '2015/01/09':2,'2015/03/06':4,'2015/02/12':3,'2015/05/19':6}           
     cpx = g.complex_at_scale(vid, scale=1)
-    _date = property(g, 'date')[cpx]
-    return(_date)
+    _date = g.property('Sample_date')[cpx]
+    return d[_date]
+
 
