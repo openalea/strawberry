@@ -367,9 +367,9 @@ def extract_at_node_scale(g, convert=convert):
         for i, vid in enumerate(trunk):
             node_df['node_id'].append(vid) #scale=3
             node_df['rank'].append(i+1) #scale=3
-            node_df['branching_type'].append(my_bt(vid)) #scale=2
+            node_df['branching_type'].append(my_bt(vid,g)) #scale=2
             node_df['complete'].append(my_complete(vid, g)) #scale=2
-            node_df['order'].append(orders[g.complex(vid)]) #scale=2
+            node_df['order'].append(orders[g.complex(vid,g)]) #scale=2
             node_df['genotype'].append(genotype(vid, g)) #scale=1
             node_df['plant'].append(plant(vid, g)) #scale=1
             node_df['date'].append(date(vid, g)) #scale=1
