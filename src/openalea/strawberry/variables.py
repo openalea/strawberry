@@ -350,6 +350,7 @@ def complete(vid, g):
 
 def extract_at_node_scale(g, convert=convert):
     node_df = OrderedDict()
+    visible_modules(g)
     complete_module(g)
     orders = algo.orders(g,scale=2)
 
@@ -387,6 +388,14 @@ def my_bt(vid, g):
     for cid in g.Sons(vid, EdgeType='+'):
         return str(branching_type(cid,g))
 
+def visible_modules(g):
+    modules =  [v for v in g.vertices_iter(scale=2)
+                  if g.label(g.component_roots_iter(v).next()) == 'F']
+    _visible = {}
+    for m in modules:
+        _visible[m] = True
+    g.properties()['visible'] = _visible
+    
 def complete_module (g):
     """Return properties incomplete or complete module
     
