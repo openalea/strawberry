@@ -385,7 +385,7 @@ def my_bt(vid, g):
     Return branching type on parent if branch crown correspond to Son vertex
     """
     for cid in g.Sons(vid, EdgeType='+'):
-        return str(branching_type(cid))
+        return str(branching_type(cid,g))
 
 def complete_module (g):
     """Return properties incomplete or complete module
