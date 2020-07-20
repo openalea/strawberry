@@ -428,7 +428,7 @@ def my_complete(vid, g):
     res = 'other'
     for cid in g.Sons(vid, EdgeType='+'):
         cpx = g.complex(cid)
-        bt = branching_type(cid)
+        bt = branching_type(cid,g)
         if bt == 6: 
             res = 'complete' if complete(cpx,g) else 'incomplete'
             break
