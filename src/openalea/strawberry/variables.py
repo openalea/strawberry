@@ -351,6 +351,7 @@ def complete(vid, g):
 def extract_at_node_scale(g, convert=convert):
     node_df = OrderedDict()
     complete_module(g)
+    orders = algo.orders(g,scale=2)
 
     # Define all the rows
     props = ['node_id', 'rank', 'branching_type', 'complete', 'order', 'genotype', 'plant', 'date']
@@ -377,7 +378,7 @@ def extract_at_node_scale(g, convert=convert):
 
     return df
 
-orders = algo.orders(g,scale=2)
+
 
 def my_bt(vid, g=g):
     """
