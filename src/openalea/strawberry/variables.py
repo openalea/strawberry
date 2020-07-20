@@ -424,6 +424,7 @@ def my_complete(vid, g):
     if not complete:
         complete_module(g)
         _complete = g.property('complete')
+        print _complete
     
     res = 'other'
     for cid in g.Sons(vid, EdgeType='+'):
