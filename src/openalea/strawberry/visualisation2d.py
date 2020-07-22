@@ -159,8 +159,9 @@ def drawable(g):
     g.properties()['drawable'] = drawables
 
 
-def color_code(g, plantule=False):
+def color_code(g,complete, plantule=False):
     PLANTULE = plantule
+    COMPLETE = complete
 
     shoot_green = (0,255,0)
     vegetative = (0,128,0)
@@ -178,12 +179,17 @@ def color_code(g, plantule=False):
     for v in g.vertices(scale=g.max_scale()):
         nid = g.node(v)
         if nid.label == 'F':
-            if PLANTULE:
-                foliar_type= nid.Foliar_type
-                if nid.Foliar_type =='Cotyledon':
-                    nid.color=(0,0,255)
-                elif nid.Foliar_type=='Unifoliate':
-                    nid.color=(125,125,125)
+            if COMPLETE:
+                if nid.complete == 'True':
+                    nid.color= (0,0,255)
+                else:
+                    nid.color = (255,0,0)
+ #           if PLANTULE:
+ #               foliar_type= nid.Foliar_type
+ #               if nid.Foliar_type =='Cotyledon':
+ #                   nid.color=(0,0,255)
+ #               elif nid.Foliar_type=='Unifoliate':
+ #                   nid.color=(125,125,125)
             else:
                 nid.color = shoot_green
         elif nid.label == 's':
@@ -296,15 +302,20 @@ def my_visitor(g, v, turtle, time=0):
 
 #TODO: add argument to choose complete/incomplet color for module
 
-def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], display=True):
+def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], display=True, complete=False):
 
     scene = Scene()
     position = Vector3()
     max_scale = g.max_scale()
-    color_code(g)
+
+    if complete==True:
+        color_code(g,complete=True)
+    else:
+        color_code(g,complete=False)
+    
     drawable(g)
     graph_layout(g)
-
+    
     for i, rid in enumerate(vids):
         t = PglTurtle()
 
