@@ -192,7 +192,7 @@ def complete_module (g):
 
 def color_code(g,complete, plantule=False):
     PLANTULE = plantule
-    COMPLETE = complete
+    _complete = complete
 
     shoot_green = (0,255,0)
     vegetative = (0,128,0)
@@ -210,8 +210,8 @@ def color_code(g,complete, plantule=False):
     for v in g.vertices(scale=g.max_scale()):
         nid = g.node(v)
         if nid.label == 'F':
-            if COMPLETE:
-                if nid.complete == 'True':
+            if _complete:
+                if nid.complex().complete:
                     nid.color= (0,0,255)
                 else:
                     nid.color = (255,0,0)
@@ -338,13 +338,10 @@ def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], display=True, complete=False):
     scene = Scene()
     position = Vector3()
     max_scale = g.max_scale()
-    complete_module(g)
     visible_modules(g)
+    complete_module(g)
 
-    if complete==True:
-        color_code(g,complete=True)
-    else:
-        color_code(g,complete=False)
+    color_code(g,complete=complete)
     
     drawable(g)
     graph_layout(g)
