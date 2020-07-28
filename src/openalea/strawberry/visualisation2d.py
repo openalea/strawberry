@@ -158,6 +158,37 @@ def drawable(g):
                     drawables[v] = True
     g.properties()['drawable'] = drawables
 
+def visible_modules(g):
+	modules =  [v for v in g.vertices_iter(scale=2) if g.label(g.component_roots_iter(v).next()) == 'F']
+	_visible = {}
+
+	for m in modules:
+		_visible[m] = True
+	g.properties()['visible'] = _visible
+
+def complete_module (g):
+    """Return properties incomplete or complete module
+    
+    Algorithm: 
+     module are complete:
+       if module are visible and terminated by an Inflorescence (HT) (propertie=True)
+       else module are incomplete (all module terminated by ht or bt) (property=False)
+       
+    """
+    complete = {}
+    visible = g.property('visible')
+    for vid in visible:
+        comp = g.components(vid)
+        c = comp[0]
+        axis = [v for v in g.Axis(c) if v in comp]
+        last = axis[-1]
+        if g.label(last) == 'HT': 
+            complete[vid] = True
+        else:
+            complete[vid] = False
+            
+    g.properties()['complete'] = complete
+
 
 def color_code(g,complete, plantule=False):
     PLANTULE = plantule
@@ -307,6 +338,8 @@ def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], display=True, complete=False):
     scene = Scene()
     position = Vector3()
     max_scale = g.max_scale()
+    complete_module(g)
+    visible_modules(g)
 
     if complete==True:
         color_code(g,complete=True)
