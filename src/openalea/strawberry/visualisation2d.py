@@ -5,7 +5,7 @@ from openalea.plantgl.all import *
 from openalea.mtg import *
 from openalea.mtg.turtle import *
 
-
+from .Visualization import plant_positions
 
 def colors():
     """ Returns a set of predefined colors"""
@@ -159,12 +159,12 @@ def drawable(g):
     g.properties()['drawable'] = drawables
 
 def visible_modules(g):
-	modules =  [v for v in g.vertices_iter(scale=2) if g.label(g.component_roots_iter(v).next()) == 'F']
-	_visible = {}
+    modules =  [v for v in g.vertices_iter(scale=2) if g.label(g.component_roots_iter(v).next()) == 'F']
+    _visible = {}
 
-	for m in modules:
-		_visible[m] = True
-	g.properties()['visible'] = _visible
+    for m in modules:
+        _visible[m] = True
+    g.properties()['visible'] = _visible
 
 def complete_module (g):
     """Return properties incomplete or complete module
@@ -333,7 +333,7 @@ def my_visitor(g, v, turtle, time=0):
 
 #TODO: add argument to choose complete/incomplet color for module
 
-def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], display=True, complete=False):
+def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], by=[], display=True, complete=False):
 
     scene = Scene()
     position = Vector3()
@@ -346,6 +346,12 @@ def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], display=True, complete=False):
     drawable(g)
     graph_layout(g)
     
+    positions = []
+    if by:
+        _, positions = plant_positions(g, by=by, vids=vids)
+
+    print(vids)
+
     for i, rid in enumerate(vids):
         t = PglTurtle()
 
@@ -354,11 +360,17 @@ def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], display=True, complete=False):
 
         ds = _scene.todict()
 
+        if positions:
+            position = positions[i]
+        else:
+            position.x += dist[i]
+
         for shid in ds:
+
             for sh in ds[shid]:
                 sh.geometry = Translated(position, sh.geometry)
                 scene.add(sh)
-        position.x += dist[i]
+                 
 
     if display:
         Viewer.display(scene)

@@ -69,7 +69,7 @@ def visualise_plants(g, vids=[], positions=[], no_plant=[], hide_leaves=False):
     return scenes
 
 
-def plant_positions(g, by=['Genotype']):
+def plant_positions(g, by=['Genotype'], vids=[]):
     prop = by[0]
     nb_by = 1
     if len(by) > 1:
@@ -83,7 +83,10 @@ def plant_positions(g, by=['Genotype']):
     if nb_by > 1:
         mod2 = g.property(by[1])
     my_property = OrderedDict()
+    
     for k, v in mod.iteritems():
+        if vids and (k not in vids):
+            continue
         if nb_by == 1:
             my_property.setdefault(v, []).append(k)
         else:

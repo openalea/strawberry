@@ -355,7 +355,7 @@ def extract_at_node_scale(g, convert=convert):
     orders = algo.orders(g,scale=2)
 
     # Define all the rows
-    props = ['node_id', 'rank', 'branching_type', 'complete', 'order', 'genotype', 'plant', 'date']
+    props = ['node_id', 'rank', 'branching_type', 'complete','nb_modules_branching','nb_branch_crown_branching','nb_extension_crown_branching','branching_length', 'genotype', 'order',  'date','plant']
     for prop in props:
         node_df[prop] = []
 
@@ -370,11 +370,15 @@ def extract_at_node_scale(g, convert=convert):
             node_df['rank'].append(i+1) #scale=3
             node_df['branching_type'].append(my_bt(vid,g)) #scale=2
             node_df['complete'].append(my_complete(vid, g)) #scale=2
-            node_df['order'].append(orders[g.complex(vid)]) #scale=2
+            node_df['nb_modules_branching'].append(nb_total_module_tree(vid,g))#scale=2
+            node_df['nb_branch_crown_branching'].append(nb_branching_tree(vid,g))#scale=2
+            node_df['nb_extension_crown_branching'].append(nb_extension_tree(vid,g))#scale=2
+            node_df['branching_length'].append(nb_visible_leaves_tree(vid,g))
             node_df['genotype'].append(genotype(vid, g)) #scale=1
+            node_df['order'].append(orders[g.complex(vid)]) #scale=2
             node_df['plant'].append(plant(vid, g)) #scale=1
             node_df['date'].append(date(vid, g)) #scale=1
-    
+            
     df = pd.DataFrame(node_df)
 
     return df
@@ -513,6 +517,54 @@ def branching_type(vid, g):
     else:
         return -1
         print 'ERROR: ', cpx, nid.complex().Genotype, nid.properties()
+
+DEBUG = True
+def module_tree(v, g):
+#     _complete = g.property('complete')
+#     if not complete:
+#         complete_module(g)
+#         _complete = g.property('complete')
+    
+    for cid in g.Sons(v, EdgeType='+'):
+        cpx = g.complex(cid)
+        visibles = g.property('visible')
+        if DEBUG:
+            if cpx in visibles and (is_axis_root(g, cpx)):
+                return [m for m in traversal.pre_order2(g, cpx) if m in visibles]
+        else:
+            bt = branching_type(cid,g)
+            if bt == 6:
+                return [m for m in traversal.pre_order2(g, cpx) if m in visibles]
+
+def nb_total_module_tree(v, g):
+    if not module_tree(v,g):
+        return 0
+    else:
+        return len(module_tree(v, g))
+
+def nb_branching_tree(v, g):
+    if not module_tree(v, g):
+        return 0
+    else:
+        return sum(1 for m in module_tree(v, g) if is_axis_root(g, m))
+
+def nb_branching_tree_weight(v, g):
+    if not module_tree(v, g):
+        return 0
+    else:
+        return sum(g.nb_components(m) for m in module_tree(v, g) if is_axis_root(g, m))
+
+def nb_extension_tree(v, g):
+    if not module_tree(v, g):
+        return 0
+    else:
+        return sum(1 for m in module_tree(v, g) if not is_axis_root(g, m))
+
+def nb_visible_leaves_tree(v, g):
+    if not module_tree(v, g):
+        return 0
+    else:
+        return sum(nb_visible_leaves(m,g) for m in module_tree(v, g))
 
 def genotype(vid, g):
     cpx = g.complex_at_scale(vid, scale=1)
