@@ -1,4 +1,7 @@
 """ Visualisation code for strawberry on MTG. """
+from __future__ import absolute_import
+from __future__ import print_function
+
 from collections import OrderedDict, defaultdict
 
 from openalea.strawberry import Rules_production
@@ -6,6 +9,8 @@ from openalea.mtg import *
 from openalea.core import *
 from openalea.plantgl import all as pgl
 
+import six
+from six.moves import range
 
 
 
@@ -84,7 +89,7 @@ def plant_positions(g, by=['Genotype'], vids=[]):
         mod2 = g.property(by[1])
     my_property = OrderedDict()
     
-    for k, v in mod.iteritems():
+    for k, v in six.iteritems(mod):
         if vids and (k not in vids):
             continue
         if nb_by == 1:
@@ -92,15 +97,15 @@ def plant_positions(g, by=['Genotype'], vids=[]):
         else:
             my_property.setdefault(v, OrderedDict()).setdefault(mod2[k], []).append(k)
 
-    my_property = OrderedDict(sorted(my_property.iteritems(), key=lambda x: x[0]))
+    my_property = OrderedDict(sorted(six.iteritems(my_property), key=lambda x: x[0]))    
     for k in my_property:
         if nb_by == 1:
             my_property[k].sort()
         else:
             old_dict = my_property[k]
-            new_dict = OrderedDict(sorted(old_dict.iteritems(), key=lambda x: x[0]))
+            new_dict = OrderedDict(sorted(six.iteritems(old_dict), key=lambda x: x[0]))
             my_property[k] = new_dict
-            for k2, v2 in new_dict.iteritems():
+            for k2, v2 in six.iteritems(new_dict):
                 v2.sort()
 
     max_scale = g.max_scale()
@@ -108,7 +113,7 @@ def plant_positions(g, by=['Genotype'], vids=[]):
     dy = 4.
 
     nb_col = len(my_property)
-    max_plants = max(len(x) for x in my_property.itervalues())
+    max_plants = max(len(x) for x in six.itervalues(my_property))
 
     x0 = -max_plants * dx // 2
     y0 = - nb_col * dy // 2
@@ -116,15 +121,15 @@ def plant_positions(g, by=['Genotype'], vids=[]):
     x0, y0 = 0,0
 
     if nb_by == 1:
-        vids = [g.component_roots_at_scale_iter(vid, scale=max_scale).next() for k, v in my_property.iteritems() for vid in v]
+        vids = [next(g.component_roots_at_scale_iter(vid, scale=max_scale)) for k, v in six.iteritems(my_property) for vid in v]
     else:
-        vids = [g.component_roots_at_scale_iter(vid, scale=max_scale).next() for k, d in my_property.iteritems() for k2, v in d.iteritems() for vid in v]
+        vids = [next(g.component_roots_at_scale_iter(vid, scale=max_scale)) for k, d in six.iteritems(my_property) for k2, v in six.iteritems(d) for vid in v]
 
 
     positions = []
     x, y = x0, y0
     for genotype in my_property:
-        print genotype
+        print(genotype)
         if nb_by == 1:
             for vid in my_property[genotype]:
                 position = x, y, 0.
@@ -134,7 +139,7 @@ def plant_positions(g, by=['Genotype'], vids=[]):
             y = y0
         else:
             for name2 in my_property[genotype]:
-                print name2
+                print(name2)
                 for vid in my_property[genotype][name2]:
                     position = x, y, 0.
                     y += dy
