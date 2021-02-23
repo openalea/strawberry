@@ -89,7 +89,7 @@ def plant_positions(g, by=['Genotype'], vids=[]):
         mod2 = g.property(by[1])
     my_property = OrderedDict()
     
-    for k, v in six.iteritems(mod):
+    for k, v in mod.items():
         if vids and (k not in vids):
             continue
         if nb_by == 1:
@@ -97,15 +97,15 @@ def plant_positions(g, by=['Genotype'], vids=[]):
         else:
             my_property.setdefault(v, OrderedDict()).setdefault(mod2[k], []).append(k)
 
-    my_property = OrderedDict(sorted(six.iteritems(my_property), key=lambda x: x[0]))    
+    my_property = OrderedDict(sorted(my_property.item(), key=lambda x: x[0]))    
     for k in my_property:
         if nb_by == 1:
             my_property[k].sort()
         else:
             old_dict = my_property[k]
-            new_dict = OrderedDict(sorted(six.iteritems(old_dict), key=lambda x: x[0]))
+            new_dict = OrderedDict(sorted(old_dict.item(), key=lambda x: x[0]))
             my_property[k] = new_dict
-            for k2, v2 in six.iteritems(new_dict):
+            for k2, v2 in new_dict.item():
                 v2.sort()
 
     max_scale = g.max_scale()
@@ -113,7 +113,7 @@ def plant_positions(g, by=['Genotype'], vids=[]):
     dy = 4.
 
     nb_col = len(my_property)
-    max_plants = max(len(x) for x in six.itervalues(my_property))
+    max_plants = max(len(x) for x in my_property.values())
 
     x0 = -max_plants * dx // 2
     y0 = - nb_col * dy // 2
@@ -121,9 +121,9 @@ def plant_positions(g, by=['Genotype'], vids=[]):
     x0, y0 = 0,0
 
     if nb_by == 1:
-        vids = [next(g.component_roots_at_scale_iter(vid, scale=max_scale)) for k, v in six.iteritems(my_property) for vid in v]
+        vids = [next(g.component_roots_at_scale_iter(vid, scale=max_scale)) for k, v in my_property.item() for vid in v]
     else:
-        vids = [next(g.component_roots_at_scale_iter(vid, scale=max_scale)) for k, d in six.iteritems(my_property) for k2, v in six.iteritems(d) for vid in v]
+        vids = [next(g.component_roots_at_scale_iter(vid, scale=max_scale)) for k, d in my_property.item() for k2, v in d.item() for vid in v]
 
 
     positions = []

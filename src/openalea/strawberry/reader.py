@@ -238,10 +238,10 @@ def transform_date(g, pattern = 'date'):
     for date_property in date_properties:
         prop = g.property(date_property)
         if prop:
-            myd = next(six.itervalues(g.property(date_property)))
+            myd = next(g.property(date_property).values())
             date_format = '%d-%m-%Y' if '-' in myd else '%d/%m/%Y'
             g.properties()[date_property] = dict((v, datetime.datetime.strptime(d, date_format))
-                                             for v, d in six.iteritems(g.property(date_property)))
+                                             for v, d in g.property(date_property).item())
     return g
 
 
