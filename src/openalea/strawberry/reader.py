@@ -241,7 +241,7 @@ def transform_date(g, pattern = 'date'):
             myd = next(g.property(date_property).values())
             date_format = '%d-%m-%Y' if '-' in myd else '%d/%m/%Y'
             g.properties()[date_property] = dict((v, datetime.datetime.strptime(d, date_format))
-                                             for v, d in g.property(date_property).item())
+                                             for v, d in g.property(date_property).items())
     return g
 
 

@@ -29,7 +29,7 @@ def to_dataframe(g, vertices=[], f=None):
     d = dict()
     for v in vertices:
         props_v = f(v)
-        for k, value in props_v.item():
+        for k, value in props_v.items():
             d.setdefault(k,{})[v] = value
 
     parents = g._parent

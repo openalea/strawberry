@@ -97,15 +97,15 @@ def plant_positions(g, by=['Genotype'], vids=[]):
         else:
             my_property.setdefault(v, OrderedDict()).setdefault(mod2[k], []).append(k)
 
-    my_property = OrderedDict(sorted(my_property.item(), key=lambda x: x[0]))    
+    my_property = OrderedDict(sorted(my_property.items(), key=lambda x: x[0]))    
     for k in my_property:
         if nb_by == 1:
             my_property[k].sort()
         else:
             old_dict = my_property[k]
-            new_dict = OrderedDict(sorted(old_dict.item(), key=lambda x: x[0]))
+            new_dict = OrderedDict(sorted(old_dict.items(), key=lambda x: x[0]))
             my_property[k] = new_dict
-            for k2, v2 in new_dict.item():
+            for k2, v2 in new_dict.items():
                 v2.sort()
 
     max_scale = g.max_scale()
@@ -121,9 +121,9 @@ def plant_positions(g, by=['Genotype'], vids=[]):
     x0, y0 = 0,0
 
     if nb_by == 1:
-        vids = [next(g.component_roots_at_scale_iter(vid, scale=max_scale)) for k, v in my_property.item() for vid in v]
+        vids = [next(g.component_roots_at_scale_iter(vid, scale=max_scale)) for k, v in my_property.items() for vid in v]
     else:
-        vids = [next(g.component_roots_at_scale_iter(vid, scale=max_scale)) for k, d in my_property.item() for k2, v in d.item() for vid in v]
+        vids = [next(g.component_roots_at_scale_iter(vid, scale=max_scale)) for k, d in my_property.items() for k2, v in d.items() for vid in v]
 
 
     positions = []
