@@ -283,7 +283,7 @@ def color_code(g):
             elif stade in 'BCDEFGH':
                 d = dict(zip('BCDEFGH', list(range(1, len('BCDEFGH')+1))))
                 i = d[stade]
-                nid.color = (255, 127+127/7*(i-1),0)
+                nid.color = (255, int(127+127/7*(i-1)),0)
             else:
                 nid.color = (153, 102, 51)
         elif nid.label == 'ht':
@@ -298,7 +298,7 @@ def color_code(g):
             elif stade in 'BCDEFGH':
                 d = dict(zip('BCDEFGH', list(range(1, len('BCDEFGH')+1))))
                 i = d[stade]
-                nid.color = (255, 127+127/7*(i-1),0)
+                nid.color = (255, int(127+127/7*(i-1)),0)
             else:
                 nid.color = (153, 102, 51)
         elif nid.label == 'HT':
@@ -314,6 +314,6 @@ def color_code(g):
                 if stade in stades:
                     d = dict(zip(stades, list(range(len(stades)))))
                     i = d[stade]
-                    nid.color = (0, 127+127/(len(stades)-1)*(i),255)
+                    nid.color = (0, int(127+127/(len(stades)-1)*(i)),255)
                 else:
                     nid.color = (153, 102, 51)
