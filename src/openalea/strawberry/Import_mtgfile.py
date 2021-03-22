@@ -1,3 +1,5 @@
+from __future__ import absolute_import
+from __future__ import print_function
 
 import glob
 from openalea.mtg import *
@@ -40,5 +42,5 @@ def plant_number_by_varieties(g):
     genotype = set(g.property("Genotype").values())
 
     for geno in genotype:
-        no_plants= g.property("Genotype").values().count(geno)
-        print geno, ":", no_plants, "plants"
+        no_plants= list(g.property("Genotype").values()).count(geno)
+        # print(geno, ":", no_plants, "plants")

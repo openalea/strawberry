@@ -1,3 +1,6 @@
+from __future__ import absolute_import
+from __future__ import print_function
+
 import pandas as pd
 from collections import OrderedDict, defaultdict
 
@@ -123,7 +126,7 @@ def _module_variables(g):
 
 def visible_modules(g):
     modules =  [v for v in g.vertices_iter(scale=2)
-                  if g.label(g.component_roots_iter(v).next()) == 'F']
+                if g.label(next(g.component_roots_iter(v))) == 'F']
     _visible = {}
     for m in modules:
         _visible[m] = True
@@ -243,17 +246,17 @@ def type_of_crown(vid, g):
     if g.label(vid) == 'T':
         return 1
     else:
-        cid = g.component_roots_iter(vid).next()
+        cid = next(g.component_roots_iter(vid))
         pid = g.parent(cid)
         sid = g.Successor(pid)
-        #print sid
+        #print(sid)
         if g.label(sid) in ('F', 'f'):
             return 3
         elif g.label(sid) in ('bt', 'ht', 'HT'):
             return 2
         else:
             # ERROR !!!
-            print g[cid], g[g.complex_at_scale(cid, scale=1)]
+            # print((g[cid], g[g.complex_at_scale(cid, scale=1)]))
             return 4
 
 def Crown_status(vid, g):
@@ -330,7 +333,7 @@ def compute_leaf_area(g):
         central = _central.get(v)
         left = _left.get(v)
         if (central is None) or (left is None):
-            print("DATA is missing on vertex %d for line %d"%(v, g.node(v)._line))
+            print(("DATA is missing on vertex %d for line %d"%(v, g.node(v)._line)))
             continue
 
         pid = g.complex_at_scale(v, scale=1)
@@ -394,7 +397,7 @@ def my_bt(vid, g):
 
 def visible_modules(g):
     modules =  [v for v in g.vertices_iter(scale=2)
-                  if g.label(g.component_roots_iter(v).next()) == 'F']
+                  if g.label(next(g.component_roots_iter(v))) == 'F']
     _visible = {}
     for m in modules:
         _visible[m] = True
@@ -437,7 +440,7 @@ def my_complete(vid, g):
     if not complete:
         complete_module(g)
         _complete = g.property('complete')
-        print _complete
+        # print(_complete)
     
     res = 'other'
     for cid in g.Sons(vid, EdgeType='+'):
@@ -463,7 +466,7 @@ def apparent_axis(g, vid):
 
 
 def is_axis_root(g, vid):
-    cid = g.component_roots_iter(vid).next()
+    cid = next(g.component_roots_iter(vid))
     pid = g.parent(cid)
     sid = g.Successor(pid)
     if g.label(sid) not in ('bt', 'ht', 'HT'):
@@ -516,7 +519,7 @@ def branching_type(vid, g):
                 return 5
     else:
         return -1
-        print 'ERROR: ', cpx, nid.complex().Genotype, nid.properties()
+        print(('ERROR: ', cpx, nid.complex().Genotype, nid.properties()))
 
 DEBUG = True
 def module_tree(v, g):

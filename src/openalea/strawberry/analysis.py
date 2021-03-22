@@ -1,7 +1,14 @@
 
+from __future__ import absolute_import
+from __future__ import print_function
+
 import pandas as pd
 from openalea.mtg.algo import orders
 import matplotlib.pyplot as plt
+
+import six
+from six.moves import map
+from six.moves import range
 
 def to_dataframe(g, vertices=[], f=None):
     """ Convert an MTG into a full dataframe.
@@ -22,7 +29,7 @@ def to_dataframe(g, vertices=[], f=None):
     d = dict()
     for v in vertices:
         props_v = f(v)
-        for k, value in props_v.iteritems():
+        for k, value in props_v.items():
             d.setdefault(k,{})[v] = value
 
     parents = g._parent
@@ -100,7 +107,7 @@ def write_sequences(seqs, variables, VertexIdentifiers):
         n = len(seq)
         for j, value in enumerate(seq):
             vid = VertexIdentifiers[i][j]
-            record = [str(vid)] + map(str,value)
+            record = [str(vid)] + list(map(str,value))
             if j < n-1:
                 record.append('\\')
             else:
@@ -200,7 +207,7 @@ def crowntype_distribution(data, varieties, crown_type, plot=True,expand=0):
     
     if plot:
         cmap = plt.get_cmap('rainbow', len(varieties))
-        print cmap
+        print(cmap)
         
         for i, variety in enumerate(varieties): 
             

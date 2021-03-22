@@ -1,3 +1,6 @@
+from __future__ import absolute_import
+from __future__ import print_function
+
 from math import radians
 
 from openalea.core import path
@@ -128,17 +131,17 @@ def type_of_crown(vid, g):
     if g.label(vid) == 'T':
         return 1
     else:
-        cid = g.component_roots_iter(vid).next()
+        cid = next(g.component_roots_iter(vid))
         pid = g.parent(cid)
         sid = g.Successor(pid)
-        #print sid
+        #print(sid)
         if g.label(sid) in ('F','f'):
             return 2
         elif g.label(sid) in ('bt', 'ht', 'HT'):
             return 3
         else:
             # ERROR !!!
-           # print g[cid], g[g.complex_at_scale(cid, scale=1)]
+           # print(g[cid], g[g.complex_at_scale(cid, scale=1)])
             return 4
 
 def drawable(g):
@@ -159,7 +162,7 @@ def drawable(g):
     g.properties()['drawable'] = drawables
 
 def visible_modules(g):
-    modules =  [v for v in g.vertices_iter(scale=2) if g.label(g.component_roots_iter(v).next()) == 'F']
+    modules =  [v for v in g.vertices_iter(scale=2) if g.label(next(g.component_roots_iter(v))) == 'F']
     _visible = {}
 
     for m in modules:
@@ -299,7 +302,7 @@ def my_visitor(g, v, turtle, time=0):
             else:
                 angle = 90.
                 length = 1.5 * branch_ratio
-             #   print 'v:%d, length:%d'%(v, branch_ratio)
+             #   print('v:%d, length:%d'%(v, branch_ratio))
 
             turtle.down(angle)
             turtle.F(length)
@@ -350,12 +353,12 @@ def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], by=[], display=True, complete=Fal
     if by:
         _, positions = plant_positions(g, by=by, vids=vids)
 
-    print(vids)
+    # print(vids)
 
     for i, rid in enumerate(vids):
         t = PglTurtle()
 
-        vid = g.component_roots_at_scale_iter(rid, scale=max_scale).next()
+        vid = next(g.component_roots_at_scale_iter(rid, scale=max_scale))
         _scene = turtle.traverse_with_turtle(g, vid, visitor=my_visitor, turtle=t, gc=False)
 
         ds = _scene.todict()

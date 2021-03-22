@@ -1,9 +1,16 @@
 # 1. Pakages import
+from __future__ import absolute_import
+
 from openalea.deploy.shared_data import shared_data
 from openalea.mtg import *
 from openalea.mtg.algo import orders
 from openalea.plantgl import all as pgl
 from math import radians
+
+from six.moves import map
+from six.moves import range
+from six.moves import zip
+
 
 #Properties
 VISIBLE = False
@@ -202,16 +209,16 @@ stolon = stolon_curve(scale=.25)
 
 
 def Stolon(g, vid, turtle):
-	""" s: Stolon
+    """ s: Stolon
     
     """
-        t = turtle
+    t = turtle
     #t.setGuide(stolon, 1)
-        nid = g.node(vid)
-        order = nid.order
+    nid = g.node(vid)
+    order = nid.order
     #turtle.setColor(3)
-        t.setColor(2+order)
-        turtle.customGeometry(stolon)
+    t.setColor(2+order)
+    turtle.customGeometry(stolon)
 
 def get_symbols():
     """
@@ -274,9 +281,9 @@ def color_code(g):
             elif stade == 'A':
                 nid.color = (255,0,0)
             elif stade in 'BCDEFGH':
-                d = dict(zip('BCDEFGH', range(1, len('BCDEFGH')+1)))
+                d = dict(zip('BCDEFGH', list(range(1, len('BCDEFGH')+1))))
                 i = d[stade]
-                nid.color = (255, 127+127/7*(i-1),0)
+                nid.color = (255, int(127+127/7*(i-1)),0)
             else:
                 nid.color = (153, 102, 51)
         elif nid.label == 'ht':
@@ -289,9 +296,9 @@ def color_code(g):
             elif stade == 'A':
                 nid.color = (255,0,0)
             elif stade in 'BCDEFGH':
-                d = dict(zip('BCDEFGH', range(1, len('BCDEFGH')+1)))
+                d = dict(zip('BCDEFGH', list(range(1, len('BCDEFGH')+1))))
                 i = d[stade]
-                nid.color = (255, 127+127/7*(i-1),0)
+                nid.color = (255, int(127+127/7*(i-1)),0)
             else:
                 nid.color = (153, 102, 51)
         elif nid.label == 'HT':
@@ -303,10 +310,10 @@ def color_code(g):
             elif stade == 'I':
                 nid.color = (255,0,0)
             else:
-                stades = map(str, range(55,88))
+                stades = list(map(str, list(range(55,88))))
                 if stade in stades:
-                    d = dict(zip(stades, range(len(stades))))
+                    d = dict(zip(stades, list(range(len(stades)))))
                     i = d[stade]
-                    nid.color = (0, 127+127/(len(stades)-1)*(i),255)
+                    nid.color = (0, int(127+127/(len(stades)-1)*(i)),255)
                 else:
                     nid.color = (153, 102, 51)

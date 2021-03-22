@@ -1,9 +1,12 @@
 """ Visualisation code for strawberry on MTG. """
+from __future__ import absolute_import
+
 from openalea.strawberry import Rules_production_Plantule
 from openalea.mtg import *
 from openalea.core import *
 from openalea.plantgl import all as pgl
 
+from six.moves import range
 
 #Visualization  by plante
 # Je souhaiterai l'avoir une entre plutot de type Visualise_plant( Genotype_name, Date, plant number)

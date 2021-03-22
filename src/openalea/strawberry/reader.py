@@ -22,10 +22,17 @@
 """
 
 """
+from __future__ import absolute_import
+from __future__ import print_function
+
 import datetime
 
 from openalea.mtg import MTG, fat_mtg
 from openalea.mtg.algo import orders
+
+import six
+from six.moves import range
+from six.moves import zip
 
 
 ###############################################################################
@@ -64,7 +71,7 @@ class Reader(object):
         for l in self.content:
             line = [item.strip() for item in l.split(sep)]
             if line[0].startswith('Axis_') and line[1].startswith('Axis_'):
-                print '\t'.join(line)
+                print('\t'.join(line))
                 break
             line_no += 1
 
@@ -96,7 +103,7 @@ class Reader(object):
         elif n == first+1:
             self._axis_vid[first] = self._vid
         else:
-            print "ERROR", first, n, self._axis_vid
+            print(("ERROR", first, n, self._axis_vid))
 
 
     def read_line(self):
@@ -121,7 +128,7 @@ class Reader(object):
         # TODO : convert properties to their own type
         current_props = dict(zip(self.props, props))
 
-        if not filter(None, code):
+        if not [_f for _f in code if _f]:
             return
 
         first = 0
@@ -202,7 +209,7 @@ class Reader(object):
 
         nb_lines = len(self.content) - self.prop_no
         for i in range(nb_lines):
-            #print self._vid
+            #print (self._vid)
             self.read_line()
 
         self.g = fat_mtg(g)
@@ -231,10 +238,10 @@ def transform_date(g, pattern = 'date'):
     for date_property in date_properties:
         prop = g.property(date_property)
         if prop:
-            myd = g.property(date_property).itervalues().next()
+            myd = next(g.property(date_property).values())
             date_format = '%d-%m-%Y' if '-' in myd else '%d/%m/%Y'
             g.properties()[date_property] = dict((v, datetime.datetime.strptime(d, date_format))
-                                             for v, d in g.property(date_property).iteritems())
+                                             for v, d in g.property(date_property).items())
     return g
 
 
