@@ -80,7 +80,8 @@ def plant_positions(g, by=['Genotype'], vids=[]):
     if len(by) > 1:
         nb_by = len(by)
         if len(by) > 2:
-            print("Not implemented for more than 2 properties ", by)
+            # print("Not implemented for more than 2 properties ", by)
+            pass
 
     # TODO: Check if the property is in the MTG
 
@@ -129,7 +130,7 @@ def plant_positions(g, by=['Genotype'], vids=[]):
     positions = []
     x, y = x0, y0
     for genotype in my_property:
-        print(genotype)
+        # print(genotype)
         if nb_by == 1:
             for vid in my_property[genotype]:
                 position = x, y, 0.
@@ -139,7 +140,7 @@ def plant_positions(g, by=['Genotype'], vids=[]):
             y = y0
         else:
             for name2 in my_property[genotype]:
-                print(name2)
+                # print(name2)
                 for vid in my_property[genotype][name2]:
                     position = x, y, 0.
                     y += dy

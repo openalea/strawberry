@@ -43,4 +43,4 @@ def plant_number_by_varieties(g):
 
     for geno in genotype:
         no_plants= list(g.property("Genotype").values()).count(geno)
-        print((geno, ":", no_plants, "plants"))
+        # print(geno, ":", no_plants, "plants")

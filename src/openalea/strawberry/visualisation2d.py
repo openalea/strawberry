@@ -353,7 +353,7 @@ def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], by=[], display=True, complete=Fal
     if by:
         _, positions = plant_positions(g, by=by, vids=vids)
 
-    print(vids)
+    # print(vids)
 
     for i, rid in enumerate(vids):
         t = PglTurtle()

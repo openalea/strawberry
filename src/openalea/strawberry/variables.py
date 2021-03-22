@@ -256,7 +256,7 @@ def type_of_crown(vid, g):
             return 2
         else:
             # ERROR !!!
-            print((g[cid], g[g.complex_at_scale(cid, scale=1)]))
+            # print((g[cid], g[g.complex_at_scale(cid, scale=1)]))
             return 4
 
 def Crown_status(vid, g):
@@ -440,7 +440,7 @@ def my_complete(vid, g):
     if not complete:
         complete_module(g)
         _complete = g.property('complete')
-        print(_complete)
+        # print(_complete)
     
     res = 'other'
     for cid in g.Sons(vid, EdgeType='+'):
