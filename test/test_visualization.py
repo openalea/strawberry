@@ -4,7 +4,7 @@ from openalea.mtg.io import read_mtg_file
 from openalea.mtg.algo import orders, split
 import openalea
 from oawidgets.plantgl import PlantGL
-from openalea.strawberry import visualization, visualisation2d
+from openalea.strawberry import visualization, visualization2d
 
 
 def name(f):
@@ -14,7 +14,7 @@ def test_import_mtg():
     files = shared_data(openalea.strawberry).glob('*.mtg')
     mtg_path = dict((name(f), f) for f in files)
     gariguette = read_mtg_file(mtg_path['Gariguette'])
-    straws = split(Gariguette)
+    straws = split(gariguette)
     assert isinstance(straws[0], openalea.mtg.mtg.MTG)
 
 
