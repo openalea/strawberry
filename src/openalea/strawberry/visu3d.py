@@ -3,25 +3,21 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from collections import OrderedDict, defaultdict
+from math import radians
 
-from openalea.strawberry import Rules_production
+from openalea.strawberry import geometry
 from openalea.mtg import *
-from openalea.core import *
+from openalea.mtg.turtle import *
 from openalea.plantgl import all as pgl
+from openalea.plantgl.all import *
 
 import six
 from six.moves import range
 
 
-
-#Visualization  by plante
-# Je souhaiterai l'avoir une entre plutot de type Visualise_plant( Genotype_name, Date, plant number)
-
-
-
 def strawberry_visitor(g, v, turtle, time=0):
     """ Function that draw geometry for a given vertex. """
-    geoms = Rules_production.get_symbols()
+    geoms = geometry.get_symbols()
     turtle.setWidth(0.01)
     nid = g.node(v)
     label = g.label(v)
@@ -29,17 +25,16 @@ def strawberry_visitor(g, v, turtle, time=0):
 
     if g.edge_type(v) == '+':
         turtle.down(30)
-    elif label in ('F','f'):
-        turtle.rollL(Rules_production.roll_angle)
+    elif label in ('F','f', 'Cotyledon', 'Unifoliate', 'Trifoliate', 'LeafPrimordia'):
+        turtle.rollL(geometry.roll_angle)
 
     turtle.setId(v)
     geoms.get(label)(g, v, turtle)
 
-#Vizalisation by genotype et par de la date
-#fonction visualisation(Genotype, nb_date, nb_plante)
+#Vizalisation by genotype and by date
 
 def visualise_plants(g, vids=[], positions=[], no_plant=[], hide_leaves=False):
-    Rules_production.WITHOUT_LEAF = hide_leaves
+    geometry.WITHOUT_LEAF = hide_leaves
 
     max_scale = g.max_scale()
     t = pgl.PglTurtle()
@@ -130,7 +125,6 @@ def plant_positions(g, by=['Genotype'], vids=[]):
     positions = []
     x, y = x0, y0
     for genotype in my_property:
-        # print(genotype)
         if nb_by == 1:
             for vid in my_property[genotype]:
                 position = x, y, 0.
@@ -140,7 +134,6 @@ def plant_positions(g, by=['Genotype'], vids=[]):
             y = y0
         else:
             for name2 in my_property[genotype]:
-                # print(name2)
                 for vid in my_property[genotype][name2]:
                     position = x, y, 0.
                     y += dy
@@ -154,10 +147,99 @@ def plant_positions(g, by=['Genotype'], vids=[]):
 def plot3d(g, by=['Genotype'], hide_leaves=False,display=True):
 
     vids, positions = plant_positions(g, by=by)
-    Rules_production.color_code(g)
+    color_code(g)
     scene = visualise_plants(g, vids=vids, positions=positions, hide_leaves=hide_leaves)
     
     if display:
         pgl.Viewer.display(scene)
     else:
         return scene
+
+
+## Colors rules
+def color_code(g):
+    """
+    Parameter:
+    g: a current MTG
+    
+    return:
+    -------
+    Colloration rule of each object phytomer, inflorescence, bud, phytomer_primordia, inflo_primordia,stolon
+    according to orders and stage
+    """
+    cleaf = (0,125,0)
+    cfleaf = (255, 0, 255)
+    cstolon= (0,20,0)
+    labels = g.property('label')
+    for v in g.vertices(scale=g.max_scale()):
+        nid = g.node(v)
+        if nid.label == 'F':
+            nid.color = cleaf
+            if nid.order == 1:
+                nid.color=(255,0,0)
+            elif nid.order == 2:
+                nid.color=(0,0,255)
+            elif nid.order == 3:
+                nid.color=(255,255,0)
+            elif nid.order == 4:
+                nid.color=(255,0,255)
+            elif nid.order == 5:
+                nid.color=(0,255,255)
+            elif nid.order == 6:
+                nid.color=(255,255,255)
+            elif nid.order >6:
+                nid.color=(0, 0, 0)
+        if nid.label =='f':
+            nid.color = cfleaf
+        elif nid.label == 's':
+            nid.color = cstolon
+        elif nid.label == 'bt':
+            stade = nid.Stade
+            if stade is None:
+                nid.color = (155, 155, 155)
+            elif stade in ('17', '18', '19'):
+                nid.color=(0, 255,0)
+            elif stade == 'A':
+                nid.color = (255,0,0)
+            elif stade in 'BCDEFGH':
+                d = dict(zip('BCDEFGH', list(range(1, len('BCDEFGH')+1))))
+                i = d[stade]
+                nid.color = (255, int(127+127/7*(i-1)),0)
+            else:
+                nid.color = (153, 102, 51)
+        elif nid.label == 'ht':
+            stade = nid.Stade
+
+            if stade is None:
+                nid.color = (155, 155, 155)
+            elif stade in ('17', '18', '19'):
+                nid.color= (0, 255,0)
+            elif stade == 'A':
+                nid.color = (255,0,0)
+            elif stade in 'BCDEFGH':
+                d = dict(zip('BCDEFGH', list(range(1, len('BCDEFGH')+1))))
+                i = d[stade]
+                nid.color = (255, int(127+127/7*(i-1)),0)
+            else:
+                nid.color = (153, 102, 51)
+        elif nid.label == 'HT':
+            stade = nid.Stade
+            if stade is None:
+                nid.color = (155, 155, 155)
+            elif stade in ('17', '18', '19'):
+                nid.color=(0,0,255)
+            elif stade == 'I':
+                nid.color = (255,0,0)
+            else:
+                stades = list(map(str, list(range(55,88))))
+                if stade in stades:
+                    d = dict(zip(stades, list(range(len(stades)))))
+                    i = d[stade]
+                    nid.color = (0, int(127+127/(len(stades)-1)*(i)),255)
+                else:
+                    nid.color = (153, 102, 51)
+
+
+# 2D visualization
+#############################################################################
+# TODO: add visualization functions

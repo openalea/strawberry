@@ -11,7 +11,7 @@ name = 'OpenAlea.Strawberry'
 version = '1.0.0'
 
 description = "Strawberry is a package for architecture analysis and 2D/3D reconstruction."
-long_description = open('README.rst').read()
+long_description = open('README.md').read()
 
 authors="Marc Labadie, Christophe Pradal"
 authors_email="marc.labadie@inra.fr, christophe.pradal@cirad.fr"

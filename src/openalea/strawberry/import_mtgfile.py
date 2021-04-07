@@ -7,6 +7,9 @@ from openalea.core import path
 from openalea.deploy.shared_data import shared_data
 import openalea.strawberry
 
+def name(f):
+    return f.basename().splitext()[0]
+
 def import_mtgfile(filename):
     """
     parameters:
