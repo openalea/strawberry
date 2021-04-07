@@ -17,9 +17,13 @@ def import_mtgfile(filename):
     -------
     a function which import mtg corresponding to the mtg names
     """
+    def name(f):
+        "return base name without extension"
+        return f.basename().splitext()[0]
+    
     filenames = filename
     files = shared_data(openalea.strawberry).glob('*.mtg')
-    mtg_path = dict((f.namebase, f) for f in files)
+    mtg_path = dict((name(f), f) for f in files)
     mtgfile = dict((k,f) for k,f in mtg_path.items() if k in filenames)
     if len(filenames) == 1:
         g = MTG(mtgfile[filenames[0]])
