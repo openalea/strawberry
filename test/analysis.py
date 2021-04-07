@@ -1,10 +1,14 @@
-from openalea.strawberry.import_mtgfile import import_mtgfile
 from openalea.strawberry.analysis import extract_at_module_scale
 from openalea.strawberry.analysis import occurence_module_order_along_time, pointwisemean_plot, crowntype_distribution
+from openalea.deploy.shared_data import shared_data
+import openalea.strawberry
+from openalea.mtg.io import read_mtg_file
 
 
 def test_extract_at_module_scale():
-    gariguette = import_mtgfile(filename= "Gariguette")
+    files = shared_data(openalea.strawberry).glob('*.mtg')
+    mtg_path = dict((name(f), f) for f in files)
+    gariguette = read_mtg_file(mtg_path['Gariguette'])
     gariguette_extraction_at_module_scale = extract_at_module_scale(gariguette)
     assert len(gariguette_extraction_at_module_scale) == 241
 
@@ -16,4 +20,3 @@ def test_extract_at_module_scale():
     assert len(mean) == 6
     assert len(sd) == 6
 
-    
