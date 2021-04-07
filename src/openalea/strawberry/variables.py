@@ -23,14 +23,32 @@ def property(g, name):
     return g.property(convert.get(name, name))
 
 ######################################## Extraction at plant scale ###########################################################
-def extract_at_plant_scale(g, convert=convert):
+def extract_at_plant_scale(g, vids=[], convert=convert):
+    """
+    Return computed properties at plant scale
 
+    Parameters
+    ----------
+    - g: MTG
+    - vids : a subset of vertex ids at scale 1
+
+    Returns
+    -------
+    - a Dataframe
+    """
+    #TODO: compute this only one. It would be nice if we can compute this in the init of a class Extractor.
     orders = algo.orders(g, scale=2)
 
     plant_variables = _plant_variables(g)
-    plant_ids = g.vertices(scale=1)
-    visible_modules(g)
-    compute_leaf_area(g)
+
+    # plant_ids is a list of plants we wat to process.
+    if not vids:
+        plant_ids = g.vertices(scale=1)
+    else: 
+        plant_ids = [pid for pid in g.vertices(scale=1) if pid in vids]
+
+    visible_modules(g, vids=plant_ids)
+    compute_leaf_area(g, vids=plant_ids)
 
     plant_df = OrderedDict()
     # for name in ('Genotype', 'date', 'plant'):
@@ -52,9 +70,6 @@ def extract_at_plant_scale(g, convert=convert):
     plant_df['nb_ramifications'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==3 and v in visibles)) for pid in plant_ids]
     plant_df['vid'] = plant_ids
 
-    #rajouter par Marc
-
-
     df = pd.DataFrame(plant_df)
     return df
 
@@ -75,15 +90,18 @@ def _plant_variables(g):
     return plant_variables
 
 ####################### Extraction at the module scale ##################################################################
-def extract_at_module_scale(g, convert=convert):
+def extract_at_module_scale(g, vids=[], convert=convert):
+
+    if not vids:
+        vids = g.vertices(scale=1)
 
     orders = algo.orders(g, scale=2)
 
     module_variables = _module_variables(g)
-    visible_modules(g)
-    complete_module(g)
+    visible_modules(g, vids=vids)
+    complete_module(g, vids=vids)
 
-    module_ids =  list(g.property('visible'))
+    module_ids =  [v for v in g.property('visible') if g.complex_at_scale(v, scale=1) in vids]
 
     module_df = OrderedDict()
     module_df['Genotype'] = [genotype(mid, g) for mid in module_ids]
@@ -124,16 +142,17 @@ def _module_variables(g):
     return module_variables
 
 
-def visible_modules(g):
-    modules =  [v for v in g.vertices_iter(scale=2)
-                if g.label(next(g.component_roots_iter(v))) == 'F']
+def visible_modules(g, vids=[]):
+    modules =  [v for v in g.vertices_iter(scale=2) 
+                if (g.complex(v) in vids)
+                and g.label(next(g.component_roots_iter(v))) == 'F']
     _visible = {}
     for m in modules:
         _visible[m] = True
     g.properties()['visible'] = _visible
 
 
-def complete_module (g):
+def complete_module(g, vids=[]):
     """Return properties incomplete or complete module
     
     Algorithm: 
@@ -145,6 +164,8 @@ def complete_module (g):
     complete = {}
     visible = g.property('visible')
     for vid in visible:
+        if g.complex_at_scale(vid, scale=1) not in vids:
+            continue
         comp = g.components(vid)
         c = comp[0]
         axis = [v for v in g.Axis(c) if v in comp]
@@ -324,19 +345,22 @@ def modality(vid, g):
 
 # add by marc
 
-def compute_leaf_area(g):
+def compute_leaf_area(g, vids=[]):
     _central= g.property("LFTLG_CENTRAL")
     _left= g.property("LFTLG_LEFT")
     _mean_leaf_area= g.property("LFAR")
 
     for v in _central:
+        pid = g.complex_at_scale(v, scale=1)
+        if pid not in vids:
+            continue
+
         central = _central.get(v)
         left = _left.get(v)
         if (central is None) or (left is None):
             print(("DATA is missing on vertex %d for line %d"%(v, g.node(v)._line)))
             continue
 
-        pid = g.complex_at_scale(v, scale=1)
         _mean_leaf_area[pid]= round(1.89 + (2.145 * (central/10) * (left/10)),2)
 
 
@@ -351,18 +375,22 @@ def complete(vid, g):
 
 ########################## Extraction on node scale ############################################
 
-def extract_at_node_scale(g, convert=convert):
+def extract_at_node_scale(g, vids=[], convert=convert):
+
+    if not vids:
+        vids = g.vertices(scale=1)
+    
     node_df = OrderedDict()
-    visible_modules(g)
-    complete_module(g)
+    visible_modules(g, vids=vids)
+    complete_module(g, vids=vids)
     orders = algo.orders(g,scale=2)
 
     # Define all the rows
-    props = ['node_id', 'rank', 'branching_type', 'complete','nb_modules_branching','nb_branch_crown_branching','nb_extension_crown_branching','branching_length', 'genotype', 'order',  'date','plant']
+    props = ['node_id', 'rank', 'branching_type', 'complete','nb_modules_branching','nb_branch_crown_branching','nb_extension_crown_branching','branching_length', 'Genotype', 'order',  'date','plant']
     for prop in props:
         node_df[prop] = []
 
-    roots = g.component_roots_at_scale(g.root, scale=2)
+    roots = [rid for pid in vids for rid in g.component_roots_at_scale(pid, scale=2)]
     trunks = [ list(chain(*[(v for v in algo.axis(g,m, scale=3) if g.label(v) in ('F', 'f')) 
                             for m in apparent_axis(g, r)])) for r in roots]
             
@@ -377,7 +405,7 @@ def extract_at_node_scale(g, convert=convert):
             node_df['nb_branch_crown_branching'].append(nb_branching_tree(vid,g))#scale=2
             node_df['nb_extension_crown_branching'].append(nb_extension_tree(vid,g))#scale=2
             node_df['branching_length'].append(nb_visible_leaves_tree(vid,g))
-            node_df['genotype'].append(genotype(vid, g)) #scale=1
+            node_df['Genotype'].append(genotype(vid, g)) #scale=1
             node_df['order'].append(orders[g.complex(vid)]) #scale=2
             node_df['plant'].append(plant(vid, g)) #scale=1
             node_df['date'].append(date(vid, g)) #scale=1
@@ -395,34 +423,6 @@ def my_bt(vid, g):
     for cid in g.Sons(vid, EdgeType='+'):
         return str(branching_type(cid,g))
 
-def visible_modules(g):
-    modules =  [v for v in g.vertices_iter(scale=2)
-                  if g.label(next(g.component_roots_iter(v))) == 'F']
-    _visible = {}
-    for m in modules:
-        _visible[m] = True
-    g.properties()['visible'] = _visible
-
-def complete_module (g):
-    """Return properties incomplete or complete module
-    
-    Algorithm: 
-     module are complete:
-       if module are visible and terminated by an Inflorescence (HT) (propertie=True)
-       else module are incomplete (all module terminated by ht or bt) (property=False)
-       
-    """
-    complete = {}
-    visible = g.property('visible')
-    for vid in visible:
-        comp = g.components(vid)
-        c = comp[0]
-        axis = [v for v in g.Axis(c) if v in comp]
-        last = axis[-1]
-        if g.label(last) == 'HT': 
-            complete[vid] = True 
-            
-    g.properties()['complete'] = complete
 
 def complete(vid, g):
     """
