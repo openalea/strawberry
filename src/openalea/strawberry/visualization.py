@@ -8,8 +8,6 @@ from math import radians
 from openalea.strawberry import geometry
 from openalea.mtg import *
 from openalea.mtg.turtle import *
-from openalea.core import *
-from openalea.core import path
 from openalea.plantgl import all as pgl
 from openalea.plantgl.all import *
 
