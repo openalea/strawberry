@@ -386,7 +386,7 @@ def extract_at_node_scale(g, vids=[], convert=convert):
     orders = algo.orders(g,scale=2)
 
     # Define all the rows
-    props = ['node_id', 'rank', 'branching_type', 'complete','nb_modules_branching','nb_branch_crown_branching','nb_extension_crown_branching','branching_length', 'genotype', 'order',  'date','plant']
+    props = ['node_id', 'rank', 'branching_type', 'complete','nb_modules_branching','nb_branch_crown_branching','nb_extension_crown_branching','branching_length', 'Genotype', 'order',  'date','plant']
     for prop in props:
         node_df[prop] = []
 
@@ -405,7 +405,7 @@ def extract_at_node_scale(g, vids=[], convert=convert):
             node_df['nb_branch_crown_branching'].append(nb_branching_tree(vid,g))#scale=2
             node_df['nb_extension_crown_branching'].append(nb_extension_tree(vid,g))#scale=2
             node_df['branching_length'].append(nb_visible_leaves_tree(vid,g))
-            node_df['genotype'].append(genotype(vid, g)) #scale=1
+            node_df['Genotype'].append(genotype(vid, g)) #scale=1
             node_df['order'].append(orders[g.complex(vid)]) #scale=2
             node_df['plant'].append(plant(vid, g)) #scale=1
             node_df['date'].append(date(vid, g)) #scale=1
