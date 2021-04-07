@@ -14,7 +14,7 @@ def test_import_mtg():
     files = shared_data(openalea.strawberry).glob('*.mtg')
     mtg_path = dict((name(f), f) for f in files)
     gariguette = read_mtg_file(mtg_path['Gariguette'])
-    straws = split(Gariguette)
+    straws = split(gariguette)
     assert isinstance(straws[0], openalea.mtg.mtg.MTG)
 
 
