@@ -15,7 +15,10 @@ def test_extract_at_module_scale(self):
     mtg = union(mtg1, mtg2)
     genotype = mtg_path[list(mtg_path)[0]].namebase
 
-    df = extract_at_module_scale(mtg, genotype)
+    genotypes = mtg.property('Genotype')
+    clery_vids=[vid for vid in mtg.vertices(scale=1) if genotypes.get(vid) == genotype]
+
+    df = extract_at_module_scale(mtg, clery_vids)
 
     self.assertFalse(df.empty)
     self.assertEqual(set(df['Genotype']), {genotype})
