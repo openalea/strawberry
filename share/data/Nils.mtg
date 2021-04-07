@@ -55,7 +55,7 @@ COMMENT	STRING
 MTG:
 ENTITY-CODE				Experiment_name	Sample_date	Architecture_date	Genotype	Plant_ID	Stade	Foliar_type	DBI	INFLOLG	PETLG	LFTLG_LEFT	LFTLG_CENTRAL	LFTLG_RIGHT	LFTWD_LEFT	LFTWD_CENTRAL	LFTWD_RIGHT	LFTAR_LEFT	LFTAR_CENTRAL	LFTAR_RIGHT	LFAR	FLWRNUMBER	FLWRNUMBER_OPEN	FLWRNUMBER_ABORTED	FLWRNUMBER_CLOSED	SAMPLING	lenght	COMMENT
 /P				Topmodel March	11/05/2016	20/07/2016	Nils	3	3																					
-^^/T																														
+^/T																														
 ^/F										Cotyledon					2.81			1.74			3.57								1.51	
 ^<F										Cotyledon					2.71			1.79			3.6								1.11	
 ^<F										Unifoliate					2.98			5.18			10.94								3.99	
