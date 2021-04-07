@@ -3,7 +3,7 @@ import openalea.strawberry
 from openalea.mtg.io import read_mtg_file
 from openalea.mtg.algo import union
 
-from openalea.strawberry.variables import extract_at_module_scale, extract_at_node_scale, extract_at_plant_scale
+from openalea.strawberry.analysis import extract_at_module_scale, extract_at_node_scale, extract_at_plant_scale
 
 def name(f):
     return f.basename().splitext()[0]
