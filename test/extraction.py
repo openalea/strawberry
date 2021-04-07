@@ -26,7 +26,7 @@ def test_extract_at_module_scale():
     assert set(df['Genotype']) == {genotype}
 
 
-def test_extract_at_node_scale()):
+def test_extract_at_node_scale():
     files = shared_data(openalea.strawberry).glob('*.mtg')
 
     mtg_path = dict((name(f), f) for f in files)
