@@ -7,6 +7,9 @@ from openalea.core import path
 from openalea.deploy.shared_data import shared_data
 import openalea.strawberry
 
+def name(f):
+    return f.basename().splitext()[0]
+
 def import_mtgfile(filename):
     """
     parameters:
@@ -19,7 +22,7 @@ def import_mtgfile(filename):
     """
     filenames = filename
     files = shared_data(openalea.strawberry).glob('*.mtg')
-    mtg_path = dict((f.namebase, f) for f in files)
+    mtg_path = dict((name(f), f) for f in files)
     mtgfile = dict((k,f) for k,f in mtg_path.items() if k in filenames)
     if len(filenames) == 1:
         g = MTG(mtgfile[filenames[0]])

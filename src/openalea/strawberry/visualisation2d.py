@@ -10,20 +10,20 @@ from openalea.mtg.turtle import *
 
 from .Visualization import plant_positions
 
-def colors():
-    """ Returns a set of predefined colors"""
-    shoot_color=Material("green",Color3(0,255,0))
-    vegbud_color=Material("green",Color3(0,40,0))
-    initbud_color = Material("orange",Color3(255,128,0))
-    floral_color= Material("red",Color3(255,0,0))
+# def colors():
+#     """ Returns a set of predefined colors"""
+#     shoot_color=Material("green",Color3(0,255,0))
+#     vegbud_color=Material("green",Color3(0,40,0))
+#     initbud_color = Material("orange",Color3(255,128,0))
+#     floral_color= Material("red",Color3(255,0,0))
 
-    d=dict()
-    d['shoot'] = shoot_color
-    d['vegbud'] = vegbud_color
-    d['initbud'] = initbud_color
-    d['floral'] = floral_color
+#     d=dict()
+#     d['shoot'] = shoot_color
+#     d['vegbud'] = vegbud_color
+#     d['initbud'] = initbud_color
+#     d['floral'] = floral_color
 
-    return d
+#     return d
 
 
 
