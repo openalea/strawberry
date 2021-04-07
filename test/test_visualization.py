@@ -4,7 +4,7 @@ from openalea.mtg.io import read_mtg_file
 from openalea.mtg.algo import orders, split
 import openalea
 from oawidgets.plantgl import PlantGL
-from openalea.strawberry import visualization, visualisation2d
+from openalea.strawberry import visualization, visualization2d
 
 
 def name(f):
