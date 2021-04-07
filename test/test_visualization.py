@@ -38,6 +38,6 @@ def test_2D():
     mtg_path = dict((name(f), f) for f in files)
     gariguette = read_mtg_file(mtg_path['Gariguette'])
     gariguette.properties()['order'] = orders(gariguette)
-    scene=visualisation2d.plot2d(gariguette,gariguette.vertices(scale=1)[53:54],dist=[3]*3,display=False)
+    scene=visualization2d.plot2d(gariguette,gariguette.vertices(scale=1)[53:54],dist=[3]*3,display=False)
     PlantGL(scene)
     
