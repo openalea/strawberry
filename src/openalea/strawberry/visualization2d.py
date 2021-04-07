@@ -3,7 +3,6 @@ from __future__ import print_function
 
 from math import radians
 
-from openalea.core import path
 from openalea.plantgl.all import *
 from openalea.mtg import *
 from openalea.mtg.turtle import *
