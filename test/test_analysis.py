@@ -4,6 +4,9 @@ from openalea.deploy.shared_data import shared_data
 import openalea.strawberry
 from openalea.mtg.io import read_mtg_file
 
+def name(f):
+    return f.basename().splitext()[0]
+
 
 def test_extract_at_module_scale():
     files = shared_data(openalea.strawberry).glob('*.mtg')
