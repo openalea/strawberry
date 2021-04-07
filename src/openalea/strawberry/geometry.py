@@ -176,7 +176,7 @@ def stolon_curve(scale=1.):
     crv = pgl.BezierCurve2D(ctrls)
     return crv
 
-stolon = stolon_curve(scale=.25)
+_stolon = stolon_curve(scale=.25)
 
 
 def stolon(g, vid, turtle):
@@ -187,7 +187,7 @@ def stolon(g, vid, turtle):
     nid = g.node(vid)
     order = nid.order
     t.setColor(2+order)
-    turtle.customGeometry(stolon)
+    turtle.customGeometry(_stolon)
 
 
 # 6. bud

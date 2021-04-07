@@ -8,7 +8,7 @@ from openalea.plantgl.all import *
 from openalea.mtg import *
 from openalea.mtg.turtle import *
 
-from .Visualization import plant_positions
+from .visualization import plant_positions
 
 # def colors():
 #     """ Returns a set of predefined colors"""
