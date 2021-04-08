@@ -17,6 +17,34 @@ VISIBLE = False
 WITHOUT_LEAF = False
 position = (0,0,0)
 
+# Set the color pallette to the turtle
+def colors_turtle(turtle):
+    """ Init the set of colors. """
+    colors = [
+        (80, 80, 80),
+        (65,45,15),
+        (30,60,10),
+        (60,0,0),
+        (60,60,15),
+        (0,0,60),
+        (60,0,60),
+        (0, 128, 0),
+        (127, 255, 0),
+        (102, 205, 170),
+        (128, 128, 0),
+        (0, 255, 127),
+        (34, 139, 34),
+        (173, 255, 47),
+        (151, 255, 151),
+        (0, 128, 128)
+    ]
+    
+    if turtle.getColorListSize() != len(colors):
+        colors = [pgl.Material(ambient=c,diffuse=3) for c in colors]
+        turtle.setColorList(colors)
+
+    return turtle
+
 # Rules of production for 3D visualisation
 
 ## 1. Phyllotaxie
@@ -54,7 +82,7 @@ def phytomer(g, vid, turtle):
     ---------
     for each F in mtg return an object compose of petiol (2 cylinder) and 3 lobes (leaflet)
     """
-    t = turtle
+    t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
     t.setColor(2+order)
@@ -91,7 +119,7 @@ def phytomer_primordia(g, vid, turtle):
     
     """
     scale = 1./5
-    t = turtle
+    t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
     t.setColor(6+order)
@@ -126,7 +154,8 @@ def inflorescence(g, vid, turtle):
     for each HT in mtg return an object compose of cylender and a blue box. 
     Shape of the box is dependent of the number of total flower and number of open flowers.
     """
-    t = turtle
+ 
+    t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
     nb_flower = nid.FLWRNUMBER
@@ -156,7 +185,7 @@ def inflo_primordia(g, vid, turtle):
     -------
     for each ht in mtg return an object compose of a cylinder and a of orange cube 
     """
-    t = turtle
+    t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
     t.setColor(8+order)
@@ -183,7 +212,7 @@ def stolon(g, vid, turtle):
     """ s: stolon
     
     """
-    t = turtle
+    t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
     t.setColor(2+order)
@@ -196,7 +225,7 @@ def bud(g, vid, turtle):
     """ bt: Terminal bud.
     sphere
     """
-    t = turtle
+    t = colors_turtle(turtle)
     #turtle.setColor(1)
     nid = g.node(vid)
     order = nid.order
@@ -258,7 +287,7 @@ def trifoliate(g, vid, turtle):
     """ F: Petiol + 3 lobes.
     cylinder + 3 ellipse/surface
     """
-    t = turtle
+    t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
     t.setColor(2+order)
@@ -284,7 +313,7 @@ def unifoliate(g, vid, turtle):
     """ F: Petiol + 3 lobes.
     cylinder + 3 ellipse/surface
     """
-    t = turtle
+    t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
     t.setColor(2+order)
