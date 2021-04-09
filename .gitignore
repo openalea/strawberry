@@ -83,5 +83,6 @@ target/
 # sphinx autogen file
 doc/_dvlpt/
 
-
+# vscode
+.code-workspace
 
