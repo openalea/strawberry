@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
+import openalea.strawberry
 from openalea.mtg import MTG, algo
 from openalea.deploy.shared_data import shared_data
 
