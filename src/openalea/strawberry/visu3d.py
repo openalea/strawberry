@@ -144,9 +144,12 @@ def plant_positions(g, by=['Genotype'], vids=[]):
     return vids, positions
 
 
-def plot3d(g, by=['Genotype'], hide_leaves=False,display=True):
+def plot3d(g, by=['Genotype'], hide_leaves=False,display=True, vids=[]):
 
-    vids, positions = plant_positions(g, by=by)
+    if not vids:
+        vids = g.vertices(scale=1)
+
+    vids, positions = plant_positions(g, by=by, vids=vids)
     color_code(g)
     scene = visualise_plants(g, vids=vids, positions=positions, hide_leaves=hide_leaves)
     
