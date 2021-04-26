@@ -820,4 +820,23 @@ def date(vid, g):
     # _date = g.property('Sample_date')[cpx]
     return g.property('Sample_date')[cpx]
 
+######################### Transformation of dataframe ######################################
+def transpose_dataframe(df,date_selected,index,variable):
+    '''
+        Transpose dataframe by variable with plant in columns and rank or order in index
+        This function are available for extraction at node scale (index='rank') and 
+        extraction at module scale (index= 'order')
+        Parameters:
+        -----------
+            df: dataframe from extract function at differente scale (modules and nodes scale)
+            date_selected: date which must be processed
+            variable: variable which must be processed
+        
+        Returns:
+        --------
+            a dataframe transposed for date and variable processed
+    '''
 
+    data=df[df['date']==date_selected]
+    res= data.pivot(index=index,columns='plant',values=variable)
+    return res
