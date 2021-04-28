@@ -10,6 +10,11 @@ from itertools import chain
 from openalea.mtg.algo import orders
 from openalea.mtg import stat, algo, traversal
 
+import numpy as np
+from matplotlib.colors import to_rgb
+import matplotlib.patches as mpatches
+import plotly.express as px
+
 import six
 from six.moves import map
 from six.moves import range
@@ -821,7 +826,7 @@ def date(vid, g):
     return g.property('Sample_date')[cpx]
 
 ######################### Transformation of dataframe ######################################
-def transpose_dataframe(df,date_selected,index,variable):
+def df2waffle(df, date, index, variable, aggfunc=None, *args, **kwargs):
     '''
         Transpose dataframe by variable with plant in columns and rank or order in index
         This function are available for extraction at node scale (index='rank') and 
@@ -837,6 +842,89 @@ def transpose_dataframe(df,date_selected,index,variable):
             a dataframe transposed for date and variable processed
     '''
 
-    data=df[df['date']==date_selected]
-    res= data.pivot(index=index,columns='plant',values=variable)
+    data=df[df['date']==date]
+    
+    if index=='rank':
+        res = data.pivot(index='rank',columns='plant',values=variable)
+    elif index=='order':
+        res= data.pivot_table(index='order',columns='plant',values=variable, aggfunc=aggfunc)
+    
+    res = res.fillna('')
+    res = res.sort_index(ascending=False)
     return res
+
+
+def plot_waffle(df, ylabel):
+    """
+    Plot a dataframe in "waffle" shape
+    """
+
+    colormap_used = plt.cm.coolwarm
+    
+    # Sort the variables. When variables are int or float, remove the str('') (that replaced the NaN) before sorting
+    values = list(set(df.values.flatten()))
+    values.remove('')
+    values.sort()
+    values.insert(0,'')
+    
+    height = len(df.index)
+    width = len(df.columns)
+    color_map = {val: colormap_used(i/len(values)) for i, val in enumerate(values)}
+    
+    # Add the "empty" variable - and set its color as white
+    color_map[''] = (1., 1., 1., 1.)
+    
+    data = np.array(df)
+    
+    # Create an array where each cell is a colormap value RGBA 
+    data_3d = np.ndarray(shape=(data.shape[0], data.shape[1], 4), dtype=float)
+    for i in range(0, data.shape[0]):
+        for j in range(0, data.shape[1]):
+            data_3d[i][j] = color_map[data[i][j]]
+
+    # # drop the A
+    # data_3d_rgb = np.array([[to_rgb([v for v in row]) for row in col] for col in data_3d], dtype=np.float64)
+
+    # create the plot 
+    _t=list(range(1,height+1))
+    _t.reverse()
+    fig = px.imshow(data_3d_rgb, 
+                    labels={'x': 'Plant', 'y': ylabel},
+                   )
+
+    
+    # OLD: Used matplotly
+    # display the plot 
+    # fig, ax = plt.subplots(1,1)
+    # fig.set_size_inches(18.5, 10.5)
+    # fig = ax.imshow(data_3d)
+
+#     # Get the axis.
+#     ax = plt.gca()
+
+#     # Minor ticks
+#     ax.set_xticks(np.arange(-.5, (width), 1), minor=True);
+#     ax.set_yticks(np.arange(-.5, (height), 1), minor=True);
+
+#     # Gridlines based on minor ticks
+#     ax.grid(which='minor', color='w', linestyle='-', linewidth=2)
+
+#     # Manually constructing a legend solves your "catagorical" problem.
+#     legend_handles = []
+#     for i, val in enumerate(values):
+#         if val!= "":
+#             lable_str = val
+#             color_val = color_map[val]
+#             legend_handles.append(mpatches.Patch(color=color_val, label=lable_str))
+
+#     # Add the legend. 
+#     plt.legend(handles=legend_handles, loc=(1,0))
+#     plt.xlabel("Plant")
+#     plt.ylabel(ylabel)
+
+#     _t=list(range(1,height+1))
+#     _t.reverse()
+#     plt.xticks(ticks=range(0,width), labels=range(1,width+1))
+#     plt.yticks(ticks=range(0,height), labels=_t)
+    
+    return fig
