@@ -883,7 +883,7 @@ def plot_waffle(df, ylabel):
             data_3d[i][j] = color_map[data[i][j]]
 
     # # drop the A
-    # data_3d_rgb = np.array([[to_rgb([v for v in row]) for row in col] for col in data_3d], dtype=np.float64)
+    data_3d_rgb = np.array([[to_rgb([v for v in row]) for row in col] for col in data_3d], dtype=np.float64)
 
     # create the plot 
     _t=list(range(1,height+1))
