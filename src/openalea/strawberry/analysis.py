@@ -10,6 +10,8 @@ from itertools import chain
 from openalea.mtg.algo import orders
 from openalea.mtg import stat, algo, traversal
 
+from pandas.core.groupby.groupby import DataError
+
 import numpy as np
 from matplotlib.colors import to_rgb
 import matplotlib.patches as mpatches
@@ -816,7 +818,7 @@ def stage_tree(vid, g):
 
 
 ######################### Transformation of dataframe ######################################
-def df2waffle(df, date, index, variable, aggfunc=None, crosstab=None, *args, **kwargs):
+def df2waffle(df, date, index, variable, order=None, aggfunc=None, crosstab=None, *args, **kwargs):
     '''
         Transpose dataframe by variable with plant in columns and rank or order in index
         This function are available for extraction at node scale (index='rank') and 
@@ -832,14 +834,17 @@ def df2waffle(df, date, index, variable, aggfunc=None, crosstab=None, *args, **k
             a dataframe in "waffle" shape: index=date, & columns=variable
     '''
 
-    data=df[df['date']==date]
+    if order:
+        data=df[(df['date']==date) & (df['order']==order)]
+    else:
+        data=df[df['date']==date]
     
     if index=='rank':
         res = data.pivot(index='rank',columns='plant',values=variable)
     elif index=='order':
         if crosstab:
             res = pd.crosstab(index=data['order'], columns=data[variable], normalize='index')
-            res=res*100 # percentage (0-100)
+            res=res*100
             res = res.round(2)
         else:
             # Catch data error: when values are string and aggfunc compute numbers
@@ -859,6 +864,7 @@ def df2waffle(df, date, index, variable, aggfunc=None, crosstab=None, *args, **k
     return res
 
 
+
 def plot_waffle_plotly_heatmap(df, layout={}, legend_name={}):
     
     def df_to_plotly(df):
@@ -870,9 +876,9 @@ def plot_waffle_plotly_heatmap(df, layout={}, legend_name={}):
     width = layout.get('width', 500)
     xlabel = layout.get('xlabel', 'Plant')
     xticks = layout.get('xticks', range(0,len(df.columns)))
-    xticks_label = layout.get('xticks_label', range(1,len(df.columns)+1))
+    xticks_label = layout.get('xticks_label', list(df.columns))
     ylabel = layout.get('ylabel', '')
-    yticks = layout.get('yticks', range(0,len(df.index)))
+    yticks = layout.get('yticks', [l-1 for l in list(df.index)])
     yticks_label = layout.get('yticks_label', list(range(0,len(df.index))))
     title = layout.get('title', '')    
 
@@ -1011,6 +1017,8 @@ def plot_waffle_matplotlib(df, layout={}, legend_name={}):
     
     plt.title(title)
 
+    plt.show()
+
     return fig
 
 
@@ -1040,7 +1048,10 @@ def plot_waffle(df, layout={}, legend_name={}, savepath=None, plot_func='matplot
 
     # With matplotlib
     elif plot_func=='matplotlib':
-        fig= plot_waffle_matplotlib(df=df, layout=layout, legend_name=legend_name)
+        try:
+            fig= plot_waffle_matplotlib(df=df, layout=layout, legend_name=legend_name)
+        except ValueError:
+            fig={}
 
     if savepath:
         plt.savefig(savepath)
