@@ -241,8 +241,3 @@ def color_code(g):
                     nid.color = (0, int(127+127/(len(stades)-1)*(i)),255)
                 else:
                     nid.color = (153, 102, 51)
-
-
-# 2D visualization
-#############################################################################
-# TODO: add visualization functions
