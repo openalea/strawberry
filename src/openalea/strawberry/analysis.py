@@ -7,9 +7,6 @@ from collections import OrderedDict, defaultdict
 import matplotlib.pyplot as plt
 from itertools import chain
 
-from openalea.mtg.algo import orders
-from openalea.mtg import stat, algo, traversal
-
 from pandas.core.groupby.groupby import DataError
 
 import numpy as np
@@ -18,10 +15,12 @@ import matplotlib.patches as mpatches
 import plotly.express as px
 import plotly.graph_objs as go
 
-
 import six
 from six.moves import map
 from six.moves import range
+
+from openalea.mtg.algo import orders
+from openalea.mtg import stat, algo, traversal
 
 
 convert = dict(Stade='Stade',
