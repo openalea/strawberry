@@ -611,7 +611,7 @@ def complete(vid, g):
 
 def stage(vid, g):
     _stage = g.property('Stade')
-    return next(iter(list(_stage[cid] for cid in g.components(vid) if cid in _stage)), None)
+    return next((_stage[cid] for cid in g.components(vid) if cid in _stage), None)
 
 
 ########################## Extraction on node scale ############################################
