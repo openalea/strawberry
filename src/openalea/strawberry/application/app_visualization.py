@@ -17,56 +17,42 @@ from openalea.strawberry.application.misc import get_vid_of_genotype
 # # Print on widget function
 # # ----------------------------------------------------------------
 
-def plot_3D_growth_developement(mtg, vids=[]):
-    if not vids:
-        return None
-    else:
-        mtg.properties()['order'] = orders(mtg)
-        scene=visu3d.plot3d(mtg,by=["Sample_date"],hide_leaves=False,display=False, vids=vids)
-        p = PlantGL(scene, group_by_color=p2_wgt_parameters.v_model)
-        return p 
-
-def print_3D_growth_developement(mtg, genotype):
+def print_3d_growth_developement(mtg, genotype):
     if mtg:
-        with p2_wgt_3D_growth_developement:
-            p2_wgt_3D_growth_developement.clear_output()
-            print('3D growth developement')
+        with plot3d_growth_developement:
+            plot3d_growth_developement.clear_output()
+            print('3d growth developement')
             vids_selected = get_vid_of_genotype(misc.all_mtg, genotypes=[genotype])
             misc.all_mtg.properties()['order'] = orders(misc.all_mtg)
             scene=visu3d.plot3d(misc.all_mtg,by=["Sample_date"],hide_leaves=False,display=False, vids=vids_selected)
             display(SceneWidget(scene))
-#             display(PlantGL(scene, group_by_color=p2_wgt_parameters.v_model))
+#             display(PlantGL(scene, group_by_color=parameter_color.v_model))
     else:
-        with p2_wgt_3D_growth_developement:
-            p2_wgt_3D_growth_developement.clear_output()
+        with plot3d_growth_developement:
+            plot3d_growth_developement.clear_output()
             print('Select a Genotype')
 
 
-def print_3D_floral_intensity(mtg, genotype):
+def print_3d_floral_intensity(mtg, genotype):
     if mtg:
-        with p2_wgt_3D_floral_intensity:
-            p2_wgt_3D_floral_intensity.clear_output()
-            print('3D floral_intensity ')
+        with plot3d_floral_intensity:
+            plot3d_floral_intensity.clear_output()
+            print('3d floral_intensity ')
             vids_selected = get_vid_of_genotype(misc.all_mtg, genotypes=[genotype])
             misc.all_mtg.properties()['order'] = orders(misc.all_mtg)
             scene=visu3d.plot3d(misc.all_mtg,by=["Sample_date"],hide_leaves=True,display=False, vids=vids_selected)
             display(SceneWidget(scene))
-#             display(PlantGL(scene, group_by_color=p2_wgt_parameters.v_model))    
+#             display(PlantGL(scene, group_by_color=parameter_color.v_model))    
     else:
-        with p2_wgt_3D_growth_developement:
-            p2_wgt_3D_growth_developement.clear_output()
+        with plot3d_growth_developement:
+            plot3d_growth_developement.clear_output()
             print('Select a Genotype') 
 
-def plot_2D_single_p(mtg):
-    return mtg
-    
-    
-def print_2D_single_p():
-    with p2_wgt_2D_single_p:
-        p2_wgt_2D_single_p.clear_output()
-        print('2D Single plant')
-        print(plot_2D_single_p(0))
 
+def print_2d_single_p():
+    with plot2d_single_p:
+        plot2d_single_p.clear_output()
+        print('2d Single plant')
 
 
 # # ----------------------------------------------------------------
@@ -74,149 +60,99 @@ def print_2D_single_p():
 # # ----------------------------------------------------------------
 
 def on_change_3d(widget, event, data):
-    # select the mtg from genotype
-    print_3D_floral_intensity(misc.all_mtg, data)
-    print_3D_growth_developement(misc.all_mtg, data)
+    print_3d_floral_intensity(misc.all_mtg, data)
+    print_3d_growth_developement(misc.all_mtg, data)
+
 
 def on_change_tab_3d(widget, event, data):
-    p2_wgt_genotype_selection_3D.v_model = ""
+    genotype_selection_3d.v_model = ""
 
     
 # # ----------------------------------------------------------------
 # # Widgets
 # # ----------------------------------------------------------------
 
-p2_wgt_genotype_selection_3D = v.Select(items=[],
+genotype_selection_3d = v.Select(items=[],
             chips=True, 
             multiple=False,
             v_model="",
             label="Select Genotype",
             truncate_length=22)
 
-p2_wgt_genotype_selection_2D = v.Select(items=[],
+genotype_selection_2d = v.Select(items=[],
             chips=True, 
             multiple=False,
             v_model="",
             label="Select Genotype",
             truncate_length=22)
 
-p2_wgt_parameters = v.Select(items=[True, False], 
+parameter_color = v.Select(items=[True, False], 
                         label="Group by color", 
                         multiple=False, chips=True, 
                         v_model=False)
 
-
-p2_row1 = v.Row(children=[v.Col(children=[p2_wgt_genotype_selection_3D]),
-                          v.Col(children=[p2_wgt_parameters])
+row_param3d = v.Row(children=[v.Col(children=[genotype_selection_3d]),
+                          v.Col(children=[parameter_color])
                          ])
 
-p2_row12 = v.Row(children=[v.Col(children=[p2_wgt_genotype_selection_2D]),                          
+row_param2d = v.Row(children=[v.Col(children=[genotype_selection_2d]),                          
                          ])
 
-p2_wgt_3D_growth_developement = widgets.Output(layout=layout_output_wgt)
+plot3d_growth_developement = widgets.Output(layout=layout_output_wgt)
 
+plot3d_floral_intensity = widgets.Output(layout=layout_output_wgt)
 
-p2_panel_3D_growth_developement = v.Container(
-                              style_='max-height: 120px;',
-                              pa="0",
-                              fluid=True,
-                              children=[
-                                    p2_wgt_3D_growth_developement    
-                            ])
+panel_3d = v.Row(children=[v.Col(cols=12, sm=12, md=6, children=[v.Container(fluid=True, children=[plot3d_growth_developement])]), 
+                           v.Col(cols=12, sm=12, md=6, children=[v.Container(fluid=True, children=[plot3d_floral_intensity])])])
 
-p2_col2 = v.Col(cols=12, sm=12, md=6, class_="pa-0",
-                children=[
-                          p2_panel_3D_growth_developement,
-                      ])
-
-
-p2_wgt_3D_floral_intensity = widgets.Output(layout=layout_output_wgt)
-
-p2_panel_3D_floral_intensity = v.Container(
-                              fluid=True,
-                              children=[
-                                    p2_wgt_3D_floral_intensity    
-                            ])
-
-p2_col3 = v.Col(cols=12, sm=12, md=6, class_="pa-0",
-                children=[
-                          p2_panel_3D_floral_intensity,
-                      ])
-p2_panel_3D = v.Row(children=[p2_col2, p2_col3])
-
-p2_tab1 = v.Row(children=[v.Col(col=12, sm=11, md=11,
-                                children=[p2_row1,
-                                      p2_panel_3D
+tab_3d_content = v.Row(children=[v.Col(col=12, sm=11, md=11,
+                                children=[row_param3d,
+                                      panel_3d
                                       ])
                          ])
 
-p2_wgt_2D_single_p = v.Img(src="2D_single_p.png")
-
-#
-
-p2_panel_2D_single_p = v.Container(
+plot2d_single_p = v.Container(
                               fluid=True,
                               children=[
-                                    p2_wgt_2D_single_p    
+                                    v.Img(src="2d_single_p.png")    
                             ])
 
-p2_col4 = v.Col(cols=12, sm=12, md=6, class_="pa-0",
-                children=[
-                          p2_panel_2D_single_p,
-                      ])
-
-p2_wgt_2D_most_central = v.Img(src="2D_most_central.png")
-
-p2_panel_2D_most_central = v.Container(
+plot2d_most_central = v.Container(
                               fluid=True,
                               children=[
-                                    p2_wgt_2D_most_central    
+                                    v.Img(src="2d_most_central.png")    
                             ])
 
-p2_col5 = v.Col(cols=12, sm=12, md=6, class_="pa-0",
-                children=[
-                          p2_panel_2D_most_central,
-                      ])
+panel_2d = v.Row(children=[v.Col(cols=12, sm=12, md=6, children=[plot2d_single_p]), 
+                           v.Col(cols=12, sm=12, md=6, children=[plot2d_most_central,])])
 
 
-p2_panel_2D = v.Row(children=[p2_col4, p2_col5])
-
-
-p2_tab2 = v.Row(children=[v.Col(col=12, sm=11, md=11,
-                                children=[p2_row12,
-                                      p2_panel_2D
+tab_2d_content = v.Row(children=[v.Col(col=12, sm=11, md=11,
+                                children=[row_param2d,
+                                      panel_2d
                                       ])
                          ])
 
-p2_t1 = v.Tab(children=['3D Visualization'])
+# Instantiate tab 3d here to link it to an event
+tab_3d = v.Tab(children=['3d Visualization'])
 
-
-p2 = v.Tabs( 
-            children=[
-            v.Tab(children=['2D Visualization']),
-            p2_t1,
-            v.TabItem(children=[
-                p2_tab2
-            ]),
-            v.TabItem(children=[
-                p2_tab1
-            ]), 
-        ])
-
-p2_container_main = v.Container(fluid=True, 
-                                   class_='grid-list-md box',
-                                   children=[
-                                       p2
-                                   ])
+container_main = v.Container(fluid=True, 
+                            class_='grid-list-md box',
+                            children=[
+                                v.Tabs( children=[
+                                    v.Tab(children=['2d Visualization']),
+                                    tab_3d,
+                                    v.TabItem(children=[tab_2d_content]),
+                                    v.TabItem(children=[tab_3d_content]), 
+                                ])
+                            ])
 
 
 # # ----------------------------------------------------------------
 # # Link widgets - event
 # # ----------------------------------------------------------------
 
-p2_wgt_genotype_selection_3D.on_event("change", on_change_3d)
-
-p2_wgt_parameters.on_event("change", on_change_3d)
-
-p2_t1.on_event('change', on_change_tab_3d)
+genotype_selection_3d.on_event("change", on_change_3d)
+parameter_color.on_event("change", on_change_3d)
+tab_3d.on_event('change', on_change_tab_3d)
 
