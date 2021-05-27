@@ -945,8 +945,8 @@ def plot_waffle_plotly_imshow(df, layout={}, legend_name={}):
 
 
 def plot_waffle_matplotlib(df, layout={}, legend_name={}):
-    height = layout.get('height', 500)
-    width = layout.get('width', 500)
+    height = layout.get('height', 18.5)
+    width = layout.get('width', 10.5)
     xlabel = layout.get('xlabel', 'Plant')
     xticks = layout.get('xticks', range(0,len(df.columns)))
     xticks_label = layout.get('xticks_label', list(df.columns))
