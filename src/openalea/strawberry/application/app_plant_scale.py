@@ -95,9 +95,9 @@ def on_change_parameter_p3(widget, event, data):
 # # Widgets
 # # ----------------------------------------------------------------
 
-p3_wgt_export = v.Btn(children=['Export table'])
+export_extraction = v.Btn(children=['Export table'])
 
-p3_wgt_genotypes_selection_t1 = v.Select(items=[],
+genotypes_selection_extraction = v.Select(items=[],
             chips=True, 
             multiple=True,
             counter=True,
@@ -105,10 +105,10 @@ p3_wgt_genotypes_selection_t1 = v.Select(items=[],
             label="Select Genotypes",
             truncate_length=22)
 
-p3_col1 = v.Col(cols=12, sm=3, md=3,
+menu_plant = v.Col(cols=12, sm=3, md=3,
                 children=[
-                          p3_wgt_genotypes_selection_t1,
-                          p3_wgt_export
+                          genotypes_selection_extraction,
+                          export_extraction
                       ])
 
 p3_wgt_df_plantscale = qgrid.show_grid(pd.DataFrame(), show_toolbar=False, 
@@ -135,7 +135,7 @@ p3_col2 = v.Col(cols=12, sm=7, md=9,
                       ])
 
 
-p3_tab1 = v.Row(children=[p3_col1,
+p3_tab1 = v.Row(children=[menu_plant,
                           p3_col2,
                           ])
 
@@ -199,7 +199,7 @@ p3_container_main = v.Container(fluid=True,
 # # Link widgets - event
 # # ----------------------------------------------------------------
 
-p3_wgt_genotypes_selection_t1.on_event('change', on_change_genotype_p3_t1)
+genotypes_selection_extraction.on_event('change', on_change_genotype_p3_t1)
 p3_wgt_genotypes_selection_t2.on_event('change', on_change_genotype_p3_t2)
 p3_wgt_date_selection.on_event('change', on_change_date_p3)
 p3_wgt_parameter_selection.on_event('change', on_change_parameter_p3)
