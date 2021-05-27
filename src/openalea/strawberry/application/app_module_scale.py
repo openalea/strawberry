@@ -60,22 +60,22 @@ def plot_module_distribution_complete_incomplete_date(df, genotype):
 
 
 def print_single_genotype_plots():
-    genotype=p4_wgt_genotypes_selection_t2.v_model
+    genotype=genotypes_selection_single_genotype.v_model
     vids=get_vid_of_genotype(misc.all_mtg, [genotype])
     df=extract_at_module_scale(misc.all_mtg, vids=vids)
     if genotype:
         # plot occurence module order
         fig = plot_module_occurence_module_order_along_time(df, genotype)
-        transfert_figure(fig, p4_wgt_occurence)
+        transfert_figure(fig, plot_occurence)
         # plot occurence module order
         fig = plot_module_distribution_complete_incomplete_module_order(df, genotype)
-        transfert_figure(fig, p4_wgt_distribution_module_order)
+        transfert_figure(fig, plot_distribution_module_order)
         # plot occurence module order
         fig = plot_module_distribution_complete_incomplete_date(df, genotype)
-        transfert_figure(fig, p4_wgt_distribution_date)
+        transfert_figure(fig, plot_distribution_date)
     else:
-        with p4_wgt_occurence:
-            p4_wgt_occurence.clear_output()
+        with plot_occurence:
+            plot_occurence.clear_output()
             print('Select a Genotype')
 
 def crowntype_distribution(data, crown_type,):
@@ -163,19 +163,19 @@ def print_multiple_genotypes_plots():
         df=extract_at_module_scale(misc.all_mtg)
         # plot pointwisemean leaves
         fig = plot_module_pointwisemean(df, "nb_total_leaves")
-        transfert_figure(fig, p4_wgt_pointwisemean_leaves)
+        transfert_figure(fig, plot_pointwisemean_leaves)
         # plot pointwisemean flowers
         fig = plot_module_pointwisemean(df, "nb_total_flowers")
-        transfert_figure(fig, p4_wgt_pointwisemean_flowers)
+        transfert_figure(fig, plot_pointwisemean_flowers)
         # plot pointwisemean stolons
         fig = plot_module_pointwisemean(df, "nb_stolons")
-        transfert_figure(fig, p4_wgt_pointwisemean_stolons)
+        transfert_figure(fig, plot_pointwisemean_stolons)
         # crowntype branch
         fig = plot_module_crown(df, "branch_crown")
-        transfert_figure(fig, p4_wgt_branch_crown)
+        transfert_figure(fig, plot_branch_crown)
         # crowntype extension
         fig = plot_module_crown(df, "extension_crown")
-        transfert_figure(fig, p4_wgt_extension_crown)
+        transfert_figure(fig, plot_extension_crown)
         
 
 
@@ -189,55 +189,55 @@ def on_change_genotype_p4(widget, event, data):
     if misc.all_mtg:
         vids=get_vid_of_genotype(misc.all_mtg, genotypes=data)
         df = extract_at_module_scale(misc.all_mtg, vids=vids)
-    p4_wgt_df_modulescale.df = df
+    df_modulescale.df = df
     
     # update descriptors
-    with p4_wgt_descriptors:
-        p4_wgt_descriptors.clear_output()
+    with df_description:
+        df_description.clear_output()
         display(df.describe())
 
 def on_change_single_genotype(widget, event, data):
     print_single_genotype_plots()
 
 def on_click_export_411(widget, event, data):
-    genotype=p4_wgt_genotypes_selection_t2.v_model
+    genotype=genotypes_selection_single_genotype.v_model
     if genotype:
         vids=get_vid_of_genotype(misc.all_mtg, [genotype])
         df=extract_at_module_scale(misc.all_mtg, vids=vids)
         geno_frequency = occurence_module_order_along_time(data= df,frequency_type= "cdf")
-        with p4_link_export_t11:
-            p4_link_export_t11.clear_output()
+        with link_export_t11:
+            link_export_t11.clear_output()
             display(create_download_link(geno_frequency))
         
         
 def on_click_export_412(widget, event, data):
-    genotype=p4_wgt_genotypes_selection_t2.v_model
+    genotype=genotypes_selection_single_genotype.v_model
     if genotype:
         vids=get_vid_of_genotype(misc.all_mtg, [genotype])
         df=extract_at_module_scale(misc.all_mtg, vids=vids)
         res=pd.crosstab(index= df["order"], columns= df["complete_module"],normalize="index")
         res.columns = ["incomplete","complete"]
-        with p4_link_export_t12:
-            p4_link_export_t12.clear_output()
+        with link_export_t12:
+            link_export_t12.clear_output()
             display(create_download_link(res))
         
 def on_click_export_413(widget, event, data):
-    genotype=p4_wgt_genotypes_selection_t2.v_model
+    genotype=genotypes_selection_single_genotype.v_model
     if genotype:
         vids=get_vid_of_genotype(misc.all_mtg, [genotype])
         df=extract_at_module_scale(misc.all_mtg, vids=vids)
         res=pd.crosstab(index=df["date"], columns= df["complete_module"],normalize="index")
         res.columns = ["incomplete","complete"]    
-        with p4_link_export_t13:
-            p4_link_export_t13.clear_output()
+        with link_export_t13:
+            link_export_t13.clear_output()
             display(create_download_link(res))
             
 def on_click_export_421(widget, event, data):
     if misc.all_mtg:
         df=extract_at_module_scale(misc.all_mtg)
         Mean= df.groupby(["Genotype", "order"]).mean()
-        with p4_link_export_t21:
-            p4_link_export_t21.clear_output()
+        with link_export_t21:
+            link_export_t21.clear_output()
             display(create_download_link(Mean))
 
             
@@ -245,16 +245,16 @@ def on_click_export_422(widget, event, data):
     if misc.all_mtg:
         df=extract_at_module_scale(misc.all_mtg)
         Mean= df.groupby(["Genotype", "order"]).mean()
-        with p4_link_export_t22:
-            p4_link_export_t22.clear_output()
+        with link_export_t22:
+            link_export_t22.clear_output()
             display(create_download_link(Mean))
             
 def on_click_export_423(widget, event, data):
     if misc.all_mtg:
         df=extract_at_module_scale(misc.all_mtg)
         Mean= df.groupby(["Genotype", "order"]).mean()
-        with p4_link_export_t23:
-            p4_link_export_t23.clear_output()
+        with link_export_t23:
+            link_export_t23.clear_output()
             display(create_download_link(Mean))
             
 def on_click_export_424(widget, event, data):
@@ -262,8 +262,8 @@ def on_click_export_424(widget, event, data):
         df=extract_at_module_scale(misc.all_mtg)
         ctd = crowntype_distribution(data= df, crown_type="branch_crown")
         ctd = ctd[ctd.index.get_level_values('order')!=0]
-        with p4_link_export_t24:
-            p4_link_export_t24.clear_output()
+        with link_export_t24:
+            link_export_t24.clear_output()
             display(create_download_link(ctd))
             
 def on_click_export_425(widget, event, data):
@@ -271,122 +271,124 @@ def on_click_export_425(widget, event, data):
         df=extract_at_module_scale(misc.all_mtg)
         ctd = crowntype_distribution(data= df, crown_type="extension_crown")
         ctd = ctd[ctd.index.get_level_values('order')!=0]
-        with p4_link_export_t25:
-            p4_link_export_t25.clear_output()
+        with link_export_t25:
+            link_export_t25.clear_output()
             display(create_download_link(ctd))
 
 
 def on_change_module_waffle_genotype(widget, event, data):
-    genotype=p4_wgt_genotypes_selection_t4.v_model
+    genotype=genotypes_selection_waffle.v_model
     vids=get_vid_of_genotype(misc.all_mtg, [genotype])
     df=extract_at_module_scale(misc.all_mtg, vids=vids)
     param = list(df.columns)
     param.remove("Genotype")
     param.remove('date')
-    p4_wgt_date_selection.items=list(df.date.unique())
-    p4_wgt_date_selection.v_model=""
-    p4_wgt_parameter_selection.items=param
+    param.remove('order')
+    param.remove('plant')
+    date_selection_waffle.items=list(df.date.unique())
+    date_selection_waffle.v_model=""
+    parameter_selection_waffle.items=param
     
 def on_change_module_waffle_date(widget, event, data):
-    if not p4_wgt_parameter_selection.v_model:
+    if not parameter_selection_waffle.v_model:
         pass
     else:
-        with p4_waffle:
-            p4_waffle.clear_output()
-            genotype=p4_wgt_genotypes_selection_t4.v_model
+        with waffle:
+            waffle.clear_output()
+            genotype=genotypes_selection_waffle.v_model
             vids=get_vid_of_genotype(misc.all_mtg, [genotype])
             df=extract_at_module_scale(misc.all_mtg, vids=vids)
 
-            if p4_wgt_aggfunc_selection.v_model == 'concat_string':
+            if aggfunc_selection_waffle.v_model == 'concat_string':
                 tmp=df2waffle(df, index='order', 
                           date=data, 
-                          variable=p4_wgt_parameter_selection.v_model, 
+                          variable=parameter_selection_waffle.v_model, 
                           aggfunc=lambda x: ' '.join(x),
                           crosstab=False)
             else:
                 tmp=df2waffle(df, index='order', 
                           date=data, 
-                          variable=p4_wgt_parameter_selection.v_model, 
-                          aggfunc=p4_wgt_aggfunc_selection.v_model,
+                          variable=parameter_selection_waffle.v_model, 
+                          aggfunc=aggfunc_selection_waffle.v_model,
                           crosstab=False)
 
             fig = plot_waffle(tmp,
 #                               layout=layout,
-                              plot_func=p4_wgt_plot_type.v_model)
+                              plot_func=plot_type_waffle.v_model)
             display(fig)
 
 
     
 def on_change_module_waffle_parameter(widget, event, data):
-    if not p4_wgt_date_selection.v_model:
+    if not date_selection_waffle.v_model:
         pass
     else:
-        with p4_waffle:
-            p4_waffle.clear_output()
-            genotype=p4_wgt_genotypes_selection_t4.v_model
+        with waffle:
+            waffle.clear_output()
+            genotype=genotypes_selection_waffle.v_model
             vids=get_vid_of_genotype(misc.all_mtg, [genotype])
             df=extract_at_module_scale(misc.all_mtg, vids=vids)
 
-            if p4_wgt_aggfunc_selection.v_model == 'concat_string':
+            if aggfunc_selection_waffle.v_model == 'concat_string':
                 tmp=df2waffle(df, index='order', 
-                          date=p4_wgt_date_selection.v_model, 
+                          date=date_selection_waffle.v_model, 
                           variable=data, 
                           aggfunc=lambda x: ' '.join(x),
                           crosstab=False)
             else:
                 tmp=df2waffle(df, index='order', 
-                          date=p4_wgt_date_selection.v_model, 
+                          date=date_selection_waffle.v_model, 
                           variable=data, 
-                          aggfunc=p4_wgt_aggfunc_selection.v_model,
+                          aggfunc=aggfunc_selection_waffle.v_model,
                           crosstab=False)
 
 
             fig = plot_waffle(tmp,
 #                               layout=layout,
-                              plot_func=p4_wgt_plot_type.v_model)
+                              plot_func=plot_type_waffle.v_model)
             display(fig)
 
             
 def on_change_module_aggfunc(widget, event, data):
-    if p4_wgt_date_selection.v_model and p4_wgt_parameter_selection.v_model:
-        with p4_waffle:
-            p4_waffle.clear_output()
-            genotype=p4_wgt_genotypes_selection_t4.v_model
+    if date_selection_waffle.v_model and parameter_selection_waffle.v_model:
+        with waffle:
+            waffle.clear_output()
+            genotype=genotypes_selection_waffle.v_model
             vids=get_vid_of_genotype(misc.all_mtg, [genotype])
             df=extract_at_module_scale(misc.all_mtg, vids=vids)
 
             
-            if p4_wgt_aggfunc_selection.v_model == 'concat_string':
+            if aggfunc_selection_waffle.v_model == 'concat_string':
                 tmp=df2waffle(df, index='order', 
-                          date=p4_wgt_date_selection.v_model, 
-                          variable=p4_wgt_parameter_selection.v_model, 
+                          date=date_selection_waffle.v_model, 
+                          variable=parameter_selection_waffle.v_model, 
                           aggfunc=lambda x: ' '.join(x),
                           crosstab=False)
             else:
                 tmp=df2waffle(df, index='order', 
-                          date=p4_wgt_date_selection.v_model, 
-                          variable=p4_wgt_parameter_selection.v_model, 
+                          date=date_selection_waffle.v_model, 
+                          variable=parameter_selection_waffle.v_model, 
                           aggfunc=data,
                           crosstab=False)
 
             fig = plot_waffle(tmp,
 #                               layout=layout,
-                              plot_func=p4_wgt_plot_type.v_model)
+                              plot_func=plot_type_waffle.v_model)
             display(fig)
 
             
 # def on_change_module_crosstab(widget, event, data):
-#     if p4_wgt_date_selection.v_model and p4_wgt_parameter_selection.v_model:
-#         with p4_waffle:
-#             p4_waffle.clear_output()
-#             genotype=p4_wgt_genotypes_selection_t4.v_model
+#     if date_selection_waffle.v_model and parameter_selection_waffle.v_model:
+#         with waffle:
+#             waffle.clear_output()
+#             genotype=genotypes_selection_waffle.v_model
 #             vids=get_vid_of_genotype(misc.all_mtg, [genotype])
 #             df=extract_at_module_scale(misc.all_mtg, vids=vids)
 
 #             tmp=df2waffle(df, index='order', 
-#                           date=p4_wgt_date_selection.v_model, 
-#                           variable=p4_wgt_parameter_selection.v_model, 
-#                           aggfunc=p4_wgt_aggfunc_selection.v_model,
+#                           date=date_selection_waffle.v_model, 
+#                           variable=parameter_selection_waffle.v_model, 
+#                           aggfunc=aggfunc_selection_waffle.v_model,
 #                           crosstab=data)
             
 #             yticks_l =list(range(0,len(tmp.index)))
@@ -405,31 +407,31 @@ def on_change_module_aggfunc(widget, event, data):
 
 #                 fig = plot_waffle(tmp,
 #                                   layout=layout,
-#                                   plot_func=p4_wgt_plot_type.v_model)
+#                                   plot_func=plot_type_waffle.v_model)
 #             display(fig)
 
             
             
 def on_change_module_plot_type(widget, event, data):
-    if p4_wgt_date_selection.v_model and p4_wgt_parameter_selection.v_model:
-        with p4_waffle:
-            p4_waffle.clear_output()
-            genotype=p4_wgt_genotypes_selection_t4.v_model
+    if date_selection_waffle.v_model and parameter_selection_waffle.v_model:
+        with waffle:
+            waffle.clear_output()
+            genotype=genotypes_selection_waffle.v_model
             vids=get_vid_of_genotype(misc.all_mtg, [genotype])
             df=extract_at_module_scale(misc.all_mtg, vids=vids)
 
-            if p4_wgt_aggfunc_selection.v_model == 'concat_string':
+            if aggfunc_selection_waffle.v_model == 'concat_string':
                 tmp=df2waffle(df, index='order', 
-                          date=p4_wgt_date_selection.v_model, 
-                          variable=p4_wgt_parameter_selection.v_model, 
+                          date=date_selection_waffle.v_model, 
+                          variable=parameter_selection_waffle.v_model, 
                           aggfunc=lambda x: ' '.join(x),
                           crosstab=False
                          )
             else:
                 tmp=df2waffle(df, index='order', 
-                          date=p4_wgt_date_selection.v_model, 
-                          variable=p4_wgt_parameter_selection.v_model, 
-                          aggfunc=p4_wgt_aggfunc_selection.v_model,
+                          date=date_selection_waffle.v_model, 
+                          variable=parameter_selection_waffle.v_model, 
+                          aggfunc=aggfunc_selection_waffle.v_model,
                           crosstab=False
                          )
 
@@ -448,9 +450,9 @@ def on_click_changetab(widget, event, data):
 # # Widgets
 # # ----------------------------------------------------------------
 
-p4_wgt_export = v.Btn(children=['Export table'])
+export_extraction = v.Btn(children=['Export table'])
 
-p4_wgt_genotypes_selection_t1 = v.Select(items=[],
+genotypes_selection_extraction = v.Select(items=[],
             chips=True, 
             multiple=True,
             counter=True,
@@ -458,148 +460,128 @@ p4_wgt_genotypes_selection_t1 = v.Select(items=[],
             label="Select Genotypes",
             truncate_length=22)
 
-p4_col1 = v.Col(cols=12, sm=3, md=3,
+menu_plant_extraction = v.Col(cols=12, sm=3, md=3,
                 children=[
-                          p4_wgt_genotypes_selection_t1,
-                          p4_wgt_export
+                          genotypes_selection_extraction,
+                          export_extraction
                       ])
 
-p4_wgt_df_modulescale = qgrid.show_grid(pd.DataFrame(), show_toolbar=False, 
+df_modulescale = qgrid.show_grid(pd.DataFrame(), show_toolbar=False, 
                                   grid_options={'forceFitColumns': False, 'editable':True, 'defaultColumnWidth':50})
 
+panel_df = v.Container(
+                    fluid=True,
+                    children=[
+                        df_modulescale    
+                ])
 
-p4_panel_table = v.Container(
-                              fluid=True,
+df_description = widgets.Output(layout=layout_output_wgt)
+
+panel_description =v.Container(fluid=True,
                               children=[
-                                    p4_wgt_df_modulescale    
-                            ])
-
-p4_wgt_descriptors = widgets.Output(layout=layout_output_wgt)
-
-p4_panel_descriptors =v.Container(fluid=True,
-                              children=[
-                                    p4_wgt_descriptors    
+                                    df_description    
                                 ])
 
-p4_col2 = v.Col(cols=12, sm=7, md=9,
-                children=[
-                          p4_panel_table,
-                          p4_panel_descriptors,
-                      ])
-
-p4_wgt_genotypes_selection_t1.on_event('change', on_change_genotype_p4)
-
-
-
-p4_tab1 = v.Row(children=[p4_col1,
-                          p4_col2,
+tab_extraction_content = v.Row(children=[menu_plant_extraction,
+                          v.Col(cols=12, sm=7, md=9,children=[panel_df,
+                                            panel_description,
+                                        ]),
                           ])
 
-p4_wgt_genotypes_selection_t2 = v.Select(items=[],
+genotypes_selection_single_genotype = v.Select(items=[],
             chips=True, 
             multiple=False,
             v_model="",
             label="Select Genotype",
             truncate_length=22)
 
-p4_wgt_occurence = go.FigureWidget(layout=layout_gofigure)
-p4_wgt_distribution_module_order = go.FigureWidget(layout=layout_gofigure)
-p4_wgt_distribution_date = go.FigureWidget(layout=layout_gofigure)
+plot_occurence = go.FigureWidget(layout=layout_gofigure)
+plot_distribution_module_order = go.FigureWidget(layout=layout_gofigure)
+plot_distribution_date = go.FigureWidget(layout=layout_gofigure)
 
-p4_link_export_t11 = widgets.Output(layout=layout_output_wgt)
-p4_link_export_t12 = widgets.Output(layout=layout_output_wgt)
-p4_link_export_t13 = widgets.Output(layout=layout_output_wgt)
+link_export_t11 = widgets.Output(layout=layout_output_wgt)
+link_export_t12 = widgets.Output(layout=layout_output_wgt)
+link_export_t13 = widgets.Output(layout=layout_output_wgt)
 
-p4_wgt_export_t11 = v.Btn(children=['Export table'])
-p4_wgt_export_t12 = v.Btn(children=['Export table'])
-p4_wgt_export_t13 = v.Btn(children=['Export table'])
+btn_export_t11 = v.Btn(children=['Export table'])
+btn_export_t12 = v.Btn(children=['Export table'])
+btn_export_t13 = v.Btn(children=['Export table'])
 
 
-p4_panel_single_genotype = v.Container(fluid=True,
+panel_single_genotype = v.Container(fluid=True,
                               children=[
-                                    p4_wgt_occurence,
-                                    v.Row(children=[p4_wgt_export_t11,p4_link_export_t11]),
-                                    p4_wgt_distribution_module_order,
-                                    v.Row(children=[p4_wgt_export_t12,p4_link_export_t12]),
-                                    p4_wgt_distribution_date,
-                                    v.Row(children=[p4_wgt_export_t13,p4_link_export_t13]),
+                                    plot_occurence,
+                                    v.Row(children=[btn_export_t11,link_export_t11]),
+                                    plot_distribution_module_order,
+                                    v.Row(children=[btn_export_t12,link_export_t12]),
+                                    plot_distribution_date,
+                                    v.Row(children=[btn_export_t13,link_export_t13]),
                                 ])
 
-
-p4_col3 = v.Col(col=12, sm=11, md=11,
-                children=[
-                    p4_wgt_genotypes_selection_t2,
-                    p4_panel_single_genotype
-                  ])
-
-p4_tab2 = v.Row(children=[p4_col3
+tab_single_genotype_content = v.Row(children=[v.Col(col=12, sm=11, md=11, children=[
+                                                        genotypes_selection_single_genotype,
+                                                        panel_single_genotype
+                                                    ])
                           ])
 
 
-p4_wgt_pointwisemean_leaves = go.FigureWidget(layout=layout_gofigure)
-p4_wgt_pointwisemean_flowers = go.FigureWidget(layout=layout_gofigure)
-p4_wgt_pointwisemean_stolons = go.FigureWidget(layout=layout_gofigure)
-p4_wgt_branch_crown = go.FigureWidget(layout=layout_gofigure)
-p4_wgt_extension_crown = go.FigureWidget(layout=layout_gofigure)
+plot_pointwisemean_leaves = go.FigureWidget(layout=layout_gofigure)
+plot_pointwisemean_flowers = go.FigureWidget(layout=layout_gofigure)
+plot_pointwisemean_stolons = go.FigureWidget(layout=layout_gofigure)
+plot_branch_crown = go.FigureWidget(layout=layout_gofigure)
+plot_extension_crown = go.FigureWidget(layout=layout_gofigure)
 
 
-p4_link_export_t21 = widgets.Output(layout=layout_output_wgt)
-p4_link_export_t22 = widgets.Output(layout=layout_output_wgt)
-p4_link_export_t23 = widgets.Output(layout=layout_output_wgt)
-p4_link_export_t24 = widgets.Output(layout=layout_output_wgt)
-p4_link_export_t25 = widgets.Output(layout=layout_output_wgt)
+link_export_t21 = widgets.Output(layout=layout_output_wgt)
+link_export_t22 = widgets.Output(layout=layout_output_wgt)
+link_export_t23 = widgets.Output(layout=layout_output_wgt)
+link_export_t24 = widgets.Output(layout=layout_output_wgt)
+link_export_t25 = widgets.Output(layout=layout_output_wgt)
 
-p4_wgt_export_t21 = v.Btn(children=['Export table'])
-p4_wgt_export_t22 = v.Btn(children=['Export table'])
-p4_wgt_export_t23 = v.Btn(children=['Export table'])
-p4_wgt_export_t24 = v.Btn(children=['Export table'])
-p4_wgt_export_t25 = v.Btn(children=['Export table'])
+btn_export_t21 = v.Btn(children=['Export table'])
+btn_export_t22 = v.Btn(children=['Export table'])
+btn_export_t23 = v.Btn(children=['Export table'])
+btn_export_t24 = v.Btn(children=['Export table'])
+btn_export_t25 = v.Btn(children=['Export table'])
 
-p4_panel_multiple_genotypes = v.Container(fluid=True,
+panel_multiple_genotypes = v.Container(fluid=True,
                               children=[
-                                    p4_wgt_pointwisemean_leaves,
-                                    v.Row(children=[p4_wgt_export_t21,p4_link_export_t21]),
-                                    p4_wgt_pointwisemean_flowers,
-                                    v.Row(children=[p4_wgt_export_t22,p4_link_export_t22]),
-                                    p4_wgt_pointwisemean_stolons,
-                                    v.Row(children=[p4_wgt_export_t23,p4_link_export_t23]),
-                                    p4_wgt_branch_crown,
-                                    v.Row(children=[p4_wgt_export_t24,p4_link_export_t24]),
-                                    p4_wgt_extension_crown,
-                                    v.Row(children=[p4_wgt_export_t25,p4_link_export_t25]),
+                                    plot_pointwisemean_leaves,
+                                    v.Row(children=[btn_export_t21,link_export_t21]),
+                                    plot_pointwisemean_flowers,
+                                    v.Row(children=[btn_export_t22,link_export_t22]),
+                                    plot_pointwisemean_stolons,
+                                    v.Row(children=[btn_export_t23,link_export_t23]),
+                                    plot_branch_crown,
+                                    v.Row(children=[btn_export_t24,link_export_t24]),
+                                    plot_extension_crown,
+                                    v.Row(children=[btn_export_t25,link_export_t25]),
                                 ])
 
-p4_col4 = v.Col(col=12, sm=11, md=11,
-                children=[
-#                     p1_wgt_genotypes_selection,
-                    p4_panel_multiple_genotypes
-                  ])
+tab_multiple_genotype_content = v.Row(children=[v.Col(col=12, sm=11, md=11, children=[panel_multiple_genotypes])])
 
-p4_tab3 = v.Row(children=[p4_col4
-                          ])
-
-p4_wgt_genotypes_selection_t4 = v.Select(items=[],
+genotypes_selection_waffle = v.Select(items=[],
             chips=True, 
             multiple=False,
             v_model="",
             label="Select Genotype",
             truncate_length=22)
 
-p4_wgt_date_selection = v.Select(items=[],
+date_selection_waffle = v.Select(items=[],
             chips=True, 
             multiple=False,
             v_model="",
             label="Select Date",
             truncate_length=22)
 
-p4_wgt_parameter_selection = v.Select(items=[],
+parameter_selection_waffle = v.Select(items=[],
             chips=True, 
             multiple=False,
             v_model="",
             label="Select Parameter",
             truncate_length=22)
     
-p4_wgt_aggfunc_selection = v.Select(items=[{'text': 'Mean', 'value': 'mean'}, 
+aggfunc_selection_waffle = v.Select(items=[{'text': 'Mean', 'value': 'mean'}, 
                                            {'text': 'Median', 'value': 'median'}, 
                                            {'text': 'Concatenate string', 'value': 'concat_string'}],
                                     chips=True, 
@@ -615,7 +597,7 @@ p4_wgt_aggfunc_selection = v.Select(items=[{'text': 'Mean', 'value': 'mean'},
 #             label="Crosstab",
 #             truncate_length=22)
 
-p4_wgt_plot_type = v.Select(items=["matplotlib", 'plotly.imshow', 'plotly.heatmap'],
+plot_type_waffle = v.Select(items=["matplotlib", 'plotly.imshow', 'plotly.heatmap'],
             chips=True, 
             multiple=False,
             v_model="matplotlib",
@@ -623,72 +605,70 @@ p4_wgt_plot_type = v.Select(items=["matplotlib", 'plotly.imshow', 'plotly.heatma
             truncate_length=22)
 
 
-p4_select_waffle = v.Row(children=[p4_wgt_genotypes_selection_t4,
-                                   p4_wgt_date_selection,
-                                   p4_wgt_parameter_selection,
-                                   p4_wgt_aggfunc_selection,
+menu_plant_waffle = v.Row(children=[genotypes_selection_waffle,
+                                   date_selection_waffle,
+                                   parameter_selection_waffle,
+                                   aggfunc_selection_waffle,
 #                                    p4_wgt_crosstab,
-                                   p4_wgt_plot_type])
+                                   plot_type_waffle])
 
-p4_waffle = widgets.Output(layout=layout_output_wgt)
+waffle = widgets.Output(layout=layout_output_wgt)
 
 
-p4_tab4 = v.Row(children=[v.Col(
-                            children=[
-                                p4_select_waffle,
-                                p4_waffle,
+tab_waffle_content = v.Row(children=[v.Col(children=[
+                                menu_plant_waffle,
+                                waffle,
                               ]),
                         ])
 
-p4 = v.Tabs( 
-            children=[
-            v.Tab(children=['Data extraction']),
-            v.Tab(children=['Single genotype']),
-            v.Tab(children=['Multiple genotypes']),
-            v.Tab(children=['Waffle']),
-            v.TabItem(children=[
-                p4_tab1
-            ]),
-            v.TabItem(children=[
-                p4_tab2
-            ]),
-            v.TabItem(children=[
-                p4_tab3
-            ]),
-            v.TabItem(children=[
-                p4_tab4
-            ]),  
-        ])
+tab_3 = v.Tab(children=['Multiple genotypes'])
 
-
-p4_container_main = v.Container(fluid=True, 
+container_main = v.Container(fluid=True, 
                                    class_='grid-list-md box',
                                    children=[
-                                       p4
+                                       v.Tabs( children=[
+                                            v.Tab(children=['Data extraction']),
+                                            v.Tab(children=['Single genotype']),
+                                            tab_3,
+                                            v.Tab(children=['Waffle']),
+                                            v.TabItem(children=[
+                                                tab_extraction_content
+                                            ]),
+                                            v.TabItem(children=[
+                                                tab_single_genotype_content
+                                            ]),
+                                            v.TabItem(children=[
+                                                tab_multiple_genotype_content
+                                            ]),
+                                            v.TabItem(children=[
+                                                tab_waffle_content
+                                            ]),  
+                                        ])
                                    ])
 
 # # ----------------------------------------------------------------
 # # Link widgets - event
 # # ----------------------------------------------------------------
 
-p4_wgt_genotypes_selection_t2.on_event("change", on_change_single_genotype)
+genotypes_selection_extraction.on_event('change', on_change_genotype_p4)
+genotypes_selection_single_genotype.on_event("change", on_change_single_genotype)
 
-p4_wgt_export_t11.on_event('click', on_click_export_411)
-p4_wgt_export_t12.on_event('click', on_click_export_412)
-p4_wgt_export_t13.on_event('click', on_click_export_413)
+btn_export_t11.on_event('click', on_click_export_411)
+btn_export_t12.on_event('click', on_click_export_412)
+btn_export_t13.on_event('click', on_click_export_413)
 
-p4_wgt_export_t21.on_event('click', on_click_export_421)
-p4_wgt_export_t22.on_event('click', on_click_export_422)
-p4_wgt_export_t23.on_event('click', on_click_export_423)
-p4_wgt_export_t24.on_event('click', on_click_export_424)
-p4_wgt_export_t25.on_event('click', on_click_export_425)
+btn_export_t21.on_event('click', on_click_export_421)
+btn_export_t22.on_event('click', on_click_export_422)
+btn_export_t23.on_event('click', on_click_export_423)
+btn_export_t24.on_event('click', on_click_export_424)
+btn_export_t25.on_event('click', on_click_export_425)
 
-p4_wgt_genotypes_selection_t4.on_event('change', on_change_module_waffle_genotype)
-p4_wgt_date_selection.on_event('change', on_change_module_waffle_date)
-p4_wgt_parameter_selection.on_event('change', on_change_module_waffle_parameter)
-p4_wgt_aggfunc_selection.on_event('change', on_change_module_aggfunc)
+genotypes_selection_waffle.on_event('change', on_change_module_waffle_genotype)
+date_selection_waffle.on_event('change', on_change_module_waffle_date)
+parameter_selection_waffle.on_event('change', on_change_module_waffle_parameter)
+aggfunc_selection_waffle.on_event('change', on_change_module_aggfunc)
 # p4_wgt_crosstab.on_event('change', on_change_module_crosstab)
-p4_wgt_plot_type.on_event('change', on_change_module_plot_type)
+plot_type_waffle.on_event('change', on_change_module_plot_type)
 
-p4.on_event("change", on_click_changetab)
+tab_3.on_event("change", on_click_changetab)
 
