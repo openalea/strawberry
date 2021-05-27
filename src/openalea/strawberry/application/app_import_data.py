@@ -10,7 +10,7 @@ import qgrid
 import oawidgets.mtg
 
 from openalea.mtg.io import read_mtg_file
-from openalea.mtg.algo import split, orders, union
+from openalea.mtg.algo import union
 from openalea.mtg import MTG
 
 import openalea.strawberry.application.app_visualization as p2
@@ -21,7 +21,7 @@ import openalea.strawberry.application.app_node_scale as p5
 from openalea.strawberry.application.misc import (get_vid_of_genotype, get_genotypes, get_vid_from_nbplant, get_files, fix_inferior_character_for_qgrid, replace_inf_alt, get_table_mtg)
 import openalea.strawberry.application.misc as misc
 
-from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure
+from openalea.strawberry.application.layout import layout_output_wgt
 
 qgrid.set_grid_option('maxVisibleRows', 10)
 

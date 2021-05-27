@@ -6,9 +6,9 @@ from pgljupyter import SceneWidget
 
 from openalea.mtg.algo import orders
 
-from openalea.strawberry import visu3d, visu2d 
+from openalea.strawberry import visu3d 
 
-from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure
+from openalea.strawberry.application.layout import layout_output_wgt
 import openalea.strawberry.application.misc as misc
 from openalea.strawberry.application.misc import get_vid_of_genotype
 
