@@ -12,6 +12,7 @@ from pandas.core.groupby.groupby import DataError
 import numpy as np
 from matplotlib.colors import to_rgb
 import matplotlib.patches as mpatches
+from matplotlib.ticker import MaxNLocator
 import plotly.express as px
 import plotly.graph_objs as go
 
@@ -157,25 +158,6 @@ def median_individuals(df):
         # minimum_inds= s[s==_min]
     return df.iloc[indices]
 
-def occurence_module_order_along_time(data, frequency_type):
-    """
-    parameters:
-    -----------
-        data = data at module scale 
-        frequency_type = type of distribution frequency distribution (freq), probability distribution frequency (pbf) or cumulative frequency distribution (cdf)
-
-    return:
-    --------
-        A dataframe with frequency, probability or cumulative frequency distribution for each module order along time
-    """
-    if frequency_type == "freq":
-        res = pd.crosstab(index= data["order"], columns= data["date"], margins = True)
-    if frequency_type == "pdf":
-        res = pd.crosstab(index= data["order"], columns= data["date"], normalize = "columns")
-    if frequency_type == "cdf":
-        res = pd.crosstab(index= data["order"], columns= data["date"], normalize = "columns").cumsum()
-    return res
-
 def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab, expand=0):
     """
     parameters:
@@ -205,48 +187,6 @@ def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab, expand=
     pointwise_mean.set_xlim(left=-expand, right= max(data_mean.loc[varietie].index)+expand)
 
     plt.show()
-
-def crowntype_distribution(data, varieties, crown_type, plot=True,expand=0):
-    """
-    parameters:
-    -----------
-    data: panda dataframe issue from extraction of data at module scale
-    varieties: names of varieties which are plot
-    variable: type of branch crown (extension_crown or branch_crown)
-    plot: booleen variable True or False
-
-    return:
-    -------
-    a dataframe containing relative frequency values by genotype and order for extension and branch crown
-    and a relative frequency distribution plot
-
-    """
-    df= pd.crosstab(index= [data.Genotype, data.order],
-                    columns= data.type_of_crown,
-                    normalize="index")
-    
-    df.columns=["Main", "extension_crown", "branch_crown"]
-    
-    if plot:
-        cmap = plt.get_cmap('rainbow', len(varieties))
-        print(cmap)
-        
-        for i, variety in enumerate(varieties): 
-            
-            df = df[df.index.get_level_values('order')!=0]
-            
-            plt.plot(df.loc[variety][crown_type],
-                     marker="p", 
-                     color = cmap(i))
-            plt.ylabel("relative frequency")
-            plt.xlabel("order")
-            plt.title("Relative frequency of " + crown_type)
-            plt.legend(labels=varieties,loc='center left', bbox_to_anchor=(1, 0.5))
-            plt.xlim(left=1-expand, right= max(df.loc[variety].index)+expand)
-            plt.ylim(bottom=0.1, top= 1.1)
-
-
-    return df
 
 
 # from variables
@@ -613,6 +553,67 @@ def stage(vid, g):
     _stage = g.property('Stade')
     return next((_stage[cid] for cid in g.components(vid) if cid in _stage), None)
 
+##### Data transformation #####
+def occurence_module_order_along_time(data, frequency_type):
+    """
+    parameters:
+    -----------
+        data = data at module scale 
+        frequency_type = type of distribution frequency distribution (freq), probability distribution frequency (pbf) or cumulative frequency distribution (cdf)
+
+    return:
+    --------
+        A dataframe with frequency, probability or cumulative frequency distribution for each module order along time
+    """
+    if frequency_type == "freq":
+        res = pd.crosstab(index= data["order"], columns= data["date"], margins = True)
+    if frequency_type == "pdf":
+        res = pd.crosstab(index= data["order"], columns= data["date"], normalize = "columns")
+    if frequency_type == "cdf":
+        res = pd.crosstab(index= data["order"], columns= data["date"], normalize = "columns").cumsum()
+    return res
+
+def crowntype_distribution(data, varieties, crown_type, plot=True,expand=0):
+    """
+    parameters:
+    -----------
+    data: panda dataframe issue from extraction of data at module scale
+    varieties: names of varieties which are plot
+    variable: type of branch crown (extension_crown or branch_crown)
+    plot: booleen variable True or False
+
+    return:
+    -------
+    a dataframe containing relative frequency values by genotype and order for extension and branch crown
+    and a relative frequency distribution plot
+
+    """
+    df= pd.crosstab(index= [data.Genotype, data.order],
+                    columns= data.type_of_crown,
+                    normalize="index")
+    
+    df.columns=["Main", "extension_crown", "branch_crown"]
+    
+    if plot:
+        cmap = plt.get_cmap('rainbow', len(varieties))
+        print(cmap)
+        
+        for i, variety in enumerate(varieties): 
+            
+            df = df[df.index.get_level_values('order')!=0]
+            
+            plt.plot(df.loc[variety][crown_type],
+                     marker="p", 
+                     color = cmap(i))
+            plt.ylabel("relative frequency")
+            plt.xlabel("order")
+            plt.title("Relative frequency of " + crown_type)
+            plt.legend(labels=varieties,loc='center left', bbox_to_anchor=(1, 0.5))
+            plt.xlim(left=1-expand, right= max(df.loc[variety].index)+expand)
+            plt.ylim(bottom=0.1, top= 1.1)
+
+
+    return df
 
 ########################## Extraction on node scale ############################################
 
@@ -814,6 +815,38 @@ def nb_visible_leaves_tree(v, g):
 
 def stage_tree(vid, g):
     return list(stage(m,g) for m in module_tree(v, g))
+
+######## Data transformation and plots #################
+def prob_axillary_production(mtg, order=None, plot=False):
+    '''
+    Probability of axillary production as function of node rank
+
+    Parameter
+    ----------
+        mtg: mtg 
+        order: order selected (order= None all module orders are selected)
+    
+    Return
+    ------
+        A dataframe with the probability of axillary production for each node
+    '''
+    df=extract_at_node_scale(mtg)
+
+    if order is not None:
+        df=df[df["order"]==order]
+    
+    # Value conversion
+    df["branching_type"]= df["branching_type"].replace(["1","2","3","4","5","6"],["S","VB","IB","AB","FB","BC"])
+
+    # pandas crosstab data
+    data=pd.crosstab(df["rank"],df["branching_type"],normalize="index")
+
+    if plot:
+        plt.plot(data, marker="o")
+        plt.legend(labels=data.columns,loc='center left', bbox_to_anchor=(1, 0.5))
+        plt.xticks(np.arange(min(data.index),max(data.index)+1,1.0))
+    else:
+        return data
 
 
 ######################### Transformation of dataframe ######################################
