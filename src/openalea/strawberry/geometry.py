@@ -17,9 +17,15 @@ VISIBLE = False
 WITHOUT_LEAF = False
 position = (0,0,0)
 
-# Set the color pallette to the turtle
+
 def colors_turtle(turtle):
-    """ Init the set of colors. """
+    """Set the color pallette to the turtle
+
+    :param turtle: Turtle 
+    :type turtle: Turtle
+    :return: return the turtle with initiated colors
+    :rtype: Turtle
+    """    
     colors = [
         (80, 80, 80),
         (65,45,15),
@@ -45,6 +51,7 @@ def colors_turtle(turtle):
 
     return turtle
 
+
 # Rules of production for 3D visualisation
 
 ## 1. Phyllotaxie
@@ -52,11 +59,15 @@ roll_angle = 360.*2./5.
 
 ## 2.phytomer
 def leaflet(length=1., width=1.):
-    """
-    return 
-    ------
-    a strawberry leaf composed of three discs
-    """
+    """Generate a strawberry leaf
+
+    :param length: length of the leaflet, defaults to 1.
+    :type length: float, optional
+    :param width: width of the leaflet, defaults to 1.
+    :type width: float, optional
+    :return: A strawberry leaf composed of three discs
+    :rtype: pgl.Group
+    """    
     disc = pgl.Translated((-0.5,0,0), pgl.Disc())
     disc = pgl.Scaled((length, width,1), disc)
     disc = pgl.AxisRotated(axis=(0,1,0), angle=radians(90.), geometry=disc)
@@ -68,20 +79,21 @@ def leaflet(length=1., width=1.):
     shape = pgl.Group([d1, d2, d3])
     return shape
 
+
 def phytomer(g, vid, turtle):
-    """ F: Petiol + 3 lobes.
-    cylinder + 3 ellipse/surface
-    
-    parameters:
-    -----------
-    g: is a current MTG
-    vid: vertex id in the mtg
-    turtle: openalea.
-    
-    return:
-    ---------
-    for each F in mtg return an object compose of petiol (2 cylinder) and 3 lobes (leaflet)
-    """
+    """Generates a phytomer 
+        F: Petiol + 3 lobes.
+        cylinder + 3 ellipse/surface
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: selected vid
+    :type vid: int
+    :param turtle: the turtle that travel
+    :type turtle: Trutle
+    :return: for each F in mtg return an object compose of petiol (2 cylinder) and 3 lobes (leaflet)
+    :rtype: [type]
+    """    
     t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
@@ -103,21 +115,21 @@ def phytomer(g, vid, turtle):
         t.customGeometry(leaflet(leaflet_length, leaflet_wdth))
     t.pop()
 
+
 def phytomer_primordia(g, vid, turtle):
-    """ f: Petiol + 3 lobes.
-    cylinder + 3 ellipse/surface
-    
-    parameters:
-    -----------
-    g: is a current MTG
-    vid: vertex id in the mtg
-    turtle: openalea.pltgl.turtle
-    
-    return:
-    ---------
-    for each f in mtg return an object compose of petiol (2 cylinder) and 3 lobes (leaflet)
-    
-    """
+    """Generates the phytomer primordia
+        f: Petiol + 3 lobes.
+        cylinder + 3 ellipse/surface
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: vid selected
+    :type vid: int
+    :param turtle: the Turtle that travel
+    :type turtle: openalea.pltgl.turtle
+    :return: for each f in mtg return an object compose of petiol (2 cylinder) and 3 lobes (leaflet)
+    :rtype: [type]
+    """    
     scale = 1./5
     t = colors_turtle(turtle)
     nid = g.node(vid)
@@ -140,21 +152,22 @@ def phytomer_primordia(g, vid, turtle):
 ## 3. inflorescence
 
 def inflorescence(g, vid, turtle):
-    """ HT: inflorescence
+    """Generates the inflorescences
+
+    HT: inflorescence
     Box (may change)
-    
-    parameters:
-    -----------
-    g: is a current MTG
-    vid: vertex id in the mtg
-    turtle: openalea.pltgl.turtle
-    
-    return:
-    ----------
     for each HT in mtg return an object compose of cylender and a blue box. 
     Shape of the box is dependent of the number of total flower and number of open flowers.
-    """
- 
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: vid selected
+    :type vid: int
+    :param turtle: Turtle
+    :type turtle: Turtle
+    :return: for each HT in mtg return an object compose of cylender and a blue box. 
+    :rtype: [type]
+    """    
     t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
@@ -172,19 +185,20 @@ def inflorescence(g, vid, turtle):
     tap = pgl.Tapered(3./20*nb_flower, 3./20*nb_flower_open, cube)
     turtle.customGeometry(tap)
 
+
 def inflo_primordia(g, vid, turtle):
-    """ ht: Primordia inflorescence
-    
-    parameters:
-    -----------
-    g: is a current MTG
-    vid: vertex id in the mtg
-    turtle: openalea.pltgl.turtle
-    
-    return:
-    -------
-    for each ht in mtg return an object compose of a cylinder and a of orange cube 
-    """
+    """Generates inflorescence primordia
+        ht: Primordia inflorescence
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: vid selected 
+    :type vid: int
+    :param turtle: Turtle
+    :type turtle: Turtle
+    :return: for each ht in mtg return an object compose of a cylinder and a of orange cube 
+    :rtype: [type]
+    """    
     t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
@@ -197,9 +211,13 @@ def inflo_primordia(g, vid, turtle):
 ## 5. stolon
 
 def stolon_curve(scale=1.):
-    """
-    return a curve to for symbolise a stolon
-    """
+    """Generates the stolon as curves
+
+    :param scale: size of the stolon, defaults to 1.
+    :type scale: float, optional
+    :return: return a curve to for symbolise a stolon
+    :rtype: plf.BezierCurve2D
+    """    
     v2 = pgl.Vector3
     ctrls = pgl.Point3Array([v2(x*scale, y*scale) for x,y in [(0,0), (1,3), (3,5), (4,2), (5,4)]])
     crv = pgl.BezierCurve2D(ctrls)
@@ -209,9 +227,15 @@ _stolon = stolon_curve(scale=.25)
 
 
 def stolon(g, vid, turtle):
-    """ s: stolon
-    
-    """
+    """Generates the stolons in the turtle
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: vid selected
+    :type vid: int
+    :param turtle: Turtle
+    :type turtle: Turtle
+    """    
     t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
@@ -222,9 +246,15 @@ def stolon(g, vid, turtle):
 # 6. bud
 
 def bud(g, vid, turtle):
-    """ bt: Terminal bud.
-    sphere
-    """
+    """Generates the buds in the turtle
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: vid selected
+    :type vid: int
+    :param turtle: Turtle
+    :type turtle: Turtle
+    """    
     t = colors_turtle(turtle)
     #turtle.setColor(1)
     nid = g.node(vid)
@@ -235,14 +265,12 @@ def bud(g, vid, turtle):
     turtle.customGeometry(sphere)
 
 
-
 def get_symbols():
-    """
-    return:
-    --------
-    
-    a dictionnary which associate each geometrical fonction phytomer, inflorescence, TerminalBud, phytomer_primordia, inflo_primordia,stolon to F, HT, bt, ht, s
-    """
+    """Get the possible symbols to read the mtg
+
+    :return: a dictionnary which associate each geometrical fonction phytomer, inflorescence, TerminalBud, phytomer_primordia, inflo_primordia,stolon to F, HT, bt, ht, s
+    :rtype: dict
+    """    
     geoms = dict(F=phytomer,
                  HT=inflorescence,
                  bt=bud,
@@ -257,10 +285,20 @@ def get_symbols():
                 ) # dictionnary for all rules production
     return geoms
 
+
 # 6.phytomer for plantule
 ## 6.1 Leaflet
 
 def trileaflet(length=1., width=1.):
+    """Generates a trileaflet shape
+
+    :param length: length of the shape, defaults to 1.
+    :type length: float, optional
+    :param width: width of the shape, defaults to 1.
+    :type width: float, optional
+    :return: the shape
+    :rtype: pgl.Group
+    """    
     disc = pgl.Translated((-0.5,0,0), pgl.Disc())
     disc = pgl.Scaled((length, width,1), disc)
     disc = pgl.AxisRotated(axis=(0,1,0), angle=radians(90.), geometry=disc)
@@ -272,7 +310,17 @@ def trileaflet(length=1., width=1.):
     shape = pgl.Group([d1, d2, d3])
     return shape
 
+
 def unileaflet(length=1., width=1.):
+    """Generates a unileaflet shape
+
+    :param length: length of the shape, defaults to 1.
+    :type length: float, optional
+    :param width: width of the shape, defaults to 1.
+    :type width: float, optional
+    :return: the shape
+    :rtype: pgl.Group
+    """  
     disc = pgl.Translated((-0.5,0,0), pgl.Disc())
     disc = pgl.Scaled((length, width,1), disc)
     disc = pgl.AxisRotated(axis=(0,1,0), angle=radians(90.), geometry=disc)
@@ -282,11 +330,20 @@ def unileaflet(length=1., width=1.):
     shape = pgl.Group([d3])
     return shape
 
+
 ## 6.2 trifoliate
 def trifoliate(g, vid, turtle):
-    """ F: Petiol + 3 lobes.
-    cylinder + 3 ellipse/surface
-    """
+    """Generates the trifoliate in the turtle
+        F: Petiol + 3 lobes.
+        cylinder + 3 ellipse/surface
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: vid selected
+    :type vid: int
+    :param turtle: Turtle
+    :type turtle: Turtle
+    """    
     t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
@@ -308,11 +365,20 @@ def trifoliate(g, vid, turtle):
         t.customGeometry(Trileaflet(leaflet_length, leaflet_wdth))
     t.pop()
 
+
 ## 6.3 unifoliate
 def unifoliate(g, vid, turtle):
-    """ F: Petiol + 3 lobes.
-    cylinder + 3 ellipse/surface
-    """
+    """Generates the unifoliate in the turtle
+        F: Petiol + 3 lobes.
+        cylinder + 3 ellipse/surface    
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: vid selected
+    :type vid: int
+    :param turtle: Turtle
+    :type turtle: Turtle
+    """    
     t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order

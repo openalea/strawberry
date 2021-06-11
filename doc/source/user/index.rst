@@ -14,6 +14,7 @@ You can use the strawberry package to modelize, analyze and visualize a strawber
 
 You can check the tutorials to get the packages possibilities.
 
+
 .. toctree::
     :maxdepth: 2
     :numbered:
