@@ -1,0 +1,25 @@
+name: strawberry
+channels:
+  - fredboudon
+  - conda-forge
+  - openalea
+
+dependencies:
+ - python=3.8 
+ - pandas 
+ - k3d 
+ - jupyter 
+ - voila 
+ - voila-vuetify 
+ - nodejs 
+ - cufflinks-py 
+ - ipyvuetify 
+ - qgrid 
+ - plotly
+ - openalea.deploy 
+ - openalea.mtg 
+ - openalea.plantgl 
+ - openalea.lpy
+ - pip:
+   - pyvis
+   - pgljupyter

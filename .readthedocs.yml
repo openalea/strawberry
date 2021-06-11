@@ -1,9 +1,12 @@
-conda:
-  file: doc/environment.yml
+version: 1
 
-build:
-  image: latest
+sphinx:
+   configuration: docs/conf.py
 
 python:
-  version: 2.7
-  setup_py_install: true
+   version: 3.7
+   install:
+   - requirements: docs/requirements.txt
+
+conda: 
+   file: docs/environment.yml

@@ -1,6 +1,4 @@
-.. image:: https://readthedocs.org/projects/strawberry/badge/?version=latest
-:target: https://strawberry.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
+[![Documentation Status](https://readthedocs.org/projects/strawberry/badge/?version=latest)](https://strawberry.readthedocs.io/en/latest/?badge=latest)
 
 # OpenAlea.Strawberry
 

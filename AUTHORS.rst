@@ -1,4 +1,3 @@
-* Marc LABADIE
-* Christophe Pradal
-
-
+* Marc	Labadie
+* Christophe    Pradal
+* Gaetan	Heidsieck
