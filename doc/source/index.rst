@@ -8,6 +8,9 @@ Welcome to strawberry's documentation!
 
 Strawberry is a package for architecture analysis and 2D/3D reconstruction. It contains Python code.
 
+
+.. contents::
+
 What is Strawberry ?
 --------------------
 
@@ -27,6 +30,13 @@ Installation
 Documentation
 -------------
 
+Strawberry User Guide
+'''''''''''''''''''''
+
+.. toctree::
+
+   ./user/index.rst
+
 Tutorial Jupyter Notebooks
 ''''''''''''''''''''''''''
 
@@ -38,7 +48,7 @@ API References
 
 .. toctree::
 
-    ./references/index.rst
+   ./references/index.rst
 
 
 
