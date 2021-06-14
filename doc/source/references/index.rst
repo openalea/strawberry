@@ -13,4 +13,11 @@ parameters available for the algorithms.
     :toctree: generated
     :nosignatures:
 
-    openalea.strawberry.analysis
+
+API References
+''''''''''''''
+
+.. toctree::
+
+    api_analysis.rst
+

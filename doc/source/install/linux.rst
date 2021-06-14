@@ -13,7 +13,7 @@ Follow official website instruction to install miniconda :
 http://conda.pydata.org/miniconda.html
 
 2. Create virtual environment and activate it
-.............................................
+---------------------------------------------
 
 .. code:: shell
 
