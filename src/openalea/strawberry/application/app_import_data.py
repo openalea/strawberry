@@ -100,16 +100,16 @@ def on_change_get_files(widget, event, data):
     else:
         tableMTG.df= pd.DataFrame()
     
-    # update genotype selection
+    # update genotype selections
     genotypes_selection.items=get_genotypes(misc.all_mtg)
     p2.genotype_selection_3d.items=get_genotypes(misc.all_mtg)
     p2.genotype_selection_2d.items=get_genotypes(misc.all_mtg)
-    p3.p3_wgt_genotypes_selection_t1.items=get_genotypes(misc.all_mtg)
-    p3.p3_wgt_genotypes_selection_t2.items=get_genotypes(misc.all_mtg)
-    p4.p4_wgt_genotypes_selection_t1.items=get_genotypes(misc.all_mtg)
-    p4.p4_wgt_genotypes_selection_t2.items=get_genotypes(misc.all_mtg)
-    p4.p4_wgt_genotypes_selection_t4.items=get_genotypes(misc.all_mtg)
-    p5.p5_wgt_genotypes_selection_t4.items=get_genotypes(misc.all_mtg)
+    p3.genotypes_selection_extraction.items=get_genotypes(misc.all_mtg)
+    p3.genotypes_selection_analyze.items=get_genotypes(misc.all_mtg)
+    p4.genotypes_selection_extraction.items=get_genotypes(misc.all_mtg)
+    p4.genotypes_selection_single_genotype.items=get_genotypes(misc.all_mtg)
+    p4.genotypes_selection_waffle.items=get_genotypes(misc.all_mtg)
+    p5.genotypes_selection_waffle.items=get_genotypes(misc.all_mtg)
     
     # update file description
     print_files_description()

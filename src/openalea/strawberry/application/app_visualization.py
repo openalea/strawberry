@@ -91,7 +91,7 @@ parameter_color = v.Select(items=[True, False],
                         multiple=False, chips=True, 
                         v_model=False)
 
-row_param3d = v.Row(children=[v.Col(children=[genotype_selection_3d]),
+menu_plant_3d = v.Row(children=[v.Col(children=[genotype_selection_3d]),
                           v.Col(children=[parameter_color])
                          ])
 
@@ -106,7 +106,7 @@ panel_3d = v.Row(children=[v.Col(cols=12, sm=12, md=6, children=[v.Container(flu
                            v.Col(cols=12, sm=12, md=6, children=[v.Container(fluid=True, children=[plot3d_floral_intensity])])])
 
 tab_3d_content = v.Row(children=[v.Col(col=12, sm=11, md=11,
-                                children=[row_param3d,
+                                children=[menu_plant_3d,
                                       panel_3d
                                       ])
                          ])
