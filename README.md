@@ -38,7 +38,7 @@ The Strawberry package contains :
 
 * Python > 3.0
 * OpenAlea.Deploy
-* OpneAlea.MTG
+* OpenAlea.MTG
 * Jupyter Notebook
 * OpenAlea.PlantGL
 * Matplotlib
