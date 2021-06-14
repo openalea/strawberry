@@ -17,12 +17,6 @@ from openalea.strawberry.application.layout import layout_output_wgt, layout_gof
 
 
 # # ----------------------------------------------------------------
-# # Print on widget function
-# # ----------------------------------------------------------------
-
-
-
-# # ----------------------------------------------------------------
 # # On event trigger
 # # ----------------------------------------------------------------
 
@@ -32,29 +26,29 @@ def on_change_genotype_p3_t1(widget, event, data):
     if misc.all_mtg:
         vids=get_vid_of_genotype(misc.all_mtg, genotypes=data)
         df = extract_at_plant_scale(misc.all_mtg, vids=vids)
-    p3_wgt_df_plantscale.df = df
+    df_plantscale.df = df
     
     # update descriptors
-    with p3_wgt_descriptors:
-        p3_wgt_descriptors.clear_output()
+    with df_description:
+        df_description.clear_output()
         display(df.describe())
         
 
 def on_change_genotype_p3_t2(widget, event, data):
-    genotype=p3_wgt_genotypes_selection_t2.v_model
+    genotype=genotypes_selection_analyze.v_model
     vids=get_vid_of_genotype(misc.all_mtg, [genotype])
     df=extract_at_plant_scale(misc.all_mtg, vids=vids)
     param = list(df.columns)
     param.remove("Genotype")
     param.remove('date')
-    p3_wgt_date_selection.items=list(df.date.unique())
-    p3_wgt_date_selection.v_model=""
-    p3_wgt_parameter_selection.items=param
+    date_selection_analyze.items=list(df.date.unique())
+    date_selection_analyze.v_model=""
+    variable_selection_analyze.items=param
     
 
 def on_change_date_p3(widget, event, data):
 
-    genotype=p3_wgt_genotypes_selection_t2.v_model
+    genotype=genotypes_selection_analyze.v_model
     vids=get_vid_of_genotype(misc.all_mtg, [genotype])
     df=extract_at_module_scale(misc.all_mtg, vids=vids)
     
@@ -66,7 +60,7 @@ def on_change_date_p3(widget, event, data):
     try:
         fig = plot_pie(tmp)
         fig.update_layout(title="Percentage representation of each stage at one date")
-        transfert_figure_pie(fig,p3_pie)
+        transfert_figure_pie(fig,pie_plantscale)
     except ValueError:
         pass
             
@@ -74,7 +68,7 @@ def on_change_date_p3(widget, event, data):
     
 def on_change_parameter_p3(widget, event, data):
 #     if date ...
-    genotype=p3_wgt_genotypes_selection_t2.v_model
+    genotype=genotypes_selection_analyze.v_model
     vids=get_vid_of_genotype(misc.all_mtg, [genotype])
     df=extract_at_plant_scale(misc.all_mtg, vids=vids)
 
@@ -89,15 +83,15 @@ def on_change_parameter_p3(widget, event, data):
 #               title="Relative distribution of complete (True) and incomplete (False) module as function of date for {}".format(genotype),
               asFigure=True
              )
-    transfert_figure(p, p3_plot) 
+    transfert_figure(p, plot_plantscale) 
 
 # # ----------------------------------------------------------------
 # # Widgets
 # # ----------------------------------------------------------------
 
-p3_wgt_export = v.Btn(children=['Export table'])
+export_extraction = v.Btn(children=['Export table'])
 
-p3_wgt_genotypes_selection_t1 = v.Select(items=[],
+genotypes_selection_extraction = v.Select(items=[],
             chips=True, 
             multiple=True,
             counter=True,
@@ -105,93 +99,80 @@ p3_wgt_genotypes_selection_t1 = v.Select(items=[],
             label="Select Genotypes",
             truncate_length=22)
 
-p3_col1 = v.Col(cols=12, sm=3, md=3,
+menu_plant_extraction = v.Col(cols=12, sm=3, md=3,
                 children=[
-                          p3_wgt_genotypes_selection_t1,
-                          p3_wgt_export
+                          genotypes_selection_extraction,
+                          export_extraction
                       ])
 
-p3_wgt_df_plantscale = qgrid.show_grid(pd.DataFrame(), show_toolbar=False, 
+df_plantscale = qgrid.show_grid(pd.DataFrame(), show_toolbar=False, 
                                   grid_options={'forceFitColumns': False, 'editable':True, 'defaultColumnWidth':50})
 
+panel_df = v.Container(
+                        fluid=True,
+                        children=[
+                            df_plantscale    
+                    ])
 
-p3_panel_table = v.Container(
-                              fluid=True,
+df_description = widgets.Output(layout=layout_output_wgt)
+
+panel_description =v.Container(fluid=True,
                               children=[
-                                    p3_wgt_df_plantscale    
-                            ])
-
-p3_wgt_descriptors = widgets.Output(layout=layout_output_wgt)
-
-p3_panel_descriptors =v.Container(fluid=True,
-                              children=[
-                                    p3_wgt_descriptors    
+                                    df_description    
                                 ])
 
-p3_col2 = v.Col(cols=12, sm=7, md=9,
-                children=[
-                          p3_panel_table,
-                          p3_panel_descriptors,
-                      ])
-
-
-p3_tab1 = v.Row(children=[p3_col1,
-                          p3_col2,
+tab_extraction_content = v.Row(children=[menu_plant_extraction,
+                          v.Col(cols=12, sm=7, md=9, children=[
+                            panel_df,
+                            panel_description,
+                            ]),
                           ])
 
-p3_wgt_genotypes_selection_t2 = v.Select(items=[],
+genotypes_selection_analyze = v.Select(items=[],
             chips=True, 
             multiple=False,
             v_model="",
             label="Select Genotype",
             truncate_length=22)
 
-p3_wgt_date_selection = v.Select(items=[],
+date_selection_analyze = v.Select(items=[],
             chips=True, 
             multiple=False,
             v_model="",
             label="Select Date",
             truncate_length=22)
 
-p3_wgt_parameter_selection = v.Select(items=[],
+variable_selection_analyze = v.Select(items=[],
             chips=True, 
             multiple=False,
             v_model="",
-            label="Select Parameter",
+            label="Select Variable",
             truncate_length=22)
 
-
-
-p3_select_genotype = v.Row(children=[p3_wgt_genotypes_selection_t2,
-                                   p3_wgt_date_selection,
-                                   p3_wgt_parameter_selection,
+menu_plant_analyze = v.Row(children=[genotypes_selection_analyze,
+                                   date_selection_analyze,
+                                   variable_selection_analyze,
                                    ])
 
-p3_plot = go.FigureWidget(layout=layout_gofigure)
-p3_pie = go.FigureWidget(layout=layout_gofigure)
+plot_plantscale = go.FigureWidget(layout=layout_gofigure)
+pie_plantscale = go.FigureWidget(layout=layout_gofigure)
 
-p3_tab2 = v.Row(children=[v.Col(
+tab_analyze_content = v.Row(children=[v.Col(
                             children=[
-                                p3_select_genotype,
-                                v.Row(children=[p3_plot, p3_pie]),
+                                menu_plant_analyze,
+                                v.Row(children=[plot_plantscale, pie_plantscale]),
                               ]),
                         ])
 
-p3 = v.Tabs( 
-            children=[
-            v.Tab(children=['Export']),
-            v.Tab(children=['Analyses']),
-            v.TabItem(children=[
-                p3_tab1,]),
-            v.TabItem(children=[p3_tab2]),
-
-        ])
-
-
-p3_container_main = v.Container(fluid=True, 
+container_main = v.Container(fluid=True, 
                                    class_='grid-list-md box',
-                                   children=[
-                                       p3
+                                   children=[v.Tabs( 
+                                        children=[
+                                        v.Tab(children=['Export']),
+                                        v.Tab(children=['Analyses']),
+                                        v.TabItem(children=[tab_extraction_content,]),
+                                        v.TabItem(children=[tab_analyze_content]),
+                                        ])
                                    ])
 
 
@@ -199,10 +180,10 @@ p3_container_main = v.Container(fluid=True,
 # # Link widgets - event
 # # ----------------------------------------------------------------
 
-p3_wgt_genotypes_selection_t1.on_event('change', on_change_genotype_p3_t1)
-p3_wgt_genotypes_selection_t2.on_event('change', on_change_genotype_p3_t2)
-p3_wgt_date_selection.on_event('change', on_change_date_p3)
-p3_wgt_parameter_selection.on_event('change', on_change_parameter_p3)
+genotypes_selection_extraction.on_event('change', on_change_genotype_p3_t1)
+genotypes_selection_analyze.on_event('change', on_change_genotype_p3_t2)
+date_selection_analyze.on_event('change', on_change_date_p3)
+variable_selection_analyze.on_event('change', on_change_parameter_p3)
 
 
 
