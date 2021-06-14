@@ -43,13 +43,6 @@ Tutorial Jupyter Notebooks
 Tutorial Jupyter Notebooks are available on the git repository in the folder
 examples.
 
-API References
-''''''''''''''
-
-.. toctree::
-
-   ./references/index.rst
-
 
 
 Authors
