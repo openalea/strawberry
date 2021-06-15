@@ -934,8 +934,6 @@ def crowntype_distribution(data, varieties, crown_type, plot=True,expand=0):
     return df
 
 ########################## Extraction on node scale ############################################
-
-########################## Extraction on node scale ############################################
 def extract_at_node_scale(g, vids=[], convert=convert):
     """Compute the properties at node scale of a MTG. 
 
@@ -1245,8 +1243,8 @@ def nb_visible_leaves_tree(v, g):
 def stage_tree(vid, g):
     return list(stage(m,g) for m in module_tree(v, g))
 
-######## Data transformation and plots #################
-def prob_axillary_production(mtg, order=None, plot=False):
+
+def prob_axillary_production(g, order=None, vids=[]):
     '''
     Probability of axillary production as function of node rank
 
@@ -1259,23 +1257,21 @@ def prob_axillary_production(mtg, order=None, plot=False):
     ------
         A dataframe with the probability of axillary production for each node
     '''
-    df=extract_at_node_scale(mtg)
-
+    if not vids:
+        vids = g.vertices(scale=1)
+        
+    df=extract_at_node_scale(g, vids=vids)
+    
     if order is not None:
         df=df[df["order"]==order]
-    
+        
     # Value conversion
     df["branching_type"]= df["branching_type"].replace(["1","2","3","4","5","6"],["S","VB","IB","AB","FB","BC"])
 
     # pandas crosstab data
     data=pd.crosstab(df["rank"],df["branching_type"],normalize="index")
 
-    if plot:
-        plt.plot(data, marker="o")
-        plt.legend(labels=data.columns,loc='center left', bbox_to_anchor=(1, 0.5))
-        plt.xticks(np.arange(min(data.index),max(data.index)+1,1.0))
-    else:
-        return data
+    return data
 
 
 ######################### Transformation of dataframe ######################################
