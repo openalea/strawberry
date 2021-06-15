@@ -21,61 +21,79 @@ from openalea.strawberry.application.layout import layout_output_wgt, layout_gof
 # # Print on widget function
 # # ----------------------------------------------------------------
 
-def plot_module_occurence_module_order_along_time(df, genotype):
+def plot_module_occurence_module_order_along_time(df, genotype, layout={}):
+    kind = layout.get('kind', "line")
+    mode = layout.get('mode', 'lines+markers')
+    xlabel = layout.get('xlabel', "Order")
+    ylabel = layout.get('ylabel', "cdf")
+    title = layout.get('title', "Occurence of successive module order for {}".format(genotype))   
+    
     geno_frequency = occurence_module_order_along_time(data= df,frequency_type= "cdf")
-    p=geno_frequency.iplot(kind = "line", 
-                          mode='lines+markers', 
-                          xTitle="order",
-                          yTitle="cdf",
-                          title="Occurence of successive module order for {}".format(genotype),
+    p=geno_frequency.iplot(kind = kind, 
+                          mode=mode, 
+                          xTitle=xlabel,
+                          yTitle=ylabel,
+                          title=title,
                           asFigure=True
                          )
     return p 
 
-def plot_module_distribution_complete_incomplete_module_order(df, genotype):
+def plot_module_distribution_complete_incomplete_module_order(df, genotype, layout={}):
+    kind = layout.get('kind', "line")
+    mode = layout.get('mode', 'lines+markers')
+    xlabel = layout.get('xlabel', "Order")
+    ylabel = layout.get('ylabel', "Probability")
+    title = layout.get('title', "Relative distrivution of complete (True) and incomplete (False) module as function of module order for {}".format(genotype))   
+   
     res=pd.crosstab(index= df["order"], columns= df["complete_module"],normalize="index")
     res.columns = ["incomplete","complete"]
     
-    p=res.iplot(kind = "line", 
-                      mode='lines+markers', 
-                      xTitle="Order",
-                      yTitle="Probability",
-                      title="Relative distrivution of complete (True) and incomplete (False) module as function of module order for {}".format(genotype),
-                      asFigure=True
+    p=res.iplot(kind =kind, 
+                  mode=mode, 
+                  xTitle=xlabel,
+                  yTitle=ylabel,
+                  title=title,
+              asFigure=True
                      )
     return p 
 
-def plot_module_distribution_complete_incomplete_date(df, genotype):
+def plot_module_distribution_complete_incomplete_date(df, genotype, layout={}):
+    kind = layout.get('kind', "line")
+    mode = layout.get('mode', 'lines+markers')
+    xlabel = layout.get('xlabel', "Dates")
+    ylabel = layout.get('ylabel', "Probability")
+    title = layout.get('title', "Relative distribution of complete (True) and incomplete (False) module as function of date for {}".format(genotype))   
+   
     res=pd.crosstab(index=df["date"], columns= df["complete_module"],normalize="index")
     res.columns = ["incomplete","complete"]    
 
-    p=res.iplot(kind = "line", 
-                  mode='lines+markers', 
-                  xTitle="Dates",
-                  yTitle="Probability",
-                  title="Relative distribution of complete (True) and incomplete (False) module as function of date for {}".format(genotype),
-                  asFigure=True
+    p=res.iplot(kind =kind, 
+                  mode=mode, 
+                  xTitle=xlabel,
+                  yTitle=ylabel,
+                  title=title,
+              asFigure=True
                  )
     return p 
 
 
 def print_single_genotype_plots():
-    genotype=genotypes_selection_single_genotype.v_model
+    genotype=p4_wgt_genotypes_selection_t2.v_model
     vids=get_vid_of_genotype(misc.all_mtg, [genotype])
     df=extract_at_module_scale(misc.all_mtg, vids=vids)
     if genotype:
         # plot occurence module order
         fig = plot_module_occurence_module_order_along_time(df, genotype)
-        transfert_figure(fig, plot_occurence)
+        transfert_figure(fig, p4_wgt_occurence)
         # plot occurence module order
         fig = plot_module_distribution_complete_incomplete_module_order(df, genotype)
-        transfert_figure(fig, plot_distribution_module_order)
+        transfert_figure(fig, p4_wgt_distribution_module_order)
         # plot occurence module order
         fig = plot_module_distribution_complete_incomplete_date(df, genotype)
-        transfert_figure(fig, plot_distribution_date)
+        transfert_figure(fig, p4_wgt_distribution_date)
     else:
-        with plot_occurence:
-            plot_occurence.clear_output()
+        with p4_wgt_occurence:
+            p4_wgt_occurence.clear_output()
             print('Select a Genotype')
 
 def crowntype_distribution(data, crown_type,):
@@ -99,7 +117,11 @@ def crowntype_distribution(data, crown_type,):
     return df
 
 
-def crowntype_plotly(data, crown_type, title, ylab,):
+def crowntype_plotly(data, crown_type, layout={}):
+    xlabel = layout.get('xlabel', "Order")
+    ylabel = layout.get('ylabel', "Relative frequency")
+    title = layout.get('title',"Relative frequency of {}".format(variable))   
+   
     fig=go.Figure()
     for genotype in list(data.unstack(level=0)[crown_type].columns):
         fig.add_trace(go.Scatter(
@@ -108,13 +130,18 @@ def crowntype_plotly(data, crown_type, title, ylab,):
                 name=genotype,
                 ))
 
-    fig.update_layout(yaxis_title=ylab,
-                      xaxis_title="Order",
+    fig.update_layout(yaxis_title=ylabel,
+                      xaxis_title=xlabel,
                       title=title,
                       )
     return go.FigureWidget(fig)
 
-def pointwisemean_plotly(data_mean, data_sd, variable,title,ylab,):
+                       
+def pointwisemean_plotly(data_mean, data_sd, variable, layout={}):
+    xlabel = layout.get('xlabel', "Order")
+    ylabel = layout.get('ylabel', "Mean {}".format(variable))
+    title = layout.get('title', "Pointwisemean of {}".format(variable))   
+   
     fig=go.Figure()
     for genotype in list(data_mean.unstack(level=0)[variable].columns):
         sd_error = list(data_sd.unstack(level=0)[variable][genotype])
@@ -122,39 +149,38 @@ def pointwisemean_plotly(data_mean, data_sd, variable,title,ylab,):
                 x=list(data_mean.unstack(level=0).index),
                 y=data_mean.unstack(level=0)[variable][genotype],
                 name=genotype,
+                mode='lines',
                 error_y=dict(type='data', 
                              array=sd_error, 
                              thickness=1,
                              visible=True)
                      ))
 
-    fig.update_layout(yaxis_title=ylab,
-                      xaxis_title="Order",
+    fig.update_layout(yaxis_title=ylabel,
+                      xaxis_title=xlabel,
                       title=title,
                       )
     return go.FigureWidget(fig)
 
 
 
-def plot_module_pointwisemean(df, var):
+def plot_module_pointwisemean(df, var, layout={}):
     Mean= df.groupby(["Genotype", "order"]).mean()
     sd= df.groupby(["Genotype", "order"]).std()
 #     variable = "nb_total_{}".format(var)
     fig = pointwisemean_plotly(data_mean=Mean,
                    data_sd=sd,
                    variable=var,
-                   title= "Pointwisemean of {}".format(var),
-                   ylab="Mean {}".format(var),)
+                   layout=layout)
 
     return fig
 
-def plot_module_crown(df, var):
+def plot_module_crown(df, var, layout={}):
     ctd = crowntype_distribution(data= df, crown_type=var)
     ctd = ctd[ctd.index.get_level_values('order')!=0]
     fig= crowntype_plotly(data=ctd,
                  crown_type=var, 
-                 title="Relative frequency of {}".format(var),
-                 ylab="Relative frequency")
+                 layout=layout)
     return fig
 
 
