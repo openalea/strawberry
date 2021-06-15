@@ -5,17 +5,7 @@ channels:
   - openalea
 
 dependencies:
- - python=3.8 
- - pandas 
- - k3d 
- - jupyter 
- - voila 
- - voila-vuetify 
- - nodejs 
- - cufflinks-py 
- - ipyvuetify 
- - qgrid 
- - plotly
+ - python=3.8  
  - openalea.deploy 
  - openalea.mtg 
  - openalea.plantgl 
@@ -23,3 +13,15 @@ dependencies:
  - pip:
    - pyvis
    - pgljupyter
+   - pandas
+   - k3d
+   - jupyter
+   - voila
+   - voila-vuetify
+   - nodejs
+   - cufflinks
+   - ipyvuetify
+   - qgrid
+   - plotly
+   - nbsphinx
+   - sphinx-rtd-theme
