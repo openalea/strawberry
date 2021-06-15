@@ -27,13 +27,13 @@ http://conda.pydata.org/miniconda.html
 .. code:: shell
 
     conda install -c conda-forge python=3.8 pandas k3d openalea.deploy jupyter voila voila-vuetify nodejs cufflinks-py ipyvuetify qgrid plotly
-    conda -c fredboudon -c conda-forge openalea.mtg openalea.plantgl openalea.lpy
+    conda install -c fredboudon -c conda-forge openalea.mtg openalea.plantgl openalea.lpy
 
-	git clone git@github.com:pomme-abricot/mtg.git
-	cd mtg; python setup.py install; cd ..
+    git clone git@github.com:pomme-abricot/mtg.git
+    cd mtg; python setup.py install; cd ..
 
-	git clone git@github.com:pomme-abricot/oawidgets.git
-	cd oawidgets; python setup.py install; cd ..
+    git clone git@github.com:pomme-abricot/oawidgets.git
+    cd oawidgets; python setup.py install; cd ..
 
 
 4. Install the strawberry package
@@ -42,5 +42,5 @@ http://conda.pydata.org/miniconda.html
 .. code:: shell
 
     git clone git@github.com:openalea-incubator/strawberry.git
-	cd strawberry; python setup.py install; cd ..
+    cd strawberry; python setup.py install; cd ..
 
