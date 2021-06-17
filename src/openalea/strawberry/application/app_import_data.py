@@ -4,8 +4,6 @@ import ipywidgets as widgets
 import pandas as pd
 import numpy as np
 from pathlib import Path
-import os
-import qgrid
 
 import oawidgets.mtg
 
@@ -18,12 +16,10 @@ import openalea.strawberry.application.app_plant_scale as p3
 import openalea.strawberry.application.app_module_scale as p4
 import openalea.strawberry.application.app_node_scale as p5
 
-from openalea.strawberry.application.misc import (get_vid_of_genotype, get_genotypes, get_vid_from_nbplant, get_files, fix_inferior_character_for_qgrid, replace_inf_alt, get_table_mtg)
+from openalea.strawberry.application.misc import (get_vid_of_genotype, get_genotypes, get_vid_from_nbplant, get_files, get_table_mtg, create_grid, update_grid)
 import openalea.strawberry.application.misc as misc
 
 from openalea.strawberry.application.layout import layout_output_wgt
-
-qgrid.set_grid_option('maxVisibleRows', 10)
 
 
 # # ----------------------------------------------------------------
@@ -85,6 +81,7 @@ def on_change_upload(widget, event, data):
     # add the file to the mtg repository
     pass
 
+
 def on_change_get_files(widget, event, data):
     # load mtgs
     misc.all_mtg = MTG()
@@ -95,10 +92,10 @@ def on_change_get_files(widget, event, data):
     # update table
     if misc.all_mtg:
         df = get_table_mtg(misc.all_mtg)
-        df_fixed = fix_inferior_character_for_qgrid(df)
-        tableMTG.df = df_fixed
+        # TODO: 
+        update_grid(df, tableMTG)
     else:
-        tableMTG.df= pd.DataFrame()
+        update_grid(pd.DataFrame(), tableMTG)
     
     # update genotype selections
     genotypes_selection.items=get_genotypes(misc.all_mtg)
@@ -216,14 +213,14 @@ menu_plant = v.Col(cols=12, sm=3, md=3,
                       export_all
                   ])
 
-tableMTG = qgrid.show_grid(pd.DataFrame(), show_toolbar=False, grid_options={'forceFitColumns': False, 'editable':True, 'defaultColumnWidth':50})
+tableMTG = create_grid()
 
 panel_tableMTG = v.Container(
                               label="The MTG as a table",
                               fluid=True,
                               children=[tableMTG])
 
-graphMTG=widgets.Output(layout=layout_output_wgt) 
+graphMTG=create_grid()
 
 panel_graphMTG = v.Container(
                               label="The MTG as a graph",
