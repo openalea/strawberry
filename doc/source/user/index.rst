@@ -25,4 +25,5 @@ You can check the tutorials to get the packages possibilities.
     3.Architecture_analysis_at_module_scale
     4.Architecture_analysis_at_node_scale
     5.Waffle_representation
-    6.Interactive_widgets
+    
+    interactive_widgets
