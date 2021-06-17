@@ -12,7 +12,7 @@ cf.set_config_file(offline=False, world_readable=True)
 from openalea.strawberry.analysis import (extract_at_module_scale, occurence_module_order_along_time, df2waffle, plot_waffle)
 
 import openalea.strawberry.application.misc as misc
-from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, transfert_figure_pie, create_download_link)
+from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, create_download_link, create_grid, update_grid)
 from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure
 
 
@@ -78,22 +78,22 @@ def plot_module_distribution_complete_incomplete_date(df, genotype, layout={}):
 
 
 def print_single_genotype_plots():
-    genotype=p4_wgt_genotypes_selection_t2.v_model
+    genotype=genotypes_selection_single_genotype.v_model
     vids=get_vid_of_genotype(misc.all_mtg, [genotype])
     df=extract_at_module_scale(misc.all_mtg, vids=vids)
     if genotype:
         # plot occurence module order
         fig = plot_module_occurence_module_order_along_time(df, genotype)
-        transfert_figure(fig, p4_wgt_occurence)
+        transfert_figure(fig, plot_occurence)
         # plot occurence module order
         fig = plot_module_distribution_complete_incomplete_module_order(df, genotype)
-        transfert_figure(fig, p4_wgt_distribution_module_order)
+        transfert_figure(fig, plot_distribution_module_order)
         # plot occurence module order
         fig = plot_module_distribution_complete_incomplete_date(df, genotype)
-        transfert_figure(fig, p4_wgt_distribution_date)
+        transfert_figure(fig, plot_distribution_date)
     else:
-        with p4_wgt_occurence:
-            p4_wgt_occurence.clear_output()
+        with plot_occurence:
+            plot_occurence.clear_output()
             print('Select a Genotype')
 
 def crowntype_distribution(data, crown_type,):
@@ -120,7 +120,7 @@ def crowntype_distribution(data, crown_type,):
 def crowntype_plotly(data, crown_type, layout={}):
     xlabel = layout.get('xlabel', "Order")
     ylabel = layout.get('ylabel', "Relative frequency")
-    title = layout.get('title',"Relative frequency of {}".format(variable))   
+    title = layout.get('title',"Relative frequency of {}".format(crown_type))   
    
     fig=go.Figure()
     for genotype in list(data.unstack(level=0)[crown_type].columns):
@@ -215,12 +215,11 @@ def on_change_genotype_p4(widget, event, data):
     if misc.all_mtg:
         vids=get_vid_of_genotype(misc.all_mtg, genotypes=data)
         df = extract_at_module_scale(misc.all_mtg, vids=vids)
-    df_modulescale.df = df
+    update_grid(df, df_modulescale)
     
     # update descriptors
-    with df_description:
-        df_description.clear_output()
-        display(df.describe())
+    update_grid(df.describe(), df_description)
+
 
 def on_change_single_genotype(widget, event, data):
     print_single_genotype_plots()
@@ -492,8 +491,7 @@ menu_plant_extraction = v.Col(cols=12, sm=3, md=3,
                           export_extraction
                       ])
 
-df_modulescale = qgrid.show_grid(pd.DataFrame(), show_toolbar=False, 
-                                  grid_options={'forceFitColumns': False, 'editable':True, 'defaultColumnWidth':50})
+df_modulescale = create_grid()
 
 panel_df = v.Container(
                     fluid=True,
@@ -501,7 +499,7 @@ panel_df = v.Container(
                         df_modulescale    
                 ])
 
-df_description = widgets.Output(layout=layout_output_wgt)
+df_description = create_grid()
 
 panel_description =v.Container(fluid=True,
                               children=[
