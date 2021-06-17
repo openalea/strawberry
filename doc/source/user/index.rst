@@ -16,7 +16,7 @@ You can check the tutorials to get the packages possibilities.
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
 
     quick_start.rst
