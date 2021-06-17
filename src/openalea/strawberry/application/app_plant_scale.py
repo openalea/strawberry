@@ -12,7 +12,7 @@ cf.set_config_file(offline=False, world_readable=True)
 from openalea.strawberry.analysis import (extract_at_module_scale, extract_at_plant_scale, df2waffle, plot_pie)
 
 import openalea.strawberry.application.misc as misc
-from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, transfert_figure_pie)
+from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, transfert_figure_pie, create_grid, update_grid)
 from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure
 
 
@@ -26,12 +26,10 @@ def on_change_genotype_p3_t1(widget, event, data):
     if misc.all_mtg:
         vids=get_vid_of_genotype(misc.all_mtg, genotypes=data)
         df = extract_at_plant_scale(misc.all_mtg, vids=vids)
-    df_plantscale.df = df
+    update_grid(df, df_plantscale)
     
     # update descriptors
-    with df_description:
-        df_description.clear_output()
-        display(df.describe())
+    update_grid(df.describe(), df_description)
         
 
 def on_change_genotype_p3_t2(widget, event, data):
@@ -105,8 +103,7 @@ menu_plant_extraction = v.Col(cols=12, sm=3, md=3,
                           export_extraction
                       ])
 
-df_plantscale = qgrid.show_grid(pd.DataFrame(), show_toolbar=False, 
-                                  grid_options={'forceFitColumns': False, 'editable':True, 'defaultColumnWidth':50})
+df_plantscale = create_grid()
 
 panel_df = v.Container(
                         fluid=True,
@@ -114,7 +111,7 @@ panel_df = v.Container(
                             df_plantscale    
                     ])
 
-df_description = widgets.Output(layout=layout_output_wgt)
+df_description = create_grid()
 
 panel_description =v.Container(fluid=True,
                               children=[
