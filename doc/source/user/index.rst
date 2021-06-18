@@ -19,7 +19,6 @@ You can check the tutorials to get the packages possibilities.
     :maxdepth: 1
     :numbered:
 
-    quick_start.rst
     1.import_and_read_MTG
     2.Strawberry_architecture_representations
     3.Architecture_analysis_at_module_scale

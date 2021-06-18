@@ -27,6 +27,21 @@ Installation
    ./install/index.rst
 
 
+Quick start
+----------------------
+
+.. toctree::
+
+   ./user/quick_start.rst
+
+
+Gallery
+-----------
+.. toctree::
+
+   ./user/gallery.rst
+
+
 Documentation
 -------------
 
