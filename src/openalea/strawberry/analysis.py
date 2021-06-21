@@ -713,16 +713,17 @@ def type_of_crown(vid, g):
 def crown_status(vid, g):
     """Returns the type of inflorescence
 
-    Algorithms
+    :Algorithms:
+
     if label is bt then
-    - if stage is 17, 18, 19 or None, => vegetative (1)
-    - if stage is A => initiated (2)
-    - if stage is other => non defined (pourri, avorte, coupe) (-1)
-    - Terminal vegetative bud (1): label==bt g.property(Stade)== none or 17 or 18 or 19
-    - Terminal initiated bud (2): label== bt if g.property(Stade) == A
-    - Terminal Floral bud (3): label==ht
-    - Inflorescence Terminal (4): label== HT
-    - runner (5): label = s
+        - if stage is 17, 18, 19 or None, => vegetative (1)
+        - if stage is A => initiated (2)
+        - if stage is other => non defined (pourri, avorte, coupe) (-1)
+        - Terminal vegetative bud (1): label==bt g.property(Stade)== none or 17 or 18 or 19
+        - Terminal initiated bud (2): label== bt if g.property(Stade) == A
+        - Terminal Floral bud (3): label==ht
+        - Inflorescence Terminal (4): label== HT
+        - runner (5): label = s
 
     :param vid: vid for which the function is applied
     :type vid: int
