@@ -45,6 +45,8 @@ extensions = [
     'sphinx.ext.inheritance_diagram',
     'sphinx.ext.mathjax',
     'nbsphinx',
+    'nbsphinx_link'
+    # 'jupyter_sphinx'
 ]
 
 # generate autosummary even if no references
