@@ -20,18 +20,31 @@ requirements:
     - openalea.mtg
     - openalea.plantgl
     - pandas
+    - k3d 
+    - jupyter 
+    - voila 
+    - voila-vuetify 
+    - nodejs 
+    - cufflinks-py 
+    - ipyvuetify 
+    - qgrid 
+    - plotly
+    - openalea.deploy 
+    - openalea.mtg 
+    - openalea.plantgl 
+    - openalea.lpy
+    - pyvis
+    - pgljupyter
 
 test:
   imports:
     - openalea.strawberry
-  requires:
-    - nose
   source_files:
     - test/
     - test/*.py
 
   commands:
-    - nosetests -v
+    - pytest
 
 about:
   home: http://github.com/openalea/strawberry
