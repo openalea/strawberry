@@ -1,4 +1,5 @@
 """ 3D Visualisation function for strawberry on MTG. """
+
 from __future__ import absolute_import
 from __future__ import print_function
 
@@ -161,15 +162,14 @@ def plot3d(g, by=['Genotype'], hide_leaves=False,display=True, vids=[]):
 
 ## Colors rules
 def color_code(g):
-    """
-    Parameter:
-    g: a current MTG
-    
-    return:
-    -------
-    Colloration rule of each object phytomer, inflorescence, bud, phytomer_primordia, inflo_primordia,stolon
+    """The color code of the 3d visualization
+    return Colloration rule of each object phytomer, inflorescence, bud, phytomer_primordia, inflo_primordia,stolon
     according to orders and stage
-    """
+
+    :param g: a current MTG
+    :type g: MTG
+    """    
+
     cleaf = (0,125,0)
     cfleaf = (255, 0, 255)
     cstolon= (0,20,0)
