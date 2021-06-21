@@ -1,4 +1,4 @@
-""" Visualisation code for strawberry on MTG. """
+""" 3D Visualisation function for strawberry on MTG. """
 from __future__ import absolute_import
 from __future__ import print_function
 
