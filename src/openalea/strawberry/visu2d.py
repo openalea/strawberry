@@ -34,6 +34,8 @@ from .visu3d import plant_positions
 ############################################################################### 
 
 def leaf():
+    """Return a leaf shape
+    """    
     cyl = Cylinder(0.01,0.5)
     cyl2 =  AxisRotated(axis=(0,1,0), angle= radians(60.), geometry= cyl)
     cyl3 = Translated(0,0,0.5,cyl2)
@@ -65,6 +67,11 @@ def leaf():
 
 
 def bud():
+    """Return a bud shape 
+
+    :return: the bud shape (a sphere)
+    :rtype: Sphere
+    """    
     sphere = Sphere(.1)
     return sphere
 
