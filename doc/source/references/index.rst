@@ -14,3 +14,4 @@ parameters available for the algorithms.
     openalea.strawberry.analysis.rst
     openalea.strawberry.geometry.rst
     openalea.strawberry.visu2d.rst
+    openalea.strawberry.visu3d.rst

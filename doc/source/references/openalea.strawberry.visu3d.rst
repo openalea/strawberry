@@ -1,6 +1,6 @@
 .. currentmodule:: openalea.strawberry.visu3d
 
-2D-visualisation function
+3D-visualisation function
 =============================
 
 .. automodule:: openalea.strawberry.visu3d
