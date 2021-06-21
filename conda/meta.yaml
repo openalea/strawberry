@@ -34,7 +34,6 @@ requirements:
     - openalea.plantgl 
     - openalea.lpy
     - pyvis
-    - pgljupyter
 
 test:
   imports:
