@@ -2,6 +2,9 @@
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
 
 <!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
 <script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
@@ -9,7 +12,7 @@
 <style type="text/css">
 
         #mynetwork {
-            width: 900px;
+            width: 500px;
             height: 800px;
             background-color: #ffffff;
             border: 1px solid lightgray;
@@ -17,6 +20,75 @@
             float: left;
         }
 
+        
+        #loadingBar {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width: 500px;
+            height: 800px;
+            background-color:rgba(200,200,200,0.8);
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            opacity:1;
+        }
+
+        #bar {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width:20px;
+            height:20px;
+            margin:auto auto auto auto;
+            border-radius:11px;
+            border:2px solid rgba(30,30,30,0.05);
+            background: rgb(0, 173, 246); /* Old browsers */
+            box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+        }
+
+        #border {
+            position:absolute;
+            top:10px;
+            left:10px;
+            width:500px;
+            height:23px;
+            margin:auto auto auto auto;
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+            border-radius:10px;
+        }
+
+        #text {
+            position:absolute;
+            top:8px;
+            left:530px;
+            width:30px;
+            height:50px;
+            margin:auto auto auto auto;
+            font-size:22px;
+            color: #000000;
+        }
+
+        div.outerBorder {
+            position:relative;
+            top:400px;
+            width:600px;
+            height:44px;
+            margin:auto auto auto auto;
+            border:8px solid rgba(0,0,0,0.1);
+            background: rgb(252,252,252); /* Old browsers */
+            background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+            border-radius:72px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
         
 
         
@@ -28,6 +100,15 @@
 
 <body>
 <div id = "mynetwork"></div>
+
+<div id="loadingBar">
+    <div class="outerBorder">
+        <div id="text">0%</div>
+        <div id="border">
+            <div id="bar"></div>
+        </div>
+    </div>
+</div>
 
 
 <script type="text/javascript">
@@ -47,8 +128,8 @@
         
 
         // parsing and collecting nodes and edges from the python
-        nodes = new vis.DataSet([{"borderWidth": 3, "color": "#6e6efd", "id": 2, "label": "F", "level": 0, "shape": "box", "title": "_line 58\u003cbr\u003evid 2"}, {"borderWidth": 3, "color": "#fb7e81", "id": 4, "label": "f", "level": 1, "shape": "box", "title": "_line 60\u003cbr\u003evid 4"}, {"borderWidth": 3, "color": "#fb7e81", "id": 5, "label": "f", "level": 2, "shape": "circle", "title": "_line 61\u003cbr\u003evid 5"}, {"borderWidth": 3, "color": "#fb7e81", "id": 6, "label": "f", "level": 3, "shape": "circle", "title": "_line 62\u003cbr\u003evid 6"}, {"borderWidth": 3, "color": "#fb7e81", "id": 7, "label": "ht", "level": 4, "shape": "circle", "title": "Stade C\u003cbr\u003e_line 63\u003cbr\u003evid 7"}, {"borderWidth": 3, "color": "#6e6efd", "id": 8, "label": "F", "level": 1, "shape": "circle", "title": "_line 64\u003cbr\u003evid 8"}, {"borderWidth": 3, "color": "#ad85e4", "id": 10, "label": "f", "level": 2, "shape": "box", "title": "_line 66\u003cbr\u003evid 10"}, {"borderWidth": 3, "color": "#ad85e4", "id": 11, "label": "f", "level": 3, "shape": "circle", "title": "_line 67\u003cbr\u003evid 11"}, {"borderWidth": 3, "color": "#ad85e4", "id": 12, "label": "ht", "level": 4, "shape": "circle", "title": "Stade E\u003cbr\u003e_line 68\u003cbr\u003evid 12"}, {"borderWidth": 3, "color": "#6e6efd", "id": 13, "label": "F", "level": 2, "shape": "circle", "title": "_line 69\u003cbr\u003evid 13"}, {"borderWidth": 3, "color": "#7be141", "id": 15, "label": "f", "level": 3, "shape": "box", "title": "_line 71\u003cbr\u003evid 15"}, {"borderWidth": 3, "color": "#7be141", "id": 16, "label": "f", "level": 4, "shape": "circle", "title": "_line 72\u003cbr\u003evid 16"}, {"borderWidth": 3, "color": "#7be141", "id": 17, "label": "f", "level": 5, "shape": "circle", "title": "_line 73\u003cbr\u003evid 17"}, {"borderWidth": 3, "color": "#7be141", "id": 18, "label": "ht", "level": 6, "shape": "circle", "title": "Stade C\u003cbr\u003e_line 74\u003cbr\u003evid 18"}, {"borderWidth": 3, "color": "#6e6efd", "id": 19, "label": "F", "level": 3, "shape": "circle", "title": "_line 75\u003cbr\u003evid 19"}, {"borderWidth": 3, "color": "#ffff00", "id": 21, "label": "f", "level": 4, "shape": "box", "title": "_line 77\u003cbr\u003evid 21"}, {"borderWidth": 3, "color": "#ffff00", "id": 22, "label": "f", "level": 5, "shape": "circle", "title": "_line 78\u003cbr\u003evid 22"}, {"borderWidth": 3, "color": "#ffff00", "id": 23, "label": "f", "level": 6, "shape": "circle", "title": "_line 79\u003cbr\u003evid 23"}, {"borderWidth": 3, "color": "#ffff00", "id": 24, "label": "ht", "level": 7, "shape": "circle", "title": "Stade C\u003cbr\u003e_line 80\u003cbr\u003evid 24"}, {"borderWidth": 3, "color": "#6e6efd", "id": 25, "label": "F", "level": 4, "shape": "circle", "title": "_line 81\u003cbr\u003evid 25"}, {"borderWidth": 3, "color": "#ffa807", "id": 27, "label": "f", "level": 5, "shape": "box", "title": "_line 83\u003cbr\u003evid 27"}, {"borderWidth": 3, "color": "#ffa807", "id": 28, "label": "f", "level": 6, "shape": "circle", "title": "_line 84\u003cbr\u003evid 28"}, {"borderWidth": 3, "color": "#ffa807", "id": 29, "label": "f", "level": 7, "shape": "circle", "title": "_line 85\u003cbr\u003evid 29"}, {"borderWidth": 3, "color": "#ffa807", "id": 30, "label": "ht", "level": 8, "shape": "circle", "title": "Stade C\u003cbr\u003e_line 86\u003cbr\u003evid 30"}, {"borderWidth": 3, "color": "#6e6efd", "id": 31, "label": "F", "level": 5, "shape": "circle", "title": "LFTLG_CENTRAL 47.0\u003cbr\u003eLFTLG_LEFT 54.0\u003cbr\u003ePETLG 77.0\u003cbr\u003e_line 87\u003cbr\u003evid 31"}, {"borderWidth": 3, "color": "#eb7df4", "id": 33, "label": "f", "level": 6, "shape": "box", "title": "_line 89\u003cbr\u003evid 33"}, {"borderWidth": 3, "color": "#eb7df4", "id": 34, "label": "f", "level": 7, "shape": "circle", "title": "_line 90\u003cbr\u003evid 34"}, {"borderWidth": 3, "color": "#eb7df4", "id": 35, "label": "bt", "level": 8, "shape": "circle", "title": "Stade A\u003cbr\u003e_line 91\u003cbr\u003evid 35"}, {"borderWidth": 3, "color": "#6e6efd", "id": 36, "label": "F", "level": 6, "shape": "circle", "title": "_line 92\u003cbr\u003evid 36"}, {"borderWidth": 3, "color": "#e6ffe3", "id": 38, "label": "f", "level": 7, "shape": "box", "title": "_line 94\u003cbr\u003evid 38"}, {"borderWidth": 3, "color": "#e6ffe3", "id": 39, "label": "f", "level": 8, "shape": "circle", "title": "_line 95\u003cbr\u003evid 39"}, {"borderWidth": 3, "color": "#e6ffe3", "id": 40, "label": "bt", "level": 9, "shape": "circle", "title": "Stade A\u003cbr\u003e_line 96\u003cbr\u003evid 40"}, {"borderWidth": 3, "color": "#6e6efd", "id": 41, "label": "F", "level": 7, "shape": "circle", "title": "_line 97\u003cbr\u003evid 41"}, {"borderWidth": 3, "color": "#d2e5ff", "id": 43, "label": "s", "level": 8, "shape": "box", "title": "_line 99\u003cbr\u003evid 43"}, {"borderWidth": 3, "color": "#6e6efd", "id": 44, "label": "f", "level": 8, "shape": "circle", "title": "_line 100\u003cbr\u003evid 44"}, {"borderWidth": 3, "color": "#ffd1d9", "id": 46, "label": "f", "level": 9, "shape": "box", "title": "_line 102\u003cbr\u003evid 46"}, {"borderWidth": 3, "color": "#ffd1d9", "id": 47, "label": "f", "level": 10, "shape": "circle", "title": "_line 103\u003cbr\u003evid 47"}, {"borderWidth": 3, "color": "#ffd1d9", "id": 48, "label": "bt", "level": 11, "shape": "circle", "title": "Stade A\u003cbr\u003e_line 104\u003cbr\u003evid 48"}, {"borderWidth": 3, "color": "#6e6efd", "id": 49, "label": "f", "level": 9, "shape": "circle", "title": "_line 105\u003cbr\u003evid 49"}, {"borderWidth": 3, "color": "#e6ffe3", "id": 51, "label": "f", "level": 10, "shape": "box", "title": "_line 107\u003cbr\u003evid 51"}, {"borderWidth": 3, "color": "#e6ffe3", "id": 52, "label": "f", "level": 11, "shape": "circle", "title": "_line 108\u003cbr\u003evid 52"}, {"borderWidth": 3, "color": "#e6ffe3", "id": 53, "label": "bt", "level": 12, "shape": "circle", "title": "Stade 17\u003cbr\u003e_line 109\u003cbr\u003evid 53"}, {"borderWidth": 3, "color": "#6e6efd", "id": 54, "label": "f", "level": 10, "shape": "circle", "title": "_line 110\u003cbr\u003evid 54"}, {"borderWidth": 3, "color": "#fb7e81", "id": 56, "label": "f", "level": 11, "shape": "box", "title": "_line 112\u003cbr\u003evid 56"}, {"borderWidth": 3, "color": "#fb7e81", "id": 57, "label": "f", "level": 12, "shape": "circle", "title": "_line 113\u003cbr\u003evid 57"}, {"borderWidth": 3, "color": "#fb7e81", "id": 58, "label": "f", "level": 13, "shape": "circle", "title": "_line 114\u003cbr\u003evid 58"}, {"borderWidth": 3, "color": "#ad85e4", "id": 60, "label": "bt", "level": 14, "shape": "box", "title": "Stade 17\u003cbr\u003e_line 116\u003cbr\u003evid 60"}, {"borderWidth": 3, "color": "#fb7e81", "id": 61, "label": "ht", "level": 14, "shape": "circle", "title": "Stade D\u003cbr\u003e_line 117\u003cbr\u003evid 61"}, {"borderWidth": 3, "color": "#6e6efd", "id": 62, "label": "f", "level": 11, "shape": "circle", "title": "_line 118\u003cbr\u003evid 62"}, {"borderWidth": 3, "color": "#7be141", "id": 64, "label": "f", "level": 12, "shape": "box", "title": "_line 120\u003cbr\u003evid 64"}, {"borderWidth": 3, "color": "#ffff00", "id": 66, "label": "bt", "level": 13, "shape": "box", "title": "Stade 17\u003cbr\u003e_line 122\u003cbr\u003evid 66"}, {"borderWidth": 3, "color": "#7be141", "id": 67, "label": "f", "level": 13, "shape": "circle", "title": "_line 123\u003cbr\u003evid 67"}, {"borderWidth": 3, "color": "#ffa807", "id": 69, "label": "bt", "level": 14, "shape": "box", "title": "Stade 17\u003cbr\u003e_line 125\u003cbr\u003evid 69"}, {"borderWidth": 3, "color": "#7be141", "id": 70, "label": "ht", "level": 14, "shape": "circle", "title": "Stade F\u003cbr\u003e_line 126\u003cbr\u003evid 70"}, {"borderWidth": 3, "color": "#6e6efd", "id": 71, "label": "ht", "level": 12, "shape": "circle", "title": "INFLOLG 6.0\u003cbr\u003eSAMPLING x\u003cbr\u003eStade H\u003cbr\u003e_line 127\u003cbr\u003evid 71"}]);
-        edges = new vis.DataSet([{"arrows": "to", "from": 2, "label": "+", "to": 4, "width": 1}, {"arrows": "to", "from": 4, "label": "\u003c", "to": 5, "width": 6}, {"arrows": "to", "from": 5, "label": "\u003c", "to": 6, "width": 6}, {"arrows": "to", "from": 6, "label": "\u003c", "to": 7, "width": 6}, {"arrows": "to", "from": 2, "label": "\u003c", "to": 8, "width": 6}, {"arrows": "to", "from": 8, "label": "+", "to": 10, "width": 1}, {"arrows": "to", "from": 10, "label": "\u003c", "to": 11, "width": 6}, {"arrows": "to", "from": 11, "label": "\u003c", "to": 12, "width": 6}, {"arrows": "to", "from": 8, "label": "\u003c", "to": 13, "width": 6}, {"arrows": "to", "from": 13, "label": "+", "to": 15, "width": 1}, {"arrows": "to", "from": 15, "label": "\u003c", "to": 16, "width": 6}, {"arrows": "to", "from": 16, "label": "\u003c", "to": 17, "width": 6}, {"arrows": "to", "from": 17, "label": "\u003c", "to": 18, "width": 6}, {"arrows": "to", "from": 13, "label": "\u003c", "to": 19, "width": 6}, {"arrows": "to", "from": 19, "label": "+", "to": 21, "width": 1}, {"arrows": "to", "from": 21, "label": "\u003c", "to": 22, "width": 6}, {"arrows": "to", "from": 22, "label": "\u003c", "to": 23, "width": 6}, {"arrows": "to", "from": 23, "label": "\u003c", "to": 24, "width": 6}, {"arrows": "to", "from": 19, "label": "\u003c", "to": 25, "width": 6}, {"arrows": "to", "from": 25, "label": "+", "to": 27, "width": 1}, {"arrows": "to", "from": 27, "label": "\u003c", "to": 28, "width": 6}, {"arrows": "to", "from": 28, "label": "\u003c", "to": 29, "width": 6}, {"arrows": "to", "from": 29, "label": "\u003c", "to": 30, "width": 6}, {"arrows": "to", "from": 25, "label": "\u003c", "to": 31, "width": 6}, {"arrows": "to", "from": 31, "label": "+", "to": 33, "width": 1}, {"arrows": "to", "from": 33, "label": "\u003c", "to": 34, "width": 6}, {"arrows": "to", "from": 34, "label": "\u003c", "to": 35, "width": 6}, {"arrows": "to", "from": 31, "label": "\u003c", "to": 36, "width": 6}, {"arrows": "to", "from": 36, "label": "+", "to": 38, "width": 1}, {"arrows": "to", "from": 38, "label": "\u003c", "to": 39, "width": 6}, {"arrows": "to", "from": 39, "label": "\u003c", "to": 40, "width": 6}, {"arrows": "to", "from": 36, "label": "\u003c", "to": 41, "width": 6}, {"arrows": "to", "from": 41, "label": "+", "to": 43, "width": 1}, {"arrows": "to", "from": 41, "label": "\u003c", "to": 44, "width": 6}, {"arrows": "to", "from": 44, "label": "+", "to": 46, "width": 1}, {"arrows": "to", "from": 46, "label": "\u003c", "to": 47, "width": 6}, {"arrows": "to", "from": 47, "label": "\u003c", "to": 48, "width": 6}, {"arrows": "to", "from": 44, "label": "\u003c", "to": 49, "width": 6}, {"arrows": "to", "from": 49, "label": "+", "to": 51, "width": 1}, {"arrows": "to", "from": 51, "label": "\u003c", "to": 52, "width": 6}, {"arrows": "to", "from": 52, "label": "\u003c", "to": 53, "width": 6}, {"arrows": "to", "from": 49, "label": "\u003c", "to": 54, "width": 6}, {"arrows": "to", "from": 54, "label": "+", "to": 56, "width": 1}, {"arrows": "to", "from": 56, "label": "\u003c", "to": 57, "width": 6}, {"arrows": "to", "from": 57, "label": "\u003c", "to": 58, "width": 6}, {"arrows": "to", "from": 58, "label": "+", "to": 60, "width": 1}, {"arrows": "to", "from": 58, "label": "\u003c", "to": 61, "width": 6}, {"arrows": "to", "from": 54, "label": "\u003c", "to": 62, "width": 6}, {"arrows": "to", "from": 62, "label": "+", "to": 64, "width": 1}, {"arrows": "to", "from": 64, "label": "+", "to": 66, "width": 1}, {"arrows": "to", "from": 64, "label": "\u003c", "to": 67, "width": 6}, {"arrows": "to", "from": 67, "label": "+", "to": 69, "width": 1}, {"arrows": "to", "from": 67, "label": "\u003c", "to": 70, "width": 6}, {"arrows": "to", "from": 62, "label": "\u003c", "to": 71, "width": 6}]);
+        nodes = new vis.DataSet([{"borderWidth": 3, "color": "#d60000", "id": 2, "label": "F", "level": 0, "shape": "box", "title": "_line 5914\u003cbr\u003evid 2"}, {"borderWidth": 3, "color": "#018700", "id": 4, "label": "bt", "level": 1, "shape": "box", "title": "Stade dried\u003cbr\u003e_line 5916\u003cbr\u003evid 4"}, {"borderWidth": 3, "color": "#d60000", "id": 5, "label": "F", "level": 1, "shape": "circle", "title": "_line 5917\u003cbr\u003evid 5"}, {"borderWidth": 3, "color": "#b500ff", "id": 7, "label": "bt", "level": 2, "shape": "box", "title": "Stade dried\u003cbr\u003e_line 5919\u003cbr\u003evid 7"}, {"borderWidth": 3, "color": "#d60000", "id": 8, "label": "F", "level": 2, "shape": "circle", "title": "_line 5920\u003cbr\u003evid 8"}, {"borderWidth": 3, "color": "#05acc6", "id": 10, "label": "F", "level": 3, "shape": "box", "title": "_line 5922\u003cbr\u003evid 10"}, {"borderWidth": 3, "color": "#97ff00", "id": 12, "label": "bt", "level": 4, "shape": "box", "title": "Stade aborted\u003cbr\u003e_line 5924\u003cbr\u003evid 12"}, {"borderWidth": 3, "color": "#05acc6", "id": 13, "label": "F", "level": 4, "shape": "circle", "title": "_line 5925\u003cbr\u003evid 13"}, {"borderWidth": 3, "color": "#ffa52f", "id": 15, "label": "bt", "level": 5, "shape": "box", "title": "Stade aborted\u003cbr\u003e_line 5927\u003cbr\u003evid 15"}, {"borderWidth": 3, "color": "#05acc6", "id": 16, "label": "F", "level": 5, "shape": "circle", "title": "_line 5928\u003cbr\u003evid 16"}, {"borderWidth": 3, "color": "#ff8ec8", "id": 18, "label": "bt", "level": 6, "shape": "box", "title": "_line 5930\u003cbr\u003evid 18"}, {"borderWidth": 3, "color": "#05acc6", "id": 19, "label": "F", "level": 6, "shape": "circle", "title": "_line 5931\u003cbr\u003evid 19"}, {"borderWidth": 3, "color": "#79525e", "id": 21, "label": "F", "level": 7, "shape": "box", "title": "_line 5933\u003cbr\u003evid 21"}, {"borderWidth": 3, "color": "#00fdcf", "id": 23, "label": "f", "level": 8, "shape": "box", "title": "_line 5935\u003cbr\u003evid 23"}, {"borderWidth": 3, "color": "#00fdcf", "id": 24, "label": "f", "level": 9, "shape": "circle", "title": "_line 5936\u003cbr\u003evid 24"}, {"borderWidth": 3, "color": "#00fdcf", "id": 25, "label": "bt", "level": 10, "shape": "circle", "title": "Stade A\u003cbr\u003e_line 5937\u003cbr\u003evid 25"}, {"borderWidth": 3, "color": "#79525e", "id": 26, "label": "F", "level": 8, "shape": "circle", "title": "_line 5938\u003cbr\u003evid 26"}, {"borderWidth": 3, "color": "#afa5ff", "id": 28, "label": "f", "level": 9, "shape": "box", "title": "_line 5940\u003cbr\u003evid 28"}, {"borderWidth": 3, "color": "#afa5ff", "id": 29, "label": "f", "level": 10, "shape": "circle", "title": "_line 5941\u003cbr\u003evid 29"}, {"borderWidth": 3, "color": "#afa5ff", "id": 30, "label": "f", "level": 11, "shape": "circle", "title": "_line 5942\u003cbr\u003evid 30"}, {"borderWidth": 3, "color": "#afa5ff", "id": 31, "label": "ht", "level": 12, "shape": "circle", "title": "Stade C\u003cbr\u003e_line 5943\u003cbr\u003evid 31"}, {"borderWidth": 3, "color": "#79525e", "id": 32, "label": "F", "level": 9, "shape": "circle", "title": "_line 5944\u003cbr\u003evid 32"}, {"borderWidth": 3, "color": "#93ac83", "id": 34, "label": "bt", "level": 10, "shape": "box", "title": "Stade 17\u003cbr\u003e_line 5946\u003cbr\u003evid 34"}, {"borderWidth": 3, "color": "#79525e", "id": 35, "label": "F", "level": 10, "shape": "circle", "title": "_line 5947\u003cbr\u003evid 35"}, {"borderWidth": 3, "color": "#9a6900", "id": 37, "label": "bt", "level": 11, "shape": "box", "title": "Stade 17\u003cbr\u003e_line 5949\u003cbr\u003evid 37"}, {"borderWidth": 3, "color": "#79525e", "id": 38, "label": "F", "level": 11, "shape": "circle", "title": "_line 5950\u003cbr\u003evid 38"}, {"borderWidth": 3, "color": "#366962", "id": 40, "label": "F", "level": 12, "shape": "box", "title": "_line 5952\u003cbr\u003evid 40"}, {"borderWidth": 3, "color": "#d3008c", "id": 42, "label": "s", "level": 13, "shape": "box", "title": "_line 5954\u003cbr\u003evid 42"}, {"borderWidth": 3, "color": "#366962", "id": 43, "label": "F", "level": 13, "shape": "circle", "title": "_line 5955\u003cbr\u003evid 43"}, {"borderWidth": 3, "color": "#fdf490", "id": 45, "label": "s", "level": 14, "shape": "box", "title": "_line 5957\u003cbr\u003evid 45"}, {"borderWidth": 3, "color": "#366962", "id": 46, "label": "F", "level": 14, "shape": "circle", "title": "_line 5958\u003cbr\u003evid 46"}, {"borderWidth": 3, "color": "#c86e66", "id": 48, "label": "f", "level": 15, "shape": "box", "title": "_line 5960\u003cbr\u003evid 48"}, {"borderWidth": 3, "color": "#c86e66", "id": 49, "label": "f", "level": 16, "shape": "circle", "title": "_line 5961\u003cbr\u003evid 49"}, {"borderWidth": 3, "color": "#c86e66", "id": 50, "label": "f", "level": 17, "shape": "circle", "title": "_line 5962\u003cbr\u003evid 50"}, {"borderWidth": 3, "color": "#c86e66", "id": 51, "label": "f", "level": 18, "shape": "circle", "title": "_line 5963\u003cbr\u003evid 51"}, {"borderWidth": 3, "color": "#c86e66", "id": 52, "label": "f", "level": 19, "shape": "circle", "title": "_line 5964\u003cbr\u003evid 52"}, {"borderWidth": 3, "color": "#c86e66", "id": 53, "label": "bt", "level": 20, "shape": "circle", "title": "Stade 19\u003cbr\u003e_line 5965\u003cbr\u003evid 53"}, {"borderWidth": 3, "color": "#366962", "id": 54, "label": "F", "level": 15, "shape": "circle", "title": "_line 5966\u003cbr\u003evid 54"}, {"borderWidth": 3, "color": "#9ee2ff", "id": 56, "label": "f", "level": 16, "shape": "box", "title": "_line 5968\u003cbr\u003evid 56"}, {"borderWidth": 3, "color": "#9ee2ff", "id": 57, "label": "f", "level": 17, "shape": "circle", "title": "_line 5969\u003cbr\u003evid 57"}, {"borderWidth": 3, "color": "#9ee2ff", "id": 58, "label": "f", "level": 18, "shape": "circle", "title": "_line 5970\u003cbr\u003evid 58"}, {"borderWidth": 3, "color": "#9ee2ff", "id": 59, "label": "bt", "level": 19, "shape": "circle", "title": "Stade 17\u003cbr\u003e_line 5971\u003cbr\u003evid 59"}, {"borderWidth": 3, "color": "#366962", "id": 60, "label": "HT", "level": 16, "shape": "circle", "title": "FLWRNUMBER 7\u003cbr\u003eFLWRNUMBER_ABORTED 0\u003cbr\u003eFLWRNUMBER_OPEN 2\u003cbr\u003eStade 65\u003cbr\u003e_line 5972\u003cbr\u003evid 60"}, {"borderWidth": 3, "color": "#79525e", "id": 61, "label": "HT", "level": 12, "shape": "circle", "title": "FLWRNUMBER 5\u003cbr\u003eFLWRNUMBER_ABORTED 0\u003cbr\u003eFLWRNUMBER_OPEN 5\u003cbr\u003eStade 87\u003cbr\u003e_line 5973\u003cbr\u003evid 61"}, {"borderWidth": 3, "color": "#05acc6", "id": 62, "label": "HT", "level": 7, "shape": "circle", "title": "FLWRNUMBER 7\u003cbr\u003eFLWRNUMBER_ABORTED 1\u003cbr\u003eFLWRNUMBER_OPEN 6\u003cbr\u003eStade 87\u003cbr\u003e_line 5974\u003cbr\u003evid 62"}, {"borderWidth": 3, "color": "#d60000", "id": 63, "label": "F", "level": 3, "shape": "circle", "title": "_line 5975\u003cbr\u003evid 63"}, {"borderWidth": 3, "color": "#00c846", "id": 65, "label": "F", "level": 4, "shape": "box", "title": "_line 5977\u003cbr\u003evid 65"}, {"borderWidth": 3, "color": "#a877ac", "id": 67, "label": "bt", "level": 5, "shape": "box", "title": "Stade 17\u003cbr\u003e_line 5979\u003cbr\u003evid 67"}, {"borderWidth": 3, "color": "#00c846", "id": 68, "label": "F", "level": 5, "shape": "circle", "title": "_line 5980\u003cbr\u003evid 68"}, {"borderWidth": 3, "color": "#b8ba01", "id": 70, "label": "F", "level": 6, "shape": "box", "title": "_line 5982\u003cbr\u003evid 70"}, {"borderWidth": 3, "color": "#f4bfb1", "id": 72, "label": "f", "level": 7, "shape": "box", "title": "_line 5984\u003cbr\u003evid 72"}, {"borderWidth": 3, "color": "#f4bfb1", "id": 73, "label": "f", "level": 8, "shape": "circle", "title": "_line 5985\u003cbr\u003evid 73"}, {"borderWidth": 3, "color": "#f4bfb1", "id": 74, "label": "f", "level": 9, "shape": "circle", "title": "_line 5986\u003cbr\u003evid 74"}, {"borderWidth": 3, "color": "#f4bfb1", "id": 75, "label": "ht", "level": 10, "shape": "circle", "title": "Stade C\u003cbr\u003e_line 5987\u003cbr\u003evid 75"}, {"borderWidth": 3, "color": "#b8ba01", "id": 76, "label": "F", "level": 7, "shape": "circle", "title": "_line 5988\u003cbr\u003evid 76"}, {"borderWidth": 3, "color": "#ff28fd", "id": 78, "label": "f", "level": 8, "shape": "box", "title": "_line 5990\u003cbr\u003evid 78"}, {"borderWidth": 3, "color": "#ff28fd", "id": 79, "label": "f", "level": 9, "shape": "circle", "title": "_line 5991\u003cbr\u003evid 79"}, {"borderWidth": 3, "color": "#f2cdff", "id": 81, "label": "bt", "level": 10, "shape": "box", "title": "Stade 17\u003cbr\u003e_line 5993\u003cbr\u003evid 81"}, {"borderWidth": 3, "color": "#ff28fd", "id": 82, "label": "ht", "level": 10, "shape": "circle", "title": "Stade E\u003cbr\u003e_line 5994\u003cbr\u003evid 82"}, {"borderWidth": 3, "color": "#b8ba01", "id": 83, "label": "F", "level": 8, "shape": "circle", "title": "_line 5995\u003cbr\u003evid 83"}, {"borderWidth": 3, "color": "#009e7c", "id": 85, "label": "f", "level": 9, "shape": "box", "title": "_line 5997\u003cbr\u003evid 85"}, {"borderWidth": 3, "color": "#009e7c", "id": 86, "label": "f", "level": 10, "shape": "circle", "title": "_line 5998\u003cbr\u003evid 86"}, {"borderWidth": 3, "color": "#009e7c", "id": 87, "label": "f", "level": 11, "shape": "circle", "title": "_line 5999\u003cbr\u003evid 87"}, {"borderWidth": 3, "color": "#009e7c", "id": 88, "label": "bt", "level": 12, "shape": "circle", "title": "Stade 17\u003cbr\u003e_line 6000\u003cbr\u003evid 88"}, {"borderWidth": 3, "color": "#b8ba01", "id": 89, "label": "F", "level": 9, "shape": "circle", "title": "_line 6001\u003cbr\u003evid 89"}, {"borderWidth": 3, "color": "#ff6200", "id": 91, "label": "F", "level": 10, "shape": "box", "title": "_line 6003\u003cbr\u003evid 91"}, {"borderWidth": 3, "color": "#56642a", "id": 93, "label": "s", "level": 11, "shape": "box", "title": "_line 6005\u003cbr\u003evid 93"}, {"borderWidth": 3, "color": "#ff6200", "id": 94, "label": "F", "level": 11, "shape": "circle", "title": "_line 6006\u003cbr\u003evid 94"}, {"borderWidth": 3, "color": "#953f1f", "id": 96, "label": "s", "level": 12, "shape": "box", "title": "_line 6008\u003cbr\u003evid 96"}, {"borderWidth": 3, "color": "#ff6200", "id": 97, "label": "F", "level": 12, "shape": "circle", "title": "_line 6009\u003cbr\u003evid 97"}, {"borderWidth": 3, "color": "#90318e", "id": 99, "label": "f", "level": 13, "shape": "box", "title": "_line 6011\u003cbr\u003evid 99"}, {"borderWidth": 3, "color": "#ff3464", "id": 101, "label": "s", "level": 14, "shape": "box", "title": "_line 6013\u003cbr\u003evid 101"}, {"borderWidth": 3, "color": "#90318e", "id": 102, "label": "f", "level": 14, "shape": "circle", "title": "_line 6014\u003cbr\u003evid 102"}, {"borderWidth": 3, "color": "#90318e", "id": 103, "label": "f", "level": 15, "shape": "circle", "title": "_line 6015\u003cbr\u003evid 103"}, {"borderWidth": 3, "color": "#90318e", "id": 104, "label": "f", "level": 16, "shape": "circle", "title": "_line 6016\u003cbr\u003evid 104"}, {"borderWidth": 3, "color": "#90318e", "id": 105, "label": "bt", "level": 17, "shape": "circle", "title": "Stade 17\u003cbr\u003e_line 6017\u003cbr\u003evid 105"}, {"borderWidth": 3, "color": "#ff6200", "id": 106, "label": "HT", "level": 13, "shape": "circle", "title": "FLWRNUMBER 7\u003cbr\u003eFLWRNUMBER_ABORTED 0\u003cbr\u003eFLWRNUMBER_OPEN 0\u003cbr\u003eStade 81\u003cbr\u003e_line 6018\u003cbr\u003evid 106"}, {"borderWidth": 3, "color": "#b8ba01", "id": 107, "label": "HT", "level": 10, "shape": "circle", "title": "FLWRNUMBER 8\u003cbr\u003eFLWRNUMBER_ABORTED 0\u003cbr\u003eFLWRNUMBER_OPEN 8\u003cbr\u003eStade 87\u003cbr\u003e_line 6019\u003cbr\u003evid 107"}, {"borderWidth": 3, "color": "#00c846", "id": 108, "label": "F", "level": 6, "shape": "circle", "title": "_line 6020\u003cbr\u003evid 108"}, {"borderWidth": 3, "color": "#a0e491", "id": 110, "label": "F", "level": 7, "shape": "box", "title": "_line 6022\u003cbr\u003evid 110"}, {"borderWidth": 3, "color": "#8c9ab1", "id": 112, "label": "f", "level": 8, "shape": "box", "title": "_line 6024\u003cbr\u003evid 112"}, {"borderWidth": 3, "color": "#8c9ab1", "id": 113, "label": "f", "level": 9, "shape": "circle", "title": "_line 6025\u003cbr\u003evid 113"}, {"borderWidth": 3, "color": "#8c9ab1", "id": 114, "label": "ht", "level": 10, "shape": "circle", "title": "Stade C\u003cbr\u003e_line 6026\u003cbr\u003evid 114"}, {"borderWidth": 3, "color": "#a0e491", "id": 115, "label": "F", "level": 8, "shape": "circle", "title": "_line 6027\u003cbr\u003evid 115"}, {"borderWidth": 3, "color": "#829026", "id": 117, "label": "f", "level": 9, "shape": "box", "title": "_line 6029\u003cbr\u003evid 117"}, {"borderWidth": 3, "color": "#829026", "id": 118, "label": "f", "level": 10, "shape": "circle", "title": "_line 6030\u003cbr\u003evid 118"}, {"borderWidth": 3, "color": "#829026", "id": 119, "label": "ht", "level": 11, "shape": "circle", "title": "Stade E\u003cbr\u003e_line 6031\u003cbr\u003evid 119"}, {"borderWidth": 3, "color": "#a0e491", "id": 120, "label": "F", "level": 9, "shape": "circle", "title": "_line 6032\u003cbr\u003evid 120"}, {"borderWidth": 3, "color": "#ae083f", "id": 122, "label": "f", "level": 10, "shape": "box", "title": "_line 6034\u003cbr\u003evid 122"}, {"borderWidth": 3, "color": "#ae083f", "id": 123, "label": "f", "level": 11, "shape": "circle", "title": "_line 6035\u003cbr\u003evid 123"}, {"borderWidth": 3, "color": "#ae083f", "id": 124, "label": "f", "level": 12, "shape": "circle", "title": "_line 6036\u003cbr\u003evid 124"}, {"borderWidth": 3, "color": "#77c6ba", "id": 126, "label": "bt", "level": 13, "shape": "box", "title": "Stade 17\u003cbr\u003e_line 6038\u003cbr\u003evid 126"}, {"borderWidth": 3, "color": "#ae083f", "id": 127, "label": "ht", "level": 13, "shape": "circle", "title": "Stade E\u003cbr\u003e_line 6039\u003cbr\u003evid 127"}, {"borderWidth": 3, "color": "#a0e491", "id": 128, "label": "F", "level": 10, "shape": "circle", "title": "_line 6040\u003cbr\u003evid 128"}, {"borderWidth": 3, "color": "#bc9157", "id": 130, "label": "F", "level": 11, "shape": "box", "title": "_line 6042\u003cbr\u003evid 130"}, {"borderWidth": 3, "color": "#e48eff", "id": 132, "label": "s", "level": 12, "shape": "box", "title": "_line 6044\u003cbr\u003evid 132"}, {"borderWidth": 3, "color": "#bc9157", "id": 133, "label": "F", "level": 12, "shape": "circle", "title": "_line 6045\u003cbr\u003evid 133"}, {"borderWidth": 3, "color": "#72b8ff", "id": 135, "label": "bt", "level": 13, "shape": "box", "title": "Stade 17\u003cbr\u003e_line 6047\u003cbr\u003evid 135"}, {"borderWidth": 3, "color": "#bc9157", "id": 136, "label": "F", "level": 13, "shape": "circle", "title": "LFTLG_CENTRAL 115.0\u003cbr\u003eLFTLG_LEFT 110.0\u003cbr\u003ePETLG 266.0\u003cbr\u003e_line 6048\u003cbr\u003evid 136"}, {"borderWidth": 3, "color": "#c6a5c1", "id": 138, "label": "F", "level": 14, "shape": "box", "title": "_line 6050\u003cbr\u003evid 138"}, {"borderWidth": 3, "color": "#ff9070", "id": 140, "label": "s", "level": 15, "shape": "box", "title": "_line 6052\u003cbr\u003evid 140"}, {"borderWidth": 3, "color": "#c6a5c1", "id": 141, "label": "F", "level": 15, "shape": "circle", "title": "_line 6053\u003cbr\u003evid 141"}, {"borderWidth": 3, "color": "#d3c37c", "id": 143, "label": "f", "level": 16, "shape": "box", "title": "_line 6055\u003cbr\u003evid 143"}, {"borderWidth": 3, "color": "#d3c37c", "id": 144, "label": "f", "level": 17, "shape": "circle", "title": "_line 6056\u003cbr\u003evid 144"}, {"borderWidth": 3, "color": "#d3c37c", "id": 145, "label": "f", "level": 18, "shape": "circle", "title": "_line 6057\u003cbr\u003evid 145"}, {"borderWidth": 3, "color": "#d3c37c", "id": 146, "label": "bt", "level": 19, "shape": "circle", "title": "Stade 17\u003cbr\u003e_line 6058\u003cbr\u003evid 146"}, {"borderWidth": 3, "color": "#c6a5c1", "id": 147, "label": "HT", "level": 16, "shape": "circle", "title": "FLWRNUMBER 7\u003cbr\u003eFLWRNUMBER_ABORTED 0\u003cbr\u003eFLWRNUMBER_OPEN 0\u003cbr\u003eStade 55\u003cbr\u003e_line 6059\u003cbr\u003evid 147"}, {"borderWidth": 3, "color": "#bc9157", "id": 148, "label": "HT", "level": 14, "shape": "circle", "title": "FLWRNUMBER 6\u003cbr\u003eFLWRNUMBER_ABORTED 0\u003cbr\u003eFLWRNUMBER_OPEN 4\u003cbr\u003eStade 77\u003cbr\u003e_line 6060\u003cbr\u003evid 148"}, {"borderWidth": 3, "color": "#a0e491", "id": 149, "label": "HT", "level": 11, "shape": "circle", "title": "FLWRNUMBER 5\u003cbr\u003eFLWRNUMBER_ABORTED 0\u003cbr\u003eFLWRNUMBER_OPEN 5\u003cbr\u003eStade 87\u003cbr\u003e_line 6061\u003cbr\u003evid 149"}, {"borderWidth": 3, "color": "#00c846", "id": 150, "label": "HT", "level": 7, "shape": "circle", "title": "FLWRNUMBER 5\u003cbr\u003eFLWRNUMBER_ABORTED 0\u003cbr\u003eFLWRNUMBER_OPEN 5\u003cbr\u003eStade 87\u003cbr\u003e_line 6062\u003cbr\u003evid 150"}, {"borderWidth": 3, "color": "#d60000", "id": 151, "label": "HT", "level": 4, "shape": "circle", "title": "FLWRNUMBER 11\u003cbr\u003eFLWRNUMBER_ABORTED 0\u003cbr\u003eFLWRNUMBER_OPEN 11\u003cbr\u003eStade 87\u003cbr\u003e_line 6063\u003cbr\u003evid 151"}]);
+        edges = new vis.DataSet([{"arrows": "to", "from": 2, "label": "+", "to": 4, "width": 1}, {"arrows": "to", "from": 2, "label": "\u003c", "to": 5, "width": 6}, {"arrows": "to", "from": 5, "label": "+", "to": 7, "width": 1}, {"arrows": "to", "from": 5, "label": "\u003c", "to": 8, "width": 6}, {"arrows": "to", "from": 8, "label": "+", "to": 10, "width": 1}, {"arrows": "to", "from": 10, "label": "+", "to": 12, "width": 1}, {"arrows": "to", "from": 10, "label": "\u003c", "to": 13, "width": 6}, {"arrows": "to", "from": 13, "label": "+", "to": 15, "width": 1}, {"arrows": "to", "from": 13, "label": "\u003c", "to": 16, "width": 6}, {"arrows": "to", "from": 16, "label": "+", "to": 18, "width": 1}, {"arrows": "to", "from": 16, "label": "\u003c", "to": 19, "width": 6}, {"arrows": "to", "from": 19, "label": "+", "to": 21, "width": 1}, {"arrows": "to", "from": 21, "label": "+", "to": 23, "width": 1}, {"arrows": "to", "from": 23, "label": "\u003c", "to": 24, "width": 6}, {"arrows": "to", "from": 24, "label": "\u003c", "to": 25, "width": 6}, {"arrows": "to", "from": 21, "label": "\u003c", "to": 26, "width": 6}, {"arrows": "to", "from": 26, "label": "+", "to": 28, "width": 1}, {"arrows": "to", "from": 28, "label": "\u003c", "to": 29, "width": 6}, {"arrows": "to", "from": 29, "label": "\u003c", "to": 30, "width": 6}, {"arrows": "to", "from": 30, "label": "\u003c", "to": 31, "width": 6}, {"arrows": "to", "from": 26, "label": "\u003c", "to": 32, "width": 6}, {"arrows": "to", "from": 32, "label": "+", "to": 34, "width": 1}, {"arrows": "to", "from": 32, "label": "\u003c", "to": 35, "width": 6}, {"arrows": "to", "from": 35, "label": "+", "to": 37, "width": 1}, {"arrows": "to", "from": 35, "label": "\u003c", "to": 38, "width": 6}, {"arrows": "to", "from": 38, "label": "+", "to": 40, "width": 1}, {"arrows": "to", "from": 40, "label": "+", "to": 42, "width": 1}, {"arrows": "to", "from": 40, "label": "\u003c", "to": 43, "width": 6}, {"arrows": "to", "from": 43, "label": "+", "to": 45, "width": 1}, {"arrows": "to", "from": 43, "label": "\u003c", "to": 46, "width": 6}, {"arrows": "to", "from": 46, "label": "+", "to": 48, "width": 1}, {"arrows": "to", "from": 48, "label": "\u003c", "to": 49, "width": 6}, {"arrows": "to", "from": 49, "label": "\u003c", "to": 50, "width": 6}, {"arrows": "to", "from": 50, "label": "\u003c", "to": 51, "width": 6}, {"arrows": "to", "from": 51, "label": "\u003c", "to": 52, "width": 6}, {"arrows": "to", "from": 52, "label": "\u003c", "to": 53, "width": 6}, {"arrows": "to", "from": 46, "label": "\u003c", "to": 54, "width": 6}, {"arrows": "to", "from": 54, "label": "+", "to": 56, "width": 1}, {"arrows": "to", "from": 56, "label": "\u003c", "to": 57, "width": 6}, {"arrows": "to", "from": 57, "label": "\u003c", "to": 58, "width": 6}, {"arrows": "to", "from": 58, "label": "\u003c", "to": 59, "width": 6}, {"arrows": "to", "from": 54, "label": "\u003c", "to": 60, "width": 6}, {"arrows": "to", "from": 38, "label": "\u003c", "to": 61, "width": 6}, {"arrows": "to", "from": 19, "label": "\u003c", "to": 62, "width": 6}, {"arrows": "to", "from": 8, "label": "\u003c", "to": 63, "width": 6}, {"arrows": "to", "from": 63, "label": "+", "to": 65, "width": 1}, {"arrows": "to", "from": 65, "label": "+", "to": 67, "width": 1}, {"arrows": "to", "from": 65, "label": "\u003c", "to": 68, "width": 6}, {"arrows": "to", "from": 68, "label": "+", "to": 70, "width": 1}, {"arrows": "to", "from": 70, "label": "+", "to": 72, "width": 1}, {"arrows": "to", "from": 72, "label": "\u003c", "to": 73, "width": 6}, {"arrows": "to", "from": 73, "label": "\u003c", "to": 74, "width": 6}, {"arrows": "to", "from": 74, "label": "\u003c", "to": 75, "width": 6}, {"arrows": "to", "from": 70, "label": "\u003c", "to": 76, "width": 6}, {"arrows": "to", "from": 76, "label": "+", "to": 78, "width": 1}, {"arrows": "to", "from": 78, "label": "\u003c", "to": 79, "width": 6}, {"arrows": "to", "from": 79, "label": "+", "to": 81, "width": 1}, {"arrows": "to", "from": 79, "label": "\u003c", "to": 82, "width": 6}, {"arrows": "to", "from": 76, "label": "\u003c", "to": 83, "width": 6}, {"arrows": "to", "from": 83, "label": "+", "to": 85, "width": 1}, {"arrows": "to", "from": 85, "label": "\u003c", "to": 86, "width": 6}, {"arrows": "to", "from": 86, "label": "\u003c", "to": 87, "width": 6}, {"arrows": "to", "from": 87, "label": "\u003c", "to": 88, "width": 6}, {"arrows": "to", "from": 83, "label": "\u003c", "to": 89, "width": 6}, {"arrows": "to", "from": 89, "label": "+", "to": 91, "width": 1}, {"arrows": "to", "from": 91, "label": "+", "to": 93, "width": 1}, {"arrows": "to", "from": 91, "label": "\u003c", "to": 94, "width": 6}, {"arrows": "to", "from": 94, "label": "+", "to": 96, "width": 1}, {"arrows": "to", "from": 94, "label": "\u003c", "to": 97, "width": 6}, {"arrows": "to", "from": 97, "label": "+", "to": 99, "width": 1}, {"arrows": "to", "from": 99, "label": "+", "to": 101, "width": 1}, {"arrows": "to", "from": 99, "label": "\u003c", "to": 102, "width": 6}, {"arrows": "to", "from": 102, "label": "\u003c", "to": 103, "width": 6}, {"arrows": "to", "from": 103, "label": "\u003c", "to": 104, "width": 6}, {"arrows": "to", "from": 104, "label": "\u003c", "to": 105, "width": 6}, {"arrows": "to", "from": 97, "label": "\u003c", "to": 106, "width": 6}, {"arrows": "to", "from": 89, "label": "\u003c", "to": 107, "width": 6}, {"arrows": "to", "from": 68, "label": "\u003c", "to": 108, "width": 6}, {"arrows": "to", "from": 108, "label": "+", "to": 110, "width": 1}, {"arrows": "to", "from": 110, "label": "+", "to": 112, "width": 1}, {"arrows": "to", "from": 112, "label": "\u003c", "to": 113, "width": 6}, {"arrows": "to", "from": 113, "label": "\u003c", "to": 114, "width": 6}, {"arrows": "to", "from": 110, "label": "\u003c", "to": 115, "width": 6}, {"arrows": "to", "from": 115, "label": "+", "to": 117, "width": 1}, {"arrows": "to", "from": 117, "label": "\u003c", "to": 118, "width": 6}, {"arrows": "to", "from": 118, "label": "\u003c", "to": 119, "width": 6}, {"arrows": "to", "from": 115, "label": "\u003c", "to": 120, "width": 6}, {"arrows": "to", "from": 120, "label": "+", "to": 122, "width": 1}, {"arrows": "to", "from": 122, "label": "\u003c", "to": 123, "width": 6}, {"arrows": "to", "from": 123, "label": "\u003c", "to": 124, "width": 6}, {"arrows": "to", "from": 124, "label": "+", "to": 126, "width": 1}, {"arrows": "to", "from": 124, "label": "\u003c", "to": 127, "width": 6}, {"arrows": "to", "from": 120, "label": "\u003c", "to": 128, "width": 6}, {"arrows": "to", "from": 128, "label": "+", "to": 130, "width": 1}, {"arrows": "to", "from": 130, "label": "+", "to": 132, "width": 1}, {"arrows": "to", "from": 130, "label": "\u003c", "to": 133, "width": 6}, {"arrows": "to", "from": 133, "label": "+", "to": 135, "width": 1}, {"arrows": "to", "from": 133, "label": "\u003c", "to": 136, "width": 6}, {"arrows": "to", "from": 136, "label": "+", "to": 138, "width": 1}, {"arrows": "to", "from": 138, "label": "+", "to": 140, "width": 1}, {"arrows": "to", "from": 138, "label": "\u003c", "to": 141, "width": 6}, {"arrows": "to", "from": 141, "label": "+", "to": 143, "width": 1}, {"arrows": "to", "from": 143, "label": "\u003c", "to": 144, "width": 6}, {"arrows": "to", "from": 144, "label": "\u003c", "to": 145, "width": 6}, {"arrows": "to", "from": 145, "label": "\u003c", "to": 146, "width": 6}, {"arrows": "to", "from": 141, "label": "\u003c", "to": 147, "width": 6}, {"arrows": "to", "from": 136, "label": "\u003c", "to": 148, "width": 6}, {"arrows": "to", "from": 128, "label": "\u003c", "to": 149, "width": 6}, {"arrows": "to", "from": 108, "label": "\u003c", "to": 150, "width": 6}, {"arrows": "to", "from": 63, "label": "\u003c", "to": 151, "width": 6}]);
 
         // adding nodes and edges to the graph
         data = {nodes: nodes, edges: edges};
@@ -56,50 +137,50 @@
         var options = {
     "configure": {
         "enabled": false
-    }, 
+    },
     "edges": {
         "color": {
             "inherit": true
-        }, 
+        },
         "smooth": {
-            "enabled": false, 
+            "enabled": false,
             "type": "continuous"
         }
-    }, 
+    },
     "interaction": {
-        "dragNodes": true, 
-        "hideEdgesOnDrag": false, 
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
         "hideNodesOnDrag": false
-    }, 
+    },
     "layout": {
         "hierarchical": {
-            "blockShifting": true, 
-            "direction": "DU", 
-            "edgeMinimization": true, 
-            "enabled": true, 
-            "levelSeparation": 150, 
-            "parentCentralization": true, 
-            "sortMethod": "hubsize", 
+            "blockShifting": true,
+            "direction": "DU",
+            "edgeMinimization": true,
+            "enabled": true,
+            "levelSeparation": 150,
+            "parentCentralization": true,
+            "sortMethod": "hubsize",
             "treeSpacing": 200
-        }, 
-        "improvedLayout": true, 
+        },
+        "improvedLayout": true,
         "randomSeed": 0
-    }, 
+    },
     "physics": {
-        "enabled": true, 
+        "enabled": true,
         "hierarchicalRepulsion": {
-            "centralGravity": 0.0, 
-            "damping": 0.09, 
-            "nodeDistance": 120, 
-            "springConstant": 0.01, 
+            "centralGravity": 0.0,
+            "damping": 0.09,
+            "nodeDistance": 120,
+            "springConstant": 0.01,
             "springLength": 100
-        }, 
-        "solver": "hierarchicalRepulsion", 
+        },
+        "solver": "hierarchicalRepulsion",
         "stabilization": {
-            "enabled": true, 
-            "fit": true, 
-            "iterations": 1000, 
-            "onlyDynamicEdges": false, 
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
             "updateInterval": 50
         }
     }
@@ -114,6 +195,24 @@
         
 
 
+        
+        network.on("stabilizationProgress", function(params) {
+      		document.getElementById('loadingBar').removeAttribute("style");
+	        var maxWidth = 496;
+	        var minWidth = 20;
+	        var widthFactor = params.iterations/params.total;
+	        var width = Math.max(minWidth,maxWidth * widthFactor);
+
+	        document.getElementById('bar').style.width = width + 'px';
+	        document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+	    });
+	    network.once("stabilizationIterationsDone", function() {
+	        document.getElementById('text').innerHTML = '100%';
+	        document.getElementById('bar').style.width = '496px';
+	        document.getElementById('loadingBar').style.opacity = 0;
+	        // really clean the dom element
+	        setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+	    });
         
 
         return network;
