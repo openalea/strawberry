@@ -25,3 +25,4 @@ dependencies:
    - plotly
    - nbsphinx
    - sphinx-rtd-theme
+   - nbsphinx-link

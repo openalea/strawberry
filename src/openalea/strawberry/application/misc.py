@@ -4,10 +4,17 @@ from io import StringIO
 import pandas as pd
 import base64
 from ipywidgets import HTML
+import ipywidgets as widgets
 
 
 from openalea.mtg.io import write_mtg
 from openalea.mtg import MTG
+from openalea.strawberry.application.layout import layout_dataframe, layout_output_wgt
+
+
+if layout_dataframe == "qgrid":
+    import qgrid
+    qgrid.set_grid_option('maxVisibleRows', 10)
 
 
 def init_allmtg():
@@ -105,3 +112,20 @@ def create_download_link( df, title = "Download CSV file", filename = "selected_
     html = html.format(payload=payload,title=title,filename=filename)
     return HTML(html)
 
+
+def update_grid(df, wgt):
+    if layout_dataframe == "qgrid":
+        df_fixed = fix_inferior_character_for_qgrid(df)
+        wgt.df = df_fixed
+    elif layout_dataframe == "pandas":
+        with wgt:
+            wgt.clear_output()
+            display(df)
+
+
+def create_grid():
+    if layout_dataframe =="qgrid":
+        return qgrid.show_grid(pd.DataFrame(), show_toolbar=False, 
+                                  grid_options={'forceFitColumns': False, 'editable':True, 'defaultColumnWidth':50})
+    elif layout_dataframe=="pandas":
+        return widgets.Output(layout=layout_output_wgt)
