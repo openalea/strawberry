@@ -1,3 +1,4 @@
+''' Function to analyse strawberry mtg: Data extraction and plot '''
 
 from __future__ import absolute_import
 from __future__ import print_function

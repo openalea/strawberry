@@ -1,4 +1,4 @@
-.. automodule:: openalea.strawberry.analysis
+﻿.. automodule:: openalea.strawberry.analysis
     :members:
 
 .. automodule:: openalea.strawberry.geometry

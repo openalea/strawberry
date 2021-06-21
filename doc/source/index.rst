@@ -6,17 +6,17 @@
 Welcome to strawberry's documentation!
 ======================================
 
-Strawberry is a package for architecture analysis and 2D/3D reconstruction. It contains Python code.
-
-
-.. contents::
-
-What is Strawberry ?
---------------------
-
 The **Strawberry** package is an amazing tools for strawberry architectural analysis.
 It enables the construction & vizualisation of 2D/3D architecture.
 It is an extension of the software OpenAlea.
+
+.. image:: ./user/images/mtg_graph.png
+   :width: 150
+
+.. image:: ./user/images/capriss_3d.png
+   :width: 300
+
+.. contents::
 
 
 Installation
@@ -25,6 +25,21 @@ Installation
 .. toctree::
 
    ./install/index.rst
+
+
+Quick start
+----------------------
+
+.. toctree::
+
+   ./user/quick_start.rst
+
+
+Gallery
+-----------
+.. toctree::
+
+   ./user/gallery.rst
 
 
 Documentation
@@ -43,7 +58,12 @@ Tutorial Jupyter Notebooks
 Tutorial Jupyter Notebooks are available on the git repository in the folder
 examples.
 
+References
+-----------
 
+.. toctree::
+
+   ./references/index.rst
 
 Authors
 -------

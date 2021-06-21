@@ -1,3 +1,5 @@
+''' Geometric rule of production for strawberry MTG Vizualisation '''
+
 # 1. Pakages import
 from __future__ import absolute_import
 

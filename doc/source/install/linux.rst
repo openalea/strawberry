@@ -18,7 +18,7 @@ http://conda.pydata.org/miniconda.html
 .. code:: shell
 
     conda create --name strawberry python
-    source activate strawberry
+    conda activate strawberry
 
 
 3. Install dependencies with conda
@@ -34,6 +34,8 @@ http://conda.pydata.org/miniconda.html
 
     git clone git@github.com:pomme-abricot/oawidgets.git
     cd oawidgets; python setup.py install; cd ..
+
+    pip install pyvis pgljupyter
 
 
 4. Install the strawberry package
