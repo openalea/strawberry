@@ -12,7 +12,6 @@ from openalea.mtg.turtle import *
 from openalea.plantgl import all as pgl
 from openalea.plantgl.all import *
 
-import six
 from six.moves import range
 
 

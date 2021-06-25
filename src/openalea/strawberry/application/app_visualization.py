@@ -1,16 +1,13 @@
 import ipyvuetify as v
 import ipywidgets as widgets
 
-from oawidgets.plantgl import PlantGL
-from pgljupyter import SceneWidget
-
 from openalea.mtg.algo import orders
 
 from openalea.strawberry import visu3d 
 
 from openalea.strawberry.application.layout import layout_output_wgt
 import openalea.strawberry.application.misc as misc
-from openalea.strawberry.application.misc import get_vid_of_genotype
+from openalea.strawberry.application.misc import get_vid_of_genotype, display3d
 
 
 # # ----------------------------------------------------------------
@@ -25,8 +22,7 @@ def print_3d_growth_developement(mtg, genotype):
             vids_selected = get_vid_of_genotype(misc.all_mtg, genotypes=[genotype])
             misc.all_mtg.properties()['order'] = orders(misc.all_mtg)
             scene=visu3d.plot3d(misc.all_mtg,by=["Sample_date"],hide_leaves=False,display=False, vids=vids_selected)
-            display(SceneWidget(scene))
-#             display(PlantGL(scene, group_by_color=parameter_color.v_model))
+            display3d(scene)
     else:
         with plot3d_growth_developement:
             plot3d_growth_developement.clear_output()
@@ -41,11 +37,10 @@ def print_3d_floral_intensity(mtg, genotype):
             vids_selected = get_vid_of_genotype(misc.all_mtg, genotypes=[genotype])
             misc.all_mtg.properties()['order'] = orders(misc.all_mtg)
             scene=visu3d.plot3d(misc.all_mtg,by=["Sample_date"],hide_leaves=True,display=False, vids=vids_selected)
-            display(SceneWidget(scene))
-#             display(PlantGL(scene, group_by_color=parameter_color.v_model))    
+            display3d(scene) 
     else:
-        with plot3d_growth_developement:
-            plot3d_growth_developement.clear_output()
+        with plot3d_floral_intensity:
+            plot3d_floral_intensity.clear_output()
             print('Select a Genotype') 
 
 
@@ -66,6 +61,10 @@ def on_change_3d(widget, event, data):
 
 def on_change_tab_3d(widget, event, data):
     genotype_selection_3d.v_model = ""
+    with plot3d_floral_intensity:
+        plot3d_floral_intensity.clear_output()
+    with plot3d_growth_developement:
+        plot3d_growth_developement.clear_output()
 
     
 # # ----------------------------------------------------------------
