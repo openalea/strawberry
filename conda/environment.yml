@@ -19,7 +19,6 @@ dependencies:
  - openalea.deploy 
  - openalea.mtg 
  - openalea.plantgl 
- - openalea.lpy
  - pip:
    - pyvis
    - pgljupyter

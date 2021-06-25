@@ -29,7 +29,6 @@ requirements:
     - ipyvuetify 
     - qgrid 
     - plotly
-    - openalea.lpy
 
 test:
   imports:
