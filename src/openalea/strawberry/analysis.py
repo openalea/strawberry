@@ -73,6 +73,7 @@ def to_dataframe(g, vertices=[], f=None):
     dataframe = pd.DataFrame.from_dict(d)
     return dataframe
 
+
 def strawberry_dataframe(g):
     """Convert a strawberry MTG into a dataframe
 
@@ -127,7 +128,7 @@ def write_sequences(seqs, variables, VertexIdentifiers):
     :type VertexIdentifiers: list
     :return: A string with variable information extacted from MTG
     :rtype: string
-    """    
+    """
 
     sep = '\t'
     txts = []
@@ -189,6 +190,7 @@ def median_individuals(df):
         # minimum_inds= s[s==_min]
     return df.iloc[indices]
 
+
 def occurence_module_order_along_time(data, frequency_type):
     """Compute occurence of module order along time.
 
@@ -208,6 +210,7 @@ def occurence_module_order_along_time(data, frequency_type):
         res = pd.crosstab(index= data["order"], columns= data["date"], normalize = "columns").cumsum()
     return res
 
+
 def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab, expand=0):
     """Plot a pointwise mean of variables.
 
@@ -225,7 +228,7 @@ def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab, expand=
     :type ylab: string
     :param expand: allows to change xlim, defaults to 0
     :type expand: int, optional
-    """
+    """    
 
     fig, pointwise_mean = plt.subplots()
     cmap = plt.get_cmap('rainbow', len(varieties))
@@ -243,22 +246,21 @@ def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab, expand=
 
 
 def crowntype_distribution(data, varieties, crown_type, plot=True,expand=0):
-    """Create a dataframe containing relative frequency values by genotype and order for extension and branch crown
-    and a relative frequency distribution plot
+    """Create a dataframe containing relative frequency values by genotype and order for extension and branch crown and a relative frequency distribution plot
 
     :param data: panda dataframe issue from extraction of data at module scale
-    :type data: DataFrame
+    :type data: pd.DataFrame
     :param varieties: names of varieties which are plot
     :type varieties: list of string
     :param crown_type: type of branch crown (extension_crown or branch_crown)
-    :type crown_type: string
-    :param plot: booleen variable True or False, defaults to True
+    :type crown_type: str
+    :param plot: is ploted, defaults to True
     :type plot: bool, optional
     :param expand: allows to change xlim, defaults to 0
     :type expand: int, optional
-    :return: A dataframe
-    :rtype: DataFrame
-    """    
+    :return: the dataframe
+    :rtype: pd.DataFrame
+    """
 
     df= pd.crosstab(index= [data.Genotype, data.order],
                     columns= data.type_of_crown,
@@ -284,12 +286,8 @@ def crowntype_distribution(data, varieties, crown_type, plot=True,expand=0):
             plt.xlim(left=1-expand, right= max(df.loc[variety].index)+expand)
             plt.ylim(bottom=0.1, top= 1.1)
 
-
     return df
 
-
-# from variables
-# 
 
 def property(g, name):
     """Change the name of the MTG properties without changing the code
@@ -300,11 +298,12 @@ def property(g, name):
     :type name: string
     :return: A MTG with the name of the property changed
     :rtype: MTG
-    """    
+    """
+
     return g.property(convert.get(name, name))
 
 
-######################################## Extraction at plant scale ###########################################################
+# Extraction at plant scale 
 def extract_at_plant_scale(g, vids=[], convert=convert):
     """Compute the properties at plant scale of a MTG. 
 
@@ -316,7 +315,7 @@ def extract_at_plant_scale(g, vids=[], convert=convert):
     :type convert: dict, optional
     :return: A dataframe of computed properties at plant scale
     :rtype: DataFrame
-    """    
+    """
 
     #TODO: compute this only one. It would be nice if we can compute this in the init of a class Extractor.
     orders = algo.orders(g, scale=2)
@@ -363,7 +362,8 @@ def _plant_variables(g):
     :type g: MTG
     :return: A dict of keys=variables name, var=extraction functions
     :rtype: OrderedDict
-    """    
+    """
+
     plant_variables = OrderedDict()
     plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
     plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
@@ -380,7 +380,7 @@ def _plant_variables(g):
     return plant_variables
 
 
-####################### Extraction at the module scale ##################################################################
+# Extraction at the module scale 
 def extract_at_module_scale(g, vids=[], convert=convert):
     """Compute the properties at module scale of a MTG. 
 
@@ -392,7 +392,7 @@ def extract_at_module_scale(g, vids=[], convert=convert):
     :type convert: dict, optional
     :return: A dataframe of computed properties at module scale
     :rtype: DataFrame
-    """    
+    """
 
     if not vids:
         vids = g.vertices(scale=1)
@@ -432,7 +432,8 @@ def _module_variables(g):
     :type g: MTG
     :return: A dict of keys=variables name, var=extraction functions
     :rtype: OrderedDict
-    """    
+    """
+    
     module_variables = OrderedDict()
     module_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille developpe
     module_variables['nb_foliar_primordia'] = nb_foliar_primordia #Nombre de primordia foliaire
@@ -445,7 +446,7 @@ def _module_variables(g):
     module_variables['nb_floral_bud']= nb_floral_buds
     module_variables['nb_stolons']= nb_stolons
     module_variables['type_of_crown'] = type_of_crown # Type de crowns (Primary Crown:1, Branch crown:2 extension crown:3)
-    module_variables['crown_status'] = Crown_status
+    module_variables['crown_status'] = crown_status
     module_variables['complete_module'] = complete #(True: complete, False: incomplete)
     module_variables['stage']= stage
 
@@ -459,7 +460,8 @@ def visible_modules(g, vids=[]):
     :type g: MTG
     :param vids: List of vids whose property will be "visible", defaults to []
     :type vids: list, optional
-    """    
+    """
+
     modules =  [v for v in g.vertices_iter(scale=2) 
                 if (g.complex(v) in vids)
                 and g.label(next(g.component_roots_iter(v))) == 'F']
@@ -471,16 +473,16 @@ def visible_modules(g, vids=[]):
 
 def complete_module(g, vids=[]):
     """Return properties incomplete or complete module
-    Algorithm: 
-        module are complete:
-        if module are visible and terminated by an Inflorescence (HT) (propertie=True)
-        else module are incomplete (all module terminated by ht or bt) (property=False)
+    Algorithm:
+    module are complete:
+    if module are visible and terminated by an Inflorescence (HT) (propertie=True)
+    else module are incomplete (all module terminated by ht or bt) (property=False)
 
     :param g: the MTG module
     :type g: MTG
     :param vids: list of vids, defaults to []
     :type vids: list, optional
-    """    
+    """
 
     complete = {}
     visible = g.property('visible')
@@ -506,7 +508,8 @@ def nb_visible_leaves(vid, g):
     :type g: MTG
     :return: The number of visible leaves
     :rtype: int
-    """    
+    """
+
     return sum(1 for cid in g.components(vid) if g.label(cid)=='F')
 
 
@@ -519,7 +522,8 @@ def nb_foliar_primordia(vid, g):
     :type g: MTG
     :return: The number of foliar primordia
     :rtype: int
-    """    
+    """
+
     return sum(1 for cid in g.components(vid) if g.label(cid)=='f')
 
 
@@ -532,7 +536,8 @@ def nb_total_leaves(vid, g):
     :type g: MTG
     :return: The number of total leaves
     :rtype: int
-    """    
+    """
+
     return sum(1 for cid in g.components(vid) if g.label(cid) in ('f', 'F'))
 
 def nb_stolons(v, g):
@@ -544,7 +549,8 @@ def nb_stolons(v, g):
     :type g: MTG
     :return: The number of stolon
     :rtype: int
-    """    
+    """
+
     def nb_stolon(vid, g=g):
         return sum(1 for cid in g.components(vid) if g.label(cid)=='s')
     return sum(nb_stolon(ch) for ch in g.children(v))
@@ -559,7 +565,8 @@ def nb_open_flowers(vid, g):
     :type g: MTG
     :return: The number of open flowers
     :rtype: int
-    """    
+    """
+
     flowers = property(g, 'Fleurs_ouverte')
     return sum( flowers.get(cid,0) for cid in g.components(vid) if g.label(cid) in ('ht', 'HT'))
 
@@ -573,7 +580,8 @@ def nb_aborted_flowers(vid, g):
     :type g: MTG
     :return: The number of aborted flowers
     :rtype: int
-    """    
+    """
+
     flowers = property(g, 'Fleurs_aborted')
     return sum( flowers.get(cid,0) for cid in g.components(vid) if g.label(cid) in ('ht', 'HT'))
 
@@ -587,7 +595,8 @@ def nb_total_flowers(vid, g):
     :type g: MTG
     :return: The number of total flowers
     :rtype: int
-    """    
+    """
+
     flowers = property(g, 'Fleurs_total')
     return sum( flowers.get(cid,0) for cid in g.components(vid) if g.label(cid) in ('ht', 'HT'))
 
@@ -601,7 +610,8 @@ def missing_leaves(vid,g):
     :type g: MTG
     :return: The number of missing leaves
     :rtype: int
-    """    
+    """
+
     missing= property(g, 'Missing')
     return sum(1 for cid in g.components(vid) if missing.get(cid)=="yes")
 
@@ -609,8 +619,8 @@ def missing_leaves(vid,g):
 def nb_vegetative_buds(vid, g):
     """Return the number of vegetative buds
     Algorithm:
-        if label is bt then stage is 17,18,19 or None
-        count number of bt and attach at the parent order
+    if label is bt then stage is 17,18,19 or None
+    count number of bt and attach at the parent order
 
     :param vid: vid for which the function is applied
     :type vid: int
@@ -618,7 +628,8 @@ def nb_vegetative_buds(vid, g):
     :type g: MTG
     :return: The number of vegetative buds
     :rtype: int
-    """    
+    """
+
     stages= property(g, 'Stade')
     def nb_vegetative(v):
         cid = g.component_roots(v)[0]
@@ -637,7 +648,8 @@ def nb_initiated_buds(vid, g):
     :type g: MTG
     :return: The number of initiated buds
     :rtype: int
-    """    
+    """
+
     stages= property(g, 'Stade')
 
     def nb_init(v):
@@ -655,7 +667,8 @@ def nb_floral_buds (vid, g):
     :type g: MTG
     :return: The number of floral buds
     :rtype: int
-    """    
+    """
+
     visibles = property(g, 'visible')
     def nb_floral(v):
         return sum(1 for cid in g.components(v) if g.label(cid)=="ht" )
@@ -678,7 +691,8 @@ def type_of_crown(vid, g):
     :type g: MTG
     :return: The type of crown
     :rtype: int
-    """   
+    """
+
     if g.label(vid) == 'T':
         return 1
     else:
@@ -696,19 +710,20 @@ def type_of_crown(vid, g):
             return 4
 
 
-def Crown_status(vid, g):
+def crown_status(vid, g):
     """Returns the type of inflorescence
 
     :Algorithms:
+
     if label is bt then
         - if stage is 17, 18, 19 or None, => vegetative (1)
         - if stage is A => initiated (2)
         - if stage is other => non defined (pourri, avorte, coupe) (-1)
-     - Terminal vegetative bud (1): label==bt g.property(Stade)== none or 17 or 18 or 19
-     - Terminal initiated bud (2): label== bt if g.property(Stade) == A
-     - Terminal Floral bud (3): label==ht
-     - Inflorescence Terminal (4): label== HT
-     - runner (5): label = s
+        - Terminal vegetative bud (1): label==bt g.property(Stade)== none or 17 or 18 or 19
+        - Terminal initiated bud (2): label== bt if g.property(Stade) == A
+        - Terminal Floral bud (3): label==ht
+        - Inflorescence Terminal (4): label== HT
+        - runner (5): label = s
 
     :param vid: vid for which the function is applied
     :type vid: int
@@ -716,7 +731,8 @@ def Crown_status(vid, g):
     :type g: MTG
     :return: The crown status
     :rtype: int
-    """   
+    """
+
     stages = property(g,'Stade')
     # select s, ht, HT et bt
     for cid in g.components(vid):
@@ -745,7 +761,8 @@ def nb_inflorescence (Vid, g):
     :type g: MTG
     :return: The number of inflorescence
     :rtype: int
-    """    
+    """
+
     return sum(1 for cid in g.components(Vid) if g.label(cid)=='HT')
 
 
@@ -759,7 +776,8 @@ def genotype(vid, g):
     :type g: MTG
     :return: The genotype
     :rtype: string
-    """    
+    """
+
     cpx = g.complex_at_scale(vid, scale=1)
     _genotype = property(g, 'Genotype')[cpx]
     return _genotype
@@ -774,7 +792,8 @@ def plant(vid, g):
     :type g: MTG
     :return: The plant id
     :rtype: string
-    """    
+    """
+
     cpx = g.complex_at_scale(vid, scale=1)
     return property(g, 'Plante')[cpx]
 
@@ -788,7 +807,8 @@ def date(vid, g):
     :type g: MTG
     :return: The date
     :rtype: string
-    """    
+    """
+
     cpx = g.complex_at_scale(vid, scale=1)
     _date = property(g, 'date')[cpx]
     return(_date)
@@ -803,7 +823,8 @@ def modality(vid, g):
     :type g: MTG
     :return: The modality
     :rtype: string
-    """    
+    """
+    
     cpx = g.complex_at_scale(vid, scale=1)
     _modality = property(g, 'Modality')[cpx]
     return(_modality)
@@ -819,6 +840,7 @@ def compute_leaf_area(g, vids=[]):
     :return: A dict of leaf area (key is vid)
     :rtype: dict
     """
+
     _central= g.property("LFTLG_CENTRAL")
     _left= g.property("LFTLG_LEFT")
     _mean_leaf_area= g.property("LFAR")
@@ -848,7 +870,8 @@ def mean_leaf_area(vid,g):
     :type g: MTG
     :return: the mean leaf area of the selected vid
     :rtype: float
-    """    
+    """
+
     pid = g.complex_at_scale(vid, scale=1)
     area = g.property("LFAR").get(pid, 0.)
 
@@ -864,7 +887,8 @@ def complete(vid, g):
     :type g: MTG
     :return: 'complete' state
     :rtype: boolean
-    """    
+    """
+
     return g.property("complete").get(vid, False)
 
 
@@ -872,18 +896,19 @@ def stage(vid, g):
     _stage = g.property('Stade')
     return next((_stage[cid] for cid in g.components(vid) if cid in _stage), None)
 
-##### Data transformation #####
-def occurence_module_order_along_time(data, frequency_type):
-    """
-    parameters:
-    -----------
-        data = data at module scale 
-        frequency_type = type of distribution frequency distribution (freq), probability distribution frequency (pbf) or cumulative frequency distribution (cdf)
 
-    return:
-    --------
-        A dataframe with frequency, probability or cumulative frequency distribution for each module order along time
-    """
+# Data transformation 
+def occurence_module_order_along_time(data, frequency_type):
+    """Compute the occurence module order along time
+
+    :param data: data extracted at module scale
+    :type data: pd.DataFrame
+    :param frequency_type: type of distribution frequency distribution (freq), probability distribution frequency (pbf) or cumulative frequency distribution (cdf)
+    :type frequency_type: str
+    :return: A dataframe with frequency, probability or cumulative frequency distribution for each module order along time
+    :rtype: pd.DataFrame
+    """    
+
     if frequency_type == "freq":
         res = pd.crosstab(index= data["order"], columns= data["date"], margins = True)
     if frequency_type == "pdf":
@@ -892,49 +917,8 @@ def occurence_module_order_along_time(data, frequency_type):
         res = pd.crosstab(index= data["order"], columns= data["date"], normalize = "columns").cumsum()
     return res
 
-def crowntype_distribution(data, varieties, crown_type, plot=True,expand=0):
-    """
-    parameters:
-    -----------
-    data: panda dataframe issue from extraction of data at module scale
-    varieties: names of varieties which are plot
-    variable: type of branch crown (extension_crown or branch_crown)
-    plot: booleen variable True or False
 
-    return:
-    -------
-    a dataframe containing relative frequency values by genotype and order for extension and branch crown
-    and a relative frequency distribution plot
-
-    """
-    df= pd.crosstab(index= [data.Genotype, data.order],
-                    columns= data.type_of_crown,
-                    normalize="index")
-    
-    df.columns=["Main", "extension_crown", "branch_crown"]
-    
-    if plot:
-        cmap = plt.get_cmap('rainbow', len(varieties))
-        print(cmap)
-        
-        for i, variety in enumerate(varieties): 
-            
-            df = df[df.index.get_level_values('order')!=0]
-            
-            plt.plot(df.loc[variety][crown_type],
-                     marker="p", 
-                     color = cmap(i))
-            plt.ylabel("relative frequency")
-            plt.xlabel("order")
-            plt.title("Relative frequency of " + crown_type)
-            plt.legend(labels=varieties,loc='center left', bbox_to_anchor=(1, 0.5))
-            plt.xlim(left=1-expand, right= max(df.loc[variety].index)+expand)
-            plt.ylim(bottom=0.1, top= 1.1)
-
-
-    return df
-
-########################## Extraction on node scale ############################################
+# Extraction on node scale
 def extract_at_node_scale(g, vids=[], convert=convert):
     """Compute the properties at node scale of a MTG. 
 
@@ -946,7 +930,7 @@ def extract_at_node_scale(g, vids=[], convert=convert):
     :type convert: dict, optional
     :return: A dataframe of computed properties at node scale
     :rtype: DataFrame
-    """    
+    """
 
     if not vids:
         vids = g.vertices(scale=1)
@@ -996,7 +980,8 @@ def my_bt(vid, g):
     :type g: MTG
     :return: the branching type on parent
     :rtype: string
-    """    
+    """
+
     for cid in g.Sons(vid, EdgeType='+'):
         return str(branching_type(cid,g))
 
@@ -1010,7 +995,8 @@ def complete(vid, g):
     :type g: MTG
     :return: The 'complete' state of the vid
     :rtype: boolean
-    """    
+    """
+
     return g.property("complete").get(vid, False)
 
     
@@ -1023,7 +1009,8 @@ def my_complete(vid, g):
     :type g: MTG
     :return: 'Complete' state
     :rtype: string
-    """    
+    """
+
     # scale = 2
     _complete = g.property('complete')
     if not complete:
@@ -1050,7 +1037,7 @@ def apparent_axis(g, vid):
     :type vid: int
     :yield: generator of axis
     :rtype: int
-    """    
+    """
 
     visibles = g.property('visible')
     v = vid
@@ -1071,7 +1058,8 @@ def is_axis_root(g, vid):
     :type vid: int
     :return: Is the axis a root
     :rtype: boolean
-    """    
+    """
+
     cid = next(g.component_roots_iter(vid))
     pid = g.parent(cid)
     sid = g.Successor(pid)
@@ -1103,7 +1091,8 @@ def branching_type(vid, g):
     :type g: MTG
     :return: The branching type
     :rtype: int
-    """    
+    """
+
     cpx = g.complex(vid)
     nid = g.node(cpx) 
     if nid.visible:
@@ -1143,7 +1132,8 @@ def module_tree(v, g):
     :type g: MTG
     :return: List of module tree
     :rtype: list
-    """    
+    """
+
 #     _complete = g.property('complete')
 #     if not complete:
 #         complete_module(g)
@@ -1170,7 +1160,8 @@ def nb_total_module_tree(v, g):
     :type g: MTG
     :return: total number of module tree
     :rtype: int
-    """    
+    """
+
     if not module_tree(v,g):
         return 0
     else:
@@ -1186,7 +1177,8 @@ def nb_branching_tree(v, g):
     :type g: MTG
     :return: number of branching tree
     :rtype: int
-    """  
+    """
+
     if not module_tree(v, g):
         return 0
     else:
@@ -1202,7 +1194,8 @@ def nb_branching_tree_weight(v, g):
     :type g: MTG
     :return: number of branching tree weight
     :rtype: int
-    """  
+    """
+
     if not module_tree(v, g):
         return 0
     else:
@@ -1218,7 +1211,8 @@ def nb_extension_tree(v, g):
     :type g: MTG
     :return: number of extension tree
     :rtype: int
-    """  
+    """
+
     if not module_tree(v, g):
         return 0
     else:
@@ -1234,7 +1228,8 @@ def nb_visible_leaves_tree(v, g):
     :type g: MTG
     :return: number of visible leaves tree
     :rtype: int
-    """  
+    """
+
     if not module_tree(v, g):
         return 0
     else:
@@ -1246,18 +1241,18 @@ def stage_tree(vid, g):
 
 
 def prob_axillary_production(g, order=None, vids=[]):
-    '''
-    Probability of axillary production as function of node rank
+    """Probability of axillary production as function of node rank
 
-    Parameter
-    ----------
-        mtg: mtg 
-        order: order selected (order= None all module orders are selected)
-    
-    Return
-    ------
-        A dataframe with the probability of axillary production for each node
-    '''
+    :param g: mtg
+    :type g: MTG
+    :param order: order selected (order= None all module orders are selected), defaults to None
+    :type order: str, optional
+    :param vids: vid selected, defaults to []
+    :type vids: list, optional
+    :return: A dataframe with the probability of axillary production for each node
+    :rtype: pd.DataFrame
+    """    
+
     if not vids:
         vids = g.vertices(scale=1)
         
@@ -1275,22 +1270,29 @@ def prob_axillary_production(g, order=None, vids=[]):
     return data
 
 
-######################### Transformation of dataframe ######################################
+# Transformation of dataframe
 def df2waffle(df, date, index, variable, order=None, aggfunc=None, crosstab=None, *args, **kwargs):
-    '''
-        Transpose dataframe by variable with plant in columns and rank or order in index
-        This function are available for extraction at node scale (index='rank') and 
-        extraction at module scale (index= 'order')
-        Parameters:
-        -----------
-            df: dataframe from extract function at differente scale (modules and nodes scale)
-            date_selected: date which must be processed
-            variable: variable which must be processed
-        
-        Returns:
-        --------
-            a dataframe in "waffle" shape: index=date, & columns=variable
-    '''
+    """Transpose dataframe by variable with plant in columns and rank or order in index
+    This function are available for extraction at node scale (index='rank') and 
+    extraction at module scale (index= 'order')
+
+    :param df: dataframe from extract function at differente scale (modules and nodes scale)
+    :type df: pd.DataFrame
+    :param date: date which must be processed
+    :type date: str
+    :param index: scale of the representation (node > 'rank', module > 'order')
+    :type index: str
+    :param variable: variable which must be processed
+    :type variable: str
+    :param order: at module scale, give a specific module to be processed , defaults to None
+    :type order: int, optional
+    :param aggfunc:  required if the data need to be grouped quantitative: "mean", "median" | qualitative: lambda x: ' '.join(x), defaults to None
+    :type aggfunc: str, optional
+    :param crosstab: make a crosstab selection of the input data, defaults to None
+    :type crosstab: boolean, optional
+    :return: a dataframe in "waffle" shape: index=date, & columns=variable
+    :rtype: pd.DataFrame
+    """
 
     if order:
         data=df[(df['date']==date) & (df['order']==order)]
