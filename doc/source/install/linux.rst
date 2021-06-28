@@ -32,7 +32,7 @@ http://conda.pydata.org/miniconda.html
     git clone https://github.com/pomme-abricot/mtg.git
     cd mtg; python setup.py install; cd ..
 
-    git clone https://github.com/openalea-incubator/oawidgets
+    git clone https://github.com/openalea-incubator/oawidgets.git
     cd oawidgets; python setup.py install; cd ..
 
     pip install pyvis pgljupyter
