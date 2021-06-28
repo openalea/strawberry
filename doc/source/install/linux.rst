@@ -46,3 +46,9 @@ http://conda.pydata.org/miniconda.html
     git clone https://github.com/openalea-incubator/strawberry.git
     cd strawberry; python setup.py install; cd ..
 
+5. Optional packages
+---------------------
+
+.. code:: shell
+
+    conda install -c conda-forge pytest
