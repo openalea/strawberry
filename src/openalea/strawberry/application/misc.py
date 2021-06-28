@@ -5,22 +5,32 @@ import pandas as pd
 import base64
 from ipywidgets import HTML
 import ipywidgets as widgets
-
+from oawidgets.plantgl import PlantGL
 
 from openalea.mtg.io import write_mtg
 from openalea.mtg import MTG
-from openalea.strawberry.application.layout import layout_dataframe, layout_output_wgt
+from openalea.strawberry.application.layout import layout_dataframe, layout_output_wgt, layout_visu3d
 
 
 if layout_dataframe == "qgrid":
-    import qgrid
-    qgrid.set_grid_option('maxVisibleRows', 10)
+    try:
+        import qgrid
+        qgrid.set_grid_option('maxVisibleRows', 10)
+    except:
+        layout_dataframe == "pandas"
+
+if layout_visu3d == "pgljupyter":
+    try:
+        from pgljupyter import SceneWidget
+    except:
+        layout_visu3d="oawidgets"
 
 
 def init_allmtg():
     global all_mtg
     all_mtg = MTG()
-    
+
+
 def get_vid_of_genotype(mtg, genotypes):
     if len(genotypes)==1:
         vids=[vid for vid in mtg.vertices(scale=1) if mtg.property('Genotype').get(vid) == genotypes[0]]
@@ -129,3 +139,10 @@ def create_grid():
                                   grid_options={'forceFitColumns': False, 'editable':True, 'defaultColumnWidth':50})
     elif layout_dataframe=="pandas":
         return widgets.Output(layout=layout_output_wgt)
+
+
+def display3d(scene):
+    if layout_visu3d=="pgljupyter":
+        display(SceneWidget(scene))
+    elif layout_visu3d=="oawidgets":
+        display(PlantGL(scene,))

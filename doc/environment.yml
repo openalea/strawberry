@@ -9,10 +9,8 @@ dependencies:
  - openalea.deploy 
  - openalea.mtg 
  - openalea.plantgl 
- - openalea.lpy
  - pip:
    - pyvis
-   - pgljupyter
    - pandas
    - k3d
    - jupyter
@@ -21,7 +19,6 @@ dependencies:
    - nodejs
    - cufflinks
    - ipyvuetify
-   - qgrid
    - plotly
    - nbsphinx
    - sphinx-rtd-theme
