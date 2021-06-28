@@ -27,7 +27,6 @@ requirements:
     - nodejs 
     - cufflinks-py 
     - ipyvuetify 
-    - qgrid 
     - plotly
 
 test:
@@ -36,7 +35,8 @@ test:
   source_files:
     - test/
     - test/*.py
-
+  requires:
+    - pytest
   commands:
     - pytest
 
