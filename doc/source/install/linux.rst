@@ -29,10 +29,10 @@ http://conda.pydata.org/miniconda.html
     conda install -c conda-forge python=3.8 pandas k3d openalea.deploy jupyter voila voila-vuetify nodejs cufflinks-py ipyvuetify qgrid plotly
     conda install -c fredboudon -c conda-forge openalea.mtg openalea.plantgl openalea.lpy
 
-    git clone git@github.com:pomme-abricot/mtg.git
+    git clone https://github.com/pomme-abricot/mtg.git
     cd mtg; python setup.py install; cd ..
 
-    git clone git@github.com:pomme-abricot/oawidgets.git
+    git clone https://github.com/pomme-abricot/oawidgets.git
     cd oawidgets; python setup.py install; cd ..
 
     pip install pyvis pgljupyter
