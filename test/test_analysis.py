@@ -30,6 +30,6 @@ def test_extraction_at_node_scale():
     gariguette_extraction_at_node_scale = extract_at_node_scale(gariguette)
     assert len(gariguette_extraction_at_node_scale) == 784
 
-    gariguette_axillary_prod=prob_axillary_production(gariguette,order=0, plot=False)
+    gariguette_axillary_prod=prob_axillary_production(gariguette,order=0)
     assert len(gariguette_axillary_prod)==19
 
