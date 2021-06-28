@@ -17,7 +17,7 @@ http://conda.pydata.org/miniconda.html
 
 .. code:: shell
 
-    conda create --name strawberry python
+    conda create --name strawberry python=3.8 -c conda-forge -y
     conda activate strawberry
 
 
