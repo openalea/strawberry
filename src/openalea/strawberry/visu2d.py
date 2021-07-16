@@ -9,7 +9,7 @@ from openalea.plantgl.all import *
 from openalea.mtg import *
 from openalea.mtg.turtle import *
 
-from .visu3d import plant_positions
+from openalea.strawberry.visu3d import plant_positions
 
 # def colors():
 #     """ Returns a set of predefined colors"""
