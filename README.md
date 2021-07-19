@@ -83,7 +83,7 @@ docker run -it -p 8888:8888 gheidsieck/strawberry
 and start the notebook in the docker terminal with:
 ```
 conda activate strawberry
-jupyter-notebook
+jupyter notebook --ip='*' --port=8888 --no-browser
 ```
 then copy the link (e.g. http://127.0.0.1:8888/?token=xxx) into your browser.
 
