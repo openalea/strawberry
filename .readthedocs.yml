@@ -8,4 +8,4 @@ python:
    python_setup_py_install: True
 
 conda: 
-   environement: doc/environment.yml
+   environment: doc/environment.yml
