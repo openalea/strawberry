@@ -2,6 +2,8 @@
 
 # OpenAlea.Strawberry
 
+![openalea](http://openalea.gforge.inria.fr/dokuwiki/lib/exe/fetch.php?cache=&media=logos:openalea_150_notxt.png)
+
 
 **Authors** : Marc Labadie, Christophe Pradal, Gaëtan Heidsieck
 
@@ -19,6 +21,7 @@
 
 Strawberry is a package for architecture analysis and 2D/3D reconstruction of strawberry plants.
 
+ <img src="/doc/source/user/images/gariguette_3d_solo.png" width="300"> <img src="/doc/source/user/images/multi_modulescale.png" width="650">
 
 
 ## Content 
@@ -104,6 +107,14 @@ display(fig)
 ```
 
 You have more examples at: https://strawberry.readthedocs.io/en/latest/user/gallery.html.
+
+### Application usage
+
+Once you installed the package, you can start the interactive application using:
+```
+cd strawberry/src/openalea/strawberry/application
+voila "Strawberry Application.ipynb" --template vuetify-default --VoilaConfiguration.enable_nbextensions=True --VoilaConfiguration.file_whitelist="['.*\.(png|jpg|gif|svg|mp4|avi|ogg|html|py|js)']" 
+```
 
 
 ## Documentation
