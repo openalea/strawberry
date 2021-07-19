@@ -22,8 +22,7 @@
 
 Strawberry is a package for architecture analysis and 2D/3D reconstruction of strawberry plants.
 
- <img src="/doc/source/user/images/gariguette_3d_solo.png" width="300"> <img src="/doc/source/user/images/multi_modulescale.png" width="650">
-
+ <img src="/doc/source/user/images/gariguette_3d_solo.png" width="300"> 
 
 ## Content 
 
