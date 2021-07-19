@@ -1,8 +1,9 @@
 [![Documentation Status](https://readthedocs.org/projects/strawberry/badge/?version=latest)](https://strawberry.readthedocs.io/en/latest/?badge=latest)
 
+![openalea](http://openalea.gforge.inria.fr/dokuwiki/lib/exe/fetch.php?cache=&media=logos:openalea_150_notxt.png)
+
 # OpenAlea.Strawberry
 
-![openalea](http://openalea.gforge.inria.fr/dokuwiki/lib/exe/fetch.php?cache=&media=logos:openalea_150_notxt.png)
 
 
 **Authors** : Marc Labadie, Christophe Pradal, Gaëtan Heidsieck
