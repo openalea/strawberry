@@ -3,7 +3,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-from collections import OrderedDict, defaultdict
+from collections import OrderedDict
 from math import radians
 
 from openalea.strawberry import geometry
