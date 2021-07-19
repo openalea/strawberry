@@ -69,7 +69,10 @@ html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {"sticky_navigation": "false",
                       "collapse_navigation": "false",
-                      "display_version": "true"}
+                      "display_version": "true",
+                      'logo_only': False}
+
+html_logo='_static/openalea_logo.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
