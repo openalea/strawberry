@@ -1,8 +1,6 @@
 import ipyvuetify as v
-import ipywidgets as widgets
 
 import pandas as pd
-import qgrid
 import plotly.graph_objs as go
 
 import cufflinks as cf
