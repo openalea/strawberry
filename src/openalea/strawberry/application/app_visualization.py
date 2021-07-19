@@ -101,10 +101,10 @@ plot3d_growth_developement = widgets.Output(layout=layout_output_wgt)
 
 plot3d_floral_intensity = widgets.Output(layout=layout_output_wgt)
 
-panel_3d = v.Row(children=[v.Col(cols=12, sm=12, md=6, children=[v.Container(fluid=True, children=[plot3d_growth_developement])]), 
-                           v.Col(cols=12, sm=12, md=6, children=[v.Container(fluid=True, children=[plot3d_floral_intensity])])])
+panel_3d = v.Row(children=[v.Col(children=[v.Container(fluid=True, children=[plot3d_growth_developement])]), 
+                           v.Col(children=[v.Container(fluid=True, children=[plot3d_floral_intensity])])])
 
-tab_3d_content = v.Row(children=[v.Col(col=12, sm=11, md=11,
+tab_3d_content = v.Row(children=[v.Col(col=12, sm=12, md=12,
                                 children=[menu_plant_3d,
                                       panel_3d
                                       ])
@@ -122,11 +122,11 @@ plot2d_most_central = v.Container(
                                     v.Img(src="2d_most_central.png")    
                             ])
 
-panel_2d = v.Row(children=[v.Col(cols=12, sm=12, md=6, children=[plot2d_single_p]), 
-                           v.Col(cols=12, sm=12, md=6, children=[plot2d_most_central,])])
+panel_2d = v.Row(children=[v.Col(children=[plot2d_single_p]), 
+                           v.Col(children=[plot2d_most_central,])])
 
 
-tab_2d_content = v.Row(children=[v.Col(col=12, sm=11, md=11,
+tab_2d_content = v.Row(children=[v.Col(col=12, sm=12, md=12,
                                 children=[row_param2d,
                                       panel_2d
                                       ])
