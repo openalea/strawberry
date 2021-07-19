@@ -7,4 +7,4 @@ Installation
     :caption: Install
 
     ./linux.rst
-
+    ./docker.rst

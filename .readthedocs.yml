@@ -1,11 +1,11 @@
-version: 1
+version: 2
 
 sphinx:
    configuration: doc/conf.py
 
 python:
-   version: 3.7
+   version: 3.8
    python_setup_py_install: True
 
 conda: 
-   file: doc/environment.yml
+   environement: doc/environment.yml

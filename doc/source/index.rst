@@ -52,11 +52,6 @@ Strawberry User Guide
 
    ./user/index.rst
 
-Tutorial Jupyter Notebooks
-''''''''''''''''''''''''''
-
-Tutorial Jupyter Notebooks are available on the git repository in the folder
-examples.
 
 References
 -----------

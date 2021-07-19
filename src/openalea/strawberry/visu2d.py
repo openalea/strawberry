@@ -344,7 +344,10 @@ def my_visitor(g, v, turtle, time=0):
 
 #TODO: add argument to choose complete/incomplet color for module
 
-def plot2d(g, vids, dist=[5, 5, 6, 8, 8, 100], by=[], display=True, complete=False):
+def plot2d(g, vids=[], dist=[5, 5, 6, 8, 8, 100], by=[], display=True, complete=False):
+
+    if not vids:
+        vids = g.vertices(scale=1)
 
     scene = Scene()
     position = Vector3()
