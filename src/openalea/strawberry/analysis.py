@@ -4,7 +4,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import pandas as pd
-from collections import OrderedDict, defaultdict
+from collections import OrderedDict
 import matplotlib.pyplot as plt
 from itertools import chain
 
@@ -21,7 +21,7 @@ from six.moves import map
 from six.moves import range
 
 from openalea.mtg.algo import orders
-from openalea.mtg import stat, algo, traversal
+from openalea.mtg import algo, traversal
 
 
 convert = dict(Stade='Stade',

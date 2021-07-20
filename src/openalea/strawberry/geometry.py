@@ -3,15 +3,10 @@
 # 1. Pakages import
 from __future__ import absolute_import
 
-from openalea.deploy.shared_data import shared_data
 from openalea.mtg import *
-from openalea.mtg.algo import orders
 from openalea.plantgl import all as pgl
 from math import radians
 
-from six.moves import map
-from six.moves import range
-from six.moves import zip
 
 
 #Properties
@@ -224,8 +219,6 @@ def stolon_curve(scale=1.):
     ctrls = pgl.Point3Array([v2(x*scale, y*scale) for x,y in [(0,0), (1,3), (3,5), (4,2), (5,4)]])
     crv = pgl.BezierCurve2D(ctrls)
     return crv
-
-
 
 
 def stolon(g, vid, turtle):

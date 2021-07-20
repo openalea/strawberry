@@ -1,5 +1,4 @@
 import ipyvuetify as v
-import ipywidgets as widgets
 
 import pandas as pd
 import plotly.graph_objs as go

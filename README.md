@@ -22,8 +22,7 @@
 
 Strawberry is a package for architecture analysis and 2D/3D reconstruction of strawberry plants.
 
- <img src="/doc/source/user/images/gariguette_3d_solo.png" width="300"> <img src="/doc/source/user/images/multi_modulescale.png" width="650">
-
+ <img src="/doc/source/user/images/gariguette_3d_solo.png" width="300"> 
 
 ## Content 
 
@@ -83,7 +82,7 @@ docker run -it -p 8888:8888 gheidsieck/strawberry
 and start the notebook in the docker terminal with:
 ```
 conda activate strawberry
-jupyter-notebook
+jupyter notebook --ip='*' --port=8888 --no-browser
 ```
 then copy the link (e.g. http://127.0.0.1:8888/?token=xxx) into your browser.
 

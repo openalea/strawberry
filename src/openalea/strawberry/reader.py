@@ -30,7 +30,6 @@ import datetime
 from openalea.mtg import MTG, fat_mtg
 from openalea.mtg.algo import orders
 
-import six
 from six.moves import range
 from six.moves import zip
 
