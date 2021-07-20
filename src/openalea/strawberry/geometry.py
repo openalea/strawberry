@@ -225,7 +225,7 @@ def stolon_curve(scale=1.):
     crv = pgl.BezierCurve2D(ctrls)
     return crv
 
-_stolon = stolon_curve(scale=.25)
+
 
 
 def stolon(g, vid, turtle):
@@ -238,6 +238,7 @@ def stolon(g, vid, turtle):
     :param turtle: Turtle
     :type turtle: Turtle
     """    
+    _stolon = stolon_curve(scale=.25)
     t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
