@@ -26,7 +26,7 @@ http://conda.pydata.org/miniconda.html
 
 .. code:: shell
 
-    conda install -c conda-forge python=3.8 pandas matplotlib k3d openalea.deploy jupyter voila voila-vuetify nodejs cufflinks-py ipyvuetify qgrid plotly pyvis
+    conda install -c conda-forge python=3.8 pandas matplotlib numpy='1.20' k3d openalea.deploy jupyter voila voila-vuetify nodejs cufflinks-py ipyvuetify qgrid plotly pyvis
     conda install -c fredboudon -c conda-forge openalea.mtg openalea.plantgl
 
     git clone https://github.com/openalea-incubator/oawidgets.git
