@@ -11,7 +11,7 @@ ipyvuetify
 qgrid 
 plotly
 pyvis
-pgljupyter
+matplotlib
 
 openalea.deploy 
 openalea.mtg 
