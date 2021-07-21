@@ -55,7 +55,8 @@ def get_files():
     files=[]
     # START BY LOADING ALL EXISTING MTG FILES IN /dashboard_files
     home = str(Path.home())
-    data_directory = os.path.join(home, "dashboard_files")
+    # data_directory = os.path.join(home, "dashboard_files")
+    data_directory = '.'
     file_paths = {}
     for file in os.listdir(data_directory):
         if file.endswith(".mtg"):
