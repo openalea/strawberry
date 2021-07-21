@@ -61,8 +61,7 @@ def get_files():
     for file in os.listdir(data_directory):
         if file.endswith(".mtg"):
             file_paths[file] = os.path.join(data_directory, file)
-
-        files.append(file)
+            files.append(file)
     return files, file_paths
 
 
