@@ -64,7 +64,7 @@ conda activate strawberry
 conda install -c fredboudon -c conda-forge openalea.mtg openalea.plantgl
 git clone https://github.com/openalea-incubator/oawidgets
 cd oawidgets; python setup.py install; cd ..
-git clone https://github.com/openalea-incubator/strawberry.git
+git clone https://github.com/openalea/strawberry.git
 cd strawberry; python setup.py install; cd ..
 ```
 
@@ -73,15 +73,14 @@ cd strawberry; python setup.py install; cd ..
 It is possible to use the package through a docker image.
 You can access a functioning environment with:
 ```
-docker run -it gheidsieck/strawberry 
+docker run -it openalea/strawberry 
 ```
 To start the notebook, you need to open the ports when starting the docker:
 ```
-docker run -it -p 8888:8888 gheidsieck/strawberry 
+docker run -it -p 8888:8888 openalea/strawberry 
 ```
 and start the notebook in the docker terminal with:
 ```
-conda activate strawberry
 jupyter notebook --ip='*' --port=8888 --no-browser
 ```
 then copy the link (e.g. http://127.0.0.1:8888/?token=xxx) into your browser.
