@@ -14,7 +14,7 @@
 
 **License** : [Cecill-C](https://cecill.info/licences/Licence_CeCILL-C_V1-en.html)
 
-**URL** : https://github.com/openalea-incubator/strawberry
+**URL** : https://github.com/openalea/strawberry
 
 
 ## Description 
