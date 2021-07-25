@@ -38,7 +38,7 @@ http://conda.pydata.org/miniconda.html
 
 .. code:: shell
 
-    git clone https://github.com/openalea-incubator/strawberry.git
+    git clone https://github.com/openalea/strawberry.git
     cd strawberry; python setup.py install; cd ..
 
 5. Optional packages
