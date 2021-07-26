@@ -58,10 +58,10 @@ def get_files():
     data_directory = os.path.join(home, "dashboard_files")
     file_paths = {}
     for file in os.listdir(data_directory):
-        if file.endswith(".mtg"):
+        if file.endswith('.mtg'):
+            print(file, file.endswith('.mtg'))
             file_paths[file] = os.path.join(data_directory, file)
-
-        files.append(file)
+            files.append(file)
     return files, file_paths
 
 
