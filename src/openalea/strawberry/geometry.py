@@ -6,7 +6,6 @@ from __future__ import absolute_import
 from openalea.mtg import *
 from openalea.plantgl import all as pgl
 from math import radians
-from openalea.strawberry.visu2d import is_visible, type_of_crown
 
 
 #Properties
@@ -115,39 +114,20 @@ def phytomer2d(g, vid, turtle):
     :return: for each F in mtg return an object compose of petiol (2 cylinder) and 3 lobes (leaflet)
     :rtype: [type]
     """    
-
     t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
     t.setColor(2+order)
-    t.setWidth(0.01)
+    t.setWidth(0.05)
 
-    branch_ratio = nid.branch_ratio
-    advance=0.5
+    len_petiole = 1.
+    len_internode = 0.1
     leaflet_length = 0.7/2.
     leaflet_wdth = 0.3/2.
-    len_petiole = 0.5
 
-    if is_visible(g, vid):
-        print('1 visible')
-        if type_of_crown(vid, g) == 3:
-            print('extension crown')
-            t.rollL(180.)
-            angle = 30.
-            length = 0.5
-        else:
-            angle = 90.
-            length = 1.5 * branch_ratio
-
-
-        t.down(angle)
-        t.F(advance)
-        t.down()
-        t.F(advance)
-    else:
-        print('1 non visible')
-        t.F(advance)
-    
+    t.F(1.)
+    #if order != 1:
+    #    return
     t.push()
     t.down(45.)
     t.F(len_petiole)
@@ -261,6 +241,21 @@ def inflorescence(g, vid, turtle):
     turtle.customGeometry(tap)
 
 
+
+def inflorescence2d(g, v, turtle):
+    box = pgl.Box(.1,0.1,0.15)
+    box_axis = pgl.AxisRotated(axis=(0,1,0), angle =45.,geometry=box)
+    box2 = pgl.Translated(.5,0,.8,box_axis)
+
+    cyl = pgl.Cylinder(.01,0.5)
+    cyl2 =  pgl.AxisRotated(axis=(0,1,0), angle= 45., geometry= cyl)
+    cyl3 = pgl.Translated(0,0,0.5,cyl2)
+
+    shape= pgl.Group([cyl,cyl3,box2])
+    return shape
+
+
+
 def inflo_primordia(g, vid, turtle):
     """Generates inflorescence primordia
         ht: Primordia inflorescence
@@ -317,6 +312,21 @@ def stolon(g, vid, turtle):
     turtle.customGeometry(_stolon)
 
 
+def stolon2d(g, v, turtle):
+    cyl = pgl.Cylinder(0.01,0.5)
+    cyl2 = pgl.Cylinder(0.01,0.2)
+    cyl3 = pgl.Cylinder(0.01,0.2)
+    cyl = pgl.AxisRotated(axis=(0,1,0), angle= radians(30.), geometry= cyl)
+    cyl2 = pgl.AxisRotated(axis=(0,1,0), angle= -radians(120.), geometry= cyl2)
+    cyl3 = pgl.AxisRotated(axis=(0,1,0), angle= -radians(180.), geometry= cyl3)
+    cyl2= pgl.Translated((0.26,0,0.45),cyl2)
+    cyl3= pgl.Translated((0.26,0,0.45),cyl3)
+    sto= pgl.Group([cyl,cyl2,cyl3])
+
+    return sto
+
+
+
 # 6. bud
 
 def bud(g, vid, turtle):
@@ -337,6 +347,18 @@ def bud(g, vid, turtle):
     turtle.F(0.05)
     sphere = pgl.Sphere(radius=0.02)
     turtle.customGeometry(sphere)
+
+
+def bud2d(g, v, turtle):
+    """Return a bud shape 
+
+    :return: the bud shape (a sphere)
+    :rtype: Sphere
+    """    
+    sphere = pgl.Sphere(.1)
+    return sphere
+
+initiated_bud = bud
 
 
 def get_symbols():
@@ -368,15 +390,10 @@ def get_symbols2d():
     """    
     geoms = dict(F=phytomer2d,
                  HT=inflorescence,
-                 bt=bud,
+                 bt=bud2d,
                  f=phytomer_primordia,
                  ht=inflo_primordia,
-                 s=stolon,
-                #  Cotyledon= unifoliate, 
-                #  Unifoliate= unifoliate, 
-                #  Trifoliate= trifoliate, 
-                #  Bud= bud, 
-                #  TerminalBud= bud
+                 s=stolon2d,
                 ) # dictionnary for all rules production
     return geoms
 

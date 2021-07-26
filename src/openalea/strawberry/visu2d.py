@@ -8,7 +8,6 @@ from math import radians
 from openalea.plantgl.all import *
 from openalea.mtg import *
 from openalea.mtg.turtle import *
-from openalea.plantgl import all as pgl
 
 
 from openalea.strawberry.visu3d import plant_positions
@@ -31,86 +30,6 @@ from openalea.strawberry import geometry
 
 #     return d
 
-
-
-###############################################################################
-#                                                                             #
-#                           Graphic alphabet                                  #
-#                   leaf, bud, stolon, inflorescence                          #
-#                                                                             #
-############################################################################### 
-
-def leaf():
-    """Return a leaf shape
-    """    
-    # cyl = Cylinder(0.01,0.5)
-    # cyl2 =  AxisRotated(axis=(0,1,0), angle= radians(60.), geometry= cyl)
-    # cyl3 = Translated(0,0,0.5,cyl2)
-    # cl4= Group(cyl,cyl3)
-
-    # disc= Disc()
-    # disc = Translated((-.5,0,0), disc)
-    # disc= AxisRotated(axis=(0,1,0), angle= radians(90.), geometry= disc)
-
-    # d1 = AxisRotated(axis=(1,0,0), angle=-radians(60.), geometry=disc)
-    # d2 = AxisRotated(axis=(1,0,0), angle=-radians(-60.), geometry=disc)
-    # d3 = AxisRotated(axis=(1,0,0), angle=0., geometry=disc)
-    # d1= Translated(0,0,1.6,d1)
-    # d3= Translated(0,0,1,d3)
-    # d2= Translated(0,0,1.6,d2)
-    # d1=Scaled((0.01,0.3,0.15), d1)
-    # d2=Scaled((0.01,0.3,0.15), d2)
-    # d3=Scaled((0.01,0.15,0.3), d3)
-
-    # leaflet= Group(d1,d2,d3)
-    # leaflet = AxisRotated(axis=(0,1,0),angle=radians(0),geometry=leaflet)
-    # leaflet = AxisRotated(axis=(1,0,0),angle=radians(60),geometry=leaflet)
-    # leaflet = AxisRotated(axis=(0,0,1),angle=radians(90),geometry=leaflet)
-
-    # leaflet = Translated((0.2,0,0.60),leaflet)
-    # shape=Group(cl4,leaflet)
-    shape = Cylinder(0.01,0.5)
-
-    return(shape)
-
-
-def bud():
-    """Return a bud shape 
-
-    :return: the bud shape (a sphere)
-    :rtype: Sphere
-    """    
-    sphere = Sphere(.1)
-    return sphere
-
-initiated_bud = bud
-
-
-def stolon():
-    cyl = Cylinder(0.01,0.5)
-    cyl2 = Cylinder(0.01,0.2)
-    cyl3 = Cylinder(0.01,0.2)
-    cyl = AxisRotated(axis=(0,1,0), angle= radians(30.), geometry= cyl)
-    cyl2 = AxisRotated(axis=(0,1,0), angle= -radians(120.), geometry= cyl2)
-    cyl3 = AxisRotated(axis=(0,1,0), angle= -radians(180.), geometry= cyl3)
-    cyl2= Translated((0.26,0,0.45),cyl2)
-    cyl3= Translated((0.26,0,0.45),cyl3)
-    sto= Group([cyl,cyl2,cyl3])
-
-    return sto
-
-
-def Inflorescence():
-    box = Box(.1,0.1,0.15)
-    box_axis = AxisRotated(axis=(0,1,0), angle =45.,geometry=box)
-    box2 = Translated(.5,0,.8,box_axis)
-
-    cyl = Cylinder(.01,0.5)
-    cyl2 =  AxisRotated(axis=(0,1,0), angle= 45., geometry= cyl)
-    cyl3 = Translated(0,0,0.5,cyl2)
-
-    shape= Group([cyl,cyl3,box2])
-    return shape
 
 ###############################################################################
 #                                                                             #
@@ -207,72 +126,6 @@ def complete_module (g):
     g.properties()['complete'] = complete
 
 
-def color_code(g,complete, plantule=False):
-    PLANTULE = plantule
-    _complete = complete
-
-    shoot_green = (0,255,0)
-    vegetative = (0,128,0)
-    initiated= (125,125,0)
-    floral= (255,0,0)
-    stolon= (255,255,255)
-
-    labels = g.property('label')
-
-# TODO: If module are incomplet module color (red) else (blue)
-#       - complet module is a module finished by an inflorescence (HT)
-#       - incomplet module is a module finished by terminal bud (bt) or floral bud (ht)
-#  Warning: only drawing module must be take into account
-    
-    for v in g.vertices(scale=g.max_scale()):
-        nid = g.node(v)
-        if nid.label == 'F':
-            if _complete:
-                if nid.complex().complete:
-                    nid.color= (0,0,255)
-                else:
-                    nid.color = (255,0,0)
- #           if PLANTULE:
- #               foliar_type= nid.Foliar_type
- #               if nid.Foliar_type =='Cotyledon':
- #                   nid.color=(0,0,255)
- #               elif nid.Foliar_type=='Unifoliate':
- #                   nid.color=(125,125,125)
-            else:
-                nid.color = shoot_green
-        elif nid.label == 's':
-            nid.color = stolon
-        elif nid.label == 'bt':
-            stade = nid.Stade
-            if stade is None:
-                nid.color = vegetative
-            elif stade in ('17', '18', '19'):
-                nid.color=vegetative
-            elif stade == 'A':
-                nid.color = initiated
-            elif stade in 'BCDEFGH':
-                nid.color = floral
-        elif nid.label == 'ht':
-            stade = nid.Stade
-            if stade is None:
-                nid.color = vegetative
-            elif stade in ('17', '18', '19'):
-                nid.color= vegetative
-            elif stade == 'A':
-                nid.color = initiated
-            elif stade in 'BCDEFGH':
-                nid.color = floral
-            else:
-                nid.color = (153, 102, 51)
-        elif nid.label == 'HT':
-            stade = nid.Stade
-            if stade is None:
-                nid.color = vegetative
-            elif stade in ('17', '18', '19'):
-                nid.color= vegetative
-            else:
-                nid.color = floral
-
 # Compute the number of branch crown that are content in the upper tree
 def graph_layout(g):
     """ Compute the distance between branch to minimize the overlaping between crowns. """
@@ -293,17 +146,39 @@ def graph_layout(g):
 
 def my_visitor(g, v, turtle, time=0):
     geoms = geometry.get_symbols2d()
-    turtle.setWidth(0.01)
+    turtle.setWidth(0.05)
     nid = g.node(v)
     label = g.label(v)
+    draw_it = nid.drawable
+    branch_ratio = nid.branch_ratio
 
-
-    if g.edge_type(v) == '+':
-        turtle.down(90)
-    elif label in ('F','f', 's', 'ht', 'HT', 'bt'):
+    if label in ('F','f'):
         turtle.rollL(180)
 
     turtle.setId(v)
+
+    advance = 0.5
+
+    if not draw_it:
+        pass
+
+    elif (label == 'F'):
+        if is_visible(g, v):
+            if type_of_crown(v, g) == 3:
+                angle = 30.
+                length = 0.5
+            else:
+                angle = 90.
+                length = 1.5 * branch_ratio
+
+            turtle.down(angle)
+            turtle.F(length)
+            turtle.down(-angle)
+        
+    elif label == 'bt':
+        turtle.down(30.)
+        turtle.f(0.05)
+
     geoms.get(label)(g, v, turtle)
 
     # turtle.setWidth(0.01)
@@ -413,3 +288,68 @@ def plot2d(g, vids=[], dist=[5, 5, 6, 8, 8, 100], by=[], display=True, complete=
         return scene
 
 
+def color_code(g,complete, plantule=False):
+    PLANTULE = plantule
+    _complete = complete
+
+    shoot_green = (0,255,0)
+    vegetative = (0,128,0)
+    initiated= (125,125,0)
+    floral= (255,0,0)
+    stolon= (255,255,255)
+
+    labels = g.property('label')
+
+# TODO: If module are incomplet module color (red) else (blue)
+#       - complet module is a module finished by an inflorescence (HT)
+#       - incomplet module is a module finished by terminal bud (bt) or floral bud (ht)
+#  Warning: only drawing module must be take into account
+    
+    for v in g.vertices(scale=g.max_scale()):
+        nid = g.node(v)
+        if nid.label == 'F':
+            if _complete:
+                if nid.complex().complete:
+                    nid.color= (0,0,255)
+                else:
+                    nid.color = (255,0,0)
+ #           if PLANTULE:
+ #               foliar_type= nid.Foliar_type
+ #               if nid.Foliar_type =='Cotyledon':
+ #                   nid.color=(0,0,255)
+ #               elif nid.Foliar_type=='Unifoliate':
+ #                   nid.color=(125,125,125)
+            else:
+                nid.color = shoot_green
+        elif nid.label == 's':
+            nid.color = stolon
+        elif nid.label == 'bt':
+            stade = nid.Stade
+            if stade is None:
+                nid.color = vegetative
+            elif stade in ('17', '18', '19'):
+                nid.color=vegetative
+            elif stade == 'A':
+                nid.color = initiated
+            elif stade in 'BCDEFGH':
+                nid.color = floral
+        elif nid.label == 'ht':
+            stade = nid.Stade
+            if stade is None:
+                nid.color = vegetative
+            elif stade in ('17', '18', '19'):
+                nid.color= vegetative
+            elif stade == 'A':
+                nid.color = initiated
+            elif stade in 'BCDEFGH':
+                nid.color = floral
+            else:
+                nid.color = (153, 102, 51)
+        elif nid.label == 'HT':
+            stade = nid.Stade
+            if stade is None:
+                nid.color = vegetative
+            elif stade in ('17', '18', '19'):
+                nid.color= vegetative
+            else:
+                nid.color = floral
