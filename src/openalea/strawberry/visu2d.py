@@ -8,8 +8,13 @@ from math import radians
 from openalea.plantgl.all import *
 from openalea.mtg import *
 from openalea.mtg.turtle import *
+from openalea.plantgl import all as pgl
+
 
 from openalea.strawberry.visu3d import plant_positions
+from openalea.strawberry import geometry
+
+# from openalea.strawberry.geometry import leaflet, phytomer
 
 # def colors():
 #     """ Returns a set of predefined colors"""
@@ -38,32 +43,33 @@ from openalea.strawberry.visu3d import plant_positions
 def leaf():
     """Return a leaf shape
     """    
-    cyl = Cylinder(0.01,0.5)
-    cyl2 =  AxisRotated(axis=(0,1,0), angle= radians(60.), geometry= cyl)
-    cyl3 = Translated(0,0,0.5,cyl2)
-    cl4= Group(cyl,cyl3)
+    # cyl = Cylinder(0.01,0.5)
+    # cyl2 =  AxisRotated(axis=(0,1,0), angle= radians(60.), geometry= cyl)
+    # cyl3 = Translated(0,0,0.5,cyl2)
+    # cl4= Group(cyl,cyl3)
 
-    disc= Disc()
-    disc = Translated((-.5,0,0), disc)
-    disc= AxisRotated(axis=(0,1,0), angle= radians(90.), geometry= disc)
+    # disc= Disc()
+    # disc = Translated((-.5,0,0), disc)
+    # disc= AxisRotated(axis=(0,1,0), angle= radians(90.), geometry= disc)
 
-    d1 = AxisRotated(axis=(1,0,0), angle=-radians(60.), geometry=disc)
-    d2 = AxisRotated(axis=(1,0,0), angle=-radians(-60.), geometry=disc)
-    d3 = AxisRotated(axis=(1,0,0), angle=0., geometry=disc)
-    d1= Translated(0,0,1.6,d1)
-    d3= Translated(0,0,1,d3)
-    d2= Translated(0,0,1.6,d2)
-    d1=Scaled((0.01,0.3,0.15), d1)
-    d2=Scaled((0.01,0.3,0.15), d2)
-    d3=Scaled((0.01,0.15,0.3), d3)
+    # d1 = AxisRotated(axis=(1,0,0), angle=-radians(60.), geometry=disc)
+    # d2 = AxisRotated(axis=(1,0,0), angle=-radians(-60.), geometry=disc)
+    # d3 = AxisRotated(axis=(1,0,0), angle=0., geometry=disc)
+    # d1= Translated(0,0,1.6,d1)
+    # d3= Translated(0,0,1,d3)
+    # d2= Translated(0,0,1.6,d2)
+    # d1=Scaled((0.01,0.3,0.15), d1)
+    # d2=Scaled((0.01,0.3,0.15), d2)
+    # d3=Scaled((0.01,0.15,0.3), d3)
 
-    leaflet= Group(d1,d2,d3)
-    leaflet = AxisRotated(axis=(0,1,0),angle=radians(0),geometry=leaflet)
-    leaflet = AxisRotated(axis=(1,0,0),angle=radians(60),geometry=leaflet)
-    leaflet = AxisRotated(axis=(0,0,1),angle=radians(90),geometry=leaflet)
+    # leaflet= Group(d1,d2,d3)
+    # leaflet = AxisRotated(axis=(0,1,0),angle=radians(0),geometry=leaflet)
+    # leaflet = AxisRotated(axis=(1,0,0),angle=radians(60),geometry=leaflet)
+    # leaflet = AxisRotated(axis=(0,0,1),angle=radians(90),geometry=leaflet)
 
-    leaflet = Translated((0.2,0,0.60),leaflet)
-    shape=Group(cl4,leaflet)
+    # leaflet = Translated((0.2,0,0.60),leaflet)
+    # shape=Group(cl4,leaflet)
+    shape = Cylinder(0.01,0.5)
 
     return(shape)
 
@@ -286,56 +292,70 @@ def graph_layout(g):
 
 
 def my_visitor(g, v, turtle, time=0):
+    geoms = geometry.get_symbols()
     turtle.setWidth(0.01)
-    t = turtle
     nid = g.node(v)
     label = g.label(v)
-    draw_it = nid.drawable
-    branch_ratio = nid.branch_ratio
 
-    if label in ('F','f'):
-        turtle.rollL(180.)
+
+    if g.edge_type(v) == '+':
+        turtle.down(90)
+    elif label in ('F','f', 's', 'ht', 'HT', 'bt'):
+        turtle.rollL(180)
+
     turtle.setId(v)
+    geoms.get(label)(g, v, turtle)
 
-    advance = 0.5
+    # turtle.setWidth(0.01)
+    # t = turtle
+    # nid = g.node(v)
+    # label = g.label(v)
+    # draw_it = nid.drawable
+    # branch_ratio = nid.branch_ratio
 
-    if not draw_it:
-        pass
-    elif label == 'F':
-        if is_visible(g, v):
-            if type_of_crown(v, g) == 3:
-                turtle.rollL(180.)
-                angle = 30.
-                length = 0.5
-            else:
-                angle = 90.
-                length = 1.5 * branch_ratio
-             #   print('v:%d, length:%d'%(v, branch_ratio))
+    # if label in ('F','f'):
+    #     turtle.rollL(180.)
+    # turtle.setId(v)
 
-            turtle.down(angle)
-            turtle.F(length)
-            turtle.down(-angle)
-        custom = leaf()
-        t.customGeometry(custom)
-        t.f(advance)
-    elif label == 'f':
-        pass
-    elif label == 's':
-        custom = stolon()
-        t.customGeometry(custom)
-    elif label == 'ht':
-        # TODO: Do not draw elements
-        custom = initiated_bud()
-        t.customGeometry(custom)
-    elif label == 'HT':
-        custom = Inflorescence()
-        t.customGeometry(custom)
-        t.f(advance)
-    elif label == 'bt':
-        custom = initiated_bud()
-        t.down(30.)
-        t.f(0.05)
-        t.customGeometry(custom)
+    # advance = 0.5
+
+    # if not draw_it:
+    #     pass
+    # elif label == 'F':
+    #     if is_visible(g, v):
+    #         if type_of_crown(v, g) == 3:
+    #             turtle.rollL(180.)
+    #             angle = 30.
+    #             length = 0.5
+    #         else:
+    #             angle = 90.
+    #             length = 1.5 * branch_ratio
+    #          #   print('v:%d, length:%d'%(v, branch_ratio))
+
+    #         turtle.down(angle)
+    #         turtle.F(length)
+    #         turtle.down(-angle)
+    #     custom = leaf()
+    #     t.customGeometry(custom)
+    #     t.f(advance)
+    # elif label == 'f':
+    #     pass
+    # elif label == 's':
+    #     custom = stolon()
+    #     t.customGeometry(custom)
+    # elif label == 'ht':
+    #     # TODO: Do not draw elements
+    #     custom = initiated_bud()
+    #     t.customGeometry(custom)
+    # elif label == 'HT':
+    #     custom = Inflorescence()
+    #     t.customGeometry(custom)
+    #     t.f(advance)
+    # elif label == 'bt':
+    #     custom = initiated_bud()
+    #     t.down(30.)
+    #     t.f(0.05)
+    #     t.customGeometry(custom)
 
         
 ###############################################################################
@@ -349,6 +369,10 @@ def plot2d(g, vids=[], dist=[5, 5, 6, 8, 8, 100], by=[], display=True, complete=
     if not vids:
         vids = g.vertices(scale=1)
 
+    positions = []
+    if by:
+        _, positions = plant_positions(g, by=by, vids=vids)
+
     scene = Scene()
     position = Vector3()
     max_scale = g.max_scale()
@@ -360,10 +384,7 @@ def plot2d(g, vids=[], dist=[5, 5, 6, 8, 8, 100], by=[], display=True, complete=
     drawable(g)
     graph_layout(g)
     
-    positions = []
-    if by:
-        _, positions = plant_positions(g, by=by, vids=vids)
-
+    
     # print(vids)
 
     for i, rid in enumerate(vids):
@@ -390,4 +411,5 @@ def plot2d(g, vids=[], dist=[5, 5, 6, 8, 8, 100], by=[], display=True, complete=
         Viewer.display(scene)
     else:
         return scene
+
 
