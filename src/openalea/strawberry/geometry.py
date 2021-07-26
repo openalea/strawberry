@@ -6,7 +6,7 @@ from __future__ import absolute_import
 from openalea.mtg import *
 from openalea.plantgl import all as pgl
 from math import radians
-
+from openalea.strawberry.visu2d import is_visible, type_of_crown
 
 
 #Properties
@@ -75,6 +75,84 @@ def leaflet(length=1., width=1.):
 
     shape = pgl.Group([d1, d2, d3])
     return shape
+
+
+def leaflet2d(length=1., width=1.):
+    """Generate a strawberry leaf
+
+    :param length: length of the leaflet, defaults to 1.
+    :type length: float, optional
+    :param width: width of the leaflet, defaults to 1.
+    :type width: float, optional
+    :return: A strawberry leaf composed of three discs
+    :rtype: pgl.Group
+    """    
+    disc = pgl.Translated((-0.5,0,0), pgl.Disc())
+    disc = pgl.Scaled((length, width,1), disc)
+    disc = pgl.AxisRotated(axis=(0,1,0), angle=radians(90.), geometry=disc)
+
+    d1 = pgl.AxisRotated(axis=(1,0,0), angle=-radians(60.), geometry=disc)
+    d2 = pgl.AxisRotated(axis=(1,0,0), angle=-radians(-60.), geometry=disc)
+    d3 = pgl.AxisRotated(axis=(1,0,0), angle=0., geometry=disc)
+
+    shape = pgl.Group([d1, d2, d3])
+    shape=pgl.AxisRotated(axis=(0,0,1),angle=radians(-90),geometry=shape)
+
+    return shape
+
+
+def phytomer2d(g, vid, turtle):
+    """Generates a phytomer 
+        F: Petiol + 3 lobes.
+        cylinder + 3 ellipse/surface
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: selected vid
+    :type vid: int
+    :param turtle: the turtle that travel
+    :type turtle: Trutle
+    :return: for each F in mtg return an object compose of petiol (2 cylinder) and 3 lobes (leaflet)
+    :rtype: [type]
+    """    
+
+    t = colors_turtle(turtle)
+    nid = g.node(vid)
+    order = nid.order
+    t.setColor(2+order)
+    t.setWidth(0.01)
+
+    branch_ratio = nid.branch_ratio
+    advance=0.5
+    leaflet_length = 0.7/2.
+    leaflet_wdth = 0.3/2.
+    len_petiole = 0.5
+
+    if is_visible(g, vid):
+        print('1 visible')
+        if type_of_crown(vid, g) == 3:
+            print('extension crown')
+            t.rollL(180.)
+            angle = 30.
+            length = 0.5
+        else:
+            angle = 90.
+            length = 1.5 * branch_ratio
+
+
+        t.down(angle)
+        t.F(advance)
+        t.down()
+        t.F(advance)
+    else:
+        print('1 non visible')
+        t.F(advance)
+    
+    t.push()
+    t.down(45.)
+    t.F(len_petiole)
+    t.customGeometry(leaflet2d(leaflet_length, leaflet_wdth))
+    t.pop()
 
 
 def phytomer(g, vid, turtle):
@@ -281,6 +359,26 @@ def get_symbols():
                 ) # dictionnary for all rules production
     return geoms
 
+
+def get_symbols2d():
+    """Get the possible symbols to read the mtg
+
+    :return: a dictionnary which associate each geometrical fonction phytomer, inflorescence, TerminalBud, phytomer_primordia, inflo_primordia,stolon to F, HT, bt, ht, s
+    :rtype: dict
+    """    
+    geoms = dict(F=phytomer2d,
+                 HT=inflorescence,
+                 bt=bud,
+                 f=phytomer_primordia,
+                 ht=inflo_primordia,
+                 s=stolon,
+                #  Cotyledon= unifoliate, 
+                #  Unifoliate= unifoliate, 
+                #  Trifoliate= trifoliate, 
+                #  Bud= bud, 
+                #  TerminalBud= bud
+                ) # dictionnary for all rules production
+    return geoms
 
 # 6.phytomer for plantule
 ## 6.1 Leaflet

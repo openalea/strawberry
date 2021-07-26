@@ -292,7 +292,7 @@ def graph_layout(g):
 
 
 def my_visitor(g, v, turtle, time=0):
-    geoms = geometry.get_symbols()
+    geoms = geometry.get_symbols2d()
     turtle.setWidth(0.01)
     nid = g.node(v)
     label = g.label(v)
