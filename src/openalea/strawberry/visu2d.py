@@ -146,7 +146,7 @@ def graph_layout(g):
 
 def my_visitor(g, v, turtle, time=0):
     geoms = geometry.get_symbols2d()
-    turtle.setWidth(0.05)
+    turtle.setWidth(0.01)
     nid = g.node(v)
     label = g.label(v)
     draw_it = nid.drawable
@@ -178,59 +178,13 @@ def my_visitor(g, v, turtle, time=0):
     elif label == 'bt':
         turtle.down(30.)
         turtle.f(0.05)
+    
+    elif label == 'HT':
+        turtle.F(0.1)
+    elif label == 's':
+        turtle.f(0.05)
 
     geoms.get(label)(g, v, turtle)
-
-    # turtle.setWidth(0.01)
-    # t = turtle
-    # nid = g.node(v)
-    # label = g.label(v)
-    # draw_it = nid.drawable
-    # branch_ratio = nid.branch_ratio
-
-    # if label in ('F','f'):
-    #     turtle.rollL(180.)
-    # turtle.setId(v)
-
-    # advance = 0.5
-
-    # if not draw_it:
-    #     pass
-    # elif label == 'F':
-    #     if is_visible(g, v):
-    #         if type_of_crown(v, g) == 3:
-    #             turtle.rollL(180.)
-    #             angle = 30.
-    #             length = 0.5
-    #         else:
-    #             angle = 90.
-    #             length = 1.5 * branch_ratio
-    #          #   print('v:%d, length:%d'%(v, branch_ratio))
-
-    #         turtle.down(angle)
-    #         turtle.F(length)
-    #         turtle.down(-angle)
-    #     custom = leaf()
-    #     t.customGeometry(custom)
-    #     t.f(advance)
-    # elif label == 'f':
-    #     pass
-    # elif label == 's':
-    #     custom = stolon()
-    #     t.customGeometry(custom)
-    # elif label == 'ht':
-    #     # TODO: Do not draw elements
-    #     custom = initiated_bud()
-    #     t.customGeometry(custom)
-    # elif label == 'HT':
-    #     custom = Inflorescence()
-    #     t.customGeometry(custom)
-    #     t.f(advance)
-    # elif label == 'bt':
-    #     custom = initiated_bud()
-    #     t.down(30.)
-    #     t.f(0.05)
-    #     t.customGeometry(custom)
 
         
 ###############################################################################
@@ -296,7 +250,7 @@ def color_code(g,complete, plantule=False):
     vegetative = (0,128,0)
     initiated= (125,125,0)
     floral= (255,0,0)
-    stolon= (255,255,255)
+    stolon= (0,0,0)
 
     labels = g.property('label')
 
@@ -313,12 +267,6 @@ def color_code(g,complete, plantule=False):
                     nid.color= (0,0,255)
                 else:
                     nid.color = (255,0,0)
- #           if PLANTULE:
- #               foliar_type= nid.Foliar_type
- #               if nid.Foliar_type =='Cotyledon':
- #                   nid.color=(0,0,255)
- #               elif nid.Foliar_type=='Unifoliate':
- #                   nid.color=(125,125,125)
             else:
                 nid.color = shoot_green
         elif nid.label == 's':
