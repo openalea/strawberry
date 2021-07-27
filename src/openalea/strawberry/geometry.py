@@ -8,7 +8,6 @@ from openalea.plantgl import all as pgl
 from math import radians
 
 
-
 #Properties
 VISIBLE = False
 WITHOUT_LEAF = False
@@ -75,6 +74,65 @@ def leaflet(length=1., width=1.):
 
     shape = pgl.Group([d1, d2, d3])
     return shape
+
+
+def leaflet2d(length=1., width=1.):
+    """Generate a strawberry leaf
+
+    :param length: length of the leaflet, defaults to 1.
+    :type length: float, optional
+    :param width: width of the leaflet, defaults to 1.
+    :type width: float, optional
+    :return: A strawberry leaf composed of three discs
+    :rtype: pgl.Group
+    """    
+    disc = pgl.Translated((-0.5,0,0), pgl.Disc())
+    disc = pgl.Scaled((length, width,1), disc)
+    disc = pgl.AxisRotated(axis=(0,1,0), angle=radians(90.), geometry=disc)
+
+    d1 = pgl.AxisRotated(axis=(1,0,0), angle=-radians(60.), geometry=disc)
+    d2 = pgl.AxisRotated(axis=(1,0,0), angle=-radians(-60.), geometry=disc)
+    d3 = pgl.AxisRotated(axis=(1,0,0), angle=0., geometry=disc)
+
+    shape = pgl.Group([d1, d2, d3])
+    shape=pgl.AxisRotated(axis=(0,0,1),angle=radians(-90),geometry=shape)
+
+    return shape
+
+
+def phytomer2d(g, vid, turtle):
+    """Generates a phytomer 
+        F: Petiol + 3 lobes.
+        cylinder + 3 ellipse/surface
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: selected vid
+    :type vid: int
+    :param turtle: the turtle that travel
+    :type turtle: Trutle
+    :return: for each F in mtg return an object compose of petiol (2 cylinder) and 3 lobes (leaflet)
+    :rtype: [type]
+    """    
+    t = colors_turtle(turtle)
+    nid = g.node(vid)
+    order = nid.order
+    t.setColor(2+order)
+    t.setWidth(0.05)
+
+    len_petiole = 1.
+    len_internode = 0.1
+    leaflet_length = 0.7/2.
+    leaflet_wdth = 0.3/2.
+
+    t.F(1.)
+    #if order != 1:
+    #    return
+    t.push()
+    t.down(45.)
+    t.F(len_petiole)
+    t.customGeometry(leaflet2d(leaflet_length, leaflet_wdth))
+    t.pop()
 
 
 def phytomer(g, vid, turtle):
@@ -183,6 +241,21 @@ def inflorescence(g, vid, turtle):
     turtle.customGeometry(tap)
 
 
+
+def inflorescence2d(g, v, turtle):
+    box = pgl.Box(.1,0.1,0.15)
+    box_axis = pgl.AxisRotated(axis=(0,1,0), angle =45.,geometry=box)
+    box2 = pgl.Translated(.5,0,.8,box_axis)
+
+    cyl = pgl.Cylinder(.01,0.5)
+    cyl2 =  pgl.AxisRotated(axis=(0,1,0), angle= 45., geometry= cyl)
+    cyl3 = pgl.Translated(0,0,0.5,cyl2)
+
+    shape= pgl.Group([cyl,cyl3,box2])
+    return shape
+
+
+
 def inflo_primordia(g, vid, turtle):
     """Generates inflorescence primordia
         ht: Primordia inflorescence
@@ -239,6 +312,21 @@ def stolon(g, vid, turtle):
     turtle.customGeometry(_stolon)
 
 
+def stolon2d(g, v, turtle):
+    cyl = pgl.Cylinder(0.01,0.5)
+    cyl2 = pgl.Cylinder(0.01,0.2)
+    cyl3 = pgl.Cylinder(0.01,0.2)
+    cyl = pgl.AxisRotated(axis=(0,1,0), angle= radians(30.), geometry= cyl)
+    cyl2 = pgl.AxisRotated(axis=(0,1,0), angle= -radians(120.), geometry= cyl2)
+    cyl3 = pgl.AxisRotated(axis=(0,1,0), angle= -radians(180.), geometry= cyl3)
+    cyl2= pgl.Translated((0.26,0,0.45),cyl2)
+    cyl3= pgl.Translated((0.26,0,0.45),cyl3)
+    sto= pgl.Group([cyl,cyl2,cyl3])
+
+    return sto
+
+
+
 # 6. bud
 
 def bud(g, vid, turtle):
@@ -261,6 +349,18 @@ def bud(g, vid, turtle):
     turtle.customGeometry(sphere)
 
 
+def bud2d(g, v, turtle):
+    """Return a bud shape 
+
+    :return: the bud shape (a sphere)
+    :rtype: Sphere
+    """    
+    sphere = pgl.Sphere(.1)
+    return sphere
+
+initiated_bud = bud
+
+
 def get_symbols():
     """Get the possible symbols to read the mtg
 
@@ -281,6 +381,21 @@ def get_symbols():
                 ) # dictionnary for all rules production
     return geoms
 
+
+def get_symbols2d():
+    """Get the possible symbols to read the mtg
+
+    :return: a dictionnary which associate each geometrical fonction phytomer, inflorescence, TerminalBud, phytomer_primordia, inflo_primordia,stolon to F, HT, bt, ht, s
+    :rtype: dict
+    """    
+    geoms = dict(F=phytomer2d,
+                 HT=inflorescence,
+                 bt=bud2d,
+                 f=phytomer_primordia,
+                 ht=inflo_primordia,
+                 s=stolon2d,
+                ) # dictionnary for all rules production
+    return geoms
 
 # 6.phytomer for plantule
 ## 6.1 Leaflet
