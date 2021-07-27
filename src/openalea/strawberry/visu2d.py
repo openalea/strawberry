@@ -181,56 +181,6 @@ def my_visitor(g, v, turtle, time=0):
 
     geoms.get(label)(g, v, turtle)
 
-    # turtle.setWidth(0.01)
-    # t = turtle
-    # nid = g.node(v)
-    # label = g.label(v)
-    # draw_it = nid.drawable
-    # branch_ratio = nid.branch_ratio
-
-    # if label in ('F','f'):
-    #     turtle.rollL(180.)
-    # turtle.setId(v)
-
-    # advance = 0.5
-
-    # if not draw_it:
-    #     pass
-    # elif label == 'F':
-    #     if is_visible(g, v):
-    #         if type_of_crown(v, g) == 3:
-    #             turtle.rollL(180.)
-    #             angle = 30.
-    #             length = 0.5
-    #         else:
-    #             angle = 90.
-    #             length = 1.5 * branch_ratio
-    #          #   print('v:%d, length:%d'%(v, branch_ratio))
-
-    #         turtle.down(angle)
-    #         turtle.F(length)
-    #         turtle.down(-angle)
-    #     custom = leaf()
-    #     t.customGeometry(custom)
-    #     t.f(advance)
-    # elif label == 'f':
-    #     pass
-    # elif label == 's':
-    #     custom = stolon()
-    #     t.customGeometry(custom)
-    # elif label == 'ht':
-    #     # TODO: Do not draw elements
-    #     custom = initiated_bud()
-    #     t.customGeometry(custom)
-    # elif label == 'HT':
-    #     custom = Inflorescence()
-    #     t.customGeometry(custom)
-    #     t.f(advance)
-    # elif label == 'bt':
-    #     custom = initiated_bud()
-    #     t.down(30.)
-    #     t.f(0.05)
-    #     t.customGeometry(custom)
 
         
 ###############################################################################
