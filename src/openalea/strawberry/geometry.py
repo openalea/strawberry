@@ -118,14 +118,14 @@ def phytomer2d(g, vid, turtle):
     nid = g.node(vid)
     order = nid.order
     t.setColor(2+order)
-    t.setWidth(0.05)
+    t.setWidth(0.01)
 
     len_petiole = 1.
-    len_internode = 0.1
+    len_internode = 0.25
     leaflet_length = 0.7/2.
     leaflet_wdth = 0.3/2.
 
-    t.F(1.)
+    t.F(len_internode)
     #if order != 1:
     #    return
     t.push()
@@ -160,7 +160,7 @@ def phytomer(g, vid, turtle):
     leaflet_length = 0.7/2.
     leaflet_wdth = 0.3/2.
 
-    t.F(0.1)
+    t.F(len_internode)
     #if order != 1:
     #    return
     t.push()
@@ -197,7 +197,7 @@ def phytomer_primordia(g, vid, turtle):
     leaflet_length = 0.7/2.
     leaflet_wdth = 0.3/2.
     if VISIBLE:
-        t.F(0.1*scale)
+        t.F(len_internode*scale)
         t.push()
         t.down(45.)
         t.F(len_petiole*scale)
@@ -243,16 +243,19 @@ def inflorescence(g, vid, turtle):
 
 
 def inflorescence2d(g, v, turtle):
+    len_internode=0.5
+    turtle.F(len_internode)
     box = pgl.Box(.1,0.1,0.15)
-    box_axis = pgl.AxisRotated(axis=(0,1,0), angle =45.,geometry=box)
-    box2 = pgl.Translated(.5,0,.8,box_axis)
+    # box_axis = pgl.AxisRotated(axis=(0,1,0), angle =45.,geometry=box)
+    # box2 = pgl.Translated(.5,0,.8,box_axis)
 
-    cyl = pgl.Cylinder(.01,0.5)
-    cyl2 =  pgl.AxisRotated(axis=(0,1,0), angle= 45., geometry= cyl)
-    cyl3 = pgl.Translated(0,0,0.5,cyl2)
+    # cyl = pgl.Cylinder(.01,0.5)
+    # cyl2 =  pgl.AxisRotated(axis=(0,1,0), angle= 45., geometry= cyl)
+    # cyl3 = pgl.Translated(0,0,0.5,cyl2)
 
-    shape= pgl.Group([cyl,cyl3,box2])
-    return shape
+    # shape= pgl.Group([cyl,cyl3,box2])
+    turtle.customGeometry(box)
+    
 
 
 
@@ -269,12 +272,37 @@ def inflo_primordia(g, vid, turtle):
     :return: for each ht in mtg return an object compose of a cylinder and a of orange cube 
     :rtype: [type]
     """    
+    len_internode=0.25
+
     t = colors_turtle(turtle)
     nid = g.node(vid)
     order = nid.order
     t.setColor(8+order)
-    turtle.F(0.1)
+    turtle.F(len_internode)
     cube = pgl.Box(0.02*pgl.Vector3(1,1,1))
+    turtle.customGeometry(cube)
+
+def inflo_primordia2d(g, vid, turtle):
+    """Generates inflorescence primordia
+        ht: Primordia inflorescence
+
+    :param g: MTG
+    :type g: MTG
+    :param vid: vid selected 
+    :type vid: int
+    :param turtle: Turtle
+    :type turtle: Turtle
+    :return: for each ht in mtg return an object compose of a cylinder and a of orange cube 
+    :rtype: [type]
+    """    
+    # len_internode=0.25
+
+    t = colors_turtle(turtle)
+    nid = g.node(vid)
+    order = nid.order
+    t.setColor(8+order)
+    # turtle.F(len_internode)
+    cube = pgl.Box(0.03*pgl.Vector3(1,1,1))
     turtle.customGeometry(cube)
 
 
@@ -313,6 +341,7 @@ def stolon(g, vid, turtle):
 
 
 def stolon2d(g, v, turtle):
+    scale= 1./5
     cyl = pgl.Cylinder(0.01,0.5)
     cyl2 = pgl.Cylinder(0.01,0.2)
     cyl3 = pgl.Cylinder(0.01,0.2)
@@ -323,7 +352,8 @@ def stolon2d(g, v, turtle):
     cyl3= pgl.Translated((0.26,0,0.45),cyl3)
     sto= pgl.Group([cyl,cyl2,cyl3])
 
-    return sto
+    turtle.customGeometry(sto)
+    
 
 
 
@@ -354,11 +384,13 @@ def bud2d(g, v, turtle):
 
     :return: the bud shape (a sphere)
     :rtype: Sphere
-    """    
-    sphere = pgl.Sphere(.1)
-    return sphere
+    """ 
+    turtle.down(30)
+    turtle.F(0.05) 
+    sphere = pgl.Sphere(0.05)
+    turtle.customGeometry(sphere)
 
-initiated_bud = bud
+# initiated_bud = bud
 
 
 def get_symbols():
@@ -371,7 +403,7 @@ def get_symbols():
                  HT=inflorescence,
                  bt=bud,
                  f=phytomer_primordia,
-                 ht=inflo_primordia,
+                 ht=bud2d,
                  s=stolon,
                 #  Cotyledon= unifoliate, 
                 #  Unifoliate= unifoliate, 
@@ -389,10 +421,10 @@ def get_symbols2d():
     :rtype: dict
     """    
     geoms = dict(F=phytomer2d,
-                 HT=inflorescence,
+                 HT=inflorescence2d,
                  bt=bud2d,
                  f=phytomer_primordia,
-                 ht=inflo_primordia,
+                 ht=inflo_primordia2d,
                  s=stolon2d,
                 ) # dictionnary for all rules production
     return geoms
