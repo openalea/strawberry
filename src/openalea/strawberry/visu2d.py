@@ -146,7 +146,7 @@ def graph_layout(g):
 
 def my_visitor(g, v, turtle, time=0):
     geoms = geometry.get_symbols2d()
-    turtle.setWidth(0.05)
+    turtle.setWidth(0.01)
     nid = g.node(v)
     label = g.label(v)
     draw_it = nid.drawable
@@ -175,12 +175,16 @@ def my_visitor(g, v, turtle, time=0):
             turtle.F(length)
             turtle.down(-angle)
         
-    # elif label == 'bt':
-    #     turtle.down(30.)
-    #     turtle.f(0.05)
+    elif label == 'bt':
+        turtle.down(30.)
+        turtle.f(0.05)
+    
+    elif label == 'HT':
+        turtle.F(0.1)
+    elif label == 's':
+        turtle.f(0.05)
 
     geoms.get(label)(g, v, turtle)
-
 
         
 ###############################################################################
@@ -246,7 +250,7 @@ def color_code(g,complete, plantule=False):
     vegetative = (0,128,0)
     initiated= (125,125,0)
     floral= (255,0,0)
-    stolon= (255,255,255)
+    stolon= (0,0,0)
 
     labels = g.property('label')
 
@@ -263,12 +267,6 @@ def color_code(g,complete, plantule=False):
                     nid.color= (0,0,255)
                 else:
                     nid.color = (255,0,0)
- #           if PLANTULE:
- #               foliar_type= nid.Foliar_type
- #               if nid.Foliar_type =='Cotyledon':
- #                   nid.color=(0,0,255)
- #               elif nid.Foliar_type=='Unifoliate':
- #                   nid.color=(125,125,125)
             else:
                 nid.color = shoot_green
         elif nid.label == 's':
