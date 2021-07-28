@@ -175,9 +175,9 @@ def my_visitor(g, v, turtle, time=0):
             turtle.F(length)
             turtle.down(-angle)
         
-    elif label == 'bt':
-        turtle.down(30.)
-        turtle.f(0.05)
+    # elif label == 'bt':
+    #     turtle.down(30.)
+    #     turtle.f(0.05)
 
     geoms.get(label)(g, v, turtle)
 
