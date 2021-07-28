@@ -378,7 +378,7 @@ def bud(g, vid, turtle):
     sphere = pgl.Sphere(radius=0.02)
     turtle.customGeometry(sphere)
 
-
+ 
 def bud2d(g, v, turtle):
     """Return a bud shape 
 
