@@ -385,8 +385,7 @@ def bud2d(g, v, turtle):
     :return: the bud shape (a sphere)
     :rtype: Sphere
     """ 
-    turtle.down(30)
-    turtle.F(0.05) 
+
     sphere = pgl.Sphere(0.05)
     turtle.customGeometry(sphere)
 
@@ -403,7 +402,7 @@ def get_symbols():
                  HT=inflorescence,
                  bt=bud,
                  f=phytomer_primordia,
-                 ht=bud2d,
+                 ht=inflo_primordia,
                  s=stolon,
                 #  Cotyledon= unifoliate, 
                 #  Unifoliate= unifoliate, 
@@ -424,7 +423,7 @@ def get_symbols2d():
                  HT=inflorescence2d,
                  bt=bud2d,
                  f=phytomer_primordia,
-                 ht=inflo_primordia2d,
+                 ht=bud2d,
                  s=stolon2d,
                 ) # dictionnary for all rules production
     return geoms
