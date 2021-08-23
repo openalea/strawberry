@@ -31,23 +31,23 @@ def init_allmtg():
     all_mtg = MTG()
 
 
-def get_vid_of_genotype(mtg, genotypes):
+def get_vid_of_genotype(g, genotypes):
     if len(genotypes)==1:
-        vids=[vid for vid in mtg.vertices(scale=1) if mtg.property('Genotype').get(vid) == genotypes[0]]
+        vids=[vid for vid in g.vertices(scale=1) if g.property('Genotype').get(vid) == genotypes[0]]
     else:
         vids=[]
         for genotype in genotypes:
-            tmp=[vid for vid in mtg.vertices(scale=1) if mtg.property('Genotype').get(vid) == genotype]
+            tmp=[vid for vid in g.vertices(scale=1) if g.property('Genotype').get(vid) == genotype]
             vids.extend(tmp)
     return vids
 
 
-def get_genotypes(mtg):
-    return list(set(mtg.property('Genotype').values()))
+def get_genotypes(g):
+    return list(set(g.property('Genotype').values()))
 
 
-def get_vid_from_nbplant(all_mtg, genotype, p_nb):
-    return get_vid_of_genotype(all_mtg, [genotype])[p_nb-1]
+def get_vid_from_nbplant(g, genotype, p_nb):
+    return get_vid_of_genotype(g, [genotype])[p_nb-1]
 
 
 def get_files():
@@ -78,7 +78,7 @@ def replace_inf_alt(x):
         return x
 
 
-def get_table_mtg(mtg):
+def get_table_mtg(g):
     
 #     tmp_table_path = "mtg_table.csv"
     properties = [('Experiment_name','STRING'), ('Sample_date', 'STRING'),('Genotype', 'STRING'),('Modality', 'STRING'),
@@ -87,8 +87,8 @@ def get_table_mtg(mtg):
               ('FLWRNUMBER_CLOSED', 'REAL'),('SAMPLING', 'STRING'),]
 
 
-    current_properties = [t for t in properties if t[0] in mtg.property_names()]
-    mtg_string = write_mtg(mtg, current_properties)
+    current_properties = [t for t in properties if t[0] in g.property_names()]
+    mtg_string = write_mtg(g, current_properties)
     f = StringIO(mtg_string[mtg_string.find('ENTITY-CODE'):])
     df = pd.read_csv(f,
                sep="\t",

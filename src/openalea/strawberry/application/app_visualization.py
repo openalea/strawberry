@@ -14,14 +14,14 @@ from openalea.strawberry.analysis import extract_at_plant_scale, median_individu
 # # Print on widget function
 # # ----------------------------------------------------------------
 
-def print_3d_growth_developement(mtg, genotype):
-    if mtg:
+def print_3d_growth_developement(g, genotype):
+    if g:
         with plot3d_growth_developement:
             plot3d_growth_developement.clear_output()
             print('3d growth developement')
-            vids_selected = get_vid_of_genotype(misc.all_mtg, genotypes=[genotype])
-            misc.all_mtg.properties()['order'] = orders(misc.all_mtg)
-            scene=visu3d.plot3d(misc.all_mtg,by=["Sample_date"],hide_leaves=False,display=False, vids=vids_selected)
+            vids_selected = get_vid_of_genotype(g, genotypes=[genotype])
+            g.properties()['order'] = orders(g)
+            scene=visu3d.plot3d(g,by=["Sample_date"],hide_leaves=False,display=False, vids=vids_selected)
             display3d(scene)
     else:
         with plot3d_growth_developement:
@@ -29,14 +29,14 @@ def print_3d_growth_developement(mtg, genotype):
             print('Select a Genotype')
 
 
-def print_3d_floral_intensity(mtg, genotype):
-    if mtg:
+def print_3d_floral_intensity(g, genotype):
+    if g:
         with plot3d_floral_intensity:
             plot3d_floral_intensity.clear_output()
             print('3d floral_intensity ')
-            vids_selected = get_vid_of_genotype(misc.all_mtg, genotypes=[genotype])
-            misc.all_mtg.properties()['order'] = orders(misc.all_mtg)
-            scene=visu3d.plot3d(misc.all_mtg,by=["Sample_date"],hide_leaves=True,display=False, vids=vids_selected)
+            vids_selected = get_vid_of_genotype(g, genotypes=[genotype])
+            g.properties()['order'] = orders(g)
+            scene=visu3d.plot3d(g,by=["Sample_date"],hide_leaves=True,display=False, vids=vids_selected)
             display3d(scene) 
     else:
         with plot3d_floral_intensity:
@@ -44,25 +44,25 @@ def print_3d_floral_intensity(mtg, genotype):
             print('Select a Genotype') 
 
 
-def print_2d_single_p(mtg, genotype, vid):
+def print_2d_single_p(g, genotype, vid):
     with plot2d_single_p:
         plot2d_single_p.clear_output()
-        vids_selected = get_vid_of_genotype(misc.all_mtg, genotypes=[genotype])
-        misc.all_mtg.properties()['order'] = orders(misc.all_mtg)
-        scene=visu2d.plot2d(misc.all_mtg,[vids_selected[vid]],dist=[3]*3,display=False)
+        vids_selected = get_vid_of_genotype(g, genotypes=[genotype])
+        g.properties()['order'] = orders(g)
+        scene=visu2d.plot2d(g,[vids_selected[vid]],dist=[3]*3,display=False)
         display3d(scene)
 
-def print_2d_median(mtg, genotype):
+def print_2d_median(g, genotype):
     with plot2d_most_central:
         plot2d_most_central.clear_output()
-        vids_selected=get_vid_of_genotype(misc.all_mtg, genotypes=[genotype])
-        misc.all_mtg.properties()['order'] = orders(misc.all_mtg)
-        df = extract_at_plant_scale(misc.all_mtg, vids=vids_selected)
+        vids_selected=get_vid_of_genotype(g, genotypes=[genotype])
+        g.properties()['order'] = orders(g)
+        df = extract_at_plant_scale(g, vids=vids_selected)
         df_median=median_individuals(df,)
         # selection of vid of median individuals
         pids = list(df_median.vid)
         n = len(pids)
-        scene= visu2d.plot2d(misc.all_mtg, pids, dist=[6]*n, display=False)
+        scene= visu2d.plot2d(g, pids, dist=[6]*n, display=False)
         display3d(scene)
 
 
@@ -83,7 +83,7 @@ def on_change_tab_3d(widget, event, data):
         plot3d_growth_developement.clear_output()
 
 def on_change_geno_2d(widget, event, data):
-    id_selection_2d.items = [*range(len(get_vid_of_genotype(misc.all_mtg, [data]))) ]
+    id_selection_2d.items = list(range(len(get_vid_of_genotype(misc.all_mtg, [data]))))
     id_selection_2d.v_model=1
 
     print_2d_median(misc.all_mtg, data)
