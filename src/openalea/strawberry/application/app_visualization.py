@@ -3,12 +3,12 @@ import ipywidgets as widgets
 
 from openalea.mtg.algo import orders
 
-from openalea.strawberry import visu3d 
+from openalea.strawberry import visu3d, visu2d 
 
 from openalea.strawberry.application.layout import layout_output_wgt
 import openalea.strawberry.application.misc as misc
 from openalea.strawberry.application.misc import get_vid_of_genotype, display3d
-
+from openalea.strawberry.analysis import extract_at_plant_scale, median_individuals
 
 # # ----------------------------------------------------------------
 # # Print on widget function
@@ -44,10 +44,26 @@ def print_3d_floral_intensity(mtg, genotype):
             print('Select a Genotype') 
 
 
-def print_2d_single_p():
+def print_2d_single_p(mtg, genotype, vid):
     with plot2d_single_p:
         plot2d_single_p.clear_output()
-        print('2d Single plant')
+        vids_selected = get_vid_of_genotype(misc.all_mtg, genotypes=[genotype])
+        misc.all_mtg.properties()['order'] = orders(misc.all_mtg)
+        scene=visu2d.plot2d(misc.all_mtg,[vids_selected[vid]],dist=[3]*3,display=False)
+        display3d(scene)
+
+def print_2d_median(mtg, genotype):
+    with plot2d_most_central:
+        plot2d_most_central.clear_output()
+        vids_selected=get_vid_of_genotype(misc.all_mtg, genotypes=[genotype])
+        misc.all_mtg.properties()['order'] = orders(misc.all_mtg)
+        df = extract_at_plant_scale(misc.all_mtg, vids=vids_selected)
+        df_median=median_individuals(df,)
+        # selection of vid of median individuals
+        pids = list(df_median.vid)
+        n = len(pids)
+        scene= visu2d.plot2d(misc.all_mtg, pids, dist=[6]*n, display=False)
+        display3d(scene)
 
 
 # # ----------------------------------------------------------------
@@ -66,7 +82,18 @@ def on_change_tab_3d(widget, event, data):
     with plot3d_growth_developement:
         plot3d_growth_developement.clear_output()
 
+def on_change_geno_2d(widget, event, data):
+    id_selection_2d.items = [*range(len(get_vid_of_genotype(misc.all_mtg, [data]))) ]
+    id_selection_2d.v_model=1
+
+    print_2d_median(misc.all_mtg, data)
+    print_2d_single_p(misc.all_mtg, data, vid=id_selection_2d.v_model)
+
     
+def on_change_id_2d(widget, event, data):
+    print_2d_single_p(misc.all_mtg, genotype= genotype_selection_2d.v_model, vid=data)
+
+
 # # ----------------------------------------------------------------
 # # Widgets
 # # ----------------------------------------------------------------
@@ -85,6 +112,13 @@ genotype_selection_2d = v.Select(items=[],
             label="Select Genotype",
             truncate_length=22)
 
+id_selection_2d = v.Select(items=[],
+            chips=True, 
+            multiple=False,
+            v_model="",
+            label="Select Plant ID",
+            truncate_length=22)
+
 parameter_color = v.Select(items=[True, False], 
                         label="Group by color", 
                         multiple=False, chips=True, 
@@ -94,7 +128,8 @@ menu_plant_3d = v.Row(children=[v.Col(children=[genotype_selection_3d]),
                           v.Col(children=[parameter_color])
                          ])
 
-row_param2d = v.Row(children=[v.Col(children=[genotype_selection_2d]),                          
+row_param2d = v.Row(children=[v.Col(children=[genotype_selection_2d]), 
+                          v.Col(children=[id_selection_2d])                         
                          ])
 
 plot3d_growth_developement = widgets.Output(layout=layout_output_wgt)
@@ -110,17 +145,9 @@ tab_3d_content = v.Row(children=[v.Col(col=12, sm=12, md=12,
                                       ])
                          ])
 
-plot2d_single_p = v.Container(
-                              fluid=True,
-                              children=[
-                                    v.Img(src="2d_single_p.png")    
-                            ])
+plot2d_single_p = widgets.Output(layout=layout_output_wgt)
 
-plot2d_most_central = v.Container(
-                              fluid=True,
-                              children=[
-                                    v.Img(src="2d_most_central.png")    
-                            ])
+plot2d_most_central = widgets.Output(layout=layout_output_wgt)
 
 panel_2d = v.Row(children=[v.Col(children=[plot2d_single_p]), 
                            v.Col(children=[plot2d_most_central,])])
@@ -153,5 +180,7 @@ container_main = v.Container(fluid=True,
 
 genotype_selection_3d.on_event("change", on_change_3d)
 parameter_color.on_event("change", on_change_3d)
-tab_3d.on_event('change', on_change_tab_3d)
+genotype_selection_2d.on_event("change", on_change_geno_2d)
+id_selection_2d.on_event("change", on_change_id_2d)
 
+tab_3d.on_event('change', on_change_tab_3d)

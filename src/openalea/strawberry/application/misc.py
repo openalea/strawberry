@@ -145,4 +145,4 @@ def display3d(scene):
     if layout_visu3d=="pgljupyter":
         display(SceneWidget(scene))
     elif layout_visu3d=="oawidgets":
-        display(PlantGL(scene,))
+        display(PlantGL(scene,group_by_color=False))
