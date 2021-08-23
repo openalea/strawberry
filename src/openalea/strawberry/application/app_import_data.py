@@ -31,11 +31,11 @@ files, file_paths = get_files()
 # # Print on widget function
 # # ----------------------------------------------------------------
 
-def print_preview(mtg, genotype="", p_nb=1, width="800px", height="600px"):
+def print_preview(g, genotype="", p_nb=1, width="800px", height="600px"):
     with graphMTG:
         graphMTG.clear_output()
-        vid = get_vid_from_nbplant(misc.all_mtg, genotype, p_nb)
-        p = oawidgets.mtg.plot(mtg.sub_mtg(vid), scale=parameter_scale.v_model, height=height, width=width)
+        vid = get_vid_from_nbplant(g, genotype, p_nb)
+        p = oawidgets.mtg.plot(g.sub_mtg(vid), scale=parameter_scale.v_model, height=height, width=width)
         display(p)
 
         
