@@ -12,6 +12,9 @@ from openalea.mtg import MTG
 from openalea.strawberry.application.layout import layout_dataframe, layout_output_wgt, layout_visu3d
 
 
+data_directory = os.path.join(str(Path.home()), "dashboard_files")
+
+
 if layout_dataframe == "qgrid":
     try:
         import qgrid
@@ -54,12 +57,9 @@ def get_files():
 
     files=[]
     # START BY LOADING ALL EXISTING MTG FILES IN /dashboard_files
-    home = str(Path.home())
-    data_directory = os.path.join(home, "dashboard_files")
     file_paths = {}
     for file in os.listdir(data_directory):
         if file.endswith('.mtg'):
-            print(file, file.endswith('.mtg'))
             file_paths[file] = os.path.join(data_directory, file)
             files.append(file)
     return files, file_paths
