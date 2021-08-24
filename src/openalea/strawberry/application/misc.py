@@ -123,6 +123,38 @@ def create_download_link( df, title = "Download CSV file", filename = "selected_
     return HTML(html)
 
 
+def create_download_btn(df, title = "Download CSV file", filename = "selected_dataframe.csv"):
+    csv = df.to_csv()
+    b64 = base64.b64encode(csv.encode())
+    payload = b64.decode()
+    html_buttons = '''<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <a download="{filename}" href="data:text/csv;base64,{payload}" download>
+    <button class="p-Widget jupyter-widgets jupyter-button widget-button mod-warning">Download File</button>
+    </a>
+    </body>
+    </html>
+    '''
+    html_button = html_buttons.format(payload=payload,filename=filename)
+    return HTML(html_button)
+
+
+def update_btn_export(wgt, payload):
+    """The export buttons are widget.Output widget, that are updated when a genotype is selected to print a button with the associated link
+
+    :param wgt: [description]
+    :type wgt: [type]
+    :param payload: [description]
+    :type payload: [type]
+    """
+    with wgt:
+        wgt.clear_output()
+        display(create_download_btn(payload))
+
+
 def update_grid(df, wgt):
     if layout_dataframe == "qgrid":
         df_fixed = fix_inferior_character_for_qgrid(df)
