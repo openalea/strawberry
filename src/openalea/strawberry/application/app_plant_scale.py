@@ -1,4 +1,5 @@
 import ipyvuetify as v
+import ipywidgets as widgets
 
 import pandas as pd
 import plotly.graph_objs as go
@@ -10,13 +11,22 @@ cf.set_config_file(offline=False, world_readable=True)
 from openalea.strawberry.analysis import (extract_at_module_scale, extract_at_plant_scale, df2waffle, plot_pie)
 
 import openalea.strawberry.application.misc as misc
-from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, transfert_figure_pie, create_grid, update_grid)
+from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, transfert_figure_pie, create_grid, update_grid, update_btn_export)
 from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure
 
 
 # # ----------------------------------------------------------------
 # # On event trigger
 # # ----------------------------------------------------------------
+
+
+def update_btn_extract():
+    genotype=genotypes_selection_extraction.v_model
+    if genotype:
+        vids=get_vid_of_genotype(misc.all_mtg, genotype)
+        df=extract_at_module_scale(misc.all_mtg, vids=vids)
+        update_btn_export(export_extraction, df)
+
 
 def on_change_genotype_p3_t1(widget, event, data):
     # update table
@@ -28,6 +38,8 @@ def on_change_genotype_p3_t1(widget, event, data):
     
     # update descriptors
     update_grid(df.describe(), df_description)
+    
+    update_btn_extract()
         
 
 def on_change_genotype_p3_t2(widget, event, data):
@@ -85,7 +97,7 @@ def on_change_parameter_p3(widget, event, data):
 # # Widgets
 # # ----------------------------------------------------------------
 
-export_extraction = v.Btn(children=['Export table'])
+export_extraction = widgets.Output(layout=layout_output_wgt)
 
 genotypes_selection_extraction = v.Select(items=[],
             chips=True, 

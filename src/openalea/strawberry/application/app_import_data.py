@@ -1,12 +1,14 @@
 import ipyvuetify as v
 import ipywidgets as widgets
+from ipyvuetify.extra import FileInput
 
 import pandas as pd
 import numpy as np
+import os
 
 import oawidgets.mtg
 
-from openalea.mtg.io import read_mtg_file
+from openalea.mtg.io import read_mtg_file, read_mtg
 from openalea.mtg.algo import union
 from openalea.mtg import MTG
 
@@ -19,7 +21,7 @@ from openalea.strawberry.application.misc import (get_vid_of_genotype, get_genot
 import openalea.strawberry.application.misc as misc
 
 from openalea.strawberry.application.layout import layout_output_wgt
-
+from openalea.strawberry.application.misc import data_directory
 
 # # ----------------------------------------------------------------
 # # Load files
@@ -31,11 +33,11 @@ files, file_paths = get_files()
 # # Print on widget function
 # # ----------------------------------------------------------------
 
-def print_preview(mtg, genotype="", p_nb=1, width="800px", height="600px"):
+def print_preview(g, genotype="", p_nb=1, width="800px", height="600px"):
     with graphMTG:
         graphMTG.clear_output()
-        vid = get_vid_from_nbplant(misc.all_mtg, genotype, p_nb)
-        p = oawidgets.mtg.plot(mtg.sub_mtg(vid), scale=parameter_scale.v_model, height=height, width=width)
+        vid = get_vid_from_nbplant(g, genotype, p_nb)
+        p = oawidgets.mtg.plot(g.sub_mtg(vid), scale=parameter_scale.v_model, height=height, width=width)
         display(p)
 
         
@@ -71,22 +73,51 @@ def print_files_description():
                 else:
                     print(p[0], ': ', p[1])
 
+def reader_uploaded():
+    if files_upload.get_files():
+        upfile = files_upload.get_files()
+        for f in upfile:
+            # if a mtg file with the same name already exists - nothing is done
+            if not os.path.isfile(data_directory+'/'+f['name']):
+                # ADD the file to the mtg database 
+                # TODO: Add the possibility to not add it
+                content=f['file_obj'].read()
+                tmp=open(data_directory+'/'+f['name'], 'w')
+                tmp.write(content.decode('utf-8'))
+                tmp.close()
+                # then add it to the all_mtg
+                g=read_mtg(content.decode('utf-8'))
+                misc.all_mtg = union(misc.all_mtg, g)
+
+        global files, file_paths
+        files, file_paths=get_files()
+        files_selection.items=files
+        update_selection_items()
+
+
+def update_selection_items():
+    genotypes_selection.items=get_genotypes(misc.all_mtg)
+    p2.genotype_selection_3d.items=get_genotypes(misc.all_mtg)
+    p2.genotype_selection_2d.items=get_genotypes(misc.all_mtg)
+    p3.genotypes_selection_extraction.items=get_genotypes(misc.all_mtg)
+    p3.genotypes_selection_analyze.items=get_genotypes(misc.all_mtg)
+    p4.genotypes_selection_extraction.items=get_genotypes(misc.all_mtg)
+    p4.genotypes_selection_single_genotype.items=get_genotypes(misc.all_mtg)
+    p4.genotypes_selection_waffle.items=get_genotypes(misc.all_mtg)
+    p5.genotypes_selection_waffle.items=get_genotypes(misc.all_mtg)
+
 
 # # ----------------------------------------------------------------
 # # On event trigger
 # # ----------------------------------------------------------------
-
-def on_change_upload(widget, event, data):
-    # add the file to the mtg repository
-    pass
 
 
 def on_change_get_files(widget, event, data):
     # load mtgs
     misc.all_mtg = MTG()
     for file in data:
-        mtg = read_mtg_file(file_paths[file])
-        misc.all_mtg = union(misc.all_mtg, mtg)
+        g = read_mtg_file(file_paths[file])
+        misc.all_mtg = union(misc.all_mtg, g)
     
     # update table
     if misc.all_mtg:
@@ -97,16 +128,8 @@ def on_change_get_files(widget, event, data):
         update_grid(pd.DataFrame(), tableMTG)
     
     # update genotype selections
-    genotypes_selection.items=get_genotypes(misc.all_mtg)
-    p2.genotype_selection_3d.items=get_genotypes(misc.all_mtg)
-    p2.genotype_selection_2d.items=get_genotypes(misc.all_mtg)
-    p3.genotypes_selection_extraction.items=get_genotypes(misc.all_mtg)
-    p3.genotypes_selection_analyze.items=get_genotypes(misc.all_mtg)
-    p4.genotypes_selection_extraction.items=get_genotypes(misc.all_mtg)
-    p4.genotypes_selection_single_genotype.items=get_genotypes(misc.all_mtg)
-    p4.genotypes_selection_waffle.items=get_genotypes(misc.all_mtg)
-    p5.genotypes_selection_waffle.items=get_genotypes(misc.all_mtg)
-    
+    update_selection_items()
+
     # update file description
     print_files_description()
 
@@ -146,7 +169,7 @@ def on_change_parameters(widget, event, data):
 # # Widgets
 # # ----------------------------------------------------------------
 
-files_upload = v.FileInput(row=True, wrap=True, align_center=True, 
+files_upload = FileInput(row=True, wrap=True, align_center=True, 
             chips=True, 
             multiple=True,
             counter=True,
@@ -197,9 +220,9 @@ cb_allplants = v.Checkbox(v_model=False,label="Select all plants", disabled=True
 
 menu_plant = v.Col(cols=12, sm=3, md=3,
                 children=[
-                      files_selection,
-                      v.Divider(),
                       files_upload,
+                      v.Divider(),
+                      files_selection,
                       v.Divider(),
                       genotypes_selection,
                       v.Divider(),
@@ -275,3 +298,5 @@ genotypes_selection.on_event('change', on_change_genotype)
 slider_n_plant.on_event('change', on_change_nbplant)
 box_n_plant.on_event('change', on_change_nbplant)
 parameter_scale.on_event('change', on_change_parameters)
+
+files_upload.observe(lambda _: reader_uploaded(), names='file_info')

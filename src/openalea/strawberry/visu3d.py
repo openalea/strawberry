@@ -40,7 +40,7 @@ def visualise_plants(g, vids=[], positions=[], no_plant=[], hide_leaves=False):
     t = pgl.PglTurtle()
     if not vids:
         vids = g.component_roots_at_scale(g.root, scale=max_scale)
-        x = - no_plant
+        x = -no_plant
         y = -12
         dx = 2.
         dy = 4.

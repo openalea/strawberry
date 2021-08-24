@@ -11,7 +11,7 @@ cf.set_config_file(offline=False, world_readable=True)
 from openalea.strawberry.analysis import (extract_at_module_scale, occurence_module_order_along_time, df2waffle, plot_waffle)
 
 import openalea.strawberry.application.misc as misc
-from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, create_download_link, create_grid, update_grid)
+from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, create_download_link, create_grid, update_grid, update_btn_export)
 from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure
 
 
@@ -19,6 +19,66 @@ from openalea.strawberry.application.layout import layout_output_wgt, layout_gof
 # # ----------------------------------------------------------------
 # # Print on widget function
 # # ----------------------------------------------------------------
+
+def update_btn_extract():
+    genotype=genotypes_selection_extraction.v_model
+    if genotype:
+        vids=get_vid_of_genotype(misc.all_mtg, genotype)
+        df=extract_at_module_scale(misc.all_mtg, vids=vids)
+        update_btn_export(export_extraction, df)
+
+
+def update_btn_single():
+    genotype=genotypes_selection_single_genotype.v_model
+    if genotype:
+        vids=get_vid_of_genotype(misc.all_mtg, [genotype])
+        df=extract_at_module_scale(misc.all_mtg, vids=vids)
+        geno_frequency = occurence_module_order_along_time(data= df,frequency_type= "cdf")
+    update_btn_export(link_export_t11,geno_frequency)
+
+    if genotype:
+        vids=get_vid_of_genotype(misc.all_mtg, [genotype])
+        df=extract_at_module_scale(misc.all_mtg, vids=vids)
+        res=pd.crosstab(index= df["order"], columns= df["complete_module"],normalize="index")
+        res.columns = ["incomplete","complete"]
+    update_btn_export(link_export_t12,res)
+
+    if genotype:
+        vids=get_vid_of_genotype(misc.all_mtg, [genotype])
+        df=extract_at_module_scale(misc.all_mtg, vids=vids)
+        res=pd.crosstab(index=df["date"], columns= df["complete_module"],normalize="index")
+        res.columns = ["incomplete","complete"]    
+    update_btn_export(link_export_t13,res)
+
+
+def update_btn_multiple():
+    if misc.all_mtg:
+        df=extract_at_module_scale(misc.all_mtg)
+        Mean= df.groupby(["Genotype", "order"]).mean()
+    update_btn_export(link_export_t21,Mean)
+
+    if misc.all_mtg:
+        df=extract_at_module_scale(misc.all_mtg)
+        Mean= df.groupby(["Genotype", "order"]).mean()
+    update_btn_export(link_export_t22,Mean)
+
+    if misc.all_mtg:
+        df=extract_at_module_scale(misc.all_mtg)
+        Mean= df.groupby(["Genotype", "order"]).mean()
+    update_btn_export(link_export_t23,Mean)
+
+    if misc.all_mtg:
+        df=extract_at_module_scale(misc.all_mtg)
+        ctd = crowntype_distribution(data= df, crown_type="branch_crown")
+        ctd = ctd[ctd.index.get_level_values('order')!=0]
+    update_btn_export(link_export_t24,ctd)
+
+    if misc.all_mtg:
+        df=extract_at_module_scale(misc.all_mtg)
+        ctd = crowntype_distribution(data= df, crown_type="extension_crown")
+        ctd = ctd[ctd.index.get_level_values('order')!=0]  
+    update_btn_export(link_export_t25,ctd)        
+
 
 def plot_module_occurence_module_order_along_time(df, genotype, layout={}):
     kind = layout.get('kind', "line")
@@ -219,86 +279,13 @@ def on_change_genotype_p4(widget, event, data):
     # update descriptors
     update_grid(df.describe(), df_description)
 
+    # update the extraction button
+    update_btn_extract()
+
 
 def on_change_single_genotype(widget, event, data):
     print_single_genotype_plots()
-
-def on_click_export_411(widget, event, data):
-    genotype=genotypes_selection_single_genotype.v_model
-    if genotype:
-        vids=get_vid_of_genotype(misc.all_mtg, [genotype])
-        df=extract_at_module_scale(misc.all_mtg, vids=vids)
-        geno_frequency = occurence_module_order_along_time(data= df,frequency_type= "cdf")
-        with link_export_t11:
-            link_export_t11.clear_output()
-            display(create_download_link(geno_frequency))
-        
-        
-def on_click_export_412(widget, event, data):
-    genotype=genotypes_selection_single_genotype.v_model
-    if genotype:
-        vids=get_vid_of_genotype(misc.all_mtg, [genotype])
-        df=extract_at_module_scale(misc.all_mtg, vids=vids)
-        res=pd.crosstab(index= df["order"], columns= df["complete_module"],normalize="index")
-        res.columns = ["incomplete","complete"]
-        with link_export_t12:
-            link_export_t12.clear_output()
-            display(create_download_link(res))
-        
-def on_click_export_413(widget, event, data):
-    genotype=genotypes_selection_single_genotype.v_model
-    if genotype:
-        vids=get_vid_of_genotype(misc.all_mtg, [genotype])
-        df=extract_at_module_scale(misc.all_mtg, vids=vids)
-        res=pd.crosstab(index=df["date"], columns= df["complete_module"],normalize="index")
-        res.columns = ["incomplete","complete"]    
-        with link_export_t13:
-            link_export_t13.clear_output()
-            display(create_download_link(res))
-            
-def on_click_export_421(widget, event, data):
-    if misc.all_mtg:
-        df=extract_at_module_scale(misc.all_mtg)
-        Mean= df.groupby(["Genotype", "order"]).mean()
-        with link_export_t21:
-            link_export_t21.clear_output()
-            display(create_download_link(Mean))
-
-            
-def on_click_export_422(widget, event, data):
-    if misc.all_mtg:
-        df=extract_at_module_scale(misc.all_mtg)
-        Mean= df.groupby(["Genotype", "order"]).mean()
-        with link_export_t22:
-            link_export_t22.clear_output()
-            display(create_download_link(Mean))
-            
-def on_click_export_423(widget, event, data):
-    if misc.all_mtg:
-        df=extract_at_module_scale(misc.all_mtg)
-        Mean= df.groupby(["Genotype", "order"]).mean()
-        with link_export_t23:
-            link_export_t23.clear_output()
-            display(create_download_link(Mean))
-            
-def on_click_export_424(widget, event, data):
-    if misc.all_mtg:
-        df=extract_at_module_scale(misc.all_mtg)
-        ctd = crowntype_distribution(data= df, crown_type="branch_crown")
-        ctd = ctd[ctd.index.get_level_values('order')!=0]
-        with link_export_t24:
-            link_export_t24.clear_output()
-            display(create_download_link(ctd))
-            
-def on_click_export_425(widget, event, data):
-    if misc.all_mtg:
-        df=extract_at_module_scale(misc.all_mtg)
-        ctd = crowntype_distribution(data= df, crown_type="extension_crown")
-        ctd = ctd[ctd.index.get_level_values('order')!=0]
-        with link_export_t25:
-            link_export_t25.clear_output()
-            display(create_download_link(ctd))
-
+    update_btn_single()
 
 def on_change_module_waffle_genotype(widget, event, data):
     genotype=genotypes_selection_waffle.v_model
@@ -468,13 +455,14 @@ def on_change_module_plot_type(widget, event, data):
 
 def on_click_changetab(widget, event, data):
     print_multiple_genotypes_plots()
+    update_btn_multiple()
 
 
 # # ----------------------------------------------------------------
 # # Widgets
 # # ----------------------------------------------------------------
 
-export_extraction = v.Btn(children=['Export table'])
+export_extraction = widgets.Output(layout=layout_output_wgt)
 
 genotypes_selection_extraction = v.Select(items=[],
             chips=True, 
@@ -526,19 +514,15 @@ link_export_t11 = widgets.Output(layout=layout_output_wgt)
 link_export_t12 = widgets.Output(layout=layout_output_wgt)
 link_export_t13 = widgets.Output(layout=layout_output_wgt)
 
-btn_export_t11 = v.Btn(children=['Export table'])
-btn_export_t12 = v.Btn(children=['Export table'])
-btn_export_t13 = v.Btn(children=['Export table'])
-
 
 panel_single_genotype = v.Container(fluid=True,
                               children=[
                                     plot_occurence,
-                                    v.Row(children=[btn_export_t11,link_export_t11]),
+                                    v.Row(children=[link_export_t11]),
                                     plot_distribution_module_order,
-                                    v.Row(children=[btn_export_t12,link_export_t12]),
+                                    v.Row(children=[link_export_t12]),
                                     plot_distribution_date,
-                                    v.Row(children=[btn_export_t13,link_export_t13]),
+                                    v.Row(children=[link_export_t13]),
                                 ])
 
 tab_single_genotype_content = v.Row(children=[v.Col(col=12, sm=11, md=11, children=[
@@ -561,24 +545,19 @@ link_export_t23 = widgets.Output(layout=layout_output_wgt)
 link_export_t24 = widgets.Output(layout=layout_output_wgt)
 link_export_t25 = widgets.Output(layout=layout_output_wgt)
 
-btn_export_t21 = v.Btn(children=['Export table'])
-btn_export_t22 = v.Btn(children=['Export table'])
-btn_export_t23 = v.Btn(children=['Export table'])
-btn_export_t24 = v.Btn(children=['Export table'])
-btn_export_t25 = v.Btn(children=['Export table'])
 
 panel_multiple_genotypes = v.Container(fluid=True,
                               children=[
                                     plot_pointwisemean_leaves,
-                                    v.Row(children=[btn_export_t21,link_export_t21]),
+                                    v.Row(children=[link_export_t21]),
                                     plot_pointwisemean_flowers,
-                                    v.Row(children=[btn_export_t22,link_export_t22]),
+                                    v.Row(children=[link_export_t22]),
                                     plot_pointwisemean_stolons,
-                                    v.Row(children=[btn_export_t23,link_export_t23]),
+                                    v.Row(children=[link_export_t23]),
                                     plot_branch_crown,
-                                    v.Row(children=[btn_export_t24,link_export_t24]),
+                                    v.Row(children=[link_export_t24]),
                                     plot_extension_crown,
-                                    v.Row(children=[btn_export_t25,link_export_t25]),
+                                    v.Row(children=[link_export_t25]),
                                 ])
 
 tab_multiple_genotype_content = v.Row(children=[v.Col(col=12, sm=11, md=11, children=[panel_multiple_genotypes])])
@@ -675,16 +654,6 @@ container_main = v.Container(fluid=True,
 
 genotypes_selection_extraction.on_event('change', on_change_genotype_p4)
 genotypes_selection_single_genotype.on_event("change", on_change_single_genotype)
-
-btn_export_t11.on_event('click', on_click_export_411)
-btn_export_t12.on_event('click', on_click_export_412)
-btn_export_t13.on_event('click', on_click_export_413)
-
-btn_export_t21.on_event('click', on_click_export_421)
-btn_export_t22.on_event('click', on_click_export_422)
-btn_export_t23.on_event('click', on_click_export_423)
-btn_export_t24.on_event('click', on_click_export_424)
-btn_export_t25.on_event('click', on_click_export_425)
 
 genotypes_selection_waffle.on_event('change', on_change_module_waffle_genotype)
 date_selection_waffle.on_event('change', on_change_module_waffle_date)

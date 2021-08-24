@@ -12,6 +12,9 @@ from openalea.mtg import MTG
 from openalea.strawberry.application.layout import layout_dataframe, layout_output_wgt, layout_visu3d
 
 
+data_directory = os.path.join(str(Path.home()), "dashboard_files")
+
+
 if layout_dataframe == "qgrid":
     try:
         import qgrid
@@ -31,37 +34,34 @@ def init_allmtg():
     all_mtg = MTG()
 
 
-def get_vid_of_genotype(mtg, genotypes):
+def get_vid_of_genotype(g, genotypes):
     if len(genotypes)==1:
-        vids=[vid for vid in mtg.vertices(scale=1) if mtg.property('Genotype').get(vid) == genotypes[0]]
+        vids=[vid for vid in g.vertices(scale=1) if g.property('Genotype').get(vid) == genotypes[0]]
     else:
         vids=[]
         for genotype in genotypes:
-            tmp=[vid for vid in mtg.vertices(scale=1) if mtg.property('Genotype').get(vid) == genotype]
+            tmp=[vid for vid in g.vertices(scale=1) if g.property('Genotype').get(vid) == genotype]
             vids.extend(tmp)
     return vids
 
 
-def get_genotypes(mtg):
-    return list(set(mtg.property('Genotype').values()))
+def get_genotypes(g):
+    return list(set(g.property('Genotype').values()))
 
 
-def get_vid_from_nbplant(all_mtg, genotype, p_nb):
-    return get_vid_of_genotype(all_mtg, [genotype])[p_nb-1]
+def get_vid_from_nbplant(g, genotype, p_nb):
+    return get_vid_of_genotype(g, [genotype])[p_nb-1]
 
 
 def get_files():
 
     files=[]
     # START BY LOADING ALL EXISTING MTG FILES IN /dashboard_files
-    home = str(Path.home())
-    data_directory = os.path.join(home, "dashboard_files")
     file_paths = {}
     for file in os.listdir(data_directory):
-        if file.endswith(".mtg"):
+        if file.endswith('.mtg'):
             file_paths[file] = os.path.join(data_directory, file)
-
-        files.append(file)
+            files.append(file)
     return files, file_paths
 
 
@@ -78,7 +78,7 @@ def replace_inf_alt(x):
         return x
 
 
-def get_table_mtg(mtg):
+def get_table_mtg(g):
     
 #     tmp_table_path = "mtg_table.csv"
     properties = [('Experiment_name','STRING'), ('Sample_date', 'STRING'),('Genotype', 'STRING'),('Modality', 'STRING'),
@@ -87,8 +87,8 @@ def get_table_mtg(mtg):
               ('FLWRNUMBER_CLOSED', 'REAL'),('SAMPLING', 'STRING'),]
 
 
-    current_properties = [t for t in properties if t[0] in mtg.property_names()]
-    mtg_string = write_mtg(mtg, current_properties)
+    current_properties = [t for t in properties if t[0] in g.property_names()]
+    mtg_string = write_mtg(g, current_properties)
     f = StringIO(mtg_string[mtg_string.find('ENTITY-CODE'):])
     df = pd.read_csv(f,
                sep="\t",
@@ -123,6 +123,38 @@ def create_download_link( df, title = "Download CSV file", filename = "selected_
     return HTML(html)
 
 
+def create_download_btn(df, title = "Download CSV file", filename = "selected_dataframe.csv"):
+    csv = df.to_csv()
+    b64 = base64.b64encode(csv.encode())
+    payload = b64.decode()
+    html_buttons = '''<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <a download="{filename}" href="data:text/csv;base64,{payload}" download>
+    <button class="p-Widget jupyter-widgets jupyter-button widget-button mod-warning">Download File</button>
+    </a>
+    </body>
+    </html>
+    '''
+    html_button = html_buttons.format(payload=payload,filename=filename)
+    return HTML(html_button)
+
+
+def update_btn_export(wgt, payload):
+    """The export buttons are widget.Output widget, that are updated when a genotype is selected to print a button with the associated link
+
+    :param wgt: [description]
+    :type wgt: [type]
+    :param payload: [description]
+    :type payload: [type]
+    """
+    with wgt:
+        wgt.clear_output()
+        display(create_download_btn(payload))
+
+
 def update_grid(df, wgt):
     if layout_dataframe == "qgrid":
         df_fixed = fix_inferior_character_for_qgrid(df)
@@ -145,4 +177,4 @@ def display3d(scene):
     if layout_visu3d=="pgljupyter":
         display(SceneWidget(scene))
     elif layout_visu3d=="oawidgets":
-        display(PlantGL(scene,))
+        display(PlantGL(scene,group_by_color=False))
