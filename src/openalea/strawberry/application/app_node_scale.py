@@ -10,7 +10,7 @@ from openalea.strawberry.analysis import (extract_at_node_scale, df2waffle, plot
 import openalea.strawberry.application.misc as misc
 from openalea.strawberry.application.misc import (get_vid_of_genotype)
 from openalea.strawberry.application.layout import layout_output_wgt
-import openalea.strawberry.application.info
+import openalea.strawberry.application.info as info
 
 
 # # ----------------------------------------------------------------
@@ -188,12 +188,13 @@ menu_plant_waffle = v.Row(children=[genotypes_selection_waffle,
 
 waffle = widgets.Output(layout=layout_output_wgt)
 
-tab_waffle_content = v.Row(children=[v.Col(
-                            children=[
-                                menu_plant_waffle,
-                                waffle,
-                              ]),
-                        ])
+tab_waffle_content = v.Row(children=[
+                                v.Card(children=[info.p5_doc_waffle]),
+                                v.Col(col=12, sm=12, md=12,children=[
+                                        menu_plant_waffle,
+                                        waffle,
+                                    ]),
+                            ])
 
 p5 = v.Tabs( 
             children=[

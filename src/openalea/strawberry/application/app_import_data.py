@@ -22,7 +22,7 @@ import openalea.strawberry.application.misc as misc
 
 from openalea.strawberry.application.layout import layout_output_wgt
 from openalea.strawberry.application.misc import data_directory
-import openalea.strawberry.application.info
+import openalea.strawberry.application.info as info
 
 # # ----------------------------------------------------------------
 # # Load files
@@ -260,6 +260,7 @@ panel_MTG = v.Col(cols=12, sm=8, md=8,
 
 
 tab_MTG_content = v.Row(children=[
+                            v.Col(col=12, sm=12, md=12, children=[v.Card(children=[info.p1_doc])]),
                               menu_plant,
                               panel_MTG,
                           ])
