@@ -13,7 +13,7 @@ from openalea.strawberry.analysis import (extract_at_module_scale, occurence_mod
 import openalea.strawberry.application.misc as misc
 from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, create_download_link, create_grid, update_grid, update_btn_export)
 from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure
-
+import openalea.strawberry.application.info
 
 
 # # ----------------------------------------------------------------

@@ -10,7 +10,7 @@ from openalea.strawberry.analysis import (extract_at_node_scale, df2waffle, plot
 import openalea.strawberry.application.misc as misc
 from openalea.strawberry.application.misc import (get_vid_of_genotype)
 from openalea.strawberry.application.layout import layout_output_wgt
-
+import openalea.strawberry.application.info
 
 
 # # ----------------------------------------------------------------

@@ -22,6 +22,7 @@ import openalea.strawberry.application.misc as misc
 
 from openalea.strawberry.application.layout import layout_output_wgt
 from openalea.strawberry.application.misc import data_directory
+import openalea.strawberry.application.info
 
 # # ----------------------------------------------------------------
 # # Load files
