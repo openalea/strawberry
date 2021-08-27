@@ -30,7 +30,7 @@ p2_doc_visu2d = HTML("""
                 <body>
                 <p style='text-align: justify; font-size: 18px; color: black;'>
                 The Visualisation tab provides a 2D (2D visualization windows) and 3D visualisation of the plants (3D visualization windows)<br>
-                
+                <br>
                 The 2D visualization is a schematic representation of strawberry plant architecture The 2D schematic visualization  of the plant architecture highlights the sympodial branching as well as the different structures of the plant. This representation makes it possible to highlight apparent axes, distinguishing the main axis (succession of extension crowns deriving from the primary crown) from the branches (succession of extension crowns deriving from a branch crown).
                 We proposed you two type of 2D visualizations (if several genotype are present in MTG files, you can select the genotype using genotype button):
                 <ul style='text-align: justify; font-size: 18px; color: black;'>
@@ -62,7 +62,8 @@ p2_doc_visu3d = HTML("""
                 In this windows, two 3D visualization are proposed.  
                 <ul style='text-align: justify; font-size: 18px; color: black;'>
                 <li> First visualization  (left) shows vegetative development represented using occurence of module order throught a colour scale based on module order.</li> 
-                <li> Second visualization (rigth) shows the timing and intensity of flowering indicated by modulating the size and shape of the light blue boxes representing the inflorescences. </li><br>
+                <li> Second visualization (rigth) shows the timing and intensity of flowering indicated by modulating the size and shape of the light blue boxes representing 
+                the inflorescences. </li>
                 In both representation, axillary buds were represented by coloured spheres or cubes according to their axillary meristem stage
                 </p>
                 </body>
@@ -77,7 +78,8 @@ p3_doc_extraction = HTML("""
                 In plant scale tab you found all informations proposed on whole plant. This tab contains two windows (Export and Analyses)<br> 
                 
                 Export windows allows to extract both MTG properties at plant scale in dataframe such as 
-                (Genotype,date,modality of experiment,plant,nb_total_leaves,nb_total_flowers,nb_stolons,nb_visible_leaves,nb_vegetative_bud,nb_initiated_bud,nb_floral_bud,nb_inflorescence,leaf_area,order_max,nb_ramifications).<br>
+                (Genotype, date,modality of experiment, plant, nb_total_leaves, nb_total_flowers, nb_stolons, nb_visible_leaves, nb_vegetative_bud, nb_initiated_bud, 
+                nb_floral_bud, nb_inflorescence, leaf_area, order_max, nb_ramifications).<br>
                 For this, you can select one or several genotype thanks genotypes button. This dataframe can by exported in .csv using export table button
                 </p>
                 </body>
@@ -104,10 +106,12 @@ p4_doc_extraction = HTML("""
                 <body>
                 <p style='text-align: justify; font-size: 18px; color: black;'>
                 In module scale tab you found all informations by module order (rank of axis). This tab contains four windows (Export data and Analyses by genotype, analyses on several genotype and waffle representation)<br> 
-                
+                <br> 
                 Export windows allows to extract both MTG properties at module scale in dataframe (data group by Genotype, date, modality,order) such as 
                 (Genotype, date, modality, plant,order,nb_visible_leaves,nb_foliar_primordia,nb_total_leaves, nb_open_flowers, nb_aborted_flowers, nb_vegetative_bud, nb_initiated_bud, nb_floral_bud, nb_stolons, type_of_crown, crown_status, complete_module, stage).<br>
-                For this, you can select one or several genotype thanks genotypes button. This dataframe can by exported in .csv using export table button
+                <br>
+                For this, you can select one or several genotype thanks genotypes button. <br>
+                This dataframe can by exported in .csv using export table button
 
                 </p>
                 </body>
@@ -153,7 +157,6 @@ p4_doc_multiple = HTML("""
                 <li> Pointwise mean plot allows to show the mean number leaves, flowers and stolon along the orders 
                 when the lineplot cross for the first time the a probability of 0.9</li>
                 <li> relative frequency allows to shows the repartition of branch crown and extension crown for each module orders</li>
-                <br>
 
                 Note: that for each figure is possible to extrat dataframe in csv which are permit to relize the plot using export table 
                 </p>
