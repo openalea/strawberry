@@ -76,10 +76,11 @@ p3_doc_extraction = HTML("""
                 <body>
                 <p style='text-align: justify; font-size: 18px; color: black;'>
                 In plant scale tab you found all informations proposed on whole plant. This tab contains two windows (Export and Analyses)<br> 
-                
+                <br>
                 Export windows allows to extract both MTG properties at plant scale in dataframe such as 
                 (Genotype, date,modality of experiment, plant, nb_total_leaves, nb_total_flowers, nb_stolons, nb_visible_leaves, nb_vegetative_bud, nb_initiated_bud, 
                 nb_floral_bud, nb_inflorescence, leaf_area, order_max, nb_ramifications).<br>
+                <br>
                 For this, you can select one or several genotype thanks genotypes button. This dataframe can by exported in .csv using export table button
                 </p>
                 </body>
