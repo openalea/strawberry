@@ -5,7 +5,7 @@ from openalea.mtg.algo import orders
 
 from openalea.strawberry import visu3d, visu2d 
 
-from openalea.strawberry.application.layout import layout_output_wgt
+from openalea.strawberry.application.layout import layout_output_wgt, layout_card
 import openalea.strawberry.application.misc as misc
 from openalea.strawberry.application.misc import get_vid_of_genotype, display3d
 from openalea.strawberry.analysis import extract_at_plant_scale, median_individuals
@@ -141,7 +141,7 @@ plot3d_floral_intensity = widgets.Output(layout=layout_output_wgt)
 panel_3d = v.Row(children=[v.Col(children=[v.Container(fluid=True, children=[plot3d_growth_developement])]), 
                            v.Col(children=[v.Container(fluid=True, children=[plot3d_floral_intensity])])])
 
-tab_3d_content = v.Row(children=[v.Card(children=[info.p2_doc_visu3d]),
+tab_3d_content = v.Row(children=[v.Card(style_=layout_card, children=[info.p2_doc_visu3d]),
                                 v.Col(col=12, sm=12, md=12,
                                     children=[menu_plant_3d,
                                         panel_3d
@@ -156,7 +156,7 @@ panel_2d = v.Row(children=[v.Col(children=[plot2d_single_p]),
                            v.Col(children=[plot2d_most_central,])])
 
 
-tab_2d_content = v.Row(children=[v.Card(children=[info.p2_doc_visu2d]),
+tab_2d_content = v.Row(children=[v.Card(style_=layout_card, children=[info.p2_doc_visu2d]),
                                 v.Col(col=12, sm=12, md=12,
                                     children=[row_param2d,
                                         panel_2d

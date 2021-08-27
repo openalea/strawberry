@@ -12,7 +12,7 @@ from openalea.strawberry.analysis import (extract_at_module_scale, occurence_mod
 
 import openalea.strawberry.application.misc as misc
 from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, create_download_link, create_grid, update_grid, update_btn_export)
-from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure
+from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure, layout_card
 import openalea.strawberry.application.info as info
 
 
@@ -494,7 +494,7 @@ panel_description =v.Container(fluid=True,
                                 ])
 
 tab_extraction_content = v.Row(children=[
-                            v.Card(children=[info.p4_doc_extraction]),
+                            v.Card(style_=layout_card, children=[info.p4_doc_extraction]),
                             v.Col(cols=12, sm=12, md=12,children=[
                                             menu_plant_extraction,
                                             panel_df,
@@ -528,7 +528,7 @@ panel_single_genotype = v.Container(fluid=True,
                                     v.Col(col=12, sm=12, md=12, children=[v.Row(children=[link_export_t13])]),
                                 ])
 
-tab_single_genotype_content = v.Row(children=[v.Card(children=[info.p4_doc_single]),
+tab_single_genotype_content = v.Row(children=[v.Card(style_=layout_card, children=[info.p4_doc_single]),
                                             v.Col(col=12, sm=12, md=12, children=[
                                                 genotypes_selection_single_genotype,
                                                 panel_single_genotype
@@ -564,7 +564,7 @@ panel_multiple_genotypes = v.Container(fluid=True,
                                     v.Row(children=[link_export_t25]),
                                 ])
 
-tab_multiple_genotype_content = v.Row(children=[v.Card(children=[info.p4_doc_multiple]),
+tab_multiple_genotype_content = v.Row(children=[v.Card(style_=layout_card, children=[info.p4_doc_multiple]),
                                                 v.Col(col=12, sm=12, md=12, children=[panel_multiple_genotypes])])
 
 genotypes_selection_waffle = v.Select(items=[],
@@ -622,7 +622,7 @@ menu_plant_waffle = v.Row(children=[genotypes_selection_waffle,
 waffle = widgets.Output(layout=layout_output_wgt)
 
 
-tab_waffle_content = v.Row(children=[v.Card(children=[info.p4_doc_waffle]),
+tab_waffle_content = v.Row(children=[v.Card(style_=layout_card, children=[info.p4_doc_waffle]),
                                 v.Col(col=12, sm=12, md=12, children=[
                                     menu_plant_waffle,
                                     waffle,

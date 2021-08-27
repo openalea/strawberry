@@ -12,7 +12,7 @@ from openalea.strawberry.analysis import (extract_at_module_scale, extract_at_pl
 
 import openalea.strawberry.application.misc as misc
 from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, transfert_figure_pie, create_grid, update_grid, update_btn_export)
-from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure
+from openalea.strawberry.application.layout import layout_output_wgt, layout_gofigure, layout_card
 import openalea.strawberry.application.info as info
 
 # # ----------------------------------------------------------------
@@ -128,7 +128,7 @@ panel_description =v.Container(fluid=True,
                                     df_description    
                                 ])
 
-tab_extraction_content = v.Row(children=[v.Card(children=[info.p3_doc_extraction]),
+tab_extraction_content = v.Row(children=[v.Card(style_=layout_card, children=[info.p3_doc_extraction]),
                           v.Col(cols=12, sm=12, md=12, children=[menu_plant_extraction,
                             panel_df,
                             panel_description,
@@ -164,7 +164,7 @@ menu_plant_analyze = v.Row(children=[genotypes_selection_analyze,
 plot_plantscale = go.FigureWidget(layout=layout_gofigure)
 pie_plantscale = go.FigureWidget(layout=layout_gofigure)
 
-tab_analyze_content = v.Row(children=[v.Card(children=[info.p3_doc_analyses]),
+tab_analyze_content = v.Row(children=[v.Card(style_=layout_card, children=[info.p3_doc_analyses]),
                                 v.Col(col=12, sm=12, md=12,children=[
                                     menu_plant_analyze,
                                     v.Row(children=[plot_plantscale, pie_plantscale]),

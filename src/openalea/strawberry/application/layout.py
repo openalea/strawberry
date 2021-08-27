@@ -4,3 +4,5 @@ layout_gofigure={'plot_bgcolor': 'rgba(0,0,0,0)'}
 
 layout_dataframe = "pandas" # can be qgrid or pandas
 layout_visu3d = "oawidgets" # can be oawidget or pgljupyter
+
+layout_card="elevation: 5; padding: 15px"
