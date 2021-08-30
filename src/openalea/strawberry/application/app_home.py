@@ -15,13 +15,13 @@ Strawberry interactive application
 
 <p style='margin-bottom: 1em; text-align: justify; font-size: 18px; color: black;'>
 The complete documentation of the package can be found on readthedoc as well as
-tutorials <a href="https://strawberry.readthedocs.io/en/latest/">here.</a>
+tutorials <a href="https://strawberry.readthedocs.io/en/latest/" onclick="window.open(this.href); return false;">here.</a>
 </p>
 
 <p style='margin-bottom: 1em; text-align: justify; font-size: 18px; color: black;'>
 Welcome to the Strawberry interactive application. 
 This application is a display of the function proposed in the OpenAlea Strawberry python package.
-The source code can be found on Github <a href="https://github.com/openalea/strawberry">here.</a>
+The source code can be found on Github <a href="https://github.com/openalea/strawberry" onclick="window.open(this.href); return false;">here.</a>
 </p>
 
 </body>

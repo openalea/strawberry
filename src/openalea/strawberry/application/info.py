@@ -165,7 +165,28 @@ p4_doc_multiple = HTML("""
                 </html>
                  """)
 
-p4_doc_waffle = "Awsome description o"
+p4_doc_waffle = HTML("""
+                <html>
+                <body>
+                <p style='text-align: justify; font-size: 18px; color: black;'>
+                
+                The waffle plots represents the states of selected variables depending on the node/ module of the plant.
+                Each plant is represented on the X axis.
+                </p>
+                </body>
+                </html>
+                 """)
 
-p5_doc_waffle = "Awsome description o"
 
+
+p5_doc_waffle = HTML("""
+                <html>
+                <body>
+                <p style='text-align: justify; font-size: 18px; color: black;'>
+                
+                The waffle plots represents the states of selected variables depending on the node/ module of the plant.
+                Each plant is represented on the X axis.
+                </p>
+                </body>
+                </html>
+                 """)
