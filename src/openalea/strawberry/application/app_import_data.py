@@ -20,8 +20,9 @@ import openalea.strawberry.application.app_node_scale as p5
 from openalea.strawberry.application.misc import (get_vid_of_genotype, get_genotypes, get_vid_from_nbplant, get_files, get_table_mtg, create_grid, update_grid)
 import openalea.strawberry.application.misc as misc
 
-from openalea.strawberry.application.layout import layout_output_wgt
+from openalea.strawberry.application.layout import layout_output_wgt, layout_card
 from openalea.strawberry.application.misc import data_directory
+import openalea.strawberry.application.info as info
 
 # # ----------------------------------------------------------------
 # # Load files
@@ -259,6 +260,7 @@ panel_MTG = v.Col(cols=12, sm=8, md=8,
 
 
 tab_MTG_content = v.Row(children=[
+                            v.Col(col=12, sm=12, md=12, children=[v.Card(style_=layout_card, children=[info.p1_doc])]),
                               menu_plant,
                               panel_MTG,
                           ])
