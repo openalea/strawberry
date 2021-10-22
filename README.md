@@ -1,6 +1,6 @@
 [![Documentation Status](https://readthedocs.org/projects/strawberry/badge/?version=latest)](https://strawberry.readthedocs.io/en/latest/?badge=latest)
 
-![openalea](http://openalea.gforge.inria.fr/dokuwiki/lib/exe/fetch.php?cache=&media=logos:openalea_150_notxt.png) <img src="/doc/source/_static/logo_strawberry.png" width="120"/>
+![openalea](https://raw.githubusercontent.com/openalea/openalea.rtfd.io/master/doc/_static/openalea_web.svg) <img src="/doc/source/_static/logo_strawberry.png" width="120"/>
 
 # OpenAlea.Strawberry
 
