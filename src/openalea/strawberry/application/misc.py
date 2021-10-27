@@ -7,12 +7,14 @@ from ipywidgets import HTML
 import ipywidgets as widgets
 from oawidgets.plantgl import PlantGL
 
+import openalea.strawberry
 from openalea.mtg.io import write_mtg
 from openalea.mtg import MTG
 from openalea.strawberry.application.layout import layout_dataframe, layout_output_wgt, layout_visu3d
+from openalea.deploy.shared_data import shared_data
 
 
-data_directory = os.path.join(str(Path.home()), "dashboard_files")
+data_directory = shared_data(openalea.strawberry.__path__)
 
 
 if layout_dataframe == "qgrid":
@@ -58,10 +60,11 @@ def get_files():
     files=[]
     # START BY LOADING ALL EXISTING MTG FILES IN /dashboard_files
     file_paths = {}
-    for file in os.listdir(data_directory):
-        if file.endswith('.mtg'):
-            file_paths[file] = os.path.join(data_directory, file)
-            files.append(file)
+    if os.path.isdir(data_directory):
+        for file in os.listdir(data_directory):
+            if file.endswith('.mtg'):
+                file_paths[file] = os.path.join(data_directory, file)
+                files.append(file)
     return files, file_paths
 
 
