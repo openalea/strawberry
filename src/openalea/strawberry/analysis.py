@@ -182,11 +182,12 @@ def median_individuals(df):
     indices = []
     for gd, dataf in df.groupby(["Genotype","date","modality"]):
         geno, date, mod = gd
-        dg = dataf[df.columns[4:-1]]
+        dg = dataf[['nb_total_leaves','nb_total_flowers', 'nb_stolons', 'nb_floral_bud', 'nb_inflorescence','type_of_crown', 'order_max']]
         s=((dg-dg.median()).abs()/(dg-dg.median()).abs().mean()).sum(axis=1)
         indices.append(s.idxmin())
 
         # _min = s.min()
+        
         # minimum_inds= s[s==_min]
     return df.iloc[indices]
 
@@ -374,7 +375,7 @@ def _plant_variables(g):
     plant_variables['nb_initiated_bud'] = nb_initiated_buds
     plant_variables['nb_floral_bud'] = nb_floral_buds
     plant_variables['nb_inflorescence'] = nb_inflorescence
-    #plant_variables['type_of_crown'] = type_of_crown
+    plant_variables['type_of_crown'] = type_of_crown
     #plant_variables['crown_status'] = crown_status
 
     return plant_variables
