@@ -283,6 +283,8 @@ def color_code(g,complete, plantule=False):
                 nid.color = initiated
             elif stade in 'BCDEFGH':
                 nid.color = floral
+            else:
+                nid.color = (90,45,0)
         elif nid.label == 'ht':
             stade = nid.Stade
             if stade is None:
@@ -294,7 +296,7 @@ def color_code(g,complete, plantule=False):
             elif stade in 'BCDEFGH':
                 nid.color = floral
             else:
-                nid.color = (153, 102, 51)
+                nid.color = (90,45,0)
         elif nid.label == 'HT':
             stade = nid.Stade
             if stade is None:
