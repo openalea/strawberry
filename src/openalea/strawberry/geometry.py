@@ -76,7 +76,7 @@ def leaflet(length=1., width=1.):
     return shape
 
 
-def leaflet2d(length=1., width=1.):
+def leaflet2d(length=1, width=1):
     """Generate a strawberry leaf
 
     :param length: length of the leaflet, defaults to 1.
@@ -120,10 +120,12 @@ def phytomer2d(g, vid, turtle):
     t.setColor(2+order)
     t.setWidth(0.01)
 
-    len_petiole = 1.
-    len_internode = 0.25
-    leaflet_length = 0.7/2.
-    leaflet_wdth = 0.3/2.
+    scale=1/2
+
+    len_petiole = 0.2
+    len_internode = 0.2
+    leaflet_length = (0.7/2.)*scale
+    leaflet_wdth = (0.3/2.)*scale
 
     t.F(len_internode)
     #if order != 1:
@@ -243,9 +245,9 @@ def inflorescence(g, vid, turtle):
 
 
 def inflorescence2d(g, v, turtle):
-    len_internode=0.5
+    len_internode=0.2
     turtle.F(len_internode)
-    box = pgl.Box(.1,0.1,0.15)
+    box = pgl.Box(0.05*pgl.Vector3(1,1,2))
     # box_axis = pgl.AxisRotated(axis=(0,1,0), angle =45.,geometry=box)
     # box2 = pgl.Translated(.5,0,.8,box_axis)
 
@@ -272,7 +274,7 @@ def inflo_primordia(g, vid, turtle):
     :return: for each ht in mtg return an object compose of a cylinder and a of orange cube 
     :rtype: [type]
     """    
-    len_internode=0.25
+    len_internode=0.1
 
     t = colors_turtle(turtle)
     nid = g.node(vid)
@@ -379,14 +381,18 @@ def bud(g, vid, turtle):
     turtle.customGeometry(sphere)
 
  
-def bud2d(g, v, turtle):
+def bud2d(g, vid, turtle):
     """Return a bud shape 
 
     :return: the bud shape (a sphere)
     :rtype: Sphere
     """ 
-
-    sphere = pgl.Sphere(0.05)
+    t = colors_turtle(turtle)
+    #turtle.setColor(1)
+    nid = g.node(vid)
+    order = nid.order
+    t.setColor(order)
+    sphere = pgl.Sphere(0.08)
     turtle.customGeometry(sphere)
 
 # initiated_bud = bud
