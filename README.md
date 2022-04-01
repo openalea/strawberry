@@ -59,11 +59,10 @@ The Strawberry package contains :
 ### User installation 
 
 ```
-conda create --name strawberry -c conda-forge -y python=3.8 pandas k3d openalea.deploy jupyter voila voila-vuetify nodejs cufflinks-py ipyvuetify plotly pyvis
+conda create --name strawberry -c conda-forge -y python=3.8 pandas openalea.deploy jupyter voila voila-vuetify nodejs cufflinks-py ipyvuetify plotly pyvis
 conda activate strawberry
-conda install -c fredboudon -c conda-forge openalea.mtg openalea.plantgl
-git clone https://github.com/openalea-incubator/oawidgets
-cd oawidgets; python setup.py install; cd ..
+conda install -c openalea3 -c conda-forge oawidgets
+
 git clone https://github.com/openalea/strawberry.git
 cd strawberry; python setup.py install; cd ..
 ```
