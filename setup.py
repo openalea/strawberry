@@ -5,15 +5,14 @@ import sys
 import os
 
 from setuptools import setup, find_packages
-from openalea.deploy.metainfo import read_metainfo
 
 name = 'OpenAlea.Strawberry'
-version = '1.0.0'
+version = '1.1.0'
 
 description = "Strawberry is a package for architecture analysis and 2D/3D reconstruction."
 long_description = open('README.md').read()
 
-authors="Marc Labadie, Christophe Pradal"
+authors="Marc Labadie, Christophe Pradal, Gaetan Heidsieck"
 authors_email="marc.labadie@inra.fr, christophe.pradal@cirad.fr"
 
 url = "https://github.com/openalea/strawberry"
@@ -21,9 +20,6 @@ url = "https://github.com/openalea/strawberry"
 license = 'cecill-c'
 # dependencies to other eggs
 setup_requires = ['openalea.deploy']
-
-# web sites where to find eggs
-dependency_links = ['http://openalea.gforge.inria.fr/pi']
 
 # find packages
 packages = find_packages('src')
@@ -39,7 +35,7 @@ setup(
     author_email=authors_email,
     url=url,
     license=license,
-    keywords='strawberry, architecture',
+    keywords='strawberry, architecture, FSPM, openalea',
 
     # package installation
     packages=packages,
@@ -49,13 +45,10 @@ setup(
 
     # Namespace packages creation by deploy
     namespace_packages=['openalea'],
-    create_namespaces=True,
     zip_safe=False,
 
     # Dependencies
     setup_requires=setup_requires,
-    dependency_links=dependency_links,
-
 
     include_package_data=True,
 

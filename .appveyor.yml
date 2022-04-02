@@ -1,5 +1,4 @@
 platform:
-  - x86
   - x64
 
 environment:
@@ -8,28 +7,32 @@ environment:
       
   matrix:
     - CONDA_PY: 37
-    - CONDA_PY: 38
+      CONDA_NPY: 111
+    - CONDA_PY: 38 
       CONDA_NPY: 116
+    - CONDA_PY: 39 
+      CONDA_NPY: 119
 
+      
 install:
-  - git clone https://github.com/openalea/appveyor-ci.git
+  - git clone https://github.com/OpenAlea/appveyor-ci.git
   - cd appveyor-ci
   - call install.bat
   - conda config --prepend channels conda-forge
-  - conda install -y conda-verify
+  - conda config --prepend channels openalea3
 
 before_build:
   - call before_build.bat
 
 build_script:
   - call build_script.bat
-
+  
 after_build:
   - call after_build.bat
 
 deploy:
   provider: Script
-
+ 
 before_deploy:
   - call before_deploy.bat
 
