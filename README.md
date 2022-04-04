@@ -1,4 +1,11 @@
 [![Documentation Status](https://readthedocs.org/projects/strawberry/badge/?version=latest)](https://strawberry.readthedocs.io/en/latest/?badge=latest)
+[![Update](https://anaconda.org/openalea3/openalea.strawberry/badges/latest_release_date.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/latest_release_date.svg)
+[![install](https://anaconda.org/openalea3/openalea.strawberry/badges/installer/conda.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/installer/conda.svg)
+[![download](https://anaconda.org/openalea3/openalea.strawberry/badges/downloads.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/downloads.svg)
+[![Plateform](https://anaconda.org/openalea3/openalea.strawberry/badges/platforms.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/platforms.svg)
+[![licence](https://anaconda.org/openalea3/openalea.strawberry/badges/license.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/license.svg)
+[![Docker Image Size](https://badgen.net/docker/size/trueosiris/godaddypy?icon=docker&label=image%20size)](https://hub.docker.com/r/trueosiris/godaddypy/)
+
 
 ![openalea](https://raw.githubusercontent.com/openalea/openalea.rtfd.io/master/doc/_static/openalea_web.svg) <img src="/doc/source/_static/logo_strawberry.png" width="120"/>
 
@@ -27,6 +34,7 @@ Strawberry is a package for architecture analysis and 2D/3D reconstruction of st
 ## Content 
 
 The Strawberry package contains :
+* import_mtgfile : Load mtg file
 * geometry : Definition  of geometric shapes for mtg visualisation
 * visualisation : 2D and 3D representation of mtg. Plot analysis results
 * analysis : extraction of data from mtg
@@ -59,12 +67,7 @@ The Strawberry package contains :
 ### User installation 
 
 ```
-conda create --name strawberry -c conda-forge -y python=3.8 pandas openalea.deploy jupyter voila voila-vuetify nodejs cufflinks-py ipyvuetify plotly pyvis
-conda activate strawberry
-conda install -c openalea3 -c conda-forge oawidgets
-
-git clone https://github.com/openalea/strawberry.git
-cd strawberry; python setup.py install; cd ..
+conda create --name strawberry -c openalea3 -c conda-forge openalea.strawberry
 ```
 
 ### Docker install
@@ -83,6 +86,16 @@ and start the notebook in the docker terminal with:
 jupyter notebook --ip='*' --port=8888 --no-browser
 ```
 then copy the link (e.g. http://127.0.0.1:8888/?token=xxx) into your browser.
+
+### Developpers installation
+```
+conda create --name strawberry -c openalea3 -c conda-forge openalea.strawberry
+```
+```
+git clone https://github.com/openalea/strawberry.git
+cd strawberry
+python setup.py develop
+```
 
 ### Quick start
 
