@@ -4,7 +4,6 @@
 [![download](https://anaconda.org/openalea3/openalea.strawberry/badges/downloads.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/downloads.svg)
 [![Plateform](https://anaconda.org/openalea3/openalea.strawberry/badges/platforms.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/platforms.svg)
 [![licence](https://anaconda.org/openalea3/openalea.strawberry/badges/license.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/license.svg)
-[![Docker Image Size](https://badgen.net/docker/size/trueosiris/godaddypy?icon=docker&label=image%20size)](https://hub.docker.com/r/trueosiris/godaddypy/)
 
 
 ![openalea](https://raw.githubusercontent.com/openalea/openalea.rtfd.io/master/doc/_static/openalea_web.svg) <img src="/doc/source/_static/logo_strawberry.png" width="120"/>
