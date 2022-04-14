@@ -20,6 +20,8 @@ requirements:
   run:
     - python
     - openalea.deploy
+    - openalea.plantgl
+    - openalea.mtg
     - oawidgets
     - pandas
     - jupyter 
