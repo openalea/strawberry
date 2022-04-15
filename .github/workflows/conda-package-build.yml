@@ -34,9 +34,9 @@ jobs:
       uses: openalea/action-build-publish-anaconda@v0.1.2
       with:
         conda: conda
-        mamba: true
+        mamba: false
         python: ${{ matrix.python-minor-version }}
-        channels: fredboudon, openalea3, conda-forge
+        channels: conda-forge, fredboudon, openalea3
         token: ${{ secrets.ANACONDA_TOKEN }}
         publish: ${{ steps.publish.outputs.value }}
         label: main
