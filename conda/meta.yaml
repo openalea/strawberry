@@ -18,7 +18,7 @@ requirements:
     - python  {{PY_VER}}
     - openalea.deploy
   run:
-    - python
+    - python >=3.6
     - openalea.deploy
     - openalea.plantgl
     - openalea.mtg
