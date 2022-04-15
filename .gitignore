@@ -86,6 +86,6 @@ doc/_dvlpt/
 # vscode
 *.code-workspace
 .vscode
-
-
+# Mac
+.DS_Store
 
