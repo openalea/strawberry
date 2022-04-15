@@ -36,7 +36,7 @@ jobs:
         conda: conda
         mamba: true
         python: ${{ matrix.python-minor-version }}
-        channels: openalea3, conda-forge
+        channels: fredboudon, openalea3, conda-forge
         token: ${{ secrets.ANACONDA_TOKEN }}
         publish: ${{ steps.publish.outputs.value }}
         label: main
