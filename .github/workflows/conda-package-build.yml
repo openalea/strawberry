@@ -19,7 +19,7 @@ jobs:
       max-parallel: 3
       matrix:
         os: [ ubuntu-latest ]
-        python-minor-version: [8]
+        python-minor-version: [7]
 
     steps:
     - uses: actions/checkout@v3
