@@ -19,7 +19,7 @@ jobs:
       max-parallel: 3
       matrix:
         os: [ ubuntu-latest ]
-        python-minor-version: [7]
+        python-minor-version: [8]
 
     steps:
     - uses: actions/checkout@v3
@@ -36,7 +36,7 @@ jobs:
         conda: conda
         mamba: false
         python: ${{ matrix.python-minor-version }}
-        channels: conda-forge, fredboudon, openalea3
+        channels: openalea3, conda-forge 
         token: ${{ secrets.ANACONDA_TOKEN }}
         publish: ${{ steps.publish.outputs.value }}
         label: main

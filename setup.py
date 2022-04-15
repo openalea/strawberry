@@ -44,7 +44,7 @@ setup(
     share_dirs={'share': 'share'},
 
     # Namespace packages creation by deploy
-    namespace_packages=['openalea'],
+    #namespace_packages=['openalea'],
     zip_safe=False,
 
     # Dependencies
