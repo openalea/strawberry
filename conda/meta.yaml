@@ -8,20 +8,21 @@ source:
   path: ..
 
 build:
+  noarch: python
   preserve_egg_dir: True
-  number: 0
-  script: python setup.py install
+  number: 1
+  script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
-  host:
+  build:
     - python  {{PY_VER}}
     - openalea.deploy
   run:
-    - python  {{PY_VER}}
+    - python >=3.6
     - openalea.deploy
-    - oawidgets
-    - openalea.mtg
     - openalea.plantgl
+    - openalea.mtg
+    - oawidgets
     - pandas
     - jupyter 
     - voila 

@@ -13,7 +13,7 @@ description = "Strawberry is a package for architecture analysis and 2D/3D recon
 long_description = open('README.md').read()
 
 authors="Marc Labadie, Christophe Pradal, Gaetan Heidsieck"
-authors_email="marc.labadie@inra.fr, christophe.pradal@cirad.fr"
+authors_email="marc.labadie@cirad.fr, christophe.pradal@cirad.fr"
 
 url = "https://github.com/openalea/strawberry"
 
@@ -44,7 +44,7 @@ setup(
     share_dirs={'share': 'share'},
 
     # Namespace packages creation by deploy
-    namespace_packages=['openalea'],
+    #namespace_packages=['openalea'],
     zip_safe=False,
 
     # Dependencies
