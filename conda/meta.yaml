@@ -10,12 +10,12 @@ source:
 build:
   noarch: python
   preserve_egg_dir: True
-  number: 1
-  script: python setup.py install 
+  number: 2
+  script: {{PYTHON}} setup.py install 
 
 requirements:
   build:
-    - python  
+    - python  {{PY_VER}}
     - openalea.deploy
   run:
     - python >=3.6
