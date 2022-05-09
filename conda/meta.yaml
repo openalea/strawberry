@@ -27,6 +27,7 @@ requirements:
     - jupyter 
     - voila 
     - voila-vuetify 
+    - jinja2 <3.1.0 # bug with voila
     - nodejs 
     - cufflinks-py 
     - ipyvuetify 
