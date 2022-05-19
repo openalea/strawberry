@@ -138,3 +138,7 @@ All contributions, bug reports, bug fixes, documentation improvements, enhanceme
 
 A detailed overview on how to contribute can be found in the ![contributing guide](http://virtualplants.github.io/contribute/devel/workflow-github.html#workflow-github).
 
+### contributors
+<a href="https://github.com/openalea/strawberry/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=openalea/strawberry" />
+</a>
