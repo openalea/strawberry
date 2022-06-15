@@ -1,47 +1,54 @@
-{% set version = "1.0.0" %}
+{% set data = load_setup_py_data() %}
 
 package:
   name: openalea.strawberry
-  version: {{ version }}
+  version: {{ data.get('version') }}
 
 source:
   path: ..
 
 build:
+  noarch: python
   preserve_egg_dir: True
-  number: 0
-  script: python setup.py install
+  number: 3
+  script: {{PYTHON}} setup.py install 
 
 requirements:
   build:
-    - openalea.deploy #==2.0.0
+    - python  {{PY_VER}}
+    - openalea.deploy
   run:
-    - python
-    - openalea.mtg
+    - python >=3.6
+    - openalea.deploy
     - openalea.plantgl
+    - openalea.mtg
+    - oawidgets
     - pandas
-    - k3d 
     - jupyter 
     - voila 
     - voila-vuetify 
+    - jinja2 <3.1.0 # bug with voila
     - nodejs 
     - cufflinks-py 
     - ipyvuetify 
     - plotly
+    - matplotlib
+
 
 test:
+  requires:
+    - pytest
   imports:
     - openalea.strawberry
   source_files:
-    - test/
-    - test/*.py
-  requires:
-    - pytest
+    - share/data/**
+    - test/**
   commands:
-    - pytest
+    - cd test
+    - pytest -v 
 
 about:
-  home: http://github.com/openalea/strawberry
-  license: Cecill-c License
-  summary: OpenAlea Strawberry is a package for architecture analysis and 2D/3D reconstruction.
+  home: http://strawberry.rtfd.io
+  license: CeCILL_C
+  summary: Strawberry plant architecture analysis and 2D/3D reconstruction.
 
