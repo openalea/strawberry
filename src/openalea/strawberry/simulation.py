@@ -206,6 +206,8 @@ def strawberry_visitor3d(g,v,turtle, time):
 
 def strawberry_visitor2d(g, v, turtle, time):
     geoms = geom.get_symbols2d()
+    drawable = visu2d.drawable(g)
+    branch_ratio= visu2d.graph_layout(g)
     turtle.setWidth(0.01)
     nid = g.node(v)
     label = g.label(v)
@@ -268,6 +270,7 @@ def strawberry_visitor2d(g, v, turtle, time):
         elif label in ('HT',"ht"):
             turtle.F(0.1)
 
+
         elif label == 's':
             turtle.rollL(180)
             turtle.f(0.05)
@@ -319,6 +322,29 @@ def traverse_with_turtle_time(g, vid, time, visitor):
 
 
 #### plot ######
+
+def plot(g,phyllochron=1,plant=30,time_start=0,time_end=180, step=2,visitor=strawberry_visitor2d):
+    plantid= [vid for vid in g.vertices(scale=1)]
+    times=[x for x in range(time_start,time_end,step)]
+    
+    thermal_time(g,phyllochron=phyllochron)
+    
+    for time in times:
+        vids=g.component_roots_at_scale(plantid[plant],scale=3)
+        
+        if visitor==strawberry_visitor2d:
+            visu2d.color_code(g,complete=False)
+        else:
+            visu3d.color_code(g)
+        
+        for vid in vids:
+            scene= traverse_with_turtle_time(g,vid=vid,visitor=visitor,time=time)
+            
+        
+        pgl.Viewer.display(scene)
+        
+        
+        
 def plot2d_with_time(g, vids=[],time_start=0,time_end=180,step=1 ,by=[], dist=[], complete=False, display=False):
     scene = pgl.Scene()
     position = pgl.Vector3()
