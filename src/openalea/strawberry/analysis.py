@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from ipaddress import summarize_address_range
 
 import pandas as pd
 from collections import OrderedDict
@@ -237,7 +238,8 @@ def pointwisemean_plot(data_mean,data_sd,varieties, variable,title,ylab, expand=
         pointwise_mean.errorbar(x=data_mean.loc[varietie].index, 
                      y=data_mean.loc[varietie][variable],
                      yerr=data_sd.loc[varietie][variable],
-                     color=cmap(i), marker="p")
+                     color=cmap(i),
+                     marker="p")
     pointwise_mean.legend(labels=varieties,loc='center left', bbox_to_anchor=(1, 0.5))
     pointwise_mean.set_title(title)
     pointwise_mean.set_ylabel(ylab)
@@ -368,6 +370,7 @@ def _plant_variables(g):
     plant_variables = OrderedDict()
     plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
     plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
+    plant_variables['nb_fruits'] = no_fruits # number of fruits
     plant_variables['nb_stolons'] = nb_stolons # Nombre de stolons
     plant_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille visible
     plant_variables['nb_missing_leaves'] = missing_leaves #Nombre de feuille manquante
@@ -397,6 +400,7 @@ def extract_at_module_scale(g, vids=[], convert=convert):
 
     if not vids:
         vids = g.vertices(scale=1)
+    print(vids)
 
     orders = algo.orders(g, scale=2)
 
@@ -450,6 +454,8 @@ def _module_variables(g):
     module_variables['crown_status'] = crown_status
     module_variables['complete_module'] = complete #(True: complete, False: incomplete)
     module_variables['stage']= stage
+    
+    module_variables['no_fruits']= no_fruits
 
     return module_variables
 
@@ -571,6 +577,19 @@ def nb_open_flowers(vid, g):
     flowers = property(g, 'Fleurs_ouverte')
     return sum( flowers.get(cid,0) for cid in g.components(vid) if g.label(cid) in ('ht', 'HT'))
 
+def no_fruits(vid, g):
+    """Return the number of fruits
+
+    :param vid: vid for which the function is applied
+    :type vid: int
+    :param g: MTG
+    :type g: MTG
+    :return: The number of fruits
+    :rtype: int
+    """
+
+    fruits = property(g, 'no_fruits')
+    return sum( fruits.get(cid,0) for cid in g.components(vid) if g.label(cid) in ('ht','HT'))
 
 def nb_aborted_flowers(vid, g):
     """Return the number of aborted flowers
