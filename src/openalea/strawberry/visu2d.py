@@ -176,8 +176,8 @@ def my_visitor(g, v, turtle, time=0):
             turtle.down(-angle)
         
     # elif label == 'bt':
-    #     turtle.down(30.)
-    #     turtle.f(0.05)
+    #     # turtle.down(30.)
+    #     turtle.f(0.1)
     
     elif label == 'HT':
         turtle.F(0.1)
@@ -281,7 +281,7 @@ def color_code(g,complete, plantule=False):
                 nid.color=vegetative
             elif stade == 'A':
                 nid.color = initiated
-            elif stade in 'BCDEFGH':
+            elif stade in ['B','C','D','E','F','G','H']:
                 nid.color = floral
             else:
                 nid.color = (90,45,0)
@@ -293,7 +293,7 @@ def color_code(g,complete, plantule=False):
                 nid.color= vegetative
             elif stade == 'A':
                 nid.color = initiated
-            elif stade in 'BCDEFGH':
+            elif stade in ['B','C','D','E','F','G','H']:
                 nid.color = floral
             else:
                 nid.color = (90,45,0)
