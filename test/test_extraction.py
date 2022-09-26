@@ -17,7 +17,7 @@ def test_extract_at_module_scale():
     mtg = MTG()
     for k, genotype in enumerate(mtg_path):
         if (genotype=="Sicile") or (genotype=="Nils") or (genotype=='origine_stolon_gariguetteDV_6novembre2018') \
-        or (genotype=='friendlyfruit_varieties'):
+        or (genotype=='friendlyfruit_varieties') or (genotype=='figure0_paper'):
             pass
         else:
             mtg = union(mtg, read_mtg_file(mtg_path[genotype]))
@@ -38,7 +38,7 @@ def test_extract_at_node_scale():
     mtg = MTG()
     for k, genotype in enumerate(mtg_path):
         if (genotype=="Sicile") or (genotype=="Nils") or (genotype=='origine_stolon_gariguetteDV_6novembre2018') \
-        or (genotype=='friendlyfruit_varieties'):
+        or (genotype=='friendlyfruit_varieties') or (genotype=='figure0_paper'):
             pass
         else:
             mtg = union(mtg, read_mtg_file(mtg_path[genotype]))
@@ -59,7 +59,7 @@ def test_extract_at_plant_scale():
     mtg = MTG()
     for k, genotype in enumerate(mtg_path):
         if (genotype=="Sicile") or (genotype=="Nils") or (genotype=='origine_stolon_gariguetteDV_6novembre2018') \
-        or (genotype=='friendlyfruit_varieties'):
+        or (genotype=='friendlyfruit_varieties') or (genotype=='figure0_paper'):
             pass
         else:
             mtg = union(mtg, read_mtg_file(mtg_path[genotype]))
