@@ -34,8 +34,8 @@ Plant_ID	INT
 Stade	STRING							
 								
 MTG:								
-ENTITY-CODE			Experiment_name	Genotype	Sample_date	Architecture_date	Plant_ID	Stade
-/P			figure0_paper	gariguette	12/04/2022	12/04/2022	1	
+ENTITY-CODE			Experiment_name	Genotype	Sample_date	Architecture_date	Plant_ID	Stade	Modality
+/P			figure0_paper	gariguette	12/04/2022	12/04/2022	1		A						
 ^/T								
 ^/F								
 	+A							
