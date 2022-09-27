@@ -1,14 +1,15 @@
 name: strawberry
 channels:
-  - fredboudon
   - conda-forge
-  - openalea
+  - openalea3
 
 dependencies:
  - python=3.8  
  - openalea.deploy 
  - openalea.mtg 
  - openalea.plantgl 
+ - openpyxl
+ - openalea.lpy
  - pip:
    - pyvis
    - pandas
@@ -17,7 +18,7 @@ dependencies:
    - voila
    - voila-vuetify
    - nodejs
-   - cufflinks
+   - cufflinks-py
    - ipyvuetify
    - plotly
    - nbsphinx
