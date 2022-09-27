@@ -33,6 +33,8 @@ requirements:
     - ipyvuetify 
     - plotly
     - matplotlib
+    - openpyxl
+    - openalea.lpy
 
 
 test:
