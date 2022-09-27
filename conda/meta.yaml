@@ -33,6 +33,7 @@ requirements:
     - ipyvuetify 
     - plotly
     - matplotlib
+    - openpyxl
 
 
 test:
