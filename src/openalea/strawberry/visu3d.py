@@ -49,7 +49,7 @@ def visualise_plants(g, vids=[], positions=[], no_plant=[], hide_leaves=False):
         #vids = [cid for vid in vids for cid in g.component_roots_at_scale_iter(vid, scale=max_scale)]
         vids = vids
 
-    assert len(vids) == len(positions)
+    #assert len(vids) == len(positions)
     n= len(vids)
 
     scenes = pgl.Scene()
@@ -203,7 +203,7 @@ def color_code(g):
                 nid.color=(0, 255,0)
             elif stade == 'A':
                 nid.color = (255,0,0)
-            elif stade in 'BCDEFGH':
+            elif stade in ['B','C','D','E','F','G','H']:
                 d = dict(zip('BCDEFGH', list(range(1, len('BCDEFGH')+1))))
                 i = d[stade]
                 nid.color = (255, int(127+127/7*(i-1)),0)

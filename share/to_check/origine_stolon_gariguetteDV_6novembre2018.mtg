@@ -59,8 +59,7 @@ ENTITY-CODE					Experiment_name	Sample_date	Architecture_date	Genotype	Modality	
 ^/T																															
 ^/F												yes																			
 	+A																														
-	^/s																														
-																															
+	^/s																																																													
 ^<F												yes																			
 	+A																														
 	^/s																														
