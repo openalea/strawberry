@@ -8,8 +8,9 @@ dependencies:
  - openalea.deploy 
  - openalea.mtg 
  - openalea.plantgl 
- - openpyxl
  - openalea.lpy
+ - openpyxl
+ - cufflinks-py
  - pip:
    - pyvis
    - pandas
@@ -18,7 +19,6 @@ dependencies:
    - voila
    - voila-vuetify
    - nodejs
-   - cufflinks-py
    - ipyvuetify
    - plotly
    - nbsphinx

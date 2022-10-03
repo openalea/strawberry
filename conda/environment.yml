@@ -8,8 +8,6 @@ dependencies:
  - pandas 
  - k3d 
  - jupyter 
- - voila 
- - voila-vuetify 
  - nodejs 
  - cufflinks-py 
  - ipyvuetify 
@@ -21,3 +19,5 @@ dependencies:
  - openalea.lpy
  - pip:
    - pyvis
+   - voila
+   - voila-vuetify
