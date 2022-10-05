@@ -30,8 +30,7 @@ Architecture_date	DD/MM/YYYY
 Genotype	STRING																																																															
 Modality	STRING # Modality in this cas no Modality (modality= A)																																																															
 Plant_ID	INT																																																															
-Stade	STRING																																																															
-Foliar_type	STRING # Cotyledon, Unifoliate, Trifoliate, Trifoliate non developped, primordia foliar																																																															
+Stade	STRING																																																																																																																													
 DBI	REAL # mm Collar diameter																																																															
 INFLOLG	REAL # mm Inflorescence length																																																															
 PETLG	REAL # mm petiole lenght																																																															
