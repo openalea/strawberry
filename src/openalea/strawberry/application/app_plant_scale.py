@@ -24,7 +24,7 @@ def update_btn_extract():
     genotype=genotypes_selection_extraction.v_model
     if genotype:
         vids=get_vid_of_genotype(misc.all_mtg, genotype)
-        df=extract_at_module_scale(misc.all_mtg, vids=vids)
+        df=extract_at_plant_scale(misc.all_mtg, vids=vids)
         update_btn_export(export_extraction, df)
 
 
