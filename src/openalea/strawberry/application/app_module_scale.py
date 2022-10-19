@@ -8,7 +8,7 @@ import cufflinks as cf
 cf.go_offline()
 cf.set_config_file(offline=False, world_readable=True)
 
-from openalea.strawberry.analysis import (extract_at_module_scale, occurence_module_order_along_time, df2waffle, plot_waffle)
+from openalea.strawberry.analysis import (extract_at_module_scale, occurence_module_order_along_time, df2waffle, plot_waffle, type_of_crown)
 
 import openalea.strawberry.application.misc as misc
 from openalea.strawberry.application.misc import (get_vid_of_genotype, transfert_figure, create_download_link, create_grid, update_grid, update_btn_export)
@@ -25,6 +25,8 @@ def update_btn_extract():
     if genotype:
         vids=get_vid_of_genotype(misc.all_mtg, genotype)
         df=extract_at_module_scale(misc.all_mtg, vids=vids)
+        df["type_of_crown"]=df['type_of_crown'].replace([1,2,3],['Main','Extension','Branch'])
+        df["crown_status"]=df['crown_status'].replace([1,2,3,4,5,-1],['vegetative', 'initiated', 'floral', 'Inflorescence', 'stolon', 'dried/aborted/cutted'])
         update_btn_export(export_extraction, df)
 
 
@@ -34,50 +36,61 @@ def update_btn_single():
         vids=get_vid_of_genotype(misc.all_mtg, [genotype])
         df=extract_at_module_scale(misc.all_mtg, vids=vids)
         geno_frequency = occurence_module_order_along_time(data= df,frequency_type= "cdf")
-    update_btn_export(link_export_t11,geno_frequency)
+        update_btn_export(link_export_t11,geno_frequency)
 
     if genotype:
         vids=get_vid_of_genotype(misc.all_mtg, [genotype])
         df=extract_at_module_scale(misc.all_mtg, vids=vids)
         res=pd.crosstab(index= df["order"], columns= df["complete_module"],normalize="index")
         res.columns = ["incomplete","complete"]
-    update_btn_export(link_export_t12,res)
+        update_btn_export(link_export_t12,res)
 
     if genotype:
         vids=get_vid_of_genotype(misc.all_mtg, [genotype])
         df=extract_at_module_scale(misc.all_mtg, vids=vids)
         res=pd.crosstab(index=df["date"], columns= df["complete_module"],normalize="index")
         res.columns = ["incomplete","complete"]    
-    update_btn_export(link_export_t13,res)
+        update_btn_export(link_export_t13,res)
 
 
 def update_btn_multiple():
     if misc.all_mtg:
         df=extract_at_module_scale(misc.all_mtg)
         Mean= df.groupby(["Genotype", "order"]).mean()
-    update_btn_export(link_export_t21,Mean)
+        update_btn_export(link_export_t21,Mean)
 
     if misc.all_mtg:
         df=extract_at_module_scale(misc.all_mtg)
         Mean= df.groupby(["Genotype", "order"]).mean()
-    update_btn_export(link_export_t22,Mean)
+        update_btn_export(link_export_t22,Mean)
 
     if misc.all_mtg:
         df=extract_at_module_scale(misc.all_mtg)
         Mean= df.groupby(["Genotype", "order"]).mean()
-    update_btn_export(link_export_t23,Mean)
-
+        update_btn_export(link_export_t23,Mean)
+    
     if misc.all_mtg:
         df=extract_at_module_scale(misc.all_mtg)
-        ctd = crowntype_distribution(data= df, crown_type="branch_crown")
+        ctd = crowntype_distribution(data= df, crown_type="branch_crown",frequency=True)
         ctd = ctd[ctd.index.get_level_values('order')!=0]
-    update_btn_export(link_export_t24,ctd)
+        update_btn_export(link_export_t24,ctd)
 
     if misc.all_mtg:
         df=extract_at_module_scale(misc.all_mtg)
-        ctd = crowntype_distribution(data= df, crown_type="extension_crown")
+        ctd = crowntype_distribution(data= df, crown_type="extension_crown",frequency=True)
         ctd = ctd[ctd.index.get_level_values('order')!=0]  
-    update_btn_export(link_export_t25,ctd)        
+        update_btn_export(link_export_t25,ctd)      
+    if misc.all_mtg:
+        df=extract_at_module_scale(misc.all_mtg)
+        ctd = crowntype_distribution(data= df, crown_type="branch_crown", frequency = False)
+        ctd = ctd[ctd.index.get_level_values('order')!=0]
+        update_btn_export(link_export_t26,ctd)
+
+    if misc.all_mtg:
+        df=extract_at_module_scale(misc.all_mtg)
+        ctd = crowntype_distribution(data= df, crown_type="extension_crown", frequency= False)
+        ctd = ctd[ctd.index.get_level_values('order')!=0]  
+        update_btn_export(link_export_t27,ctd)        
 
 
 def plot_module_occurence_module_order_along_time(df, genotype, layout={}):
@@ -95,6 +108,7 @@ def plot_module_occurence_module_order_along_time(df, genotype, layout={}):
                           title=title,
                           asFigure=True
                          )
+    p.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
     return p 
 
 def plot_module_distribution_complete_incomplete_module_order(df, genotype, layout={}):
@@ -114,6 +128,7 @@ def plot_module_distribution_complete_incomplete_module_order(df, genotype, layo
                   title=title,
               asFigure=True
                      )
+    p.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
     return p 
 
 def plot_module_distribution_complete_incomplete_date(df, genotype, layout={}):
@@ -133,6 +148,7 @@ def plot_module_distribution_complete_incomplete_date(df, genotype, layout={}):
                   title=title,
               asFigure=True
                  )
+    p.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
     return p 
 
 
@@ -155,7 +171,7 @@ def print_single_genotype_plots():
             plot_occurence.clear_output()
             print('Select a Genotype')
 
-def crowntype_distribution(data, crown_type,):
+def crowntype_distribution(data, crown_type,frequency):
     """
     parameters:
     -----------
@@ -168,18 +184,28 @@ def crowntype_distribution(data, crown_type,):
     and a relative frequency distribution plot
 
     """
-    df= pd.crosstab(index= [data.Genotype, data.order],
-                    columns= data.type_of_crown,
-                    normalize="index")   
+    
+    if frequency == True:
+        df= pd.crosstab(index= [data.Genotype, data.order],
+                        columns= data.type_of_crown)   
+    else:
+        df= pd.crosstab(index= [data.Genotype, data.order],
+                        columns= data.type_of_crown,
+                        normalize="index")
+        
     df.columns=["Main", "extension_crown", "branch_crown"]
 
     return df
 
 
-def crowntype_plotly(data, crown_type, layout={}):
+def crowntype_plotly(data, crown_type, frequency,layout={}):
     xlabel = layout.get('xlabel', "Order")
-    ylabel = layout.get('ylabel', "Relative frequency")
-    title = layout.get('title',"Relative frequency of {}".format(crown_type))   
+    if frequency == True:
+        ylabel = layout.get('ylabel', "Frequency")
+        title = layout.get('title',"Frequency of {}".format(crown_type))
+    else:
+        ylabel = layout.get('ylabel', "Relative frequency")
+        title = layout.get('title',"Relative frequency of {}".format(crown_type))   
    
     fig=go.Figure()
     for genotype in list(data.unstack(level=0)[crown_type].columns):
@@ -234,12 +260,13 @@ def plot_module_pointwisemean(df, var, layout={}):
 
     return fig
 
-def plot_module_crown(df, var, layout={}):
-    ctd = crowntype_distribution(data= df, crown_type=var)
+def plot_module_crown(df, var, frequency, layout={}):
+    ctd = crowntype_distribution(data= df, crown_type=var, frequency=frequency)
     ctd = ctd[ctd.index.get_level_values('order')!=0]
     fig= crowntype_plotly(data=ctd,
-                 crown_type=var, 
-                 layout=layout)
+                          crown_type=var,
+                          frequency=frequency, 
+                          layout=layout)
     return fig
 
 
@@ -247,20 +274,26 @@ def print_multiple_genotypes_plots():
     if misc.all_mtg.property('Genotype'):
         df=extract_at_module_scale(misc.all_mtg)
         # plot pointwisemean leaves
-        fig = plot_module_pointwisemean(df, "nb_total_leaves")
+        fig = plot_module_pointwisemean(df, "no_total_leaves")
         transfert_figure(fig, plot_pointwisemean_leaves)
         # plot pointwisemean flowers
-        fig = plot_module_pointwisemean(df, "nb_total_flowers")
+        fig = plot_module_pointwisemean(df, "no_total_flowers")
         transfert_figure(fig, plot_pointwisemean_flowers)
         # plot pointwisemean stolons
-        fig = plot_module_pointwisemean(df, "nb_stolons")
+        fig = plot_module_pointwisemean(df, "no_stolons")
         transfert_figure(fig, plot_pointwisemean_stolons)
-        # crowntype branch
-        fig = plot_module_crown(df, "branch_crown")
-        transfert_figure(fig, plot_branch_crown)
-        # crowntype extension
-        fig = plot_module_crown(df, "extension_crown")
-        transfert_figure(fig, plot_extension_crown)
+        # crowntype branch frequency
+        fig = plot_module_crown(df, "branch_crown",frequency= True)
+        transfert_figure(fig, plot_branch_crown_freq)
+        # crowntype extension frequency
+        fig = plot_module_crown(df, "extension_crown",frequency= True)
+        transfert_figure(fig, plot_extension_crown_freq)
+        # crowntype branch (relative frequency)
+        fig = plot_module_crown(df, "branch_crown",frequency= False)
+        transfert_figure(fig, plot_branch_crown_rfreq)
+        # crowntype extension (relative frequency)
+        fig = plot_module_crown(df, "extension_crown",frequency= False)
+        transfert_figure(fig, plot_extension_crown_rfreq)
         
 
 
@@ -274,14 +307,14 @@ def on_change_genotype_p4(widget, event, data):
     if misc.all_mtg:
         vids=get_vid_of_genotype(misc.all_mtg, genotypes=data)
         df = extract_at_module_scale(misc.all_mtg, vids=vids)
+        df["type_of_crown"]=df['type_of_crown'].replace([1,2,3],['Main','Extension','Branch'])
+        df["crown_status"]=df['crown_status'].replace([1,2,3,4,5,-1],['vegetative', 'initiated', 'floral', 'Inflorescence', 'stolon', 'dried/aborted/cutted'])
+
     update_grid(df, df_modulescale)
-    
     # update descriptors
     update_grid(df.describe(), df_description)
-
     # update the extraction button
     update_btn_extract()
-
 
 def on_change_single_genotype(widget, event, data):
     print_single_genotype_plots()
@@ -539,8 +572,10 @@ tab_single_genotype_content = v.Row(children=[v.Card(style_=layout_card, childre
 plot_pointwisemean_leaves = go.FigureWidget(layout=layout_gofigure)
 plot_pointwisemean_flowers = go.FigureWidget(layout=layout_gofigure)
 plot_pointwisemean_stolons = go.FigureWidget(layout=layout_gofigure)
-plot_branch_crown = go.FigureWidget(layout=layout_gofigure)
-plot_extension_crown = go.FigureWidget(layout=layout_gofigure)
+plot_branch_crown_freq = go.FigureWidget(layout=layout_gofigure)
+plot_extension_crown_freq = go.FigureWidget(layout=layout_gofigure)
+plot_branch_crown_rfreq = go.FigureWidget(layout=layout_gofigure)
+plot_extension_crown_rfreq = go.FigureWidget(layout=layout_gofigure)
 
 
 link_export_t21 = widgets.Output(layout=layout_output_wgt)
@@ -548,6 +583,8 @@ link_export_t22 = widgets.Output(layout=layout_output_wgt)
 link_export_t23 = widgets.Output(layout=layout_output_wgt)
 link_export_t24 = widgets.Output(layout=layout_output_wgt)
 link_export_t25 = widgets.Output(layout=layout_output_wgt)
+link_export_t26= widgets.Output(layout=layout_output_wgt)
+link_export_t27 = widgets.Output(layout=layout_output_wgt)
 
 
 panel_multiple_genotypes = v.Container(fluid=True,
@@ -558,10 +595,14 @@ panel_multiple_genotypes = v.Container(fluid=True,
                                     v.Row(children=[link_export_t22]),
                                     plot_pointwisemean_stolons,
                                     v.Row(children=[link_export_t23]),
-                                    plot_branch_crown,
+                                    plot_branch_crown_freq,
                                     v.Row(children=[link_export_t24]),
-                                    plot_extension_crown,
+                                    plot_extension_crown_freq,
                                     v.Row(children=[link_export_t25]),
+                                    plot_branch_crown_rfreq,
+                                    v.Row(children=[link_export_t26]),
+                                    plot_extension_crown_rfreq,
+                                    v.Row(children=[link_export_t27]),
                                 ])
 
 tab_multiple_genotype_content = v.Row(children=[v.Card(style_=layout_card, children=[info.p4_doc_multiple]),

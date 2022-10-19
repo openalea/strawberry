@@ -15,21 +15,25 @@ https://docs.conda.io/en/latest/miniconda.html
 2. Create virtual environment and activate it
 ---------------------------------------------
 
+In Anaconda Prompt: 
+
 .. code:: shell
 
     conda create --name strawberry -c conda-forge -c openalea3 openalea.strawberry -y
     conda activate strawberry
 
 
-4. Install the strawberry package
+3. Install the strawberry package
 ---------------------------------
 
 .. code:: shell
 
     git clone https://github.com/openalea/strawberry.git
-    cd strawberry; python setup.py develop; cd ..
+    cd strawberry
+    python setup.py develop
+    
 
-5. Optional packages
+4. Optional packages
 ---------------------
 
 .. code:: shell
