@@ -105,6 +105,8 @@ def update_selection_items():
     p4.genotypes_selection_extraction.items=get_genotypes(misc.all_mtg)
     p4.genotypes_selection_single_genotype.items=get_genotypes(misc.all_mtg)
     p4.genotypes_selection_waffle.items=get_genotypes(misc.all_mtg)
+    p5.genotypes_selection_extraction.items= get_genotypes(misc.all_mtg)
+    p5.genotypes_selection_single_genotype.items= get_genotypes(misc.all_mtg)
     p5.genotypes_selection_waffle.items=get_genotypes(misc.all_mtg)
 
 

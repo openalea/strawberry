@@ -183,7 +183,7 @@ def median_individuals(df):
     indices = []
     for gd, dataf in df.groupby(["Genotype","date","modality"]):
         geno, date, mod = gd
-        dg = dataf[['nb_total_leaves','nb_total_flowers', 'nb_stolons', 'nb_floral_bud', 'nb_inflorescence','type_of_crown', 'order_max']]
+        dg = dataf[['no_total_leaves','no_total_flowers', 'no_stolons', 'no_floral_bud', 'no_inflorescences','no_branch_crown', 'no_extension_crown', 'order_max']]
         s=((dg-dg.median()).abs()/(dg-dg.median()).abs().mean()).sum(axis=1)
         indices.append(s.idxmin())
 
@@ -349,12 +349,16 @@ def extract_at_plant_scale(g, vids=[], convert=convert):
         plant_df[name] = [sum(f(v, g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
 
     #plant_df['Total_leaf_area'] = [mean_leaf_area(pid, g) * (sum(nb_visible_leaves(v,g) for v in g.components(pid) if v in visibles) for pid in plant_ids]
-    plant_df['leaf_area'] = [mean_leaf_area(pid, g)  for pid in plant_ids]
+    #plant_df['leaf_area'] = [mean_leaf_area(pid, g)  for pid in plant_ids]
+    
+    plant_df['no_branch_crown'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==3 and v in visibles)) for pid in plant_ids]
+    plant_df['no_extension_crown'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==2 and v in visibles)) for pid in plant_ids]
+    plant_df['no_ramifications'] = [sum(1 for v in g.components(pid) if ((type_of_crown(v, g)==2 or type_of_crown(v,g)==3) and v in visibles)) for pid in plant_ids]
     plant_df['order_max'] = [max(orders[v] for v in g.components(pid) if v in visibles) for pid in plant_ids]
-    plant_df['nb_ramifications'] = [sum(1 for v in g.components(pid) if (type_of_crown(v, g)==3 and v in visibles)) for pid in plant_ids]
     plant_df['vid'] = plant_ids
 
     df = pd.DataFrame(plant_df)
+   
     return df
 
 
@@ -368,17 +372,21 @@ def _plant_variables(g):
     """
 
     plant_variables = OrderedDict()
-    plant_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
-    plant_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
-    plant_variables['nb_fruits'] = no_fruits # number of fruits
-    plant_variables['nb_stolons'] = nb_stolons # Nombre de stolons
-    plant_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille visible
-    plant_variables['nb_missing_leaves'] = missing_leaves #Nombre de feuille manquante
-    plant_variables['nb_vegetative_bud'] = nb_vegetative_buds
-    plant_variables['nb_initiated_bud'] = nb_initiated_buds
-    plant_variables['nb_floral_bud'] = nb_floral_buds
-    plant_variables['nb_inflorescence'] = nb_inflorescence
-    plant_variables['type_of_crown'] = type_of_crown
+    plant_variables['no_visible_leaves'] = nb_visible_leaves # Nombre de feuille developpé
+    plant_variables['no_foliar_primodium']= nb_foliar_primordia # Nombre de feuille dans le bourgeons
+    #plant_variables['no_missing_leaves'] = missing_leaves #Nombre de feuille manquante
+    plant_variables['no_total_leaves'] = nb_total_leaves #Nombre total de feuille
+    plant_variables['no_open_flowers'] = nb_open_flowers #Nombre de fleurs ouverte
+    plant_variables['no_aborted_flowers'] = nb_aborted_flowers #Nombre de fleurs avorte
+    plant_variables['no_closed_flowers'] = nb_close_flowers #Nombre de fleurs fermé
+    plant_variables['no_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
+    plant_variables['no_fruits'] = no_fruits # number of fruits
+    plant_variables['no_stolons'] = nb_stolons # Nombre de stolons    
+    plant_variables['no_vegetative_bud'] = nb_vegetative_buds
+    plant_variables['no_initiated_bud'] = nb_initiated_buds
+    plant_variables['no_floral_bud'] = nb_floral_buds
+    plant_variables['no_inflorescences'] = nb_inflorescence
+    #plant_variables['type_of_crown'] = type_of_crown (1: Main Crown, 2:extension crown, 3: branch crown)
     #plant_variables['crown_status'] = crown_status
 
     return plant_variables
@@ -440,22 +448,27 @@ def _module_variables(g):
     """
     
     module_variables = OrderedDict()
-    module_variables['nb_visible_leaves'] = nb_visible_leaves # Nombre de feuille developpe
-    module_variables['nb_foliar_primordia'] = nb_foliar_primordia #Nombre de primordia foliaire
-    module_variables['nb_total_leaves'] = nb_total_leaves #Nombre total de feuille
-    module_variables['nb_open_flowers'] = nb_open_flowers #Nombre de fleurs ouverte
-    module_variables['nb_aborted_flowers'] = nb_aborted_flowers #Nombre de fleurs avorte
-    module_variables['nb_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
-    module_variables['nb_vegetative_bud'] = nb_vegetative_buds
-    module_variables['nb_initiated_bud']= nb_initiated_buds
-    module_variables['nb_floral_bud']= nb_floral_buds
-    module_variables['nb_stolons']= nb_stolons
-    module_variables['type_of_crown'] = type_of_crown # Type de crowns (Primary Crown:1, Branch crown:2 extension crown:3)
-    module_variables['crown_status'] = crown_status
-    module_variables['complete_module'] = complete #(True: complete, False: incomplete)
-    module_variables['stage']= stage
+    module_variables['no_visible_leaves'] = nb_visible_leaves # Nombre de feuille developpe
+    module_variables['no_foliar_primordia'] = nb_foliar_primordia #Nombre de feuille dans le bourgeons
+    module_variables['no_total_leaves'] = nb_total_leaves #Nombre total de feuille
     
-    module_variables['no_fruits']= no_fruits
+    module_variables['no_open_flowers'] = nb_open_flowers #Nombre de fleurs ouverte
+    module_variables['no_aborted_flowers'] = nb_aborted_flowers #Nombre de fleurs avorte
+    module_variables['no_total_flowers'] = nb_total_flowers #Nombre total de Fleurs
+    module_variables['no_fruits']= no_fruits # Number of fruits
+    
+    module_variables['no_stolons']= nb_stolons # number of stolon
+    module_variables['no_vegetative_bud'] = nb_vegetative_buds # number of vegetative bud
+    module_variables['no_initiated_bud']= nb_initiated_buds
+    module_variables['no_floral_bud']= nb_floral_buds
+    
+    module_variables['type_of_crown'] = type_of_crown # Type de crowns (Primary Crown:1, Branch crown:3 extension crown:2)
+    module_variables['crown_status'] = crown_status
+    module_variables['stage']= stage
+    module_variables['complete_module'] = complete #(True: complete, False: incomplete)
+
+    
+ 
 
     return module_variables
 
@@ -603,6 +616,20 @@ def nb_aborted_flowers(vid, g):
     """
 
     flowers = property(g, 'Fleurs_aborted')
+    return sum( flowers.get(cid,0) for cid in g.components(vid) if g.label(cid) in ('ht', 'HT'))
+
+def nb_close_flowers(vid, g):
+    """Return the number of aborted flowers
+
+    :param vid: vid for which the function is applied
+    :type vid: int
+    :param g: MTG
+    :type g: MTG
+    :return: The number of aborted flowers
+    :rtype: int
+    """
+
+    flowers = property(g, 'FLWRNUMBER_CLOSED')
     return sum( flowers.get(cid,0) for cid in g.components(vid) if g.label(cid) in ('ht', 'HT'))
 
 
@@ -961,7 +988,7 @@ def extract_at_node_scale(g, vids=[], convert=convert):
     orders = algo.orders(g,scale=2)
 
     # Define all the rows
-    props = ['node_id', 'rank', 'branching_type', 'complete','nb_modules_branching','nb_branch_crown_branching','nb_extension_crown_branching','branching_length', 'stage', 'Genotype', 'order',  'date','plant']
+    props = ['node_id', 'rank', 'branching_type', 'complete','no_modules_branching','no_branch_crown_branching','no_extension_crown_branching','branching_length', 'Genotype', 'order',  'date','plant']
     for prop in props:
         node_df[prop] = []
 
@@ -972,19 +999,19 @@ def extract_at_node_scale(g, vids=[], convert=convert):
     for trunk in trunks:
         # Define your schema
         for i, vid in enumerate(trunk):
-            node_df['node_id'].append(vid) #scale=3
-            node_df['rank'].append(i+1) #scale=3
-            node_df['branching_type'].append(my_bt(vid,g)) #scale=2
-            node_df['complete'].append(my_complete(vid, g)) #scale=2
-            node_df['nb_modules_branching'].append(nb_total_module_tree(vid,g))#scale=2
-            node_df['nb_branch_crown_branching'].append(nb_branching_tree(vid,g))#scale=2
-            node_df['nb_extension_crown_branching'].append(nb_extension_tree(vid,g))#scale=2
-            node_df['branching_length'].append(nb_visible_leaves_tree(vid,g))
-            node_df['Genotype'].append(genotype(vid, g)) #scale=1
-            node_df['order'].append(orders[g.complex(vid)]) #scale=2
-            node_df['plant'].append(plant(vid, g)) #scale=1
-            node_df['date'].append(date(vid, g)) #scale=1
-            node_df['stage'].append(stage(vid, g)) # scale=3
+            node_df['node_id'].append(vid) #scale=3 node id
+            node_df['rank'].append(i+1) #scale=3 # rank of the node
+            node_df['branching_type'].append(my_bt(vid,g)) #scale=2, 1: stolon, 2:vegetative bud, 3: initiated bud, 4: aborted/dried bud, 5: floral bud, 6: branch crown, 7: Inflorescence 
+            node_df['complete'].append(my_complete(vid, g)) #scale=2 complete module if Inflorescence else incomplete module other if module is stolons
+            node_df['no_modules_branching'].append(nb_total_module_tree(vid,g))#scale=2 no. total module in the tree attach on the node
+            node_df['no_branch_crown_branching'].append(nb_branching_tree(vid,g))#scale=2 no. branching in the tree attach on the node
+            node_df['no_extension_crown_branching'].append(nb_extension_tree(vid,g))#scale=2 no. extension in the tree attach on the node
+            node_df['branching_length'].append(nb_visible_leaves_tree(vid,g)) # length of the no.node along branching counting base of no. leaves
+            node_df['Genotype'].append(genotype(vid, g)) #scale=1 # Genotype
+            node_df['order'].append(orders[g.complex(vid)]) #scale=2 Order of the node
+            node_df['plant'].append(plant(vid, g)) #scale=1  plant id
+            node_df['date'].append(date(vid, g)) #scale=1 date
+            #node_df['stage'].append(stage(vid, g)) # scale=3 stage
             
     df = pd.DataFrame(node_df)
 
@@ -1260,7 +1287,7 @@ def stage_tree(vid, g):
     return list(stage(m,g) for m in module_tree(v, g))
 
 
-def prob_axillary_production(g, order=None, vids=[]):
+def prob_axillary_production(g, order=None, vids=[],frequency=False):
     """Probability of axillary production as function of node rank
 
     :param g: mtg
@@ -1269,6 +1296,8 @@ def prob_axillary_production(g, order=None, vids=[]):
     :type order: str, optional
     :param vids: vid selected, defaults to []
     :type vids: list, optional
+    :param frequency: frequency selected, defaults to False
+    :type frequency: bool, optional
     :return: A dataframe with the probability of axillary production for each node
     :rtype: pd.DataFrame
     """    
@@ -1282,10 +1311,13 @@ def prob_axillary_production(g, order=None, vids=[]):
         df=df[df["order"]==order]
         
     # Value conversion
-    df["branching_type"]= df["branching_type"].replace(["1","2","3","4","5","6"],["S","VB","IB","AB","FB","BC"])
+    df["branching_type"]= df["branching_type"].replace(["1","2","3","4","5","6","7"],["S","VB","IB","AB","FB","BC","Inflorescence"])
 
     # pandas crosstab data
-    data=pd.crosstab(df["rank"],df["branching_type"],normalize="index")
+    if frequency==True:  
+        data= pd.crosstab(df["rank"],df["branching_type"])
+    else:
+        data=pd.crosstab(df["rank"],df["branching_type"],normalize="index")
 
     return data
 

@@ -11,6 +11,7 @@ parameters available for the algorithms.
 
 .. toctree::
 
+    openalea.strawberry.import_mtgfile.rst
     openalea.strawberry.analysis.rst
     openalea.strawberry.geometry.rst
     openalea.strawberry.visu2d.rst

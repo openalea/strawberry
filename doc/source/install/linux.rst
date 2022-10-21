@@ -10,36 +10,27 @@ Developer Install - Ubuntu (linux)
 
 Follow official website instruction to install miniconda :
 
-http://conda.pydata.org/miniconda.html
+https://docs.conda.io/en/latest/miniconda.html
 
 2. Create virtual environment and activate it
 ---------------------------------------------
 
+In Anaconda Prompt:
+
 .. code:: shell
 
-    conda create --name strawberry python=3.8 -c conda-forge -y
+    conda create --name strawberry -c conda-forge -c openalea3 openalea.strawberry -y
     conda activate strawberry
 
 
-3. Install dependencies with conda
-----------------------------------
-
-.. code:: shell
-
-    conda install -c conda-forge python=3.8 pandas matplotlib numpy='1.20' k3d openalea.deploy jupyter voila voila-vuetify nodejs cufflinks-py ipyvuetify qgrid plotly pyvis
-    conda install -c fredboudon -c conda-forge openalea.mtg openalea.plantgl
-
-    git clone https://github.com/openalea-incubator/oawidgets.git
-    cd oawidgets; python setup.py install; cd ..
-
-
-4. Install the strawberry package
+3. Install the strawberry package
 ---------------------------------
 
 .. code:: shell
 
     git clone https://github.com/openalea/strawberry.git
-    cd strawberry; python setup.py install; cd ..
+    cd strawberry
+    python setup.py develop
 
 5. Optional packages
 ---------------------

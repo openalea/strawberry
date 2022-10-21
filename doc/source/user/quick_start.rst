@@ -7,9 +7,10 @@ You can construct a 3d architecture and some analyses by doing:
 
 .. code-block:: python
 
-  from openalea.mtg as mtg
+  import openalea.mtg as mtg
   from oawidgets.plantgl import PlantGL
-  from openalea.strawberry as strawberry
+  import openalea.strawberry as strawberry
+  
   g = strawberry.import_mtgfile.import_mtgfile(filename= ["Capriss"])
   g.properties()['order'] = mtg.algo.orders(g)
   scene=straberry.visu3d.plot3d(g,by=["Sample_date"],hide_leaves=False,display=False)
