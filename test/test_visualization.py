@@ -1,17 +1,18 @@
-from openalea.deploy.shared_data import shared_data
-import openalea.strawberry
+import openalea
 from openalea.mtg.io import read_mtg_file
 from openalea.mtg.algo import orders, split
-import openalea
+
 from oawidgets.plantgl import PlantGL
+import openalea.strawberry
 from openalea.strawberry import visu2d, visu3d
+from openalea.strawberry.data import data_directory
 
 
 def name(f):
     return f.basename().splitext()[0]
 
 def test_import_mtg():
-    files = shared_data(openalea.strawberry).glob('*.mtg')
+    files = data_directory.glob('*.mtg')
     mtg_path = dict((name(f), f) for f in files)
     gariguette = read_mtg_file(mtg_path['Gariguette'])
     straws = split(gariguette)
@@ -19,7 +20,7 @@ def test_import_mtg():
 
 
 def test_3D():
-    files = shared_data(openalea.strawberry).glob('*.mtg')
+    files = data_directory.glob('*.mtg')
     mtg_path = dict((name(f), f) for f in files)
     gariguette = read_mtg_file(mtg_path['Gariguette'])
     gariguette.properties()['order'] = orders(gariguette)
@@ -34,7 +35,7 @@ def test_3D():
 
 
 def __test_2D():
-    files = shared_data(openalea.strawberry).glob('*.mtg')
+    files = data_directory.glob('*.mtg')
     mtg_path = dict((name(f), f) for f in files)
     gariguette = read_mtg_file(mtg_path['Gariguette'])
     gariguette.properties()['order'] = orders(gariguette)

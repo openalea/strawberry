@@ -1,17 +1,18 @@
-from pathlib import Path
 import os
+from pathlib import Path
 from openalea.mtg.io import read_mtg_file, write_mtg
-from openalea.strawberry.analysis import extract_at_node_scale, extract_at_module_scale
-from openalea.deploy.shared_data import shared_data
-import openalea.strawberry
 
+import openalea.strawberry
+from openalea.strawberry.analysis import extract_at_node_scale, extract_at_module_scale
 from openalea.strawberry.analysis import df2waffle
+from openalea.strawberry.data import data_directory
+
 
 def name(f):
     return f.basename().splitext()[0]
 
 def test_df2waffle():
-    files = shared_data(openalea.strawberry).glob('*.mtg')
+    files = data_directory.glob('*.mtg')
     mtg_path = dict((name(f), f) for f in files)
     mtg = read_mtg_file(mtg_path['Capriss'])
 

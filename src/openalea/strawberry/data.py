@@ -1,7 +1,9 @@
 """ Module providing shared data access
 """
+from pathlib import Path
 
 from openalea.deploy.shared_data import shared_data
+import openalea.strawberry
 
 
 data_directory = shared_data(openalea.strawberry.__path__)

@@ -10,7 +10,7 @@ source:
 build:
   noarch: python
   preserve_egg_dir: True
-  number: 3
+  number: 0
   script: {{PYTHON}} setup.py install 
 
 requirements:
