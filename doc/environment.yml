@@ -1,27 +1,11 @@
 name: strawberry
 channels:
-  - conda-forge
   - openalea3
+  - conda-forge
 
 dependencies:
- - python=3.8  
- - openalea.deploy 
- - openalea.mtg 
- - openalea.plantgl 
- - openalea.lpy
- - openpyxl
- - cufflinks-py
- - pip:
-   - pyvis
-   - pandas
-   - k3d
-   - jupyter
-   - voila
-   - voila-vuetify
-   - nodejs
-   - ipyvuetify
-   - plotly
-   - nbsphinx
-   - sphinx-rtd-theme
-   - nbsphinx-link
-   - matplotlib
+  - python
+  - sphinx_rtd_theme
+  - openalea.strawberry
+  - nbsphinx
+  - nbsphinx-link
