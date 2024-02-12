@@ -4,7 +4,7 @@ channels:
   - conda-forge
 
 dependencies:
- - python=3.8 
+ - python
  - pandas 
  - k3d 
  - jupyter 
@@ -17,7 +17,6 @@ dependencies:
  - openalea.plantgl 
  - openpyxl
  - openalea.lpy
- - pip:
-   - pyvis
-   - voila
-   - voila-vuetify
+ - pyvis
+ - voila
+ - voila-vuetify
