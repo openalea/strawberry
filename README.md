@@ -1,6 +1,5 @@
 [![Documentation Status](https://readthedocs.org/projects/strawberry/badge/?version=latest)](https://strawberry.readthedocs.io/en/latest/?badge=latest)
 [![Update](https://anaconda.org/openalea3/openalea.strawberry/badges/latest_release_date.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/latest_release_date.svg)
-[![install](https://anaconda.org/openalea3/openalea.strawberry/badges/installer/conda.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/installer/conda.svg)
 [![download](https://anaconda.org/openalea3/openalea.strawberry/badges/downloads.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/downloads.svg)
 [![Plateform](https://anaconda.org/openalea3/openalea.strawberry/badges/platforms.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/platforms.svg)
 [![licence](https://anaconda.org/openalea3/openalea.strawberry/badges/license.svg)](https://anaconda.org/openalea3/openalea.strawberry/badges/license.svg)
