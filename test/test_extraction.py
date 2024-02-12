@@ -1,4 +1,3 @@
-from openalea.deploy.shared_data import shared_data
 import openalea.strawberry
 from openalea.mtg.io import read_mtg_file
 from openalea.mtg.algo import union
@@ -6,12 +5,13 @@ from openalea.mtg import MTG
 
 
 from openalea.strawberry.analysis import extract_at_module_scale, extract_at_node_scale, extract_at_plant_scale
+from openalea.strawberry.data import data_directory
 
 def name(f):
     return f.basename().splitext()[0]
 
 def test_extract_at_module_scale():
-    files = shared_data(openalea.strawberry).glob('*.mtg')
+    files = data_directory.glob('*.mtg')
 
     mtg_path = dict((name(f), f) for f in files)
     mtg = MTG()
@@ -32,7 +32,7 @@ def test_extract_at_module_scale():
 
 
 def test_extract_at_node_scale():
-    files = shared_data(openalea.strawberry).glob('*.mtg')
+    files = data_directory.glob('*.mtg')
 
     mtg_path = dict((name(f), f) for f in files)
     mtg = MTG()
@@ -53,7 +53,7 @@ def test_extract_at_node_scale():
 
 
 def test_extract_at_plant_scale():
-    files = shared_data(openalea.strawberry).glob('*.mtg')
+    files = data_directory.glob('*.mtg')
 
     mtg_path = dict((name(f), f) for f in files)
     mtg = MTG()

@@ -4,6 +4,7 @@ from __future__ import print_function
 import pandas as pd
 import numpy as np
 from openpyxl import load_workbook
+
 from openalea.plantgl.all import*
 from openalea.mtg import io
 from openalea.mtg import algo
@@ -11,7 +12,7 @@ from openalea.lpy import *
 
 import openalea.strawberry
 from openalea.mtg import MTG, algo
-from openalea.deploy.shared_data import shared_data
+from openalea.strawberry.data import data_directory
 
 
 def name(f):
@@ -34,7 +35,7 @@ def import_mtgfile(filename):
     :rtype: MTG
     """    
     filenames = filename
-    files = shared_data(openalea.strawberry).glob('*.mtg')
+    files = data_directory.glob('*.mtg')
     mtg_path = dict((name(f), f) for f in files)
     mtgfile = dict((k,f) for k,f in mtg_path.items() if k in filenames)
     if len(filenames) == 1:

@@ -3,18 +3,18 @@ import os
 from io import StringIO
 import pandas as pd
 import base64
+
 from ipywidgets import HTML
 import ipywidgets as widgets
+
 from oawidgets.plantgl import PlantGL
 
 import openalea.strawberry
 from openalea.mtg.io import write_mtg
 from openalea.mtg import MTG
+
+from openalea.strawberry.data import data_directory
 from openalea.strawberry.application.layout import layout_dataframe, layout_output_wgt, layout_visu3d
-from openalea.deploy.shared_data import shared_data
-
-
-data_directory = shared_data(openalea.strawberry.__path__)
 
 
 if layout_dataframe == "qgrid":
