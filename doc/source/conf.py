@@ -22,7 +22,7 @@ copyright = '2021, Marc Labadie, Christophe Pradal, Gaetan Heidsieck'
 author = 'Marc Labadie, Christophe Pradal, Gaetan Heidsieck'
 
 # The full version, including alpha/beta/rc tags
-release = '1.1.0'
+release = '1.1.1'
 
 
 # -- General configuration ---------------------------------------------------
