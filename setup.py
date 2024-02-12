@@ -4,10 +4,10 @@ from __future__ import absolute_import
 import sys
 import os
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 name = 'OpenAlea.Strawberry'
-version = '1.1.0'
+version = '1.1.1'
 
 description = "Strawberry is a package for architecture analysis and 2D/3D reconstruction."
 long_description = open('README.md').read()
@@ -22,7 +22,7 @@ license = 'cecill-c'
 setup_requires = ['openalea.deploy']
 
 # find packages
-packages = find_packages('src')
+packages=find_namespace_packages(where='src', include=['openalea.*'])
 package_dir={'': 'src'}
 
 setup(
