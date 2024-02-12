@@ -59,7 +59,7 @@ setup(
     # Declare scripts and wralea as entry_points (extensions) of your package
     entry_points={
         'wralea': ['strawberry = openalea.strawberry_wralea'],
-        'console_script': [
+        'console_scripts': [
             'strawberry = openalea.strawberry.application.run:main'  # Define a console script to run your Voilà app
         ]
         },

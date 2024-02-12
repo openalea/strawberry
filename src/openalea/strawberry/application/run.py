@@ -1,3 +1,4 @@
+from pathlib import Path
 from voila.app import Voila
 from voila.configuration import VoilaConfiguration
 
@@ -12,7 +13,10 @@ def main():
 
     app = Voila()
     app.voila_configuration = config
-    app.notebook_path="Strawberry Application.ipynb"
+
+    nb_file = Path(__file__)/'..'/r"Strawberry Application.ipynb"
+    nb_file = str(nb_file.resolve())
+    app.notebook_path=nb_file
     app.setup_template_dirs()
     # Launch your Voilà app here
 
