@@ -7,7 +7,7 @@ import os
 from setuptools import setup, find_namespace_packages
 
 name = 'OpenAlea.Strawberry'
-version = '1.1.1'
+version = '1.2.0'
 
 description = "Strawberry is a package for architecture analysis and 2D/3D reconstruction."
 long_description = open('README.md').read()
@@ -57,5 +57,10 @@ setup(
     package_data={'': ['*.csv', '*.mtg', '*.R*', '*.ipynb']},
 
     # Declare scripts and wralea as entry_points (extensions) of your package
-    entry_points={'wralea': ['strawberry = openalea.strawberry_wralea']},
+    entry_points={
+        'wralea': ['strawberry = openalea.strawberry_wralea'],
+        'console_scripts': [
+            'strawberry = openalea.strawberry.application.run:main'  # Define a console script to run your Voilà app
+        ]
+        },
     )
