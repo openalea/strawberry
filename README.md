@@ -23,6 +23,8 @@
 
 **URL** : https://github.com/openalea/strawberry
 
+**Funding** : The  European Union’s Horizon 2020 [BreedingValue](https://breedingvalue.eu/) project
+
 
 ## Description 
 
