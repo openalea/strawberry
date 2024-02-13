@@ -6,6 +6,8 @@
 
 
 ![openalea](https://raw.githubusercontent.com/openalea/openalea.rtfd.io/master/doc/_static/openalea_web.svg) <img src="/doc/source/_static/logo_strawberry.png" width="120"/>
+![image](https://github.com/openalea/strawberry/assets/1121866/8e7ef74a-0658-49f1-8904-4e7460910170)
+
 
 # OpenAlea.Strawberry
 
