@@ -6,7 +6,7 @@ build:
     python: "mambaforge-22.9"
 
 sphinx:
-  configuration: doc/conf.py
+  configuration: doc/source/conf.py
 
 conda:
   environment: doc/environment.yml
