@@ -2,6 +2,7 @@ name: strawberry
 channels:
   - openalea3
   - conda-forge
+  - nodefaults
 
 dependencies:
   - python
