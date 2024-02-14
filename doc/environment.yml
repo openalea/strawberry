@@ -7,6 +7,7 @@ channels:
 dependencies:
   - python
   - sphinx_rtd_theme
+  - readthedocs-sphinx-ext
   - openalea.strawberry
   - nbsphinx
   - nbsphinx-link
