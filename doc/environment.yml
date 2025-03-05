@@ -11,3 +11,22 @@ dependencies:
   - openalea.strawberry
   - nbsphinx
   - nbsphinx-link
+  - python
+  - pandas 
+  - k3d 
+  - jupyter 
+  - nodejs 
+  - cufflinks-py 
+  - ipyvuetify 
+  - plotly
+  - openalea.deploy 
+  - openalea.mtg 
+  - openalea.plantgl 
+  - openpyxl
+  - openalea.lpy
+  - pyvis
+  - voila
+  - voila-vuetify
+  - pip
+  - pip:
+    - -e ..
