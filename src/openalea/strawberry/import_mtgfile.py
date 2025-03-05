@@ -100,13 +100,22 @@ def topology(df, first_property):
     string=[]
     
     for row in row_index:
+        empty = True
         for column in column_index:
             if array[row,column]!=-1:
+                empty = False
                 break
+        if empty: 
+            print("Error : Empty lines are forbidden")
+            continue
         if column == column_start:
             string.append(array[row,column])
         elif column < column_start:
-            string.extend([']',array[row,column]])
+            if column_start-column >1:
+                print('ERROR : ',column_start-column, ' LINE: ',row+2)
+                print(array[row-1,:])
+            nb = column_start-column
+            string.extend([']'*nb,array[row,column]])
         else:
             string.extend(['[',array[row,column]])
         
@@ -138,7 +147,9 @@ def topology(df, first_property):
     if test_string_convertion(string)==0:
         return string
     else:
-        print("Error in convertion dataframe to string")
+        print("Error in convertion dataframe to string:")
+        print(string)
+        return string
         
 
 def add_properties(g, df, first_property):
@@ -188,9 +199,10 @@ def add_axis_scale(g):
             p_cpx = g.complex(pid)
             
             g.add_child(p_cpx, cpx, label="A", edge_type="+")
-            
-    g.reindex()
-    return g
+
+    new_g = g.reindex(copy=True)
+    
+    return new_g
 
 def strawberry_reader_csv(file, first_property='experimental_name',symbole_at_scale = dict(P=1,T=2, F=3, f=3, b=3, HT=3, bt=3, ht=3,s=3)):
     ''' Main function to import MTG from csv file
@@ -212,6 +224,7 @@ def strawberry_reader_csv(file, first_property='experimental_name',symbole_at_sc
     mtgs = list()
     
     for sheet in sheets:
+        print(f"{sheet}")
         df = read_file(file=file, sheet_name=sheet)  
         
         string= topology(df,first_property=first_property)
@@ -228,7 +241,15 @@ def strawberry_reader_csv(file, first_property='experimental_name',symbole_at_sc
         
         g= add_properties(g, df,first_property=first_property)
         g.property("Stade")
-        g= add_axis_scale(g)
+        try:
+            g= add_axis_scale(g)
+        except Exception as e:
+            print("#"*80)
+            print(f"{sheet} in ERROR")
+            print(g)
+            g.display()
+            raise(e)
+
         g.properties()["order"] = algo.orders(g)
         mtgs.append(g)
         
