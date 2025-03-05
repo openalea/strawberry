@@ -7,7 +7,7 @@ import os
 from setuptools import setup, find_namespace_packages
 
 name = 'OpenAlea.Strawberry'
-version = '1.2.0'
+version = '1.2.1'
 
 description = "Strawberry is a package for architecture analysis and 2D/3D reconstruction."
 long_description = open('README.md').read()
