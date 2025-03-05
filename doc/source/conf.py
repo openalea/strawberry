@@ -18,11 +18,11 @@ sys.path.insert(0, os.path.abspath('../../example/tutorials'))
 # -- Project information -----------------------------------------------------
 
 project = 'strawberry'
-copyright = '2021, Marc Labadie, Christophe Pradal, Gaetan Heidsieck'
+copyright = '2021-2025, Marc Labadie, Christophe Pradal, Gaetan Heidsieck'
 author = 'Marc Labadie, Christophe Pradal, Gaetan Heidsieck'
 
 # The full version, including alpha/beta/rc tags
-release = '1.2.0'
+release = '1.2.1'
 
 
 # -- General configuration ---------------------------------------------------
