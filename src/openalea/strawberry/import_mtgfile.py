@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
+import os
 import pandas as pd
 import numpy as np
 from openpyxl import load_workbook
@@ -269,7 +270,7 @@ def import_mtg_from_csv(files,first_property,symbol_at_scale=dict(P=1,T=2, F=3, 
     '''
     mtgs={}
     for file in files:
-        name= str(file).split('\\')[-1].split(".")[0]
+        name= str(file).split(os.sep)[-1].split(".")[0]
         print(name)
         mtg= strawberry_reader_csv(file)
         mtgs[name]=mtg
