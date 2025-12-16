@@ -1,0 +1,736 @@
+CODE :  	FORM-A
+
+CLASSES :
+SYMBOL	SCALE	DECOMPOSITION	INDEXATION	DEFINITION
+$	0	FREE	FREE	IMPLICIT
+P	1	FREE	FREE	EXPLICIT
+T	2	FREE	FREE	EXPLICIT
+A	2	FREE	FREE	EXPLICIT
+F	3	FREE	FREE	EXPLICIT
+f	3	FREE	FREE	EXPLICIT
+HT	3	FREE	FREE	EXPLICIT
+bt	3	FREE	FREE	EXPLICIT
+ht	3	FREE	FREE	EXPLICIT
+s	3	FREE	FREE	EXPLICIT
+
+DESCRIPTION :
+LEFT	RIGHT	RELTYPE	MAX
+P	P	<	?
+P	P	+	?
+T	T,A	<	?
+T	T,A	+	?
+A	T,A	<	?
+A	T,A	+	?
+F	F,f,HT,bt,ht,s	<	?
+F	F,f,HT,bt,ht,s	+	?
+f	F,f,HT,bt,ht,s	<	?
+f	F,f,HT,bt,ht,s	+	?
+HT	F,f,HT,bt,ht,s	<	?
+HT	F,f,HT,bt,ht,s	+	?
+bt	F,f,HT,bt,ht,s	<	?
+bt	F,f,HT,bt,ht,s	+	?
+ht	F,f,HT,bt,ht,s	<	?
+ht	F,f,HT,bt,ht,s	+	?
+s	F,f,HT,bt,ht,s	<	?
+s	F,f,HT,bt,ht,s	+	?
+
+FEATURES :
+NAME	TYPE
+experimental_name	STRING
+Genotype	STRING
+Modality	STRING
+Plant_ID	REAL
+Sample_date	DD/MM/YY
+Architecture_date	DD/MM/YY
+Stade	STRING
+no_fruits	REAL
+no_flowers	REAL
+FLWRNUMBER	REAL
+area	REAL
+leaf_ID	REAL
+order	REAL
+
+MTG :
+ENTITY-CODE					experimental_name	Genotype	Modality	Plant_ID	Sample_date	Architecture_date	Stade	no_fruits	no_flowers	FLWRNUMBER	area	leaf_ID	order
+/P					BreedingValue	CF20292	test	1.0	09/05/2023	11/05/2023							0
+^/T																	0
+^/F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/F														3
+				+A													4
+				^/bt													4
+			^<F														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<bt							D							3
+		^<HT								HT	3.0		3.0				2
+	^<HT									HT	9.0		9.0				1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<bt								G							2
+	^<HT									55							1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/F														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<bt							G							3
+		^<HT								55							2
+	^<HT									89	6.0		6.0				1
+^<HT										89	8.0		8.0				0
+/P					BreedingValue	CF20292		2.0	09/05/2023	11/05/2023							0
+^/T																	0
+^/F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/s															2
+	^<f																1
+		+A															2
+		^/bt															2
+	^<f																1
+		+A															2
+		^/bt															2
+	^<bt										G						1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/s															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/s														3
+		^<F															2
+			+A														3
+			^/s														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<bt									17						2
+	^<HT										Cut						1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/s															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<bt									G						2
+^<HT											Cut						0
+	+A																1
+	^/F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<bt									17						2
+	^<HT										89	8.0		8.0			1
+/P					BreedingValue	CF20292		3.0	09/05/2023	11/05/2023							0
+^/T																	0
+^/F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/F														3
+				+A													4
+				^/bt													4
+			^<F														3
+				+A													4
+				^/bt													4
+			^<F														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<bt								I						3
+		^<HT									89	5.0		5.0			2
+	^<HT										Cut						1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/F														3
+				+A													4
+				^/bt													4
+			^<F														3
+				+A													4
+				^/bt													4
+			^<bt								I						3
+		^<HT									60		6.0	6.0			2
+	^<HT										Cut						1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/f														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<bt								C						3
+		^<F															2
+			+A														3
+			^/F														3
+				+A													4
+				^/bt													4
+			^<F														3
+				+A													4
+				^/bt													4
+			^<F														3
+				+A													4
+				^/bt													4
+			^<F														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<bt								H						3
+		^<HT									89	5.0		5.0			2
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<f																1
+		+A															2
+		^/bt															2
+	^<f																1
+		+A															2
+		^/bt															2
+	^<f																1
+		+A															2
+		^/bt															2
+	^<bt										C						1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/s															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<f																1
+		+A															2
+		^/bt															2
+	^<f																1
+		+A															2
+		^/bt															2
+	^<f																1
+		+A															2
+		^/bt															2
+	^<bt										17						1
+^<HT											89	5.0		5.0			0
+/P					BreedingValue	CF20292		4.0	09/05/2023	11/05/2023							0
+^/T																	0
+^/F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/s															2
+	^<F																1
+		+A															2
+		^/s															2
+	^<F																1
+		+A															2
+		^/s															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<bt										I						1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/s														3
+		^<F															2
+			+A														3
+			^/s														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<bt									G						2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/s														3
+		^<F															2
+			+A														3
+			^/s														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<bt									17						2
+	^<HT										89	8.0		8.0			1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/s														3
+		^<F															2
+			+A														3
+			^/s														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<bt									G						2
+^<HT											Cut						0
+	+A																1
+	^/F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/F														3
+				+A													4
+				^/s													4
+			^<F														3
+				+A													4
+				^/bt													4
+			^<F														3
+				+A													4
+				^/s													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<bt								17						3
+		^<HT									89	6.0		6.0			2
+	^<HT										Cut						1
+/P					BreedingValue	CF20292		5.0	09/05/2023	11/05/2023							0
+^/T																	0
+^/F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/F														3
+				+A													4
+				^/s													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<bt								H						3
+		^<HT									60		5.0	5.0			2
+	^<HT										Cut						1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/s														3
+		^<F															2
+			+A														3
+			^/s														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<f															2
+			+A														3
+			^/bt														3
+		^<bt									E						2
+	^<HT										Cut						1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/bt																1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<f																1
+		+A															2
+		^/bt															2
+	^<bt										F						1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/F														3
+				+A													4
+				^/s													4
+			^<F														3
+				+A													4
+				^/s													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<bt								F						3
+		^<HT									55						2
+	^<HT										89	7.0		7.0			1
+^<F																	0
+	+A																1
+	^/F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/bt															2
+	^<F																1
+		+A															2
+		^/F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/bt														3
+		^<F															2
+			+A														3
+			^/f														3
+				+A													4
+				^/s													4
+			^<f														3
+				+A													4
+				^/bt													4
+			^<bt								F						3
+		^<HT									55						2
+	^<HT										Cut						1
+^<HT											Cut						0
