@@ -873,7 +873,7 @@ def modality(vid, g):
     """
     
     cpx = g.complex_at_scale(vid, scale=1)
-    _modality = property(g, 'Modality')[cpx]
+    _modality = property(g, 'Modality').get(cpx, 'test')
     return(_modality)
 
 
